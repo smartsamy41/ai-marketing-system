@@ -1,117 +1,75 @@
-from flask import Flask, jsonify
+from flask import Flask
 import os
-from datetime import datetime
 
-from engine.data_layer_engine import (
-    get_products,
-    get_metrics,
-    get_events,
-    get_dashboard_data
-)
+from engine.output_layer import success, system_response
 
 app = Flask(__name__)
 
-# =========================
-# CORE
-# =========================
-
 @app.route("/")
 def home():
-    return "AI Marketing System DATA LAYER LIVE 🚀"
+    return "AI Marketing System CORE LIVE 🚀"
 
 @app.route("/health")
 def health():
-    return jsonify({
-        "status": "OK",
-        "system": "AI_MARKETING_ENGINE",
-        "mode": "DATA_LAYER_ACTIVE"
+    return system_response("CORE_AI_MARKETING", {
+        "mode": "OUTPUT_LAYER_ACTIVE",
+        "version": "V1",
+        "cloud_run": "ONLINE"
     })
 
 @app.route("/run")
 def run():
-    return jsonify({
-        "status": "success",
+    return success({
+        "mode": "core",
         "product": {
-            "product_id": "TEST_001",
-            "score": 85
+            "product_id": "CORE_TEST",
+            "score": 80
         },
-        "content": {
-            "blog": "Test Blog Content",
-            "pin": "Test Pin",
-            "youtube": "Test Video Script"
+        "pipeline": {
+            "step_1": "product_selected",
+            "step_2": "content_ready",
+            "step_3": "publish_ready"
         }
     })
 
 @app.route("/autopilot")
 def autopilot():
-    return jsonify({
-        "status": "success",
-        "autopublish": {
-            "action": "PUBLISH_READY",
-            "slot": "morning"
-        },
-        "ads": {
-            "budget": 25,
-            "level": "TEST"
-        },
-        "scaling": {
-            "action": "TEST_MODE"
-        }
-    })
-
-@app.route("/auto-loop")
-def auto_loop():
-    return jsonify({
-        "status": "success",
+    return success({
+        "mode": "autopilot_core",
         "auto_loop": "ACTIVE",
-        "scheduler": "RUNNING"
+        "scheduler": "ACTIVE",
+        "ads": {
+            "budget_level": "SAFE_TEST",
+            "budget": 10
+        }
     })
 
 @app.route("/system-status")
 def system_status():
-    return jsonify({
-        "timestamp": datetime.now().isoformat(),
+    return success({
         "cloud_run": "ONLINE",
         "scheduler": "ACTIVE",
         "auto_loop": "ACTIVE",
-        "status": "HEALTHY"
+        "output_layer": "ENABLED"
     })
-
-# =========================
-# DATA LAYER API
-# =========================
-
-@app.route("/data/products")
-def data_products():
-    return jsonify(get_products())
-
-@app.route("/data/metrics")
-def data_metrics():
-    return jsonify(get_metrics())
-
-@app.route("/data/events")
-def data_events():
-    return jsonify(get_events())
-
-@app.route("/data/dashboard")
-def data_dashboard():
-    return jsonify(get_dashboard_data())
-
-# =========================
-# LEGACY DASHBOARD (COMPAT)
-# =========================
 
 @app.route("/live-metrics")
 def live_metrics():
-    return jsonify(get_metrics())
+    return success({
+        "products_total": 45,
+        "pins_total": 45,
+        "blog_posts": 35,
+        "landingpages": 35,
+        "mode": "DATA_LAYER_READY"
+    })
 
-@app.route("/dashboard-monitor")
-def dashboard_monitor():
-    return jsonify(get_dashboard_data())
-
-# =========================
-# CLOUD RUN ENTRY
-# =========================
+@app.route("/auto-loop")
+def auto_loop():
+    return success({
+        "message": "AUTO LOOP ACTIVE",
+        "scheduler": "RUNNING",
+        "mode": "SAFE_AUTONOMOUS"
+    })
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
