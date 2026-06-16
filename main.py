@@ -2,56 +2,69 @@ from flask import Flask
 import os
 from datetime import datetime
 
-from engine.output_lock import safe_json, lock_response
+from engine.output_lock import success, system_response
+from engine.winner_engine import decide_action
+from engine.scaling_engine import calculate_scaling  # EXISTIERT BEREITS → KEIN DUPLIKAT
 
 app = Flask(__name__)
 
 # =========================
-# CORE SAFE SYSTEM
+# CORE
 # =========================
 
 @app.route("/")
 def home():
-    return "AI MARKETING SYSTEM OUTPUT LOCK ACTIVE 🚀"
+    return "AI MARKETING SYSTEM SCALING ENGINE LIVE 🚀"
 
 @app.route("/health")
-@lock_response
 def health():
-    return {
-        "system": "AI_MARKETING_ENGINE",
-        "mode": "OUTPUT_LOCK_ACTIVE",
-        "status": "STABLE"
-    }
+    return system_response("AI_SCALING_ENGINE", {
+        "status": "STABLE",
+        "mode": "SCALING_ACTIVE"
+    })
 
 @app.route("/run")
-@lock_response
 def run():
-    return {
-        "product": {
-            "id": "CORE_001",
-            "score": 85
-        },
-        "pipeline": "SAFE_EXECUTION"
+
+    product = {
+        "product_id": "TEST_001",
+        "score": 88
     }
+
+    metrics = {
+        "clicks": 15,
+        "sales": 1
+    }
+
+    winner = decide_action(product)
+    scaling = calculate_scaling(product, metrics)
+
+    return success({
+        "product": product,
+        "winner_decision": winner,
+        "scaling_decision": scaling
+    })
 
 @app.route("/autopilot")
-@lock_response
 def autopilot():
-    return {
-        "mode": "AUTOPILOT_LOCKED",
-        "ads": "SAFE_MODE",
-        "scaling": "CONTROLLED"
-    }
+    return success({
+        "mode": "AUTOPILOT_SCALING",
+        "system": "ACTIVE",
+        "actions": [
+            "detect_winner",
+            "calculate_scaling",
+            "adjust_budget"
+        ]
+    })
 
 @app.route("/system-status")
-@lock_response
 def system_status():
-    return {
+    return success({
         "cloud_run": "ONLINE",
         "scheduler": "ACTIVE",
         "auto_loop": "ACTIVE",
-        "output_lock": "ENABLED"
-    }
+        "scaling_engine": "ENABLED"
+    })
 
 # =========================
 # CLOUD RUN ENTRY
