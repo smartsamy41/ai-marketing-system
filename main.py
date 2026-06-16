@@ -1,28 +1,21 @@
 from flask import Flask
 import os
-from datetime import datetime
 
 from engine.output_lock import success, system_response
 from engine.winner_engine import decide_action
 from engine.scaling_engine import calculate_scaling
-from engine.data_connect import get_live_events, get_live_metrics, get_product_feed
+from engine.data_connect import get_product_feed, get_live_metrics
+from engine.learning_layer import log_decision, get_learning_data, analyze_learning
 
 app = Flask(__name__)
 
 # =========================
-# CORE
+# CORE ENGINE
 # =========================
 
 @app.route("/")
 def home():
-    return "AI MARKETING DATA CONNECT LIVE 🚀"
-
-@app.route("/health")
-def health():
-    return system_response("DATA_CONNECT_ENGINE", {
-        "status": "STABLE",
-        "mode": "LIVE_DATA_ACTIVE"
-    })
+    return "AI MARKETING LEARNING ENGINE LIVE 🚀"
 
 @app.route("/run")
 def run():
@@ -33,40 +26,45 @@ def run():
     results = []
 
     for p in products:
+
+        winner = decide_action(p)
+        scaling = calculate_scaling(p, metrics)
+
+        # 🧠 LEARNING LOG
+        learning = log_decision(p, winner, scaling)
+
         results.append({
             "product": p,
-            "winner": decide_action(p),
-            "scaling": calculate_scaling(p, metrics)
+            "winner": winner,
+            "scaling": scaling,
+            "learning_log": learning
         })
 
     return success({
-        "mode": "DATA_CONNECTED",
+        "mode": "LEARNING_ACTIVE",
         "results": results
     })
 
-@app.route("/events")
-def events():
-    return success({
-        "events": get_live_events(),
-        "status": "CONNECTED"
-    })
 
-@app.route("/metrics")
-def metrics():
-    return success(get_live_metrics())
+@app.route("/learning")
+def learning():
+    return success(get_learning_data())
 
-@app.route("/products")
-def products():
-    return success(get_product_feed())
+
+@app.route("/insights")
+def insights():
+    return success(analyze_learning())
+
 
 @app.route("/system-status")
 def system_status():
     return success({
         "cloud_run": "ONLINE",
-        "scheduler": "ACTIVE",
         "auto_loop": "ACTIVE",
-        "data_connect": "ENABLED"
+        "data_connect": "ACTIVE",
+        "learning_layer": "ENABLED"
     })
+
 
 # =========================
 # CLOUD RUN ENTRY
