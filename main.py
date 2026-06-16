@@ -1,83 +1,85 @@
 from flask import Flask, jsonify
 import os
-from datetime import datetime
+
+from engine.winner_engine_v2 import decide_winner
+from engine.scaling_engine_v2 import calculate_scaling
 
 app = Flask(__name__)
 
 # =========================
-# 🟢 CORE STATUS
+# 🧠 TEST PRODUCT DATA
+# =========================
+
+def get_products():
+    return [
+        {"product_id": "AMZ_001", "score": 92, "source": "amazon"},
+        {"product_id": "CHK24_001", "score": 85, "source": "check24"},
+        {"product_id": "TC_001", "score": 78, "source": "tarifcheck"},
+        {"product_id": "AMZ_002", "score": 95, "source": "amazon"},
+        {"product_id": "CHK24_002", "score": 81, "source": "check24"},
+        {"product_id": "TC_002", "score": 88, "source": "tarifcheck"}
+    ]
+
+# =========================
+# 🚀 CORE ROUTES
 # =========================
 
 @app.route("/")
 def home():
-    return "AI MARKETING SYSTEM LIVE 🚀"
+    return "AI MARKETING ENGINE V2 LIVE 🚀"
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
         "system": "AI_MARKETING_ENGINE",
+        "version": "V2",
         "mode": "STABLE"
     })
 
-@app.route("/system-status")
-def system_status():
-    return jsonify({
-        "timestamp": datetime.now().isoformat(),
-        "cloud_run": "ONLINE",
-        "status": "HEALTHY",
-        "engine": "CORE_STABLE"
-    })
-
-# =========================
-# 🟢 CORE FUNCTIONS (SAFE)
-# =========================
-
 @app.route("/run")
 def run():
+
+    products = get_products()
+
+    results = []
+
+    for p in products:
+
+        # 🧠 WINNER ENGINE
+        winner = decide_winner(p)
+
+        # 📈 SCALING ENGINE
+        scaling = calculate_scaling(p)
+
+        results.append({
+            "product": p,
+            "winner": winner,
+            "scaling": scaling
+        })
+
     return jsonify({
         "status": "success",
-        "mode": "SAFE_RUN",
-        "data": {
-            "product_id": "TEST_001",
-            "score": 85,
-            "action": "KEEP"
-        }
-    })
-
-@app.route("/metrics")
-def metrics():
-    return jsonify({
-        "products_total": 45,
-        "pins_total": 45,
-        "blog_posts": 35,
-        "landingpages": 35,
-        "status": "READY"
-    })
-
-@app.route("/events")
-def events():
-    return jsonify({
-        "status": "CONNECTED",
-        "events": [
-            {"type": "click", "product": "AMZ_001"},
-            {"type": "conversion", "product": "CHK24_001"},
-            {"type": "scale", "product": "TC_001"}
-        ]
+        "mode": "V2_ENGINE",
+        "results": results
     })
 
 @app.route("/products")
 def products():
+    return jsonify(get_products())
+
+@app.route("/system-status")
+def system_status():
     return jsonify({
-        "products": [
-            {"id": "AMZ_001", "score": 92},
-            {"id": "CHK24_001", "score": 85},
-            {"id": "TC_001", "score": 78}
-        ]
+        "cloud_run": "ONLINE",
+        "engine": "V2_ACTIVE",
+        "winner_engine": "ACTIVE",
+        "scaling_engine": "ACTIVE",
+        "status": "HEALTHY"
     })
 
 # =========================
-# 🟢 SAFE ENTRY POINT
+# ☁️ ENTRY POINT
 # =========================
 
 if __name__ == "__main__":
