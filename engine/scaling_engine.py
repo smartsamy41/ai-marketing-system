@@ -1,34 +1,42 @@
-def decide_scaling(product, ads_result):
+from datetime import datetime
+
+# =========================
+# 📈 SCALING ENGINE V1 (FIXED)
+# =========================
+
+def calculate_scaling(product, metrics):
+
     score = product.get("score", 0)
-    decision = ads_result.get("final_decision", "NO_DATA")
+    clicks = metrics.get("clicks", 0)
+    sales = metrics.get("sales", 0)
 
-    if score >= 95 and decision == "INCREASE_BUDGET":
-        return {
-            "product_id": product["product_id"],
-            "scaling_action": "SCALE_AGGRESSIVE",
-            "post_frequency": "HIGH",
-            "budget_action": "INCREASE"
-        }
+    if score >= 90 and sales > 0:
+        action = "SCALE_UP"
+        multiplier = 2.5
+        level = "AGGRESSIVE"
 
-    if score >= 85:
-        return {
-            "product_id": product["product_id"],
-            "scaling_action": "SCALE_NORMAL",
-            "post_frequency": "MEDIUM",
-            "budget_action": "KEEP_OR_TEST"
-        }
+    elif score >= 80 and clicks > 10:
+        action = "SCALE_UP"
+        multiplier = 1.5
+        level = "GROWTH"
 
-    if score >= 70:
-        return {
-            "product_id": product["product_id"],
-            "scaling_action": "TEST_MORE",
-            "post_frequency": "LOW",
-            "budget_action": "SMALL_TEST"
-        }
+    elif score >= 70:
+        action = "HOLD"
+        multiplier = 1.0
+        level = "STABLE"
+
+    else:
+        action = "SCALE_DOWN"
+        multiplier = 0.3
+        level = "CUT"
 
     return {
-        "product_id": product["product_id"],
-        "scaling_action": "PAUSE",
-        "post_frequency": "STOP",
-        "budget_action": "NO_SPEND"
+        "product_id": product.get("product_id"),
+        "score": score,
+        "clicks": clicks,
+        "sales": sales,
+        "action": action,
+        "budget_multiplier": multiplier,
+        "level": level,
+        "timestamp": datetime.now().isoformat()
     }
