@@ -6,12 +6,15 @@ from engine.content_engine import generate_content
 from engine.autopublish_engine import autopublish
 from engine.pinterest_simulation_engine import simulate_pinterest_post
 
-# 🟢 TRACKING ENGINE (NEU KOMPLETT INTEGRIERT)
 from engine.tracking_engine import (
     log_event,
     get_product_stats,
     get_top_products
 )
+
+from engine.winner_detection_engine import detect_winners, decide_action
+
+from engine.ads_budget_engine import decide_ads
 
 app = Flask(__name__)
 
@@ -24,7 +27,7 @@ def home():
 
 
 # =========================
-# 🟢 RUN (PRODUKT + CONTENT)
+# 🟢 RUN
 # =========================
 @app.route("/run")
 def run():
@@ -32,7 +35,6 @@ def run():
     product = get_next_product()
     content = generate_content(product)
 
-    # 🟢 TRACKING EVENT (SIMULIERT ERSTE DATEN)
     log_event(
         product_id=product["product_id"],
         clicks=10,
@@ -49,7 +51,7 @@ def run():
 
 
 # =========================
-# 🟢 AUTOPILOT
+# 🟢 AUTOPILOT (JETZT MIT ADS LOGIC)
 # =========================
 @app.route("/autopilot")
 def autopilot():
@@ -62,9 +64,14 @@ def autopilot():
         "sales": 1
     }
 
-    result = autopublish(product, metrics)
+    autopublish_result = autopublish(product, metrics)
 
-    # 🟢 TRACKING UPDATE
+    ads_result = decide_ads(
+        product,
+        clicks=metrics["clicks"],
+        sales=metrics["sales"]
+    )
+
     log_event(
         product_id=product["product_id"],
         clicks=metrics["clicks"],
@@ -75,7 +82,8 @@ def autopilot():
 
     return jsonify({
         "status": "success",
-        "autopublish": result
+        "autopublish": autopublish_result,
+        "ads": ads_result
     })
 
 
@@ -88,13 +96,12 @@ def pinterest_test():
     product = get_next_product()
     simulation = simulate_pinterest_post(product)
 
-    # 🟢 TRACKING UPDATE
     log_event(
         product_id=product["product_id"],
         clicks=simulation["clicks"],
         impressions=simulation["impressions"],
         sales=0,
-        platform="pinterest_sim"
+        platform="pinterest"
     )
 
     return jsonify({
@@ -104,7 +111,7 @@ def pinterest_test():
 
 
 # =========================
-# 🟢 WINNER TEST
+# 🟢 WINNER SYSTEM
 # =========================
 @app.route("/winner-test")
 def winner_test():
@@ -118,8 +125,16 @@ def winner_test():
 
     return jsonify({
         "status": "success",
-        "top_products": get_top_products(),
-        "raw_products": products
+        "winners": detect_winners(products),
+        "actions": [
+            {
+                "product_id": p["product_id"],
+                "score": p["score"],
+                "action": decide_action(p)
+            }
+            for p in products
+        ],
+        "top_products": get_top_products()
     })
 
 
@@ -129,9 +144,7 @@ def winner_test():
 @app.route("/stats/<product_id>")
 def stats(product_id):
 
-    return jsonify(
-        get_product_stats(product_id)
-    )
+    return jsonify(get_product_stats(product_id))
 
 
 # =========================
