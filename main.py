@@ -41,8 +41,9 @@ def autopilot():
 def auto_loop():
     return jsonify({
         "status": "success",
-        "message": "AUTO LOOP ACTIVE",
-        "scheduler": "RUNNING"
+        "auto_loop": "ACTIVE",
+        "cloud_run": "ONLINE",
+        "scheduler": "ACTIVE"
     })
 
 @app.route("/system-status")
