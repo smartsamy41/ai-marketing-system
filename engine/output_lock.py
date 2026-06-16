@@ -1,9 +1,8 @@
-import json
 from flask import jsonify
 from datetime import datetime
 
 # =========================
-# 🔒 OUTPUT LOCK SYSTEM (FIXED)
+# OUTPUT LOCK SYSTEM FIXED
 # =========================
 
 def success(data):
