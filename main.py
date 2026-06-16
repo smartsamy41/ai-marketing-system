@@ -5,17 +5,19 @@ from engine.output_lock import success, system_response
 from engine.winner_engine import decide_action
 from engine.scaling_engine import calculate_scaling
 from engine.data_connect import get_product_feed, get_live_metrics
-from engine.learning_layer import log_decision, get_learning_data, analyze_learning
+from engine.learning_layer import log_decision, analyze_learning
+from engine.memory_layer import store_event, get_memory, analyze_memory
 
 app = Flask(__name__)
 
 # =========================
-# CORE ENGINE
+# CORE
 # =========================
 
 @app.route("/")
 def home():
-    return "AI MARKETING LEARNING ENGINE LIVE 🚀"
+    return "AI MEMORY LAYER ENGINE LIVE 🚀"
+
 
 @app.route("/run")
 def run():
@@ -30,29 +32,45 @@ def run():
         winner = decide_action(p)
         scaling = calculate_scaling(p, metrics)
 
-        # 🧠 LEARNING LOG
+        # 🧠 LEARNING
         learning = log_decision(p, winner, scaling)
+
+        # 🧠 MEMORY STORE (NEU)
+        store_event("decision", {
+            "product": p,
+            "winner": winner,
+            "scaling": scaling
+        })
 
         results.append({
             "product": p,
             "winner": winner,
             "scaling": scaling,
-            "learning_log": learning
+            "learning": learning
         })
 
     return success({
-        "mode": "LEARNING_ACTIVE",
+        "mode": "FULL_MEMORY_ACTIVE",
         "results": results
     })
 
 
+# -------------------------
+# MEMORY ENDPOINTS
+# -------------------------
+
+@app.route("/memory")
+def memory():
+    return success(get_memory())
+
+
+@app.route("/memory/insights")
+def memory_insights():
+    return success(analyze_memory())
+
+
 @app.route("/learning")
 def learning():
-    return success(get_learning_data())
-
-
-@app.route("/insights")
-def insights():
     return success(analyze_learning())
 
 
@@ -60,9 +78,10 @@ def insights():
 def system_status():
     return success({
         "cloud_run": "ONLINE",
-        "auto_loop": "ACTIVE",
         "data_connect": "ACTIVE",
-        "learning_layer": "ENABLED"
+        "learning_layer": "ACTIVE",
+        "memory_layer": "ENABLED",
+        "autonomous_mode": "TRUE"
     })
 
 
