@@ -4,7 +4,8 @@ from datetime import datetime
 
 from engine.output_lock import success, system_response
 from engine.winner_engine import decide_action
-from engine.scaling_engine import calculate_scaling  # EXISTIERT BEREITS → KEIN DUPLIKAT
+from engine.scaling_engine import calculate_scaling
+from engine.data_connect import get_live_events, get_live_metrics, get_product_feed
 
 app = Flask(__name__)
 
@@ -14,48 +15,49 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "AI MARKETING SYSTEM SCALING ENGINE LIVE 🚀"
+    return "AI MARKETING DATA CONNECT LIVE 🚀"
 
 @app.route("/health")
 def health():
-    return system_response("AI_SCALING_ENGINE", {
+    return system_response("DATA_CONNECT_ENGINE", {
         "status": "STABLE",
-        "mode": "SCALING_ACTIVE"
+        "mode": "LIVE_DATA_ACTIVE"
     })
 
 @app.route("/run")
 def run():
 
-    product = {
-        "product_id": "TEST_001",
-        "score": 88
-    }
+    products = get_product_feed()
+    metrics = get_live_metrics()
 
-    metrics = {
-        "clicks": 15,
-        "sales": 1
-    }
+    results = []
 
-    winner = decide_action(product)
-    scaling = calculate_scaling(product, metrics)
+    for p in products:
+        results.append({
+            "product": p,
+            "winner": decide_action(p),
+            "scaling": calculate_scaling(p, metrics)
+        })
 
     return success({
-        "product": product,
-        "winner_decision": winner,
-        "scaling_decision": scaling
+        "mode": "DATA_CONNECTED",
+        "results": results
     })
 
-@app.route("/autopilot")
-def autopilot():
+@app.route("/events")
+def events():
     return success({
-        "mode": "AUTOPILOT_SCALING",
-        "system": "ACTIVE",
-        "actions": [
-            "detect_winner",
-            "calculate_scaling",
-            "adjust_budget"
-        ]
+        "events": get_live_events(),
+        "status": "CONNECTED"
     })
+
+@app.route("/metrics")
+def metrics():
+    return success(get_live_metrics())
+
+@app.route("/products")
+def products():
+    return success(get_product_feed())
 
 @app.route("/system-status")
 def system_status():
@@ -63,7 +65,7 @@ def system_status():
         "cloud_run": "ONLINE",
         "scheduler": "ACTIVE",
         "auto_loop": "ACTIVE",
-        "scaling_engine": "ENABLED"
+        "data_connect": "ENABLED"
     })
 
 # =========================
