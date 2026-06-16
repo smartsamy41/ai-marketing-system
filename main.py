@@ -1,76 +1,60 @@
-from flask import Flask, jsonify
+from flask import Flask
 import os
 from datetime import datetime
 
-from engine.winner_engine import detect_winners, decide_action
+from engine.output_lock import safe_json, lock_response
 
 app = Flask(__name__)
 
 # =========================
-# CORE
+# CORE SAFE SYSTEM
 # =========================
 
 @app.route("/")
 def home():
-    return "AI Marketing System WINNER ENGINE LIVE 🚀"
+    return "AI MARKETING SYSTEM OUTPUT LOCK ACTIVE 🚀"
 
 @app.route("/health")
+@lock_response
 def health():
-    return jsonify({
-        "status": "OK",
-        "system": "WINNER_AI_ENGINE",
-        "mode": "STABLE"
-    })
-
-@app.route("/run")
-def run():
-
-    product = {
-        "product_id": "TEST_001",
-        "score": 88
+    return {
+        "system": "AI_MARKETING_ENGINE",
+        "mode": "OUTPUT_LOCK_ACTIVE",
+        "status": "STABLE"
     }
 
-    return jsonify({
-        "status": "success",
-        "product": product,
-        "decision": decide_action(product)
-    })
+@app.route("/run")
+@lock_response
+def run():
+    return {
+        "product": {
+            "id": "CORE_001",
+            "score": 85
+        },
+        "pipeline": "SAFE_EXECUTION"
+    }
 
-@app.route("/winner-test")
-def winner_test():
-
-    products = [
-        {"product_id": "A1", "score": 95},
-        {"product_id": "A2", "score": 82},
-        {"product_id": "A3", "score": 76},
-        {"product_id": "A4", "score": 60}
-    ]
-
-    return jsonify({
-        "status": "success",
-        "winners": detect_winners(products),
-        "decisions": [decide_action(p) for p in products]
-    })
-
-@app.route("/auto-loop")
-def auto_loop():
-    return jsonify({
-        "status": "success",
-        "mode": "WINNER_LOOP_ACTIVE",
-        "scheduler": "RUNNING"
-    })
+@app.route("/autopilot")
+@lock_response
+def autopilot():
+    return {
+        "mode": "AUTOPILOT_LOCKED",
+        "ads": "SAFE_MODE",
+        "scaling": "CONTROLLED"
+    }
 
 @app.route("/system-status")
+@lock_response
 def system_status():
-    return jsonify({
-        "timestamp": datetime.now().isoformat(),
-        "system": "WINNER_ENGINE",
+    return {
         "cloud_run": "ONLINE",
-        "status": "HEALTHY"
-    })
+        "scheduler": "ACTIVE",
+        "auto_loop": "ACTIVE",
+        "output_lock": "ENABLED"
+    }
 
 # =========================
-# CLOUD RUN
+# CLOUD RUN ENTRY
 # =========================
 
 if __name__ == "__main__":
