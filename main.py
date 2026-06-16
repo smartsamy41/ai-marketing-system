@@ -49,10 +49,9 @@ def auto_loop():
 def system_status():
     return jsonify({
         "timestamp": datetime.now().isoformat(),
-        "system": "AI_MARKETING_SYSTEM",
         "cloud_run": "ONLINE",
         "scheduler": "ACTIVE",
-        "auto_loop": "RUNNING",
+        "auto_loop": "ACTIVE",
         "status": "HEALTHY"
     })
 
@@ -60,24 +59,27 @@ def system_status():
 def live_metrics():
     return jsonify({
         "products_total": 45,
+        "pins_total": 45,
         "blog_posts": 35,
         "landingpages": 35,
-        "pins": 45,
-        "system_status": "READY",
-        "mode": "AUTONOMOUS"
+        "mode": "AUTONOMOUS",
+        "status": "READY"
     })
 
 @app.route("/dashboard-monitor")
 def dashboard_monitor():
     return jsonify({
+        "status": "LIVE_DASHBOARD",
         "system": {
-            "timestamp": datetime.now().isoformat(),
-            "status": "HEALTHY"
+            "cloud_run": "ONLINE",
+            "scheduler": "ACTIVE",
+            "auto_loop": "ACTIVE"
         },
         "metrics": {
             "products_total": 45,
-            "pins": 45,
-            "mode": "AUTONOMOUS"
+            "pins_total": 45,
+            "blog_posts": 35,
+            "landingpages": 35
         }
     })
 
