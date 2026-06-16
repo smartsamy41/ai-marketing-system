@@ -1,75 +1,77 @@
-from flask import Flask
+from flask import Flask, jsonify
 import os
+from datetime import datetime
 
-from engine.output_layer import success, system_response
+from engine.winner_engine import detect_winners, decide_action
 
 app = Flask(__name__)
 
+# =========================
+# CORE
+# =========================
+
 @app.route("/")
 def home():
-    return "AI Marketing System CORE LIVE 🚀"
+    return "AI Marketing System WINNER ENGINE LIVE 🚀"
 
 @app.route("/health")
 def health():
-    return system_response("CORE_AI_MARKETING", {
-        "mode": "OUTPUT_LAYER_ACTIVE",
-        "version": "V1",
-        "cloud_run": "ONLINE"
+    return jsonify({
+        "status": "OK",
+        "system": "WINNER_AI_ENGINE",
+        "mode": "STABLE"
     })
 
 @app.route("/run")
 def run():
-    return success({
-        "mode": "core",
-        "product": {
-            "product_id": "CORE_TEST",
-            "score": 80
-        },
-        "pipeline": {
-            "step_1": "product_selected",
-            "step_2": "content_ready",
-            "step_3": "publish_ready"
-        }
+
+    product = {
+        "product_id": "TEST_001",
+        "score": 88
+    }
+
+    return jsonify({
+        "status": "success",
+        "product": product,
+        "decision": decide_action(product)
     })
 
-@app.route("/autopilot")
-def autopilot():
-    return success({
-        "mode": "autopilot_core",
-        "auto_loop": "ACTIVE",
-        "scheduler": "ACTIVE",
-        "ads": {
-            "budget_level": "SAFE_TEST",
-            "budget": 10
-        }
-    })
+@app.route("/winner-test")
+def winner_test():
 
-@app.route("/system-status")
-def system_status():
-    return success({
-        "cloud_run": "ONLINE",
-        "scheduler": "ACTIVE",
-        "auto_loop": "ACTIVE",
-        "output_layer": "ENABLED"
-    })
+    products = [
+        {"product_id": "A1", "score": 95},
+        {"product_id": "A2", "score": 82},
+        {"product_id": "A3", "score": 76},
+        {"product_id": "A4", "score": 60}
+    ]
 
-@app.route("/live-metrics")
-def live_metrics():
-    return success({
-        "products_total": 45,
-        "pins_total": 45,
-        "blog_posts": 35,
-        "landingpages": 35,
-        "mode": "DATA_LAYER_READY"
+    return jsonify({
+        "status": "success",
+        "winners": detect_winners(products),
+        "decisions": [decide_action(p) for p in products]
     })
 
 @app.route("/auto-loop")
 def auto_loop():
-    return success({
-        "message": "AUTO LOOP ACTIVE",
-        "scheduler": "RUNNING",
-        "mode": "SAFE_AUTONOMOUS"
+    return jsonify({
+        "status": "success",
+        "mode": "WINNER_LOOP_ACTIVE",
+        "scheduler": "RUNNING"
     })
+
+@app.route("/system-status")
+def system_status():
+    return jsonify({
+        "timestamp": datetime.now().isoformat(),
+        "system": "WINNER_ENGINE",
+        "cloud_run": "ONLINE",
+        "status": "HEALTHY"
+    })
+
+# =========================
+# CLOUD RUN
+# =========================
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
