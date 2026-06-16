@@ -5,7 +5,13 @@ from engine.decision_engine import get_next_product
 from engine.content_engine import generate_content
 from engine.autopublish_engine import autopublish
 from engine.pinterest_simulation_engine import simulate_pinterest_post
-from engine.winner_detection_engine import detect_winners, decide_action
+
+# 🟢 TRACKING ENGINE (NEU KOMPLETT INTEGRIERT)
+from engine.tracking_engine import (
+    log_event,
+    get_product_stats,
+    get_top_products
+)
 
 app = Flask(__name__)
 
@@ -18,13 +24,22 @@ def home():
 
 
 # =========================
-# 🟢 RUN
+# 🟢 RUN (PRODUKT + CONTENT)
 # =========================
 @app.route("/run")
 def run():
 
     product = get_next_product()
     content = generate_content(product)
+
+    # 🟢 TRACKING EVENT (SIMULIERT ERSTE DATEN)
+    log_event(
+        product_id=product["product_id"],
+        clicks=10,
+        impressions=100,
+        sales=0,
+        platform="run"
+    )
 
     return jsonify({
         "status": "success",
@@ -49,6 +64,15 @@ def autopilot():
 
     result = autopublish(product, metrics)
 
+    # 🟢 TRACKING UPDATE
+    log_event(
+        product_id=product["product_id"],
+        clicks=metrics["clicks"],
+        impressions=200,
+        sales=metrics["sales"],
+        platform="autopilot"
+    )
+
     return jsonify({
         "status": "success",
         "autopublish": result
@@ -64,6 +88,15 @@ def pinterest_test():
     product = get_next_product()
     simulation = simulate_pinterest_post(product)
 
+    # 🟢 TRACKING UPDATE
+    log_event(
+        product_id=product["product_id"],
+        clicks=simulation["clicks"],
+        impressions=simulation["impressions"],
+        sales=0,
+        platform="pinterest_sim"
+    )
+
     return jsonify({
         "status": "success",
         "simulation": simulation
@@ -71,7 +104,7 @@ def pinterest_test():
 
 
 # =========================
-# 🟢 WINNER TEST (FIXED)
+# 🟢 WINNER TEST
 # =========================
 @app.route("/winner-test")
 def winner_test():
@@ -83,22 +116,22 @@ def winner_test():
         get_next_product()
     ]
 
-    winners = detect_winners(products)
-
-    actions = []
-    for p in products:
-        actions.append({
-            "product_id": p["product_id"],
-            "score": p["score"],
-            "action": decide_action(p)
-        })
-
     return jsonify({
         "status": "success",
-        "products": products,
-        "winners": winners,
-        "actions": actions
+        "top_products": get_top_products(),
+        "raw_products": products
     })
+
+
+# =========================
+# 🟢 PRODUCT STATS
+# =========================
+@app.route("/stats/<product_id>")
+def stats(product_id):
+
+    return jsonify(
+        get_product_stats(product_id)
+    )
 
 
 # =========================
