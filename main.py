@@ -9,12 +9,20 @@ from engine.winner_detection_engine import detect_winners, decide_action
 
 app = Flask(__name__)
 
+# =========================
+# 🟢 HOME
+# =========================
 @app.route("/")
 def home():
     return "AI Marketing System LIVE 🚀"
 
+
+# =========================
+# 🟢 RUN
+# =========================
 @app.route("/run")
 def run():
+
     product = get_next_product()
     content = generate_content(product)
 
@@ -24,8 +32,13 @@ def run():
         "content": content
     })
 
+
+# =========================
+# 🟢 AUTOPILOT
+# =========================
 @app.route("/autopilot")
 def autopilot():
+
     product = get_next_product()
 
     metrics = {
@@ -41,8 +54,13 @@ def autopilot():
         "autopublish": result
     })
 
+
+# =========================
+# 🟢 PINTEREST SIMULATION
+# =========================
 @app.route("/pinterest-test")
 def pinterest_test():
+
     product = get_next_product()
     simulation = simulate_pinterest_post(product)
 
@@ -51,8 +69,13 @@ def pinterest_test():
         "simulation": simulation
     })
 
+
+# =========================
+# 🟢 WINNER TEST (FIXED)
+# =========================
 @app.route("/winner-test")
 def winner_test():
+
     products = [
         get_next_product(),
         get_next_product(),
@@ -62,14 +85,13 @@ def winner_test():
 
     winners = detect_winners(products)
 
-    actions = [
-        {
+    actions = []
+    for p in products:
+        actions.append({
             "product_id": p["product_id"],
             "score": p["score"],
             "action": decide_action(p)
-        }
-        for p in products
-    ]
+        })
 
     return jsonify({
         "status": "success",
@@ -78,6 +100,11 @@ def winner_test():
         "actions": actions
     })
 
+
+# =========================
+# 🟢 CLOUD RUN ENTRY
+# =========================
 if __name__ == "__main__":
+
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
