@@ -1,70 +1,86 @@
 from flask import Flask, jsonify
 import os
-from datetime import datetime
+
+from engine.core_engine import run_core_engine
 
 app = Flask(__name__)
 
 # =========================
-# 🟢 CORE ROUTES
+# 🧠 TEST DATA LAYER
+# =========================
+
+def get_products():
+    return [
+        {"product_id": "AMZ_001", "score": 92, "source": "amazon"},
+        {"product_id": "CHK24_001", "score": 85, "source": "check24"},
+        {"product_id": "TC_001", "score": 78, "source": "tarifcheck"},
+        {"product_id": "AMZ_002", "score": 91, "source": "amazon"},
+        {"product_id": "CHK24_002", "score": 82, "source": "check24"}
+    ]
+
+
+def get_metrics():
+    return {
+        "clicks": 128,
+        "conversions": 12,
+        "revenue": 89.50,
+        "cost": 45.00,
+        "ctr": 3.42,
+        "roi": 98.8
+    }
+
+# =========================
+# 🚀 CORE ROUTES
 # =========================
 
 @app.route("/")
 def home():
-    return "AI MARKETING SYSTEM LIVE 🚀"
+    return "AI MARKETING ENGINE V2 LIVE 🚀"
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
         "system": "AI_MARKETING_ENGINE",
+        "version": "V2",
         "mode": "STABLE"
     })
 
-@app.route("/system-status")
-def system_status():
-    return jsonify({
-        "timestamp": datetime.now().isoformat(),
-        "cloud_run": "ONLINE",
-        "status": "HEALTHY"
-    })
-
-# =========================
-# 🟢 DATA TEST ROUTES
-# =========================
-
 @app.route("/run")
 def run():
+
+    products = get_products()
+    metrics = get_metrics()
+
+    result = run_core_engine(products, metrics)
+
     return jsonify({
         "status": "success",
-        "message": "ENGINE RUNNING",
-        "data": {
-            "product_id": "TEST_001",
-            "score": 85
-        }
+        "mode": "V2_ENGINE",
+        "input_metrics": metrics,
+        "output": result
     })
 
 @app.route("/metrics")
 def metrics():
-    return jsonify({
-        "products_total": 45,
-        "pins_total": 45,
-        "blog_posts": 35,
-        "landingpages": 35,
-        "status": "READY"
-    })
+    return jsonify(get_metrics())
 
-@app.route("/events")
-def events():
+@app.route("/products")
+def products():
+    return jsonify(get_products())
+
+@app.route("/system-status")
+def system_status():
     return jsonify({
-        "status": "CONNECTED",
-        "events": [
-            {"type": "click", "product": "AMZ_001"},
-            {"type": "conversion", "product": "CHK24_001"}
-        ]
+        "cloud_run": "ONLINE",
+        "engine": "V2_ACTIVE",
+        "core": "RUNNING",
+        "scaling": "READY",
+        "memory": "READY_FOR_NEXT_PHASE"
     })
 
 # =========================
-# 🟢 SAFE ENTRY
+# ☁️ CLOUD RUN ENTRY POINT
 # =========================
 
 if __name__ == "__main__":
