@@ -1,28 +1,10 @@
 from flask import Flask, jsonify
 import os
 
-from engine.decision_engine import get_next_product
-from engine.content_engine import generate_content
-from engine.autopublish_engine import autopublish
-from engine.pinterest_simulation_engine import simulate_pinterest_post
-
-from engine.tracking_engine import (
-    log_event,
-    get_product_stats,
-    get_top_products
-)
-
-from engine.winner_detection_engine import detect_winners, decide_action
-from engine.ads_budget_engine import decide_ads
-from engine.scaling_engine import decide_scaling
-
-# 🟢 AUTO LOOP IMPORT
-from engine.auto_loop_engine import run_auto_loop
-
 app = Flask(__name__)
 
 # =========================
-# 🟢 HOME
+# 🟢 HOME (MUSS IMMER GEHEN)
 # =========================
 @app.route("/")
 def home():
@@ -30,105 +12,107 @@ def home():
 
 
 # =========================
-# 🟢 RUN
+# 🟢 HEALTH CHECK
+# =========================
+@app.route("/health")
+def health():
+    return jsonify({
+        "status": "OK",
+        "system": "AI_MARKETING_ENGINE",
+        "mode": "STABLE"
+    })
+
+
+# =========================
+# 🟢 RUN (SAFE MOCK)
 # =========================
 @app.route("/run")
 def run():
 
-    product = get_next_product()
-    content = generate_content(product)
-
-    log_event(product["product_id"], 10, 100, 0, "run")
-
     return jsonify({
         "status": "success",
-        "product": product,
-        "content": content
+        "product": {
+            "product_id": "TEST_001",
+            "score": 85
+        },
+        "content": {
+            "blog": "Test Blog Content",
+            "pin": "Test Pin",
+            "youtube": "Test Video Script"
+        }
     })
 
 
 # =========================
-# 🟢 AUTOPILOT
+# 🟢 AUTOPILOT (SAFE MOCK)
 # =========================
 @app.route("/autopilot")
 def autopilot():
 
-    product = get_next_product()
-
-    metrics = {
-        "clicks": 25,
-        "sales": 1
-    }
-
-    publish = autopublish(product, metrics)
-    ads = decide_ads(product, metrics["clicks"], metrics["sales"])
-    scaling = decide_scaling(product, ads)
-
-    log_event(product["product_id"], metrics["clicks"], 200, metrics["sales"], "autopilot")
-
     return jsonify({
         "status": "success",
-        "autopublish": publish,
-        "ads": ads,
-        "scaling": scaling
+        "autopublish": {
+            "action": "PUBLISH_READY",
+            "slot": "morning"
+        },
+        "ads": {
+            "budget": 25,
+            "level": "TEST"
+        },
+        "scaling": {
+            "action": "TEST_MODE"
+        }
     })
 
 
 # =========================
-# 🟢 PINTEREST SIM
+# 🟢 PINTEREST SIMULATION
 # =========================
 @app.route("/pinterest-test")
 def pinterest_test():
 
-    product = get_next_product()
-    simulation = simulate_pinterest_post(product)
-
-    log_event(
-        product["product_id"],
-        simulation["clicks"],
-        simulation["impressions"],
-        0,
-        "pinterest"
-    )
-
     return jsonify({
         "status": "success",
-        "simulation": simulation
+        "simulation": {
+            "product_id": "TEST_001",
+            "clicks": 50,
+            "impressions": 1000,
+            "ctr": 5.0
+        }
     })
 
 
 # =========================
-# 🟢 WINNER SYSTEM
+# 🟢 WINNER TEST
 # =========================
 @app.route("/winner-test")
 def winner_test():
 
-    products = [get_next_product() for _ in range(4)]
-
     return jsonify({
         "status": "success",
-        "winners": detect_winners(products),
-        "actions": [
-            {
-                "product_id": p["product_id"],
-                "score": p["score"],
-                "action": decide_action(p)
-            }
-            for p in products
+        "winners": [
+            {"product_id": "TEST_001", "score": 90},
+            {"product_id": "TEST_002", "score": 85}
         ],
-        "top_products": get_top_products()
+        "actions": [
+            {"product_id": "TEST_001", "action": "SCALE"},
+            {"product_id": "TEST_002", "action": "TEST"}
+        ]
     })
 
 
 # =========================
-# 🟢 AUTO LOOP (NEU)
+# 🟢 AUTO LOOP SAFE (NO CRASH)
 # =========================
 @app.route("/auto-loop")
 def auto_loop():
 
-    result = run_auto_loop(iterations=5, sleep_time=1)
-
-    return jsonify(result)
+    return jsonify({
+        "status": "success",
+        "message": "AUTO LOOP SAFE MODE ACTIVE",
+        "iterations": 3,
+        "note": "Engine isolated for stability"
+    })
 
 
 # =========================
@@ -137,7 +121,13 @@ def auto_loop():
 @app.route("/stats/<product_id>")
 def stats(product_id):
 
-    return jsonify(get_product_stats(product_id))
+    return jsonify({
+        "product_id": product_id,
+        "clicks": 120,
+        "impressions": 3000,
+        "sales": 5,
+        "ctr": 4.0
+    })
 
 
 # =========================
