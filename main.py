@@ -1,92 +1,70 @@
-from flask import Flask
+from flask import Flask, jsonify
 import os
-
-from engine.output_lock import success, system_response
-from engine.winner_engine import decide_action
-from engine.scaling_engine import calculate_scaling
-from engine.data_connect import get_product_feed, get_live_metrics
-from engine.learning_layer import log_decision, analyze_learning
-from engine.memory_layer import store_event, get_memory, analyze_memory
+from datetime import datetime
 
 app = Flask(__name__)
 
 # =========================
-# CORE
+# 🟢 CORE ROUTES
 # =========================
 
 @app.route("/")
 def home():
-    return "AI MEMORY LAYER ENGINE LIVE 🚀"
+    return "AI MARKETING SYSTEM LIVE 🚀"
 
-
-@app.route("/run")
-def run():
-
-    products = get_product_feed()
-    metrics = get_live_metrics()
-
-    results = []
-
-    for p in products:
-
-        winner = decide_action(p)
-        scaling = calculate_scaling(p, metrics)
-
-        # 🧠 LEARNING
-        learning = log_decision(p, winner, scaling)
-
-        # 🧠 MEMORY STORE (NEU)
-        store_event("decision", {
-            "product": p,
-            "winner": winner,
-            "scaling": scaling
-        })
-
-        results.append({
-            "product": p,
-            "winner": winner,
-            "scaling": scaling,
-            "learning": learning
-        })
-
-    return success({
-        "mode": "FULL_MEMORY_ACTIVE",
-        "results": results
+@app.route("/health")
+def health():
+    return jsonify({
+        "status": "OK",
+        "system": "AI_MARKETING_ENGINE",
+        "mode": "STABLE"
     })
-
-
-# -------------------------
-# MEMORY ENDPOINTS
-# -------------------------
-
-@app.route("/memory")
-def memory():
-    return success(get_memory())
-
-
-@app.route("/memory/insights")
-def memory_insights():
-    return success(analyze_memory())
-
-
-@app.route("/learning")
-def learning():
-    return success(analyze_learning())
-
 
 @app.route("/system-status")
 def system_status():
-    return success({
+    return jsonify({
+        "timestamp": datetime.now().isoformat(),
         "cloud_run": "ONLINE",
-        "data_connect": "ACTIVE",
-        "learning_layer": "ACTIVE",
-        "memory_layer": "ENABLED",
-        "autonomous_mode": "TRUE"
+        "status": "HEALTHY"
     })
 
+# =========================
+# 🟢 DATA TEST ROUTES
+# =========================
+
+@app.route("/run")
+def run():
+    return jsonify({
+        "status": "success",
+        "message": "ENGINE RUNNING",
+        "data": {
+            "product_id": "TEST_001",
+            "score": 85
+        }
+    })
+
+@app.route("/metrics")
+def metrics():
+    return jsonify({
+        "products_total": 45,
+        "pins_total": 45,
+        "blog_posts": 35,
+        "landingpages": 35,
+        "status": "READY"
+    })
+
+@app.route("/events")
+def events():
+    return jsonify({
+        "status": "CONNECTED",
+        "events": [
+            {"type": "click", "product": "AMZ_001"},
+            {"type": "conversion", "product": "CHK24_001"}
+        ]
+    })
 
 # =========================
-# CLOUD RUN ENTRY
+# 🟢 SAFE ENTRY
 # =========================
 
 if __name__ == "__main__":
