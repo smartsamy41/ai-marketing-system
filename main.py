@@ -1,10 +1,16 @@
 from flask import Flask, jsonify
 import os
 
+from engine.dashboard_monitoring_engine import (
+    get_dashboard,
+    get_system_status,
+    get_live_metrics
+)
+
 app = Flask(__name__)
 
 # =========================
-# 🟢 HOME (MUSS IMMER GEHEN)
+# HOME
 # =========================
 @app.route("/")
 def home():
@@ -12,7 +18,7 @@ def home():
 
 
 # =========================
-# 🟢 HEALTH CHECK
+# HEALTH
 # =========================
 @app.route("/health")
 def health():
@@ -24,7 +30,7 @@ def health():
 
 
 # =========================
-# 🟢 RUN (SAFE MOCK)
+# RUN
 # =========================
 @app.route("/run")
 def run():
@@ -44,7 +50,7 @@ def run():
 
 
 # =========================
-# 🟢 AUTOPILOT (SAFE MOCK)
+# AUTOPILOT
 # =========================
 @app.route("/autopilot")
 def autopilot():
@@ -66,72 +72,47 @@ def autopilot():
 
 
 # =========================
-# 🟢 PINTEREST SIMULATION
-# =========================
-@app.route("/pinterest-test")
-def pinterest_test():
-
-    return jsonify({
-        "status": "success",
-        "simulation": {
-            "product_id": "TEST_001",
-            "clicks": 50,
-            "impressions": 1000,
-            "ctr": 5.0
-        }
-    })
-
-
-# =========================
-# 🟢 WINNER TEST
-# =========================
-@app.route("/winner-test")
-def winner_test():
-
-    return jsonify({
-        "status": "success",
-        "winners": [
-            {"product_id": "TEST_001", "score": 90},
-            {"product_id": "TEST_002", "score": 85}
-        ],
-        "actions": [
-            {"product_id": "TEST_001", "action": "SCALE"},
-            {"product_id": "TEST_002", "action": "TEST"}
-        ]
-    })
-
-
-# =========================
-# 🟢 AUTO LOOP SAFE (NO CRASH)
+# AUTO LOOP
 # =========================
 @app.route("/auto-loop")
 def auto_loop():
 
     return jsonify({
         "status": "success",
-        "message": "AUTO LOOP SAFE MODE ACTIVE",
-        "iterations": 3,
-        "note": "Engine isolated for stability"
+        "message": "AUTO LOOP ACTIVE",
+        "scheduler": "RUNNING"
     })
 
 
 # =========================
-# 🟢 STATS
+# SYSTEM STATUS
 # =========================
-@app.route("/stats/<product_id>")
-def stats(product_id):
+@app.route("/system-status")
+def system_status():
 
-    return jsonify({
-        "product_id": product_id,
-        "clicks": 120,
-        "impressions": 3000,
-        "sales": 5,
-        "ctr": 4.0
-    })
+    return jsonify(get_system_status())
 
 
 # =========================
-# 🟢 CLOUD RUN ENTRY
+# LIVE METRICS
+# =========================
+@app.route("/live-metrics")
+def live_metrics():
+
+    return jsonify(get_live_metrics())
+
+
+# =========================
+# DASHBOARD MONITOR
+# =========================
+@app.route("/dashboard-monitor")
+def dashboard_monitor():
+
+    return jsonify(get_dashboard())
+
+
+# =========================
+# CLOUD RUN ENTRY
 # =========================
 if __name__ == "__main__":
 
