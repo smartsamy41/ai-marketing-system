@@ -2,20 +2,26 @@ import gspread
 from google.auth import default
 
 # =========================
-# 🔐 GOOGLE SHEETS CONNECT
+# 📦 SHEET CONFIG
 # =========================
 
 SHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
 
+# =========================
+# 🔐 GOOGLE CLOUD AUTH (ADC)
+# =========================
 
 def _connect():
+    """
+    Uses Application Default Credentials (Cloud Run SAFE MODE)
+    """
     creds, _ = default()
     client = gspread.authorize(creds)
     return client.open_by_key(SHEET_ID)
 
 
 # =========================
-# 📦 LOAD PRODUCTS
+# 📊 LOAD PRODUCTS
 # =========================
 
 def load_products():
@@ -26,10 +32,10 @@ def load_products():
         return data
 
     except Exception as e:
-        return {
+        return [{
             "error": str(e),
-            "source": "sheets_products_failed"
-        }
+            "source": "load_products_failed"
+        }]
 
 
 # =========================
@@ -44,7 +50,7 @@ def load_assets():
         return data
 
     except Exception as e:
-        return {
+        return [{
             "error": str(e),
-            "source": "sheets_assets_failed"
-        }
+            "source": "load_assets_failed"
+        }]
