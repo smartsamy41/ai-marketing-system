@@ -28,7 +28,7 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS CONNECT
+# 📊 SHEETS CONNECT
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
@@ -73,7 +73,7 @@ def google_sheets_connect():
         return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
-# 💰 STEP A (AFFILIATE SCORE)
+# 💰 AFFILIATE SCORING
 # =========================
 
 def affiliate_score(product):
@@ -106,49 +106,84 @@ def budget_allocator(final_score):
         return {"budget": 1.0, "level": "HOLD"}
 
 # =========================
-# 🧠 STEP B (LEARNING ENGINE)
+# 🧠 STEP B MEMORY LEARNING (KEEP)
 # =========================
 
 def learning_engine(memory):
-    """
-    STEP B: AI lernt aus Performance
-    """
+    stats = {}
 
-    product_stats = {}
-
-    # 1. Statistik sammeln
     for entry in memory:
         pid = entry["product"]["product_id"]
 
-        if pid not in product_stats:
-            product_stats[pid] = {
-                "wins": 0,
-                "losses": 0,
-                "avg_score": entry["product"]["score"]
-            }
+        if pid not in stats:
+            stats[pid] = {"win": 0, "loss": 0}
 
         if entry["budget"]["level"] == "HIGH_SCALE":
-            product_stats[pid]["wins"] += 1
-        elif entry["budget"]["level"] == "HOLD":
-            product_stats[pid]["losses"] += 1
+            stats[pid]["win"] += 1
+        else:
+            stats[pid]["loss"] += 1
 
-    # 2. Lern-Boost berechnen
     for entry in memory:
         pid = entry["product"]["product_id"]
 
-        stats = product_stats.get(pid, {})
+        win = stats[pid]["win"]
+        loss = stats[pid]["loss"]
+        total = win + loss
 
-        win_rate = 0
-        if stats.get("wins", 0) + stats.get("losses", 0) > 0:
-            win_rate = stats.get("wins", 0) / (stats.get("wins", 0) + stats.get("losses", 0))
+        if total == 0:
+            continue
 
-        # 🔥 LEARNING SCORE ADJUSTMENT
-        if win_rate > 0.6:
-            entry["product"]["score"] += 2
-        elif win_rate < 0.3:
-            entry["product"]["score"] -= 2
+        winrate = win / total
+
+        # learning adjustment
+        if winrate > 0.65:
+            entry["product"]["score"] += 3
+        elif winrate < 0.35:
+            entry["product"]["score"] -= 3
 
     return memory
+
+# =========================
+# 🚀 STEP C – PREDICTION ENGINE
+# =========================
+
+def prediction_engine(products):
+    predictions = []
+
+    for p in products:
+
+        score = p.get("score", 0)
+        source = p.get("source", "unknown")
+
+        multiplier = 1.0
+
+        # trend boost simulation
+        if source == "amazon":
+            multiplier += 0.35
+        elif source == "check24":
+            multiplier += 0.25
+        elif source == "tarifcheck":
+            multiplier += 0.30
+
+        predicted_score = score * multiplier
+
+        # probability model (simple AI)
+        if predicted_score >= 130:
+            chance = "VERY_HIGH_WIN"
+        elif predicted_score >= 100:
+            chance = "HIGH_WIN"
+        elif predicted_score >= 80:
+            chance = "MEDIUM"
+        else:
+            chance = "LOW"
+
+        predictions.append({
+            "product": p,
+            "predicted_score": round(predicted_score, 2),
+            "prediction": chance
+        })
+
+    return predictions
 
 # =========================
 # 🚀 ROUTES
@@ -156,7 +191,7 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "STEP B AI LEARNING ENGINE LIVE 🚀"
+    return "STEP C PREDICTION ENGINE LIVE 🚀"
 
 @app.route("/run")
 def run():
@@ -177,23 +212,35 @@ def run():
         entry = {
             "timestamp": datetime.now().isoformat(),
             "product": p,
-            "score_data": score_data,
+            "score": score_data,
             "budget": budget
         }
 
         memory.append(entry)
         results.append(entry)
 
-    # 🧠 STEP B LEARNING APPLY
+    # STEP B learning
     memory = learning_engine(memory)
 
     save_memory(memory)
 
+    # STEP C prediction
+    predictions = prediction_engine(products)
+
     return jsonify({
         "status": "success",
-        "mode": "STEP_B_LEARNING_ENGINE",
+        "mode": "STEP_C_PREDICTION_ENGINE",
         "results": results,
+        "predictions": predictions,
         "memory_size": len(memory)
+    })
+
+@app.route("/prediction")
+def prediction():
+
+    products = google_sheets_connect()
+    return jsonify({
+        "predictions": prediction_engine(products)
     })
 
 @app.route("/memory")
@@ -214,7 +261,7 @@ def data_source():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_B"
+        "version": "STEP_C"
     })
 
 # =========================
