@@ -28,7 +28,7 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS CONNECT (CLOUD RUN SAFE)
+# 📊 GOOGLE SHEETS CONNECT (CLOUD RUN FIXED)
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
@@ -38,33 +38,37 @@ def google_sheets_connect():
     try:
         # 🔐 Cloud Run Default Auth (ADC)
         creds, _ = google.auth.default(scopes=[
-            "https://www.googleapis.com/auth/spreadsheets.readonly"
+            "https://www.googleapis.com/auth/spreadsheets"
         ])
 
         service = build("sheets", "v4", credentials=creds)
 
-        result = service.spreadsheets().values().get(
+        sheet = service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
             range=RANGE_NAME
         ).execute()
 
-        values = result.get("values", [])
+        values = sheet.get("values", [])
 
         products = []
 
-        # Skip header row
         for row in values[1:]:
             if len(row) >= 3:
+                try:
+                    score = int(row[1])
+                except:
+                    score = 0
+
                 products.append({
                     "product_id": row[0],
-                    "score": int(row[1]),
+                    "score": score,
                     "source": row[2]
                 })
 
         return products
 
     except Exception as e:
-        return [{"error": str(e), "source": "sheets_error"}]
+        return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
 # 🧠 AI ENGINE
@@ -92,10 +96,13 @@ def calculate_scaling(product):
 
 def learning_engine(memory):
     for entry in memory:
-        if entry["winner"]["action"] == "WINNER":
-            entry["product"]["score"] += 1
-        elif entry["winner"]["action"] == "LOW":
-            entry["product"]["score"] -= 1
+        try:
+            if entry["winner"]["action"] == "WINNER":
+                entry["product"]["score"] += 1
+            elif entry["winner"]["action"] == "LOW":
+                entry["product"]["score"] -= 1
+        except:
+            pass
     return memory
 
 # =========================
@@ -110,7 +117,7 @@ def home():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "FINAL_PRODUCTION"
+        "version": "FINAL_STABLE"
     })
 
 @app.route("/data-source")
@@ -151,7 +158,7 @@ def run():
 
     return jsonify({
         "status": "success",
-        "mode": "FINAL_PRODUCTION",
+        "mode": "FINAL_STABLE",
         "data_source": "GOOGLE_SHEETS",
         "results": results,
         "memory_size": len(memory)
@@ -167,15 +174,15 @@ def memory():
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "FINAL_AI_ENGINE",
+        "engine": "AI_MARKETING_FINAL",
         "status": "STABLE",
-        "google_sheets": "CONNECTED",
         "learning": "ON",
+        "google_sheets": "CONNECTED",
         "memory": "ACTIVE"
     })
 
 # =========================
-# ☁️ START APP
+# ☁️ START
 # =========================
 
 if __name__ == "__main__":
