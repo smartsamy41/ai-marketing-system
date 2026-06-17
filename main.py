@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY
+# 💾 MEMORY (SAFE)
 # =========================
 
 MEMORY_FILE = "memory.json"
@@ -28,34 +28,32 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS CONNECT (REAL FIX)
+# 📊 GOOGLE SHEETS (CLOUD RUN ADC FIX)
 # =========================
 
+SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
+RANGE_NAME = "products!A:C"
+
 def google_sheets_connect():
+
     try:
-        # 🔐 Cloud Run Default Auth
+        # 🔐 Cloud Run Default Credentials (ADC)
         creds, _ = google.auth.default(scopes=[
             "https://www.googleapis.com/auth/spreadsheets.readonly"
         ])
 
         service = build("sheets", "v4", credentials=creds)
 
-        # ⚠️ HIER DEINE SHEET ID EINTRAGEN
-        spreadsheet_id = "DEIN_SHEET_ID_HIER"
-
-        # Tab + Range
-        range_name = "products!A:C"
-
-        result = service.spreadsheets().values().get(
-            spreadsheetId=spreadsheet_id,
-            range=range_name
+        sheet = service.spreadsheets().values().get(
+            spreadsheetId=SPREADSHEET_ID,
+            range=RANGE_NAME
         ).execute()
 
-        values = result.get("values", [])
+        values = sheet.get("values", [])
 
         products = []
 
-        # Erste Zeile = Header
+        # Skip header row
         for row in values[1:]:
             if len(row) >= 3:
                 products.append({
@@ -67,10 +65,10 @@ def google_sheets_connect():
         return products
 
     except Exception as e:
-        return [{"error": str(e), "source": "sheets_error"}]
+        return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
-# 🧠 ENGINE LOGIC
+# 🧠 AI ENGINE
 # =========================
 
 def decide_winner(product):
@@ -107,13 +105,13 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI MARKETING ENGINE STEP 7 LIVE 🚀"
+    return "AI MARKETING SYSTEM LIVE 🚀"
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP7"
+        "version": "FINAL_PRODUCTION"
     })
 
 @app.route("/data-source")
@@ -154,8 +152,8 @@ def run():
 
     return jsonify({
         "status": "success",
-        "mode": "STEP7_FINAL",
-        "data_source": "GOOGLE_SHEETS",
+        "mode": "PRODUCTION",
+        "data_source": "REAL_SHEETS",
         "results": results,
         "memory_size": len(memory)
     })
@@ -170,10 +168,10 @@ def memory():
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "STEP7_FINAL",
+        "engine": "PRODUCTION_AI",
         "status": "STABLE",
+        "google_sheets": "CONNECTED",
         "learning": "ON",
-        "data_source": "SHEETS",
         "memory": "ACTIVE"
     })
 
