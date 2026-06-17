@@ -9,37 +9,19 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 📦 CONFIG
+# CONFIG
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
+
 PRODUCT_RANGE = "products!A:D"
 ASSET_RANGE = "affiliate_assets!A:E"
 
-MEMORY_FILE = "memory.json"
-
 # =========================
-# 💾 MEMORY
+# SHEETS CONNECT (SAFE)
 # =========================
 
-def load_memory():
-    if not os.path.exists(MEMORY_FILE):
-        return []
-    try:
-        with open(MEMORY_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-def save_memory(data):
-    with open(MEMORY_FILE, "w") as f:
-        json.dump(data, f, indent=2)
-
-# =========================
-# 📊 GOOGLE SHEETS CONNECT
-# =========================
-
-def sheets_connect(range_name):
+def sheets(range_name):
     try:
         creds, _ = google.auth.default(scopes=[
             "https://www.googleapis.com/auth/spreadsheets"
@@ -52,102 +34,90 @@ def sheets_connect(range_name):
             range=range_name
         ).execute()
 
-        values = result.get("values", [])
-
-        return values
+        return result.get("values", [])
 
     except Exception as e:
         return [["error", str(e)]]
 
 # =========================
-# 📦 PRODUCT LOADER
+# LOAD PRODUCTS
 # =========================
 
 def get_products():
 
-    rows = sheets_connect(PRODUCT_RANGE)
+    rows = sheets(PRODUCT_RANGE)
     products = []
 
     for r in rows[1:]:
 
-        product_id = r[0] if len(r) > 0 else "unknown"
-
         try:
-            score = float(r[1])
+            products.append({
+                "product_id": r[0],
+                "score": float(r[1]) if len(r) > 1 else 50,
+                "source": r[2] if len(r) > 2 else "unknown",
+                "status": r[3] if len(r) > 3 else "active"
+            })
         except:
-            score = 50
-
-        source = r[2] if len(r) > 2 else "unknown"
-
-        status = r[3] if len(r) > 3 else "active"
-
-        products.append({
-            "product_id": product_id,
-            "score": score,
-            "source": source,
-            "status": status
-        })
+            continue
 
     return products
 
 # =========================
-# 🎯 ASSET LOADER
+# LOAD ASSETS
 # =========================
 
 def get_assets():
 
-    rows = sheets_connect(ASSET_RANGE)
+    rows = sheets(ASSET_RANGE)
     assets = []
 
     for r in rows[1:]:
 
-        assets.append({
-            "product_id": r[0],
-            "source": r[1],
-            "type": r[2],
-            "url": r[3],
-            "tracking": r[4] if len(r) > 4 else ""
-        })
+        try:
+            assets.append({
+                "product_id": r[0],
+                "source": r[1],
+                "type": r[2],
+                "url": r[3],
+                "tracking": r[4] if len(r) > 4 else ""
+            })
+        except:
+            continue
 
     return assets
 
 # =========================
-# 🔥 ENGINE CORE
+# SCORING ENGINE (STABLE)
 # =========================
 
-def calculate_score(product):
+def score(product):
 
-    base = product["score"]
-    source = product["source"]
-
-    boost_map = {
+    boost = {
         "amazon": 1.4,
-        "check24": 1.3,
-        "tarifcheck": 1.35,
+        "check24": 1.25,
+        "tarifcheck": 1.3,
         "telekom": 1.6
     }
 
-    boost = boost_map.get(source, 1.0)
-
-    return base * boost
+    return product["score"] * boost.get(product["source"], 1.0)
 
 # =========================
-# 🧠 CHANNEL ROUTER
+# ROUTING ENGINE (STABLE)
 # =========================
 
 def route(source):
 
-    routing = {
-        "amazon": {"channel": "pinterest", "format": "pin"},
-        "check24": {"channel": "youtube", "format": "short"},
-        "tarifcheck": {"channel": "blog", "format": "article"},
-        "telekom": {"channel": "shop", "format": "direct"}
+    mapping = {
+        "amazon": "pinterest",
+        "check24": "youtube",
+        "tarifcheck": "blog",
+        "telekom": "shop"
     }
 
-    return routing.get(source, {"channel": "unknown", "format": "none"})
+    return mapping.get(source, "unknown")
 
 # =========================
-# 🔗 ASSET MATCHER
+# ASSET MATCH
 # =========================
 
 def match_asset(product_id, source, assets):
@@ -159,14 +129,13 @@ def match_asset(product_id, source, assets):
     return None
 
 # =========================
-# 🚀 MAIN ENGINE
+# MAIN ENGINE (ONLY ONE FLOW)
 # =========================
 
 def run_engine():
 
     products = get_products()
     assets = get_assets()
-    memory = load_memory()
 
     results = []
 
@@ -175,38 +144,34 @@ def run_engine():
         if p["status"] != "active":
             continue
 
-        final_score = calculate_score(p)
+        final_score = score(p)
         channel = route(p["source"])
-        asset_url = match_asset(p["product_id"], p["source"], assets)
+        asset = match_asset(p["product_id"], p["source"], assets)
 
-        entry = {
-            "timestamp": datetime.now().isoformat(),
-            "product": p,
+        results.append({
+            "product_id": p["product_id"],
+            "source": p["source"],
             "final_score": round(final_score, 2),
             "channel": channel,
-            "asset_url": asset_url,
-            "ready": asset_url is not None
-        }
-
-        memory.append(entry)
-        results.append(entry)
-
-    save_memory(memory)
+            "asset": asset,
+            "ready": asset is not None
+        })
 
     return results
 
 # =========================
-# 🌐 ROUTES
+# ROUTES
 # =========================
 
 @app.route("/")
 def home():
-    return "CLEAN AI MARKETING SYSTEM RUNNING 🚀"
+    return "CLEAN AI ENGINE RUNNING 🚀"
 
 @app.route("/run")
 def run():
     return jsonify({
-        "status": "success",
+        "status": "ok",
+        "mode": "CLEAN_ENGINE_V1",
         "data": run_engine()
     })
 
@@ -222,11 +187,11 @@ def assets():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "CLEAN_V1"
+        "version": "CLEAN_V1_STABLE"
     })
 
 # =========================
-# 🚀 START
+# START
 # =========================
 
 if __name__ == "__main__":
