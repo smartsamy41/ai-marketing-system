@@ -1,11 +1,8 @@
 from flask import Flask, jsonify
-from app.core_engine import run_engine
+from engine.core_engine import run_engine
+import os
 
 app = Flask(__name__)
-
-# =========================
-# HEALTH
-# =========================
 
 @app.route("/")
 def home():
@@ -13,11 +10,10 @@ def home():
 
 @app.route("/health")
 def health():
-    return jsonify({"status": "OK", "engine": "MASTER_V1"})
-
-# =========================
-# RUN ENGINE
-# =========================
+    return jsonify({
+        "status": "OK",
+        "engine": "MASTER_V1"
+    })
 
 @app.route("/run")
 def run():
@@ -33,10 +29,6 @@ def run():
             "message": str(e)
         })
 
-# =========================
-# DEBUG
-# =========================
-
 @app.route("/debug")
 def debug():
     return jsonify({
@@ -44,9 +36,6 @@ def debug():
         "engine": "MASTER_CONTROL_FLOW"
     })
 
-# =========================
-# START
-# =========================
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
