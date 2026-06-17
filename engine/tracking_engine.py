@@ -21,11 +21,31 @@ def _save(data):
         json.dump(data, f)
 
 
-# -----------------------------
-# 🟢 LOG EVENT
-# -----------------------------
-def log_event(product_id, clicks=0, impressions=0, sales=0, platform="unknown"):
+def track_event(product, output):
+    data = _load()
 
+    entry = {
+        "time": datetime.now().isoformat(),
+        "product_id": product.get("product_id"),
+        "source": product.get("source"),
+        "channel": output.get("channel"),
+        "output_status": output.get("status", "prepared"),
+        "clicks": 0,
+        "impressions": 0,
+        "sales": 0
+    }
+
+    data.append(entry)
+    _save(data)
+
+    return {
+        "tracked": True,
+        "product_id": entry["product_id"],
+        "channel": entry["channel"]
+    }
+
+
+def log_event(product_id, clicks=0, impressions=0, sales=0, platform="unknown"):
     data = _load()
 
     ctr = 0
@@ -47,18 +67,13 @@ def log_event(product_id, clicks=0, impressions=0, sales=0, platform="unknown"):
     return True
 
 
-# -----------------------------
-# 🟢 GET PRODUCT PERFORMANCE
-# -----------------------------
 def get_product_stats(product_id):
-
     data = _load()
+    filtered = [d for d in data if d.get("product_id") == product_id]
 
-    filtered = [d for d in data if d["product_id"] == product_id]
-
-    clicks = sum(d["clicks"] for d in filtered)
-    impressions = sum(d["impressions"] for d in filtered)
-    sales = sum(d["sales"] for d in filtered)
+    clicks = sum(d.get("clicks", 0) for d in filtered)
+    impressions = sum(d.get("impressions", 0) for d in filtered)
+    sales = sum(d.get("sales", 0) for d in filtered)
 
     ctr = 0
     if impressions > 0:
@@ -73,17 +88,14 @@ def get_product_stats(product_id):
     }
 
 
-# -----------------------------
-# 🟢 TOP PERFORMER
-# -----------------------------
 def get_top_products(limit=5):
-
     data = _load()
-
     scores = {}
 
     for d in data:
-        pid = d["product_id"]
+        pid = d.get("product_id")
+        if not pid:
+            continue
 
         if pid not in scores:
             scores[pid] = {
@@ -92,14 +104,13 @@ def get_top_products(limit=5):
                 "impressions": 0
             }
 
-        scores[pid]["clicks"] += d["clicks"]
-        scores[pid]["sales"] += d["sales"]
-        scores[pid]["impressions"] += d["impressions"]
+        scores[pid]["clicks"] += d.get("clicks", 0)
+        scores[pid]["sales"] += d.get("sales", 0)
+        scores[pid]["impressions"] += d.get("impressions", 0)
 
     results = []
 
     for pid, s in scores.items():
-
         ctr = 0
         if s["impressions"] > 0:
             ctr = (s["clicks"] / s["impressions"]) * 100
@@ -112,6 +123,4 @@ def get_top_products(limit=5):
             "ctr": round(ctr, 2)
         })
 
-    results = sorted(results, key=lambda x: x["score"], reverse=True)
-
-    return results[:limit]
+    return sorted(results, key=lambda x: x["score"], reverse=True)[:limit]
