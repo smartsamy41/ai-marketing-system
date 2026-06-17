@@ -2,7 +2,6 @@ from flask import Flask, jsonify
 import os
 import json
 from datetime import datetime
-import hashlib
 
 import google.auth
 from googleapiclient.discovery import build
@@ -10,34 +9,37 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 STORAGE
+# 📦 CONFIG
 # =========================
 
-MEMORY_FILE = "memory.json"
-CLICK_FILE = "clicks.json"
-TRACK_FILE = "tracking.json"
+SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
+PRODUCT_RANGE = "products!A:D"
+ASSET_RANGE = "affiliate_assets!A:E"
 
-def load(file):
-    if not os.path.exists(file):
+MEMORY_FILE = "memory.json"
+
+# =========================
+# 💾 MEMORY
+# =========================
+
+def load_memory():
+    if not os.path.exists(MEMORY_FILE):
         return []
     try:
-        with open(file, "r") as f:
+        with open(MEMORY_FILE, "r") as f:
             return json.load(f)
     except:
         return []
 
-def save(file, data):
-    with open(file, "w") as f:
+def save_memory(data):
+    with open(MEMORY_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 SHEETS CONNECT
+# 📊 GOOGLE SHEETS CONNECT
 # =========================
 
-SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
-RANGE = "products!A:C"
-
-def sheets():
+def sheets_connect(range_name):
     try:
         creds, _ = google.auth.default(scopes=[
             "https://www.googleapis.com/auth/spreadsheets"
@@ -45,166 +47,186 @@ def sheets():
 
         service = build("sheets", "v4", credentials=creds)
 
-        res = service.spreadsheets().values().get(
+        result = service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
-            range=RANGE
+            range=range_name
         ).execute()
 
-        values = res.get("values", [])
+        values = result.get("values", [])
 
-        return [
-            {
-                "id": r[0],
-                "score": int(r[1]) if len(r) > 1 else 50,
-                "source": r[2] if len(r) > 2 else "unknown"
-            }
-            for r in values[1:]
-        ]
+        return values
 
     except Exception as e:
-        return [{"error": str(e)}]
+        return [["error", str(e)]]
 
 # =========================
-# 🔥 STEP H – TRACKING ENGINE
+# 📦 PRODUCT LOADER
 # =========================
 
-def generate_tracking_link(product_id, source):
+def get_products():
 
-    base_url = {
-        "amazon": "https://amazon.com/dp/",
-        "check24": "https://check24.de/product/",
-        "tarifcheck": "https://tarifcheck.de/product/"
-    }.get(source, "https://example.com/product/")
+    rows = sheets_connect(PRODUCT_RANGE)
+    products = []
 
-    raw = f"{product_id}-{datetime.now().isoformat()}"
+    for r in rows[1:]:
 
-    tracking_id = hashlib.md5(raw.encode()).hexdigest()[:10]
+        product_id = r[0] if len(r) > 0 else "unknown"
 
-    full_url = f"{base_url}{product_id}?ref={tracking_id}"
+        try:
+            score = float(r[1])
+        except:
+            score = 50
 
-    return {
-        "tracking_id": tracking_id,
-        "url": full_url
+        source = r[2] if len(r) > 2 else "unknown"
+
+        status = r[3] if len(r) > 3 else "active"
+
+        products.append({
+            "product_id": product_id,
+            "score": score,
+            "source": source,
+            "status": status
+        })
+
+    return products
+
+# =========================
+# 🎯 ASSET LOADER
+# =========================
+
+def get_assets():
+
+    rows = sheets_connect(ASSET_RANGE)
+    assets = []
+
+    for r in rows[1:]:
+
+        assets.append({
+            "product_id": r[0],
+            "source": r[1],
+            "type": r[2],
+            "url": r[3],
+            "tracking": r[4] if len(r) > 4 else ""
+        })
+
+    return assets
+
+# =========================
+# 🔥 ENGINE CORE
+# =========================
+
+def calculate_score(product):
+
+    base = product["score"]
+    source = product["source"]
+
+    boost_map = {
+        "amazon": 1.4,
+        "check24": 1.3,
+        "tarifcheck": 1.35,
+        "telekom": 1.6
     }
 
+    boost = boost_map.get(source, 1.0)
+
+    return base * boost
+
 # =========================
-# 🧠 AI CORE
+# 🧠 CHANNEL ROUTER
 # =========================
 
-def ai_engine(products, clicks):
+def route(source):
+
+    routing = {
+        "amazon": {"channel": "pinterest", "format": "pin"},
+        "check24": {"channel": "youtube", "format": "short"},
+        "tarifcheck": {"channel": "blog", "format": "article"},
+        "telekom": {"channel": "shop", "format": "direct"}
+    }
+
+    return routing.get(source, {"channel": "unknown", "format": "none"})
+
+# =========================
+# 🔗 ASSET MATCHER
+# =========================
+
+def match_asset(product_id, source, assets):
+
+    for a in assets:
+        if a["product_id"] == product_id and a["source"] == source:
+            return a["url"]
+
+    return None
+
+# =========================
+# 🚀 MAIN ENGINE
+# =========================
+
+def run_engine():
+
+    products = get_products()
+    assets = get_assets()
+    memory = load_memory()
 
     results = []
 
     for p in products:
 
-        if "error" in p:
+        if p["status"] != "active":
             continue
 
-        score = p["score"]
-        source = p["source"]
+        final_score = calculate_score(p)
+        channel = route(p["source"])
+        asset_url = match_asset(p["product_id"], p["source"], assets)
 
-        # prediction
-        boost = {"amazon":1.4, "check24":1.3, "tarifcheck":1.35}.get(source, 1.0)
-        predicted = score * boost
-
-        # decision
-        if predicted > 130:
-            action = "AUTO_SCALE"
-        elif predicted > 100:
-            action = "SCALE"
-        elif predicted > 80:
-            action = "HOLD"
-        else:
-            action = "CUT"
-
-        # tracking
-        tracking = generate_tracking_link(p["id"], source)
-
-        # clicks
-        product_clicks = [c for c in clicks if c["id"] == p["id"]]
-
-        revenue = len(product_clicks) * predicted * 0.1
-
-        results.append({
+        entry = {
+            "timestamp": datetime.now().isoformat(),
             "product": p,
-            "predicted_score": round(predicted,2),
-            "action": action,
-            "tracking": tracking,
-            "clicks": len(product_clicks),
-            "revenue_estimate": round(revenue,2)
-        })
+            "final_score": round(final_score, 2),
+            "channel": channel,
+            "asset_url": asset_url,
+            "ready": asset_url is not None
+        }
+
+        memory.append(entry)
+        results.append(entry)
+
+    save_memory(memory)
 
     return results
 
 # =========================
-# 🚀 ROUTES
+# 🌐 ROUTES
 # =========================
 
 @app.route("/")
 def home():
-    return "STEP H REAL DEPLOYMENT ENGINE LIVE 🚀"
+    return "CLEAN AI MARKETING SYSTEM RUNNING 🚀"
 
 @app.route("/run")
 def run():
-
-    products = sheets()
-    clicks = load(CLICK_FILE)
-
-    result = ai_engine(products, clicks)
-
     return jsonify({
         "status": "success",
-        "mode": "STEP_H_PRODUCTION_LAYER",
-        "results": result
+        "data": run_engine()
     })
 
-# =========================
-# 🔗 CLICK TRACKING
-# =========================
+@app.route("/products")
+def products():
+    return jsonify(get_products())
 
-@app.route("/click/<pid>")
-def click(pid):
-
-    clicks = load(CLICK_FILE)
-
-    clicks.append({
-        "id": pid,
-        "time": datetime.now().isoformat()
-    })
-
-    save(CLICK_FILE, clicks)
-
-    return jsonify({
-        "status": "tracked",
-        "product_id": pid,
-        "total_clicks": len(clicks)
-    })
-
-# =========================
-# 📊 TRACKING OVERVIEW
-# =========================
-
-@app.route("/tracking")
-def tracking():
-
-    return jsonify({
-        "clicks": load(CLICK_FILE),
-        "system": "STEP_H_ACTIVE"
-    })
-
-# =========================
-# 🧠 HEALTH
-# =========================
+@app.route("/assets")
+def assets():
+    return jsonify(get_assets())
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_H"
+        "version": "CLEAN_V1"
     })
 
 # =========================
-# ☁️ START
+# 🚀 START
 # =========================
 
 if __name__ == "__main__":
