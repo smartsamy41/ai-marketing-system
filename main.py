@@ -6,7 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # =========================
-# 💾 PERSISTENT MEMORY FILE
+# 💾 MEMORY FILE
 # =========================
 
 MEMORY_FILE = "memory.json"
@@ -18,7 +18,6 @@ MEMORY_FILE = "memory.json"
 def load_memory():
     if not os.path.exists(MEMORY_FILE):
         return []
-
     with open(MEMORY_FILE, "r") as f:
         return json.load(f)
 
@@ -31,14 +30,18 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 🧠 TEST DATA
+# 🌐 DATA CONNECT LAYER (NEW)
 # =========================
 
-def get_products():
+def data_connect():
+    """
+    Simuliert externe Datenquelle (später Google Sheets / API)
+    """
+
     return [
-        {"product_id": "AMZ_001", "score": 92},
-        {"product_id": "CHK24_001", "score": 85},
-        {"product_id": "TC_001", "score": 78}
+        {"product_id": "AMZ_001", "score": 93, "source": "amazon"},
+        {"product_id": "CHK24_001", "score": 86, "source": "check24"},
+        {"product_id": "TC_001", "score": 77, "source": "tarifcheck"}
     ]
 
 # =========================
@@ -91,14 +94,15 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI ENGINE STEP 4 PERSISTENT MEMORY ACTIVE 🚀"
+    return "AI ENGINE STEP 5 DATA CONNECT LIVE 🚀"
 
 @app.route("/run")
 def run():
 
-    memory = load_memory()
+    # 🌐 DATA CONNECT (LIVE INPUT)
+    products = data_connect()
 
-    products = get_products()
+    memory = load_memory()
 
     results = []
 
@@ -115,48 +119,51 @@ def run():
         }
 
         memory.append(entry)
-
         results.append(entry)
 
-    # 🧠 APPLY LEARNING
+    # 🧠 LEARNING
     memory = learning_engine(memory)
 
-    # 💾 SAVE TO FILE (PERSISTENT)
+    # 💾 SAVE UPDATED MEMORY
     save_memory(memory)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_4_PERSISTENT_MEMORY",
+        "mode": "STEP_5_DATA_CONNECT",
         "results": results,
         "memory_size": len(memory)
     })
 
 @app.route("/memory")
 def memory():
-
-    memory = load_memory()
-
     return jsonify({
-        "status": "OK",
-        "memory_size": len(memory),
-        "data": memory
+        "memory_size": len(load_memory()),
+        "data": load_memory()
+    })
+
+@app.route("/data-source")
+def data_source():
+    return jsonify({
+        "source": "DATA_CONNECT_LAYER",
+        "data": data_connect()
+    })
+
+@app.route("/system-status")
+def status():
+    return jsonify({
+        "engine": "STEP5_DATA_CONNECT",
+        "status": "STABLE",
+        "learning": "ON",
+        "data_connect": "ACTIVE",
+        "memory": "PERSISTENT"
     })
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP4",
-        "memory": "PERSISTENT"
-    })
-
-@app.route("/system-status")
-def status():
-    return jsonify({
-        "engine": "STEP4_PERSISTENT_MEMORY",
-        "status": "STABLE",
-        "learning": "ON",
-        "memory": "FILE_BASED"
+        "version": "STEP5",
+        "data_connect": "ACTIVE"
     })
 
 # =========================
