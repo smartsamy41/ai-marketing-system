@@ -1,14 +1,34 @@
 from flask import Flask, jsonify
 import os
+import json
 from datetime import datetime
 
 app = Flask(__name__)
 
 # =========================
-# 🧠 MEMORY (IN RAM)
+# 💾 PERSISTENT MEMORY FILE
 # =========================
 
-MEMORY = []
+MEMORY_FILE = "memory.json"
+
+# =========================
+# 🧠 LOAD MEMORY
+# =========================
+
+def load_memory():
+    if not os.path.exists(MEMORY_FILE):
+        return []
+
+    with open(MEMORY_FILE, "r") as f:
+        return json.load(f)
+
+# =========================
+# 💾 SAVE MEMORY
+# =========================
+
+def save_memory(data):
+    with open(MEMORY_FILE, "w") as f:
+        json.dump(data, f, indent=2)
 
 # =========================
 # 🧠 TEST DATA
@@ -50,42 +70,20 @@ def calculate_scaling(product):
         return {"budget": 1.0}
 
 # =========================
-# 🧠 LEARNING ENGINE (NEW)
+# 🧠 LEARNING ENGINE
 # =========================
 
 def learning_engine(memory):
-    """
-    Simple learning:
-    - boost score if WINNER
-    - reduce score if LOW
-    """
 
     for entry in memory:
 
         if entry["winner"]["action"] == "WINNER":
             entry["product"]["score"] += 1
 
-        if entry["winner"]["action"] == "LOW":
+        elif entry["winner"]["action"] == "LOW":
             entry["product"]["score"] -= 1
 
     return memory
-
-# =========================
-# 💾 SAVE MEMORY
-# =========================
-
-def save_memory(product, winner, scaling):
-
-    entry = {
-        "timestamp": datetime.now().isoformat(),
-        "product": product,
-        "winner": winner,
-        "scaling": scaling
-    }
-
-    MEMORY.append(entry)
-
-    return entry
 
 # =========================
 # 🚀 ROUTES
@@ -93,10 +91,12 @@ def save_memory(product, winner, scaling):
 
 @app.route("/")
 def home():
-    return "AI ENGINE STEP 3 LEARNING ACTIVE 🚀"
+    return "AI ENGINE STEP 4 PERSISTENT MEMORY ACTIVE 🚀"
 
 @app.route("/run")
 def run():
+
+    memory = load_memory()
 
     products = get_products()
 
@@ -107,45 +107,56 @@ def run():
         winner = decide_winner(p)
         scaling = calculate_scaling(p)
 
-        save_memory(p, winner, scaling)
-
-        results.append({
+        entry = {
+            "timestamp": datetime.now().isoformat(),
             "product": p,
             "winner": winner,
             "scaling": scaling
-        })
+        }
 
-    # 🧠 APPLY LEARNING AFTER RUN
-    learned = learning_engine(MEMORY)
+        memory.append(entry)
+
+        results.append(entry)
+
+    # 🧠 APPLY LEARNING
+    memory = learning_engine(memory)
+
+    # 💾 SAVE TO FILE (PERSISTENT)
+    save_memory(memory)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_3_LEARNING",
+        "mode": "STEP_4_PERSISTENT_MEMORY",
         "results": results,
-        "learned_memory": learned
+        "memory_size": len(memory)
     })
 
 @app.route("/memory")
 def memory():
+
+    memory = load_memory()
+
     return jsonify({
-        "size": len(MEMORY),
-        "data": MEMORY
+        "status": "OK",
+        "memory_size": len(memory),
+        "data": memory
     })
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP3"
+        "version": "STEP4",
+        "memory": "PERSISTENT"
     })
 
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "STEP3_LEARNING_ACTIVE",
-        "memory": len(MEMORY),
+        "engine": "STEP4_PERSISTENT_MEMORY",
+        "status": "STABLE",
         "learning": "ON",
-        "status": "STABLE"
+        "memory": "FILE_BASED"
     })
 
 # =========================
