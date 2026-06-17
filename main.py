@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 import os
 import json
 from datetime import datetime
@@ -10,13 +10,14 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 STORAGE
+# 💾 STORAGE LAYER
 # =========================
 
 MEMORY_FILE = "memory.json"
 CLICK_FILE = "clicks.json"
+EVENTS_FILE = "events.json"
 
-def load_json(file):
+def load(file):
     if not os.path.exists(file):
         return []
     try:
@@ -25,7 +26,7 @@ def load_json(file):
     except:
         return []
 
-def save_json(file, data):
+def save(file, data):
     with open(file, "w") as f:
         json.dump(data, f, indent=2)
 
@@ -34,9 +35,9 @@ def save_json(file, data):
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
-RANGE_NAME = "products!A:C"
+RANGE = "products!A:C"
 
-def google_sheets_connect():
+def sheets():
     try:
         creds, _ = google.auth.default(scopes=[
             "https://www.googleapis.com/auth/spreadsheets"
@@ -44,29 +45,20 @@ def google_sheets_connect():
 
         service = build("sheets", "v4", credentials=creds)
 
-        result = service.spreadsheets().values().get(
+        res = service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
-            range=RANGE_NAME
+            range=RANGE
         ).execute()
 
-        values = result.get("values", [])
+        values = res.get("values", [])
 
         products = []
 
-        for row in values[1:]:
-            product_id = row[0] if len(row) > 0 else "unknown"
-
-            try:
-                score = int(row[1])
-            except:
-                score = 50
-
-            source = row[2] if len(row) > 2 else "unknown"
-
+        for r in values[1:]:
             products.append({
-                "product_id": product_id,
-                "score": score,
-                "source": source
+                "id": r[0],
+                "score": int(r[1]) if len(r) > 1 else 50,
+                "source": r[2] if len(r) > 2 else "unknown"
             })
 
         return products
@@ -75,170 +67,127 @@ def google_sheets_connect():
         return [{"error": str(e)}]
 
 # =========================
-# 🧠 STEP C – PREDICTION
+# 🧠 AI CORE (STEP C+D+E+F)
 # =========================
 
-def prediction_engine(products):
-    results = []
+def ai_engine(products, clicks):
+
+    output = []
 
     for p in products:
 
-        base = p.get("score", 50)
-        source = p.get("source", "")
+        if "error" in p:
+            continue
 
-        boost = 1.0
+        base = p["score"]
+        source = p["source"]
 
-        if source == "amazon":
-            boost += 0.4
-        elif source == "check24":
-            boost += 0.3
-        elif source == "tarifcheck":
-            boost += 0.35
-
+        # 🔥 Prediction Layer
+        boost = {"amazon":1.4, "check24":1.3, "tarifcheck":1.35}.get(source, 1.0)
         predicted = base * boost
 
+        # 🤖 Autopilot Decision
         if predicted > 130:
-            label = "HOT"
+            decision = "AGGRESSIVE_SCALE"
+            budget = 3.0
         elif predicted > 100:
-            label = "GOOD"
-        else:
-            label = "NORMAL"
-
-        results.append({
-            "product": p,
-            "predicted": round(predicted, 2),
-            "label": label
-        })
-
-    return results
-
-# =========================
-# 🤖 STEP D – AUTOPILOT
-# =========================
-
-def autopilot(predictions):
-
-    actions = []
-
-    for p in predictions:
-
-        label = p["label"]
-
-        if label == "HOT":
-            action = {"budget": 3.0, "decision": "SCALE_UP"}
-        elif label == "GOOD":
-            action = {"budget": 2.0, "decision": "BOOST"}
-        else:
-            action = {"budget": 1.0, "decision": "HOLD"}
-
-        actions.append({
-            "product": p["product"],
-            "prediction": p,
-            "action": action
-        })
-
-    return actions
-
-# =========================
-# 💰 STEP F – REAL WORLD ENGINE
-# =========================
-
-def real_world_engine(actions, clicks):
-
-    enriched = []
-
-    for a in actions:
-
-        product_id = a["product"]["product_id"]
-
-        product_clicks = [c for c in clicks if c["product_id"] == product_id]
-
-        click_count = len(product_clicks)
-
-        # 🔥 REAL WORLD SIGNAL SIMULATION
-        traffic_score = click_count * random.uniform(0.8, 1.5)
-
-        conversion = min(1.0, click_count / 15)
-
-        revenue_score = traffic_score * conversion * a["action"]["budget"]
-
-        if revenue_score > 25:
-            decision = "INCREASE_BUDGET"
-        elif revenue_score > 10:
+            decision = "SCALE"
+            budget = 2.0
+        elif predicted > 80:
             decision = "STABLE"
+            budget = 1.5
         else:
             decision = "CUT"
+            budget = 0.5
 
-        enriched.append({
-            "product_id": product_id,
-            "clicks": click_count,
-            "traffic_score": round(traffic_score, 2),
-            "revenue_score": round(revenue_score, 2),
-            "final_decision": decision,
-            "budget": a["action"]["budget"]
+        # 💰 Real World Feedback Loop
+        product_clicks = [c for c in clicks if c["id"] == p["id"]]
+        click_score = len(product_clicks)
+
+        revenue = click_score * budget * random.uniform(0.8, 1.6)
+
+        if revenue > 30:
+            final_action = "SCALE_UP"
+        elif revenue > 10:
+            final_action = "HOLD"
+        else:
+            final_action = "REDUCE"
+
+        output.append({
+            "product": p,
+            "predicted_score": round(predicted,2),
+            "decision": decision,
+            "budget": budget,
+            "clicks": click_score,
+            "revenue_score": round(revenue,2),
+            "final_action": final_action
         })
 
-    return enriched
+    return output
 
 # =========================
-# 🚀 ROUTES
+# 🚀 AUTONOMOUS BUSINESS LOOP
 # =========================
 
 @app.route("/")
 def home():
-    return "STEP F REAL WORLD AI SYSTEM LIVE 🚀"
+    return "STEP G AUTONOMOUS AI BUSINESS ENGINE 🚀"
 
 @app.route("/run")
 def run():
 
-    products = google_sheets_connect()
-    predictions = prediction_engine(products)
-    actions = autopilot(predictions)
+    products = sheets()
+    clicks = load(CLICK_FILE)
 
-    clicks = load_json(CLICK_FILE)
+    result = ai_engine(products, clicks)
 
-    result = real_world_engine(actions, clicks)
+    # store event
+    events = load(EVENTS_FILE)
+    events.append({
+        "time": datetime.now().isoformat(),
+        "result_count": len(result)
+    })
+    save(EVENTS_FILE, events)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_F_REAL_WORLD",
-        "result": result
+        "mode": "STEP_G_FULL_AUTONOMY",
+        "results": result
     })
 
 # =========================
-# 🔗 REAL AFFILIATE CLICK TRACKING
+# 🔗 REAL CLICK TRACKING
 # =========================
 
-@app.route("/click/<product_id>")
-def click(product_id):
+@app.route("/click/<pid>")
+def click(pid):
 
-    clicks = load_json(CLICK_FILE)
+    clicks = load(CLICK_FILE)
 
     clicks.append({
-        "product_id": product_id,
-        "timestamp": datetime.now().isoformat()
+        "id": pid,
+        "time": datetime.now().isoformat()
     })
 
-    save_json(CLICK_FILE, clicks)
+    save(CLICK_FILE, clicks)
 
     return jsonify({
-        "status": "click_tracked",
-        "product_id": product_id,
-        "total_clicks": len(clicks)
+        "status": "tracked",
+        "product_id": pid,
+        "total": len(clicks)
     })
 
 # =========================
-# 📊 LIVE METRICS
+# 📊 METRICS
 # =========================
 
 @app.route("/metrics")
 def metrics():
 
-    clicks = load_json(CLICK_FILE)
-
     return jsonify({
-        "total_clicks": len(clicks),
-        "system": "STEP_F_REAL_WORLD"
+        "clicks": len(load(CLICK_FILE)),
+        "events": len(load(EVENTS_FILE)),
+        "system": "STEP_G"
     })
 
 # =========================
@@ -249,7 +198,7 @@ def metrics():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_F"
+        "version": "STEP_G_FULL_AUTONOMY"
     })
 
 # =========================
