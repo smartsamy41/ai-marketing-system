@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY (SAFE)
+# 💾 MEMORY SYSTEM
 # =========================
 
 MEMORY_FILE = "memory.json"
@@ -28,28 +28,27 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS (CLOUD RUN ADC FIX)
+# 📊 GOOGLE SHEETS CONNECT (CLOUD RUN SAFE)
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
 RANGE_NAME = "products!A:C"
 
 def google_sheets_connect():
-
     try:
-        # 🔐 Cloud Run Default Credentials (ADC)
+        # 🔐 Cloud Run Default Auth (ADC)
         creds, _ = google.auth.default(scopes=[
             "https://www.googleapis.com/auth/spreadsheets.readonly"
         ])
 
         service = build("sheets", "v4", credentials=creds)
 
-        sheet = service.spreadsheets().values().get(
+        result = service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
             range=RANGE_NAME
         ).execute()
 
-        values = sheet.get("values", [])
+        values = result.get("values", [])
 
         products = []
 
@@ -65,7 +64,7 @@ def google_sheets_connect():
         return products
 
     except Exception as e:
-        return [{"error": str(e), "source": "sheets_failed"}]
+        return [{"error": str(e), "source": "sheets_error"}]
 
 # =========================
 # 🧠 AI ENGINE
@@ -152,8 +151,8 @@ def run():
 
     return jsonify({
         "status": "success",
-        "mode": "PRODUCTION",
-        "data_source": "REAL_SHEETS",
+        "mode": "FINAL_PRODUCTION",
+        "data_source": "GOOGLE_SHEETS",
         "results": results,
         "memory_size": len(memory)
     })
@@ -168,7 +167,7 @@ def memory():
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "PRODUCTION_AI",
+        "engine": "FINAL_AI_ENGINE",
         "status": "STABLE",
         "google_sheets": "CONNECTED",
         "learning": "ON",
@@ -176,7 +175,7 @@ def status():
     })
 
 # =========================
-# ☁️ START
+# ☁️ START APP
 # =========================
 
 if __name__ == "__main__":
