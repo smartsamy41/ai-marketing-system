@@ -3,16 +3,27 @@ import os
 import json
 from datetime import datetime
 
+# =========================
+# 🟢 GOOGLE SHEETS IMPORT (SAFE TRY)
+# =========================
+
+try:
+    from google.oauth2.service_account import Credentials
+    import gspread
+    SHEETS_ENABLED = True
+except:
+    SHEETS_ENABLED = False
+
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY FILE
+# 💾 MEMORY FILE (FALLBACK)
 # =========================
 
 MEMORY_FILE = "memory.json"
 
 # =========================
-# 🧠 LOCAL MEMORY LOAD
+# 🧠 MEMORY LOAD
 # =========================
 
 def load_memory():
@@ -26,28 +37,49 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 🌐 STEP 6: GOOGLE SHEETS CONNECT (SIMULATED)
+# 🌐 REAL GOOGLE SHEETS CONNECT
 # =========================
 
 def google_sheets_connect():
-    """
-    REAL STEP 6 FOUNDATION:
-    später ersetzt durch echte Google Sheets API
-    """
 
-    return [
-        {"product_id": "AMZ_001", "score": 95, "source": "google_sheet"},
-        {"product_id": "CHK24_001", "score": 87, "source": "google_sheet"},
-        {"product_id": "TC_001", "score": 76, "source": "google_sheet"},
-        {"product_id": "AMZ_002", "score": 91, "source": "google_sheet"}
-    ]
+    if not SHEETS_ENABLED:
+        # fallback safe mode
+        return [
+            {"product_id": "AMZ_001", "score": 95, "source": "fallback"},
+            {"product_id": "CHK24_001", "score": 87, "source": "fallback"},
+            {"product_id": "TC_001", "score": 76, "source": "fallback"}
+        ]
+
+    try:
+        # 🔐 SERVICE ACCOUNT FILE
+        scope = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive"
+        ]
+
+        creds = Credentials.from_service_account_file(
+            "service_account.json",
+            scopes=scope
+        )
+
+        client = gspread.authorize(creds)
+
+        # 📊 SHEET OPEN
+        sheet = client.open("AI_Marketing_System").worksheet("products")
+
+        data = sheet.get_all_records()
+
+        return data
+
+    except Exception as e:
+        return [{"error": str(e), "source": "sheets_error"}]
 
 # =========================
 # 🧠 WINNER ENGINE
 # =========================
 
 def decide_winner(product):
-    score = product["score"]
+    score = product.get("score", 0)
 
     if score >= 90:
         return {"action": "WINNER", "weight": 3}
@@ -61,7 +93,7 @@ def decide_winner(product):
 # =========================
 
 def calculate_scaling(product):
-    score = product["score"]
+    score = product.get("score", 0)
 
     if score >= 90:
         return {"budget": 2.0}
@@ -92,12 +124,12 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI ENGINE STEP 6 GOOGLE SHEETS CONNECT LIVE 🚀"
+    return "AI ENGINE STEP 7 GOOGLE SHEETS API LIVE 🚀"
 
 @app.route("/run")
 def run():
 
-    # 🌐 REAL DATA SOURCE (STEP 6)
+    # 🌐 REAL DATA FROM SHEETS
     products = google_sheets_connect()
 
     memory = load_memory()
@@ -105,6 +137,9 @@ def run():
     results = []
 
     for p in products:
+
+        if "error" in p:
+            continue
 
         winner = decide_winner(p)
         scaling = calculate_scaling(p)
@@ -119,7 +154,7 @@ def run():
         memory.append(entry)
         results.append(entry)
 
-    # 🧠 LEARNING LOOP
+    # 🧠 LEARNING
     memory = learning_engine(memory)
 
     # 💾 SAVE MEMORY
@@ -127,17 +162,11 @@ def run():
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_6_GOOGLE_SHEETS_CONNECT",
-        "data_source": "GOOGLE_SHEETS_LAYER",
+        "mode": "STEP_7_GOOGLE_SHEETS_API",
+        "data_source": "REAL_SHEETS" if SHEETS_ENABLED else "FALLBACK",
         "results": results,
-        "memory_size": len(memory)
-    })
-
-@app.route("/data-source")
-def data_source():
-    return jsonify({
-        "source": "GOOGLE_SHEETS_CONNECT_LAYER",
-        "data": google_sheets_connect()
+        "memory_size": len(memory),
+        "sheets_enabled": SHEETS_ENABLED
     })
 
 @app.route("/memory")
@@ -150,10 +179,10 @@ def memory():
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "STEP6_GOOGLE_SHEETS_CONNECT",
+        "engine": "STEP7_SHEETS_API",
         "status": "STABLE",
+        "google_sheets": SHEETS_ENABLED,
         "learning": "ON",
-        "data_source": "SHEETS_READY",
         "memory": "PERSISTENT"
     })
 
@@ -161,8 +190,8 @@ def status():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP6",
-        "google_sheets": "CONNECTED_LAYER_READY"
+        "version": "STEP7",
+        "sheets_api": SHEETS_ENABLED
     })
 
 # =========================
