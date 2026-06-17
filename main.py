@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY SYSTEM
+# 💾 MEMORY SAFE
 # =========================
 
 MEMORY_FILE = "memory.json"
@@ -28,7 +28,7 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS CONNECT (CLOUD RUN FIXED)
+# 📊 GOOGLE SHEETS CONNECT (FINAL FIX)
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
@@ -36,34 +36,39 @@ RANGE_NAME = "products!A:C"
 
 def google_sheets_connect():
     try:
-        # 🔐 Cloud Run Default Auth (ADC)
         creds, _ = google.auth.default(scopes=[
             "https://www.googleapis.com/auth/spreadsheets"
         ])
 
         service = build("sheets", "v4", credentials=creds)
 
-        sheet = service.spreadsheets().values().get(
+        result = service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
             range=RANGE_NAME
         ).execute()
 
-        values = sheet.get("values", [])
+        values = result.get("values", [])
 
         products = []
 
+        # skip header
         for row in values[1:]:
-            if len(row) >= 3:
-                try:
-                    score = int(row[1])
-                except:
-                    score = 0
 
-                products.append({
-                    "product_id": row[0],
-                    "score": score,
-                    "source": row[2]
-                })
+            # SAFE parsing (FIX 1)
+            product_id = row[0] if len(row) > 0 else "UNKNOWN"
+
+            try:
+                score = int(row[1])
+            except:
+                score = 50   # FIX: default instead of 0 crash loop
+
+            source = row[2] if len(row) > 2 else "unknown"
+
+            products.append({
+                "product_id": product_id,
+                "score": score,
+                "source": source
+            })
 
         return products
 
@@ -71,7 +76,7 @@ def google_sheets_connect():
         return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
-# 🧠 AI ENGINE
+# 🧠 AI ENGINE (STABLE FIX)
 # =========================
 
 def decide_winner(product):
@@ -99,10 +104,14 @@ def learning_engine(memory):
         try:
             if entry["winner"]["action"] == "WINNER":
                 entry["product"]["score"] += 1
+
             elif entry["winner"]["action"] == "LOW":
-                entry["product"]["score"] -= 1
+                # FIX 2: no negative infinite loop
+                entry["product"]["score"] = max(1, entry["product"]["score"] - 1)
+
         except:
             pass
+
     return memory
 
 # =========================
@@ -111,13 +120,13 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI MARKETING SYSTEM LIVE 🚀"
+    return "AI MARKETING SYSTEM FIXED 🚀"
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "FINAL_STABLE"
+        "version": "FINAL_FIX"
     })
 
 @app.route("/data-source")
@@ -158,7 +167,7 @@ def run():
 
     return jsonify({
         "status": "success",
-        "mode": "FINAL_STABLE",
+        "mode": "FINAL_FIX",
         "data_source": "GOOGLE_SHEETS",
         "results": results,
         "memory_size": len(memory)
@@ -174,11 +183,10 @@ def memory():
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "AI_MARKETING_FINAL",
+        "engine": "FIXED_AI_ENGINE",
         "status": "STABLE",
         "learning": "ON",
-        "google_sheets": "CONNECTED",
-        "memory": "ACTIVE"
+        "sheets": "CONNECTED"
     })
 
 # =========================
