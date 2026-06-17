@@ -28,7 +28,7 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 SHEETS CONNECT
+# 📊 GOOGLE SHEETS CONNECT
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
@@ -73,78 +73,7 @@ def google_sheets_connect():
         return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
-# 💰 AFFILIATE SCORING
-# =========================
-
-def affiliate_score(product):
-    score = product.get("score", 0)
-    source = product.get("source", "unknown")
-
-    multiplier = 1.0
-
-    if source == "amazon":
-        multiplier += 0.3
-    elif source == "check24":
-        multiplier += 0.2
-    elif source == "tarifcheck":
-        multiplier += 0.25
-
-    return {
-        "base_score": score,
-        "multiplier": multiplier,
-        "final_score": score * multiplier
-    }
-
-def budget_allocator(final_score):
-    if final_score >= 120:
-        return {"budget": 3.0, "level": "HIGH_SCALE"}
-    elif final_score >= 90:
-        return {"budget": 2.0, "level": "MID_SCALE"}
-    elif final_score >= 70:
-        return {"budget": 1.5, "level": "LOW_SCALE"}
-    else:
-        return {"budget": 1.0, "level": "HOLD"}
-
-# =========================
-# 🧠 STEP B MEMORY LEARNING (KEEP)
-# =========================
-
-def learning_engine(memory):
-    stats = {}
-
-    for entry in memory:
-        pid = entry["product"]["product_id"]
-
-        if pid not in stats:
-            stats[pid] = {"win": 0, "loss": 0}
-
-        if entry["budget"]["level"] == "HIGH_SCALE":
-            stats[pid]["win"] += 1
-        else:
-            stats[pid]["loss"] += 1
-
-    for entry in memory:
-        pid = entry["product"]["product_id"]
-
-        win = stats[pid]["win"]
-        loss = stats[pid]["loss"]
-        total = win + loss
-
-        if total == 0:
-            continue
-
-        winrate = win / total
-
-        # learning adjustment
-        if winrate > 0.65:
-            entry["product"]["score"] += 3
-        elif winrate < 0.35:
-            entry["product"]["score"] -= 3
-
-    return memory
-
-# =========================
-# 🚀 STEP C – PREDICTION ENGINE
+# 🧠 STEP C – PREDICTION ENGINE
 # =========================
 
 def prediction_engine(products):
@@ -155,35 +84,74 @@ def prediction_engine(products):
         score = p.get("score", 0)
         source = p.get("source", "unknown")
 
-        multiplier = 1.0
+        boost = 1.0
 
-        # trend boost simulation
         if source == "amazon":
-            multiplier += 0.35
+            boost += 0.35
         elif source == "check24":
-            multiplier += 0.25
+            boost += 0.25
         elif source == "tarifcheck":
-            multiplier += 0.30
+            boost += 0.30
 
-        predicted_score = score * multiplier
+        predicted = score * boost
 
-        # probability model (simple AI)
-        if predicted_score >= 130:
-            chance = "VERY_HIGH_WIN"
-        elif predicted_score >= 100:
-            chance = "HIGH_WIN"
-        elif predicted_score >= 80:
-            chance = "MEDIUM"
+        if predicted >= 130:
+            label = "VERY_HIGH_WIN"
+        elif predicted >= 100:
+            label = "HIGH_WIN"
+        elif predicted >= 80:
+            label = "MEDIUM"
         else:
-            chance = "LOW"
+            label = "LOW"
 
         predictions.append({
             "product": p,
-            "predicted_score": round(predicted_score, 2),
-            "prediction": chance
+            "predicted_score": round(predicted, 2),
+            "label": label
         })
 
     return predictions
+
+# =========================
+# 🚀 STEP D – AUTOPILOT ENGINE
+# =========================
+
+def autopilot_engine(products, predictions):
+
+    actions = []
+
+    for pred in predictions:
+
+        product = pred["product"]
+        label = pred["label"]
+
+        action = {
+            "product_id": product["product_id"],
+            "decision": None,
+            "budget_action": None
+        }
+
+        # 🔥 AUTOPILOT DECISION LOGIC
+
+        if label == "VERY_HIGH_WIN":
+            action["decision"] = "AUTO_SCALE_UP"
+            action["budget_action"] = 3.0
+
+        elif label == "HIGH_WIN":
+            action["decision"] = "SCALE_UP"
+            action["budget_action"] = 2.0
+
+        elif label == "MEDIUM":
+            action["decision"] = "KEEP"
+            action["budget_action"] = 1.5
+
+        else:
+            action["decision"] = "PAUSE"
+            action["budget_action"] = 0.5
+
+        actions.append(action)
+
+    return actions
 
 # =========================
 # 🚀 ROUTES
@@ -191,77 +159,42 @@ def prediction_engine(products):
 
 @app.route("/")
 def home():
-    return "STEP C PREDICTION ENGINE LIVE 🚀"
+    return "STEP D AUTOPILOT ENGINE LIVE 🚀"
 
 @app.route("/run")
 def run():
 
     products = google_sheets_connect()
-    memory = load_memory()
 
-    results = []
-
-    for p in products:
-
-        if "error" in p:
-            continue
-
-        score_data = affiliate_score(p)
-        budget = budget_allocator(score_data["final_score"])
-
-        entry = {
-            "timestamp": datetime.now().isoformat(),
-            "product": p,
-            "score": score_data,
-            "budget": budget
-        }
-
-        memory.append(entry)
-        results.append(entry)
-
-    # STEP B learning
-    memory = learning_engine(memory)
-
-    save_memory(memory)
-
-    # STEP C prediction
+    # STEP C
     predictions = prediction_engine(products)
+
+    # STEP D
+    actions = autopilot_engine(products, predictions)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_C_PREDICTION_ENGINE",
-        "results": results,
+        "mode": "STEP_D_AUTOPILOT",
         "predictions": predictions,
-        "memory_size": len(memory)
+        "autopilot_actions": actions
     })
 
 @app.route("/prediction")
 def prediction():
-
     products = google_sheets_connect()
-    return jsonify({
-        "predictions": prediction_engine(products)
-    })
+    return jsonify(prediction_engine(products))
 
-@app.route("/memory")
-def memory():
-    return jsonify({
-        "memory_size": len(load_memory()),
-        "data": load_memory()
-    })
-
-@app.route("/data-source")
-def data_source():
-    return jsonify({
-        "source": "GOOGLE_SHEETS_REAL",
-        "data": google_sheets_connect()
-    })
+@app.route("/autopilot")
+def autopilot():
+    products = google_sheets_connect()
+    predictions = prediction_engine(products)
+    return jsonify(autopilot_engine(products, predictions))
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_C"
+        "version": "STEP_D_AUTOPILOT"
     })
 
 # =========================
