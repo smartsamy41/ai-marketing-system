@@ -1,10 +1,18 @@
 from flask import Flask, jsonify
 import os
+from datetime import datetime
 
 app = Flask(__name__)
 
 # =========================
-# 🧠 SIMPLE AI LOGIC (STEP 1)
+# 🧠 MEMORY STORE (IN-MEMORY)
+# =========================
+
+MEMORY_LOG = []
+
+
+# =========================
+# 🧠 TEST PRODUCTS
 # =========================
 
 def get_products():
@@ -16,51 +24,50 @@ def get_products():
 
 
 # =========================
-# 🧠 WINNER ENGINE (INLINE)
+# 🧠 WINNER ENGINE
 # =========================
 
 def decide_winner(product):
     score = product.get("score", 0)
 
     if score >= 90:
-        return {
-            "action": "WINNER",
-            "reason": "HIGH_SCORE"
-        }
+        return {"action": "WINNER", "reason": "HIGH_SCORE"}
     elif score >= 80:
-        return {
-            "action": "KEEP",
-            "reason": "STABLE"
-        }
+        return {"action": "KEEP", "reason": "STABLE"}
     else:
-        return {
-            "action": "LOW",
-            "reason": "WEAK"
-        }
+        return {"action": "LOW", "reason": "WEAK"}
 
 
 # =========================
-# 📈 SCALING ENGINE (INLINE)
+# 📈 SCALING ENGINE
 # =========================
 
 def calculate_scaling(product):
     score = product.get("score", 0)
 
     if score >= 90:
-        return {
-            "budget_multiplier": 2.0,
-            "action": "AGGRESSIVE_SCALE"
-        }
+        return {"budget_multiplier": 2.0, "action": "AGGRESSIVE_SCALE"}
     elif score >= 80:
-        return {
-            "budget_multiplier": 1.5,
-            "action": "NORMAL_SCALE"
-        }
+        return {"budget_multiplier": 1.5, "action": "NORMAL_SCALE"}
     else:
-        return {
-            "budget_multiplier": 1.0,
-            "action": "NO_SCALE"
-        }
+        return {"budget_multiplier": 1.0, "action": "NO_SCALE"}
+
+
+# =========================
+# 🧠 MEMORY SAVE FUNCTION
+# =========================
+
+def save_to_memory(product, winner, scaling):
+    entry = {
+        "timestamp": datetime.now().isoformat(),
+        "product": product,
+        "winner": winner,
+        "scaling": scaling
+    }
+
+    MEMORY_LOG.append(entry)
+
+    return entry
 
 
 # =========================
@@ -69,14 +76,16 @@ def calculate_scaling(product):
 
 @app.route("/")
 def home():
-    return "AI ENGINE V2 STEP 1 LIVE 🚀"
+    return "AI ENGINE STEP 2 MEMORY LIVE 🚀"
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "V2_STEP1"
+        "version": "STEP2",
+        "memory": "ACTIVE"
     })
+
 
 @app.route("/run")
 def run():
@@ -90,25 +99,38 @@ def run():
         winner = decide_winner(p)
         scaling = calculate_scaling(p)
 
+        memory = save_to_memory(p, winner, scaling)
+
         results.append({
             "product": p,
             "winner": winner,
-            "scaling": scaling
+            "scaling": scaling,
+            "memory_saved": True
         })
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_1_ENGINE",
+        "mode": "STEP_2_MEMORY_ACTIVE",
         "results": results
     })
+
+
+@app.route("/memory")
+def memory():
+
+    return jsonify({
+        "status": "OK",
+        "memory_size": len(MEMORY_LOG),
+        "data": MEMORY_LOG
+    })
+
 
 @app.route("/system-status")
 def system_status():
     return jsonify({
         "cloud_run": "ONLINE",
-        "engine": "STEP1_ACTIVE",
-        "winner_engine": "INLINE",
-        "scaling_engine": "INLINE",
+        "engine": "STEP2_MEMORY_ACTIVE",
+        "memory_entries": len(MEMORY_LOG),
         "status": "STABLE"
     })
 
