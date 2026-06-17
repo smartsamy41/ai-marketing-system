@@ -5,9 +5,6 @@ from datetime import datetime
 DATA_FILE = "/tmp/learning_data.json"
 
 
-# -----------------------
-# LOAD / SAVE MEMORY
-# -----------------------
 def _load_data():
     if not os.path.exists(DATA_FILE):
         return []
@@ -24,19 +21,12 @@ def _save_data(data):
         json.dump(data, f)
 
 
-# -----------------------
-# 🧠 CORE LEARNING ENGINE
-# -----------------------
 def update_score(score, clicks, sales):
-
-    # 🔥 learning weights (wichtig!)
     click_weight = 0.05
     sales_weight = 5
 
-    # 📊 learning logic
     score_change = (clicks * click_weight) + (sales * sales_weight)
 
-    # bonus / penalty system
     if sales > 0:
         score_change += 5
 
@@ -44,11 +34,8 @@ def update_score(score, clicks, sales):
         score_change -= 3
 
     new_score = score + score_change
-
-    # clamp 0–100
     new_score = max(0, min(100, new_score))
 
-    # save learning event
     data = _load_data()
 
     data.append({
@@ -65,29 +52,31 @@ def update_score(score, clicks, sales):
     return round(new_score, 2)
 
 
-# -----------------------
-# 📊 ANALYZE WINNERS
-# -----------------------
+def learn_from_results(product, tracking):
+    old_score = float(product.get("score", 50))
+
+    clicks = int(tracking.get("clicks", 0)) if isinstance(tracking, dict) else 0
+    sales = int(tracking.get("sales", 0)) if isinstance(tracking, dict) else 0
+
+    new_score = update_score(old_score, clicks, sales)
+
+    return {
+        "learning": "updated",
+        "product_id": product.get("product_id"),
+        "old_score": old_score,
+        "new_score": new_score
+    }
+
+
 def get_top_products(limit=5):
-
     data = _load_data()
-
     items = [d for d in data if "new_score" in d]
-
-    sorted_items = sorted(items, key=lambda x: x["new_score"], reverse=True)
-
-    return sorted_items[:limit]
+    return sorted(items, key=lambda x: x["new_score"], reverse=True)[:limit]
 
 
-# -----------------------
-# 📈 SYSTEM SUMMARY
-# -----------------------
 def get_learning_summary():
-
     data = _load_data()
-
     scores = [d.get("new_score", 0) for d in data if "new_score" in d]
-
     avg_score = sum(scores) / len(scores) if scores else 0
 
     return {
