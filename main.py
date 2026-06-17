@@ -4,13 +4,12 @@ import json
 from datetime import datetime
 
 import google.auth
-from google.auth.transport.requests import Request
-import gspread
+from googleapiclient.discovery import build
 
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY FILE
+# 💾 MEMORY
 # =========================
 
 MEMORY_FILE = "memory.json"
@@ -18,35 +17,57 @@ MEMORY_FILE = "memory.json"
 def load_memory():
     if not os.path.exists(MEMORY_FILE):
         return []
-    with open(MEMORY_FILE, "r") as f:
-        return json.load(f)
+    try:
+        with open(MEMORY_FILE, "r") as f:
+            return json.load(f)
+    except:
+        return []
 
 def save_memory(data):
     with open(MEMORY_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 # =========================
-# 🌐 DEFAULT AUTH GOOGLE SHEETS CONNECT
+# 📊 GOOGLE SHEETS CONNECT (REAL FIX)
 # =========================
 
 def google_sheets_connect():
     try:
-        # 🔐 DEFAULT CLOUD RUN AUTH
+        # 🔐 Cloud Run Default Auth
         creds, _ = google.auth.default(scopes=[
-            "https://www.googleapis.com/auth/spreadsheets",
-            "https://www.googleapis.com/auth/drive"
+            "https://www.googleapis.com/auth/spreadsheets.readonly"
         ])
 
-        client = gspread.authorize(creds)
+        service = build("sheets", "v4", credentials=creds)
 
-        sheet = client.open("AI_Marketing_System").worksheet("products")
+        # ⚠️ HIER DEINE SHEET ID EINTRAGEN
+        spreadsheet_id = "DEIN_SHEET_ID_HIER"
 
-        data = sheet.get_all_records()
+        # Tab + Range
+        range_name = "products!A:C"
 
-        return data
+        result = service.spreadsheets().values().get(
+            spreadsheetId=spreadsheet_id,
+            range=range_name
+        ).execute()
+
+        values = result.get("values", [])
+
+        products = []
+
+        # Erste Zeile = Header
+        for row in values[1:]:
+            if len(row) >= 3:
+                products.append({
+                    "product_id": row[0],
+                    "score": int(row[1]),
+                    "source": row[2]
+                })
+
+        return products
 
     except Exception as e:
-        return [{"error": str(e), "source": "auth_failed"}]
+        return [{"error": str(e), "source": "sheets_error"}]
 
 # =========================
 # 🧠 ENGINE LOGIC
@@ -86,7 +107,21 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI ENGINE DEFAULT AUTH LIVE 🚀"
+    return "AI MARKETING ENGINE STEP 7 LIVE 🚀"
+
+@app.route("/health")
+def health():
+    return jsonify({
+        "status": "OK",
+        "version": "STEP7"
+    })
+
+@app.route("/data-source")
+def data_source():
+    return jsonify({
+        "source": "GOOGLE_SHEETS_REAL",
+        "data": google_sheets_connect()
+    })
 
 @app.route("/run")
 def run():
@@ -119,17 +154,10 @@ def run():
 
     return jsonify({
         "status": "success",
-        "mode": "DEFAULT_AUTH_ACTIVE",
-        "data_source": "GOOGLE_SHEETS_REAL",
+        "mode": "STEP7_FINAL",
+        "data_source": "GOOGLE_SHEETS",
         "results": results,
         "memory_size": len(memory)
-    })
-
-@app.route("/data-source")
-def data_source():
-    return jsonify({
-        "source": "GOOGLE_SHEETS_REAL",
-        "data": google_sheets_connect()
     })
 
 @app.route("/memory")
@@ -142,22 +170,15 @@ def memory():
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "DEFAULT_AUTH_MODE",
+        "engine": "STEP7_FINAL",
         "status": "STABLE",
-        "auth": "CLOUD_RUN_ADC",
         "learning": "ON",
-        "memory": "PERSISTENT"
-    })
-
-@app.route("/health")
-def health():
-    return jsonify({
-        "status": "OK",
-        "version": "DEFAULT_AUTH"
+        "data_source": "SHEETS",
+        "memory": "ACTIVE"
     })
 
 # =========================
-# ☁️ ENTRY
+# ☁️ START
 # =========================
 
 if __name__ == "__main__":
