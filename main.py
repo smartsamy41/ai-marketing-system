@@ -13,6 +13,7 @@ app = Flask(__name__)
 # =========================
 
 MEMORY_FILE = "memory.json"
+CLICK_FILE = "clicks.json"
 
 def load_memory():
     if not os.path.exists(MEMORY_FILE):
@@ -25,6 +26,19 @@ def load_memory():
 
 def save_memory(data):
     with open(MEMORY_FILE, "w") as f:
+        json.dump(data, f, indent=2)
+
+def load_clicks():
+    if not os.path.exists(CLICK_FILE):
+        return []
+    try:
+        with open(CLICK_FILE, "r") as f:
+            return json.load(f)
+    except:
+        return []
+
+def save_clicks(data):
+    with open(CLICK_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 # =========================
@@ -73,7 +87,7 @@ def google_sheets_connect():
         return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
-# 🧠 STEP C – PREDICTION ENGINE
+# 🧠 PREDICTION ENGINE (STEP C)
 # =========================
 
 def prediction_engine(products):
@@ -113,45 +127,82 @@ def prediction_engine(products):
     return predictions
 
 # =========================
-# 🚀 STEP D – AUTOPILOT ENGINE
+# 🚀 STEP D – AUTOPILOT
 # =========================
 
-def autopilot_engine(products, predictions):
+def autopilot_engine(predictions):
 
     actions = []
 
     for pred in predictions:
 
-        product = pred["product"]
         label = pred["label"]
-
-        action = {
-            "product_id": product["product_id"],
-            "decision": None,
-            "budget_action": None
-        }
-
-        # 🔥 AUTOPILOT DECISION LOGIC
+        product = pred["product"]
 
         if label == "VERY_HIGH_WIN":
-            action["decision"] = "AUTO_SCALE_UP"
-            action["budget_action"] = 3.0
-
+            decision = "SCALE_AGGRESSIVE"
+            budget = 3.0
         elif label == "HIGH_WIN":
-            action["decision"] = "SCALE_UP"
-            action["budget_action"] = 2.0
-
+            decision = "SCALE_UP"
+            budget = 2.0
         elif label == "MEDIUM":
-            action["decision"] = "KEEP"
-            action["budget_action"] = 1.5
-
+            decision = "KEEP"
+            budget = 1.5
         else:
-            action["decision"] = "PAUSE"
-            action["budget_action"] = 0.5
+            decision = "PAUSE"
+            budget = 0.5
 
-        actions.append(action)
+        actions.append({
+            "product_id": product["product_id"],
+            "decision": decision,
+            "budget": budget,
+            "timestamp": datetime.now().isoformat()
+        })
 
     return actions
+
+# =========================
+# 💰 STEP E – REAL MONEY LOOP ENGINE
+# =========================
+
+def money_loop_engine(actions, clicks):
+
+    enriched = []
+
+    for action in actions:
+
+        product_id = action["product_id"]
+
+        # find clicks
+        product_clicks = [c for c in clicks if c["product_id"] == product_id]
+
+        click_count = len(product_clicks)
+        conversion_rate = 0
+
+        if click_count > 0:
+            conversion_rate = min(1.0, click_count / 10)
+
+        # ROI simulation
+        roi_score = (action["budget"] * conversion_rate) * 10
+
+        if roi_score > 20:
+            money_action = "INCREASE_BUDGET"
+        elif roi_score > 10:
+            money_action = "STABLE"
+        else:
+            money_action = "CUT_BUDGET"
+
+        enriched.append({
+            "product_id": product_id,
+            "action": action["decision"],
+            "budget": action["budget"],
+            "clicks": click_count,
+            "conversion_rate": conversion_rate,
+            "roi_score": roi_score,
+            "money_action": money_action
+        })
+
+    return enriched
 
 # =========================
 # 🚀 ROUTES
@@ -159,42 +210,60 @@ def autopilot_engine(products, predictions):
 
 @app.route("/")
 def home():
-    return "STEP D AUTOPILOT ENGINE LIVE 🚀"
+    return "STEP E MONEY LOOP ENGINE LIVE 🚀"
 
 @app.route("/run")
 def run():
 
     products = google_sheets_connect()
 
-    # STEP C
     predictions = prediction_engine(products)
+    actions = autopilot_engine(predictions)
 
-    # STEP D
-    actions = autopilot_engine(products, predictions)
+    clicks = load_clicks()
+
+    money_loop = money_loop_engine(actions, clicks)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_D_AUTOPILOT",
+        "mode": "STEP_E_MONEY_LOOP",
         "predictions": predictions,
-        "autopilot_actions": actions
+        "autopilot": actions,
+        "money_loop": money_loop
     })
 
-@app.route("/prediction")
-def prediction():
-    products = google_sheets_connect()
-    return jsonify(prediction_engine(products))
+@app.route("/click")
+def click_simulate():
 
-@app.route("/autopilot")
-def autopilot():
-    products = google_sheets_connect()
-    predictions = prediction_engine(products)
-    return jsonify(autopilot_engine(products, predictions))
+    clicks = load_clicks()
+
+    clicks.append({
+        "product_id": "AMZ_001",
+        "timestamp": datetime.now().isoformat()
+    })
+
+    save_clicks(clicks)
+
+    return jsonify({
+        "status": "click_saved",
+        "total_clicks": len(clicks)
+    })
+
+@app.route("/metrics")
+def metrics():
+
+    clicks = load_clicks()
+
+    return jsonify({
+        "total_clicks": len(clicks),
+        "system": "STEP_E_ACTIVE"
+    })
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_D_AUTOPILOT"
+        "version": "STEP_E_MONEY_LOOP"
     })
 
 # =========================
