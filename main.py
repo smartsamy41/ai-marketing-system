@@ -5,14 +5,13 @@ from datetime import datetime
 app = Flask(__name__)
 
 # =========================
-# 🧠 MEMORY STORE (IN-MEMORY)
+# 🧠 MEMORY (IN RAM)
 # =========================
 
-MEMORY_LOG = []
-
+MEMORY = []
 
 # =========================
-# 🧠 TEST PRODUCTS
+# 🧠 TEST DATA
 # =========================
 
 def get_products():
@@ -22,42 +21,61 @@ def get_products():
         {"product_id": "TC_001", "score": 78}
     ]
 
-
 # =========================
 # 🧠 WINNER ENGINE
 # =========================
 
 def decide_winner(product):
-    score = product.get("score", 0)
+    score = product["score"]
 
     if score >= 90:
-        return {"action": "WINNER", "reason": "HIGH_SCORE"}
+        return {"action": "WINNER", "weight": 3}
     elif score >= 80:
-        return {"action": "KEEP", "reason": "STABLE"}
+        return {"action": "KEEP", "weight": 2}
     else:
-        return {"action": "LOW", "reason": "WEAK"}
-
+        return {"action": "LOW", "weight": 1}
 
 # =========================
 # 📈 SCALING ENGINE
 # =========================
 
 def calculate_scaling(product):
-    score = product.get("score", 0)
+    score = product["score"]
 
     if score >= 90:
-        return {"budget_multiplier": 2.0, "action": "AGGRESSIVE_SCALE"}
+        return {"budget": 2.0}
     elif score >= 80:
-        return {"budget_multiplier": 1.5, "action": "NORMAL_SCALE"}
+        return {"budget": 1.5}
     else:
-        return {"budget_multiplier": 1.0, "action": "NO_SCALE"}
-
+        return {"budget": 1.0}
 
 # =========================
-# 🧠 MEMORY SAVE FUNCTION
+# 🧠 LEARNING ENGINE (NEW)
 # =========================
 
-def save_to_memory(product, winner, scaling):
+def learning_engine(memory):
+    """
+    Simple learning:
+    - boost score if WINNER
+    - reduce score if LOW
+    """
+
+    for entry in memory:
+
+        if entry["winner"]["action"] == "WINNER":
+            entry["product"]["score"] += 1
+
+        if entry["winner"]["action"] == "LOW":
+            entry["product"]["score"] -= 1
+
+    return memory
+
+# =========================
+# 💾 SAVE MEMORY
+# =========================
+
+def save_memory(product, winner, scaling):
+
     entry = {
         "timestamp": datetime.now().isoformat(),
         "product": product,
@@ -65,10 +83,9 @@ def save_to_memory(product, winner, scaling):
         "scaling": scaling
     }
 
-    MEMORY_LOG.append(entry)
+    MEMORY.append(entry)
 
     return entry
-
 
 # =========================
 # 🚀 ROUTES
@@ -76,16 +93,7 @@ def save_to_memory(product, winner, scaling):
 
 @app.route("/")
 def home():
-    return "AI ENGINE STEP 2 MEMORY LIVE 🚀"
-
-@app.route("/health")
-def health():
-    return jsonify({
-        "status": "OK",
-        "version": "STEP2",
-        "memory": "ACTIVE"
-    })
-
+    return "AI ENGINE STEP 3 LEARNING ACTIVE 🚀"
 
 @app.route("/run")
 def run():
@@ -99,44 +107,49 @@ def run():
         winner = decide_winner(p)
         scaling = calculate_scaling(p)
 
-        memory = save_to_memory(p, winner, scaling)
+        save_memory(p, winner, scaling)
 
         results.append({
             "product": p,
             "winner": winner,
-            "scaling": scaling,
-            "memory_saved": True
+            "scaling": scaling
         })
+
+    # 🧠 APPLY LEARNING AFTER RUN
+    learned = learning_engine(MEMORY)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_2_MEMORY_ACTIVE",
-        "results": results
+        "mode": "STEP_3_LEARNING",
+        "results": results,
+        "learned_memory": learned
     })
-
 
 @app.route("/memory")
 def memory():
-
     return jsonify({
-        "status": "OK",
-        "memory_size": len(MEMORY_LOG),
-        "data": MEMORY_LOG
+        "size": len(MEMORY),
+        "data": MEMORY
     })
 
+@app.route("/health")
+def health():
+    return jsonify({
+        "status": "OK",
+        "version": "STEP3"
+    })
 
 @app.route("/system-status")
-def system_status():
+def status():
     return jsonify({
-        "cloud_run": "ONLINE",
-        "engine": "STEP2_MEMORY_ACTIVE",
-        "memory_entries": len(MEMORY_LOG),
+        "engine": "STEP3_LEARNING_ACTIVE",
+        "memory": len(MEMORY),
+        "learning": "ON",
         "status": "STABLE"
     })
 
-
 # =========================
-# ☁️ ENTRY POINT
+# ☁️ ENTRY
 # =========================
 
 if __name__ == "__main__":
