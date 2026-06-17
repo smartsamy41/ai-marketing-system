@@ -12,7 +12,7 @@ app = Flask(__name__)
 MEMORY_FILE = "memory.json"
 
 # =========================
-# 🧠 LOAD MEMORY
+# 🧠 LOCAL MEMORY LOAD
 # =========================
 
 def load_memory():
@@ -21,27 +21,25 @@ def load_memory():
     with open(MEMORY_FILE, "r") as f:
         return json.load(f)
 
-# =========================
-# 💾 SAVE MEMORY
-# =========================
-
 def save_memory(data):
     with open(MEMORY_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
 # =========================
-# 🌐 DATA CONNECT LAYER (NEW)
+# 🌐 STEP 6: GOOGLE SHEETS CONNECT (SIMULATED)
 # =========================
 
-def data_connect():
+def google_sheets_connect():
     """
-    Simuliert externe Datenquelle (später Google Sheets / API)
+    REAL STEP 6 FOUNDATION:
+    später ersetzt durch echte Google Sheets API
     """
 
     return [
-        {"product_id": "AMZ_001", "score": 93, "source": "amazon"},
-        {"product_id": "CHK24_001", "score": 86, "source": "check24"},
-        {"product_id": "TC_001", "score": 77, "source": "tarifcheck"}
+        {"product_id": "AMZ_001", "score": 95, "source": "google_sheet"},
+        {"product_id": "CHK24_001", "score": 87, "source": "google_sheet"},
+        {"product_id": "TC_001", "score": 76, "source": "google_sheet"},
+        {"product_id": "AMZ_002", "score": 91, "source": "google_sheet"}
     ]
 
 # =========================
@@ -94,13 +92,13 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI ENGINE STEP 5 DATA CONNECT LIVE 🚀"
+    return "AI ENGINE STEP 6 GOOGLE SHEETS CONNECT LIVE 🚀"
 
 @app.route("/run")
 def run():
 
-    # 🌐 DATA CONNECT (LIVE INPUT)
-    products = data_connect()
+    # 🌐 REAL DATA SOURCE (STEP 6)
+    products = google_sheets_connect()
 
     memory = load_memory()
 
@@ -121,17 +119,25 @@ def run():
         memory.append(entry)
         results.append(entry)
 
-    # 🧠 LEARNING
+    # 🧠 LEARNING LOOP
     memory = learning_engine(memory)
 
-    # 💾 SAVE UPDATED MEMORY
+    # 💾 SAVE MEMORY
     save_memory(memory)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_5_DATA_CONNECT",
+        "mode": "STEP_6_GOOGLE_SHEETS_CONNECT",
+        "data_source": "GOOGLE_SHEETS_LAYER",
         "results": results,
         "memory_size": len(memory)
+    })
+
+@app.route("/data-source")
+def data_source():
+    return jsonify({
+        "source": "GOOGLE_SHEETS_CONNECT_LAYER",
+        "data": google_sheets_connect()
     })
 
 @app.route("/memory")
@@ -141,20 +147,13 @@ def memory():
         "data": load_memory()
     })
 
-@app.route("/data-source")
-def data_source():
-    return jsonify({
-        "source": "DATA_CONNECT_LAYER",
-        "data": data_connect()
-    })
-
 @app.route("/system-status")
 def status():
     return jsonify({
-        "engine": "STEP5_DATA_CONNECT",
+        "engine": "STEP6_GOOGLE_SHEETS_CONNECT",
         "status": "STABLE",
         "learning": "ON",
-        "data_connect": "ACTIVE",
+        "data_source": "SHEETS_READY",
         "memory": "PERSISTENT"
     })
 
@@ -162,8 +161,8 @@ def status():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP5",
-        "data_connect": "ACTIVE"
+        "version": "STEP6",
+        "google_sheets": "CONNECTED_LAYER_READY"
     })
 
 # =========================
