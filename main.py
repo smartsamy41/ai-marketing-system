@@ -1,7 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import os
 import json
 from datetime import datetime
+import random
 
 import google.auth
 from googleapiclient.discovery import build
@@ -9,36 +10,23 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY SYSTEM
+# 💾 STORAGE
 # =========================
 
 MEMORY_FILE = "memory.json"
 CLICK_FILE = "clicks.json"
 
-def load_memory():
-    if not os.path.exists(MEMORY_FILE):
+def load_json(file):
+    if not os.path.exists(file):
         return []
     try:
-        with open(MEMORY_FILE, "r") as f:
+        with open(file, "r") as f:
             return json.load(f)
     except:
         return []
 
-def save_memory(data):
-    with open(MEMORY_FILE, "w") as f:
-        json.dump(data, f, indent=2)
-
-def load_clicks():
-    if not os.path.exists(CLICK_FILE):
-        return []
-    try:
-        with open(CLICK_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-def save_clicks(data):
-    with open(CLICK_FILE, "w") as f:
+def save_json(file, data):
+    with open(file, "w") as f:
         json.dump(data, f, indent=2)
 
 # =========================
@@ -84,122 +72,110 @@ def google_sheets_connect():
         return products
 
     except Exception as e:
-        return [{"error": str(e), "source": "sheets_failed"}]
+        return [{"error": str(e)}]
 
 # =========================
-# 🧠 PREDICTION ENGINE (STEP C)
+# 🧠 STEP C – PREDICTION
 # =========================
 
 def prediction_engine(products):
-    predictions = []
+    results = []
 
     for p in products:
 
-        score = p.get("score", 0)
-        source = p.get("source", "unknown")
+        base = p.get("score", 50)
+        source = p.get("source", "")
 
         boost = 1.0
 
         if source == "amazon":
-            boost += 0.35
+            boost += 0.4
         elif source == "check24":
-            boost += 0.25
+            boost += 0.3
         elif source == "tarifcheck":
-            boost += 0.30
+            boost += 0.35
 
-        predicted = score * boost
+        predicted = base * boost
 
-        if predicted >= 130:
-            label = "VERY_HIGH_WIN"
-        elif predicted >= 100:
-            label = "HIGH_WIN"
-        elif predicted >= 80:
-            label = "MEDIUM"
+        if predicted > 130:
+            label = "HOT"
+        elif predicted > 100:
+            label = "GOOD"
         else:
-            label = "LOW"
+            label = "NORMAL"
 
-        predictions.append({
+        results.append({
             "product": p,
-            "predicted_score": round(predicted, 2),
+            "predicted": round(predicted, 2),
             "label": label
         })
 
-    return predictions
+    return results
 
 # =========================
-# 🚀 STEP D – AUTOPILOT
+# 🤖 STEP D – AUTOPILOT
 # =========================
 
-def autopilot_engine(predictions):
+def autopilot(predictions):
 
     actions = []
 
-    for pred in predictions:
+    for p in predictions:
 
-        label = pred["label"]
-        product = pred["product"]
+        label = p["label"]
 
-        if label == "VERY_HIGH_WIN":
-            decision = "SCALE_AGGRESSIVE"
-            budget = 3.0
-        elif label == "HIGH_WIN":
-            decision = "SCALE_UP"
-            budget = 2.0
-        elif label == "MEDIUM":
-            decision = "KEEP"
-            budget = 1.5
+        if label == "HOT":
+            action = {"budget": 3.0, "decision": "SCALE_UP"}
+        elif label == "GOOD":
+            action = {"budget": 2.0, "decision": "BOOST"}
         else:
-            decision = "PAUSE"
-            budget = 0.5
+            action = {"budget": 1.0, "decision": "HOLD"}
 
         actions.append({
-            "product_id": product["product_id"],
-            "decision": decision,
-            "budget": budget,
-            "timestamp": datetime.now().isoformat()
+            "product": p["product"],
+            "prediction": p,
+            "action": action
         })
 
     return actions
 
 # =========================
-# 💰 STEP E – REAL MONEY LOOP ENGINE
+# 💰 STEP F – REAL WORLD ENGINE
 # =========================
 
-def money_loop_engine(actions, clicks):
+def real_world_engine(actions, clicks):
 
     enriched = []
 
-    for action in actions:
+    for a in actions:
 
-        product_id = action["product_id"]
+        product_id = a["product"]["product_id"]
 
-        # find clicks
         product_clicks = [c for c in clicks if c["product_id"] == product_id]
 
         click_count = len(product_clicks)
-        conversion_rate = 0
 
-        if click_count > 0:
-            conversion_rate = min(1.0, click_count / 10)
+        # 🔥 REAL WORLD SIGNAL SIMULATION
+        traffic_score = click_count * random.uniform(0.8, 1.5)
 
-        # ROI simulation
-        roi_score = (action["budget"] * conversion_rate) * 10
+        conversion = min(1.0, click_count / 15)
 
-        if roi_score > 20:
-            money_action = "INCREASE_BUDGET"
-        elif roi_score > 10:
-            money_action = "STABLE"
+        revenue_score = traffic_score * conversion * a["action"]["budget"]
+
+        if revenue_score > 25:
+            decision = "INCREASE_BUDGET"
+        elif revenue_score > 10:
+            decision = "STABLE"
         else:
-            money_action = "CUT_BUDGET"
+            decision = "CUT"
 
         enriched.append({
             "product_id": product_id,
-            "action": action["decision"],
-            "budget": action["budget"],
             "clicks": click_count,
-            "conversion_rate": conversion_rate,
-            "roi_score": roi_score,
-            "money_action": money_action
+            "traffic_score": round(traffic_score, 2),
+            "revenue_score": round(revenue_score, 2),
+            "final_decision": decision,
+            "budget": a["action"]["budget"]
         })
 
     return enriched
@@ -210,60 +186,70 @@ def money_loop_engine(actions, clicks):
 
 @app.route("/")
 def home():
-    return "STEP E MONEY LOOP ENGINE LIVE 🚀"
+    return "STEP F REAL WORLD AI SYSTEM LIVE 🚀"
 
 @app.route("/run")
 def run():
 
     products = google_sheets_connect()
-
     predictions = prediction_engine(products)
-    actions = autopilot_engine(predictions)
+    actions = autopilot(predictions)
 
-    clicks = load_clicks()
+    clicks = load_json(CLICK_FILE)
 
-    money_loop = money_loop_engine(actions, clicks)
+    result = real_world_engine(actions, clicks)
 
     return jsonify({
         "status": "success",
-        "mode": "STEP_E_MONEY_LOOP",
-        "predictions": predictions,
-        "autopilot": actions,
-        "money_loop": money_loop
+        "mode": "STEP_F_REAL_WORLD",
+        "result": result
     })
 
-@app.route("/click")
-def click_simulate():
+# =========================
+# 🔗 REAL AFFILIATE CLICK TRACKING
+# =========================
 
-    clicks = load_clicks()
+@app.route("/click/<product_id>")
+def click(product_id):
+
+    clicks = load_json(CLICK_FILE)
 
     clicks.append({
-        "product_id": "AMZ_001",
+        "product_id": product_id,
         "timestamp": datetime.now().isoformat()
     })
 
-    save_clicks(clicks)
+    save_json(CLICK_FILE, clicks)
 
     return jsonify({
-        "status": "click_saved",
+        "status": "click_tracked",
+        "product_id": product_id,
         "total_clicks": len(clicks)
     })
+
+# =========================
+# 📊 LIVE METRICS
+# =========================
 
 @app.route("/metrics")
 def metrics():
 
-    clicks = load_clicks()
+    clicks = load_json(CLICK_FILE)
 
     return jsonify({
         "total_clicks": len(clicks),
-        "system": "STEP_E_ACTIVE"
+        "system": "STEP_F_REAL_WORLD"
     })
+
+# =========================
+# 🧠 HEALTH
+# =========================
 
 @app.route("/health")
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_E_MONEY_LOOP"
+        "version": "STEP_F"
     })
 
 # =========================
