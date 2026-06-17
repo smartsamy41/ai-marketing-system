@@ -1,5 +1,50 @@
+import gspread
+from google.auth import default
+
+# =========================
+# 🔐 GOOGLE SHEETS CONNECT
+# =========================
+
+SHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
+
+
+def _connect():
+    creds, _ = default()
+    client = gspread.authorize(creds)
+    return client.open_by_key(SHEET_ID)
+
+
+# =========================
+# 📦 LOAD PRODUCTS
+# =========================
+
 def load_products():
-    return []
+    try:
+        sheet = _connect().worksheet("products")
+        data = sheet.get_all_records()
+
+        return data
+
+    except Exception as e:
+        return {
+            "error": str(e),
+            "source": "sheets_products_failed"
+        }
+
+
+# =========================
+# 🎯 LOAD AFFILIATE ASSETS
+# =========================
 
 def load_assets():
-    return []
+    try:
+        sheet = _connect().worksheet("affiliate_assets")
+        data = sheet.get_all_records()
+
+        return data
+
+    except Exception as e:
+        return {
+            "error": str(e),
+            "source": "sheets_assets_failed"
+        }
