@@ -17,8 +17,27 @@ SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
 PRODUCT_RANGE = "products!A:D"
 ASSET_RANGE = "affiliate_assets!A:E"
 
+MEMORY_FILE = "memory.json"
+
 # =========================
-# SHEETS CONNECT (SAFE)
+# MEMORY
+# =========================
+
+def load_memory():
+    if not os.path.exists(MEMORY_FILE):
+        return []
+    try:
+        with open(MEMORY_FILE, "r") as f:
+            return json.load(f)
+    except:
+        return []
+
+def save_memory(data):
+    with open(MEMORY_FILE, "w") as f:
+        json.dump(data, f, indent=2)
+
+# =========================
+# GOOGLE SHEETS
 # =========================
 
 def sheets(range_name):
@@ -40,11 +59,10 @@ def sheets(range_name):
         return [["error", str(e)]]
 
 # =========================
-# LOAD PRODUCTS
+# PRODUCTS
 # =========================
 
 def get_products():
-
     rows = sheets(PRODUCT_RANGE)
     products = []
 
@@ -53,7 +71,7 @@ def get_products():
         try:
             products.append({
                 "product_id": r[0],
-                "score": float(r[1]) if len(r) > 1 else 50,
+                "score": float(r[1]) if len(r) > 1 and r[1] != "" else 50,
                 "source": r[2] if len(r) > 2 else "unknown",
                 "status": r[3] if len(r) > 3 else "active"
             })
@@ -63,11 +81,10 @@ def get_products():
     return products
 
 # =========================
-# LOAD ASSETS
+# ASSETS
 # =========================
 
 def get_assets():
-
     rows = sheets(ASSET_RANGE)
     assets = []
 
@@ -87,34 +104,35 @@ def get_assets():
     return assets
 
 # =========================
-# SCORING ENGINE (STABLE)
+# SCORING ENGINE
 # =========================
 
-def score(product):
+def score_product(product):
 
-    boost = {
+    boost_map = {
         "amazon": 1.4,
         "check24": 1.25,
         "tarifcheck": 1.3,
         "telekom": 1.6
     }
 
-    return product["score"] * boost.get(product["source"], 1.0)
+    base = product["score"]
+    source = product["source"]
+
+    return base * boost_map.get(source, 1.0)
 
 # =========================
-# ROUTING ENGINE (STABLE)
+# ROUTING
 # =========================
 
 def route(source):
 
-    mapping = {
+    return {
         "amazon": "pinterest",
         "check24": "youtube",
         "tarifcheck": "blog",
         "telekom": "shop"
-    }
-
-    return mapping.get(source, "unknown")
+    }.get(source, "unknown")
 
 # =========================
 # ASSET MATCH
@@ -129,13 +147,14 @@ def match_asset(product_id, source, assets):
     return None
 
 # =========================
-# MAIN ENGINE (ONLY ONE FLOW)
+# ENGINE
 # =========================
 
 def run_engine():
 
     products = get_products()
     assets = get_assets()
+    memory = load_memory()
 
     results = []
 
@@ -144,18 +163,24 @@ def run_engine():
         if p["status"] != "active":
             continue
 
-        final_score = score(p)
+        final_score = score_product(p)
         channel = route(p["source"])
         asset = match_asset(p["product_id"], p["source"], assets)
 
-        results.append({
+        entry = {
+            "timestamp": datetime.now().isoformat(),
             "product_id": p["product_id"],
             "source": p["source"],
             "final_score": round(final_score, 2),
             "channel": channel,
-            "asset": asset,
+            "asset_url": asset,
             "ready": asset is not None
-        })
+        }
+
+        results.append(entry)
+        memory.append(entry)
+
+    save_memory(memory)
 
     return results
 
@@ -165,13 +190,13 @@ def run_engine():
 
 @app.route("/")
 def home():
-    return "CLEAN AI ENGINE RUNNING 🚀"
+    return "CLEAN AI MARKETING SYSTEM V1 LIVE 🚀"
 
 @app.route("/run")
 def run():
     return jsonify({
         "status": "ok",
-        "mode": "CLEAN_ENGINE_V1",
+        "mode": "CLEAN_V1",
         "data": run_engine()
     })
 
@@ -182,6 +207,15 @@ def products():
 @app.route("/assets")
 def assets():
     return jsonify(get_assets())
+
+@app.route("/debug")
+def debug():
+    return jsonify({
+        "products": len(get_products()),
+        "assets": len(get_assets()),
+        "sample_products": get_products()[:3],
+        "sample_assets": get_assets()[:3]
+    })
 
 @app.route("/health")
 def health():
