@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 MEMORY SAFE
+# 💾 MEMORY
 # =========================
 
 MEMORY_FILE = "memory.json"
@@ -28,7 +28,7 @@ def save_memory(data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS CONNECT (FINAL FIX)
+# 📊 SHEETS CONNECT
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
@@ -51,16 +51,13 @@ def google_sheets_connect():
 
         products = []
 
-        # skip header
         for row in values[1:]:
-
-            # SAFE parsing (FIX 1)
-            product_id = row[0] if len(row) > 0 else "UNKNOWN"
+            product_id = row[0] if len(row) > 0 else "unknown"
 
             try:
                 score = int(row[1])
             except:
-                score = 50   # FIX: default instead of 0 crash loop
+                score = 50
 
             source = row[2] if len(row) > 2 else "unknown"
 
@@ -76,43 +73,44 @@ def google_sheets_connect():
         return [{"error": str(e), "source": "sheets_failed"}]
 
 # =========================
-# 🧠 AI ENGINE (STABLE FIX)
+# 💰 AFFILIATE OPTIMIZER (STEP A CORE)
 # =========================
 
-def decide_winner(product):
+def affiliate_score(product):
     score = product.get("score", 0)
+    source = product.get("source", "unknown")
 
-    if score >= 90:
-        return {"action": "WINNER", "weight": 3}
-    elif score >= 80:
-        return {"action": "KEEP", "weight": 2}
+    multiplier = 1.0
+
+    # AMAZON BOOST
+    if source == "amazon":
+        multiplier += 0.3
+
+    # CHECK24 BOOST
+    if source == "check24":
+        multiplier += 0.2
+
+    # TARIFCHECK BOOST
+    if source == "tarifcheck":
+        multiplier += 0.25
+
+    final_score = score * multiplier
+
+    return {
+        "base_score": score,
+        "multiplier": multiplier,
+        "final_score": round(final_score, 2)
+    }
+
+def budget_allocator(final_score):
+    if final_score >= 120:
+        return {"budget": 3.0, "level": "HIGH_SCALE"}
+    elif final_score >= 90:
+        return {"budget": 2.0, "level": "MID_SCALE"}
+    elif final_score >= 70:
+        return {"budget": 1.5, "level": "LOW_SCALE"}
     else:
-        return {"action": "LOW", "weight": 1}
-
-def calculate_scaling(product):
-    score = product.get("score", 0)
-
-    if score >= 90:
-        return {"budget": 2.0}
-    elif score >= 80:
-        return {"budget": 1.5}
-    else:
-        return {"budget": 1.0}
-
-def learning_engine(memory):
-    for entry in memory:
-        try:
-            if entry["winner"]["action"] == "WINNER":
-                entry["product"]["score"] += 1
-
-            elif entry["winner"]["action"] == "LOW":
-                # FIX 2: no negative infinite loop
-                entry["product"]["score"] = max(1, entry["product"]["score"] - 1)
-
-        except:
-            pass
-
-    return memory
+        return {"budget": 1.0, "level": "HOLD"}
 
 # =========================
 # 🚀 ROUTES
@@ -120,21 +118,7 @@ def learning_engine(memory):
 
 @app.route("/")
 def home():
-    return "AI MARKETING SYSTEM FIXED 🚀"
-
-@app.route("/health")
-def health():
-    return jsonify({
-        "status": "OK",
-        "version": "FINAL_FIX"
-    })
-
-@app.route("/data-source")
-def data_source():
-    return jsonify({
-        "source": "GOOGLE_SHEETS_REAL",
-        "data": google_sheets_connect()
-    })
+    return "AFFILIATE OPTIMIZER STEP A LIVE 🚀"
 
 @app.route("/run")
 def run():
@@ -149,28 +133,33 @@ def run():
         if "error" in p:
             continue
 
-        winner = decide_winner(p)
-        scaling = calculate_scaling(p)
+        score_data = affiliate_score(p)
+        budget = budget_allocator(score_data["final_score"])
 
         entry = {
             "timestamp": datetime.now().isoformat(),
             "product": p,
-            "winner": winner,
-            "scaling": scaling
+            "optimization": score_data,
+            "budget": budget
         }
 
         memory.append(entry)
         results.append(entry)
 
-    memory = learning_engine(memory)
     save_memory(memory)
 
     return jsonify({
         "status": "success",
-        "mode": "FINAL_FIX",
-        "data_source": "GOOGLE_SHEETS",
+        "mode": "STEP_A_AFFILIATE_OPTIMIZER",
         "results": results,
         "memory_size": len(memory)
+    })
+
+@app.route("/data-source")
+def data_source():
+    return jsonify({
+        "source": "GOOGLE_SHEETS_REAL",
+        "data": google_sheets_connect()
     })
 
 @app.route("/memory")
@@ -180,13 +169,11 @@ def memory():
         "data": load_memory()
     })
 
-@app.route("/system-status")
-def status():
+@app.route("/health")
+def health():
     return jsonify({
-        "engine": "FIXED_AI_ENGINE",
-        "status": "STABLE",
-        "learning": "ON",
-        "sheets": "CONNECTED"
+        "status": "OK",
+        "version": "STEP_A"
     })
 
 # =========================
