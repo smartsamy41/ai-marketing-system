@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import os
 import json
 from datetime import datetime
-import random
+import hashlib
 
 import google.auth
 from googleapiclient.discovery import build
@@ -10,12 +10,12 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 # =========================
-# 💾 STORAGE LAYER
+# 💾 STORAGE
 # =========================
 
 MEMORY_FILE = "memory.json"
 CLICK_FILE = "clicks.json"
-EVENTS_FILE = "events.json"
+TRACK_FILE = "tracking.json"
 
 def load(file):
     if not os.path.exists(file):
@@ -31,7 +31,7 @@ def save(file, data):
         json.dump(data, f, indent=2)
 
 # =========================
-# 📊 GOOGLE SHEETS CONNECT
+# 📊 SHEETS CONNECT
 # =========================
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
@@ -52,86 +52,97 @@ def sheets():
 
         values = res.get("values", [])
 
-        products = []
-
-        for r in values[1:]:
-            products.append({
+        return [
+            {
                 "id": r[0],
                 "score": int(r[1]) if len(r) > 1 else 50,
                 "source": r[2] if len(r) > 2 else "unknown"
-            })
-
-        return products
+            }
+            for r in values[1:]
+        ]
 
     except Exception as e:
         return [{"error": str(e)}]
 
 # =========================
-# 🧠 AI CORE (STEP C+D+E+F)
+# 🔥 STEP H – TRACKING ENGINE
+# =========================
+
+def generate_tracking_link(product_id, source):
+
+    base_url = {
+        "amazon": "https://amazon.com/dp/",
+        "check24": "https://check24.de/product/",
+        "tarifcheck": "https://tarifcheck.de/product/"
+    }.get(source, "https://example.com/product/")
+
+    raw = f"{product_id}-{datetime.now().isoformat()}"
+
+    tracking_id = hashlib.md5(raw.encode()).hexdigest()[:10]
+
+    full_url = f"{base_url}{product_id}?ref={tracking_id}"
+
+    return {
+        "tracking_id": tracking_id,
+        "url": full_url
+    }
+
+# =========================
+# 🧠 AI CORE
 # =========================
 
 def ai_engine(products, clicks):
 
-    output = []
+    results = []
 
     for p in products:
 
         if "error" in p:
             continue
 
-        base = p["score"]
+        score = p["score"]
         source = p["source"]
 
-        # 🔥 Prediction Layer
+        # prediction
         boost = {"amazon":1.4, "check24":1.3, "tarifcheck":1.35}.get(source, 1.0)
-        predicted = base * boost
+        predicted = score * boost
 
-        # 🤖 Autopilot Decision
+        # decision
         if predicted > 130:
-            decision = "AGGRESSIVE_SCALE"
-            budget = 3.0
+            action = "AUTO_SCALE"
         elif predicted > 100:
-            decision = "SCALE"
-            budget = 2.0
+            action = "SCALE"
         elif predicted > 80:
-            decision = "STABLE"
-            budget = 1.5
+            action = "HOLD"
         else:
-            decision = "CUT"
-            budget = 0.5
+            action = "CUT"
 
-        # 💰 Real World Feedback Loop
+        # tracking
+        tracking = generate_tracking_link(p["id"], source)
+
+        # clicks
         product_clicks = [c for c in clicks if c["id"] == p["id"]]
-        click_score = len(product_clicks)
 
-        revenue = click_score * budget * random.uniform(0.8, 1.6)
+        revenue = len(product_clicks) * predicted * 0.1
 
-        if revenue > 30:
-            final_action = "SCALE_UP"
-        elif revenue > 10:
-            final_action = "HOLD"
-        else:
-            final_action = "REDUCE"
-
-        output.append({
+        results.append({
             "product": p,
             "predicted_score": round(predicted,2),
-            "decision": decision,
-            "budget": budget,
-            "clicks": click_score,
-            "revenue_score": round(revenue,2),
-            "final_action": final_action
+            "action": action,
+            "tracking": tracking,
+            "clicks": len(product_clicks),
+            "revenue_estimate": round(revenue,2)
         })
 
-    return output
+    return results
 
 # =========================
-# 🚀 AUTONOMOUS BUSINESS LOOP
+# 🚀 ROUTES
 # =========================
 
 @app.route("/")
 def home():
-    return "STEP G AUTONOMOUS AI BUSINESS ENGINE 🚀"
+    return "STEP H REAL DEPLOYMENT ENGINE LIVE 🚀"
 
 @app.route("/run")
 def run():
@@ -141,22 +152,14 @@ def run():
 
     result = ai_engine(products, clicks)
 
-    # store event
-    events = load(EVENTS_FILE)
-    events.append({
-        "time": datetime.now().isoformat(),
-        "result_count": len(result)
-    })
-    save(EVENTS_FILE, events)
-
     return jsonify({
         "status": "success",
-        "mode": "STEP_G_FULL_AUTONOMY",
+        "mode": "STEP_H_PRODUCTION_LAYER",
         "results": result
     })
 
 # =========================
-# 🔗 REAL CLICK TRACKING
+# 🔗 CLICK TRACKING
 # =========================
 
 @app.route("/click/<pid>")
@@ -174,20 +177,19 @@ def click(pid):
     return jsonify({
         "status": "tracked",
         "product_id": pid,
-        "total": len(clicks)
+        "total_clicks": len(clicks)
     })
 
 # =========================
-# 📊 METRICS
+# 📊 TRACKING OVERVIEW
 # =========================
 
-@app.route("/metrics")
-def metrics():
+@app.route("/tracking")
+def tracking():
 
     return jsonify({
-        "clicks": len(load(CLICK_FILE)),
-        "events": len(load(EVENTS_FILE)),
-        "system": "STEP_G"
+        "clicks": load(CLICK_FILE),
+        "system": "STEP_H_ACTIVE"
     })
 
 # =========================
@@ -198,7 +200,7 @@ def metrics():
 def health():
     return jsonify({
         "status": "OK",
-        "version": "STEP_G_FULL_AUTONOMY"
+        "version": "STEP_H"
     })
 
 # =========================
