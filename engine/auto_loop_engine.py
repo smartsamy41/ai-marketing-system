@@ -1,4 +1,3 @@
-from engine.scheduler_engine import run_scheduler
 from engine.data_layer_engine import load_products, load_assets
 from engine.decision_engine import evaluate_products
 from engine.content_engine import build_content
@@ -8,7 +7,7 @@ from engine.learning_engine import learn_from_results
 
 
 # =========================
-# 🔁 FULL AUTOPILOT LOOP
+# 🔁 AUTOPILOT CORE ENGINE
 # =========================
 
 def run_autopilot():
@@ -17,51 +16,56 @@ def run_autopilot():
     products = load_products()
     assets = load_assets()
 
-    # 2. CLEAN + SCORE
-    products = evaluate_products(products)
+    if not products:
+        return {
+            "status": "error",
+            "message": "No products loaded"
+        }
 
-    # 3. SCHEDULER GENERATES QUEUE
-    schedule = run_scheduler(products)
+    # 2. SCORE PRODUCTS
+    products = evaluate_products(products)
 
     results = []
 
-    # 4. EXECUTE QUEUE
-    for item in schedule["queue"]:
+    # 3. PROCESS EACH PRODUCT (NO SCHEDULER DEPENDENCY)
+    for product in products:
 
-        product = next(
-            (p for p in products if p["product_id"] == item["product_id"]),
-            None
-        )
+        try:
+            product_id = product.get("product_id")
 
-        if not product:
-            continue
+            # 4. CONTENT GENERATION
+            content = build_content(product)
 
-        # 5. CONTENT GENERATION
-        content = build_content(product)
+            # 5. OUTPUT ROUTING
+            output = route_output(product)
 
-        # 6. OUTPUT ROUTING (PINTEREST / YOUTUBE / BLOG / SHOP)
-        output = route_output(product)
+            # 6. TRACKING
+            tracking = track_event(product, output)
 
-        # 7. TRACKING EVENT
-        tracking = track_event(product, output)
+            # 7. LEARNING
+            learning = learn_from_results(product, tracking)
 
-        # 8. LEARNING UPDATE
-        learning = learn_from_results(product, tracking)
+            results.append({
+                "product_id": product_id,
+                "source": product.get("source"),
+                "score": product.get("score"),
+                "content": content,
+                "output": output,
+                "tracking": tracking,
+                "learning": learning,
+                "status": "PROCESSED"
+            })
 
-        results.append({
-            "product_id": product["product_id"],
-            "source": product["source"],
-            "score": product["score"],
-            "scheduled_time": item["scheduled_time"],
-            "content": content,
-            "output": output,
-            "tracking": tracking,
-            "learning": learning
-        })
+        except Exception as e:
+            results.append({
+                "product_id": product.get("product_id"),
+                "status": "ERROR",
+                "error": str(e)
+            })
 
     return {
         "status": "success",
-        "mode": "AUTOPILOT_ACTIVE",
+        "mode": "AUTOPILOT_V2_CLEAN",
         "executed": len(results),
         "results": results
     }
