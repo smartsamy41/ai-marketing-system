@@ -1,7 +1,6 @@
 from flask import Flask, jsonify
 
 from engine.auto_loop_engine import run_autopilot
-from engine.scheduler_engine import run_scheduler
 from engine.data_layer_engine import load_products
 from engine.tracking_engine import get_top_products
 from engine.learning_engine import get_learning_summary
@@ -25,13 +24,13 @@ def home():
 def health():
     return jsonify({
         "status": "OK",
-        "engine": "AUTOPILOT_V1",
+        "engine": "STABLE_V1",
         "system": "RUNNING"
     })
 
 
 # =========================
-# 🚀 FULL AUTOPILOT RUN
+# 🚀 AUTOPILOT RUN (SAFE VERSION)
 # =========================
 
 @app.route("/run")
@@ -42,29 +41,6 @@ def run():
         return jsonify({
             "status": "success",
             "mode": "AUTOPILOT",
-            "data": data
-        })
-
-    except Exception as e:
-        return jsonify({
-            "status": "error",
-            "message": str(e)
-        })
-
-
-# =========================
-# ⏰ SCHEDULER ONLY TEST
-# =========================
-
-@app.route("/schedule")
-def schedule():
-    try:
-        products = load_products()
-        data = run_scheduler(products)
-
-        return jsonify({
-            "status": "success",
-            "mode": "SCHEDULER_ONLY",
             "data": data
         })
 
@@ -97,7 +73,7 @@ def top():
 
 
 # =========================
-# 🧠 LEARNING SUMMARY
+# 🧠 LEARNING STATUS
 # =========================
 
 @app.route("/learning")
@@ -115,6 +91,18 @@ def learning():
             "status": "error",
             "message": str(e)
         })
+
+
+# =========================
+# 🧪 DEBUG TEST (IMPORTANT)
+# =========================
+
+@app.route("/test")
+def test():
+    return jsonify({
+        "status": "ok",
+        "message": "API is alive"
+    })
 
 
 # =========================
