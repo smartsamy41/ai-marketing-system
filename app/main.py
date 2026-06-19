@@ -25,6 +25,7 @@ def health():
 
 @app.get("/run")
 def run_system():
+
     try:
         from engine.master_engine import run_master_engine
 
@@ -34,11 +35,22 @@ def run_system():
             "status": result.get("status", "UNKNOWN"),
             "mode": result.get("mode", "MASTER_ENGINE"),
             "executed": result.get("executed", 0),
-            "results": result.get("results", []),
+
+            # ✅ WICHTIG: nicht zu groß zurückgeben
+            "results": result.get("results", [])[:3],
+
+            # ✅ DEBUG SAFE
+            "sample_product": (
+                result.get("results", [{}])[0]
+                if result.get("results")
+                else None
+            ),
+
             "time": str(datetime.now())
         }
 
     except Exception as e:
+
         return {
             "status": "FATAL_ERROR",
             "message": str(e),
