@@ -3,43 +3,8 @@ from datetime import datetime
 
 app = FastAPI()
 
-print("🟢 AI SYSTEM STARTED (CLEAN MAIN)")
+print("🟢 AI SYSTEM STARTED")
 
-# =========================
-# 🧠 SAFE ENGINE LOADING
-# =========================
-
-try:
-    from engine.master_engine import MasterEngine
-except Exception as e:
-    print("⚠️ MasterEngine not loaded:", e)
-    MasterEngine = None
-
-try:
-    from engine.orchestrator_engine import OrchestratorEngine
-except Exception as e:
-    print("⚠️ OrchestratorEngine not loaded:", e)
-    OrchestratorEngine = None
-
-try:
-    from engine.content_engine import ContentEngine
-except Exception as e:
-    print("⚠️ ContentEngine not loaded:", e)
-    ContentEngine = None
-
-
-# =========================
-# 🔵 INIT SAFE INSTANCES
-# =========================
-
-master = MasterEngine() if MasterEngine else None
-orchestrator = OrchestratorEngine() if OrchestratorEngine else None
-content = ContentEngine() if ContentEngine else None
-
-
-# =========================
-# 🟢 ROOT
-# =========================
 
 @app.get("/")
 def root():
@@ -48,10 +13,6 @@ def root():
         "time": str(datetime.now())
     }
 
-
-# =========================
-# 🟢 HEALTH CHECK
-# =========================
 
 @app.get("/health")
 def health():
@@ -62,34 +23,24 @@ def health():
     }
 
 
-# =========================
-# 🚀 TEST PIPELINE (SAFE)
-# =========================
-
 @app.get("/run")
-def run():
+def run_system():
+    try:
+        from engine.master_engine import run_master_engine
 
-    products = [
-        "Strom Vergleich",
-        "Gas Anbieter",
-        "DSL Internet"
-    ]
+        result = run_master_engine()
 
-    results = []
-
-    for p in products:
-
-        data = {
-            "product": p,
-            "title": f"{p} 2026 Vergleich",
-            "blog": f"Automatisierter Content für {p}",
-            "timestamp": str(datetime.now())
+        return {
+            "status": result.get("status", "UNKNOWN"),
+            "mode": result.get("mode", "MASTER_ENGINE"),
+            "executed": result.get("executed", 0),
+            "results": result.get("results", []),
+            "time": str(datetime.now())
         }
 
-        results.append(data)
-
-    return {
-        "status": "SUCCESS",
-        "count": len(results),
-        "results": results
-    }
+    except Exception as e:
+        return {
+            "status": "FATAL_ERROR",
+            "message": str(e),
+            "time": str(datetime.now())
+        }
