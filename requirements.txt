@@ -1,5 +1,3 @@
-flask
-gunicorn
-google-auth
-google-api-python-client
-gspread
+fastapi
+uvicorn
+requests
