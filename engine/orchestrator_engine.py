@@ -1,81 +1,64 @@
 from datetime import datetime
-import random
+
 
 # =========================
-# 🎯 ORCHESTRATOR ENGINE
+# 🚀 ORCHESTRATOR ENGINE V2
 # =========================
 
-def run_orchestrator(products, learning_data=None):
+def run_orchestrator(products):
 
-    schedule = {
-        "morning": [],
-        "midday": [],
-        "evening": []
-    }
+    try:
 
-    for product in products:
+        print("🟢 OrchestratorEngine V2 running")
 
-        score = product.get("score", 50)
-        source = product.get("source")
-        product_id = product.get("product_id")
+        if not products:
+            return {"schedule": {}}
 
-        # -------------------------
-        # 🧠 AI PRIORITY BOOST (learning optional)
-        # -------------------------
-        if learning_data:
-            for entry in learning_data:
-                if entry.get("product_id") == product_id:
-                    score += entry.get("boost", 0)
-
-        # -------------------------
-        # ⏰ TIME SLOT DECISION
-        # -------------------------
-        if score >= 85:
-            slot = "morning"
-        elif score >= 70:
-            slot = "midday"
-        else:
-            slot = "evening"
-
-        # -------------------------
-        # 📌 PLATFORM STRATEGY
-        # -------------------------
-        if source == "amazon":
-            platforms = ["pinterest", "youtube"]
-        elif source == "check24":
-            platforms = ["youtube", "pinterest", "blog"]
-        elif source == "tarifcheck":
-            platforms = ["blog", "pinterest", "youtube"]
-        elif source == "telekom":
-            platforms = ["shop"]
-        else:
-            platforms = ["pinterest"]
-
-        # -------------------------
-        # 🛡️ ANTI SPAM RULE
-        # -------------------------
-        if len(schedule[slot]) >= 5:
-            slot = "evening"
-
-        # -------------------------
-        # FINAL TASK
-        # -------------------------
-        schedule[slot].append({
-            "product_id": product_id,
-            "source": source,
-            "score": round(score, 2),
-            "platforms": platforms,
-            "time": datetime.now().isoformat(),
-            "status": "SCHEDULED"
-        })
-
-    return {
-        "status": "success",
-        "mode": "ORCHESTRATOR_V1",
-        "schedule": schedule,
-        "summary": {
-            "morning": len(schedule["morning"]),
-            "midday": len(schedule["midday"]),
-            "evening": len(schedule["evening"])
+        schedule = {
+            "morning": [],
+            "afternoon": [],
+            "evening": []
         }
-    }
+
+        # =========================
+        # SIMPLE INTELLIGENT DISTRIBUTION
+        # =========================
+
+        for i, product in enumerate(products):
+
+            product_id = product.get("product_id")
+
+            if not product_id:
+                continue
+
+            # rotation logic (simple load balancing)
+            if i % 3 == 0:
+                schedule["morning"].append({
+                    "product_id": product_id,
+                    "priority": product.get("score", 1)
+                })
+
+            elif i % 3 == 1:
+                schedule["afternoon"].append({
+                    "product_id": product_id,
+                    "priority": product.get("score", 1)
+                })
+
+            else:
+                schedule["evening"].append({
+                    "product_id": product_id,
+                    "priority": product.get("score", 1)
+                })
+
+        return {
+            "schedule": schedule,
+            "generated_at": str(datetime.now())
+        }
+
+    except Exception as e:
+
+        return {
+            "schedule": {},
+            "error": str(e),
+            "status": "orchestrator_failed"
+        }
