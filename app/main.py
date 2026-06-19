@@ -1,110 +1,95 @@
 from fastapi import FastAPI
-import json
 from datetime import datetime
-
-# =========================
-# 🚀 APP START
-# =========================
 
 app = FastAPI()
 
-print("🟢 AI SYSTEM MAIN ENTRY STARTED")
+print("🟢 AI SYSTEM STARTED (CLEAN MAIN)")
 
 # =========================
-# 🔵 ENGINE IMPORTS (SAFE IMPORTS)
+# 🧠 SAFE ENGINE LOADING
 # =========================
 
 try:
     from engine.master_engine import MasterEngine
-    from engine.orchestrator_engine import OrchestratorEngine
-    from engine.decision_engine import DecisionEngine
-    from engine.routing_engine import RoutingEngine
-    from engine.content_engine import ContentEngine
-    from engine.output_layer import OutputLayer
-    from engine.tracking_engine import TrackingEngine
 except Exception as e:
-    print("⚠️ Engine import warning:", e)
+    print("⚠️ MasterEngine not loaded:", e)
+    MasterEngine = None
+
+try:
+    from engine.orchestrator_engine import OrchestratorEngine
+except Exception as e:
+    print("⚠️ OrchestratorEngine not loaded:", e)
+    OrchestratorEngine = None
+
+try:
+    from engine.content_engine import ContentEngine
+except Exception as e:
+    print("⚠️ ContentEngine not loaded:", e)
+    ContentEngine = None
+
 
 # =========================
-# 🧠 INIT SYSTEM
+# 🔵 INIT SAFE INSTANCES
 # =========================
 
-master = MasterEngine()
-orchestrator = OrchestratorEngine()
-decision = DecisionEngine()
-router = RoutingEngine()
-content = ContentEngine()
-output = OutputLayer()
-tracker = TrackingEngine()
+master = MasterEngine() if MasterEngine else None
+orchestrator = OrchestratorEngine() if OrchestratorEngine else None
+content = ContentEngine() if ContentEngine else None
+
 
 # =========================
-# 🔥 HEALTH CHECK
+# 🟢 ROOT
+# =========================
+
+@app.get("/")
+def root():
+    return {
+        "status": "AI SYSTEM ONLINE",
+        "time": str(datetime.now())
+    }
+
+
+# =========================
+# 🟢 HEALTH CHECK
 # =========================
 
 @app.get("/health")
 def health():
     return {
-        "status": "AI_SYSTEM_RUNNING",
+        "status": "RUNNING",
+        "system": "CLEAN_APP_MAIN",
         "time": str(datetime.now())
     }
 
+
 # =========================
-# 🚀 MAIN RUN ENGINE
+# 🚀 TEST PIPELINE (SAFE)
 # =========================
 
 @app.get("/run")
-def run_system():
+def run():
 
-    try:
-        # 1. Master Plan
-        plan = master.generate_plan()
+    products = [
+        "Strom Vergleich",
+        "Gas Anbieter",
+        "DSL Internet"
+    ]
 
-        # 2. Orchestrate
-        tasks = orchestrator.build_tasks(plan)
+    results = []
 
-        results = []
+    for p in products:
 
-        for task in tasks:
-
-            # 3. Decision
-            decision_result = decision.evaluate(task)
-
-            # 4. Routing
-            route = router.route(task)
-
-            # 5. Content Generation
-            content_data = content.generate(task)
-
-            # 6. Output Layer
-            output_result = output.process(content_data)
-
-            # 7. Tracking
-            tracker.log(task, output_result)
-
-            results.append({
-                "task": task,
-                "decision": decision_result,
-                "route": route,
-                "output": output_result,
-                "status": "DONE"
-            })
-
-        return {
-            "status": "SUCCESS",
-            "processed": len(results),
-            "results": results
+        data = {
+            "product": p,
+            "title": f"{p} 2026 Vergleich",
+            "blog": f"Automatisierter Content für {p}",
+            "timestamp": str(datetime.now())
         }
 
-    except Exception as e:
-        return {
-            "status": "ERROR",
-            "message": str(e)
-        }
+        results.append(data)
 
-# =========================
-# 🔁 SIMPLE TEST ENDPOINT
-# =========================
-
-@app.get("/")
-def root():
-    return {"message": "AI SYSTEM ONLINE"}
+    return {
+        "status": "SUCCESS",
+        "count": len(results),
+        "results": results
+    }
