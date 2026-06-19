@@ -1,6 +1,11 @@
-def build_content(product):
+class ContentEngine:
 
-    return {
-        "product_id": product["product_id"],
-        "text": f"Content for {product['product_id']}"
-    }
+    def __init__(self):
+        print("🟢 ContentEngine loaded")
+
+    def generate(self, product):
+
+        return {
+            "text": f"AI Content for {product.get('name')}",
+            "title": product.get("name")
+        }
