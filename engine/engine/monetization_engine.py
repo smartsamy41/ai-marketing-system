@@ -5,8 +5,8 @@ from datetime import datetime
 def generate_affiliate_link(product):
 
     try:
-        if not product:
-            return "https://fallback.ai/error"
+        if not isinstance(product, dict):
+            product = {}
 
         source = (product.get("source") or "").lower()
         product_id = product.get("product_id") or "unknown"
@@ -25,7 +25,7 @@ def generate_affiliate_link(product):
 
         return f"https://track.ai/{product_id}?ref={uuid.uuid4()}"
 
-    except Exception as e:
+    except Exception:
         return "https://fallback.ai/error"
 
 
@@ -33,7 +33,7 @@ def inject_monetization(content, product, assets):
 
     try:
         # =========================
-        # SAFE DEFAULTS
+        # SAFE TYPE CHECKS
         # =========================
         if not isinstance(content, dict):
             content = {}
@@ -45,7 +45,7 @@ def inject_monetization(content, product, assets):
             assets = {}
 
         # =========================
-        # CONTENT SAFE READ
+        # SAFE CONTENT READ
         # =========================
         text = content.get("text") or ""
         title = content.get("title") or product.get("name") or product.get("product_id") or "Produkt"
@@ -56,11 +56,11 @@ def inject_monetization(content, product, assets):
         affiliate_link = generate_affiliate_link(product)
 
         # =========================
-        # OUTPUT BUILD
+        # FINAL OUTPUT
         # =========================
         return {
             "title": title,
-            "text": text + f"\n\n👉 Jetzt vergleichen: {affiliate_link}",
+            "text": f"{text}\n\n👉 Jetzt vergleichen: {affiliate_link}",
             "affiliate_link": affiliate_link,
             "tracking_id": str(uuid.uuid4()),
             "timestamp": str(datetime.now()),
@@ -70,8 +70,8 @@ def inject_monetization(content, product, assets):
     except Exception as e:
 
         return {
-            "error": str(e),
             "status": "MONETIZATION_FAILED_SAFE",
+            "error": str(e),
             "fallback": True,
             "timestamp": str(datetime.now())
         }
