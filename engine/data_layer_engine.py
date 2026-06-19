@@ -1,11 +1,6 @@
-import os
-import json
 import gspread
-from google.oauth2.service_account import Credentials
+from google.auth import default
 
-# =========================
-# 📊 GOOGLE SHEETS DATA LAYER V2
-# =========================
 
 SHEET_NAME = "AI_Marketing_System"
 
@@ -13,16 +8,8 @@ SHEET_NAME = "AI_Marketing_System"
 def _connect_sheet():
 
     try:
-
-        scopes = [
-            "https://www.googleapis.com/auth/spreadsheets",
-            "https://www.googleapis.com/auth/drive"
-        ]
-
-        creds = Credentials.from_service_account_file(
-            "service_account.json",
-            scopes=scopes
-        )
+        # ✅ Cloud Run Default Credentials (WICHTIG)
+        creds, _ = default()
 
         client = gspread.authorize(creds)
         sheet = client.open(SHEET_NAME)
@@ -34,10 +21,6 @@ def _connect_sheet():
         return None
 
 
-# =========================
-# 📦 LOAD PRODUCTS (REAL DATA)
-# =========================
-
 def load_products():
 
     try:
@@ -47,13 +30,14 @@ def load_products():
         if not sheet:
             return []
 
-        # TAB: products
         worksheet = sheet.worksheet("products")
         data = worksheet.get_all_records()
 
         products = []
 
         for row in data:
+            if not row.get("product_id"):
+                continue
 
             products.append({
                 "product_id": row.get("product_id"),
@@ -68,15 +52,9 @@ def load_products():
         return products
 
     except Exception as e:
-
         print("❌ load_products ERROR:", e)
-
         return []
 
-
-# =========================
-# 🧩 LOAD ASSETS (IMAGES, LINKS)
-# =========================
 
 def load_assets():
 
@@ -97,7 +75,6 @@ def load_assets():
         }
 
         for row in data:
-
             assets["links"].append(row.get("link"))
             assets["images"].append(row.get("image_url"))
 
@@ -106,7 +83,5 @@ def load_assets():
         return assets
 
     except Exception as e:
-
         print("❌ load_assets ERROR:", e)
-
         return {}
