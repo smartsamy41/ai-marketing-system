@@ -1,69 +1,112 @@
+import os
 import json
+import gspread
+from google.oauth2.service_account import Credentials
 
 # =========================
-# 📦 DATA LAYER ENGINE V1
+# 📊 GOOGLE SHEETS DATA LAYER V2
+# =========================
+
+SHEET_NAME = "AI_Marketing_System"
+
+
+def _connect_sheet():
+
+    try:
+
+        scopes = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive"
+        ]
+
+        creds = Credentials.from_service_account_file(
+            "service_account.json",
+            scopes=scopes
+        )
+
+        client = gspread.authorize(creds)
+        sheet = client.open(SHEET_NAME)
+
+        return sheet
+
+    except Exception as e:
+        print("❌ SHEET CONNECTION ERROR:", e)
+        return None
+
+
+# =========================
+# 📦 LOAD PRODUCTS (REAL DATA)
 # =========================
 
 def load_products():
 
     try:
 
-        # =========================
-        # TEMP FALLBACK (CLOUD SAFE)
-        # =========================
-        products = [
-            {
-                "product_id": "P1",
-                "name": "Strom Vergleich",
-                "source": "internal"
-            },
-            {
-                "product_id": "P2",
-                "name": "Gas Anbieter",
-                "source": "internal"
-            },
-            {
-                "product_id": "P3",
-                "name": "DSL Internet",
-                "source": "internal"
-            },
-            {
-                "product_id": "P4",
-                "name": "Kredit Vergleich",
-                "source": "internal"
-            },
-            {
-                "product_id": "P5",
-                "name": "Versicherung PKV",
-                "source": "internal"
-            }
-        ]
+        sheet = _connect_sheet()
+
+        if not sheet:
+            return []
+
+        # TAB: products
+        worksheet = sheet.worksheet("products")
+        data = worksheet.get_all_records()
+
+        products = []
+
+        for row in data:
+
+            products.append({
+                "product_id": row.get("product_id"),
+                "name": row.get("name"),
+                "source": row.get("source"),
+                "category": row.get("category"),
+                "status": row.get("status", "active")
+            })
+
+        print(f"🟢 LOADED PRODUCTS: {len(products)}")
 
         return products
 
     except Exception as e:
 
-        return {
-            "error": str(e),
-            "status": "data_layer_failed"
-        }
+        print("❌ load_products ERROR:", e)
 
+        return []
+
+
+# =========================
+# 🧩 LOAD ASSETS (IMAGES, LINKS)
+# =========================
 
 def load_assets():
 
     try:
 
+        sheet = _connect_sheet()
+
+        if not sheet:
+            return {}
+
+        worksheet = sheet.worksheet("affiliate_assets")
+        data = worksheet.get_all_records()
+
         assets = {
+            "links": [],
             "images": [],
-            "templates": [],
-            "links": []
+            "banners": []
         }
+
+        for row in data:
+
+            assets["links"].append(row.get("link"))
+            assets["images"].append(row.get("image_url"))
+
+        print(f"🟢 LOADED ASSETS: {len(data)}")
 
         return assets
 
     except Exception as e:
 
-        return {
-            "error": str(e),
-            "status": "asset_layer_failed"
-        }
+        print("❌ load_assets ERROR:", e)
+
+        return {}
