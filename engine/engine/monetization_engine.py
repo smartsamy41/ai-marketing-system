@@ -6,23 +6,38 @@ def generate_affiliate_link(product):
 
     try:
         if not isinstance(product, dict):
-            product = {}
+            return "https://fallback.ai/error"
 
-        source = (product.get("source") or "").lower()
-        product_id = product.get("product_id") or "unknown"
+        source = str(product.get("source") or "").strip().lower()
+        product_id = str(product.get("product_id") or "unknown")
 
+        # =========================
+        # AMAZON
+        # =========================
         if "amazon" in source:
             return f"https://amazon.de/dp/{product_id}?tag=freebasics-21"
 
+        # =========================
+        # CHECK24
+        # =========================
         if "check24" in source:
             return f"https://check24.de/vergleich/{product_id}?tracking=AI_AGENT"
 
+        # =========================
+        # TARIFCHECK
+        # =========================
         if "tarifcheck" in source:
             return f"https://tarifcheck.de/{product_id}?partner=165274"
 
+        # =========================
+        # TELEKOM
+        # =========================
         if "telekom" in source:
             return f"https://telekom.de/{product_id}"
 
+        # =========================
+        # FALLBACK
+        # =========================
         return f"https://track.ai/{product_id}?ref={uuid.uuid4()}"
 
     except Exception:
@@ -33,30 +48,30 @@ def inject_monetization(content, product, assets):
 
     try:
         # =========================
-        # SAFE TYPE CHECKS
+        # SAFE INPUTS
         # =========================
-        if not isinstance(content, dict):
-            content = {}
-
-        if not isinstance(product, dict):
-            product = {}
-
-        if not isinstance(assets, dict):
-            assets = {}
+        content = content if isinstance(content, dict) else {}
+        product = product if isinstance(product, dict) else {}
+        assets = assets if isinstance(assets, dict) else {}
 
         # =========================
-        # SAFE CONTENT READ
+        # SAFE READ
         # =========================
         text = content.get("text") or ""
-        title = content.get("title") or product.get("name") or product.get("product_id") or "Produkt"
+        title = (
+            content.get("title")
+            or product.get("name")
+            or product.get("product_id")
+            or "Produkt"
+        )
 
         # =========================
-        # LINK GENERATION
+        # LINK
         # =========================
         affiliate_link = generate_affiliate_link(product)
 
         # =========================
-        # FINAL OUTPUT
+        # OUTPUT
         # =========================
         return {
             "title": title,
