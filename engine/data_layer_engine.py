@@ -1,56 +1,69 @@
-import gspread
-from google.auth import default
+import json
 
 # =========================
-# 📦 SHEET CONFIG
-# =========================
-
-SHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
-
-# =========================
-# 🔐 GOOGLE CLOUD AUTH (ADC)
-# =========================
-
-def _connect():
-    """
-    Uses Application Default Credentials (Cloud Run SAFE MODE)
-    """
-    creds, _ = default()
-    client = gspread.authorize(creds)
-    return client.open_by_key(SHEET_ID)
-
-
-# =========================
-# 📊 LOAD PRODUCTS
+# 📦 DATA LAYER ENGINE V1
 # =========================
 
 def load_products():
-    try:
-        sheet = _connect().worksheet("products")
-        data = sheet.get_all_records()
 
-        return data
+    try:
+
+        # =========================
+        # TEMP FALLBACK (CLOUD SAFE)
+        # =========================
+        products = [
+            {
+                "product_id": "P1",
+                "name": "Strom Vergleich",
+                "source": "internal"
+            },
+            {
+                "product_id": "P2",
+                "name": "Gas Anbieter",
+                "source": "internal"
+            },
+            {
+                "product_id": "P3",
+                "name": "DSL Internet",
+                "source": "internal"
+            },
+            {
+                "product_id": "P4",
+                "name": "Kredit Vergleich",
+                "source": "internal"
+            },
+            {
+                "product_id": "P5",
+                "name": "Versicherung PKV",
+                "source": "internal"
+            }
+        ]
+
+        return products
 
     except Exception as e:
-        return [{
+
+        return {
             "error": str(e),
-            "source": "load_products_failed"
-        }]
+            "status": "data_layer_failed"
+        }
 
-
-# =========================
-# 🎯 LOAD AFFILIATE ASSETS
-# =========================
 
 def load_assets():
-    try:
-        sheet = _connect().worksheet("affiliate_assets")
-        data = sheet.get_all_records()
 
-        return data
+    try:
+
+        assets = {
+            "images": [],
+            "templates": [],
+            "links": []
+        }
+
+        return assets
 
     except Exception as e:
-        return [{
+
+        return {
             "error": str(e),
-            "source": "load_assets_failed"
-        }]
+            "status": "asset_layer_failed"
+        }
