@@ -20,6 +20,7 @@ def run_master_engine():
         from engine.monetization_engine import inject_monetization
         from engine.landingpage_engine import build_landingpage
         from engine.compliance_engine import apply_compliance, audit_content
+        from engine.dashboard_engine import build_dashboard
 
         products = load_products() or []
         assets = load_assets() or {}
@@ -32,12 +33,19 @@ def run_master_engine():
                 "message": "NO_PRODUCTS_FOUND",
                 "executed": 0,
                 "results": [],
+                "dashboard": {},
                 "time": str(datetime.now())
             }
 
         products = evaluate_products(products, commissions) or products
-        plan = run_orchestrator(products) or {"schedule": {}}
+        dashboard = build_dashboard(
+            products=products,
+            commissions=commissions,
+            assets=assets,
+            rules=partner_rules
+        )
 
+        plan = run_orchestrator(products) or {"schedule": {}}
         final_results = []
 
         for slot, items in plan.get("schedule", {}).items():
@@ -126,7 +134,7 @@ def run_master_engine():
                         "output": output,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "LANDINGPAGE_V3_COMPLIANCE_ACTIVE"
+                        "status": "LANDINGPAGE_V3_DASHBOARD_ACTIVE"
                     })
 
                 except Exception as item_error:
@@ -139,8 +147,9 @@ def run_master_engine():
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_V3_COMPLIANCE_ACTIVE",
+            "mode": "MASTER_ENGINE_V3_DASHBOARD_ACTIVE",
             "executed": len(final_results),
+            "dashboard": dashboard,
             "results": final_results,
             "time": str(datetime.now())
         }
@@ -150,8 +159,9 @@ def run_master_engine():
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_V3_COMPLIANCE_FAILED",
+            "mode": "MASTER_ENGINE_V3_DASHBOARD_FAILED",
             "executed": 0,
+            "dashboard": {},
             "results": [],
             "time": str(datetime.now())
         }
