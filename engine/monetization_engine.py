@@ -2,8 +2,14 @@ import uuid
 from datetime import datetime
 
 
+def _clean(value):
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
 def _find_asset(product, assets):
-    product_id = product.get("product_id")
+    product_id = _clean(product.get("product_id"))
 
     if not isinstance(assets, dict):
         return {}
@@ -13,48 +19,65 @@ def _find_asset(product, assets):
     if not matches:
         return {}
 
-    for item in matches:
-        asset_type = str(
-            item.get("asset_type")
-            or item.get("type")
-            or item.get("format")
-            or ""
-        ).lower()
+    priority_fields = [
+        "affiliate_url",
+        "direktlink",
+        "short_url",
+        "vergleichsrechner_html",
+        "kurzrechner_html",
+        "html_code",
+        "banner_300x250_html",
+        "banner_728x90_html"
+    ]
 
-        if any(x in asset_type for x in ["deeplink", "direct", "link", "iframe"]):
-            return item
+    for item in matches:
+        for field in priority_fields:
+            if _clean(item.get(field)):
+                return item
 
     return matches[0]
+
+
+def _get_best_link(product, asset):
+    for field in [
+        "affiliate_url",
+        "official_direct_link",
+        "landingpage_url",
+        "direktlink",
+        "short_url",
+        "link",
+        "url",
+        "deeplink",
+        "direct_link"
+    ]:
+        value = _clean(product.get(field)) or _clean(asset.get(field))
+        if value and value != "#":
+            return value
+
+    return "#"
 
 
 def generate_affiliate_link(product, assets=None):
     product = product if isinstance(product, dict) else {}
     assets = assets if isinstance(assets, dict) else {}
 
-    source = str(product.get("source") or "").strip().lower()
-    product_id = str(product.get("product_id") or "unknown")
+    source = _clean(product.get("source")).lower()
+    product_id = _clean(product.get("product_id"))
 
     asset = _find_asset(product, assets)
+    real_link = _get_best_link(product, asset)
 
-    real_link = (
-        asset.get("affiliate_link")
-        or asset.get("link")
-        or asset.get("url")
-        or asset.get("deeplink")
-        or asset.get("direct_link")
-    )
-
-    if real_link:
+    if real_link != "#":
         return real_link
-
-    if "amazon" in source:
-        return f"https://amazon.de/dp/{product_id}?tag=freebasics-21"
-
-    if "tarifcheck" in source:
-        return f"https://a.partner-versicherung.de/click.php?partner_id=165274&ad_id=15"
 
     if "telekom" in source:
         return "https://free-basics.telekom-profis.de"
+
+    if "tarifcheck" in source:
+        return "https://a.partner-versicherung.de/click.php?partner_id=165274&ad_id=15"
+
+    if "amazon" in source:
+        return f"https://amazon.de/dp/{product_id}?tag=freebasics-21"
 
     return "#"
 
@@ -64,25 +87,29 @@ def inject_monetization(content, product, assets):
     product = product if isinstance(product, dict) else {}
     assets = assets if isinstance(assets, dict) else {}
 
-    text = content.get("text") or ""
-    title = (
-        content.get("title")
-        or product.get("name")
-        or product.get("product_id")
+    source = _clean(product.get("source")).lower()
+    name = (
+        _clean(product.get("name"))
+        or _clean(product.get("product_name"))
+        or _clean(product.get("category"))
+        or _clean(product.get("product_id"))
         or "Produkt"
     )
 
-    affiliate_link = generate_affiliate_link(product, assets)
+    title = content.get("title") or f"{name} Vergleich"
+    text = content.get("text") or f"Informationen zu {name}"
 
-    source = str(product.get("source") or "").lower()
+    affiliate_link = generate_affiliate_link(product, assets)
 
     if "tarifcheck" in source:
         compliance_note = (
-            "Hinweis: Werbung / Anzeige. Free Basics ist Tippgeber und kein "
-            "Versicherungsmakler. Powered by TARIFCHECK24 GmbH."
+            "Werbung / Anzeige. Free Basics ist Tippgeber und kein Versicherungsmakler. "
+            "Alle Vergleiche powered by TARIFCHECK24 GmbH, Zollstr. 11b, "
+            "21465 Wentorf bei Hamburg, Tel. 040 - 73098288, "
+            "Fax 040 - 73098289, E-Mail: info@tarifcheck.de."
         )
     else:
-        compliance_note = "Hinweis: Werbung / Anzeige."
+        compliance_note = "Werbung / Anzeige. Diese Seite enthält Affiliate-Links."
 
     return {
         "title": title,
