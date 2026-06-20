@@ -6,8 +6,8 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY App ./app
-COPY Motor/engine ./engine
+COPY app ./app
+COPY engine ./engine
 
 ENV PORT=8080
 
