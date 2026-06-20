@@ -18,9 +18,9 @@ def run_master_engine():
         from engine.tracking_engine import track_event
         from engine.learning_engine import learn_from_results
         from engine.monetization_engine import inject_monetization
-        from engine.landingpage_engine import build_landingpage
         from engine.compliance_engine import apply_compliance, audit_content
         from engine.dashboard_engine import build_dashboard
+        from engine.landingpage_v4_engine import build_landingpage_v4
 
         products = load_products() or []
         assets = load_assets() or {}
@@ -86,13 +86,15 @@ def run_master_engine():
                     )
                     monetized_content["compliance_audit"] = compliance.get("audit")
 
-                    landingpage = build_landingpage(
+                    landingpage = build_landingpage_v4(
                         product=product,
-                        monetized_content=monetized_content
+                        assets=assets,
+                        commissions=commissions,
+                        rules=partner_rules
                     ) or {}
 
                     landingpage_audit = audit_content(
-                        content=landingpage.get("html", ""),
+                        content=landingpage.get("lp_html", ""),
                         product=product,
                         rules=partner_rules
                     )
@@ -136,7 +138,7 @@ def run_master_engine():
                         "output": output,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "LANDINGPAGE_V3_DASHBOARD_ACTIVE"
+                        "status": "LANDINGPAGE_V4_ACTIVE"
                     })
 
                 except Exception as item_error:
@@ -149,10 +151,11 @@ def run_master_engine():
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_V3_DASHBOARD_ACTIVE",
+            "mode": "MASTER_ENGINE_V4_LANDINGPAGE_ACTIVE",
             "executed": len(final_results),
             "dashboard": dashboard,
             "results": final_results,
+            "sample_product": final_results[0] if final_results else None,
             "time": str(datetime.now())
         }
 
@@ -161,9 +164,10 @@ def run_master_engine():
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_V3_DASHBOARD_FAILED",
+            "mode": "MASTER_ENGINE_V4_LANDINGPAGE_FAILED",
             "executed": 0,
             "dashboard": {},
             "results": [],
+            "sample_product": None,
             "time": str(datetime.now())
         }
