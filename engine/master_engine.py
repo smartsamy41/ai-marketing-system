@@ -1,28 +1,43 @@
 from datetime import datetime
 import traceback
 
+# ENGINE IMPORTS
+from engine.data_layer_engine import (
+    load_products,
+    load_assets,
+    load_commissions,
+    load_partner_rules
+)
+
+from engine.decision_engine import evaluate_products
+from engine.content_engine import build_content
+from engine.orchestrator_engine import run_orchestrator
+from engine.routing_engine import route_product
+
+from engine.monetization_engine import inject_monetization
+from engine.compliance_engine import apply_compliance, audit_content
+
+from engine.landingpage_v4_engine import build_landingpage_v4
+from engine.auto_fix_engine import auto_fix_posts
+
+from engine.tracking_engine import track_event
+from engine.learning_engine import learn_from_results
+
+from engine.output_layer import route_output as send_output
+
+from engine.dashboard_engine import build_dashboard
+
+# YOUTUBE ENGINE
+from engine.youtube_engine_v1 import build_youtube_entry
+
+
+def _now():
+    return str(datetime.now())
+
 
 def run_master_engine():
-    try:
-        from engine.data_layer_engine import (
-            load_products,
-            load_assets,
-            load_commissions,
-            load_partner_rules
-        )
-        from engine.decision_engine import evaluate_products
-        from engine.content_engine import build_content
-        from engine.auto_fix_engine import auto_fix_posts
-        from engine.orchestrator_engine import run_orchestrator
-        from engine.output_layer import route_output as send_output
-        from engine.tracking_engine import track_event
-        from engine.learning_engine import learn_from_results
-        from engine.monetization_engine import inject_monetization
-        from engine.compliance_engine import apply_compliance, audit_content
-        from engine.dashboard_engine import build_dashboard
-        from engine.landingpage_v4_engine import build_landingpage_v4
-        from engine.routing_engine import route_product
 
+    try:
         products = load_products() or []
         assets = load_assets() or {}
         commissions = load_commissions() or {}
@@ -32,12 +47,8 @@ def run_master_engine():
             return {
                 "status": "error",
                 "message": "NO_PRODUCTS_FOUND",
-                "mode": "MASTER_ENGINE_PRODUCTS_EMPTY",
                 "executed": 0,
-                "dashboard": {},
-                "results": [],
-                "sample_product": None,
-                "time": str(datetime.now())
+                "results": []
             }
 
         products = evaluate_products(products, commissions) or products
@@ -50,13 +61,13 @@ def run_master_engine():
         )
 
         plan = run_orchestrator(products) or {"schedule": {}}
+
         final_results = []
 
         for slot, items in plan.get("schedule", {}).items():
-            if not items:
-                continue
 
             for item in items:
+
                 try:
                     product_id = item.get("product_id")
 
@@ -68,8 +79,10 @@ def run_master_engine():
                     if not product:
                         continue
 
+                    # ROUTING
                     route = route_product(product)
 
+                    # CONTENT
                     content = build_content(product) or {}
 
                     monetized_content = inject_monetization(
@@ -84,74 +97,46 @@ def run_master_engine():
                         rules=partner_rules
                     )
 
-                    monetized_content["text"] = compliance.get(
-                        "content",
-                        monetized_content.get("text", "")
-                    )
-                    monetized_content["compliance_audit"] = compliance.get("audit")
+                    # LANDINGPAGE (ONLY IF REQUIRED)
+                    if route.get("landingpage_required"):
 
-                    landingpage = None
-                    landingpage_audit = None
-
-                    if route.get("landingpage_required") is True:
                         landingpage = build_landingpage_v4(
                             product=product,
                             assets=assets,
                             commissions=commissions,
                             rules=partner_rules
-                        ) or {}
+                        )
 
                         landingpage_audit = audit_content(
                             content=landingpage.get("lp_html", ""),
                             product=product,
                             rules=partner_rules
                         )
+
                     else:
                         landingpage = {
                             "status": "SKIPPED_DIRECT_TO_SHOP",
-                            "product_id": product_id,
-                            "source": product.get("source"),
                             "url_path": route.get("target_url"),
-                            "full_url": route.get("target_url"),
                             "affiliate_url": route.get("target_url"),
-                            "lp_html": "",
-                            "lp_seo_title": "",
-                            "lp_meta_description": "",
-                            "lp_faq": "",
-                            "lp_cta": "Zum Shop",
-                            "lp_content": "",
-                            "timestamp": str(datetime.now())
+                            "lp_html": ""
                         }
 
                         landingpage_audit = {
-                            "status": "SKIPPED",
-                            "reason": "DIRECT_TO_SHOP_NO_LANDINGPAGE",
-                            "score": 100
+                            "status": "SKIPPED"
                         }
 
-                    auto_fix_result = auto_fix_posts([{
+                    # AUTO FIX
+                    fixed = auto_fix_posts([{
                         "post_id": product_id,
                         "content": monetized_content.get("text", ""),
                         "source": product.get("source"),
-                        "links": [
-                            route.get("target_url")
-                        ]
+                        "links": [route.get("target_url")]
                     }])
 
-                    if isinstance(auto_fix_result, list) and auto_fix_result:
-                        fixed_content = auto_fix_result[0]
-                    else:
-                        fixed_content = auto_fix_result
+                    # YOUTUBE ENTRY (NEW)
+                    youtube = build_youtube_entry(product, route)
 
-                    routing = {
-                        "channel": route.get("channel"),
-                        "product_id": product_id,
-                        "slot": slot,
-                        "target_url": route.get("target_url"),
-                        "landingpage_required": route.get("landingpage_required"),
-                        "route_type": route.get("route_type")
-                    }
-
+                    # TRACKING + LEARNING
                     output = send_output(product)
                     tracking = track_event(product, output)
                     learning = learn_from_results(product, tracking)
@@ -159,48 +144,45 @@ def run_master_engine():
                     final_results.append({
                         "product_id": product_id,
                         "slot": slot,
-                        "score": product.get("score"),
-                        "commission": product.get("commission"),
-                        "content": fixed_content,
+                        "routing": route,
+                        "content": content,
                         "monetized_content": monetized_content,
-                        "routing": routing,
-                        "landingpage": landingpage,
                         "compliance": compliance,
+                        "landingpage": landingpage,
                         "landingpage_audit": landingpage_audit,
-                        "output": output,
+                        "youtube": youtube,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "DIRECT_TO_SHOP" if route.get("landingpage_required") is False else "LANDINGPAGE_V4_ACTIVE"
+                        "output": output,
+                        "status": "OK"
                     })
 
-                except Exception as item_error:
+                except Exception as e:
+
                     final_results.append({
-                        "product_id": item.get("product_id") if isinstance(item, dict) else None,
-                        "slot": slot,
-                        "status": "ITEM_ERROR",
-                        "error": str(item_error),
+                        "product_id": item.get("product_id"),
+                        "status": "ERROR",
+                        "error": str(e),
                         "traceback": traceback.format_exc()
                     })
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_V4_ROUTING_ACTIVE",
+            "mode": "MASTER_ENGINE_V4_YOUTUBE_CONNECTED",
             "executed": len(final_results),
             "dashboard": dashboard,
             "results": final_results,
-            "sample_product": final_results[0] if final_results else None,
-            "time": str(datetime.now())
+            "sample": final_results[0] if final_results else None,
+            "time": _now()
         }
 
     except Exception as e:
+
         return {
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_V4_ROUTING_FAILED",
             "executed": 0,
-            "dashboard": {},
             "results": [],
-            "sample_product": None,
-            "time": str(datetime.now())
+            "time": _now()
         }
