@@ -13,17 +13,17 @@ def run_master_engine():
         from engine.output_layer import route_output as send_output
         from engine.tracking_engine import track_event
         from engine.learning_engine import learn_from_results
-
-        # ✅ MONETIZATION HINZUFÜGEN
         from engine.monetization_engine import inject_monetization
 
         products = load_products() or []
-        assets = load_assets() or []
+        assets = load_assets() or {}
 
         if not products:
             return {
                 "status": "error",
                 "message": "NO_PRODUCTS_FOUND",
+                "executed": 0,
+                "results": [],
                 "time": str(datetime.now())
             }
 
@@ -34,77 +34,71 @@ def run_master_engine():
 
         for slot, items in plan.get("schedule", {}).items():
 
+            if not items:
+                continue
+
             for item in items:
 
-                product_id = item.get("product_id")
+                try:
+                    product_id = item.get("product_id")
 
-                product = next(
-                    (p for p in products if p.get("product_id") == product_id),
-                    None
-                )
+                    product = next(
+                        (p for p in products if p.get("product_id") == product_id),
+                        None
+                    )
 
-                if not product:
-                    continue
+                    if not product:
+                        continue
 
-                # =========================
-                # 1. CONTENT GENERIEREN
-                # =========================
-                content = build_content(product) or {}
+                    content = build_content(product) or {}
 
-                # =========================
-                # 2. MONETIZATION (NEU)
-                # =========================
-                monetized_content = inject_monetization(
-                    content=content,
-                    product=product,
-                    assets=assets
-                )
+                    monetized_content = inject_monetization(
+                        content=content,
+                        product=product,
+                        assets=assets
+                    ) or {}
 
-                # =========================
-                # 3. AUTO FIX
-                # =========================
-                fixed_content = auto_fix_posts([{
-                    "post_id": product_id,
-                    "content": monetized_content.get("text", ""),
-                    "source": product.get("source"),
-                    "links": []
-                }])[0]
+                    auto_fix_result = auto_fix_posts([{
+                        "post_id": product_id,
+                        "content": monetized_content.get("text", ""),
+                        "source": product.get("source"),
+                        "links": []
+                    }])
 
-                # =========================
-                # 4. ROUTING
-                # =========================
-                routing = {
-                    "channel": "landingpage",
-                    "product_id": product_id,
-                    "slot": slot
-                }
+                    if isinstance(auto_fix_result, list) and auto_fix_result:
+                        fixed_content = auto_fix_result[0]
+                    else:
+                        fixed_content = auto_fix_result
 
-                # =========================
-                # 5. OUTPUT
-                # =========================
-                output = send_output(product)
+                    routing = {
+                        "channel": "landingpage",
+                        "product_id": product_id,
+                        "slot": slot
+                    }
 
-                # =========================
-                # 6. TRACKING
-                # =========================
-                tracking = track_event(product, output)
+                    output = send_output(product)
+                    tracking = track_event(product, output)
+                    learning = learn_from_results(product, tracking)
 
-                # =========================
-                # 7. LEARNING
-                # =========================
-                learning = learn_from_results(product, tracking)
+                    final_results.append({
+                        "product_id": product_id,
+                        "slot": slot,
+                        "content": fixed_content,
+                        "monetized_content": monetized_content,
+                        "routing": routing,
+                        "output": output,
+                        "tracking": tracking,
+                        "learning": learning,
+                        "status": "MONETIZED"
+                    })
 
-                final_results.append({
-                    "product_id": product_id,
-                    "slot": slot,
-                    "content": fixed_content,
-                    "monetized_content": monetized_content,
-                    "routing": routing,
-                    "output": output,
-                    "tracking": tracking,
-                    "learning": learning,
-                    "status": "MONETIZED"
-                })
+                except Exception as item_error:
+                    final_results.append({
+                        "product_id": item.get("product_id") if isinstance(item, dict) else None,
+                        "slot": slot,
+                        "status": "ITEM_ERROR",
+                        "error": str(item_error)
+                    })
 
         return {
             "status": "success",
@@ -120,5 +114,7 @@ def run_master_engine():
             "message": str(e),
             "traceback": traceback.format_exc(),
             "mode": "MASTER_ENGINE_MONETIZATION_FAILED",
+            "executed": 0,
+            "results": [],
             "time": str(datetime.now())
         }
