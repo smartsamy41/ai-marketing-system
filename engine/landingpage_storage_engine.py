@@ -1,6 +1,7 @@
 from datetime import datetime
 import os
 import re
+import traceback
 import gspread
 from google.auth import default
 
@@ -35,15 +36,18 @@ def _connect_sheet():
         return None
 
 
-def _write_file(product_id, html):
+def _write_file(product_id, landingpage):
     try:
         os.makedirs(LANDINGPAGE_DIR, exist_ok=True)
 
-        filename = f"{product_id}.html"
+        html = landingpage.get("lp_html") or landingpage.get("html") or ""
+        slug = landingpage.get("slug") or _slug(product_id)
+
+        filename = f"{slug}.html"
         path = os.path.join(LANDINGPAGE_DIR, filename)
 
         with open(path, "w", encoding="utf-8") as f:
-            f.write(html or "")
+            f.write(html)
 
         return {
             "status": "FILE_SAVED",
@@ -54,25 +58,25 @@ def _write_file(product_id, html):
     except Exception as e:
         return {
             "status": "FILE_SAVE_FAILED",
-            "error": str(e)
+            "error": str(e),
+            "traceback": traceback.format_exc()
         }
 
 
-def _upsert_landingpage_row(sheet, product, landingpage, monetized_content, compliance):
+def _upsert_landingpage_row(sheet, product, landingpage, monetized_content=None, compliance=None):
     try:
         ws = sheet.worksheet("landingpages")
+
         rows = ws.get_all_records()
         headers = ws.row_values(1)
 
         product_id = _safe(product.get("product_id"))
-        product_name = _safe(product.get("name") or product.get("product_name") or product.get("category"))
-        url_path = _safe(landingpage.get("url_path"))
-        html = landingpage.get("html", "")
-        affiliate_url = _safe(monetized_content.get("affiliate_link"))
-        title = _safe(landingpage.get("title") or monetized_content.get("title"))
-        meta = f"{product_name} prüfen und passende Angebote vergleichen."
-        content = _safe(monetized_content.get("text"))
-        cta = "Vergleich starten"
+        product_name = (
+            _safe(product.get("product_name"))
+            or _safe(product.get("name"))
+            or _safe(product.get("category"))
+            or product_id
+        )
 
         lp_id = f"LP_{product_id}"
 
@@ -80,22 +84,24 @@ def _upsert_landingpage_row(sheet, product, landingpage, monetized_content, comp
             "lp_id": lp_id,
             "product_id": product_id,
             "product_name": product_name,
-            "landingpage_url": url_path,
-            "affiliate_url": affiliate_url,
-            "status": "ready",
+            "landingpage_url": landingpage.get("url_path", ""),
+            "affiliate_url": landingpage.get("affiliate_url", ""),
+            "status": "created",
             "updated_at": _now(),
-            "lp_html": html,
-            "lp_seo_title": title,
-            "lp_meta_description": meta,
-            "lp_cta": cta,
-            "lp_content": content,
-            "lp_status": "ready",
+            "lp_html": landingpage.get("lp_html") or landingpage.get("html") or "",
+            "lp_seo_title": landingpage.get("lp_seo_title") or landingpage.get("title") or "",
+            "lp_meta_description": landingpage.get("lp_meta_description") or "",
+            "lp_faq": landingpage.get("lp_faq") or "",
+            "lp_cta": landingpage.get("lp_cta") or "Vergleich starten",
+            "lp_content": landingpage.get("lp_content") or landingpage.get("lp_html") or "",
+            "lp_status": "v4_ready",
             "lp_updated_at": _now(),
-            "final_status": "READY",
-            "publish_status": "READY",
-            "content_status": "landingpage_v3_ready",
-            "official_asset_status": "linked",
-            "asset_status": "linked"
+            "asset_status": "linked",
+            "final_status": "production_ready",
+            "content_model": "LANDINGPAGE_V4_ENGINE",
+            "content_status": "landingpage_v4_ready",
+            "official_asset_status": "official_assets_linked",
+            "publish_status": "ready_for_publish"
         }
 
         existing_row = None
@@ -117,10 +123,7 @@ def _upsert_landingpage_row(sheet, product, landingpage, monetized_content, comp
                 "product_id": product_id
             }
 
-        new_row = []
-        for h in headers:
-            new_row.append(update_data.get(h, ""))
-
+        new_row = [update_data.get(h, "") for h in headers]
         ws.append_row(new_row)
 
         return {
@@ -132,6 +135,7 @@ def _upsert_landingpage_row(sheet, product, landingpage, monetized_content, comp
         return {
             "status": "LANDINGPAGE_SHEET_SAVE_FAILED",
             "error": str(e),
+            "traceback": traceback.format_exc(),
             "product_id": product.get("product_id")
         }
 
@@ -139,15 +143,15 @@ def _upsert_landingpage_row(sheet, product, landingpage, monetized_content, comp
 def _update_product_row(sheet, product, landingpage):
     try:
         ws = sheet.worksheet("products")
+
         rows = ws.get_all_records()
         headers = ws.row_values(1)
 
         product_id = _safe(product.get("product_id"))
-        url_path = _safe(landingpage.get("url_path"))
 
         updates = {
-            "landingpage_url": url_path,
-            "content_status": "landingpage_v3_ready",
+            "landingpage_url": landingpage.get("url_path", ""),
+            "content_status": "landingpage_v4_ready",
             "updated_at": _now()
         }
 
@@ -173,6 +177,7 @@ def _update_product_row(sheet, product, landingpage):
         return {
             "status": "PRODUCT_UPDATE_FAILED",
             "error": str(e),
+            "traceback": traceback.format_exc(),
             "product_id": product.get("product_id")
         }
 
@@ -200,9 +205,8 @@ def store_landingpage(product, landingpage, monetized_content=None, compliance=N
             "product_id": product_id
         }
 
-    html = landingpage.get("html", "")
+    file_result = _write_file(product_id, landingpage)
 
-    file_result = _write_file(product_id, html)
     landingpage_result = _upsert_landingpage_row(
         sheet=sheet,
         product=product,
@@ -210,6 +214,7 @@ def store_landingpage(product, landingpage, monetized_content=None, compliance=N
         monetized_content=monetized_content,
         compliance=compliance
     )
+
     product_result = _update_product_row(
         sheet=sheet,
         product=product,
@@ -217,7 +222,7 @@ def store_landingpage(product, landingpage, monetized_content=None, compliance=N
     )
 
     return {
-        "status": "LANDINGPAGE_STORED",
+        "status": "LANDINGPAGE_STORED_V4",
         "product_id": product_id,
         "file": file_result,
         "landingpages_sheet": landingpage_result,
@@ -228,7 +233,7 @@ def store_landingpage(product, landingpage, monetized_content=None, compliance=N
 
 class LandingpageStorageEngine:
     def __init__(self):
-        print("🟢 LandingpageStorageEngine loaded")
+        print("🟢 LandingpageStorageEngine V4 loaded")
 
     def store(self, product, landingpage, monetized_content=None, compliance=None):
         return store_landingpage(product, landingpage, monetized_content, compliance)
