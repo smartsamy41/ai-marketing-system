@@ -14,6 +14,7 @@ def run_master_engine():
         from engine.tracking_engine import track_event
         from engine.learning_engine import learn_from_results
         from engine.monetization_engine import inject_monetization
+        from engine.landingpage_engine import build_landingpage
 
         products = load_products() or []
         assets = load_assets() or {}
@@ -58,11 +59,18 @@ def run_master_engine():
                         assets=assets
                     ) or {}
 
+                    landingpage = build_landingpage(
+                        product=product,
+                        monetized_content=monetized_content
+                    ) or {}
+
                     auto_fix_result = auto_fix_posts([{
                         "post_id": product_id,
                         "content": monetized_content.get("text", ""),
                         "source": product.get("source"),
-                        "links": []
+                        "links": [
+                            landingpage.get("url_path")
+                        ]
                     }])
 
                     if isinstance(auto_fix_result, list) and auto_fix_result:
@@ -73,7 +81,8 @@ def run_master_engine():
                     routing = {
                         "channel": "landingpage",
                         "product_id": product_id,
-                        "slot": slot
+                        "slot": slot,
+                        "landingpage_url": landingpage.get("url_path")
                     }
 
                     output = send_output(product)
@@ -85,11 +94,12 @@ def run_master_engine():
                         "slot": slot,
                         "content": fixed_content,
                         "monetized_content": monetized_content,
+                        "landingpage": landingpage,
                         "routing": routing,
                         "output": output,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "MONETIZED"
+                        "status": "LANDINGPAGE_V2_CREATED"
                     })
 
                 except Exception as item_error:
@@ -102,7 +112,7 @@ def run_master_engine():
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_MONETIZATION_ACTIVE",
+            "mode": "MASTER_ENGINE_LANDINGPAGES_V2_ACTIVE",
             "executed": len(final_results),
             "results": final_results,
             "time": str(datetime.now())
@@ -113,7 +123,7 @@ def run_master_engine():
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_MONETIZATION_FAILED",
+            "mode": "MASTER_ENGINE_LANDINGPAGES_V2_FAILED",
             "executed": 0,
             "results": [],
             "time": str(datetime.now())
