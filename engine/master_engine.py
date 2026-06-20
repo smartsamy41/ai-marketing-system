@@ -21,6 +21,7 @@ def run_master_engine():
         from engine.landingpage_engine import build_landingpage
         from engine.compliance_engine import apply_compliance, audit_content
         from engine.dashboard_engine import build_dashboard
+        from engine.landingpage_storage_engine import store_landingpage
 
         products = load_products() or []
         assets = load_assets() or {}
@@ -32,12 +33,13 @@ def run_master_engine():
                 "status": "error",
                 "message": "NO_PRODUCTS_FOUND",
                 "executed": 0,
-                "results": [],
                 "dashboard": {},
+                "results": [],
                 "time": str(datetime.now())
             }
 
         products = evaluate_products(products, commissions) or products
+
         dashboard = build_dashboard(
             products=products,
             commissions=commissions,
@@ -95,6 +97,13 @@ def run_master_engine():
                         rules=partner_rules
                     )
 
+                    storage = store_landingpage(
+                        product=product,
+                        landingpage=landingpage,
+                        monetized_content=monetized_content,
+                        compliance=compliance
+                    )
+
                     auto_fix_result = auto_fix_posts([{
                         "post_id": product_id,
                         "content": monetized_content.get("text", ""),
@@ -128,13 +137,14 @@ def run_master_engine():
                         "content": fixed_content,
                         "monetized_content": monetized_content,
                         "landingpage": landingpage,
+                        "storage": storage,
                         "compliance": compliance,
                         "landingpage_audit": landingpage_audit,
                         "routing": routing,
                         "output": output,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "LANDINGPAGE_V3_DASHBOARD_ACTIVE"
+                        "status": "LANDINGPAGE_V4_STORED"
                     })
 
                 except Exception as item_error:
@@ -147,7 +157,7 @@ def run_master_engine():
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_V3_DASHBOARD_ACTIVE",
+            "mode": "MASTER_ENGINE_V4_LANDINGPAGE_STORAGE_ACTIVE",
             "executed": len(final_results),
             "dashboard": dashboard,
             "results": final_results,
@@ -159,7 +169,7 @@ def run_master_engine():
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_V3_DASHBOARD_FAILED",
+            "mode": "MASTER_ENGINE_V4_LANDINGPAGE_STORAGE_FAILED",
             "executed": 0,
             "dashboard": {},
             "results": [],
