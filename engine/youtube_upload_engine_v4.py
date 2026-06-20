@@ -23,28 +23,25 @@ def _now():
 # AUTH
 # =========================
 
-def get_youtube_service():
+def get_service():
     creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
-
-    service = build("youtube", "v3", credentials=creds)
-
-    return service
+    return build("youtube", "v3", credentials=creds)
 
 
 # =========================
-# VIDEO UPLOAD
+# UPLOAD VIDEO
 # =========================
 
 def upload_video(file_path, title, description, tags=None):
 
     try:
-        service = get_youtube_service()
+        service = get_service()
 
         body = {
             "snippet": {
                 "title": title[:100],
                 "description": description,
-                "tags": tags or ["affiliate", "vergleich", "money", "deutschland"],
+                "tags": tags or ["affiliate", "vergleich", "2026", "shorts"],
                 "categoryId": "22"
             },
             "status": {
@@ -79,30 +76,32 @@ def upload_video(file_path, title, description, tags=None):
 
 
 # =========================
-# ENGINE WRAPPER
+# QUEUE UPLOADER
 # =========================
 
-def upload_from_queue(youtube_queue, video_folder):
+def upload_from_queue(youtube_results, video_folder):
 
     results = []
 
-    for item in youtube_queue:
+    for item in youtube_results:
 
         try:
             product_id = item.get("product_id")
-            title = item.get("title")
-            description = item.get("description")
-
             video_path = os.path.join(video_folder, f"{product_id}.mp4")
 
             if not os.path.exists(video_path):
+
                 results.append({
                     "product_id": product_id,
                     "status": "VIDEO_NOT_FOUND"
                 })
                 continue
 
-            result = upload_video(
+            yt = item.get("script", "")
+            title = f"{product_id} Vergleich 2026"
+            description = item.get("script", "") + "\n\nAffiliate Link in Beschreibung."
+
+            upload = upload_video(
                 file_path=video_path,
                 title=title,
                 description=description
@@ -110,7 +109,7 @@ def upload_from_queue(youtube_queue, video_folder):
 
             results.append({
                 "product_id": product_id,
-                "youtube": result
+                "youtube": upload
             })
 
         except Exception as e:
@@ -122,7 +121,7 @@ def upload_from_queue(youtube_queue, video_folder):
             })
 
     return {
-        "status": "YOUTUBE_UPLOAD_DONE",
+        "status": "YOUTUBE_UPLOAD_V4_DONE",
         "executed": len(results),
         "results": results,
         "time": _now()
