@@ -21,6 +21,7 @@ def run_master_engine():
         from engine.compliance_engine import apply_compliance, audit_content
         from engine.dashboard_engine import build_dashboard
         from engine.landingpage_v4_engine import build_landingpage_v4
+        from engine.routing_engine import route_product
 
         products = load_products() or []
         assets = load_assets() or {}
@@ -35,6 +36,7 @@ def run_master_engine():
                 "executed": 0,
                 "dashboard": {},
                 "results": [],
+                "sample_product": None,
                 "time": str(datetime.now())
             }
 
@@ -66,6 +68,8 @@ def run_master_engine():
                     if not product:
                         continue
 
+                    route = route_product(product)
+
                     content = build_content(product) or {}
 
                     monetized_content = inject_monetization(
@@ -86,25 +90,51 @@ def run_master_engine():
                     )
                     monetized_content["compliance_audit"] = compliance.get("audit")
 
-                    landingpage = build_landingpage_v4(
-                        product=product,
-                        assets=assets,
-                        commissions=commissions,
-                        rules=partner_rules
-                    ) or {}
+                    landingpage = None
+                    landingpage_audit = None
 
-                    landingpage_audit = audit_content(
-                        content=landingpage.get("lp_html", ""),
-                        product=product,
-                        rules=partner_rules
-                    )
+                    if route.get("landingpage_required") is True:
+                        landingpage = build_landingpage_v4(
+                            product=product,
+                            assets=assets,
+                            commissions=commissions,
+                            rules=partner_rules
+                        ) or {}
+
+                        landingpage_audit = audit_content(
+                            content=landingpage.get("lp_html", ""),
+                            product=product,
+                            rules=partner_rules
+                        )
+                    else:
+                        landingpage = {
+                            "status": "SKIPPED_DIRECT_TO_SHOP",
+                            "product_id": product_id,
+                            "source": product.get("source"),
+                            "url_path": route.get("target_url"),
+                            "full_url": route.get("target_url"),
+                            "affiliate_url": route.get("target_url"),
+                            "lp_html": "",
+                            "lp_seo_title": "",
+                            "lp_meta_description": "",
+                            "lp_faq": "",
+                            "lp_cta": "Zum Shop",
+                            "lp_content": "",
+                            "timestamp": str(datetime.now())
+                        }
+
+                        landingpage_audit = {
+                            "status": "SKIPPED",
+                            "reason": "DIRECT_TO_SHOP_NO_LANDINGPAGE",
+                            "score": 100
+                        }
 
                     auto_fix_result = auto_fix_posts([{
                         "post_id": product_id,
                         "content": monetized_content.get("text", ""),
                         "source": product.get("source"),
                         "links": [
-                            landingpage.get("url_path")
+                            route.get("target_url")
                         ]
                     }])
 
@@ -114,10 +144,12 @@ def run_master_engine():
                         fixed_content = auto_fix_result
 
                     routing = {
-                        "channel": "landingpage",
+                        "channel": route.get("channel"),
                         "product_id": product_id,
                         "slot": slot,
-                        "landingpage_url": landingpage.get("url_path")
+                        "target_url": route.get("target_url"),
+                        "landingpage_required": route.get("landingpage_required"),
+                        "route_type": route.get("route_type")
                     }
 
                     output = send_output(product)
@@ -131,14 +163,14 @@ def run_master_engine():
                         "commission": product.get("commission"),
                         "content": fixed_content,
                         "monetized_content": monetized_content,
+                        "routing": routing,
                         "landingpage": landingpage,
                         "compliance": compliance,
                         "landingpage_audit": landingpage_audit,
-                        "routing": routing,
                         "output": output,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "LANDINGPAGE_V4_ACTIVE"
+                        "status": "DIRECT_TO_SHOP" if route.get("landingpage_required") is False else "LANDINGPAGE_V4_ACTIVE"
                     })
 
                 except Exception as item_error:
@@ -146,12 +178,13 @@ def run_master_engine():
                         "product_id": item.get("product_id") if isinstance(item, dict) else None,
                         "slot": slot,
                         "status": "ITEM_ERROR",
-                        "error": str(item_error)
+                        "error": str(item_error),
+                        "traceback": traceback.format_exc()
                     })
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_V4_LANDINGPAGE_ACTIVE",
+            "mode": "MASTER_ENGINE_V4_ROUTING_ACTIVE",
             "executed": len(final_results),
             "dashboard": dashboard,
             "results": final_results,
@@ -164,7 +197,7 @@ def run_master_engine():
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_V4_LANDINGPAGE_FAILED",
+            "mode": "MASTER_ENGINE_V4_ROUTING_FAILED",
             "executed": 0,
             "dashboard": {},
             "results": [],
