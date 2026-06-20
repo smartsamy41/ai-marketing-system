@@ -3,9 +3,13 @@ import traceback
 
 
 def run_master_engine():
-
     try:
-        from engine.data_layer_engine import load_products, load_assets
+        from engine.data_layer_engine import (
+            load_products,
+            load_assets,
+            load_commissions,
+            load_partner_rules
+        )
         from engine.decision_engine import evaluate_products
         from engine.content_engine import build_content
         from engine.auto_fix_engine import auto_fix_posts
@@ -15,9 +19,12 @@ def run_master_engine():
         from engine.learning_engine import learn_from_results
         from engine.monetization_engine import inject_monetization
         from engine.landingpage_engine import build_landingpage
+        from engine.compliance_engine import apply_compliance, audit_content
 
         products = load_products() or []
         assets = load_assets() or {}
+        commissions = load_commissions() or {}
+        partner_rules = load_partner_rules() or {}
 
         if not products:
             return {
@@ -28,18 +35,16 @@ def run_master_engine():
                 "time": str(datetime.now())
             }
 
-        products = evaluate_products(products) or products
+        products = evaluate_products(products, commissions) or products
         plan = run_orchestrator(products) or {"schedule": {}}
 
         final_results = []
 
         for slot, items in plan.get("schedule", {}).items():
-
             if not items:
                 continue
 
             for item in items:
-
                 try:
                     product_id = item.get("product_id")
 
@@ -59,10 +64,28 @@ def run_master_engine():
                         assets=assets
                     ) or {}
 
+                    compliance = apply_compliance(
+                        content=monetized_content.get("text", ""),
+                        product=product,
+                        rules=partner_rules
+                    )
+
+                    monetized_content["text"] = compliance.get(
+                        "content",
+                        monetized_content.get("text", "")
+                    )
+                    monetized_content["compliance_audit"] = compliance.get("audit")
+
                     landingpage = build_landingpage(
                         product=product,
                         monetized_content=monetized_content
                     ) or {}
+
+                    landingpage_audit = audit_content(
+                        content=landingpage.get("html", ""),
+                        product=product,
+                        rules=partner_rules
+                    )
 
                     auto_fix_result = auto_fix_posts([{
                         "post_id": product_id,
@@ -92,14 +115,18 @@ def run_master_engine():
                     final_results.append({
                         "product_id": product_id,
                         "slot": slot,
+                        "score": product.get("score"),
+                        "commission": product.get("commission"),
                         "content": fixed_content,
                         "monetized_content": monetized_content,
                         "landingpage": landingpage,
+                        "compliance": compliance,
+                        "landingpage_audit": landingpage_audit,
                         "routing": routing,
                         "output": output,
                         "tracking": tracking,
                         "learning": learning,
-                        "status": "LANDINGPAGE_V2_CREATED"
+                        "status": "LANDINGPAGE_V3_COMPLIANCE_ACTIVE"
                     })
 
                 except Exception as item_error:
@@ -112,7 +139,7 @@ def run_master_engine():
 
         return {
             "status": "success",
-            "mode": "MASTER_ENGINE_LANDINGPAGES_V2_ACTIVE",
+            "mode": "MASTER_ENGINE_V3_COMPLIANCE_ACTIVE",
             "executed": len(final_results),
             "results": final_results,
             "time": str(datetime.now())
@@ -123,7 +150,7 @@ def run_master_engine():
             "status": "fatal_error",
             "message": str(e),
             "traceback": traceback.format_exc(),
-            "mode": "MASTER_ENGINE_LANDINGPAGES_V2_FAILED",
+            "mode": "MASTER_ENGINE_V3_COMPLIANCE_FAILED",
             "executed": 0,
             "results": [],
             "time": str(datetime.now())
