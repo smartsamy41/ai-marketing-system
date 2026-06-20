@@ -3,10 +3,11 @@ FROM python:3.11-slim
 WORKDIR /app
 
 COPY requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 🔥 WICHTIG: alles sauber kopieren
-COPY . .
+COPY App ./app
+COPY Motor/engine ./engine
 
 ENV PORT=8080
 
