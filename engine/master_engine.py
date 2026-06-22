@@ -1,7 +1,14 @@
 from datetime import datetime
 import traceback
 
-from engine.data_layer_engine import load_products, load_assets
+from engine.data_layer_engine import (
+    load_products,
+    load_assets,
+    load_commissions,
+    load_partner_rules
+)
+
+from engine.decision_engine import evaluate_products
 from engine.orchestrator_engine import run_orchestrator
 from engine.routing_engine import route_product
 
@@ -10,14 +17,20 @@ from engine.monetization_engine import inject_monetization
 from engine.compliance_engine import apply_compliance, audit_content
 
 from engine.landingpage_v4_engine import build_landingpage_v4
+from engine.auto_fix_engine import auto_fix_posts
+
 from engine.tracking_engine import track_event
 from engine.learning_engine import learn_from_results
+
 from engine.output_layer import route_output
 
 from engine.youtube_engine_v1 import build_youtube_entry
+
 from engine.dashboard_engine import build_dashboard
 
 from engine.cleanup_engine import run_cleanup_system
+
+from engine.traffic_loop_engine import run_traffic_loop
 
 
 def _now():
@@ -30,6 +43,8 @@ def run_master_engine():
 
         products = load_products() or []
         assets = load_assets() or {}
+        commissions = load_commissions() or {}
+        partner_rules = load_partner_rules() or {}
 
         if not products:
             return {
@@ -39,15 +54,21 @@ def run_master_engine():
                 "time": _now()
             }
 
-        # CLEANUP LAYER (PRODUCTION SAFE)
+        # CLEANUP LAYER
         run_cleanup_system({
             "landingpages": [],
             "blog_posts": []
         })
 
+        # PRODUCT SCORING
+        products = evaluate_products(products, commissions) or products
+
+        # ORCHESTRATION PLAN
         plan = run_orchestrator(products) or {"schedule": {}}
 
         results = []
+
+        total_performance_input = []
 
         for slot, items in plan.get("schedule", {}).items():
 
@@ -77,19 +98,23 @@ def run_master_engine():
 
                     compliance = apply_compliance(
                         content=monetized.get("text", ""),
-                        product=product
+                        product=product,
+                        rules=partner_rules
                     )
 
                     if route.get("landingpage_required"):
 
                         landing = build_landingpage_v4(
                             product=product,
-                            assets=assets
+                            assets=assets,
+                            commissions=commissions,
+                            rules=partner_rules
                         )
 
                         audit = audit_content(
                             landing.get("lp_html", ""),
-                            product=product
+                            product=product,
+                            rules=partner_rules
                         )
 
                     else:
@@ -99,11 +124,24 @@ def run_master_engine():
                         }
                         audit = {"status": "SKIPPED"}
 
+                    auto_fix_posts([{
+                        "post_id": product_id,
+                        "content": monetized.get("text", ""),
+                        "source": product.get("source"),
+                        "links": [route.get("target_url")]
+                    }])
+
                     youtube = build_youtube_entry(product, route)
 
                     output = route_output(product)
                     tracking = track_event(product, output)
                     learning = learn_from_results(product, tracking)
+
+                    # TRAFFIC LOOP INPUT
+                    total_performance_input.append({
+                        "product_id": product_id,
+                        "source": product.get("source", "unknown")
+                    })
 
                     results.append({
                         "product_id": product_id,
@@ -117,6 +155,7 @@ def run_master_engine():
                         "youtube": youtube,
                         "tracking": tracking,
                         "learning": learning,
+                        "output": output,
                         "status": "OK"
                     })
 
@@ -129,13 +168,18 @@ def run_master_engine():
                         "trace": traceback.format_exc()
                     })
 
+        # DASHBOARD
         dashboard = build_dashboard(products, {}, assets, {})
+
+        # TRAFFIC LOOP (NEW REAL SYSTEM)
+        traffic = run_traffic_loop(total_performance_input)
 
         return {
             "status": "SUCCESS",
-            "mode": "PRODUCTION_V1",
+            "mode": "MASTER_ENGINE_V5_PRODUCTION",
             "executed": len(results),
             "dashboard": dashboard,
+            "traffic": traffic,
             "results": results,
             "sample": results[0] if results else None,
             "time": _now()
@@ -147,5 +191,7 @@ def run_master_engine():
             "status": "FATAL_ERROR",
             "error": str(e),
             "trace": traceback.format_exc(),
+            "executed": 0,
+            "results": [],
             "time": _now()
         }
