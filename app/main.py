@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from datetime import datetime
 
 app = FastAPI()
 
-print("🟢 AI SYSTEM STARTED (PRODUCTION MODE)")
+print("🟢 AI AUTONOMY SYSTEM STARTED")
 
 
 # =========================
@@ -13,7 +13,7 @@ print("🟢 AI SYSTEM STARTED (PRODUCTION MODE)")
 @app.get("/")
 def root():
     return {
-        "status": "KI-SYSTEM ONLINE",
+        "status": "AI AUTONOMY SYSTEM ONLINE",
         "mode": "PRODUCTION",
         "time": str(datetime.now())
     }
@@ -26,7 +26,7 @@ def root():
 def health():
     return {
         "status": "RUNNING",
-        "system": "CLEAN_PRODUCTION_MAIN",
+        "system": "AUTONOMY_CORE_V1",
         "time": str(datetime.now())
     }
 
@@ -35,28 +35,25 @@ def health():
 # AUTONOMY ENGINE TRIGGER
 # =========================
 @app.get("/run")
-def run_system():
+def run_autonomy():
     try:
         from engine.master_engine import run_master_engine
 
         result = run_master_engine()
 
         return {
-            "status": result.get("status", "UNKNOWN"),
+            "status": "AUTONOMY_RUNNING",
             "mode": result.get("mode", "MASTER_ENGINE"),
             "executed": result.get("executed", 0),
 
-            # core outputs
             "results": result.get("results", [])[:5],
 
-            # sample product
             "sample_product": (
                 result.get("results", [{}])[0]
                 if result.get("results")
                 else None
             ),
 
-            # debug
             "message": result.get("message"),
             "error": result.get("error"),
 
@@ -65,10 +62,44 @@ def run_system():
 
     except Exception as e:
         return {
-            "status": "FATAL_ERROR",
+            "status": "ERROR",
             "message": str(e),
             "time": str(datetime.now())
         }
+
+
+# =========================
+# CONTROL PANEL (LIVE BRAIN)
+# =========================
+@app.get("/control")
+def control_panel():
+    try:
+        from engine.performance_layer_v1 import get_performance
+        from engine.revenue_system_v2 import get_revenue_state
+        from engine.ecosystem_state_v1 import get_system_health
+
+        return JSONResponse({
+            "status": "CONTROL_PANEL_ACTIVE",
+
+            "system_health": get_system_health(),
+            "performance": get_performance(),
+            "revenue": get_revenue_state(),
+
+            "autonomy": {
+                "mode": "READY_24_7",
+                "scheduler": "EXTERNAL_REQUIRED",
+                "engine": "ACTIVE"
+            },
+
+            "time": str(datetime.now())
+        })
+
+    except Exception as e:
+        return JSONResponse({
+            "status": "CONTROL_PANEL_ERROR",
+            "error": str(e),
+            "time": str(datetime.now())
+        })
 
 
 # =========================
@@ -110,7 +141,7 @@ def landingpage(slug: str):
             content="""
             <html>
                 <body>
-                    <h1>404 - Landingpage nicht gefunden</h1>
+                    <h1>404 - NOT FOUND</h1>
                 </body>
             </html>
             """,
