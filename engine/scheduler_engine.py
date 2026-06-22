@@ -1,6 +1,11 @@
 from datetime import datetime
 
+import requests
 
+
+# =========================
+# BUILD SCHEDULE
+# =========================
 def build_schedule(products):
 
     schedule = {
@@ -27,10 +32,27 @@ def build_schedule(products):
     }
 
 
+# =========================
+# LIVE AUTONOMY TRIGGER
+# =========================
 class SchedulerEngine:
 
-    def __init__(self):
-        print("🟢 SchedulerEngine loaded")
+    def __init__(self, base_url):
+        self.base_url = base_url
+        print("🟢 SchedulerEngine ACTIVE")
+
+    def trigger_run(self):
+        try:
+            response = requests.get(self.base_url + "/run")
+
+            print("🟢 AUTONOMY TRIGGERED")
+            print("STATUS:", response.status_code)
+
+            return response.json()
+
+        except Exception as e:
+            print("❌ ERROR TRIGGERING SYSTEM:", str(e))
+            return {"status": "ERROR", "message": str(e)}
 
     def create_schedule(self, products):
         return build_schedule(products)
