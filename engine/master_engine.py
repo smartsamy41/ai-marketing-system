@@ -32,6 +32,8 @@ from engine.cleanup_engine import run_cleanup_system
 
 from engine.traffic_loop_engine import run_traffic_loop
 
+from engine.real_traffic_connector import run_real_traffic_connector
+
 
 def _now():
     return str(datetime.now())
@@ -60,15 +62,15 @@ def run_master_engine():
             "blog_posts": []
         })
 
-        # PRODUCT SCORING
+        # SCORING
         products = evaluate_products(products, commissions) or products
 
-        # ORCHESTRATION PLAN
+        # ORCHESTRATION
         plan = run_orchestrator(products) or {"schedule": {}}
 
         results = []
 
-        total_performance_input = []
+        traffic_input = []
 
         for slot, items in plan.get("schedule", {}).items():
 
@@ -137,11 +139,7 @@ def run_master_engine():
                     tracking = track_event(product, output)
                     learning = learn_from_results(product, tracking)
 
-                    # TRAFFIC LOOP INPUT
-                    total_performance_input.append({
-                        "product_id": product_id,
-                        "source": product.get("source", "unknown")
-                    })
+                    traffic_input.append(product)
 
                     results.append({
                         "product_id": product_id,
@@ -168,18 +166,18 @@ def run_master_engine():
                         "trace": traceback.format_exc()
                     })
 
-        # DASHBOARD
+        # SYSTEM LAYERS
         dashboard = build_dashboard(products, {}, assets, {})
-
-        # TRAFFIC LOOP (NEW REAL SYSTEM)
-        traffic = run_traffic_loop(total_performance_input)
+        traffic = run_traffic_loop(traffic_input)
+        real_traffic = run_real_traffic_connector(products)
 
         return {
             "status": "SUCCESS",
-            "mode": "MASTER_ENGINE_V5_PRODUCTION",
+            "mode": "MASTER_ENGINE_V6_FULL_PRODUCTION",
             "executed": len(results),
             "dashboard": dashboard,
             "traffic": traffic,
+            "real_traffic": real_traffic,
             "results": results,
             "sample": results[0] if results else None,
             "time": _now()
