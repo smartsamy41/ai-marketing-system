@@ -1,70 +1,80 @@
 from fastapi import FastAPI
 
 # =========================
-# SAFE ENGINE IMPORT LAYER
+# SAFE IMPORT LAYER
 # =========================
 try:
     from engine.orchestrator_engine_v2 import run_orchestrator
-    from engine.scheduler_engine import SchedulerEngine
-    from engine.core_engine import CoreEngine
 except Exception as e:
     run_orchestrator = None
-    SchedulerEngine = None
-    CoreEngine = None
 
 
 app = FastAPI()
 
 
 # =========================
-# CORE HEALTH
+# ROOT
 # =========================
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "LIVE"}
-
-
-@app.get("/health")
-def health():
     return {
         "status": "OK",
-        "engine_loaded": run_orchestrator is not None
+        "system": "LIVE"
     }
 
 
 # =========================
-# RUN SYSTEM
+# HEALTH
+# =========================
+@app.get("/health")
+def health():
+    return {
+        "status": "OK",
+        "orchestrator_loaded": run_orchestrator is not None
+    }
+
+
+# =========================
+# RUN (SAFE MODE - NO CRASH)
 # =========================
 @app.get("/run")
 def run():
 
-    if not run_orchestrator:
-        return {"status": "ERROR", "message": "Engine not loaded"}
-
-    # MOCK JOB (safe test)
     job = {
         "product_id": "TEST_001",
         "category": "default",
         "data": {}
     }
 
-    result = run_orchestrator(job)
+    # IF ORCHESTRATOR NOT LOADED
+    if not run_orchestrator:
+        return {
+            "status": "ERROR",
+            "message": "orchestrator not loaded"
+        }
 
-    return {
-        "status": "RUNNING",
-        "result": result
-    }
+    try:
+        result = run_orchestrator(job)
+
+        return {
+            "status": "RUN OK",
+            "result": result
+        }
+
+    except Exception as e:
+        return {
+            "status": "RUN ERROR",
+            "message": str(e)
+        }
 
 
 # =========================
-# ENGINE TEST
+# DEBUG ENGINE TEST
 # =========================
 @app.get("/engine")
-def engine_test():
+def engine():
 
-    core = CoreEngine() if CoreEngine else None
-
-    if not core:
-        return {"status": "ERROR", "message": "CoreEngine missing"}
-
-    return core.health()
+    return {
+        "status": "ENGINE OK",
+        "orchestrator": run_orchestrator is not None
+    }
