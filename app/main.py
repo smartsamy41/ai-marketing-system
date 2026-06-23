@@ -1,6 +1,8 @@
 from fastapi import FastAPI
-from app.engine.orchestrator_engine_v2 import run_orchestrator
-from app.engine.scheduler_engine import get_due_jobs
+
+# ✅ engine liegt im ROOT neben app
+from engine.orchestrator_engine_v2 import run_orchestrator
+from engine.scheduler_engine import get_due_jobs
 
 app = FastAPI()
 
@@ -12,13 +14,13 @@ app = FastAPI()
 def home():
     return {
         "status": "OK",
-        "system": "CLOUD RUN ACTIVE",
+        "system": "AI MARKETING RUNNING",
         "mode": "PRODUCTION"
     }
 
 
 # =========================
-# RUN SINGLE CYCLE
+# MANUAL RUN
 # =========================
 @app.get("/run")
 def run():
@@ -29,7 +31,7 @@ def run():
 
     for job in jobs:
 
-        # 🔥 SAFE JOB NORMALIZATION (WICHTIG!)
+        # SAFE JOB NORMALIZATION
         clean_job = {
             "product_id": job.get("product_id"),
             "category": job.get("category", "default"),
@@ -40,7 +42,7 @@ def run():
             result = run_orchestrator(clean_job)
 
             results.append({
-                "job": clean_job["product_id"],
+                "product": clean_job["product_id"],
                 "status": "SUCCESS",
                 "result": result
             })
@@ -48,7 +50,7 @@ def run():
         except Exception as e:
 
             results.append({
-                "job": clean_job["product_id"],
+                "product": clean_job["product_id"],
                 "status": "ERROR",
                 "error": str(e)
             })
