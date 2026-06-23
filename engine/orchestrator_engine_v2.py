@@ -1,4 +1,3 @@
-
 from datetime import datetime
 import random
 
@@ -29,15 +28,19 @@ def run_orchestrator(job):
     else:
         slot = "EVENING"
 
+    # =========================
+    # RESULT STRUCTURE
+    # =========================
     result = {
         "product_id": product_id,
         "category": category,
         "slot": slot,
-        "actions": []
+        "actions": [],
+        "cross_links": []
     }
 
     # =========================
-    # 1. TELEKOM ROUTING (IMPORTANT)
+    # 1. TELEKOM ROUTING (NO LANDINGPAGE)
     # =========================
     if category == "telekom":
 
@@ -50,7 +53,7 @@ def run_orchestrator(job):
         return result
 
     # =========================
-    # 2. AMAZON ROUTING (CROSS LINK READY)
+    # 2. AMAZON ROUTING (CROSS LINK)
     # =========================
     if category == "amazon":
 
@@ -60,7 +63,7 @@ def run_orchestrator(job):
         })
 
     # =========================
-    # 3. LANDINGPAGE (ALWAYS)
+    # 3. LANDINGPAGE (ALWAYS EXCEPT TELEKOM)
     # =========================
     lp_url = generate_landingpage(product_id, data)
 
@@ -70,7 +73,7 @@ def run_orchestrator(job):
     })
 
     # =========================
-    # 4. BLOG POST (CONTROLLED)
+    # 4. BLOG POST (CONTROLLED FREQUENCY)
     # =========================
     if slot == "MORNING" and random.random() < 0.6:
 
@@ -82,7 +85,7 @@ def run_orchestrator(job):
         })
 
     # =========================
-    # 5. YOUTUBE (LOW FREQUENCY = NO SPAM)
+    # 5. YOUTUBE (LOW FREQUENCY - NO SPAM)
     # =========================
     if slot in ["MIDDAY", "EVENING"] and random.random() < 0.4:
 
@@ -94,7 +97,16 @@ def run_orchestrator(job):
         })
 
     # =========================
-    # 6. TRACKING
+    # 6. CROSS LINKING STRATEGY
+    # =========================
+    result["cross_links"] = [
+        "check24",
+        "tarifcheck",
+        "amazon"
+    ]
+
+    # =========================
+    # 7. TRACKING
     # =========================
     log_event(result)
 
