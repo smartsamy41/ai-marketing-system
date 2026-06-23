@@ -1,8 +1,5 @@
 from fastapi import FastAPI
 
-# =========================
-# SAFE IMPORT LAYER
-# =========================
 try:
     from engine.orchestrator_engine_v2 import run_orchestrator
 except Exception:
@@ -12,20 +9,11 @@ except Exception:
 app = FastAPI()
 
 
-# =========================
-# ROOT
-# =========================
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "LIVE"
-    }
+    return {"status": "OK", "system": "LIVE"}
 
 
-# =========================
-# HEALTH CHECK
-# =========================
 @app.get("/health")
 def health():
     return {
@@ -34,9 +22,6 @@ def health():
     }
 
 
-# =========================
-# RUN SYSTEM
-# =========================
 @app.get("/run")
 def run():
 
@@ -46,18 +31,12 @@ def run():
         "data": {}
     }
 
-    # -------------------------
-    # ORCHESTRATOR CHECK
-    # -------------------------
     if not run_orchestrator:
         return {
             "status": "ERROR",
             "message": "orchestrator not loaded"
         }
 
-    # -------------------------
-    # SAFE EXECUTION
-    # -------------------------
     try:
         result = run_orchestrator(job)
 
@@ -73,12 +52,8 @@ def run():
         }
 
 
-# =========================
-# ENGINE TEST
-# =========================
 @app.get("/engine")
 def engine():
-
     return {
         "status": "ENGINE OK",
         "orchestrator": run_orchestrator is not None
