@@ -4,8 +4,8 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"status": "OK", "message": "container started"}
+    return {"status": "OK"}
 
 @app.get("/run")
 def run():
-    return {"status": "OK", "message": "run endpoint working"}
+    return {"status": "RUN OK"}
