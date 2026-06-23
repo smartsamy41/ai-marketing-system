@@ -1,60 +1,111 @@
 
-from fastapi import FastAPI
+from datetime import datetime
+import random
 
-from engine.orchestrator_engine_v2 import run_orchestrator
-from engine.scheduler_engine import get_due_jobs
-
-app = FastAPI()
+from app.engine.landingpage_engine import generate_landingpage
+from app.engine.blogger_publisher_engine import publish_blog
+from app.engine.youtube_engine_v1 import create_youtube_content
+from app.engine.tracking_engine import log_event
 
 
 # =========================
-# HEALTH CHECK
+# ORCHESTRATOR V2
 # =========================
-@app.get("/")
-def home():
-    return {
-        "status": "OK",
-        "system": "AI MARKETING RUNNING",
-        "mode": "PRODUCTION"
+def run_orchestrator(job):
+
+    product_id = job.get("product_id")
+    category = job.get("category", "default")
+    data = job.get("data", {})
+
+    hour = datetime.now().hour
+
+    # =========================
+    # TIME SLOT
+    # =========================
+    if 6 <= hour < 12:
+        slot = "MORNING"
+    elif 12 <= hour < 18:
+        slot = "MIDDAY"
+    else:
+        slot = "EVENING"
+
+    result = {
+        "product_id": product_id,
+        "category": category,
+        "slot": slot,
+        "actions": [],
+        "cross_links": []
     }
 
+    # =========================
+    # TELEKOM (NO LANDINGPAGE)
+    # =========================
+    if category == "telekom":
 
-# =========================
-# RUN
-# =========================
-@app.get("/run")
-def run():
+        result["actions"].append({
+            "type": "telekom_redirect",
+            "target": "official_shop"
+        })
 
-    jobs = get_due_jobs()
+        log_event(result)
+        return result
 
-    results = []
+    # =========================
+    # AMAZON (CROSS LINK)
+    # =========================
+    if category == "amazon":
 
-    for job in jobs:
+        result["actions"].append({
+            "type": "amazon_cross_link",
+            "target": "affiliate"
+        })
 
-        clean_job = {
-            "product_id": job.get("product_id"),
-            "category": job.get("category", "default"),
-            "data": job.get("data", {})
-        }
+    # =========================
+    # LANDINGPAGE
+    # =========================
+    lp_url = generate_landingpage(product_id, data)
 
-        try:
-            result = run_orchestrator(clean_job)
+    result["actions"].append({
+        "type": "landingpage",
+        "url": lp_url
+    })
 
-            results.append({
-                "product": clean_job["product_id"],
-                "status": "SUCCESS",
-                "result": result
-            })
+    # =========================
+    # BLOG (CONTROLLED)
+    # =========================
+    if slot == "MORNING" and random.random() < 0.6:
 
-        except Exception as e:
+        blog_url = publish_blog(product_id, lp_url, data)
 
-            results.append({
-                "product": clean_job["product_id"],
-                "status": "ERROR",
-                "error": str(e)
-            })
+        result["actions"].append({
+            "type": "blog",
+            "url": blog_url
+        })
 
-    return {
-        "executed": len(results),
-        "results": results
-    }
+    # =========================
+    # YOUTUBE (LOW FREQUENCY)
+    # =========================
+    if slot in ["MIDDAY", "EVENING"] and random.random() < 0.4:
+
+        yt_url = create_youtube_content(product_id, lp_url, data)
+
+        result["actions"].append({
+            "type": "youtube",
+            "url": yt_url
+        })
+
+    # =========================
+    # CROSS LINKS
+    # =========================
+    result["cross_links"] = [
+        "check24",
+        "tarifcheck",
+        "amazon"
+    ]
+
+    # =========================
+    # TRACKING
+    =========================
+    log_event(result)
+
+    return result
