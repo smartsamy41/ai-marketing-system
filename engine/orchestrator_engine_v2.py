@@ -1,11 +1,27 @@
-
 from datetime import datetime
 import random
 
-from app.engine.landingpage_engine import generate_landingpage
-from app.engine.blogger_publisher_engine import publish_blog
-from app.engine.youtube_engine_v1 import create_youtube_content
-from app.engine.tracking_engine import log_event
+
+# =========================
+# SAFE IMPORTS (FAIL PROTECTED)
+# =========================
+try:
+    from app.engine.landingpage_engine import generate_landingpage
+    from app.engine.blogger_publisher_engine import publish_blog
+    from app.engine.youtube_engine_v1 import create_youtube_content
+    from app.engine.tracking_engine import log_event
+except Exception as e:
+    def generate_landingpage(*args, **kwargs):
+        return "ERROR_LANDINGPAGE_IMPORT"
+
+    def publish_blog(*args, **kwargs):
+        return "ERROR_BLOG_IMPORT"
+
+    def create_youtube_content(*args, **kwargs):
+        return "ERROR_YOUTUBE_IMPORT"
+
+    def log_event(*args, **kwargs):
+        print("LOG_DISABLED:", e)
 
 
 # =========================
@@ -38,10 +54,9 @@ def run_orchestrator(job):
     }
 
     # =========================
-    # TELEKOM (NO LANDINGPAGE)
+    # TELEKOM ROUTE
     # =========================
     if category == "telekom":
-
         result["actions"].append({
             "type": "telekom_redirect",
             "target": "official_shop"
@@ -51,10 +66,9 @@ def run_orchestrator(job):
         return result
 
     # =========================
-    # AMAZON (CROSS LINK)
+    # AMAZON ROUTE
     # =========================
     if category == "amazon":
-
         result["actions"].append({
             "type": "amazon_cross_link",
             "target": "affiliate"
@@ -74,7 +88,6 @@ def run_orchestrator(job):
     # BLOG (CONTROLLED)
     # =========================
     if slot == "MORNING" and random.random() < 0.6:
-
         blog_url = publish_blog(product_id, lp_url, data)
 
         result["actions"].append({
@@ -86,7 +99,6 @@ def run_orchestrator(job):
     # YOUTUBE (LOW FREQUENCY)
     # =========================
     if slot in ["MIDDAY", "EVENING"] and random.random() < 0.4:
-
         yt_url = create_youtube_content(product_id, lp_url, data)
 
         result["actions"].append({
@@ -104,8 +116,8 @@ def run_orchestrator(job):
     ]
 
     # =========================
-    # TRACKING
-    =========================
+    # TRACKING SAFE CALL
+    # =========================
     log_event(result)
 
     return result
