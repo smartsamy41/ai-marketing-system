@@ -1,8 +1,5 @@
-
 from fastapi import FastAPI
-import time
-
-from app.engine.orchestrator_engine import run_orchestrator
+from app.engine.orchestrator_engine_v2 import run_orchestrator
 from app.engine.scheduler_engine import get_due_jobs
 
 app = FastAPI()
@@ -14,17 +11,17 @@ app = FastAPI()
 @app.get("/")
 def home():
     return {
-        "status": "CLOUD RUN ACTIVE",
-        "system": "PRODUCTION V2",
-        "mode": "AUTOPILOT READY"
+        "status": "OK",
+        "system": "CLOUD RUN ACTIVE",
+        "mode": "PRODUCTION"
     }
 
 
 # =========================
-# SINGLE RUN TRIGGER
+# RUN SINGLE CYCLE
 # =========================
 @app.get("/run")
-def run_once():
+def run():
 
     jobs = get_due_jobs()
 
@@ -32,53 +29,31 @@ def run_once():
 
     for job in jobs:
 
-        try:
+        # 🔥 SAFE JOB NORMALIZATION (WICHTIG!)
+        clean_job = {
+            "product_id": job.get("product_id"),
+            "category": job.get("category", "default"),
+            "data": job.get("data", {})
+        }
 
-            result = run_orchestrator(job)
+        try:
+            result = run_orchestrator(clean_job)
 
             results.append({
-                "job": job.get("product_id"),
+                "job": clean_job["product_id"],
                 "status": "SUCCESS",
-                "output": result
+                "result": result
             })
 
         except Exception as e:
 
             results.append({
-                "job": job.get("product_id"),
+                "job": clean_job["product_id"],
                 "status": "ERROR",
                 "error": str(e)
             })
 
     return {
-        "executed_jobs": len(results),
+        "executed": len(results),
         "results": results
-    }
-
-
-# =========================
-# AUTOPILOT LOOP (PRODUCTION MODE)
-# =========================
-@app.get("/autopilot")
-def autopilot():
-
-    cycle = 0
-
-    while cycle < 1000:   # safety limit
-
-        jobs = get_due_jobs()
-
-        for job in jobs:
-
-            try:
-                run_orchestrator(job)
-
-            except Exception as e:
-                print("ERROR:", e)
-
-        cycle += 1
-        time.sleep(60)
-
-    return {
-        "status": "AUTOPILOT STOPPED (LIMIT REACHED)"
     }
