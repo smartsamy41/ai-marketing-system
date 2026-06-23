@@ -9,18 +9,18 @@ from app.engine.tracking_engine import log_event
 
 
 # =========================
-# MAIN ORCHESTRATOR
+# ORCHESTRATOR V2 (PRODUCTION CORE)
 # =========================
 def run_orchestrator(job):
 
     product_id = job.get("product_id")
-    category = job.get("category")
+    category = job.get("category", "default")
     data = job.get("data", {})
 
     hour = datetime.now().hour
 
     # =========================
-    # SMART TIME DECISION
+    # TIME SLOT LOGIC
     # =========================
     if 6 <= hour < 12:
         slot = "MORNING"
@@ -29,19 +29,39 @@ def run_orchestrator(job):
     else:
         slot = "EVENING"
 
-    # =========================
-    # ROUTING LOGIC (NO SPAM)
-    # =========================
-
     result = {
         "product_id": product_id,
+        "category": category,
         "slot": slot,
         "actions": []
     }
 
-    # -------------------------
-    # 1. LANDINGPAGE (ALWAYS CHECK)
-    # -------------------------
+    # =========================
+    # 1. TELEKOM ROUTING (IMPORTANT)
+    # =========================
+    if category == "telekom":
+
+        result["actions"].append({
+            "type": "telekom_redirect",
+            "target": "official_shop_only"
+        })
+
+        log_event(result)
+        return result
+
+    # =========================
+    # 2. AMAZON ROUTING (CROSS LINK READY)
+    # =========================
+    if category == "amazon":
+
+        result["actions"].append({
+            "type": "amazon_cross_link",
+            "target": "amazon_affiliate"
+        })
+
+    # =========================
+    # 3. LANDINGPAGE (ALWAYS)
+    # =========================
     lp_url = generate_landingpage(product_id, data)
 
     result["actions"].append({
@@ -49,10 +69,11 @@ def run_orchestrator(job):
         "url": lp_url
     })
 
-    # -------------------------
-    # 2. BLOG POST (CONTROLLED)
-    # -------------------------
+    # =========================
+    # 4. BLOG POST (CONTROLLED)
+    # =========================
     if slot == "MORNING" and random.random() < 0.6:
+
         blog_url = publish_blog(product_id, lp_url, data)
 
         result["actions"].append({
@@ -60,10 +81,11 @@ def run_orchestrator(job):
             "url": blog_url
         })
 
-    # -------------------------
-    # 3. YOUTUBE (LOW FREQUENCY = NO SPAM)
-    # -------------------------
+    # =========================
+    # 5. YOUTUBE (LOW FREQUENCY = NO SPAM)
+    # =========================
     if slot in ["MIDDAY", "EVENING"] and random.random() < 0.4:
+
         yt_url = create_youtube_content(product_id, lp_url, data)
 
         result["actions"].append({
@@ -71,18 +93,9 @@ def run_orchestrator(job):
             "url": yt_url
         })
 
-    # -------------------------
-    # 4. CROSS LINKING LOGIC
-    # -------------------------
-    result["cross_links"] = [
-        "check24",
-        "tarifcheck",
-        "amazon"
-    ]
-
-    # -------------------------
-    # 5. TRACK EVERYTHING
-    # -------------------------
+    # =========================
+    # 6. TRACKING
+    # =========================
     log_event(result)
 
     return result
