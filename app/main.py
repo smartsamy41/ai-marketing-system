@@ -1,6 +1,6 @@
+
 from fastapi import FastAPI
 
-# ✅ engine liegt im ROOT neben app
 from engine.orchestrator_engine_v2 import run_orchestrator
 from engine.scheduler_engine import get_due_jobs
 
@@ -20,7 +20,7 @@ def home():
 
 
 # =========================
-# MANUAL RUN
+# RUN
 # =========================
 @app.get("/run")
 def run():
@@ -31,7 +31,6 @@ def run():
 
     for job in jobs:
 
-        # SAFE JOB NORMALIZATION
         clean_job = {
             "product_id": job.get("product_id"),
             "category": job.get("category", "default"),
