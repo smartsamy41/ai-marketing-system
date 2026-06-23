@@ -1,7 +1,5 @@
 from datetime import datetime
 
-import requests
-
 
 # =========================
 # BUILD SCHEDULE
@@ -18,10 +16,8 @@ def build_schedule(products):
 
         if i % 3 == 0:
             schedule["morning"].append(product)
-
         elif i % 3 == 1:
             schedule["afternoon"].append(product)
-
         else:
             schedule["evening"].append(product)
 
@@ -33,25 +29,21 @@ def build_schedule(products):
 
 
 # =========================
-# LIVE AUTONOMY TRIGGER
+# LIVE AUTONOMY TRIGGER (SAFE)
 # =========================
 class SchedulerEngine:
 
     def __init__(self, base_url):
         self.base_url = base_url
-        print("🟢 SchedulerEngine ACTIVE")
 
     def trigger_run(self):
+        import requests   # 🔥 IMPORTANT: local import (safe)
+
         try:
             response = requests.get(self.base_url + "/run")
-
-            print("🟢 AUTONOMY TRIGGERED")
-            print("STATUS:", response.status_code)
-
             return response.json()
 
         except Exception as e:
-            print("❌ ERROR TRIGGERING SYSTEM:", str(e))
             return {"status": "ERROR", "message": str(e)}
 
     def create_schedule(self, products):
