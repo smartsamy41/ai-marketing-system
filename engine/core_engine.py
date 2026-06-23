@@ -1,43 +1,30 @@
-from engine.data_layer_engine import load_products
-from engine.decision_engine import evaluate_products
-from engine.content_engine import build_content
-from engine.output_layer import route_output
-from engine.tracking_engine import track_event
-from engine.learning_engine import learn_from_results
+from datetime import datetime
 
 
-def run_engine():
-    products = load_products()
+# =========================
+# CORE ENGINE SAFE LAYER
+# =========================
+class CoreEngine:
 
-    if not products:
+    def __init__(self):
+        self.status = "ACTIVE"
+        self.start_time = datetime.utcnow()
+
+    def health(self):
         return {
-            "status": "no_products",
-            "message": "No products loaded from data layer",
-            "items": []
+            "status": "OK",
+            "engine": "core_engine",
+            "time": str(datetime.utcnow())
         }
 
-    evaluated_products = evaluate_products(products)
-
-    results = []
-
-    for product in evaluated_products:
-        content = build_content(product)
-        output = route_output(product)
-        tracking = track_event(product, output)
-        learning = learn_from_results(product, tracking)
-
-        results.append({
-            "product_id": product.get("product_id"),
-            "source": product.get("source"),
-            "score": product.get("score"),
-            "content": content,
-            "output": output,
-            "tracking": tracking,
-            "learning": learning
-        })
-
-    return {
-        "status": "success",
-        "count": len(results),
-        "items": results
-    }
+    def safe_run(self, func, *args, **kwargs):
+        try:
+            return {
+                "status": "SUCCESS",
+                "result": func(*args, **kwargs)
+            }
+        except Exception as e:
+            return {
+                "status": "ERROR",
+                "message": str(e)
+            }
