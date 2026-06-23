@@ -1,113 +1,60 @@
-from datetime import datetime
-import random
 
-from app.engine.landingpage_engine import generate_landingpage
-from app.engine.blogger_publisher_engine import publish_blog
-from app.engine.youtube_engine_v1 import create_youtube_content
-from app.engine.tracking_engine import log_event
+from fastapi import FastAPI
+
+from engine.orchestrator_engine_v2 import run_orchestrator
+from engine.scheduler_engine import get_due_jobs
+
+app = FastAPI()
 
 
 # =========================
-# ORCHESTRATOR V2 (PRODUCTION CORE)
+# HEALTH CHECK
 # =========================
-def run_orchestrator(job):
-
-    product_id = job.get("product_id")
-    category = job.get("category", "default")
-    data = job.get("data", {})
-
-    hour = datetime.now().hour
-
-    # =========================
-    # TIME SLOT LOGIC
-    # =========================
-    if 6 <= hour < 12:
-        slot = "MORNING"
-    elif 12 <= hour < 18:
-        slot = "MIDDAY"
-    else:
-        slot = "EVENING"
-
-    # =========================
-    # RESULT STRUCTURE
-    # =========================
-    result = {
-        "product_id": product_id,
-        "category": category,
-        "slot": slot,
-        "actions": [],
-        "cross_links": []
+@app.get("/")
+def home():
+    return {
+        "status": "OK",
+        "system": "AI MARKETING RUNNING",
+        "mode": "PRODUCTION"
     }
 
-    # =========================
-    # 1. TELEKOM ROUTING (NO LANDINGPAGE)
-    # =========================
-    if category == "telekom":
 
-        result["actions"].append({
-            "type": "telekom_redirect",
-            "target": "official_shop_only"
-        })
+# =========================
+# RUN
+# =========================
+@app.get("/run")
+def run():
 
-        log_event(result)
-        return result
+    jobs = get_due_jobs()
 
-    # =========================
-    # 2. AMAZON ROUTING (CROSS LINK)
-    # =========================
-    if category == "amazon":
+    results = []
 
-        result["actions"].append({
-            "type": "amazon_cross_link",
-            "target": "amazon_affiliate"
-        })
+    for job in jobs:
 
-    # =========================
-    # 3. LANDINGPAGE (ALWAYS EXCEPT TELEKOM)
-    # =========================
-    lp_url = generate_landingpage(product_id, data)
+        clean_job = {
+            "product_id": job.get("product_id"),
+            "category": job.get("category", "default"),
+            "data": job.get("data", {})
+        }
 
-    result["actions"].append({
-        "type": "landingpage",
-        "url": lp_url
-    })
+        try:
+            result = run_orchestrator(clean_job)
 
-    # =========================
-    # 4. BLOG POST (CONTROLLED FREQUENCY)
-    # =========================
-    if slot == "MORNING" and random.random() < 0.6:
+            results.append({
+                "product": clean_job["product_id"],
+                "status": "SUCCESS",
+                "result": result
+            })
 
-        blog_url = publish_blog(product_id, lp_url, data)
+        except Exception as e:
 
-        result["actions"].append({
-            "type": "blog",
-            "url": blog_url
-        })
+            results.append({
+                "product": clean_job["product_id"],
+                "status": "ERROR",
+                "error": str(e)
+            })
 
-    # =========================
-    # 5. YOUTUBE (LOW FREQUENCY - NO SPAM)
-    # =========================
-    if slot in ["MIDDAY", "EVENING"] and random.random() < 0.4:
-
-        yt_url = create_youtube_content(product_id, lp_url, data)
-
-        result["actions"].append({
-            "type": "youtube",
-            "url": yt_url
-        })
-
-    # =========================
-    # 6. CROSS LINKING STRATEGY
-    # =========================
-    result["cross_links"] = [
-        "check24",
-        "tarifcheck",
-        "amazon"
-    ]
-
-    # =========================
-    # 7. TRACKING
-    # =========================
-    log_event(result)
-
-    return result
+    return {
+        "executed": len(results),
+        "results": results
+    }
