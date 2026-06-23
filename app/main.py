@@ -5,7 +5,7 @@ from fastapi import FastAPI
 # =========================
 try:
     from engine.orchestrator_engine_v2 import run_orchestrator
-except Exception as e:
+except Exception:
     run_orchestrator = None
 
 
@@ -24,7 +24,7 @@ def root():
 
 
 # =========================
-# HEALTH
+# HEALTH CHECK
 # =========================
 @app.get("/health")
 def health():
@@ -35,7 +35,7 @@ def health():
 
 
 # =========================
-# RUN (SAFE MODE - NO CRASH)
+# RUN SYSTEM
 # =========================
 @app.get("/run")
 def run():
@@ -46,13 +46,18 @@ def run():
         "data": {}
     }
 
-    # IF ORCHESTRATOR NOT LOADED
+    # -------------------------
+    # ORCHESTRATOR CHECK
+    # -------------------------
     if not run_orchestrator:
         return {
             "status": "ERROR",
             "message": "orchestrator not loaded"
         }
 
+    # -------------------------
+    # SAFE EXECUTION
+    # -------------------------
     try:
         result = run_orchestrator(job)
 
@@ -61,15 +66,15 @@ def run():
             "result": result
         }
 
-    except Exception as e:
+    except Exception as error:
         return {
             "status": "RUN ERROR",
-            "message": str(e)
+            "message": str(error)
         }
 
 
 # =========================
-# DEBUG ENGINE TEST
+# ENGINE TEST
 # =========================
 @app.get("/engine")
 def engine():
