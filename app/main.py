@@ -1,28 +1,35 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 
 # =========================
 # ENGINE IMPORTS
 # =========================
 try:
     from engine.orchestrator_engine_v2 import run_orchestrator
-except Exception:
+except:
     run_orchestrator = None
 
-from engine.email_system import (
-    add_email,
-    confirm_email,
-    get_active_emails,
-    get_all_emails,
-    EmailMarketingEngine
-)
+from engine.email_system import EmailMarketingEngine, get_all_emails
+from engine.data_layer_engine import DataLayer
+from engine.revenue_autopilot_engine import RevenueAutopilotEngine
+from engine.master_autopilot_engine import MasterAutopilotEngine
 
 
 # =========================
-# APP INIT
+# INIT SYSTEMS
 # =========================
 app = FastAPI()
 
-email_engine = EmailMarketingEngine(get_all_emails()["emails"])
+db = DataLayer()
+
+email_engine = EmailMarketingEngine(db.leads)
+
+revenue_engine = RevenueAutopilotEngine(None)
+
+master_engine = MasterAutopilotEngine(
+    revenue_engine=revenue_engine,
+    email_engine=email_engine,
+    tracking_engine=db
+)
 
 
 # =========================
@@ -32,7 +39,7 @@ email_engine = EmailMarketingEngine(get_all_emails()["emails"])
 def root():
     return {
         "status": "OK",
-        "system": "AUTOPILOT READY"
+        "system": "24/7 AUTOPILOT READY"
     }
 
 
@@ -54,10 +61,7 @@ def health():
 def run():
 
     if not run_orchestrator:
-        return {
-            "status": "ERROR",
-            "message": "orchestrator not loaded"
-        }
+        return {"status": "ERROR"}
 
     jobs = [
         {"product_id": "CHK24_001", "category": "check24", "data": {}},
@@ -68,102 +72,54 @@ def run():
     results = []
 
     for job in jobs:
-
         try:
-            result = run_orchestrator(job)
-
-            results.append({
-                "product_id": job["product_id"],
-                "status": "SUCCESS",
-                "result": result
-            })
-
+            results.append(run_orchestrator(job))
         except Exception as e:
-
-            results.append({
-                "product_id": job["product_id"],
-                "status": "ERROR",
-                "message": str(e)
-            })
+            results.append({"error": str(e)})
 
     return {
-        "status": "RUNNING_ORCHESTRATOR",
+        "status": "RUNNING",
         "results": results
     }
 
 
 # =========================
-# EMAIL SIGNUP
-# =========================
-@app.post("/subscribe")
-async def subscribe(request: Request):
-
-    data = await request.json()
-
-    email = data.get("email")
-
-    return add_email(email)
-
-
-# =========================
-# EMAIL CONFIRM (DOI)
-# =========================
-@app.get("/confirm/{email_id}")
-def confirm(email_id: str):
-
-    return confirm_email(email_id)
-
-
-# =========================
-# EMAIL LIST (ACTIVE)
-# =========================
-@app.get("/emails")
-def emails():
-
-    return get_active_emails()
-
-
-# =========================
-# EMAIL LIST (ALL DEBUG)
-# =========================
-@app.get("/emails/all")
-def emails_all():
-
-    return get_all_emails()
-
-
-# =========================
-# EMAIL CAMPAIGN ENGINE
+# EMAIL CAMPAIGN
 # =========================
 @app.get("/campaign")
 def campaign():
-
     return email_engine.run_campaign()
 
 
 # =========================
-# TRACKING ENDPOINT (OPTIONAL)
+# TRACKING
 # =========================
 @app.post("/track")
-async def track(request: Request):
-
+async def track(request):
     data = await request.json()
-
-    return {
-        "status": "TRACKED",
-        "data": data
-    }
+    return db.track_event(data.get("type"), data.get("data"))
 
 
 # =========================
-# ENGINE STATUS
+# DASHBOARD
 # =========================
-@app.get("/engine")
-def engine():
+@app.get("/dashboard")
+def dashboard():
+    return db.get_dashboard()
 
-    return {
-        "status": "ENGINE OK",
-        "orchestrator": run_orchestrator is not None,
-        "email_system": True,
-        "campaign_engine": True
-    }
+
+# =========================
+# MASTER AUTOPILOT (🔥 MAIN CONTROL)
+# =========================
+@app.get("/autopilot")
+def autopilot():
+
+    return master_engine.loop()
+
+
+# =========================
+# EMAILS
+# =========================
+@app.get("/emails")
+def emails():
+    return get_all_emails()
