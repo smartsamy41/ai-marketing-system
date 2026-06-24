@@ -1,15 +1,17 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from datetime import datetime
 
 from engine.landingpage_engine_v2 import LandingpageEngineV2
+from engine.content_run_v1 import ContentRunV1
 
 app = FastAPI()
 
 # =========================
-# INIT CLEAN SYSTEM
+# INIT SYSTEM
 # =========================
 
 landingpage = LandingpageEngineV2()
+content = ContentRunV1(landingpage)
 
 # =========================
 # ROOT
@@ -17,7 +19,7 @@ landingpage = LandingpageEngineV2()
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "LANDINGPAGE SEO V2 CLEAN MODE"}
+    return {"status": "OK", "system": "CONTENT RUN V1 ACTIVE"}
 
 # =========================
 # HEALTH
@@ -28,58 +30,42 @@ def health():
     return {"status": "OK", "ready": True}
 
 # =========================
-# RESET EVERYTHING (IMPORTANT FOR YOUR REQUEST)
+# RESET (CLEAN START)
 # =========================
 
 @app.get("/reset")
 def reset():
-
-    return landingpage.reset()
-
-# =========================
-# CREATE LANDINGPAGE (MAIN FUNCTION)
-# =========================
-
-@app.get("/lp/{product_id}")
-def create_lp(product_id: str):
-
-    return landingpage.create(
-        product_id,
-        title=f"Vergleich für {product_id}",
-        description=f"Finde die besten Angebote für {product_id}. Schnell vergleichen und passende Tarife prüfen."
-    )
+    landingpage.reset()
+    return {"status": "SYSTEM_RESET_DONE"}
 
 # =========================
-# GET LANDINGPAGE
+# RUN SINGLE PRODUCT
 # =========================
 
-@app.get("/lp/get/{product_id}")
-def get_lp(product_id: str):
+@app.get("/run/{product_id}")
+def run(product_id: str):
 
-    return landingpage.get(product_id)
+    return content.generate(product_id)
 
 # =========================
-# DAILY CONTENT RUN (NO SPAM)
+# RUN FULL BATCH (CONTROLLED 1X FLOW)
 # =========================
 
-@app.get("/run")
-def run():
+@app.get("/run-batch")
+def run_batch():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    created = []
+    return content.run_batch(products)
 
-    for p in products:
-        created.append(
-            landingpage.create(
-                p,
-                title=f"{p} Vergleich 2026",
-                description=f"Beste Angebote für {p} jetzt vergleichen und passende Lösung finden."
-            )
-        )
+# =========================
+# DASHBOARD
+# =========================
+
+@app.get("/dashboard")
+def dashboard():
 
     return {
-        "status": "CLEAN_RUN_DONE",
-        "landingpages": created,
+        "content": content.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
