@@ -14,13 +14,12 @@ except:
             self.conversions = []
 
         def track_click(self, product_id, source="api"):
-            click = {
+            self.clicks.append({
                 "product_id": product_id,
                 "source": source,
                 "timestamp": datetime.utcnow().isoformat()
-            }
-            self.clicks.append(click)
-            return {"status": "CLICK_TRACKED", "click": click}
+            })
+            return {"status": "CLICK_TRACKED"}
 
         def get_summary(self):
             return {
@@ -102,6 +101,7 @@ def health():
 @app.get("/engine")
 def engine():
     return {
+        "status": "ACTIVE",
         "tracking": True,
         "traffic": True,
         "governor": True,
@@ -110,7 +110,7 @@ def engine():
 
 
 # =========================
-# FLOW (CLEAN + NO DUPLICATE LOGIC)
+# FLOW
 # =========================
 
 @app.get("/flow/{product_id}")
@@ -124,46 +124,27 @@ def flow(product_id: str):
 
     product_name = products.get(product_id, "Unknown Product")
 
-    # =========================
-    # GOVERNOR CHECK
-    # =========================
     decision = governor.approve(product_id, 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {
-            "status": "BLOCKED_BY_GOVERNOR",
-            "reason": decision
-        }
+        return {"status": "BLOCKED", "reason": decision}
 
-    # =========================
-    # LANDINGPAGE (IDEMPOTENT LOGIC)
-    # =========================
     existing = landingpage_engine.get(product_id)
 
     if existing.get("status") == "NOT_FOUND":
-        lp = landingpage_engine.create(
-            product_id,
-            product_name,
-            "general"
-        )
+        lp = landingpage_engine.create(product_id, product_name, "general")
     else:
         lp = existing
 
-    # =========================
-    # AFFILIATE
-    # =========================
-    redirect = affiliate_router.get_redirect(product_id)
+    affiliate = affiliate_router.get_redirect(product_id)
 
-    # =========================
-    # TRACK
-    # =========================
     tracking.track_click(product_id, source="flow")
 
     return {
         "status": "FLOW_COMPLETE",
         "timestamp": datetime.utcnow().isoformat(),
         "landingpage": lp,
-        "affiliate": redirect
+        "affiliate": affiliate
     }
 
 
@@ -173,10 +154,11 @@ def flow(product_id: str):
 
 @app.get("/run")
 def run():
+
     decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED", "reason": decision}
+        return {"status": "BLOCKED"}
 
     return connector.run_cycle("CHK24_001", "check24")
 
@@ -187,10 +169,11 @@ def run():
 
 @app.get("/autopilot")
 def autopilot():
+
     decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED", "reason": decision}
+        return {"status": "BLOCKED"}
 
     return connector.run_cycle("CHK24_001", "check24")
 
@@ -201,10 +184,11 @@ def autopilot():
 
 @app.get("/loop")
 def loop():
+
     decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED", "reason": decision}
+        return {"status": "BLOCKED"}
 
     return {
         "traffic": traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"]),
