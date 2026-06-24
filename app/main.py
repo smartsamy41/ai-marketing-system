@@ -22,9 +22,7 @@ app = FastAPI()
 # SYSTEM INIT
 # =========================
 pipeline = MasterContentPipeline()
-
 tracking = TrackingEngine()
-
 traffic = TrafficEngine()
 
 revenue_engine = RevenueAutopilotEngine(tracking)
@@ -63,22 +61,35 @@ def health():
 
 
 # =========================
-# TRAFFIC
+# ENGINE STATUS
+# =========================
+@app.get("/engine")
+def engine():
+    return {
+        "status": "FULL SYSTEM ACTIVE",
+        "autopilot": True,
+        "traffic": True,
+        "tracking": True,
+        "revenue": True,
+        "email": True,
+        "pipeline": True
+    }
+
+
+# =========================
+# TRAFFIC GENERATION
 # =========================
 @app.get("/traffic")
 def generate_traffic():
-
     products = ["CHK24_001", "TC_001", "AMZ_001"]
-
     return traffic.run_bulk_traffic(products)
 
 
 # =========================
-# TRACKING
+# TRACK CLICK
 # =========================
 @app.post("/track")
 async def track(request: Request):
-
     data = await request.json()
 
     return tracking.track_click(
@@ -92,20 +103,17 @@ async def track(request: Request):
 # =========================
 @app.post("/subscribe")
 async def subscribe(request: Request):
-
     data = await request.json()
-
     email = data.get("email")
 
     return add_email(email)
 
 
 # =========================
-# AUTOPILOT
+# AUTOPILOT CORE
 # =========================
 @app.get("/autopilot")
 def autopilot():
-
     return connector.run_cycle(
         product_id="CHK24_001",
         category="check24"
@@ -113,7 +121,7 @@ def autopilot():
 
 
 # =========================
-# LOOP
+# LOOP SYSTEM
 # =========================
 @app.get("/loop")
 def loop():
@@ -124,7 +132,10 @@ def loop():
         "AMZ_001"
     ])
 
-    autopilot_result = connector.run_cycle("CHK24_001", "check24")
+    autopilot_result = connector.run_cycle(
+        product_id="CHK24_001",
+        category="check24"
+    )
 
     return {
         "status": "FULL_LOOP_DONE",
@@ -144,20 +155,4 @@ def dashboard():
         "revenue": revenue_engine.run_cycle(),
         "tracking": tracking.get_summary(),
         "emails": get_all_emails()
-    }
-
-
-# =========================
-# ENGINE STATUS
-# =========================
-@app.get("/engine")
-def engine():
-
-    return {
-        "status": "FULL SYSTEM ACTIVE",
-        "autopilot": True,
-        "traffic": True,
-        "tracking": True,
-        "revenue": True,
-        "email": True
     }
