@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from datetime import datetime
 
 # =========================
-# SAFE IMPORTS (NO CRASH MODE)
+# SAFE IMPORTS
 # =========================
 
 try:
@@ -14,13 +14,12 @@ except:
             self.conversions = []
 
         def track_click(self, product_id, source="api"):
-            click = {
+            self.clicks.append({
                 "product_id": product_id,
                 "source": source,
                 "timestamp": datetime.utcnow().isoformat()
-            }
-            self.clicks.append(click)
-            return {"status": "CLICK_TRACKED", "click": click}
+            })
+            return {"status": "CLICK_TRACKED"}
 
         def get_summary(self):
             return {
@@ -47,9 +46,10 @@ except:
 from engine.orchestrator_engine_v2 import run_orchestrator
 from engine.master_content_pipeline import MasterContentPipeline
 from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
-from engine.revenue_autopilot_engine import RevenueAutopilotEngine
 from engine.autopilot_connector import AutopilotConnector
 from engine.governor import Governor
+from engine.landingpage_engine import LandingpageEngine
+from engine.affiliate_router import AffiliateRouter
 
 
 # =========================
@@ -62,21 +62,18 @@ pipeline = MasterContentPipeline()
 tracking = TrackingEngine()
 traffic = TrafficEngine()
 
-# 🔥 FIX: revenue_engine MUSS existieren
-revenue_engine = RevenueAutopilotEngine(tracking)
-
 email_engine = EmailMarketingEngine(get_all_emails().get("emails", []))
 
-# 🔥 FIX: revenue_engine korrekt übergeben
 connector = AutopilotConnector(
     orchestrator=run_orchestrator,
     pipeline=pipeline,
     email_engine=email_engine,
-    tracking=tracking,
-    revenue_engine=revenue_engine
+    tracking=tracking
 )
 
 governor = Governor()
+landingpage_engine = LandingpageEngine()
+affiliate_router = AffiliateRouter()
 
 
 # =========================
@@ -85,23 +82,16 @@ governor = Governor()
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "AUTOPILOT LIVE"
-    }
+    return {"status": "OK", "system": "AUTOPILOT LIVE"}
 
 
 # =========================
-# HEALTH (CLOUD RUN CRITICAL)
+# HEALTH
 # =========================
 
 @app.get("/health")
 def health():
-    return {
-        "status": "OK",
-        "ready": True,
-        "timestamp": datetime.utcnow().isoformat()
-    }
+    return {"status": "OK", "ready": True, "timestamp": datetime.utcnow().isoformat()}
 
 
 # =========================
@@ -114,27 +104,77 @@ def engine():
         "status": "ACTIVE",
         "tracking": True,
         "traffic": True,
-        "revenue": True,
-        "governor": True
+        "governor": True,
+        "flow": True
     }
 
 
 # =========================
-# GOVERNOR CHECK
+# FLOW (FIXED: NO BLOCK ON EXISTING LANDINGPAGE)
 # =========================
 
-def check_governor(product_id="CHK24_001", traffic_amount=5, score=0.8):
-    return governor.approve(product_id, traffic_amount, score)
+@app.get("/flow/{product_id}")
+def flow(product_id: str):
+
+    products = {
+        "CHK24_001": "Strom Vergleich",
+        "TC_001": "Solar Vergleich",
+        "AMZ_001": "Amazon Produkt"
+    }
+
+    product_name = products.get(product_id, "Unknown Product")
+
+    # =========================
+    # GOVERNOR CHECK
+    # =========================
+    decision = governor.approve(product_id, 5, 0.8)
+
+    if decision["status"] != "APPROVED":
+        return {
+            "status": "BLOCKED_BY_GOVERNOR",
+            "reason": decision
+        }
+
+    # =========================
+    # LANDINGPAGE LOGIC (REUSE MODEL)
+    # =========================
+    existing = landingpage_engine.get(product_id)
+
+    if existing.get("status") == "NOT_FOUND":
+        lp = landingpage_engine.create(
+            product_id,
+            product_name,
+            "general"
+        )
+    else:
+        # 🟢 IMPORTANT FIX: NO BLOCK, ONLY REUSE
+        lp = existing
+
+    # =========================
+    # AFFILIATE ROUTE
+    # =========================
+    affiliate = affiliate_router.get_redirect(product_id)
+
+    # =========================
+    # TRACK CLICK
+    # =========================
+    tracking.track_click(product_id, source="flow")
+
+    return {
+        "status": "FLOW_COMPLETE",
+        "timestamp": datetime.utcnow().isoformat(),
+        "landingpage": lp,
+        "affiliate": affiliate
+    }
 
 
 # =========================
-# RUN FLOW
+# RUN
 # =========================
 
 @app.get("/run")
 def run():
-
-    decision = check_governor()
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
         return {"status": "BLOCKED", "reason": decision}
@@ -148,8 +188,7 @@ def run():
 
 @app.get("/autopilot")
 def autopilot():
-
-    decision = check_governor()
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
         return {"status": "BLOCKED", "reason": decision}
@@ -158,13 +197,12 @@ def autopilot():
 
 
 # =========================
-# LOOP TEST
+# LOOP
 # =========================
 
 @app.get("/loop")
 def loop():
-
-    decision = check_governor()
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
         return {"status": "BLOCKED", "reason": decision}
@@ -193,16 +231,15 @@ def generate_traffic():
 
 
 # =========================
-# TRACK CLICK
+# TRACK
 # =========================
 
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
-
     return tracking.track_click(
-        product_id=data.get("product_id"),
-        source=data.get("source", "api")
+        data.get("product_id"),
+        data.get("source", "api")
     )
 
 
@@ -225,8 +262,7 @@ def dashboard():
     return {
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
-        "revenue": revenue_engine.run_cycle(),
-        "emails": get_all_emails(),
         "governor": "ACTIVE",
+        "flow": "ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
