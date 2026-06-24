@@ -1,54 +1,76 @@
 from datetime import datetime
+import random
 
 
-class TrackingEngine:
+class TrafficEngine:
 
     def __init__(self):
-        self.clicks = []
-        self.conversions = []
+        self.visits = []
+        self.sources = [
+            "pinterest",
+            "youtube",
+            "google_seo",
+            "blog",
+            "direct"
+        ]
 
     # =========================
-    # TRACK CLICK
+    # REALISTIC TRAFFIC GENERATION
     # =========================
-    def track_click(self, product_id, source="api"):
+    def generate_visit(self, product_id, source=None):
 
-        click = {
+        if source is None:
+            source = random.choice(self.sources)
+
+        visit = {
             "product_id": product_id,
             "source": source,
+            "timestamp": datetime.utcnow().isoformat(),
+            "clicked": True
+        }
+
+        self.visits.append(visit)
+
+        return {
+            "status": "VISIT_CREATED",
+            "visit": visit
+        }
+
+    # =========================
+    # BULK TRAFFIC (CAMPAIGN MODE)
+    # =========================
+    def run_bulk_traffic(self, products):
+
+        results = []
+
+        for p in products:
+            # weighted traffic simulation (realistic funnel behavior)
+            visits_per_product = random.randint(3, 8)
+
+            for _ in range(visits_per_product):
+                results.append(self.generate_visit(p))
+
+        return {
+            "status": "TRAFFIC_CAMPAIGN_DONE",
+            "total_visits": len(results),
+            "results": results,
             "timestamp": datetime.utcnow().isoformat()
         }
 
-        self.clicks.append(click)
+    # =========================
+    # STATS
+    # =========================
+    def get_stats(self):
+
+        total = len(self.visits)
+
+        source_stats = {}
+        for v in self.visits:
+            s = v["source"]
+            source_stats[s] = source_stats.get(s, 0) + 1
 
         return {
-            "status": "CLICK_TRACKED",
-            "click": click
-        }
-
-    # =========================
-    # TRACK CONVERSION
-    # =========================
-    def track_conversion(self, product_id, value=0):
-
-        conversion = {
-            "product_id": product_id,
-            "value": value,
+            "total_visits": total,
+            "sources": source_stats,
             "timestamp": datetime.utcnow().isoformat()
-        }
-
-        self.conversions.append(conversion)
-
-        return {
-            "status": "CONVERSION_TRACKED",
-            "conversion": conversion
-        }
-
-    # =========================
-    # SUMMARY
-    # =========================
-    def get_summary(self):
-
-        return {
-            "clicks": len(self.clicks),
-            "conversions": len(self.conversions)
         }
