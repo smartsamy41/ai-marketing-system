@@ -1,22 +1,22 @@
 from fastapi import FastAPI, Request
 
 # =========================
-# ENGINE IMPORTS SAFE
+# SAFE IMPORTS
 # =========================
 try:
     from engine.orchestrator_engine_v2 import run_orchestrator
 except Exception:
     run_orchestrator = None
 
-from engine.email_system import (
-    add_email,
-    confirm_email,
-    get_active_emails,
-    get_all_emails
-)
+from engine.data_layer_engine import DataLayer
 
 
+# =========================
+# APP INIT
+# =========================
 app = FastAPI()
+
+db = DataLayer()
 
 
 # =========================
@@ -88,39 +88,65 @@ def run():
 
 
 # =========================
-# EMAIL SIGNUP (LANDINGPAGE)
+# EMAIL / LEAD TRACKING
 # =========================
-@app.post("/subscribe")
-async def subscribe(request: Request):
+@app.post("/track")
+async def track(request: Request):
 
     data = await request.json()
-    email = data.get("email", "")
 
-    return add_email(email)
-
-
-# =========================
-# EMAIL CONFIRM (DOI)
-# =========================
-@app.get("/confirm/{email_id}")
-def confirm(email_id: str):
-
-    return confirm_email(email_id)
+    return db.track_event(
+        data.get("type", "unknown"),
+        data.get("data", {})
+    )
 
 
 # =========================
-# EMAIL LISTS
+# DASHBOARD (MONEY VIEW)
 # =========================
-@app.get("/emails")
-def emails():
+@app.get("/dashboard")
+def dashboard():
 
-    return get_active_emails()
+    return {
+        "status": "OK",
+        "data": db.get_dashboard()
+    }
 
 
-@app.get("/emails/all")
-def emails_all():
+# =========================
+# EMAIL VIEW
+# =========================
+@app.get("/leads")
+def leads():
 
-    return get_all_emails()
+    return {
+        "status": "OK",
+        "leads": db.leads
+    }
+
+
+# =========================
+# SALES VIEW
+# =========================
+@app.get("/sales")
+def sales():
+
+    return {
+        "status": "OK",
+        "sales": db.sales
+    }
+
+
+# =========================
+# EVENTS VIEW
+# =========================
+@app.get("/events")
+def events():
+
+    return {
+        "status": "OK",
+        "events": db.events
+    }
 
 
 # =========================
@@ -132,5 +158,5 @@ def engine():
     return {
         "status": "ENGINE OK",
         "orchestrator": run_orchestrator is not None,
-        "email_system": True
+        "data_layer": True
     }
