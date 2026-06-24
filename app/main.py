@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from datetime import datetime
 
 from engine.conversion_engine_v3 import ConversionTrackingV3
@@ -7,6 +7,7 @@ from engine.v5_autonomy_engine import V5AutonomyEngine
 from engine.v6_self_evolution_engine import V6SelfEvolutionEngine
 from engine.v7_autonomous_business_engine import V7AutonomousBusiness
 from engine.v8_self_rewriting_company import V8SelfRewritingCompany
+from engine.v9_real_world_engine import V9RealWorldEngine
 
 app = FastAPI()
 
@@ -20,6 +21,7 @@ v5 = V5AutonomyEngine(scaling, conversion)
 v6 = V6SelfEvolutionEngine(v5, scaling, conversion)
 v7 = V7AutonomousBusiness(v6, scaling, conversion)
 v8 = V8SelfRewritingCompany(v7)
+v9 = V9RealWorldEngine(conversion)
 
 
 # =========================
@@ -28,7 +30,7 @@ v8 = V8SelfRewritingCompany(v7)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "V8 SELF REWRITING COMPANY ACTIVE"}
+    return {"status": "OK", "system": "V9 REAL WORLD ACTIVE"}
 
 
 # =========================
@@ -41,57 +43,93 @@ def health():
 
 
 # =========================
-# TRACK
+# TRACK CLICK
 # =========================
 
 @app.post("/track")
-async def track(request):
+async def track(request: Request):
     data = await request.json()
     return conversion.track_click(data.get("product_id"), "api")
 
 
 # =========================
-# CONVERT
+# CONVERT (REAL EVENT)
 # =========================
 
 @app.get("/convert/{product_id}")
 def convert(product_id: str):
+
     return conversion.track_conversion(product_id, 50.0)
 
 
 # =========================
-# SCALING
+# SEND TO SALES API (REAL LAYER)
+# =========================
+
+@app.get("/sales/send/{product_id}")
+def send_sales(product_id: str):
+
+    return v9.send_to_sales_api(product_id)
+
+
+# =========================
+# REAL REVENUE CONFIRMATION
+# =========================
+
+@app.get("/sales/confirm/{product_id}/{revenue}")
+def confirm(product_id: str, revenue: float):
+
+    return v9.confirm_conversion(product_id, revenue)
+
+
+# =========================
+# REAL WORLD SCORE
+# =========================
+
+@app.get("/score")
+def score():
+
+    return v9.score()
+
+
+# =========================
+# SCALING DECISION
 # =========================
 
 @app.get("/scale/{product_id}")
 def scale(product_id: str):
+
     return scaling.analyze_product(product_id)
 
 
 # =========================
-# V8 CORE LOOP
+# V9 FULL CYCLE
 # =========================
 
-@app.get("/v8/run")
-def v8_run():
+@app.get("/v9/run")
+def v9_run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    return v8.run(products)
+    # STEP 1: simulate sales API push
+    for p in products:
+        v9.send_to_sales_api(p)
+
+    # STEP 2: conversion tracking
+    conversion.track_click("CHK24_001", "v9")
+    conversion.track_lead("CHK24_001", "v9")
+    conversion.track_conversion("CHK24_001", 60.0)
+
+    return {
+        "status": "V9_REAL_WORLD_CYCLE_DONE",
+        "score": v9.score(),
+        "sales": v9.report(),
+        "scaling": scaling.analyze_product("CHK24_001")
+    }
 
 
 # =========================
-# V8 COMPANY REPORT
-# =========================
-
-@app.get("/v8/report")
-def v8_report():
-
-    return v8.report()
-
-
-# =========================
-# DASHBOARD (FULL INTELLIGENCE)
+# DASHBOARD
 # =========================
 
 @app.get("/dashboard")
@@ -99,31 +137,27 @@ def dashboard():
 
     return {
         "conversion": conversion.report(),
-        "scaling": scaling.report(),
-        "v5": v5.learn(),
-        "v6": v6.report(),
-        "v7": v7.report(),
-        "v8": v8.report(),
+        "sales": v9.report(),
+        "score": v9.score(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 
 # =========================
-# SAFE AUTOPILOT ENTRY
+# SAFE RUN
 # =========================
 
 @app.get("/run")
 def run():
 
-    conversion.track_click("CHK24_001", "v8")
-    conversion.track_lead("CHK24_001", "v8")
-    conversion.track_conversion("CHK24_001", 50.0)
+    conversion.track_click("CHK24_001", "v9")
+    conversion.track_lead("CHK24_001", "v9")
+    conversion.track_conversion("CHK24_001", 60.0)
 
-    scale = scaling.analyze_product("CHK24_001")
-    v8_state = v8.run(["CHK24_001", "TC_001", "AMZ_001"])
+    v9.send_to_sales_api("CHK24_001")
 
     return {
-        "status": "V8_CYCLE_DONE",
-        "scale": scale,
-        "v8": v8_state
+        "status": "V9_CYCLE_DONE",
+        "score": v9.score(),
+        "sales": v9.report()
     }
