@@ -3,25 +3,19 @@ from datetime import datetime
 
 from engine.conversion_engine_v3 import ConversionTrackingV3
 from engine.scaling_engine_v4 import ScalingEngineV4
-from engine.v5_autonomy_engine import V5AutonomyEngine
-from engine.v6_self_evolution_engine import V6SelfEvolutionEngine
-from engine.v7_autonomous_business_engine import V7AutonomousBusiness
-from engine.v8_self_rewriting_company import V8SelfRewritingCompany
 from engine.v9_real_world_engine import V9RealWorldEngine
+from engine.v10_money_machine import V10MoneyMachine
 
 app = FastAPI()
 
 # =========================
-# INIT FULL STACK
+# INIT STACK
 # =========================
 
 conversion = ConversionTrackingV3()
 scaling = ScalingEngineV4(conversion)
-v5 = V5AutonomyEngine(scaling, conversion)
-v6 = V6SelfEvolutionEngine(v5, scaling, conversion)
-v7 = V7AutonomousBusiness(v6, scaling, conversion)
-v8 = V8SelfRewritingCompany(v7)
 v9 = V9RealWorldEngine(conversion)
+v10 = V10MoneyMachine(v9, conversion)
 
 
 # =========================
@@ -30,7 +24,7 @@ v9 = V9RealWorldEngine(conversion)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "V9 REAL WORLD ACTIVE"}
+    return {"status": "OK", "system": "V10 MONEY MACHINE ACTIVE"}
 
 
 # =========================
@@ -43,7 +37,7 @@ def health():
 
 
 # =========================
-# TRACK CLICK
+# TRACK
 # =========================
 
 @app.post("/track")
@@ -53,79 +47,53 @@ async def track(request: Request):
 
 
 # =========================
-# CONVERT (REAL EVENT)
+# CONVERT
 # =========================
 
 @app.get("/convert/{product_id}")
 def convert(product_id: str):
 
-    return conversion.track_conversion(product_id, 50.0)
+    return conversion.track_conversion(product_id, 70.0)
 
 
 # =========================
-# SEND TO SALES API (REAL LAYER)
+# V9 SALES CONNECT
 # =========================
 
-@app.get("/sales/send/{product_id}")
-def send_sales(product_id: str):
+@app.get("/sales/{product_id}")
+def sales(product_id: str):
 
     return v9.send_to_sales_api(product_id)
 
 
 # =========================
-# REAL REVENUE CONFIRMATION
+# V10 INGEST REAL MONEY
 # =========================
 
-@app.get("/sales/confirm/{product_id}/{revenue}")
-def confirm(product_id: str, revenue: float):
+@app.get("/money/{product_id}")
+def money(product_id: str):
 
-    return v9.confirm_conversion(product_id, revenue)
-
-
-# =========================
-# REAL WORLD SCORE
-# =========================
-
-@app.get("/score")
-def score():
-
-    return v9.score()
+    return v10.run_cycle(product_id)
 
 
 # =========================
-# SCALING DECISION
+# V10 ANALYTICS
 # =========================
 
-@app.get("/scale/{product_id}")
-def scale(product_id: str):
+@app.get("/analytics")
+def analytics():
 
-    return scaling.analyze_product(product_id)
+    return v10.analyze()
 
 
 # =========================
-# V9 FULL CYCLE
+# V10 ALLOCATION ENGINE
 # =========================
 
-@app.get("/v9/run")
-def v9_run():
+@app.get("/allocate")
+def allocate():
 
-    products = ["CHK24_001", "TC_001", "AMZ_001"]
-
-    # STEP 1: simulate sales API push
-    for p in products:
-        v9.send_to_sales_api(p)
-
-    # STEP 2: conversion tracking
-    conversion.track_click("CHK24_001", "v9")
-    conversion.track_lead("CHK24_001", "v9")
-    conversion.track_conversion("CHK24_001", 60.0)
-
-    return {
-        "status": "V9_REAL_WORLD_CYCLE_DONE",
-        "score": v9.score(),
-        "sales": v9.report(),
-        "scaling": scaling.analyze_product("CHK24_001")
-    }
+    return v10.allocate()
 
 
 # =========================
@@ -137,27 +105,29 @@ def dashboard():
 
     return {
         "conversion": conversion.report(),
-        "sales": v9.report(),
-        "score": v9.score(),
+        "v9": v9.report(),
+        "v10": v10.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 
 # =========================
-# SAFE RUN
+# MAIN RUN (AUTOPILOT ENTRY)
 # =========================
 
 @app.get("/run")
 def run():
 
-    conversion.track_click("CHK24_001", "v9")
-    conversion.track_lead("CHK24_001", "v9")
-    conversion.track_conversion("CHK24_001", 60.0)
+    conversion.track_click("CHK24_001", "v10")
+    conversion.track_lead("CHK24_001", "v10")
+    conversion.track_conversion("CHK24_001", 80.0)
 
-    v9.send_to_sales_api("CHK24_001")
+    v9.ingest("CHK24_001", 80.0)
+
+    v10_result = v10.run_cycle("CHK24_001")
 
     return {
-        "status": "V9_CYCLE_DONE",
-        "score": v9.score(),
-        "sales": v9.report()
+        "status": "V10_MONEY_MACHINE_RUNNING",
+        "v10": v10_result,
+        "timestamp": datetime.utcnow().isoformat()
     }
