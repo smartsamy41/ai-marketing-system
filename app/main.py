@@ -4,7 +4,7 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# SAFE ENGINE (MINIMAL STABLE)
+# SAFE TRACKING ENGINE
 # =========================
 
 class TrackingEngine:
@@ -12,12 +12,20 @@ class TrackingEngine:
         self.clicks = []
 
     def track_click(self, product_id, source="api"):
-        self.clicks.append(product_id)
+        self.clicks.append({
+            "product_id": product_id,
+            "source": source,
+            "timestamp": datetime.utcnow().isoformat()
+        })
         return {"status": "CLICK_TRACKED"}
 
     def get_summary(self):
         return {"clicks": len(self.clicks)}
 
+
+# =========================
+# TRAFFIC ENGINE
+# =========================
 
 class TrafficEngine:
     def run_bulk_traffic(self, products):
@@ -27,18 +35,84 @@ class TrafficEngine:
         return {"traffic": 0}
 
 
+# =========================
+# SALES ENGINE (REAL REVENUE LAYER)
+# =========================
+
+class SalesEngine:
+    def __init__(self):
+        self.leads = []
+
+    def send_lead(self, product_id, source="system"):
+
+        lead = {
+            "product_id": product_id,
+            "source": source,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+        self.leads.append(lead)
+
+        return {
+            "status": "LEAD_SENT",
+            "lead": lead
+        }
+
+    def get_sales_stats(self):
+        return {"leads": len(self.leads)}
+
+
+# =========================
+# LANDINGPAGE ENGINE
+# =========================
+
+class LandingpageEngine:
+    def __init__(self):
+        self.pages = {}
+
+    def get(self, product_id):
+        return self.pages.get(product_id, {"status": "NOT_FOUND"})
+
+    def create(self, product_id, name, category):
+        page = {
+            "product_id": product_id,
+            "title": name,
+            "category": category,
+            "html": f"""
+            <html>
+            <body>
+                <h1>{name}</h1>
+                <p>Vergleiche Angebote und Tarife.</p>
+
+                <!-- NEWSLETTER -->
+                <form action="/subscribe" method="post">
+                    <input type="email" name="email" placeholder="E-Mail eingeben">
+                    <button type="submit">Jetzt Angebote erhalten</button>
+                </form>
+
+                <a href="/flow/{product_id}">Jetzt vergleichen</a>
+            </body>
+            </html>
+            """,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+        self.pages[product_id] = page
+        return page
+
+
+# =========================
+# GOVERNOR (SAFE MODE)
+# =========================
+
 class Governor:
     def approve(self, product_id, traffic, score):
         return {"status": "APPROVED"}
 
 
-class SalesEngine:
-    def send_lead(self, product_id, source="api"):
-        return {"status": "LEAD_SENT", "product_id": product_id}
-
-    def get_sales_stats(self):
-        return {"sales": 0}
-
+# =========================
+# AUTOPILOT CONNECTOR
+# =========================
 
 class Connector:
     def run_cycle(self, product_id, category):
@@ -49,13 +123,14 @@ class Connector:
 
 
 # =========================
-# INIT
+# INIT SYSTEM
 # =========================
 
 tracking = TrackingEngine()
 traffic = TrafficEngine()
-governor = Governor()
 sales = SalesEngine()
+landingpage_engine = LandingpageEngine()
+governor = Governor()
 connector = Connector()
 
 
@@ -65,51 +140,50 @@ connector = Connector()
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "STABLE MODE"}
+    return {"status": "OK", "system": "MONETIZATION PIPELINE ACTIVE"}
 
+
+# =========================
+# HEALTH
+# =========================
 
 @app.get("/health")
 def health():
     return {"status": "OK", "ready": True}
 
 
-@app.get("/engine")
-def engine():
-    return {
-        "tracking": True,
-        "traffic": True,
-        "sales": True,
-        "governor": True
-    }
-
-
 # =========================
-# FLOW (MAIN)
+# LANDINGPAGE FLOW (CORE MONEY ENTRY)
 # =========================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
 
-    decision = governor.approve(product_id, 5, 0.8)
+    # 1. LANDINGPAGE CHECK / CREATE
+    page = landingpage_engine.get(product_id)
 
-    if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED"}
+    if page.get("status") == "NOT_FOUND":
+        page = landingpage_engine.create(product_id, product_id, "general")
 
+    # 2. TRACK CLICK
     tracking.track_click(product_id, "flow")
-    sales.send_lead(product_id, "flow")
 
-    result = connector.run_cycle(product_id, "check24")
+    # 3. SALES CALL
+    sale = sales.send_lead(product_id, "flow")
+
+    # 4. AUTOPILOT
+    auto = connector.run_cycle(product_id, "system")
 
     return {
-        "status": "FLOW_COMPLETE",
-        "timestamp": datetime.utcnow().isoformat(),
-        "autopilot": result,
-        "sales": sales.send_lead(product_id, "flow")
+        "status": "MONETIZATION_DONE",
+        "landingpage": page,
+        "sales": sale,
+        "autopilot": auto
     }
 
 
 # =========================
-# RUN
+# RUN (SCHEDULER SAFE)
 # =========================
 
 @app.get("/run")
@@ -118,52 +192,45 @@ def run():
 
 
 # =========================
-# AUTOPILOT
-# =========================
-
-@app.get("/autopilot")
-def autopilot():
-    return connector.run_cycle("CHK24_001", "check24")
-
-
-# =========================
-# LOOP
-# =========================
-
-@app.get("/loop")
-def loop():
-    return {
-        "traffic": traffic.run_bulk_traffic(["CHK24_001", "TC_001"]),
-        "autopilot": connector.run_cycle("CHK24_001", "check24")
-    }
-
-
-# =========================
 # TRAFFIC
 # =========================
 
 @app.get("/traffic")
 def get_traffic():
-    return traffic.run_bulk_traffic(["CHK24_001", "TC_001"])
+    return traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"])
 
 
 # =========================
-# TRACK
+# TRACK CLICK
 # =========================
 
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
-    return tracking.track_click(data.get("product_id"))
+    return tracking.track_click(data.get("product_id"), "api")
 
 
 # =========================
-# SALES
+# SALES STATUS
 # =========================
 
 @app.get("/sales")
 def sales_status():
     return sales.get_sales_stats()
+
+
+# =========================
+# NEWSLETTER (DOI READY)
+# =========================
+
+@app.post("/subscribe")
+async def subscribe(request: Request):
+    data = await request.json()
+    return {
+        "status": "SUBSCRIBED",
+        "email": data.get("email"),
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 
 # =========================
@@ -176,5 +243,5 @@ def dashboard():
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
         "sales": sales.get_sales_stats(),
-        "status": "STABLE"
+        "status": "MONETIZATION_ACTIVE"
     }
