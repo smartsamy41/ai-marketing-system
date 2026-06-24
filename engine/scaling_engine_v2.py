@@ -1,24 +1,73 @@
-# =========================
-# 📈 SCALING ENGINE V2
-# =========================
+from datetime import datetime
 
-def calculate_scaling(product):
-    score = product.get("score", 0)
 
-    if score >= 90:
+# =========================
+# SCALING ENGINE (AUTONOMOUS GROWTH)
+# =========================
+class ScalingEngine:
+
+    def __init__(self, revenue_engine, traffic_engine, tracking_engine):
+
+        self.revenue_engine = revenue_engine
+        self.traffic_engine = traffic_engine
+        self.tracking_engine = tracking_engine
+
+    # =========================
+    # ANALYZE SYSTEM HEALTH
+    # =========================
+    def analyze(self):
+
+        revenue = self.revenue_engine.run_cycle()
+        traffic = self.traffic_engine.get_stats()
+        tracking = self.tracking_engine.get_summary()
+
+        score = (
+            traffic.get("conversion_rate", 0) * 100 +
+            tracking.get("clicks", 0) * 0.1 +
+            tracking.get("conversions", 0) * 5 +
+            revenue.get("metrics", {}).get("revenue", 0) * 0.01
+        )
+
         return {
-            "budget_multiplier": 2.0,
-            "action": "AGGRESSIVE_SCALE"
+            "status": "ANALYSIS_DONE",
+            "metrics": {
+                "traffic": traffic,
+                "tracking": tracking,
+                "revenue": revenue
+            },
+            "score": round(score, 2),
+            "timestamp": datetime.utcnow().isoformat()
         }
 
-    elif score >= 80:
+    # =========================
+    # DECISION ENGINE
+    # =========================
+    def decide(self):
+
+        analysis = self.analyze()
+        score = analysis["score"]
+
+        if score > 80:
+            action = "SCALE"
+        elif score > 40:
+            action = "BOOST"
+        else:
+            action = "OPTIMIZE"
+
         return {
-            "budget_multiplier": 1.5,
-            "action": "NORMAL_SCALE"
+            "status": "DECISION_MADE",
+            "action": action,
+            "score": score,
+            "timestamp": datetime.utcnow().isoformat()
         }
 
-    else:
+    # =========================
+    # EXECUTE SCALE LOOP
+    # =========================
+    def run(self):
+
         return {
-            "budget_multiplier": 1.0,
-            "action": "NO_SCALE"
+            "status": "SCALING_CYCLE_COMPLETE",
+            "analysis": self.analyze(),
+            "decision": self.decide()
         }
