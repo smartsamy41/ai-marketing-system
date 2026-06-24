@@ -1,12 +1,19 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 # =========================
-# SAFE IMPORT ORCHESTRATOR
+# ENGINE IMPORTS SAFE
 # =========================
 try:
     from engine.orchestrator_engine_v2 import run_orchestrator
 except Exception:
     run_orchestrator = None
+
+from engine.email_system import (
+    add_email,
+    confirm_email,
+    get_active_emails,
+    get_all_emails
+)
 
 
 app = FastAPI()
@@ -35,14 +42,17 @@ def health():
 
 
 # =========================
-# RUN ORCHESTRATOR (LIVE MODE)
+# RUN ORCHESTRATOR
 # =========================
 @app.get("/run")
 def run():
 
-    # =========================
-    # SAMPLE JOB LIST (LIVE SIMULATION)
-    # =========================
+    if not run_orchestrator:
+        return {
+            "status": "ERROR",
+            "message": "orchestrator not loaded"
+        }
+
     jobs = [
         {"product_id": "CHK24_001", "category": "check24", "data": {}},
         {"product_id": "TC_001", "category": "tarifcheck", "data": {}},
@@ -50,15 +60,6 @@ def run():
     ]
 
     results = []
-
-    # =========================
-    # ORCHESTRATOR EXECUTION
-    # =========================
-    if not run_orchestrator:
-        return {
-            "status": "ERROR",
-            "message": "orchestrator not loaded"
-        }
 
     for job in jobs:
 
@@ -87,12 +88,49 @@ def run():
 
 
 # =========================
-# ENGINE CHECK
+# EMAIL SIGNUP (LANDINGPAGE)
+# =========================
+@app.post("/subscribe")
+async def subscribe(request: Request):
+
+    data = await request.json()
+    email = data.get("email", "")
+
+    return add_email(email)
+
+
+# =========================
+# EMAIL CONFIRM (DOI)
+# =========================
+@app.get("/confirm/{email_id}")
+def confirm(email_id: str):
+
+    return confirm_email(email_id)
+
+
+# =========================
+# EMAIL LISTS
+# =========================
+@app.get("/emails")
+def emails():
+
+    return get_active_emails()
+
+
+@app.get("/emails/all")
+def emails_all():
+
+    return get_all_emails()
+
+
+# =========================
+# ENGINE STATUS
 # =========================
 @app.get("/engine")
 def engine():
 
     return {
         "status": "ENGINE OK",
-        "orchestrator_loaded": run_orchestrator is not None
+        "orchestrator": run_orchestrator is not None,
+        "email_system": True
     }
