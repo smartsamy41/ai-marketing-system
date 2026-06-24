@@ -6,6 +6,7 @@ from engine.scaling_engine_v4 import ScalingEngineV4
 from engine.v9_real_world_engine import V9RealWorldEngine
 from engine.v10_money_machine import V10MoneyMachine
 from engine.v11_cloud_autopilot import V11CloudAutopilot
+from engine.v12_business_os import V12BusinessOS
 
 app = FastAPI()
 
@@ -18,6 +19,7 @@ scaling = ScalingEngineV4(conversion)
 v9 = V9RealWorldEngine(conversion)
 v10 = V10MoneyMachine(v9, conversion)
 v11 = V11CloudAutopilot(v10, v9, scaling)
+v12 = V12BusinessOS(v11, v10, scaling)
 
 
 # =========================
@@ -26,11 +28,11 @@ v11 = V11CloudAutopilot(v10, v9, scaling)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "V11 CLOUD AUTOPILOT ACTIVE"}
+    return {"status": "OK", "system": "V12 BUSINESS OS ACTIVE"}
 
 
 # =========================
-# HEALTH (CLOUD RUN SAFE)
+# HEALTH
 # =========================
 
 @app.get("/health")
@@ -58,7 +60,7 @@ def convert(product_id: str):
 
 
 # =========================
-# SCALING ENGINE
+# SCALING
 # =========================
 
 @app.get("/scale/{product_id}")
@@ -67,48 +69,46 @@ def scale(product_id: str):
 
 
 # =========================
-# V10 MONEY ENGINE
+# CLOUD AUTOPILOT
 # =========================
 
-@app.get("/money/{product_id}")
-def money(product_id: str):
-    return v10.run_cycle(product_id)
-
-
-# =========================
-# V11 CLOUD AUTOPILOT (CORE)
-# =========================
-
-@app.get("/cloud/run")
-def cloud_run():
-
-    products = ["CHK24_001", "TC_001", "AMZ_001"]
-
-    return v11.scheduler_run(products)
-
-
-# =========================
-# SINGLE CLOUD CYCLE
-# =========================
-
-@app.get("/cloud/cycle/{product_id}")
-def cloud_cycle(product_id: str):
-
+@app.get("/cloud/{product_id}")
+def cloud(product_id: str):
     return v11.run_cloud_cycle(product_id)
 
 
 # =========================
-# CLOUD REPORT
+# MONEY ENGINE
 # =========================
 
-@app.get("/cloud/report")
-def cloud_report():
-
-    return v11.report()
+@app.get("/money")
+def money():
+    return v10.report()
 
 
 # =========================
-# DASHBOARD (FULL SYSTEM VIEW)
+# BUSINESS OS CORE
+# =========================
+
+@app.get("/v12/run/{product_id}")
+def v12_run(product_id: str):
+
+    return v12.run(product_id)
+
+
+# =========================
+# BUSINESS DECISION
+# =========================
+
+@app.get("/v12/decision/{product_id}")
+def v12_decision(product_id: str):
+
+    v12.collect(product_id)
+    return v12.decide()
+
+
+# =========================
+# DASHBOARD (FULL CONTROL TOWER)
 # =========================
 
 @app.get("/dashboard")
@@ -116,27 +116,27 @@ def dashboard():
 
     return {
         "conversion": conversion.report(),
-        "v9": v9.report(),
         "v10": v10.report(),
         "v11": v11.report(),
+        "v12": v12.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 
 # =========================
-# AUTOPILOT ENTRY POINT
+# AUTOPILOT ENTRY
 # =========================
 
 @app.get("/run")
 def run():
 
-    conversion.track_click("CHK24_001", "v11")
-    conversion.track_lead("CHK24_001", "v11")
-    conversion.track_conversion("CHK24_001", 120.0)
+    conversion.track_click("CHK24_001", "v12")
+    conversion.track_lead("CHK24_001", "v12")
+    conversion.track_conversion("CHK24_001", 100.0)
 
-    cloud_result = v11.run_cloud_cycle("CHK24_001")
+    result = v12.run("CHK24_001")
 
     return {
-        "status": "V11_AUTOPILOT_RUNNING",
-        "cloud": cloud_result
+        "status": "V12_BUSINESS_OS_RUNNING",
+        "result": result
     }
