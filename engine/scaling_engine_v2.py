@@ -1,6 +1,9 @@
 from datetime import datetime
 
 
+# =========================
+# SCALING ENGINE (PRODUCTION SAFE)
+# =========================
 class ScalingEngine:
 
     def __init__(self, revenue_engine=None, traffic_engine=None, tracking_engine=None):
@@ -10,14 +13,23 @@ class ScalingEngine:
         self.tracking_engine = tracking_engine
 
     # =========================
-    # ANALYSIS (SAFE MODE)
+    # ANALYZE SYSTEM
     # =========================
     def analyze(self):
+
+        debug = {
+            "revenue_engine": str(self.revenue_engine),
+            "traffic_engine": str(self.traffic_engine),
+            "tracking_engine": str(self.tracking_engine)
+        }
 
         traffic = {}
         tracking = {}
         revenue = {}
 
+        # =========================
+        # SAFE EXECUTION BLOCK
+        # =========================
         try:
             if self.traffic_engine:
                 traffic = self.traffic_engine.get_stats()
@@ -49,6 +61,7 @@ class ScalingEngine:
 
         return {
             "status": "ANALYSIS_DONE",
+            "debug": debug,
             "metrics": {
                 "traffic": traffic,
                 "tracking": tracking,
@@ -76,7 +89,8 @@ class ScalingEngine:
         return {
             "status": "DECISION_MADE",
             "action": action,
-            "score": score
+            "score": score,
+            "timestamp": datetime.utcnow().isoformat()
         }
 
     # =========================
