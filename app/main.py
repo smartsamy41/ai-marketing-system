@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from datetime import datetime
 
 # =========================
-# SAFE IMPORTS (NO CRASH MODE)
+# SAFE IMPORTS
 # =========================
 
 try:
@@ -34,17 +34,14 @@ try:
 except:
     class TrafficEngine:
         def run_bulk_traffic(self, products):
-            return {
-                "status": "TRAFFIC_FALLBACK",
-                "products": products
-            }
+            return {"status": "TRAFFIC_FALLBACK", "products": products}
 
         def get_stats(self):
             return {"traffic": 0}
 
 
 # =========================
-# CORE ENGINE IMPORTS
+# CORE IMPORTS
 # =========================
 
 from engine.orchestrator_engine_v2 import run_orchestrator
@@ -93,7 +90,7 @@ def root():
 
 
 # =========================
-# HEALTH CHECK
+# HEALTH
 # =========================
 
 @app.get("/health")
@@ -121,26 +118,17 @@ def engine():
 
 
 # =========================
-# GOVERNOR CHECK FUNCTION
-# =========================
-
-def check_governor(product_id="CHK24_001", traffic_amount=5, score=0.8):
-
-    return governor.approve(
-        product_id,
-        traffic_amount,
-        score
-    )
-
-
-# =========================
-# RUN (SCHEDULER SAFE)
+# RUN (GOVERNOR CONTROLLED)
 # =========================
 
 @app.get("/run")
 def run():
 
-    decision = check_governor()
+    decision = governor.approve(
+        product_id="CHK24_001",
+        traffic_amount=5,
+        score=0.8
+    )
 
     if decision["status"] != "APPROVED":
         return {
@@ -158,7 +146,11 @@ def run():
 @app.get("/autopilot")
 def autopilot():
 
-    decision = check_governor()
+    decision = governor.approve(
+        product_id="CHK24_001",
+        traffic_amount=5,
+        score=0.8
+    )
 
     if decision["status"] != "APPROVED":
         return {
@@ -176,7 +168,11 @@ def autopilot():
 @app.get("/loop")
 def loop():
 
-    decision = check_governor()
+    decision = governor.approve(
+        product_id="CHK24_001",
+        traffic_amount=5,
+        score=0.8
+    )
 
     if decision["status"] != "APPROVED":
         return {
@@ -214,7 +210,6 @@ def generate_traffic():
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
-
     return tracking.track_click(
         product_id=data.get("product_id"),
         source=data.get("source", "api")
@@ -222,7 +217,7 @@ async def track(request: Request):
 
 
 # =========================
-# EMAIL SUBSCRIBE
+# EMAIL
 # =========================
 
 @app.post("/subscribe")
@@ -237,7 +232,6 @@ async def subscribe(request: Request):
 
 @app.get("/dashboard")
 def dashboard():
-
     return {
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
