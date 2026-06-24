@@ -3,15 +3,17 @@ from datetime import datetime
 
 from engine.conversion_engine_v3 import ConversionTrackingV3
 from engine.scaling_engine_v4 import ScalingEngineV4
+from engine.v5_autonomy_engine import V5AutonomyEngine
 
 app = FastAPI()
 
 # =========================
-# INIT SYSTEM
+# INIT SYSTEM STACK
 # =========================
 
 conversion = ConversionTrackingV3()
 scaling = ScalingEngineV4(conversion)
+v5 = V5AutonomyEngine(scaling, conversion)
 
 
 # =========================
@@ -20,7 +22,7 @@ scaling = ScalingEngineV4(conversion)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "SCALING ENGINE V4 ACTIVE"}
+    return {"status": "OK", "system": "V5 AUTONOMY ACTIVE"}
 
 
 # =========================
@@ -43,25 +45,16 @@ async def track(request):
 
 
 # =========================
-# CONVERT (REVENUE EVENT)
+# CONVERT
 # =========================
 
 @app.get("/convert/{product_id}")
 def convert(product_id: str):
-    return conversion.track_conversion(product_id, 15.0)
+    return conversion.track_conversion(product_id, 20.0)
 
 
 # =========================
-# SCORE
-# =========================
-
-@app.get("/score/{product_id}")
-def score(product_id: str):
-    return conversion.product_score(product_id)
-
-
-# =========================
-# SCALING DECISION (CORE V4)
+# SCALING V4
 # =========================
 
 @app.get("/scale/{product_id}")
@@ -70,19 +63,39 @@ def scale(product_id: str):
 
 
 # =========================
-# FULL SYSTEM SCAN
+# V5 AUTONOMY CORE
 # =========================
 
-@app.get("/scan")
-def scan():
+@app.get("/v5/run")
+def v5_run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    return scaling.scan_all(products)
+    return v5.run_cycle(products)
 
 
 # =========================
-# DASHBOARD (FULL INTELLIGENCE)
+# LEARNING DASHBOARD
+# =========================
+
+@app.get("/v5/learn")
+def v5_learn():
+
+    return v5.learn()
+
+
+# =========================
+# DECISION ENGINE
+# =========================
+
+@app.get("/v5/decide")
+def v5_decide():
+
+    return v5.decide_next_action()
+
+
+# =========================
+# FULL DASHBOARD
 # =========================
 
 @app.get("/dashboard")
@@ -91,25 +104,27 @@ def dashboard():
     return {
         "conversion": conversion.report(),
         "scaling": scaling.report(),
+        "v5_learning": v5.learn(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 
 # =========================
-# AUTOPILOT SIMULATION
+# AUTOPILOT RUN (SAFE ENTRY)
 # =========================
 
 @app.get("/run")
 def run():
 
-    conversion.track_click("CHK24_001", "autopilot")
-    conversion.track_lead("CHK24_001", "sales")
+    conversion.track_click("CHK24_001", "v5")
+    conversion.track_lead("CHK24_001", "v5")
     conversion.track_conversion("CHK24_001", 25.0)
 
-    scale_result = scaling.analyze_product("CHK24_001")
+    scale = scaling.analyze_product("CHK24_001")
+    learn = v5.observe("CHK24_001")
 
     return {
-        "status": "V4_CYCLE_DONE",
-        "conversion": conversion.product_score("CHK24_001"),
-        "scaling": scale_result
+        "status": "V5_CYCLE_DONE",
+        "scale": scale,
+        "learning": learn
     }
