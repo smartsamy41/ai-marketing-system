@@ -1,88 +1,78 @@
 from datetime import datetime
-import uuid
+import random
 
 
 # =========================
-# CLICK + REVENUE TRACKING ENGINE
+# TRAFFIC ENGINE (SIMULATION + READY FOR REAL SOURCES)
 # =========================
-class TrackingEngine:
+class TrafficEngine:
 
     def __init__(self):
 
-        self.clicks = []
-        self.conversions = []
-        self.revenue = []
+        self.sources = [
+            "pinterest",
+            "youtube",
+            "seo",
+            "blog",
+            "direct"
+        ]
+
+        self.visits = []
 
     # =========================
-    # TRACK CLICK
+    # GENERATE TRAFFIC EVENT
     # =========================
-    def track_click(self, product_id, source, link_type="affiliate"):
+    def generate_traffic(self, product_id):
 
-        click = {
-            "id": str(uuid.uuid4()),
+        source = random.choice(self.sources)
+
+        visit = {
             "product_id": product_id,
             "source": source,
-            "link_type": link_type,
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.utcnow().isoformat(),
+            "converted": random.random() < 0.05  # 5% conversion sim
         }
 
-        self.clicks.append(click)
+        self.visits.append(visit)
 
         return {
-            "status": "CLICK_TRACKED",
-            "click": click
+            "status": "TRAFFIC_GENERATED",
+            "visit": visit
         }
 
     # =========================
-    # TRACK CONVERSION
+    # BULK TRAFFIC SIMULATION
     # =========================
-    def track_conversion(self, product_id, amount, provider):
+    def run_bulk_traffic(self, products):
 
-        conversion = {
-            "id": str(uuid.uuid4()),
-            "product_id": product_id,
-            "amount": amount,
-            "provider": provider,
-            "timestamp": datetime.utcnow().isoformat()
-        }
+        results = []
 
-        self.conversions.append(conversion)
+        for p in products:
+
+            results.append(self.generate_traffic(p))
 
         return {
-            "status": "CONVERSION_TRACKED",
-            "conversion": conversion
+            "status": "BULK_TRAFFIC_DONE",
+            "total": len(results),
+            "results": results
         }
 
     # =========================
-    # ADD REVENUE ENTRY
+    # ANALYTICS
     # =========================
-    def add_revenue(self, product_id, amount):
+    def get_stats(self):
 
-        entry = {
-            "id": str(uuid.uuid4()),
-            "product_id": product_id,
-            "amount": amount,
-            "timestamp": datetime.utcnow().isoformat()
-        }
+        total = len(self.visits)
+        conversions = len([v for v in self.visits if v["converted"]])
+        sources = {}
 
-        self.revenue.append(entry)
+        for v in self.visits:
+            s = v["source"]
+            sources[s] = sources.get(s, 0) + 1
 
         return {
-            "status": "REVENUE_ADDED",
-            "entry": entry
-        }
-
-    # =========================
-    # DASHBOARD SUMMARY
-    # =========================
-    def get_summary(self):
-
-        total_clicks = len(self.clicks)
-        total_conversions = len(self.conversions)
-        total_revenue = sum([r["amount"] for r in self.revenue]) if self.revenue else 0
-
-        return {
-            "clicks": total_clicks,
-            "conversions": total_conversions,
-            "revenue": total_revenue
+            "total_visits": total,
+            "conversions": conversions,
+            "conversion_rate": round(conversions / total, 4) if total > 0 else 0,
+            "sources": sources
         }
