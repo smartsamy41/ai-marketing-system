@@ -3,7 +3,7 @@ from datetime import datetime
 
 class ScalingEngine:
 
-    def __init__(self, revenue_engine, traffic_engine, tracking_engine):
+    def __init__(self, revenue_engine=None, traffic_engine=None, tracking_engine=None):
 
         self.revenue_engine = revenue_engine
         self.traffic_engine = traffic_engine
@@ -11,35 +11,36 @@ class ScalingEngine:
 
     def analyze(self):
 
-        # =========================
-        # SAFE DEFAULTS (CRASH FIX)
-        # =========================
+        debug = {
+            "revenue_engine": str(self.revenue_engine),
+            "traffic_engine": str(self.traffic_engine),
+            "tracking_engine": str(self.tracking_engine)
+        }
+
         traffic = {}
         tracking = {}
         revenue = {}
 
+        # =========================
+        # SAFE EXECUTION (NO CRASH EVER)
+        # =========================
         try:
             if self.traffic_engine:
-                traffic = self.traffic_engine.get_stats() or {}
+                traffic = self.traffic_engine.get_stats()
         except Exception as e:
             traffic = {"error": str(e)}
 
         try:
             if self.tracking_engine:
-                tracking = self.tracking_engine.get_summary() or {}
+                tracking = self.tracking_engine.get_summary()
         except Exception as e:
             tracking = {"error": str(e)}
 
         try:
             if self.revenue_engine:
-                revenue = self.revenue_engine.run_cycle() or {}
+                revenue = self.revenue_engine.run_cycle()
         except Exception as e:
             revenue = {"error": str(e)}
-
-        # =========================
-        # SAFE SCORE CALCULATION
-        # =========================
-        conversion_rate = traffic.get("conversion_rate", 0)
 
         clicks = tracking.get("clicks", 0)
         conversions = tracking.get("conversions", 0)
@@ -50,15 +51,11 @@ class ScalingEngine:
         except:
             revenue_value = 0
 
-        score = (
-            conversion_rate * 100 +
-            clicks * 0.1 +
-            conversions * 5 +
-            revenue_value * 0.01
-        )
+        score = clicks * 0.1 + conversions * 5 + revenue_value * 0.01
 
         return {
             "status": "ANALYSIS_DONE",
+            "debug": debug,
             "metrics": {
                 "traffic": traffic,
                 "tracking": tracking,
@@ -83,8 +80,7 @@ class ScalingEngine:
         return {
             "status": "DECISION_MADE",
             "action": action,
-            "score": score,
-            "timestamp": datetime.utcnow().isoformat()
+            "score": score
         }
 
     def run(self):
