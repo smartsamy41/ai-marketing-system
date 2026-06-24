@@ -1,26 +1,61 @@
 from fastapi import FastAPI, Request
 from datetime import datetime
 
-from engine.conversion_engine_v3 import ConversionTrackingV3
-from engine.scaling_engine_v4 import ScalingEngineV4
-from engine.v9_real_world_engine import V9RealWorldEngine
-from engine.v10_money_machine import V10MoneyMachine
-from engine.v11_cloud_autopilot import V11CloudAutopilot
-from engine.v12_business_os import V12BusinessOS
-
 app = FastAPI()
 
 # =========================
-# INIT FULL STACK
+# SIMPLE TRACKING (STABLE CORE)
 # =========================
 
-conversion = ConversionTrackingV3()
-scaling = ScalingEngineV4(conversion)
-v9 = V9RealWorldEngine(conversion)
-v10 = V10MoneyMachine(v9, conversion)
-v11 = V11CloudAutopilot(v10, v9, scaling)
-v12 = V12BusinessOS(v11, v10, scaling)
+class Tracking:
+    def __init__(self):
+        self.clicks = []
 
+    def track(self, product_id, source="api"):
+        event = {
+            "product_id": product_id,
+            "source": source,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        self.clicks.append(event)
+        return {"status": "CLICK_TRACKED", "event": event}
+
+    def summary(self):
+        return {"clicks": len(self.clicks)}
+
+
+tracking = Tracking()
+
+# =========================
+# LANDINGPAGE (SAFE SIMPLE VERSION)
+# =========================
+
+class LandingpageEngine:
+    def create(self, product_id):
+        return {
+            "product_id": product_id,
+            "url": f"/landing/{product_id}",
+            "status": "CREATED",
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+
+landingpage = LandingpageEngine()
+
+# =========================
+# SALES API (PLACEHOLDER READY)
+# =========================
+
+class SalesAPI:
+    def send(self, product_id):
+        return {
+            "product_id": product_id,
+            "status": "SENT_TO_SALES_API",
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+
+sales = SalesAPI()
 
 # =========================
 # ROOT
@@ -28,115 +63,75 @@ v12 = V12BusinessOS(v11, v10, scaling)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "V12 BUSINESS OS ACTIVE"}
-
+    return {"status": "OK", "system": "CLEAN MARKETING SYSTEM ACTIVE"}
 
 # =========================
-# HEALTH
+# HEALTH (CLOUD SAFE)
 # =========================
 
 @app.get("/health")
 def health():
     return {"status": "OK", "ready": True}
 
-
 # =========================
-# TRACK
-# =========================
-
-@app.post("/track")
-async def track(request: Request):
-    data = await request.json()
-    return conversion.track_click(data.get("product_id"), "api")
-
-
-# =========================
-# CONVERT
+# FLOW (MAIN MONEY FLOW)
 # =========================
 
-@app.get("/convert/{product_id}")
-def convert(product_id: str):
-    return conversion.track_conversion(product_id, 100.0)
+@app.get("/flow/{product_id}")
+def flow(product_id: str):
 
+    lp = landingpage.create(product_id)
+    click = tracking.track(product_id, "flow")
+    sales_event = sales.send(product_id)
 
-# =========================
-# SCALING
-# =========================
-
-@app.get("/scale/{product_id}")
-def scale(product_id: str):
-    return scaling.analyze_product(product_id)
-
-
-# =========================
-# CLOUD AUTOPILOT
-# =========================
-
-@app.get("/cloud/{product_id}")
-def cloud(product_id: str):
-    return v11.run_cloud_cycle(product_id)
-
+    return {
+        "status": "FLOW_COMPLETE",
+        "landingpage": lp,
+        "tracking": click,
+        "sales": sales_event
+    }
 
 # =========================
-# MONEY ENGINE
+# PINTEREST QUEUE (NUR PREP, KEIN ADS CODE)
 # =========================
 
-@app.get("/money")
-def money():
-    return v10.report()
+@app.get("/pin/{product_id}")
+def pin(product_id: str):
 
-
-# =========================
-# BUSINESS OS CORE
-# =========================
-
-@app.get("/v12/run/{product_id}")
-def v12_run(product_id: str):
-
-    return v12.run(product_id)
-
+    return {
+        "product_id": product_id,
+        "pin_status": "READY_FOR_PINTEREST",
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 # =========================
-# BUSINESS DECISION
-# =========================
-
-@app.get("/v12/decision/{product_id}")
-def v12_decision(product_id: str):
-
-    v12.collect(product_id)
-    return v12.decide()
-
-
-# =========================
-# DASHBOARD (FULL CONTROL TOWER)
+# DASHBOARD
 # =========================
 
 @app.get("/dashboard")
 def dashboard():
 
     return {
-        "conversion": conversion.report(),
-        "v10": v10.report(),
-        "v11": v11.report(),
-        "v12": v12.report(),
+        "tracking": tracking.summary(),
+        "system": "STABLE READY",
         "timestamp": datetime.utcnow().isoformat()
     }
 
-
 # =========================
-# AUTOPILOT ENTRY
+# RUN (CLOUD SAFE ENTRY)
 # =========================
 
 @app.get("/run")
 def run():
 
-    conversion.track_click("CHK24_001", "v12")
-    conversion.track_lead("CHK24_001", "v12")
-    conversion.track_conversion("CHK24_001", 100.0)
+    product_id = "CHK24_001"
 
-    result = v12.run("CHK24_001")
+    lp = landingpage.create(product_id)
+    tracking.track(product_id, "run")
+    sales.send(product_id)
 
     return {
-        "status": "V12_BUSINESS_OS_RUNNING",
-        "result": result
+        "status": "RUN_COMPLETE",
+        "landingpage": lp,
+        "tracking": tracking.summary()
     }
