@@ -31,7 +31,6 @@ revenue_engine = RevenueAutopilotEngine(tracking)
 
 email_engine = EmailMarketingEngine(get_all_emails().get("emails", []))
 
-
 connector = AutopilotConnector(
     orchestrator=run_orchestrator,
     pipeline=pipeline,
@@ -48,25 +47,34 @@ connector = AutopilotConnector(
 def root():
     return {
         "status": "OK",
-        "system": "FULL MONEY AUTOPILOT LIVE 🚀"
+        "system": "AUTOPILOT LIVE"
     }
 
 
 # =========================
-# TRAFFIC GENERATION
+# HEALTH
+# =========================
+@app.get("/health")
+def health():
+    return {
+        "status": "OK",
+        "system_ready": True
+    }
+
+
+# =========================
+# TRAFFIC
 # =========================
 @app.get("/traffic")
 def generate_traffic():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    result = traffic.run_bulk_traffic(products)
-
-    return result
+    return traffic.run_bulk_traffic(products)
 
 
 # =========================
-# TRACK CLICK
+# TRACKING
 # =========================
 @app.post("/track")
 async def track(request: Request):
@@ -93,7 +101,7 @@ async def subscribe(request: Request):
 
 
 # =========================
-# AUTOPILOT CORE
+# AUTOPILOT
 # =========================
 @app.get("/autopilot")
 def autopilot():
@@ -105,7 +113,7 @@ def autopilot():
 
 
 # =========================
-# FULL LOOP (TRAFFIC → MONEY)
+# LOOP
 # =========================
 @app.get("/loop")
 def loop():
@@ -126,7 +134,7 @@ def loop():
 
 
 # =========================
-# DASHBOARD (REAL MONEY VIEW)
+# DASHBOARD
 # =========================
 @app.get("/dashboard")
 def dashboard():
@@ -147,9 +155,9 @@ def engine():
 
     return {
         "status": "FULL SYSTEM ACTIVE",
-        "traffic": True,
         "autopilot": True,
-        "email": True,
+        "traffic": True,
         "tracking": True,
-        "revenue": True
+        "revenue": True,
+        "email": True
     }
