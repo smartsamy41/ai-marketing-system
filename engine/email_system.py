@@ -3,13 +3,13 @@ import uuid
 
 
 # =========================
-# EMAIL STORAGE (SIMPLE DB LAYER)
+# SIMPLE EMAIL DATABASE
 # =========================
 EMAIL_DB = []
 
 
 # =========================
-# ADD EMAIL (STEP 1)
+# ADD EMAIL (LANDINGPAGE SIGNUP)
 # =========================
 def add_email(email: str, source: str = "landingpage"):
 
@@ -25,41 +25,59 @@ def add_email(email: str, source: str = "landingpage"):
 
     return {
         "status": "EMAIL_SAVED",
-        "message": "confirmation_required",
         "entry": entry
     }
 
 
 # =========================
-# CONFIRM EMAIL (DOI STEP 2)
+# CONFIRM EMAIL (DOI)
 # =========================
 def confirm_email(email_id: str):
 
-    for e in EMAIL_DB:
-        if e["id"] == email_id:
-            e["status"] = "ACTIVE"
-            e["confirmed_at"] = datetime.utcnow().isoformat()
+    for entry in EMAIL_DB:
+
+        if entry["id"] == email_id:
+
+            entry["status"] = "ACTIVE"
+            entry["confirmed_at"] = datetime.utcnow().isoformat()
 
             return {
                 "status": "CONFIRMED",
-                "email": e
+                "entry": entry
             }
 
     return {
         "status": "ERROR",
-        "message": "email_not_found"
+        "message": "EMAIL_NOT_FOUND"
     }
 
 
 # =========================
-# GET ACTIVE LIST
+# GET ACTIVE EMAILS
 # =========================
 def get_active_emails():
 
-    active = [e for e in EMAIL_DB if e["status"] == "ACTIVE"]
+    active = []
+
+    for entry in EMAIL_DB:
+
+        if entry["status"] == "ACTIVE":
+            active.append(entry)
 
     return {
         "status": "OK",
         "count": len(active),
         "emails": active
+    }
+
+
+# =========================
+# GET ALL EMAILS (DEBUG)
+# =========================
+def get_all_emails():
+
+    return {
+        "status": "OK",
+        "count": len(EMAIL_DB),
+        "emails": EMAIL_DB
     }
