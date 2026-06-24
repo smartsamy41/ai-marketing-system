@@ -2,13 +2,12 @@ from fastapi import FastAPI, Request
 from datetime import datetime
 
 # =========================
-# SAFE ENGINE IMPORTS (CRASH FIX)
+# SAFE ENGINE IMPORTS
 # =========================
 
 try:
     from engine.tracking_engine import TrackingEngine
 except:
-    # FALLBACK (Cloud darf NIE crashen)
     class TrackingEngine:
         def __init__(self):
             self.clicks = []
@@ -41,6 +40,10 @@ except:
             return {"traffic": 0}
 
 
+# =========================
+# CORE IMPORTS
+# =========================
+
 from engine.orchestrator_engine_v2 import run_orchestrator
 from engine.master_content_pipeline import MasterContentPipeline
 from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
@@ -49,14 +52,11 @@ from engine.autopilot_connector import AutopilotConnector
 
 
 # =========================
-# FASTAPI APP
+# APP INIT
 # =========================
+
 app = FastAPI()
 
-
-# =========================
-# INIT SYSTEM
-# =========================
 pipeline = MasterContentPipeline()
 tracking = TrackingEngine()
 traffic = TrafficEngine()
@@ -74,8 +74,9 @@ connector = AutopilotConnector(
 
 
 # =========================
-# ROOT (IMPORTANT HEALTH)
+# ROOT
 # =========================
+
 @app.get("/")
 def root():
     return {
@@ -85,19 +86,22 @@ def root():
 
 
 # =========================
-# HEALTH CHECK (CRITICAL FOR CLOUD RUN)
+# HEALTH
 # =========================
+
 @app.get("/health")
 def health():
     return {
         "status": "OK",
-        "ready": True
+        "ready": True,
+        "timestamp": datetime.utcnow().isoformat()
     }
 
 
 # =========================
 # ENGINE STATUS
 # =========================
+
 @app.get("/engine")
 def engine():
     return {
@@ -109,16 +113,34 @@ def engine():
 
 
 # =========================
+# RUN (FIX FÜR SCHEDULER)
+# =========================
+
+@app.get("/run")
+def run():
+    return connector.run_cycle(
+        product_id="CHK24_001",
+        category="check24"
+    )
+
+
+# =========================
 # TRAFFIC
 # =========================
+
 @app.get("/traffic")
 def generate_traffic():
-    return traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"])
+    return traffic.run_bulk_traffic([
+        "CHK24_001",
+        "TC_001",
+        "AMZ_001"
+    ])
 
 
 # =========================
 # TRACK CLICK
 # =========================
+
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
@@ -132,6 +154,7 @@ async def track(request: Request):
 # =========================
 # EMAIL
 # =========================
+
 @app.post("/subscribe")
 async def subscribe(request: Request):
     data = await request.json()
@@ -141,6 +164,7 @@ async def subscribe(request: Request):
 # =========================
 # AUTOPILOT
 # =========================
+
 @app.get("/autopilot")
 def autopilot():
     return connector.run_cycle(
@@ -150,12 +174,17 @@ def autopilot():
 
 
 # =========================
-# LOOP TEST
+# LOOP
 # =========================
+
 @app.get("/loop")
 def loop():
     return {
-        "traffic": traffic.run_bulk_traffic(["CHK24_001", "TC_001"]),
+        "traffic": traffic.run_bulk_traffic([
+            "CHK24_001",
+            "TC_001",
+            "AMZ_001"
+        ]),
         "autopilot": connector.run_cycle("CHK24_001", "check24")
     }
 
@@ -163,11 +192,13 @@ def loop():
 # =========================
 # DASHBOARD
 # =========================
+
 @app.get("/dashboard")
 def dashboard():
     return {
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
         "revenue": revenue_engine.run_cycle(),
-        "emails": get_all_emails()
+        "emails": get_all_emails(),
+        "timestamp": datetime.utcnow().isoformat()
     }
