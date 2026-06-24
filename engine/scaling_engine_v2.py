@@ -22,7 +22,7 @@ class ScalingEngine:
         revenue = {}
 
         # =========================
-        # SAFE EXECUTION (NO CRASH EVER)
+        # SAFE EXECUTION
         # =========================
         try:
             if self.traffic_engine:
@@ -80,7 +80,8 @@ class ScalingEngine:
         return {
             "status": "DECISION_MADE",
             "action": action,
-            "score": score
+            "score": score,
+            "timestamp": datetime.utcnow().isoformat()
         }
 
     def run(self):
