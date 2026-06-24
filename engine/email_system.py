@@ -1,9 +1,10 @@
 from datetime import datetime
 import uuid
+import random
 
 
 # =========================
-# SIMPLE EMAIL DATABASE
+# EMAIL DATABASE (IN MEMORY)
 # =========================
 EMAIL_DB = []
 
@@ -57,17 +58,10 @@ def confirm_email(email_id: str):
 # =========================
 def get_active_emails():
 
-    active = []
-
-    for entry in EMAIL_DB:
-
-        if entry["status"] == "ACTIVE":
-            active.append(entry)
-
     return {
         "status": "OK",
-        "count": len(active),
-        "emails": active
+        "emails": [e for e in EMAIL_DB if e["status"] == "ACTIVE"],
+        "count": len([e for e in EMAIL_DB if e["status"] == "ACTIVE"])
     }
 
 
@@ -78,6 +72,95 @@ def get_all_emails():
 
     return {
         "status": "OK",
-        "count": len(EMAIL_DB),
-        "emails": EMAIL_DB
+        "emails": EMAIL_DB,
+        "count": len(EMAIL_DB)
     }
+
+
+# =========================
+# EMAIL MARKETING ENGINE (AUTOPILOT)
+# =========================
+class EmailMarketingEngine:
+
+    def __init__(self, email_db):
+
+        self.email_db = email_db
+
+        self.campaigns = [
+            "Neue Tarife entdecken",
+            "Top Deals heute",
+            "Versicherungen vergleichen",
+            "Strom & Gas sparen",
+            "Finanz Angebote prüfen"
+        ]
+
+    # =========================
+    # GET ACTIVE USERS
+    # =========================
+    def get_users(self):
+
+        return [e for e in self.email_db if e["status"] == "ACTIVE"]
+
+    # =========================
+    # GENERATE EMAIL
+    # =========================
+    def generate_email(self, user):
+
+        product_id = random.choice([
+            "CHK24_001",
+            "TC_001",
+            "AMZ_001"
+        ])
+
+        campaign = random.choice(self.campaigns)
+
+        html = f"""
+        <html>
+        <body>
+            <h1>{campaign}</h1>
+
+            <p>Hallo, hier sind neue passende Angebote für dich.</p>
+
+            <h2>Empfohlenes Produkt</h2>
+            <p>{product_id}</p>
+
+            <a href="https://affiliate-link/{product_id}">
+                Jetzt vergleichen
+            </a>
+
+            <hr>
+            <small>Du erhältst diese Email, weil du dich angemeldet hast.</small>
+        </body>
+        </html>
+        """
+
+        return {
+            "to": user["email"],
+            "subject": campaign,
+            "html": html,
+            "created_at": datetime.utcnow().isoformat()
+        }
+
+    # =========================
+    # RUN CAMPAIGN (AUTOPILOT)
+    # =========================
+    def run_campaign(self):
+
+        users = self.get_users()
+
+        if not users:
+            return {
+                "status": "NO_USERS"
+            }
+
+        emails = []
+
+        for user in users:
+
+            emails.append(self.generate_email(user))
+
+        return {
+            "status": "CAMPAIGN_READY",
+            "count": len(emails),
+            "emails": emails
+        }
