@@ -49,6 +49,7 @@ from engine.master_content_pipeline import MasterContentPipeline
 from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
 from engine.revenue_autopilot_engine import RevenueAutopilotEngine
 from engine.autopilot_connector import AutopilotConnector
+from engine.governor import Governor
 
 
 # =========================
@@ -60,6 +61,7 @@ app = FastAPI()
 pipeline = MasterContentPipeline()
 tracking = TrackingEngine()
 traffic = TrafficEngine()
+
 revenue_engine = RevenueAutopilotEngine(tracking)
 
 email_engine = EmailMarketingEngine(get_all_emails().get("emails", []))
@@ -71,6 +73,12 @@ connector = AutopilotConnector(
     tracking=tracking,
     revenue_engine=revenue_engine
 )
+
+# =========================
+# GOVERNOR (CONTROL LAYER)
+# =========================
+
+governor = Governor()
 
 
 # =========================
@@ -108,20 +116,88 @@ def engine():
         "status": "ACTIVE",
         "tracking": True,
         "traffic": True,
-        "revenue": True
+        "revenue": True,
+        "governor": True
     }
 
 
 # =========================
-# RUN (FIX FÜR SCHEDULER)
+# RUN (SCHEDULER SAFE)
 # =========================
 
 @app.get("/run")
 def run():
+
+    decision = governor.approve(
+        product_id="CHK24_001",
+        traffic_amount=5,
+        score=0.8
+    )
+
+    if decision["status"] != "APPROVED":
+        return {
+            "status": "BLOCKED_BY_GOVERNOR",
+            "reason": decision
+        }
+
     return connector.run_cycle(
         product_id="CHK24_001",
         category="check24"
     )
+
+
+# =========================
+# AUTOPILOT
+# =========================
+
+@app.get("/autopilot")
+def autopilot():
+
+    decision = governor.approve(
+        product_id="CHK24_001",
+        traffic_amount=5,
+        score=0.8
+    )
+
+    if decision["status"] != "APPROVED":
+        return {
+            "status": "BLOCKED_BY_GOVERNOR",
+            "reason": decision
+        }
+
+    return connector.run_cycle(
+        product_id="CHK24_001",
+        category="check24"
+    )
+
+
+# =========================
+# LOOP
+# =========================
+
+@app.get("/loop")
+def loop():
+
+    decision = governor.approve(
+        product_id="CHK24_001",
+        traffic_amount=5,
+        score=0.8
+    )
+
+    if decision["status"] != "APPROVED":
+        return {
+            "status": "BLOCKED_BY_GOVERNOR",
+            "reason": decision
+        }
+
+    return {
+        "traffic": traffic.run_bulk_traffic([
+            "CHK24_001",
+            "TC_001",
+            "AMZ_001"
+        ]),
+        "autopilot": connector.run_cycle("CHK24_001", "check24")
+    }
 
 
 # =========================
@@ -162,34 +238,6 @@ async def subscribe(request: Request):
 
 
 # =========================
-# AUTOPILOT
-# =========================
-
-@app.get("/autopilot")
-def autopilot():
-    return connector.run_cycle(
-        product_id="CHK24_001",
-        category="check24"
-    )
-
-
-# =========================
-# LOOP
-# =========================
-
-@app.get("/loop")
-def loop():
-    return {
-        "traffic": traffic.run_bulk_traffic([
-            "CHK24_001",
-            "TC_001",
-            "AMZ_001"
-        ]),
-        "autopilot": connector.run_cycle("CHK24_001", "check24")
-    }
-
-
-# =========================
 # DASHBOARD
 # =========================
 
@@ -200,5 +248,6 @@ def dashboard():
         "tracking": tracking.get_summary(),
         "revenue": revenue_engine.run_cycle(),
         "emails": get_all_emails(),
+        "governor": "ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
