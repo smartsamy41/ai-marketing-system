@@ -1,49 +1,8 @@
 from fastapi import FastAPI, Request
 from datetime import datetime
 
-# =========================
-# SAFE ENGINE IMPORTS
-# =========================
-
-try:
-    from engine.tracking_engine import TrackingEngine
-except:
-    class TrackingEngine:
-        def __init__(self):
-            self.clicks = []
-            self.conversions = []
-
-        def track_click(self, product_id, source="api"):
-            click = {
-                "product_id": product_id,
-                "source": source,
-                "timestamp": datetime.utcnow().isoformat()
-            }
-            self.clicks.append(click)
-            return {"status": "CLICK_TRACKED", "click": click}
-
-        def get_summary(self):
-            return {
-                "clicks": len(self.clicks),
-                "conversions": len(self.conversions)
-            }
-
-
-try:
-    from engine.traffic_engine import TrafficEngine
-except:
-    class TrafficEngine:
-        def run_bulk_traffic(self, products):
-            return {"status": "TRAFFIC_FALLBACK", "products": products}
-
-        def get_stats(self):
-            return {"traffic": 0}
-
-
-# =========================
-# CORE IMPORTS
-# =========================
-
+from engine.tracking_engine import TrackingEngine
+from engine.traffic_engine import TrafficEngine
 from engine.orchestrator_engine_v2 import run_orchestrator
 from engine.master_content_pipeline import MasterContentPipeline
 from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
@@ -74,10 +33,6 @@ connector = AutopilotConnector(
     revenue_engine=revenue_engine
 )
 
-# =========================
-# GOVERNOR (CONTROL LAYER)
-# =========================
-
 governor = Governor()
 
 
@@ -87,10 +42,7 @@ governor = Governor()
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "AUTOPILOT LIVE"
-    }
+    return {"status": "OK", "system": "AUTOPILOT LIVE"}
 
 
 # =========================
@@ -99,11 +51,7 @@ def root():
 
 @app.get("/health")
 def health():
-    return {
-        "status": "OK",
-        "ready": True,
-        "timestamp": datetime.utcnow().isoformat()
-    }
+    return {"status": "OK", "ready": True}
 
 
 # =========================
@@ -128,22 +76,12 @@ def engine():
 @app.get("/run")
 def run():
 
-    decision = governor.approve(
-        product_id="CHK24_001",
-        traffic_amount=5,
-        score=0.8
-    )
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {
-            "status": "BLOCKED_BY_GOVERNOR",
-            "reason": decision
-        }
+        return {"status": "BLOCKED", "reason": decision}
 
-    return connector.run_cycle(
-        product_id="CHK24_001",
-        category="check24"
-    )
+    return connector.run_cycle("CHK24_001", "check24")
 
 
 # =========================
@@ -153,22 +91,12 @@ def run():
 @app.get("/autopilot")
 def autopilot():
 
-    decision = governor.approve(
-        product_id="CHK24_001",
-        traffic_amount=5,
-        score=0.8
-    )
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {
-            "status": "BLOCKED_BY_GOVERNOR",
-            "reason": decision
-        }
+        return {"status": "BLOCKED", "reason": decision}
 
-    return connector.run_cycle(
-        product_id="CHK24_001",
-        category="check24"
-    )
+    return connector.run_cycle("CHK24_001", "check24")
 
 
 # =========================
@@ -178,24 +106,13 @@ def autopilot():
 @app.get("/loop")
 def loop():
 
-    decision = governor.approve(
-        product_id="CHK24_001",
-        traffic_amount=5,
-        score=0.8
-    )
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {
-            "status": "BLOCKED_BY_GOVERNOR",
-            "reason": decision
-        }
+        return {"status": "BLOCKED", "reason": decision}
 
     return {
-        "traffic": traffic.run_bulk_traffic([
-            "CHK24_001",
-            "TC_001",
-            "AMZ_001"
-        ]),
+        "traffic": traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"]),
         "autopilot": connector.run_cycle("CHK24_001", "check24")
     }
 
@@ -206,25 +123,17 @@ def loop():
 
 @app.get("/traffic")
 def generate_traffic():
-    return traffic.run_bulk_traffic([
-        "CHK24_001",
-        "TC_001",
-        "AMZ_001"
-    ])
+    return traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"])
 
 
 # =========================
-# TRACK CLICK
+# TRACK
 # =========================
 
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
-
-    return tracking.track_click(
-        product_id=data.get("product_id"),
-        source=data.get("source", "api")
-    )
+    return tracking.track_click(data.get("product_id"), data.get("source", "api"))
 
 
 # =========================
