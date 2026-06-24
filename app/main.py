@@ -3,6 +3,7 @@ from datetime import datetime
 
 from engine.landingpage_engine_v2 import LandingpageEngineV2
 from engine.content_run_v1 import ContentRunV1
+from engine.scheduler_v1 import SchedulerV1
 
 app = FastAPI()
 
@@ -12,6 +13,7 @@ app = FastAPI()
 
 landingpage = LandingpageEngineV2()
 content = ContentRunV1(landingpage)
+scheduler = SchedulerV1(content)
 
 # =========================
 # ROOT
@@ -19,7 +21,7 @@ content = ContentRunV1(landingpage)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "CONTENT RUN V1 ACTIVE"}
+    return {"status": "OK", "system": "SCHEDULER V1 ACTIVE"}
 
 # =========================
 # HEALTH
@@ -30,33 +32,33 @@ def health():
     return {"status": "OK", "ready": True}
 
 # =========================
-# RESET (CLEAN START)
+# RESET SYSTEM
 # =========================
 
 @app.get("/reset")
 def reset():
     landingpage.reset()
-    return {"status": "SYSTEM_RESET_DONE"}
+    return {"status": "RESET_DONE"}
 
 # =========================
-# RUN SINGLE PRODUCT
+# SCHEDULER RUN (CORE)
 # =========================
 
-@app.get("/run/{product_id}")
-def run(product_id: str):
+@app.get("/run")
+def run():
 
-    return content.generate(product_id)
+    products = ["CHK24_001", "TC_001", "AMZ_001", "CHK24_002", "TC_002"]
+
+    return scheduler.run(products)
 
 # =========================
-# RUN FULL BATCH (CONTROLLED 1X FLOW)
+# MORNING RUN ONLY
 # =========================
 
-@app.get("/run-batch")
-def run_batch():
+@app.get("/run/morning")
+def morning():
 
-    products = ["CHK24_001", "TC_001", "AMZ_001"]
-
-    return content.run_batch(products)
+    return scheduler.run(["CHK24_001", "TC_001", "AMZ_001"])
 
 # =========================
 # DASHBOARD
@@ -66,6 +68,6 @@ def run_batch():
 def dashboard():
 
     return {
-        "content": content.report(),
+        "scheduler": scheduler.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
