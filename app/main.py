@@ -5,17 +5,19 @@ from engine.conversion_engine_v3 import ConversionTrackingV3
 from engine.scaling_engine_v4 import ScalingEngineV4
 from engine.v5_autonomy_engine import V5AutonomyEngine
 from engine.v6_self_evolution_engine import V6SelfEvolutionEngine
+from engine.v7_autonomous_business_engine import V7AutonomousBusiness
 
 app = FastAPI()
 
 # =========================
-# INIT STACK
+# INIT FULL STACK
 # =========================
 
 conversion = ConversionTrackingV3()
 scaling = ScalingEngineV4(conversion)
 v5 = V5AutonomyEngine(scaling, conversion)
 v6 = V6SelfEvolutionEngine(v5, scaling, conversion)
+v7 = V7AutonomousBusiness(v6, scaling, conversion)
 
 
 # =========================
@@ -24,7 +26,7 @@ v6 = V6SelfEvolutionEngine(v5, scaling, conversion)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "V6 SELF EVOLUTION ACTIVE"}
+    return {"status": "OK", "system": "V7 AUTONOMOUS BUSINESS ACTIVE"}
 
 
 # =========================
@@ -52,7 +54,7 @@ async def track(request):
 
 @app.get("/convert/{product_id}")
 def convert(product_id: str):
-    return conversion.track_conversion(product_id, 25.0)
+    return conversion.track_conversion(product_id, 35.0)
 
 
 # =========================
@@ -65,29 +67,29 @@ def scale(product_id: str):
 
 
 # =========================
-# V6 EVOLUTION CORE
+# V7 AUTONOMOUS BUSINESS CORE
 # =========================
 
-@app.get("/v6/run")
-def v6_run():
+@app.get("/v7/run")
+def v7_run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    return v6.run(products)
+    return v7.run(products)
 
 
 # =========================
-# V6 REPORT
+# V7 REPORT
 # =========================
 
-@app.get("/v6/report")
-def v6_report():
+@app.get("/v7/report")
+def v7_report():
 
-    return v6.report()
+    return v7.report()
 
 
 # =========================
-# DASHBOARD
+# DASHBOARD (FULL INTELLIGENCE)
 # =========================
 
 @app.get("/dashboard")
@@ -98,6 +100,7 @@ def dashboard():
         "scaling": scaling.report(),
         "v5": v5.learn(),
         "v6": v6.report(),
+        "v7": v7.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
@@ -109,17 +112,16 @@ def dashboard():
 @app.get("/run")
 def run():
 
-    conversion.track_click("CHK24_001", "v6")
-    conversion.track_lead("CHK24_001", "v6")
-    conversion.track_conversion("CHK24_001", 30.0)
+    conversion.track_click("CHK24_001", "v7")
+    conversion.track_lead("CHK24_001", "v7")
+    conversion.track_conversion("CHK24_001", 40.0)
 
     scale = scaling.analyze_product("CHK24_001")
-    v5_state = v5.observe("CHK24_001")
     v6_state = v6.run(["CHK24_001", "TC_001"])
+    v7_state = v7.run(["CHK24_001", "TC_001", "AMZ_001"])
 
     return {
-        "status": "V6_CYCLE_DONE",
+        "status": "V7_BUSINESS_CYCLE_DONE",
         "scale": scale,
-        "v5": v5_state,
-        "v6": v6_state
+        "v7": v7_state
     }
