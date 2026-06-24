@@ -83,10 +83,7 @@ affiliate_router = AffiliateRouter()
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "AUTOPILOT LIVE"
-    }
+    return {"status": "OK", "system": "AUTOPILOT LIVE"}
 
 
 # =========================
@@ -95,29 +92,25 @@ def root():
 
 @app.get("/health")
 def health():
-    return {
-        "status": "OK",
-        "ready": True,
-        "timestamp": datetime.utcnow().isoformat()
-    }
+    return {"status": "OK", "ready": True}
 
 
 # =========================
-# ENGINE STATUS
+# ENGINE
 # =========================
 
 @app.get("/engine")
 def engine():
     return {
-        "status": "ACTIVE",
         "tracking": True,
         "traffic": True,
-        "governor": True
+        "governor": True,
+        "flow": True
     }
 
 
 # =========================
-# FLOW (FIXED LOGIC)
+# FLOW (CLEAN + NO DUPLICATE LOGIC)
 # =========================
 
 @app.get("/flow/{product_id}")
@@ -143,7 +136,7 @@ def flow(product_id: str):
         }
 
     # =========================
-    # LANDINGPAGE CHECK (NO DUPLICATE BLOCK)
+    # LANDINGPAGE (IDEMPOTENT LOGIC)
     # =========================
     existing = landingpage_engine.get(product_id)
 
@@ -157,12 +150,12 @@ def flow(product_id: str):
         lp = existing
 
     # =========================
-    # AFFILIATE LINK
+    # AFFILIATE
     # =========================
     redirect = affiliate_router.get_redirect(product_id)
 
     # =========================
-    # TRACK CLICK
+    # TRACK
     # =========================
     tracking.track_click(product_id, source="flow")
 
@@ -175,7 +168,7 @@ def flow(product_id: str):
 
 
 # =========================
-# RUN AUTOPILOT
+# RUN
 # =========================
 
 @app.get("/run")
@@ -214,11 +207,7 @@ def loop():
         return {"status": "BLOCKED", "reason": decision}
 
     return {
-        "traffic": traffic.run_bulk_traffic([
-            "CHK24_001",
-            "TC_001",
-            "AMZ_001"
-        ]),
+        "traffic": traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"]),
         "autopilot": connector.run_cycle("CHK24_001", "check24")
     }
 
@@ -229,11 +218,7 @@ def loop():
 
 @app.get("/traffic")
 def generate_traffic():
-    return traffic.run_bulk_traffic([
-        "CHK24_001",
-        "TC_001",
-        "AMZ_001"
-    ])
+    return traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"])
 
 
 # =========================
@@ -243,11 +228,7 @@ def generate_traffic():
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
-
-    return tracking.track_click(
-        product_id=data.get("product_id"),
-        source=data.get("source", "api")
-    )
+    return tracking.track_click(data.get("product_id"), data.get("source", "api"))
 
 
 # =========================
@@ -270,5 +251,6 @@ def dashboard():
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
         "governor": "ACTIVE",
+        "flow": "ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
