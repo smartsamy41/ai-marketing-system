@@ -4,7 +4,7 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# SAFE TRACKING
+# SAFETY LAYER (NO CRASH)
 # =========================
 
 class Tracking:
@@ -22,47 +22,28 @@ class Tracking:
     def summary(self):
         return {"clicks": len(self.clicks)}
 
+
 tracking = Tracking()
 
 # =========================
-# SAFE LANDINGPAGE (NO DEPENDENCY CRASH)
+# LANDINGPAGE (CLEAN ONLY)
 # =========================
 
 class LandingpageEngine:
-    def create(self, product_id, title, description):
+    def create(self, product_id):
         return {
             "product_id": product_id,
-            "title": title,
-            "description": description,
+            "title": f"{product_id} Vergleich 2026",
+            "description": f"Beste Angebote für {product_id}",
             "url": f"/landing/{product_id}",
             "status": "CREATED"
         }
 
+
 landingpage = LandingpageEngine()
 
 # =========================
-# SAFE SCHEDULER WRAPPER (FIX FOR base_url ERROR)
-# =========================
-
-class SchedulerEngine:
-    def __init__(self, base_url=None):
-        self.base_url = base_url
-        self.log = []
-
-    def run(self, products):
-        self.log.append({
-            "products": products,
-            "timestamp": datetime.utcnow().isoformat()
-        })
-        return {
-            "status": "SCHEDULER_OK",
-            "products": products
-        }
-
-scheduler = SchedulerEngine(base_url="local")
-
-# =========================
-# SALES API SAFE
+# SALES API (SAFE MOCK / CONNECTOR READY)
 # =========================
 
 class SalesAPI:
@@ -72,6 +53,7 @@ class SalesAPI:
             "status": "SENT_TO_SALES_API"
         }
 
+
 sales = SalesAPI()
 
 # =========================
@@ -80,39 +62,41 @@ sales = SalesAPI()
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "STABLE MAIN V3.1"}
+    return {
+        "status": "OK",
+        "system": "CLEAN MAIN FIX V1"
+    }
 
 # =========================
-# HEALTH (CRITICAL CLOUD RUN FIX)
+# HEALTH (CRITICAL FOR CLOUD RUN)
 # =========================
 
 @app.get("/health")
 def health():
-    return {"status": "OK", "ready": True}
-
-# =========================
-# FLOW
-# =========================
-
-def process(product_id):
-
-    lp = landingpage.create(
-        product_id,
-        f"{product_id} Vergleich 2026",
-        f"Beste Angebote für {product_id}"
-    )
-
-    tracking.track(product_id, "flow")
-    sales.send(product_id)
-
     return {
-        "landingpage": lp,
-        "tracking": tracking.summary(),
-        "sales": "OK"
+        "status": "OK",
+        "ready": True,
+        "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# RUN (CLOUD ENTRY SAFE)
+# SAFE PROCESS FLOW
+# =========================
+
+def process_product(product_id: str):
+
+    lp = landingpage.create(product_id)
+    click = tracking.track(product_id, "flow")
+    sale = sales.send(product_id)
+
+    return {
+        "landingpage": lp,
+        "tracking": click,
+        "sales": sale
+    }
+
+# =========================
+# RUN (SCHEDULER ENTRY POINT)
 # =========================
 
 @app.get("/run")
@@ -120,18 +104,25 @@ def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    scheduler.run(products)
-
     results = []
 
     for p in products:
-        results.append(process(p))
+        results.append(process_product(p))
 
     return {
         "status": "RUN_OK",
         "results": results,
         "timestamp": datetime.utcnow().isoformat()
     }
+
+# =========================
+# SINGLE FLOW TEST
+# =========================
+
+@app.get("/flow/{product_id}")
+def flow(product_id: str):
+
+    return process_product(product_id)
 
 # =========================
 # DASHBOARD
@@ -142,7 +133,6 @@ def dashboard():
 
     return {
         "tracking": tracking.summary(),
-        "scheduler": "OK",
         "system": "STABLE",
         "timestamp": datetime.utcnow().isoformat()
     }
