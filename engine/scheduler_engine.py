@@ -1,68 +1,68 @@
 from datetime import datetime
+import requests
 
 
 # =========================
-# BUILD SCHEDULE (SAFE)
-# =========================
-def build_schedule(products):
-
-    schedule = {
-        "morning": [],
-        "afternoon": [],
-        "evening": []
-    }
-
-    for i, product in enumerate(products):
-
-        if i % 3 == 0:
-            schedule["morning"].append(product)
-
-        elif i % 3 == 1:
-            schedule["afternoon"].append(product)
-
-        else:
-            schedule["evening"].append(product)
-
-    return {
-        "status": "SCHEDULE_CREATED",
-        "schedule": schedule,
-        "timestamp": datetime.utcnow().isoformat()
-    }
-
-
-# =========================
-# LIVE AUTONOMY TRIGGER (SAFE + CI FRIENDLY)
+# AUTOPILOT SCHEDULER ENGINE
 # =========================
 class SchedulerEngine:
 
-    def __init__(self, base_url: str):
+    def __init__(self, base_url):
         self.base_url = base_url
 
+    # =========================
+    # RUN SYSTEM (TRIGGER /run)
+    # =========================
     def trigger_run(self):
-        """
-        SAFE MODE:
-        - no hard dependency crash
-        - optional import
-        """
 
         try:
-            import requests
-
-            response = requests.get(
-                f"{self.base_url}/run",
-                timeout=10
-            )
+            response = requests.get(self.base_url + "/run")
 
             return {
-                "status": "SUCCESS",
-                "response": response.json()
+                "status": "TRIGGERED",
+                "code": response.status_code,
+                "result": response.json()
             }
 
         except Exception as e:
+
             return {
                 "status": "ERROR",
                 "message": str(e)
             }
 
-    def create_schedule(self, products):
-        return build_schedule(products)
+    # =========================
+    # RUN CAMPAIGN (EMAIL AUTOPILOT)
+    # =========================
+    def trigger_campaign(self):
+
+        try:
+            response = requests.get(self.base_url + "/campaign")
+
+            return {
+                "status": "CAMPAIGN_TRIGGERED",
+                "code": response.status_code,
+                "result": response.json()
+            }
+
+        except Exception as e:
+
+            return {
+                "status": "ERROR",
+                "message": str(e)
+            }
+
+    # =========================
+    # FULL AUTOPILOT LOOP
+    # =========================
+    def autopilot_cycle(self):
+
+        run_result = self.trigger_run()
+        campaign_result = self.trigger_campaign()
+
+        return {
+            "status": "AUTOPILOT_CYCLE_DONE",
+            "run": run_result,
+            "campaign": campaign_result,
+            "timestamp": str(datetime.utcnow())
+        }
