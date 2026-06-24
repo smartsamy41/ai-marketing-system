@@ -9,21 +9,15 @@ class ScalingEngine:
         self.traffic_engine = traffic_engine
         self.tracking_engine = tracking_engine
 
+    # =========================
+    # ANALYSIS (SAFE MODE)
+    # =========================
     def analyze(self):
-
-        debug = {
-            "revenue_engine": str(self.revenue_engine),
-            "traffic_engine": str(self.traffic_engine),
-            "tracking_engine": str(self.tracking_engine)
-        }
 
         traffic = {}
         tracking = {}
         revenue = {}
 
-        # =========================
-        # SAFE EXECUTION
-        # =========================
         try:
             if self.traffic_engine:
                 traffic = self.traffic_engine.get_stats()
@@ -55,7 +49,6 @@ class ScalingEngine:
 
         return {
             "status": "ANALYSIS_DONE",
-            "debug": debug,
             "metrics": {
                 "traffic": traffic,
                 "tracking": tracking,
@@ -65,6 +58,9 @@ class ScalingEngine:
             "timestamp": datetime.utcnow().isoformat()
         }
 
+    # =========================
+    # DECISION ENGINE
+    # =========================
     def decide(self):
 
         analysis = self.analyze()
@@ -80,10 +76,12 @@ class ScalingEngine:
         return {
             "status": "DECISION_MADE",
             "action": action,
-            "score": score,
-            "timestamp": datetime.utcnow().isoformat()
+            "score": score
         }
 
+    # =========================
+    # RUN CYCLE
+    # =========================
     def run(self):
 
         return {
