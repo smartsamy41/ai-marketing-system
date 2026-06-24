@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from datetime import datetime
 
 # =========================
-# SAFE IMPORTS
+# SAFE IMPORTS (NO CRASH MODE)
 # =========================
 
 try:
@@ -14,12 +14,13 @@ except:
             self.conversions = []
 
         def track_click(self, product_id, source="api"):
-            self.clicks.append({
+            click = {
                 "product_id": product_id,
                 "source": source,
                 "timestamp": datetime.utcnow().isoformat()
-            })
-            return {"status": "CLICK_TRACKED"}
+            }
+            self.clicks.append(click)
+            return {"status": "CLICK_TRACKED", "click": click}
 
         def get_summary(self):
             return {
@@ -46,10 +47,9 @@ except:
 from engine.orchestrator_engine_v2 import run_orchestrator
 from engine.master_content_pipeline import MasterContentPipeline
 from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
+from engine.revenue_autopilot_engine import RevenueAutopilotEngine
 from engine.autopilot_connector import AutopilotConnector
 from engine.governor import Governor
-from engine.landingpage_engine import LandingpageEngine
-from engine.affiliate_router import AffiliateRouter
 
 
 # =========================
@@ -62,18 +62,21 @@ pipeline = MasterContentPipeline()
 tracking = TrackingEngine()
 traffic = TrafficEngine()
 
+# 🔥 FIX: revenue_engine MUSS existieren
+revenue_engine = RevenueAutopilotEngine(tracking)
+
 email_engine = EmailMarketingEngine(get_all_emails().get("emails", []))
 
+# 🔥 FIX: revenue_engine korrekt übergeben
 connector = AutopilotConnector(
     orchestrator=run_orchestrator,
     pipeline=pipeline,
     email_engine=email_engine,
-    tracking=tracking
+    tracking=tracking,
+    revenue_engine=revenue_engine
 )
 
 governor = Governor()
-landingpage_engine = LandingpageEngine()
-affiliate_router = AffiliateRouter()
 
 
 # =========================
@@ -82,20 +85,27 @@ affiliate_router = AffiliateRouter()
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "AUTOPILOT LIVE"}
+    return {
+        "status": "OK",
+        "system": "AUTOPILOT LIVE"
+    }
 
 
 # =========================
-# HEALTH
+# HEALTH (CLOUD RUN CRITICAL)
 # =========================
 
 @app.get("/health")
 def health():
-    return {"status": "OK", "ready": True}
+    return {
+        "status": "OK",
+        "ready": True,
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 
 # =========================
-# ENGINE
+# ENGINE STATUS
 # =========================
 
 @app.get("/engine")
@@ -104,61 +114,30 @@ def engine():
         "status": "ACTIVE",
         "tracking": True,
         "traffic": True,
-        "governor": True,
-        "flow": True
+        "revenue": True,
+        "governor": True
     }
 
 
 # =========================
-# FLOW
+# GOVERNOR CHECK
 # =========================
 
-@app.get("/flow/{product_id}")
-def flow(product_id: str):
-
-    products = {
-        "CHK24_001": "Strom Vergleich",
-        "TC_001": "Solar Vergleich",
-        "AMZ_001": "Amazon Produkt"
-    }
-
-    product_name = products.get(product_id, "Unknown Product")
-
-    decision = governor.approve(product_id, 5, 0.8)
-
-    if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED", "reason": decision}
-
-    existing = landingpage_engine.get(product_id)
-
-    if existing.get("status") == "NOT_FOUND":
-        lp = landingpage_engine.create(product_id, product_name, "general")
-    else:
-        lp = existing
-
-    affiliate = affiliate_router.get_redirect(product_id)
-
-    tracking.track_click(product_id, source="flow")
-
-    return {
-        "status": "FLOW_COMPLETE",
-        "timestamp": datetime.utcnow().isoformat(),
-        "landingpage": lp,
-        "affiliate": affiliate
-    }
+def check_governor(product_id="CHK24_001", traffic_amount=5, score=0.8):
+    return governor.approve(product_id, traffic_amount, score)
 
 
 # =========================
-# RUN
+# RUN FLOW
 # =========================
 
 @app.get("/run")
 def run():
 
-    decision = governor.approve("CHK24_001", 5, 0.8)
+    decision = check_governor()
 
     if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED"}
+        return {"status": "BLOCKED", "reason": decision}
 
     return connector.run_cycle("CHK24_001", "check24")
 
@@ -170,28 +149,32 @@ def run():
 @app.get("/autopilot")
 def autopilot():
 
-    decision = governor.approve("CHK24_001", 5, 0.8)
+    decision = check_governor()
 
     if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED"}
+        return {"status": "BLOCKED", "reason": decision}
 
     return connector.run_cycle("CHK24_001", "check24")
 
 
 # =========================
-# LOOP
+# LOOP TEST
 # =========================
 
 @app.get("/loop")
 def loop():
 
-    decision = governor.approve("CHK24_001", 5, 0.8)
+    decision = check_governor()
 
     if decision["status"] != "APPROVED":
-        return {"status": "BLOCKED"}
+        return {"status": "BLOCKED", "reason": decision}
 
     return {
-        "traffic": traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"]),
+        "traffic": traffic.run_bulk_traffic([
+            "CHK24_001",
+            "TC_001",
+            "AMZ_001"
+        ]),
         "autopilot": connector.run_cycle("CHK24_001", "check24")
     }
 
@@ -202,17 +185,25 @@ def loop():
 
 @app.get("/traffic")
 def generate_traffic():
-    return traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"])
+    return traffic.run_bulk_traffic([
+        "CHK24_001",
+        "TC_001",
+        "AMZ_001"
+    ])
 
 
 # =========================
-# TRACK
+# TRACK CLICK
 # =========================
 
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
-    return tracking.track_click(data.get("product_id"), data.get("source", "api"))
+
+    return tracking.track_click(
+        product_id=data.get("product_id"),
+        source=data.get("source", "api")
+    )
 
 
 # =========================
@@ -234,7 +225,8 @@ def dashboard():
     return {
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
+        "revenue": revenue_engine.run_cycle(),
+        "emails": get_all_emails(),
         "governor": "ACTIVE",
-        "flow": "ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
