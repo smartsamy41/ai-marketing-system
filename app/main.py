@@ -47,7 +47,6 @@ except:
 from engine.orchestrator_engine_v2 import run_orchestrator
 from engine.master_content_pipeline import MasterContentPipeline
 from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
-from engine.revenue_autopilot_engine import RevenueAutopilotEngine
 from engine.autopilot_connector import AutopilotConnector
 from engine.governor import Governor
 from engine.landingpage_engine import LandingpageEngine
@@ -64,16 +63,13 @@ pipeline = MasterContentPipeline()
 tracking = TrackingEngine()
 traffic = TrafficEngine()
 
-revenue_engine = RevenueAutopilotEngine(tracking)
-
 email_engine = EmailMarketingEngine(get_all_emails().get("emails", []))
 
 connector = AutopilotConnector(
     orchestrator=run_orchestrator,
     pipeline=pipeline,
     email_engine=email_engine,
-    tracking=tracking,
-    revenue_engine=revenue_engine
+    tracking=tracking
 )
 
 governor = Governor()
@@ -116,14 +112,12 @@ def engine():
         "status": "ACTIVE",
         "tracking": True,
         "traffic": True,
-        "revenue": True,
-        "governor": True,
-        "flow": True
+        "governor": True
     }
 
 
 # =========================
-# REAL MONEY FLOW (CORE)
+# FLOW (FIXED LOGIC)
 # =========================
 
 @app.get("/flow/{product_id}")
@@ -149,13 +143,18 @@ def flow(product_id: str):
         }
 
     # =========================
-    # LANDINGPAGE CREATE
+    # LANDINGPAGE CHECK (NO DUPLICATE BLOCK)
     # =========================
-    lp = landingpage_engine.create(
-        product_id,
-        product_name,
-        category="energy"
-    )
+    existing = landingpage_engine.get(product_id)
+
+    if existing.get("status") == "NOT_FOUND":
+        lp = landingpage_engine.create(
+            product_id,
+            product_name,
+            "general"
+        )
+    else:
+        lp = existing
 
     # =========================
     # AFFILIATE LINK
@@ -171,7 +170,7 @@ def flow(product_id: str):
         "status": "FLOW_COMPLETE",
         "timestamp": datetime.utcnow().isoformat(),
         "landingpage": lp,
-        "redirect": redirect
+        "affiliate": redirect
     }
 
 
@@ -181,7 +180,6 @@ def flow(product_id: str):
 
 @app.get("/run")
 def run():
-
     decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
@@ -196,7 +194,6 @@ def run():
 
 @app.get("/autopilot")
 def autopilot():
-
     decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
@@ -211,7 +208,6 @@ def autopilot():
 
 @app.get("/loop")
 def loop():
-
     decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
@@ -241,7 +237,7 @@ def generate_traffic():
 
 
 # =========================
-# TRACK CLICK
+# TRACK
 # =========================
 
 @app.post("/track")
@@ -255,7 +251,7 @@ async def track(request: Request):
 
 
 # =========================
-# EMAIL SUBSCRIBE
+# EMAIL
 # =========================
 
 @app.post("/subscribe")
@@ -273,9 +269,6 @@ def dashboard():
     return {
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
-        "revenue": revenue_engine.run_cycle(),
-        "emails": get_all_emails(),
         "governor": "ACTIVE",
-        "flow": "ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
