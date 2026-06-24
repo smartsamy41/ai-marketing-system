@@ -1,67 +1,68 @@
 from datetime import datetime
 
 
-# =========================
-# SCALING ENGINE (PRODUCTION SAFE)
-# =========================
 class ScalingEngine:
 
     def __init__(self, revenue_engine=None, traffic_engine=None, tracking_engine=None):
-
         self.revenue_engine = revenue_engine
         self.traffic_engine = traffic_engine
         self.tracking_engine = tracking_engine
+
+    # =========================
+    # SAFE CALL HELPER
+    # =========================
+    def safe_call(self, func, default):
+        try:
+            if func:
+                return func()
+        except Exception as e:
+            return {"error": str(e)}
+        return default
 
     # =========================
     # ANALYZE SYSTEM
     # =========================
     def analyze(self):
 
-        debug = {
-            "revenue_engine": str(self.revenue_engine),
-            "traffic_engine": str(self.traffic_engine),
-            "tracking_engine": str(self.tracking_engine)
-        }
+        traffic = self.safe_call(
+            lambda: self.traffic_engine.get_stats(),
+            {}
+        )
 
-        traffic = {}
-        tracking = {}
-        revenue = {}
+        tracking = self.safe_call(
+            lambda: self.tracking_engine.get_summary(),
+            {}
+        )
+
+        revenue = self.safe_call(
+            lambda: self.revenue_engine.run_cycle(),
+            {}
+        )
 
         # =========================
-        # SAFE EXECUTION BLOCK
+        # SAFE VALUE EXTRACTION
         # =========================
         try:
-            if self.traffic_engine:
-                traffic = self.traffic_engine.get_stats()
-        except Exception as e:
-            traffic = {"error": str(e)}
-
-        try:
-            if self.tracking_engine:
-                tracking = self.tracking_engine.get_summary()
-        except Exception as e:
-            tracking = {"error": str(e)}
-
-        try:
-            if self.revenue_engine:
-                revenue = self.revenue_engine.run_cycle()
-        except Exception as e:
-            revenue = {"error": str(e)}
-
-        clicks = tracking.get("clicks", 0)
-        conversions = tracking.get("conversions", 0)
-
-        revenue_value = 0
-        try:
-            revenue_value = revenue.get("metrics", {}).get("revenue", 0)
+            clicks = int(tracking.get("clicks", 0) or 0)
         except:
-            revenue_value = 0
+            clicks = 0
+
+        try:
+            conversions = int(tracking.get("conversions", 0) or 0)
+        except:
+            conversions = 0
+
+        try:
+            revenue_value = float(
+                revenue.get("metrics", {}).get("revenue", 0) or 0
+            )
+        except:
+            revenue_value = 0.0
 
         score = clicks * 0.1 + conversions * 5 + revenue_value * 0.01
 
         return {
             "status": "ANALYSIS_DONE",
-            "debug": debug,
             "metrics": {
                 "traffic": traffic,
                 "tracking": tracking,
