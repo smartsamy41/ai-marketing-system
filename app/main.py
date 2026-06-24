@@ -3,9 +3,9 @@ from datetime import datetime
 
 app = FastAPI()
 
-# =========================
-# SAFE TRACKING ENGINE
-# =========================
+# =========================================================
+# 🧠 SAFE CORE ENGINE LAYER (NO CRASH)
+# =========================================================
 
 class TrackingEngine:
     def __init__(self):
@@ -23,10 +23,6 @@ class TrackingEngine:
         return {"clicks": len(self.clicks)}
 
 
-# =========================
-# TRAFFIC ENGINE
-# =========================
-
 class TrafficEngine:
     def run_bulk_traffic(self, products):
         return {"status": "OK", "products": products}
@@ -35,36 +31,22 @@ class TrafficEngine:
         return {"traffic": 0}
 
 
-# =========================
-# SALES ENGINE (REAL REVENUE LAYER)
-# =========================
-
 class SalesEngine:
     def __init__(self):
         self.leads = []
 
     def send_lead(self, product_id, source="system"):
-
         lead = {
             "product_id": product_id,
             "source": source,
             "timestamp": datetime.utcnow().isoformat()
         }
-
         self.leads.append(lead)
-
-        return {
-            "status": "LEAD_SENT",
-            "lead": lead
-        }
+        return {"status": "LEAD_SENT", "lead": lead}
 
     def get_sales_stats(self):
         return {"leads": len(self.leads)}
 
-
-# =========================
-# LANDINGPAGE ENGINE
-# =========================
 
 class LandingpageEngine:
     def __init__(self):
@@ -80,129 +62,140 @@ class LandingpageEngine:
             "category": category,
             "html": f"""
             <html>
-            <body>
-                <h1>{name}</h1>
-                <p>Vergleiche Angebote und Tarife.</p>
+                <body>
+                    <h1>{name}</h1>
+                    <p>Vergleich starten und Angebote prüfen.</p>
 
-                <!-- NEWSLETTER -->
-                <form action="/subscribe" method="post">
-                    <input type="email" name="email" placeholder="E-Mail eingeben">
-                    <button type="submit">Jetzt Angebote erhalten</button>
-                </form>
+                    <!-- NEWSLETTER -->
+                    <form action="/subscribe" method="post">
+                        <input type="email" name="email" placeholder="E-Mail">
+                        <button type="submit">Newsletter starten</button>
+                    </form>
 
-                <a href="/flow/{product_id}">Jetzt vergleichen</a>
-            </body>
+                    <a href="/flow/{product_id}">Jetzt vergleichen</a>
+                </body>
             </html>
             """,
             "timestamp": datetime.utcnow().isoformat()
         }
-
         self.pages[product_id] = page
         return page
 
-
-# =========================
-# GOVERNOR (SAFE MODE)
-# =========================
 
 class Governor:
     def approve(self, product_id, traffic, score):
         return {"status": "APPROVED"}
 
 
-# =========================
-# AUTOPILOT CONNECTOR
-# =========================
-
-class Connector:
+class AutopilotConnector:
     def run_cycle(self, product_id, category):
         return {
             "status": "AUTOPILOT_CYCLE_DONE",
-            "product_id": product_id
+            "product_id": product_id,
+            "timestamp": datetime.utcnow().isoformat()
         }
 
 
-# =========================
-# INIT SYSTEM
-# =========================
+# =========================================================
+# 🚀 INIT SYSTEM
+# =========================================================
 
 tracking = TrackingEngine()
 traffic = TrafficEngine()
 sales = SalesEngine()
-landingpage_engine = LandingpageEngine()
+landingpage = LandingpageEngine()
 governor = Governor()
-connector = Connector()
+connector = AutopilotConnector()
 
 
-# =========================
-# ROOT
-# =========================
+# =========================================================
+# 🟢 BASIC ROUTES
+# =========================================================
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "MONETIZATION PIPELINE ACTIVE"}
+    return {"status": "OK", "system": "CLEAN MAIN V2 ACTIVE"}
 
-
-# =========================
-# HEALTH
-# =========================
 
 @app.get("/health")
 def health():
     return {"status": "OK", "ready": True}
 
 
-# =========================
-# LANDINGPAGE FLOW (CORE MONEY ENTRY)
-# =========================
+@app.get("/engine")
+def engine():
+    return {
+        "tracking": True,
+        "traffic": True,
+        "sales": True,
+        "autopilot": True
+    }
+
+
+# =========================================================
+# 💰 FLOW (MAIN MONEY PIPELINE)
+# =========================================================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
 
-    # 1. LANDINGPAGE CHECK / CREATE
-    page = landingpage_engine.get(product_id)
+    decision = governor.approve(product_id, 5, 0.8)
 
-    if page.get("status") == "NOT_FOUND":
-        page = landingpage_engine.create(product_id, product_id, "general")
+    if decision["status"] != "APPROVED":
+        return {"status": "BLOCKED"}
 
-    # 2. TRACK CLICK
+    # Landingpage
+    page = landingpage.get(product_id)
+    if page["status"] == "NOT_FOUND":
+        page = landingpage.create(product_id, product_id, "general")
+
+    # Tracking
     tracking.track_click(product_id, "flow")
 
-    # 3. SALES CALL
+    # Sales
     sale = sales.send_lead(product_id, "flow")
 
-    # 4. AUTOPILOT
+    # Autopilot
     auto = connector.run_cycle(product_id, "system")
 
     return {
-        "status": "MONETIZATION_DONE",
+        "status": "FLOW_COMPLETE",
         "landingpage": page,
         "sales": sale,
         "autopilot": auto
     }
 
 
-# =========================
-# RUN (SCHEDULER SAFE)
-# =========================
+# =========================================================
+# 🚀 AUTOPILOT
+# =========================================================
+
+@app.get("/autopilot")
+def autopilot():
+    return connector.run_cycle("CHK24_001", "check24")
+
+
+# =========================================================
+# 🚀 RUN
+# =========================================================
 
 @app.get("/run")
 def run():
     return connector.run_cycle("CHK24_001", "check24")
 
 
-# =========================
-# TRAFFIC
-# =========================
+# =========================================================
+# 🚀 TRAFFIC
+# =========================================================
 
 @app.get("/traffic")
 def get_traffic():
     return traffic.run_bulk_traffic(["CHK24_001", "TC_001", "AMZ_001"])
 
 
-# =========================
-# TRACK CLICK
-# =========================
+# =========================================================
+# 📊 TRACK CLICK
+# =========================================================
 
 @app.post("/track")
 async def track(request: Request):
@@ -210,18 +203,18 @@ async def track(request: Request):
     return tracking.track_click(data.get("product_id"), "api")
 
 
-# =========================
-# SALES STATUS
-# =========================
+# =========================================================
+# 💰 SALES STATUS
+# =========================================================
 
 @app.get("/sales")
 def sales_status():
     return sales.get_sales_stats()
 
 
-# =========================
-# NEWSLETTER (DOI READY)
-# =========================
+# =========================================================
+# 📧 NEWSLETTER (DOI READY)
+# =========================================================
 
 @app.post("/subscribe")
 async def subscribe(request: Request):
@@ -233,9 +226,9 @@ async def subscribe(request: Request):
     }
 
 
-# =========================
-# DASHBOARD
-# =========================
+# =========================================================
+# 📊 DASHBOARD
+# =========================================================
 
 @app.get("/dashboard")
 def dashboard():
@@ -243,5 +236,5 @@ def dashboard():
         "traffic": traffic.get_stats(),
         "tracking": tracking.get_summary(),
         "sales": sales.get_sales_stats(),
-        "status": "MONETIZATION_ACTIVE"
+        "status": "CLEAN_MAIN_V2_ACTIVE"
     }
