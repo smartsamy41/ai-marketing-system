@@ -50,6 +50,8 @@ from engine.email_system import EmailMarketingEngine, add_email, get_all_emails
 from engine.revenue_autopilot_engine import RevenueAutopilotEngine
 from engine.autopilot_connector import AutopilotConnector
 from engine.governor import Governor
+from engine.landingpage_engine import LandingpageEngine
+from engine.affiliate_router import AffiliateRouter
 
 
 # =========================
@@ -75,6 +77,8 @@ connector = AutopilotConnector(
 )
 
 governor = Governor()
+landingpage_engine = LandingpageEngine()
+affiliate_router = AffiliateRouter()
 
 
 # =========================
@@ -113,28 +117,75 @@ def engine():
         "tracking": True,
         "traffic": True,
         "revenue": True,
-        "governor": True
+        "governor": True,
+        "flow": True
     }
 
 
 # =========================
-# RUN (GOVERNOR CONTROLLED)
+# REAL MONEY FLOW (CORE)
 # =========================
 
-@app.get("/run")
-def run():
+@app.get("/flow/{product_id}")
+def flow(product_id: str):
 
-    decision = governor.approve(
-        product_id="CHK24_001",
-        traffic_amount=5,
-        score=0.8
-    )
+    products = {
+        "CHK24_001": "Strom Vergleich",
+        "TC_001": "Solar Vergleich",
+        "AMZ_001": "Amazon Produkt"
+    }
+
+    product_name = products.get(product_id, "Unknown Product")
+
+    # =========================
+    # GOVERNOR CHECK
+    # =========================
+    decision = governor.approve(product_id, 5, 0.8)
 
     if decision["status"] != "APPROVED":
         return {
             "status": "BLOCKED_BY_GOVERNOR",
             "reason": decision
         }
+
+    # =========================
+    # LANDINGPAGE CREATE
+    # =========================
+    lp = landingpage_engine.create(
+        product_id,
+        product_name,
+        category="energy"
+    )
+
+    # =========================
+    # AFFILIATE LINK
+    # =========================
+    redirect = affiliate_router.get_redirect(product_id)
+
+    # =========================
+    # TRACK CLICK
+    # =========================
+    tracking.track_click(product_id, source="flow")
+
+    return {
+        "status": "FLOW_COMPLETE",
+        "timestamp": datetime.utcnow().isoformat(),
+        "landingpage": lp,
+        "redirect": redirect
+    }
+
+
+# =========================
+# RUN AUTOPILOT
+# =========================
+
+@app.get("/run")
+def run():
+
+    decision = governor.approve("CHK24_001", 5, 0.8)
+
+    if decision["status"] != "APPROVED":
+        return {"status": "BLOCKED", "reason": decision}
 
     return connector.run_cycle("CHK24_001", "check24")
 
@@ -146,17 +197,10 @@ def run():
 @app.get("/autopilot")
 def autopilot():
 
-    decision = governor.approve(
-        product_id="CHK24_001",
-        traffic_amount=5,
-        score=0.8
-    )
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {
-            "status": "BLOCKED_BY_GOVERNOR",
-            "reason": decision
-        }
+        return {"status": "BLOCKED", "reason": decision}
 
     return connector.run_cycle("CHK24_001", "check24")
 
@@ -168,17 +212,10 @@ def autopilot():
 @app.get("/loop")
 def loop():
 
-    decision = governor.approve(
-        product_id="CHK24_001",
-        traffic_amount=5,
-        score=0.8
-    )
+    decision = governor.approve("CHK24_001", 5, 0.8)
 
     if decision["status"] != "APPROVED":
-        return {
-            "status": "BLOCKED_BY_GOVERNOR",
-            "reason": decision
-        }
+        return {"status": "BLOCKED", "reason": decision}
 
     return {
         "traffic": traffic.run_bulk_traffic([
@@ -210,6 +247,7 @@ def generate_traffic():
 @app.post("/track")
 async def track(request: Request):
     data = await request.json()
+
     return tracking.track_click(
         product_id=data.get("product_id"),
         source=data.get("source", "api")
@@ -217,7 +255,7 @@ async def track(request: Request):
 
 
 # =========================
-# EMAIL
+# EMAIL SUBSCRIBE
 # =========================
 
 @app.post("/subscribe")
@@ -238,5 +276,6 @@ def dashboard():
         "revenue": revenue_engine.run_cycle(),
         "emails": get_all_emails(),
         "governor": "ACTIVE",
+        "flow": "ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
