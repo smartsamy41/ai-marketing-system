@@ -2,16 +2,19 @@ from engine.landingpage_engine_v2 import LandingpageQualityFixV1
 from engine.tracking_engine import tracking
 from engine.api_connector import APIConnector
 from engine.profit_engine import ProfitEngine
+from engine.partner_commission_mapper import PartnerCommissionMapper
 
 
 class OrchestratorCleanMaster:
 
     def __init__(self):
+
         self.api = APIConnector()
         self.profit_engine = ProfitEngine()
+        self.commission_mapper = PartnerCommissionMapper()
 
     # =========================
-    # SAFE FLOW + PROFIT
+    # FULL FLOW
     # =========================
     def run(self, product_id):
 
@@ -29,7 +32,7 @@ class OrchestratorCleanMaster:
             track = tracking.track(product_id)
 
             # -------------------------
-            # SALES SAFE
+            # SALES
             # -------------------------
             sales_raw = self.api.send_sales_lead(product_id)
 
@@ -45,20 +48,20 @@ class OrchestratorCleanMaster:
                 "type": "sales",
                 "status": sales_raw.get("status"),
                 "code": sales_raw.get("code", 0),
-                "data": sales_raw.get("data", []),
-                "error": sales_raw.get("error")
+                "data": sales_raw.get("data", [])
             }
 
             # -------------------------
-            # PROFIT ENGINE (NEW)
+            # PROFIT
             # -------------------------
-            try:
-                profit = self.profit_engine.process_product(product_id)
-            except Exception:
-                profit = {
-                    "status": "ERROR",
-                    "value": 0
-                }
+            profit = self.profit_engine.process_product(product_id)
+
+            # -------------------------
+            # COMMISSION (NEW STEP 3)
+            # -------------------------
+            commission = self.commission_mapper.get(product_id)
+
+            revenue = self.commission_mapper.calculate(product_id, leads=1)
 
             # -------------------------
             # FINAL OUTPUT
@@ -69,6 +72,8 @@ class OrchestratorCleanMaster:
                 "tracking": track,
                 "sales": sales,
                 "profit": profit,
+                "commission": commission,
+                "revenue": revenue,
                 "status": "OK"
             }
 
@@ -80,8 +85,5 @@ class OrchestratorCleanMaster:
                 "error": str(e)
             }
 
-    # =========================
-    # BATCH
-    # =========================
     def run_all(self, products):
         return [self.run(p) for p in products]
