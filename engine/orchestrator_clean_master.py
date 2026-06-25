@@ -1,97 +1,58 @@
+from engine.monetization_engine import MonetizationEngine
+
+
 class OrchestratorCleanMaster:
 
     def __init__(self):
-        pass
+        self.monetization = MonetizationEngine()
 
-    # =========================
-    # SINGLE PRODUCT SAFE FLOW
-    # =========================
     def run(self, product_id):
 
         try:
 
-            # -------------------------
-            # SAFE MOCK CONTENT
-            # -------------------------
+            product = {"product_id": product_id}
+
+            # =========================
+            # CORE DATA (SAFE)
+            # =========================
             content = {
                 "product_id": product_id,
                 "title": f"{product_id} Vergleich 2026",
-                "status": "MOCK_CONTENT"
+                "status": "CORE_ACTIVE"
             }
 
-            # -------------------------
-            # SAFE LANDINGPAGE MOCK
-            # -------------------------
-            landingpage = {
-                "product_id": product_id,
-                "url": f"/landing/{product_id}",
-                "status": "MOCK_LANDINGPAGE"
-            }
+            # =========================
+            # MONETIZATION LAYER
+            # =========================
+            landing_html = self.monetization.build_landing_html(product)
+            affiliate_link = self.monetization.build_affiliate_link(product_id)
+            pinterest = self.monetization.build_pinterest(product)
+            youtube_script = self.monetization.build_youtube_script(product)
 
-            # -------------------------
-            # SAFE TRACKING MOCK
-            # -------------------------
-            tracking = {
-                "product_id": product_id,
-                "status": "TRACKED_SAFE"
-            }
-
-            # -------------------------
-            # SAFE SALES MOCK
-            # -------------------------
-            sales = {
-                "type": "sales",
-                "status": "MOCK",
-                "code": 200,
-                "data": []
-            }
-
-            # -------------------------
-            # SAFE PROFIT MOCK
-            # -------------------------
-            profit = {
-                "product_id": product_id,
-                "profit": 0
-            }
-
-            # -------------------------
-            # SAFE COMMISSION MOCK
-            # -------------------------
-            commission = {
-                "product_id": product_id,
-                "commission": 0
-            }
-
-            # -------------------------
-            # FINAL SAFE OUTPUT
-            # -------------------------
+            # =========================
+            # FINAL OUTPUT
+            # =========================
             return {
                 "product_id": product_id,
                 "content": content,
-                "landingpage": landingpage,
-                "tracking": tracking,
-                "sales": sales,
-                "profit": profit,
-                "commission": commission,
-                "status": "SAFE_REBUILD_STEP_1"
+
+                "landingpage_html": landing_html,
+                "affiliate_link": affiliate_link,
+
+                "pinterest": pinterest,
+                "youtube": youtube_script,
+
+                "status": "MONETIZATION_CONNECTED"
             }
 
         except Exception as e:
 
             return {
                 "product_id": product_id,
-                "status": "SAFE_ERROR",
+                "status": "FAILED_SAFE",
                 "error": str(e)
             }
 
-    # =========================
-    # BATCH SAFE RUN
-    # =========================
     def run_all(self, products):
 
-        results = []
-
-        for p in products:
-            results.append(self.run(p))
-
-        return results
+        return [self.run(p) for p in products]
