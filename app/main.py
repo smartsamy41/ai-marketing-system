@@ -1,28 +1,21 @@
 from fastapi import FastAPI
+from engine.orchestrator_clean_master import OrchestratorCleanMaster
+from engine.dashboard_live_engine import DashboardLiveEngine
 
 app = FastAPI()
 
-# =========================
-# MINIMAL SAFE SYSTEM
-# =========================
+orchestrator = OrchestratorCleanMaster()
+dashboard = DashboardLiveEngine()
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "MINIMAL MODE ACTIVE"
-    }
+    return {"status": "OK", "system": "LIVE MODE ACTIVE"}
 
 @app.get("/run")
 def run():
-    return {
-        "status": "RUNNING",
-        "mode": "SAFE",
-        "message": "System is stable - no orchestration loaded"
-    }
+    products = ["CHK24_001", "TC_001", "AMZ_001"]
+    return orchestrator.run_all(products)
 
 @app.get("/health")
 def health():
-    return {
-        "status": "OK"
-    }
+    return {"status": "OK"}
