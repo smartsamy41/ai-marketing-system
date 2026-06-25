@@ -1,6 +1,7 @@
 from engine.monetization_engine import MonetizationEngine
 from engine.publish_engine import PublishEngine
 from engine.product_layer import ProductLayer
+from engine.real_publish_layer import RealPublishLayer
 
 
 class OrchestratorCleanMaster:
@@ -9,6 +10,7 @@ class OrchestratorCleanMaster:
 
         self.monetization = MonetizationEngine()
         self.publisher = PublishEngine()
+        self.real_publish = RealPublishLayer()
         self.products = ProductLayer()
 
     # =========================
@@ -45,11 +47,22 @@ class OrchestratorCleanMaster:
             }
 
             # =========================
-            # PUBLISH LAYER
+            # LEGACY PUBLISH ROUTING (SAFE)
             # =========================
-            publish_result = self.publisher.publish(
+            legacy_publish = self.publisher.publish(
                 product_id,
                 monetized_content
+            )
+
+            # =========================
+            # REAL PUBLISH LAYER (LIVE READY)
+            # =========================
+            real_publish = self.real_publish.publish_all(
+                product_id,
+                {
+                    "title": f"{product_id} Vergleich 2026",
+                    "landing_html": landing_html
+                }
             )
 
             # =========================
@@ -57,10 +70,14 @@ class OrchestratorCleanMaster:
             # =========================
             return {
                 "product_id": product_id,
+
                 "content": content,
                 "monetization": monetized_content,
-                "publish": publish_result,
-                "status": "FULL_PIPELINE_ACTIVE"
+
+                "legacy_publish": legacy_publish,
+                "real_publish": real_publish,
+
+                "status": "FULL_PUBLISH_SYSTEM_ACTIVE"
             }
 
         except Exception as e:
@@ -72,7 +89,7 @@ class OrchestratorCleanMaster:
             }
 
     # =========================
-    # FULL SCALE PRODUCT RUN
+    # BATCH FLOW (FULL SCALE)
     # =========================
     def run_all(self, _):
 
