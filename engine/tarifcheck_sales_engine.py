@@ -7,19 +7,27 @@ class TarifcheckSalesEngine:
 
     def __init__(self):
 
+        # =========================
+        # LOAD FROM CLOUD RUN ENV
+        # =========================
         self.username = os.getenv("TARIFCHECK_USERNAME")
         self.password = os.getenv("TARIFCHECK_PASSWORD")
+
         self.url = os.getenv(
             "TARIFCHECK_API_URL",
             "https://www.tarifcheck-partnerprogramm.de/app/api/leads/"
         )
 
+    # =========================
+    # FETCH LEADS
+    # =========================
     def fetch_leads(self):
 
+        # DEBUG (optional)
         if not self.username or not self.password:
             return {
                 "status": "ERROR",
-                "message": "Missing ENV credentials"
+                "message": "ENV MISSING (USERNAME or PASSWORD)"
             }
 
         try:
