@@ -8,7 +8,7 @@ class TarifcheckSalesEngine:
     def __init__(self):
 
         # =========================
-        # LOAD FROM CLOUD RUN ENV
+        # ENV CONFIG
         # =========================
         self.username = os.getenv("TARIFCHECK_USERNAME")
         self.password = os.getenv("TARIFCHECK_PASSWORD")
@@ -19,15 +19,20 @@ class TarifcheckSalesEngine:
         )
 
     # =========================
-    # FETCH LEADS
+    # FETCH LEADS (SAFE VERSION)
     # =========================
     def fetch_leads(self):
 
-        # DEBUG (optional)
+        # -------------------------
+        # CHECK ENV
+        # -------------------------
         if not self.username or not self.password:
             return {
+                "type": "sales",
                 "status": "ERROR",
-                "message": "ENV MISSING (USERNAME or PASSWORD)"
+                "error": "ENV MISSING (USERNAME or PASSWORD)",
+                "code": 0,
+                "data": []
             }
 
         try:
@@ -37,14 +42,35 @@ class TarifcheckSalesEngine:
                 timeout=20
             )
 
+            # -------------------------
+            # SAFE JSON PARSE
+            # -------------------------
+            try:
+                data = response.json()
+            except Exception:
+                return {
+                    "type": "sales",
+                    "status": "ERROR",
+                    "error": "INVALID JSON RESPONSE",
+                    "code": response.status_code,
+                    "data": []
+                }
+
+            # -------------------------
+            # SAFE RETURN
+            # -------------------------
             return {
-                "status": "SUCCESS",
+                "type": "sales",
+                "status": "OK" if response.status_code == 200 else "ERROR",
                 "code": response.status_code,
-                "leads": response.json().get("data", [])
+                "data": data.get("data", []) if isinstance(data, dict) else []
             }
 
         except Exception as e:
             return {
+                "type": "sales",
                 "status": "ERROR",
-                "message": str(e)
+                "error": str(e),
+                "code": 0,
+                "data": []
             }
