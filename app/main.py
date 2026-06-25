@@ -1,37 +1,29 @@
 from fastapi import FastAPI
 from datetime import datetime
 
+from engine.api_connector import APIConnector
+
 app = FastAPI()
 
 # =========================
-# CORE SYSTEM
+# CORE
 # =========================
 
 class Tracking:
     def track(self, product_id):
-        return {"product_id": product_id, "status": "tracked"}
+        return {"product_id": product_id, "status": "TRACKED"}
 
 class Landingpage:
     def create(self, product_id):
         return {
             "product_id": product_id,
-            "url": f"/landing/{product_id}"
+            "url": f"/landing/{product_id}",
+            "status": "CREATED"
         }
 
 tracking = Tracking()
 landingpage = Landingpage()
-
-# =========================
-# API CONNECTOR
-# =========================
-
-from engine.api_connector import APIConnectorV1
-
-api = APIConnectorV1(
-    youtube_token="YOUR_YOUTUBE_TOKEN",
-    pinterest_token="YOUR_PINTEREST_TOKEN",
-    sales_url="https://YOUR-SALES-API-ENDPOINT"
-)
+api = APIConnector()
 
 # =========================
 # ORCHESTRATOR
@@ -42,22 +34,23 @@ class Orchestrator:
     def run(self, product_id):
 
         lp = landingpage.create(product_id)
-        tracking.track(product_id)
+        track = tracking.track(product_id)
 
         sales = api.send_sales_lead(product_id)
 
-        youtube = api.upload_youtube(
+        youtube = api.upload_youtube_video(
             title=f"{product_id} Vergleich 2026",
-            description="Beste Tarife vergleichen"
+            description="Auto Content"
         )
 
-        pinterest = api.post_pinterest(
+        pinterest = api.create_pinterest_pin(
             title=f"{product_id} sparen & vergleichen"
         )
 
         return {
             "product_id": product_id,
             "landingpage": lp,
+            "tracking": track,
             "sales": sales,
             "youtube": youtube,
             "pinterest": pinterest
@@ -66,68 +59,32 @@ class Orchestrator:
 orchestrator = Orchestrator()
 
 # =========================
-# ROOT
+# ROUTES
 # =========================
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "REAL API CONNECT V1"
-    }
-
-# =========================
-# HEALTH
-# =========================
+    return {"status": "OK", "system": "MINIMAL LIVE V1"}
 
 @app.get("/health")
 def health():
     return {"status": "OK", "ready": True}
-
-# =========================
-# RUN (FULL REAL FLOW)
-# =========================
 
 @app.get("/run")
 def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    results = []
-
-    for p in products:
-        results.append(orchestrator.run(p))
-
     return {
-        "status": "REAL_API_FLOW_ACTIVE",
-        "results": results,
+        "status": "RUNNING",
+        "results": [orchestrator.run(p) for p in products],
         "timestamp": datetime.utcnow().isoformat()
     }
-
-# =========================
-# SINGLE FLOW
-# =========================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
     return orchestrator.run(product_id)
 
-# =========================
-# API REPORT
-# =========================
-
 @app.get("/report")
 def report():
     return api.report()
-
-# =========================
-# DASHBOARD
-# =========================
-
-@app.get("/dashboard")
-def dashboard():
-    return {
-        "api_report": api.report(),
-        "system": "REAL API CONNECT ACTIVE",
-        "timestamp": datetime.utcnow().isoformat()
-    }
