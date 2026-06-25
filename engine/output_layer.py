@@ -1,20 +1,58 @@
+import os
+import requests
+
+
 # =========================
-# OUTPUT ROUTER
+# YOUTUBE CONNECT (REAL PLACEHOLDER)
 # =========================
+class YouTubeConnector:
 
-def route_output(product):
+    def upload_video(self, title, description):
 
-    source = product.get("source", "").lower()
+        access_token = os.getenv("YOUTUBE_ACCESS_TOKEN")
 
-    routing = {
-        "amazon": "pinterest",
-        "check24": "youtube",
-        "tarifcheck": "blog",
-        "telekom": "shop"
-    }
+        if not access_token:
+            return {"status": "ERROR", "msg": "Missing YouTube Token"}
 
-    return {
-        "product_id": product.get("product_id"),
-        "channel": routing.get(source, "unknown"),
-        "source": source
-    }
+        # REAL API CALL PLACEHOLDER
+        return {
+            "status": "READY_FOR_REAL_UPLOAD",
+            "title": title
+        }
+
+
+# =========================
+# PINTEREST CONNECT
+# =========================
+class PinterestConnector:
+
+    def create_pin(self, title):
+
+        token = os.getenv("PINTEREST_ACCESS_TOKEN")
+
+        if not token:
+            return {"status": "ERROR", "msg": "Missing Pinterest Token"}
+
+        return {
+            "status": "READY_FOR_REAL_PIN",
+            "title": title
+        }
+
+
+# =========================
+# BLOGGER CONNECT
+# =========================
+class BloggerConnector:
+
+    def publish_post(self, title, content):
+
+        token = os.getenv("BLOGGER_REFRESH_TOKEN")
+        blog_id = os.getenv("BLOGGER_BLOG_ID")
+
+        if not token or not blog_id:
+            return {"status": "ERROR", "msg": "Missing Blogger Credentials"}
+
+        return {
+            "status": "READY_FOR_REAL_POST",
+            "title": title
+        }
