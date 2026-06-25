@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 class APIConnector:
 
     # =========================
-    # SALES API (CLEAN OUTPUT FIX)
+    # SALES API (CLEAN + NO STRING WRAP)
     # =========================
     def send_sales_lead(self, product_id):
 
@@ -14,17 +14,6 @@ class APIConnector:
         username = os.getenv("TARIFCHECK_USERNAME")
         password = os.getenv("TARIFCHECK_PASSWORD")
 
-        # =========================
-        # DEBUG (SAFE)
-        # =========================
-        print("=== SALES DEBUG ===")
-        print("URL:", url)
-        print("USERNAME:", username)
-        print("PASSWORD:", "SET" if password else "MISSING")
-
-        # =========================
-        # ENV CHECK
-        # =========================
         if not url or not username or not password:
             return {
                 "type": "sales",
@@ -39,26 +28,15 @@ class APIConnector:
                 timeout=20
             )
 
-            # =========================
-            # CLEAN JSON PARSING (NO DOUBLE ENCODING)
-            # =========================
-            try:
-                data = response.json()
-            except Exception:
-                return {
-                    "type": "sales",
-                    "status": "ERROR",
-                    "error": "Invalid JSON response",
-                    "raw": response.text[:200]
-                }
+            # 🟢 IMPORTANT: ONLY ONCE JSON PARSING
+            data = response.json()
 
-            # =========================
-            # CLEAN STRUCTURE OUTPUT
-            # =========================
             return {
                 "type": "sales",
                 "status": "OK",
                 "code": response.status_code,
+
+                # 🔥 CLEAN OUTPUT (NO STRING INSIDE STRING)
                 "data": data.get("data", [])
             }
 
@@ -70,23 +48,23 @@ class APIConnector:
             }
 
     # =========================
-    # YOUTUBE (PLACEHOLDER SAFE)
+    # YOUTUBE (PLACEHOLDER)
     # =========================
     def upload_youtube_video(self, title, description):
         return {
             "type": "youtube",
-            "status": "READY_FOR_GOOGLE_API",
+            "status": "READY",
             "title": title,
             "description": description
         }
 
     # =========================
-    # PINTEREST (PLACEHOLDER SAFE)
+    # PINTEREST (PLACEHOLDER)
     # =========================
     def create_pinterest_pin(self, title):
         return {
             "type": "pinterest",
-            "status": "READY_FOR_PIN",
+            "status": "READY",
             "title": title
         }
 
@@ -96,5 +74,5 @@ class APIConnector:
     def report(self):
         return {
             "status": "OK",
-            "system": "CLEAN OUTPUT LAYER V1"
+            "system": "CLEAN PIPELINE V2"
         }
