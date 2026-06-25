@@ -1,22 +1,26 @@
+import os
 import requests
 from requests.auth import HTTPBasicAuth
 
 
-# =========================
-# TARIFCHECK SALES API ENGINE
-# =========================
 class TarifcheckSalesEngine:
 
-    def __init__(self, password):
+    def __init__(self):
 
-        self.username = "partner_165274"
-        self.password = password
-        self.url = "https://www.tarifcheck-partnerprogramm.de/app/api/leads/"
+        self.username = os.getenv("TARIFCHECK_USERNAME")
+        self.password = os.getenv("TARIFCHECK_PASSWORD")
+        self.url = os.getenv(
+            "TARIFCHECK_API_URL",
+            "https://www.tarifcheck-partnerprogramm.de/app/api/leads/"
+        )
 
-    # =========================
-    # FETCH LEADS
-    # =========================
     def fetch_leads(self):
+
+        if not self.username or not self.password:
+            return {
+                "status": "ERROR",
+                "message": "Missing ENV credentials"
+            }
 
         try:
             response = requests.get(
@@ -25,15 +29,13 @@ class TarifcheckSalesEngine:
                 timeout=20
             )
 
-            data = response.json()
-
             return {
                 "status": "SUCCESS",
-                "leads": data.get("data", [])
+                "code": response.status_code,
+                "leads": response.json().get("data", [])
             }
 
         except Exception as e:
-
             return {
                 "status": "ERROR",
                 "message": str(e)
