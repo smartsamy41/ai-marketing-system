@@ -1,11 +1,17 @@
 from engine.monetization_engine import MonetizationEngine
+from engine.publish_engine import PublishEngine
 
 
 class OrchestratorCleanMaster:
 
     def __init__(self):
-        self.monetization = MonetizationEngine()
 
+        self.monetization = MonetizationEngine()
+        self.publisher = PublishEngine()
+
+    # =========================
+    # SINGLE PRODUCT FLOW
+    # =========================
     def run(self, product_id):
 
         try:
@@ -13,7 +19,7 @@ class OrchestratorCleanMaster:
             product = {"product_id": product_id}
 
             # =========================
-            # CORE DATA (SAFE)
+            # CORE CONTENT
             # =========================
             content = {
                 "product_id": product_id,
@@ -29,20 +35,30 @@ class OrchestratorCleanMaster:
             pinterest = self.monetization.build_pinterest(product)
             youtube_script = self.monetization.build_youtube_script(product)
 
+            monetized_content = {
+                "landing_html": landing_html,
+                "affiliate_link": affiliate_link,
+                "pinterest": pinterest,
+                "youtube": youtube_script
+            }
+
+            # =========================
+            # PUBLISH LAYER (NEW)
+            # =========================
+            publish_result = self.publisher.publish(
+                product_id,
+                monetized_content
+            )
+
             # =========================
             # FINAL OUTPUT
             # =========================
             return {
                 "product_id": product_id,
                 "content": content,
-
-                "landingpage_html": landing_html,
-                "affiliate_link": affiliate_link,
-
-                "pinterest": pinterest,
-                "youtube": youtube_script,
-
-                "status": "MONETIZATION_CONNECTED"
+                "monetization": monetized_content,
+                "publish": publish_result,
+                "status": "FULL_SYSTEM_ACTIVE"
             }
 
         except Exception as e:
@@ -53,6 +69,9 @@ class OrchestratorCleanMaster:
                 "error": str(e)
             }
 
+    # =========================
+    # BATCH FLOW
+    # =========================
     def run_all(self, products):
 
         return [self.run(p) for p in products]
