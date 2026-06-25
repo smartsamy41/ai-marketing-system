@@ -4,29 +4,29 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# TRACKING ENGINE
+# CORE TRACKING
 # =========================
 
 class TrackingEngine:
     def __init__(self):
-        self.clicks = []
+        self.clicks = 0
 
-    def track_click(self, product_id, source="api"):
-        event = {
-            "product_id": product_id,
-            "source": source,
-            "timestamp": datetime.utcnow().isoformat()
-        }
-        self.clicks.append(event)
-        return {"status": "CLICK_TRACKED", "event": event}
-
-    def get_summary(self):
-        return {"clicks": len(self.clicks)}
+    def track(self):
+        self.clicks += 1
+        return {"clicks": self.clicks}
 
 tracking = TrackingEngine()
 
 # =========================
-# LANDINGPAGE ENGINE
+# SCALE SYSTEM IMPORT
+# =========================
+
+from engine.scale_system_v1 import ScaleSystemV1
+
+scale_engine = ScaleSystemV1()
+
+# =========================
+# LANDINGPAGE
 # =========================
 
 class LandingpageEngine:
@@ -34,96 +34,48 @@ class LandingpageEngine:
         return {
             "product_id": product_id,
             "title": f"{product_id} Vergleich 2026",
-            "description": f"Beste Angebote für {product_id}. Jetzt vergleichen.",
-            "url": f"/landing/{product_id}",
             "status": "CREATED"
         }
 
-landingpage_engine = LandingpageEngine()
+landingpage = LandingpageEngine()
 
 # =========================
-# SALES ENGINE (SAFE)
+# REVENUE SIM (CONNECTED LATER)
 # =========================
 
-class SalesAPIEngine:
-    def send_lead(self, product_id, source="api"):
-        return {
-            "product_id": product_id,
-            "source": source,
-            "status": "SENT"
-        }
-
-sales_engine = SalesAPIEngine()
-
-# =========================
-# REVENUE VERIFICATION V2
-# =========================
-
-class RevenueVerificationV2:
-
+class Revenue:
     def __init__(self):
-        self.leads = []
+        self.revenue = 0
 
-    def send_lead(self, product_id, source="api"):
+    def add(self, value=5):
+        self.revenue += value
+        return self.revenue
 
-        lead = {
-            "product_id": product_id,
-            "source": source,
-            "status": "SENT",
-            "revenue": 0,
-            "timestamp": datetime.utcnow().isoformat()
-        }
-
-        self.leads.append(lead)
-        return lead
-
-    def update_from_sales(self, product_id, status, revenue=0):
-
-        for lead in self.leads:
-            if lead["product_id"] == product_id:
-                lead["status"] = status
-                lead["revenue"] = revenue
-                lead["updated_at"] = datetime.utcnow().isoformat()
-                return lead
-
-        return {"status": "NOT_FOUND"}
-
-    def analytics(self):
-
-        total = len(self.leads)
-        confirmed = len([l for l in self.leads if l["status"] == "CONFIRMED"])
-        rejected = len([l for l in self.leads if l["status"] == "REJECTED"])
-        revenue = sum([l["revenue"] for l in self.leads])
-
-        return {
-            "total_leads": total,
-            "confirmed": confirmed,
-            "rejected": rejected,
-            "revenue": revenue,
-            "conversion_rate": (confirmed / total) if total > 0 else 0
-        }
-
-revenue = RevenueVerificationV2()
+revenue = Revenue()
 
 # =========================
-# CORE PROCESS
+# FLOW
 # =========================
 
-def process_product(product_id):
+def process(product_id):
 
-    lp = landingpage_engine.create(product_id)
+    landingpage.create(product_id)
+    tracking.track()
 
-    tracking.track_click(product_id, "flow")
+    revenue.add(5)
 
-    sales_engine.send_lead(product_id)
-
-    revenue.send_lead(product_id)
+    scale_engine.update(
+        traffic=1,
+        clicks=1,
+        leads=1,
+        revenue=5
+    )
 
     return {
-        "landingpage": lp,
-        "tracking": tracking.get_summary(),
-        "sales": sales_engine.send_lead(product_id),
-        "revenue": revenue.analytics()
+        "product_id": product_id,
+        "landingpage": "OK",
+        "tracking": tracking.clicks,
+        "revenue": revenue.revenue
     }
 
 # =========================
@@ -132,25 +84,18 @@ def process_product(product_id):
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "MAIN V4 FULL FINAL"
-    }
+    return {"status": "OK", "system": "SCALE V1 ACTIVE"}
 
 # =========================
-# HEALTH (CLOUD SAFE)
+# HEALTH
 # =========================
 
 @app.get("/health")
 def health():
-    return {
-        "status": "OK",
-        "ready": True,
-        "timestamp": datetime.utcnow().isoformat()
-    }
+    return {"status": "OK", "ready": True}
 
 # =========================
-# RUN PIPELINE
+# RUN (MAIN ENTRY)
 # =========================
 
 @app.get("/run")
@@ -161,38 +106,34 @@ def run():
     results = []
 
     for p in products:
-        results.append(process_product(p))
+        results.append(process(p))
+
+    decision = scale_engine.decision()
 
     return {
         "status": "RUN_OK",
         "results": results,
-        "revenue": revenue.analytics(),
+        "scale": decision,
         "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# FLOW
+# SCALE DECISION ONLY
 # =========================
 
-@app.get("/flow/{product_id}")
-def flow(product_id: str):
-    return process_product(product_id)
+@app.get("/scale")
+def scale():
+
+    return scale_engine.decision()
 
 # =========================
-# SALES STATUS
+# RESET SCALE CYCLE
 # =========================
 
-@app.get("/sales")
-def sales():
-    return {"status": "ACTIVE"}
+@app.get("/reset")
+def reset():
 
-# =========================
-# REVENUE DASHBOARD
-# =========================
-
-@app.get("/revenue")
-def revenue_status():
-    return revenue.analytics()
+    return scale_engine.reset()
 
 # =========================
 # DASHBOARD
@@ -200,9 +141,11 @@ def revenue_status():
 
 @app.get("/dashboard")
 def dashboard():
+
     return {
-        "tracking": tracking.get_summary(),
-        "revenue": revenue.analytics(),
-        "system": "STABLE V4 FULL",
+        "scale": scale_engine.decision(),
+        "tracking": tracking.clicks,
+        "revenue": revenue.revenue,
+        "system": "SCALING ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
