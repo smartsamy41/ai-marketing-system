@@ -4,12 +4,12 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# SERVICES (MINIMAL CORE ONLY)
+# CORE SERVICES
 # =========================
 
 class Tracking:
     def track_click(self, product_id, source="api"):
-        return {"product_id": product_id, "source": source}
+        return {"product_id": product_id, "status": "tracked"}
 
 class Landingpage:
     def create(self, product_id):
@@ -19,29 +19,40 @@ class Landingpage:
             "status": "CREATED"
         }
 
-class SalesAPI:
+class Sales:
     def send_lead(self, product_id, source="api"):
-        return {
-            "product_id": product_id,
-            "status": "SENT",
-            "source": source
-        }
+        return {"product_id": product_id, "status": "SENT"}
 
 tracking = Tracking()
 landingpage = Landingpage()
-sales = SalesAPI()
+sales = Sales()
 
 # =========================
-# MASTER ORCHESTRATOR
+# ORCHESTRATOR (MINIMAL)
 # =========================
 
-from engine.orchestrator_clean_master import OrchestratorCleanMaster
+class Orchestrator:
 
-orchestrator = OrchestratorCleanMaster(
-    landingpage=landingpage,
-    tracking=tracking,
-    sales=sales
-)
+    def run(self, product_id):
+
+        lp = landingpage.create(product_id)
+        tracking.track_click(product_id)
+        sales.send_lead(product_id)
+
+        return {
+            "product_id": product_id,
+            "landingpage": lp
+        }
+
+orchestrator = Orchestrator()
+
+# =========================
+# CONTENT ACTIVATION ENGINE
+# =========================
+
+from engine.real_content_activation_v1 import RealContentActivationV1
+
+content_engine = RealContentActivationV1(orchestrator)
 
 # =========================
 # ROOT
@@ -49,10 +60,7 @@ orchestrator = OrchestratorCleanMaster(
 
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "ORCHESTRATOR CLEAN MASTER V1"
-    }
+    return {"status": "OK", "system": "REAL CONTENT ACTIVATION V1"}
 
 # =========================
 # HEALTH
@@ -60,14 +68,10 @@ def root():
 
 @app.get("/health")
 def health():
-    return {
-        "status": "OK",
-        "ready": True,
-        "timestamp": datetime.utcnow().isoformat()
-    }
+    return {"status": "OK", "ready": True}
 
 # =========================
-# RUN (MAIN FLOW)
+# RUN (FULL CONTENT GENERATION)
 # =========================
 
 @app.get("/run")
@@ -75,25 +79,23 @@ def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    results = []
-
-    for p in products:
-        results.append(orchestrator.run(p))
+    result = content_engine.run_batch(products)
 
     return {
-        "status": "RUN_OK",
-        "results": results,
-        "report": orchestrator.report(),
+        "status": "CONTENT_GENERATED",
+        "results": result,
+        "report": content_engine.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# SINGLE FLOW
+# SINGLE PRODUCT
 # =========================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
-    return orchestrator.run(product_id)
+
+    return content_engine.run_product(product_id)
 
 # =========================
 # REPORT
@@ -101,15 +103,7 @@ def flow(product_id: str):
 
 @app.get("/report")
 def report():
-    return orchestrator.report()
-
-# =========================
-# RESET
-# =========================
-
-@app.get("/reset")
-def reset():
-    return orchestrator.reset()
+    return content_engine.report()
 
 # =========================
 # DASHBOARD
@@ -117,9 +111,8 @@ def reset():
 
 @app.get("/dashboard")
 def dashboard():
-
     return {
-        "report": orchestrator.report(),
-        "system": "MASTER ORCHESTRATOR ACTIVE",
+        "report": content_engine.report(),
+        "system": "LIVE CONTENT PIPELINE ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
