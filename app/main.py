@@ -4,28 +4,34 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# CORE SERVICES
+# CORE SYSTEM
 # =========================
 
 class Tracking:
-    def track_click(self, product_id, source="api"):
+    def track(self, product_id):
         return {"product_id": product_id, "status": "tracked"}
 
 class Landingpage:
     def create(self, product_id):
         return {
             "product_id": product_id,
-            "url": f"/landing/{product_id}",
-            "status": "CREATED"
+            "url": f"/landing/{product_id}"
         }
-
-class Sales:
-    def send_lead(self, product_id, source="api"):
-        return {"product_id": product_id, "status": "SENT"}
 
 tracking = Tracking()
 landingpage = Landingpage()
-sales = Sales()
+
+# =========================
+# API CONNECTOR
+# =========================
+
+from engine.api_connector import APIConnectorV1
+
+api = APIConnectorV1(
+    youtube_token="YOUR_YOUTUBE_TOKEN",
+    pinterest_token="YOUR_PINTEREST_TOKEN",
+    sales_url="https://YOUR-SALES-API-ENDPOINT"
+)
 
 # =========================
 # ORCHESTRATOR
@@ -36,31 +42,28 @@ class Orchestrator:
     def run(self, product_id):
 
         lp = landingpage.create(product_id)
-        tracking.track_click(product_id)
-        sales.send_lead(product_id)
+        tracking.track(product_id)
+
+        sales = api.send_sales_lead(product_id)
+
+        youtube = api.upload_youtube(
+            title=f"{product_id} Vergleich 2026",
+            description="Beste Tarife vergleichen"
+        )
+
+        pinterest = api.post_pinterest(
+            title=f"{product_id} sparen & vergleichen"
+        )
 
         return {
             "product_id": product_id,
             "landingpage": lp,
-            "youtube": {
-                "title": f"{product_id} Vergleich 2026",
-                "status": "READY"
-            },
-            "pinterest": {
-                "pin_title": f"{product_id} sparen & vergleichen",
-                "status": "READY"
-            }
+            "sales": sales,
+            "youtube": youtube,
+            "pinterest": pinterest
         }
 
 orchestrator = Orchestrator()
-
-# =========================
-# LIVE POSTING ENGINE
-# =========================
-
-from engine.live_posting_activation_v1 import LivePostingActivationV1
-
-publisher = LivePostingActivationV1()
 
 # =========================
 # ROOT
@@ -68,7 +71,10 @@ publisher = LivePostingActivationV1()
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "LIVE POSTING ACTIVATION V1"}
+    return {
+        "status": "OK",
+        "system": "REAL API CONNECT V1"
+    }
 
 # =========================
 # HEALTH
@@ -79,7 +85,7 @@ def health():
     return {"status": "OK", "ready": True}
 
 # =========================
-# RUN FULL PIPELINE
+# RUN (FULL REAL FLOW)
 # =========================
 
 @app.get("/run")
@@ -87,21 +93,14 @@ def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    processed = []
+    results = []
 
     for p in products:
-        result = orchestrator.run(p)
-        posted = publisher.post_product(result)
-
-        processed.append({
-            "orchestrator": result,
-            "live_posting": posted
-        })
+        results.append(orchestrator.run(p))
 
     return {
-        "status": "LIVE_POSTING_RUNNING",
-        "results": processed,
-        "report": publisher.report(),
+        "status": "REAL_API_FLOW_ACTIVE",
+        "results": results,
         "timestamp": datetime.utcnow().isoformat()
     }
 
@@ -111,22 +110,15 @@ def run():
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
-
-    result = orchestrator.run(product_id)
-    posted = publisher.post_product(result)
-
-    return {
-        "orchestrator": result,
-        "live_posting": posted
-    }
+    return orchestrator.run(product_id)
 
 # =========================
-# REPORT
+# API REPORT
 # =========================
 
 @app.get("/report")
 def report():
-    return publisher.report()
+    return api.report()
 
 # =========================
 # DASHBOARD
@@ -135,7 +127,7 @@ def report():
 @app.get("/dashboard")
 def dashboard():
     return {
-        "posting_report": publisher.report(),
-        "system": "LIVE CONTENT PIPELINE ACTIVE",
+        "api_report": api.report(),
+        "system": "REAL API CONNECT ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
