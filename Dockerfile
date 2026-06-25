@@ -19,8 +19,9 @@ COPY engine ./engine
 # =========================
 ENV PYTHONPATH=/app
 ENV PORT=8080
+ENV PYTHONUNBUFFERED=1
 
 # =========================
-# START COMMAND (CRITICAL FIX)
+# START
 # =========================
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
