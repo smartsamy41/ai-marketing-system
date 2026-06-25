@@ -1,23 +1,51 @@
-from datetime import datetime
+import json
+import os
 
 
 class ContentEngine:
+
     def __init__(self):
-        print("🟢 ContentEngine loaded")
+        self.base_path = "engine/content_assets"
 
-    def generate(self, product):
-        return build_content(product)
+    # =========================
+    # LOAD CONTENT ASSET
+    # =========================
+    def load(self, product_id):
 
+        path = os.path.join(self.base_path, f"{product_id.lower()}.json")
 
-def build_content(product):
-    name = product.get("name") or product.get("product_name") or product.get("title") or product.get("product_id")
+        if not os.path.exists(path):
+            return {
+                "status": "ERROR",
+                "message": "CONTENT_NOT_FOUND",
+                "product_id": product_id
+            }
 
-    return {
-        "title": f"{name} 2026 Vergleich",
-        "text": f"Automatisierter Content für {name}",
-        "blog": f"Automatisierter Blogtext für {name}",
-        "youtube_script": f"Kurzes YouTube-Skript für {name}",
-        "product_id": product.get("product_id"),
-        "source": product.get("source"),
-        "timestamp": str(datetime.now())
-    }
+        with open(path, "r") as f:
+            data = json.load(f)
+
+        return {
+            "status": "OK",
+            "data": data
+        }
+
+    # =========================
+    # TRANSFORM FOR ENGINE
+    # =========================
+    def transform(self, product_id):
+
+        content = self.load(product_id)
+
+        if content.get("status") != "OK":
+            return content
+
+        data = content["data"]
+
+        return {
+            "product_id": product_id,
+            "title": data.get("title"),
+            "headline": data.get("headline"),
+            "seo": data.get("seo"),
+            "cta": data.get("cta"),
+            "channels": data.get("channels")
+        }
