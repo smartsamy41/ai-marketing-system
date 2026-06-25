@@ -1,58 +1,32 @@
-from datetime import datetime
+def run(self, product_id):
 
-class OrchestratorCleanMaster:
+    lp = landingpage.create(product_id)
+    track = tracking.track(product_id)
 
-    def __init__(self, landingpage, tracking, sales):
+    sales_raw = api.send_sales_lead(product_id)
 
-        self.landingpage = landingpage
-        self.tracking = tracking
-        self.sales = sales
+    # 🔥 CRITICAL FIX: NEVER WRAP AGAIN
+    sales = {
+        "type": "sales",
+        "status": sales_raw.get("status"),
+        "code": sales_raw.get("code"),
+        "data": sales_raw.get("data", [])
+    }
 
-        self.logs = []
+    youtube = api.upload_youtube_video(
+        title=f"{product_id} Vergleich 2026",
+        description="Auto Content"
+    )
 
-    # =========================
-    # MAIN FLOW (ONLY SOURCE OF TRUTH)
-    # =========================
-    def run(self, product_id):
+    pinterest = api.create_pinterest_pin(
+        title=f"{product_id} sparen & vergleichen"
+    )
 
-        # 1. LANDINGPAGE
-        lp = self.landingpage.create(product_id)
-
-        # 2. TRACK CLICK
-        track = self.tracking.track_click(product_id, "orchestrator")
-
-        # 3. SALES API
-        sale = self.sales.send_lead(product_id, "orchestrator")
-
-        # 4. BUILD LOG
-        log = {
-            "product_id": product_id,
-            "landingpage": lp,
-            "tracking": track,
-            "sales": sale,
-            "timestamp": datetime.utcnow().isoformat()
-        }
-
-        self.logs.append(log)
-
-        return log
-
-    # =========================
-    # SYSTEM REPORT
-    # =========================
-    def report(self):
-
-        return {
-            "total_runs": len(self.logs),
-            "last_run": self.logs[-1] if self.logs else None,
-            "status": "MASTER_ACTIVE"
-        }
-
-    # =========================
-    # RESET SYSTEM
-    # =========================
-    def reset(self):
-
-        self.logs = []
-
-        return {"status": "RESET_DONE"}
+    return {
+        "product_id": product_id,
+        "landingpage": lp,
+        "tracking": track,
+        "sales": sales,
+        "youtube": youtube,
+        "pinterest": pinterest
+    }
