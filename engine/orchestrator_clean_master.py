@@ -1,5 +1,6 @@
 from engine.monetization_engine import MonetizationEngine
 from engine.publish_engine import PublishEngine
+from engine.product_layer import ProductLayer
 
 
 class OrchestratorCleanMaster:
@@ -8,6 +9,7 @@ class OrchestratorCleanMaster:
 
         self.monetization = MonetizationEngine()
         self.publisher = PublishEngine()
+        self.products = ProductLayer()
 
     # =========================
     # SINGLE PRODUCT FLOW
@@ -43,7 +45,7 @@ class OrchestratorCleanMaster:
             }
 
             # =========================
-            # PUBLISH LAYER (NEW)
+            # PUBLISH LAYER
             # =========================
             publish_result = self.publisher.publish(
                 product_id,
@@ -58,7 +60,7 @@ class OrchestratorCleanMaster:
                 "content": content,
                 "monetization": monetized_content,
                 "publish": publish_result,
-                "status": "FULL_SYSTEM_ACTIVE"
+                "status": "FULL_PIPELINE_ACTIVE"
             }
 
         except Exception as e:
@@ -70,8 +72,22 @@ class OrchestratorCleanMaster:
             }
 
     # =========================
-    # BATCH FLOW
+    # FULL SCALE PRODUCT RUN
     # =========================
-    def run_all(self, products):
+    def run_all(self, _):
 
-        return [self.run(p) for p in products]
+        product_list = self.products.get_all_products()
+
+        results = []
+
+        for item in product_list:
+
+            product_id = item["product_id"]
+
+            results.append(self.run(product_id))
+
+        return {
+            "status": "BATCH_RUNNING",
+            "count": len(results),
+            "results": results
+        }
