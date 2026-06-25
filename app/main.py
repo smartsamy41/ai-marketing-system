@@ -4,14 +4,14 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# SAFETY LAYER (NO CRASH)
+# TRACKING
 # =========================
 
-class Tracking:
+class TrackingEngine:
     def __init__(self):
         self.clicks = []
 
-    def track(self, product_id, source="api"):
+    def track_click(self, product_id, source="api"):
         self.clicks.append({
             "product_id": product_id,
             "source": source,
@@ -19,14 +19,13 @@ class Tracking:
         })
         return {"status": "CLICK_TRACKED"}
 
-    def summary(self):
+    def get_summary(self):
         return {"clicks": len(self.clicks)}
 
-
-tracking = Tracking()
+tracking = TrackingEngine()
 
 # =========================
-# LANDINGPAGE (CLEAN ONLY)
+# LANDINGPAGE ENGINE
 # =========================
 
 class LandingpageEngine:
@@ -39,22 +38,21 @@ class LandingpageEngine:
             "status": "CREATED"
         }
 
-
-landingpage = LandingpageEngine()
+landingpage_engine = LandingpageEngine()
 
 # =========================
-# SALES API (SAFE MOCK / CONNECTOR READY)
+# SALES API (SAFE MOCK / READY FOR CONNECT)
 # =========================
 
-class SalesAPI:
-    def send(self, product_id):
+class SalesAPIEngine:
+    def send_lead(self, product_id, source="api"):
         return {
             "product_id": product_id,
+            "source": source,
             "status": "SENT_TO_SALES_API"
         }
 
-
-sales = SalesAPI()
+sales_engine = SalesAPIEngine()
 
 # =========================
 # ROOT
@@ -64,7 +62,7 @@ sales = SalesAPI()
 def root():
     return {
         "status": "OK",
-        "system": "CLEAN MAIN FIX V1"
+        "system": "CLEAN MAIN FINAL"
     }
 
 # =========================
@@ -80,23 +78,23 @@ def health():
     }
 
 # =========================
-# SAFE PROCESS FLOW
+# CORE FLOW
 # =========================
 
 def process_product(product_id: str):
 
-    lp = landingpage.create(product_id)
-    click = tracking.track(product_id, "flow")
-    sale = sales.send(product_id)
+    landingpage = landingpage_engine.create(product_id)
+    tracking.track_click(product_id, "flow")
+    sales = sales_engine.send_lead(product_id, "flow")
 
     return {
-        "landingpage": lp,
-        "tracking": click,
-        "sales": sale
+        "landingpage": landingpage,
+        "tracking": tracking.get_summary(),
+        "sales": sales
     }
 
 # =========================
-# RUN (SCHEDULER ENTRY POINT)
+# RUN PIPELINE
 # =========================
 
 @app.get("/run")
@@ -116,13 +114,23 @@ def run():
     }
 
 # =========================
-# SINGLE FLOW TEST
+# SINGLE FLOW
 # =========================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
-
     return process_product(product_id)
+
+# =========================
+# TRAFFIC SIM (OPTIONAL)
+# =========================
+
+@app.get("/traffic")
+def traffic():
+    return {
+        "status": "OK",
+        "message": "traffic layer ready"
+    }
 
 # =========================
 # DASHBOARD
@@ -130,9 +138,8 @@ def flow(product_id: str):
 
 @app.get("/dashboard")
 def dashboard():
-
     return {
-        "tracking": tracking.summary(),
-        "system": "STABLE",
+        "tracking": tracking.get_summary(),
+        "system": "STABLE PRODUCTION",
         "timestamp": datetime.utcnow().isoformat()
     }
