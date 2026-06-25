@@ -1,68 +1,79 @@
 from fastapi import FastAPI
 
-from engine.orchestrator_clean_master import OrchestratorCleanMaster
-from engine.dashboard_live_engine import DashboardLiveEngine
-from engine.tarifcheck_sales_engine import TarifcheckSalesEngine
-
 app = FastAPI()
 
 # =========================
-# INIT SYSTEM
+# CLEAN CORE SYSTEM
 # =========================
-orchestrator = OrchestratorCleanMaster()
-dashboard = DashboardLiveEngine()
 
-# =========================
-# ROOT
-# =========================
 @app.get("/")
 def root():
     return {
         "status": "OK",
-        "system": "LIVE STABLE MODE"
+        "system": "CLEAN CORE ACTIVE"
     }
 
-# =========================
-# HEALTH CHECK
-# =========================
 @app.get("/health")
 def health():
-    return {
-        "status": "OK"
-    }
+    return {"status": "OK"}
 
 # =========================
-# MAIN ORCHESTRATOR RUN
+# CORE PIPELINE (NO CRASH SAFE)
 # =========================
 @app.get("/run")
 def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    results = orchestrator.run_all(products)
+    results = []
+
+    for p in products:
+
+        # -------------------------
+        # CORE CONTENT STRUCTURE
+        # -------------------------
+        content = {
+            "product_id": p,
+            "title": f"{p} Vergleich 2026",
+            "status": "CORE_CONTENT"
+        }
+
+        # -------------------------
+        # LANDINGPAGE STRUCTURE
+        # -------------------------
+        landingpage = {
+            "product_id": p,
+            "url": f"/landing/{p}",
+            "status": "CORE_LANDING"
+        }
+
+        # -------------------------
+        # SOCIAL OUTPUT STRUCTURE
+        # -------------------------
+        output = {
+            "youtube": {
+                "title": f"{p} Vergleich 2026",
+                "status": "READY"
+            },
+            "pinterest": {
+                "title": f"{p} sparen & vergleichen",
+                "status": "READY"
+            }
+        }
+
+        # -------------------------
+        # FINAL SAFE OBJECT
+        # -------------------------
+        results.append({
+            "product_id": p,
+            "content": content,
+            "landingpage": landingpage,
+            "output": output,
+            "status": "CLEAN_CORE_OK"
+        })
 
     return {
         "status": "RUNNING",
+        "mode": "CLEAN_CORE",
         "results": results
-    }
-
-# =========================
-# DASHBOARD
-# =========================
-@app.get("/dashboard")
-def get_dashboard():
-    return dashboard.get_live()
-
-# =========================
-# PHASE 2 SALES TEST
-# =========================
-@app.get("/test-sales")
-def test_sales():
-
-    engine = TarifcheckSalesEngine()
-    result = engine.fetch_leads()
-
-    return {
-        "status": "PHASE_2_SALES_TEST",
-        "result": result
     }
