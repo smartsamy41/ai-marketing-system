@@ -5,18 +5,22 @@ from requests.auth import HTTPBasicAuth
 
 class APIConnector:
 
+    # =========================
+    # TARIFCHECK SALES
+    # =========================
     def send_sales_lead(self, product_id):
 
-        url = os.getenv(
-            "TARIFCHECK_API_URL",
-            "https://www.tarifcheck-partnerprogramm.de/app/api/leads/"
-        )
-
+        url = os.getenv("TARIFCHECK_API_URL")
         username = os.getenv("TARIFCHECK_USERNAME")
         password = os.getenv("TARIFCHECK_PASSWORD")
 
-        # ❗ SAFETY CHECK
-        if not username or not password:
+        # 🔥 DEBUG (WICHTIG)
+        print("DEBUG USER:", username)
+        print("DEBUG PASS:", "SET" if password else "MISSING")
+        print("DEBUG URL:", url)
+
+        # safety check
+        if not url or not username or not password:
             return {
                 "type": "sales",
                 "status": "SKIPPED",
@@ -44,12 +48,14 @@ class APIConnector:
                 "error": str(e)
             }
 
-    # placeholder
+    # =========================
+    # PLACEHOLDERS
+    # =========================
     def upload_youtube_video(self, title, description):
-        return {"type": "youtube", "title": title, "status": "READY_FOR_GOOGLE_API"}
+        return {"type": "youtube", "status": "READY"}
 
     def create_pinterest_pin(self, title):
-        return {"type": "pinterest", "title": title, "status": "READY_FOR_PIN"}
+        return {"type": "pinterest", "status": "READY"}
 
     def report(self):
         return {"status": "OK"}
