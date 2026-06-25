@@ -9,28 +9,29 @@ class OrchestratorCleanMaster:
         self.api = APIConnector()
 
     # =========================
-    # SAFE MINIMAL FLOW
+    # SAFE SINGLE FLOW
     # =========================
     def run(self, product_id):
 
         try:
 
             # -------------------------
-            # LANDINGPAGE
+            # LANDINGPAGE SAFE
             # -------------------------
             landingpage = LandingpageQualityFixV1()
             lp = landingpage.build(product_id)
 
             # -------------------------
-            # TRACKING
+            # TRACKING SAFE
             # -------------------------
             track = tracking.track(product_id)
 
             # -------------------------
-            # SALES (SAFE ONLY)
+            # SALES SAFE CALL
             # -------------------------
             sales_raw = self.api.send_sales_lead(product_id)
 
+            # SAFE GUARD
             if not isinstance(sales_raw, dict):
                 sales_raw = {
                     "status": "ERROR",
@@ -43,11 +44,12 @@ class OrchestratorCleanMaster:
                 "type": "sales",
                 "status": sales_raw.get("status"),
                 "code": sales_raw.get("code", 0),
-                "data": sales_raw.get("data", [])
+                "data": sales_raw.get("data", []),
+                "error": sales_raw.get("error")
             }
 
             # -------------------------
-            # RETURN SAFE OUTPUT
+            # FINAL SAFE OUTPUT
             # -------------------------
             return {
                 "product_id": product_id,
