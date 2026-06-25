@@ -1,6 +1,10 @@
 from datetime import datetime
 
 
+# =========================
+# RULE SET
+# =========================
+
 FORBIDDEN_TERMS = [
     "ohne schufa",
     "schufa-frei",
@@ -15,7 +19,6 @@ FORBIDDEN_TERMS = [
     "sparen"
 ]
 
-
 BRAND_TERMS = [
     "check24-strompreise",
     "check24-strom",
@@ -24,6 +27,10 @@ BRAND_TERMS = [
     "tarifcheck-24"
 ]
 
+
+# =========================
+# INTERNAL HELPERS
+# =========================
 
 def _text(value):
     return str(value or "").lower()
@@ -46,10 +53,13 @@ def check_required_notices(content, source):
 
     errors = []
 
+    # affiliate disclosure
     if "werbung" not in text and "anzeige" not in text:
         errors.append("affiliate_notice_missing")
 
+    # tarifcheck rules
     if "tarifcheck" in source:
+
         if "tippgeber" not in text:
             errors.append("tippgeber_notice_missing")
 
@@ -76,17 +86,23 @@ def build_compliance_notice(product):
 
     return (
         "⚠️ Werbung / Anzeige. Diese Seite enthält Affiliate-Links. "
-        "Für verifizierte Leads oder Sales kann Free Basics eine Provision erhalten."
+        "Für qualifizierte Leads kann eine Provision entstehen."
     )
 
 
+# =========================
+# CORE AUDIT ENGINE
+# =========================
+
 def audit_content(content, product=None, rules=None):
+
     product = product if isinstance(product, dict) else {}
     source = product.get("source")
 
     errors = []
     warnings = []
 
+    # forbidden check
     forbidden = check_forbidden_terms(content)
     if forbidden:
         errors.append({
@@ -94,9 +110,11 @@ def audit_content(content, product=None, rules=None):
             "terms": forbidden
         })
 
+    # required notices
     notice_errors = check_required_notices(content, source)
     errors.extend(notice_errors)
 
+    # scoring system
     score = 100
     score -= len(errors) * 20
     score -= len(warnings) * 5
@@ -115,7 +133,12 @@ def audit_content(content, product=None, rules=None):
     }
 
 
+# =========================
+# APPLY COMPLIANCE FIX
+# =========================
+
 def apply_compliance(content, product=None, rules=None):
+
     product = product if isinstance(product, dict) else {}
 
     notice = build_compliance_notice(product)
@@ -123,7 +146,7 @@ def apply_compliance(content, product=None, rules=None):
     safe_content = str(content or "")
 
     if "werbung" not in safe_content.lower() and "anzeige" not in safe_content.lower():
-        safe_content = safe_content + "\n\n" + notice
+        safe_content += "\n\n" + notice
 
     audit = audit_content(
         content=safe_content,
@@ -139,9 +162,14 @@ def apply_compliance(content, product=None, rules=None):
     }
 
 
+# =========================
+# ENGINE CLASS
+# =========================
+
 class ComplianceEngine:
+
     def __init__(self):
-        print("🟢 ComplianceEngine loaded")
+        print("🟢 ComplianceEngine ACTIVE")
 
     def audit(self, content, product=None, rules=None):
         return audit_content(content, product, rules)
