@@ -8,127 +8,115 @@ class APIConnector:
     def __init__(self):
 
         # =========================
-        # ENV LOAD (SAFE)
+        # LOAD ENV (CLEAN)
         # =========================
 
-        # YouTube / Google
-        self.YT_CLIENT_ID = os.getenv("YOUTUBE_CLIENT_ID")
-        self.YT_CLIENT_SECRET = os.getenv("YOUTUBE_CLIENT_SECRET")
-        self.YT_REFRESH_TOKEN = os.getenv("YOUTUBE_REFRESH_TOKEN")
+        # YouTube
+        self.yt_client_id = os.getenv("YOUTUBE_CLIENT_ID")
+        self.yt_client_secret = os.getenv("YOUTUBE_CLIENT_SECRET")
+        self.yt_refresh_token = os.getenv("YOUTUBE_REFRESH_TOKEN")
 
         # Pinterest
-        self.PINTEREST_TOKEN = os.getenv("PINTEREST_ACCESS_TOKEN")
+        self.pinterest_token = os.getenv("PINTEREST_ACCESS_TOKEN")
 
-        # Sales API
-        self.SALES_API_KEY = os.getenv("SALES_API_KEY")
-        self.SALES_API_URL = os.getenv("SALES_API_URL")
+        # Sales API (Tarifcheck)
+        self.sales_url = os.getenv("SALES_API_URL")
+        self.sales_key = os.getenv("SALES_API_KEY")
 
-        # Blogger (Google)
-        self.BLOGGER_CLIENT_ID = os.getenv("BLOGGER_CLIENT_ID")
-        self.BLOGGER_CLIENT_SECRET = os.getenv("BLOGGER_CLIENT_SECRET")
-        self.BLOGGER_REFRESH_TOKEN = os.getenv("BLOGGER_REFRESH_TOKEN")
-        self.BLOGGER_BLOG_ID = os.getenv("BLOGGER_BLOG_ID")
+        # Blogger
+        self.blogger_client_id = os.getenv("BLOGGER_CLIENT_ID")
+        self.blogger_client_secret = os.getenv("BLOGGER_CLIENT_SECRET")
+        self.blogger_refresh_token = os.getenv("BLOGGER_REFRESH_TOKEN")
+        self.blogger_blog_id = os.getenv("BLOGGER_BLOG_ID")
 
         self.logs = []
 
     # =========================
     # SAFE CHECK
     # =========================
-    def _ok(self, value):
-        return value is not None and value != ""
+    def _ok(self, v):
+        return v is not None and v != ""
 
     # =========================
-    # SALES API
+    # SALES API (REAL FIX)
     # =========================
     def send_sales_lead(self, product_id, source="api"):
 
-        if not self._ok(self.SALES_API_URL):
-            return {"status": "SKIPPED_NO_SALES_API"}
+        if not self._ok(self.sales_url):
+            return {"status": "SKIPPED_NO_SALES_URL"}
 
         try:
-            res = requests.post(
-                self.SALES_API_URL,
+            response = requests.post(
+                self.sales_url,
                 json={
                     "product_id": product_id,
                     "source": source,
                     "timestamp": datetime.utcnow().isoformat()
                 },
-                timeout=5
+                timeout=20
             )
 
-            result = {
+            return {
                 "type": "sales",
-                "status": "SENT",
-                "code": res.status_code,
-                "product_id": product_id
+                "status": "OK",
+                "code": response.status_code,
+                "response": response.text[:200]
             }
 
         except Exception as e:
-            result = {
+            return {
                 "type": "sales",
-                "status": "FAILED",
+                "status": "ERROR",
                 "error": str(e)
             }
 
-        self.logs.append(result)
-        return result
-
     # =========================
-    # YOUTUBE (READY FOR REAL API)
+    # YOUTUBE (READY MODE)
     # =========================
     def upload_youtube_video(self, title, description):
 
-        if not self._ok(self.YT_REFRESH_TOKEN):
-            return {"status": "SKIPPED_NO_YOUTUBE_AUTH"}
+        if not self._ok(self.yt_refresh_token):
+            return {"status": "SKIPPED_NO_YOUTUBE_TOKEN"}
 
-        result = {
+        return {
             "type": "youtube",
             "title": title,
             "description": description,
-            "status": "READY_FOR_UPLOAD",
+            "status": "READY_FOR_GOOGLE_API",
             "timestamp": datetime.utcnow().isoformat()
         }
-
-        self.logs.append(result)
-        return result
 
     # =========================
     # PINTEREST
     # =========================
     def create_pinterest_pin(self, title):
 
-        if not self._ok(self.PINTEREST_TOKEN):
+        if not self._ok(self.pinterest_token):
             return {"status": "SKIPPED_NO_PINTEREST_TOKEN"}
 
-        result = {
+        return {
             "type": "pinterest",
             "title": title,
             "status": "READY_FOR_PIN",
             "timestamp": datetime.utcnow().isoformat()
         }
 
-        self.logs.append(result)
-        return result
-
     # =========================
-    # BLOGGER (GOOGLE)
+    # BLOGGER
     # =========================
     def post_blogger(self, title, content):
 
-        if not self._ok(self.BLOGGER_REFRESH_TOKEN):
-            return {"status": "SKIPPED_NO_BLOGGER_AUTH"}
+        if not self._ok(self.blogger_refresh_token):
+            return {"status": "SKIPPED_NO_BLOGGER_TOKEN"}
 
-        result = {
+        return {
             "type": "blogger",
             "title": title,
             "content": content,
-            "blog_id": self.BLOGGER_BLOG_ID,
+            "blog_id": self.blogger_blog_id,
             "status": "READY_FOR_POST",
             "timestamp": datetime.utcnow().isoformat()
         }
-
-        self.logs.append(result)
-        return result
 
     # =========================
     # REPORT
@@ -136,6 +124,6 @@ class APIConnector:
     def report(self):
 
         return {
-            "total_calls": len(self.logs),
+            "logs_count": len(self.logs),
             "last_logs": self.logs[-10:]
         }
