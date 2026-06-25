@@ -4,77 +4,44 @@ from datetime import datetime
 app = FastAPI()
 
 # =========================
-# CORE TRACKING
+# SERVICES (MINIMAL CORE ONLY)
 # =========================
 
 class Tracking:
-    def __init__(self):
-        self.clicks = 0
-
-    def track(self):
-        self.clicks += 1
-        return self.clicks
-
-tracking = Tracking()
-
-# =========================
-# SIMPLE REVENUE SIMULATION
-# =========================
-
-class Revenue:
-    def __init__(self):
-        self.value = 0
-
-    def add(self, amount=5):
-        self.value += amount
-        return self.value
-
-revenue = Revenue()
-
-# =========================
-# AUTONOMY LOOP IMPORT
-# =========================
-
-from engine.v5_autonomy_loop import AutonomyLoopV5
-
-autonomy = AutonomyLoopV5()
-
-# =========================
-# LANDINGPAGE
-# =========================
+    def track_click(self, product_id, source="api"):
+        return {"product_id": product_id, "source": source}
 
 class Landingpage:
     def create(self, product_id):
         return {
             "product_id": product_id,
+            "url": f"/landing/{product_id}",
             "status": "CREATED"
         }
 
+class SalesAPI:
+    def send_lead(self, product_id, source="api"):
+        return {
+            "product_id": product_id,
+            "status": "SENT",
+            "source": source
+        }
+
+tracking = Tracking()
 landingpage = Landingpage()
+sales = SalesAPI()
 
 # =========================
-# PROCESS FLOW
+# MASTER ORCHESTRATOR
 # =========================
 
-def process(product_id):
+from engine.orchestrator_clean_master import OrchestratorCleanMaster
 
-    landingpage.create(product_id)
-    tracking.track()
-
-    revenue.add(5)
-
-    autonomy.collect(
-        traffic=1,
-        clicks=1,
-        leads=1,
-        revenue=5
-    )
-
-    return {
-        "product_id": product_id,
-        "clicks": tracking.clicks,
-        "revenue": revenue.value
-    }
+orchestrator = OrchestratorCleanMaster(
+    landingpage=landingpage,
+    tracking=tracking,
+    sales=sales
+)
 
 # =========================
 # ROOT
@@ -82,7 +49,10 @@ def process(product_id):
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "V5 AUTONOMY ACTIVE"}
+    return {
+        "status": "OK",
+        "system": "ORCHESTRATOR CLEAN MASTER V1"
+    }
 
 # =========================
 # HEALTH
@@ -90,10 +60,14 @@ def root():
 
 @app.get("/health")
 def health():
-    return {"status": "OK", "ready": True}
+    return {
+        "status": "OK",
+        "ready": True,
+        "timestamp": datetime.utcnow().isoformat()
+    }
 
 # =========================
-# RUN LOOP (AUTONOMY CORE)
+# RUN (MAIN FLOW)
 # =========================
 
 @app.get("/run")
@@ -104,32 +78,38 @@ def run():
     results = []
 
     for p in products:
-        results.append(process(p))
-
-    decision = autonomy.decide()
+        results.append(orchestrator.run(p))
 
     return {
         "status": "RUN_OK",
         "results": results,
-        "autonomy": decision,
+        "report": orchestrator.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# DECISION ONLY
+# SINGLE FLOW
 # =========================
 
-@app.get("/decide")
-def decide():
-    return autonomy.decide()
+@app.get("/flow/{product_id}")
+def flow(product_id: str):
+    return orchestrator.run(product_id)
 
 # =========================
-# RESET LOOP
+# REPORT
+# =========================
+
+@app.get("/report")
+def report():
+    return orchestrator.report()
+
+# =========================
+# RESET
 # =========================
 
 @app.get("/reset")
 def reset():
-    return autonomy.reset()
+    return orchestrator.reset()
 
 # =========================
 # DASHBOARD
@@ -139,9 +119,7 @@ def reset():
 def dashboard():
 
     return {
-        "tracking": tracking.clicks,
-        "revenue": revenue.value,
-        "decision": autonomy.decide(),
-        "system": "AUTONOMY LOOP V5",
+        "report": orchestrator.report(),
+        "system": "MASTER ORCHESTRATOR ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
