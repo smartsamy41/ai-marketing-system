@@ -1,0 +1,44 @@
+{
+  "product_id": "CHK24_001",
+
+  "title": "Strom & Gas Tarife vergleichen 2026",
+
+  "headline": "Finde die besten Energie-Tarife schnell und einfach",
+
+  "seo": {
+    "keywords": [
+      "stromvergleich",
+      "gasvergleich",
+      "tarife vergleichen",
+      "energieanbieter",
+      "stromanbieter wechseln"
+    ],
+    "meta_description": "Vergleiche Strom- und Gas-Tarife einfach online und finde den passenden Anbieter."
+  },
+
+  "content": {
+    "hook": "Viele zahlen zu viel für Strom und Gas – jetzt vergleichen lohnt sich.",
+    "benefits": [
+      "✔ Alle Anbieter im Überblick",
+      "✔ Schneller Vergleich",
+      "✔ Passender Tarif in wenigen Klicks"
+    ],
+    "trust": "Transparente Darstellung aller Tarife ohne versteckte Kosten."
+  },
+
+  "cta": {
+    "text": "Vergleich starten",
+    "action": "/run?product=CHK24_001"
+  },
+
+  "channels": {
+    "pinterest": {
+      "title": "Strom & Gas vergleichen 2026",
+      "description": "Finde günstige Energieanbieter und vergleiche Tarife einfach online."
+    },
+    "youtube": {
+      "title": "CHK24 Strom & Gas Vergleich 2026",
+      "description": "So findest du die besten Energie-Tarife schnell und einfach."
+    }
+  }
+}
