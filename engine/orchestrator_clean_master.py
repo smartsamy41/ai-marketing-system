@@ -1,37 +1,38 @@
 from engine.landingpage_engine_v2 import LandingpageQualityFixV1
 from engine.tracking_engine import tracking
 from engine.api_connector import APIConnector
+from engine.profit_engine import ProfitEngine
 
 
 class OrchestratorCleanMaster:
 
     def __init__(self):
         self.api = APIConnector()
+        self.profit_engine = ProfitEngine()
 
     # =========================
-    # SAFE SINGLE FLOW
+    # SAFE FLOW + PROFIT
     # =========================
     def run(self, product_id):
 
         try:
 
             # -------------------------
-            # LANDINGPAGE SAFE
+            # LANDINGPAGE
             # -------------------------
             landingpage = LandingpageQualityFixV1()
             lp = landingpage.build(product_id)
 
             # -------------------------
-            # TRACKING SAFE
+            # TRACKING
             # -------------------------
             track = tracking.track(product_id)
 
             # -------------------------
-            # SALES SAFE CALL
+            # SALES SAFE
             # -------------------------
             sales_raw = self.api.send_sales_lead(product_id)
 
-            # SAFE GUARD
             if not isinstance(sales_raw, dict):
                 sales_raw = {
                     "status": "ERROR",
@@ -49,13 +50,25 @@ class OrchestratorCleanMaster:
             }
 
             # -------------------------
-            # FINAL SAFE OUTPUT
+            # PROFIT ENGINE (NEW)
+            # -------------------------
+            try:
+                profit = self.profit_engine.process_product(product_id)
+            except Exception:
+                profit = {
+                    "status": "ERROR",
+                    "value": 0
+                }
+
+            # -------------------------
+            # FINAL OUTPUT
             # -------------------------
             return {
                 "product_id": product_id,
                 "landingpage": lp,
                 "tracking": track,
                 "sales": sales,
+                "profit": profit,
                 "status": "OK"
             }
 
@@ -68,8 +81,7 @@ class OrchestratorCleanMaster:
             }
 
     # =========================
-    # BATCH SAFE RUN
+    # BATCH
     # =========================
     def run_all(self, products):
-
         return [self.run(p) for p in products]
