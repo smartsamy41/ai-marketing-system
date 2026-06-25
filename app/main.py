@@ -12,17 +12,16 @@ class TrackingEngine:
         self.clicks = []
 
     def track_click(self, product_id, source="api"):
-        self.clicks.append({
+        event = {
             "product_id": product_id,
             "source": source,
             "timestamp": datetime.utcnow().isoformat()
-        })
-        return {"status": "CLICK_TRACKED"}
+        }
+        self.clicks.append(event)
+        return {"status": "CLICK_TRACKED", "event": event}
 
     def get_summary(self):
-        return {
-            "clicks": len(self.clicks)
-        }
+        return {"clicks": len(self.clicks)}
 
 tracking = TrackingEngine()
 
@@ -35,7 +34,7 @@ class LandingpageEngine:
         return {
             "product_id": product_id,
             "title": f"{product_id} Vergleich 2026",
-            "description": f"Beste Angebote für {product_id}. Jetzt Tarife vergleichen.",
+            "description": f"Beste Angebote für {product_id}. Jetzt vergleichen.",
             "url": f"/landing/{product_id}",
             "status": "CREATED"
         }
@@ -43,44 +42,68 @@ class LandingpageEngine:
 landingpage_engine = LandingpageEngine()
 
 # =========================
-# SALES API ENGINE (REAL CONNECT READY)
+# SALES ENGINE (SAFE)
 # =========================
 
 class SalesAPIEngine:
-    def __init__(self):
-        self.logs = []
-
     def send_lead(self, product_id, source="api"):
-        event = {
+        return {
             "product_id": product_id,
             "source": source,
-            "status": "SENT",
-            "timestamp": datetime.utcnow().isoformat()
-        }
-        self.logs.append(event)
-        return event
-
-    def get_sales_stats(self):
-        return {
-            "total_leads": len(self.logs),
-            "last": self.logs[-1] if self.logs else None
+            "status": "SENT"
         }
 
 sales_engine = SalesAPIEngine()
 
 # =========================
-# SCHEDULER ENGINE (SAFE WRAPPER)
+# REVENUE VERIFICATION V2
 # =========================
 
-class SchedulerEngine:
-    def run(self, products):
-        return {
-            "status": "SCHEDULER_OK",
-            "products": products,
+class RevenueVerificationV2:
+
+    def __init__(self):
+        self.leads = []
+
+    def send_lead(self, product_id, source="api"):
+
+        lead = {
+            "product_id": product_id,
+            "source": source,
+            "status": "SENT",
+            "revenue": 0,
             "timestamp": datetime.utcnow().isoformat()
         }
 
-scheduler = SchedulerEngine()
+        self.leads.append(lead)
+        return lead
+
+    def update_from_sales(self, product_id, status, revenue=0):
+
+        for lead in self.leads:
+            if lead["product_id"] == product_id:
+                lead["status"] = status
+                lead["revenue"] = revenue
+                lead["updated_at"] = datetime.utcnow().isoformat()
+                return lead
+
+        return {"status": "NOT_FOUND"}
+
+    def analytics(self):
+
+        total = len(self.leads)
+        confirmed = len([l for l in self.leads if l["status"] == "CONFIRMED"])
+        rejected = len([l for l in self.leads if l["status"] == "REJECTED"])
+        revenue = sum([l["revenue"] for l in self.leads])
+
+        return {
+            "total_leads": total,
+            "confirmed": confirmed,
+            "rejected": rejected,
+            "revenue": revenue,
+            "conversion_rate": (confirmed / total) if total > 0 else 0
+        }
+
+revenue = RevenueVerificationV2()
 
 # =========================
 # CORE PROCESS
@@ -88,19 +111,19 @@ scheduler = SchedulerEngine()
 
 def process_product(product_id):
 
-    # 1. Landingpage
     lp = landingpage_engine.create(product_id)
 
-    # 2. Tracking
     tracking.track_click(product_id, "flow")
 
-    # 3. Sales API
-    sale = sales_engine.send_lead(product_id, "flow")
+    sales_engine.send_lead(product_id)
+
+    revenue.send_lead(product_id)
 
     return {
         "landingpage": lp,
         "tracking": tracking.get_summary(),
-        "sales": sale
+        "sales": sales_engine.send_lead(product_id),
+        "revenue": revenue.analytics()
     }
 
 # =========================
@@ -111,11 +134,11 @@ def process_product(product_id):
 def root():
     return {
         "status": "OK",
-        "system": "MAIN V4 STABLE"
+        "system": "MAIN V4 FULL FINAL"
     }
 
 # =========================
-# HEALTH (CLOUD RUN SAFE)
+# HEALTH (CLOUD SAFE)
 # =========================
 
 @app.get("/health")
@@ -127,15 +150,13 @@ def health():
     }
 
 # =========================
-# RUN PIPELINE (MAIN ENTRY)
+# RUN PIPELINE
 # =========================
 
 @app.get("/run")
 def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
-
-    scheduler_result = scheduler.run(products)
 
     results = []
 
@@ -144,31 +165,18 @@ def run():
 
     return {
         "status": "RUN_OK",
-        "scheduler": scheduler_result,
         "results": results,
-        "sales": sales_engine.get_sales_stats(),
+        "revenue": revenue.analytics(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# SINGLE FLOW
+# FLOW
 # =========================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
-
     return process_product(product_id)
-
-# =========================
-# TRAFFIC TEST
-# =========================
-
-@app.get("/traffic")
-def traffic():
-    return {
-        "status": "OK",
-        "message": "traffic layer active"
-    }
 
 # =========================
 # SALES STATUS
@@ -176,7 +184,15 @@ def traffic():
 
 @app.get("/sales")
 def sales():
-    return sales_engine.get_sales_stats()
+    return {"status": "ACTIVE"}
+
+# =========================
+# REVENUE DASHBOARD
+# =========================
+
+@app.get("/revenue")
+def revenue_status():
+    return revenue.analytics()
 
 # =========================
 # DASHBOARD
@@ -184,11 +200,9 @@ def sales():
 
 @app.get("/dashboard")
 def dashboard():
-
     return {
         "tracking": tracking.get_summary(),
-        "sales": sales_engine.get_sales_stats(),
-        "scheduler": "ACTIVE",
-        "system": "STABLE V4",
+        "revenue": revenue.analytics(),
+        "system": "STABLE V4 FULL",
         "timestamp": datetime.utcnow().isoformat()
     }
