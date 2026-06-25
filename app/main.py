@@ -1,13 +1,28 @@
 from fastapi import FastAPI
 from datetime import datetime
-import os
-import requests
-from requests.auth import HTTPBasicAuth
+
+from engine.api_connector import APIConnector
+from compliance_engine import ComplianceEngine
+from profit_engine import ProfitEngine
 
 app = FastAPI()
 
 # =========================
-# CORE CLASSES
+# CORE MODULES
+# =========================
+
+api = APIConnector()
+compliance_engine = ComplianceEngine()
+
+# Profit Engine bekommt alle Systeme
+profit_engine = ProfitEngine(
+    sales_engine=api,
+    compliance_engine=compliance_engine,
+    commission_engine=compliance_engine
+)
+
+# =========================
+# LANDING + TRACKING (SIMPLE CORE)
 # =========================
 
 class Tracking:
@@ -26,75 +41,44 @@ tracking = Tracking()
 landingpage = Landingpage()
 
 # =========================
-# TARIFCHECK SALES (FIXED)
-# =========================
-
-class TarifcheckSales:
-
-    def __init__(self):
-
-        self.username = os.getenv("TARIFCHECK_USERNAME")
-        self.password = os.getenv("TARIFCHECK_PASSWORD")
-        self.url = os.getenv(
-            "TARIFCHECK_API_URL",
-            "https://www.tarifcheck-partnerprogramm.de/app/api/leads/"
-        )
-
-    def fetch(self):
-
-        # 🔥 DEBUG (WICHTIG)
-        print("USERNAME:", self.username)
-        print("PASSWORD:", "SET" if self.password else "MISSING")
-        print("URL:", self.url)
-
-        if not self.username or not self.password:
-            return {
-                "type": "sales",
-                "status": "SKIPPED",
-                "error": "Missing ENV credentials"
-            }
-
-        try:
-            response = requests.get(
-                self.url,
-                auth=HTTPBasicAuth(self.username, self.password),
-                timeout=20
-            )
-
-            return {
-                "type": "sales",
-                "status": "OK",
-                "code": response.status_code,
-                "response": response.text[:200]
-            }
-
-        except Exception as e:
-            return {
-                "type": "sales",
-                "status": "ERROR",
-                "error": str(e)
-            }
-
-sales_engine = TarifcheckSales()
-
-# =========================
-# ORCHESTRATOR
+# ORCHESTRATOR (OLD FLOW + PROFIT ENGINE)
 # =========================
 
 class Orchestrator:
 
     def run(self, product_id):
 
+        # 1. CORE DATA
         lp = landingpage.create(product_id)
         track = tracking.track(product_id)
 
-        sales = sales_engine.fetch()
+        # 2. PROFIT ENGINE (FULL SYSTEM)
+        profit_data = profit_engine.process_product(product_id)
+
+        # 3. OUTPUT CONTENT (PLACEHOLDER)
+        youtube = api.upload_youtube_video(
+            title=f"{product_id} Vergleich 2026",
+            description="Auto Content"
+        )
+
+        pinterest = api.create_pinterest_pin(
+            title=f"{product_id} sparen & vergleichen"
+        )
+
+        # 4. CONTENT COMPLIANCE CHECK (optional hook)
+        compliance = compliance_engine.audit(
+            content=str(profit_data),
+            product={"source": "tarifcheck"}
+        )
 
         return {
             "product_id": product_id,
             "landingpage": lp,
             "tracking": track,
-            "sales": sales
+            "profit": profit_data,
+            "compliance": compliance,
+            "youtube": youtube,
+            "pinterest": pinterest
         }
 
 orchestrator = Orchestrator()
@@ -105,23 +89,38 @@ orchestrator = Orchestrator()
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "LIVE V2"}
-
-@app.get("/env-check")
-def env_check():
     return {
-        "username": os.getenv("TARIFCHECK_USERNAME"),
-        "password": "SET" if os.getenv("TARIFCHECK_PASSWORD") else None,
-        "url": os.getenv("TARIFCHECK_API_URL")
+        "status": "OK",
+        "system": "FULL PROFIT AI SYSTEM V1"
     }
 
-@app.get("/run")
-def run():
+# =========================
+# SINGLE PRODUCT RUN
+# =========================
+
+@app.get("/run/{product_id}")
+def run(product_id: str):
+    return orchestrator.run(product_id)
+
+# =========================
+# FULL PORTFOLIO PROFIT RUN
+# =========================
+
+@app.get("/profit")
+def profit():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
+    return profit_engine.run_all(products)
+
+# =========================
+# HEALTH CHECK
+# =========================
+
+@app.get("/health")
+def health():
     return {
-        "status": "RUNNING",
-        "results": [orchestrator.run(p) for p in products],
+        "status": "OK",
+        "ready": True,
         "timestamp": datetime.utcnow().isoformat()
     }
