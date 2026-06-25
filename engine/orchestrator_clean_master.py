@@ -1,4 +1,4 @@
-from engine.landingpage_engine_v2 import landingpage
+from engine.landingpage_engine_v2 import LandingpageQualityFixV1
 from engine.tracking_engine import tracking
 from engine.api_connector import APIConnector
 from engine.profit_engine import ProfitEngine
@@ -22,15 +22,20 @@ class OrchestratorCleanMaster:
 
         try:
 
-            # -------------------------
-            # CORE DATA
-            # -------------------------
-            lp = landingpage.create(product_id)
+            # =========================
+            # LANDINGPAGE (SAFE)
+            # =========================
+            landingpage = LandingpageQualityFixV1()
+            lp = landingpage.build(product_id)
+
+            # =========================
+            # TRACKING
+            # =========================
             track = tracking.track(product_id)
 
-            # -------------------------
-            # SALES
-            # -------------------------
+            # =========================
+            # SALES (SAFE API)
+            # =========================
             sales_raw = self.api.send_sales_lead(product_id)
 
             if not isinstance(sales_raw, dict):
@@ -49,27 +54,27 @@ class OrchestratorCleanMaster:
                 "error": sales_raw.get("error")
             }
 
-            # -------------------------
-            # PROFIT
-            # -------------------------
+            # =========================
+            # PROFIT ENGINE
+            # =========================
             profit = self.profit_engine.process_product(product_id)
 
-            # -------------------------
+            # =========================
             # COMMISSION
-            # -------------------------
+            # =========================
             commission = self.commission_mapper.get(product_id)
 
-            # -------------------------
-            # COMPLIANCE
-            # -------------------------
+            # =========================
+            # COMPLIANCE CHECK
+            # =========================
             compliance = self.compliance_engine.audit(
                 content=str(profit),
                 product={"source": "tarifcheck"}
             )
 
-            # -------------------------
+            # =========================
             # FINAL OUTPUT
-            # -------------------------
+            # =========================
             return {
                 "product_id": product_id,
                 "landingpage": lp,
