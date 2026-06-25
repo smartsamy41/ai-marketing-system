@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from datetime import datetime
 
 app = FastAPI()
@@ -7,54 +7,53 @@ app = FastAPI()
 # CORE TRACKING
 # =========================
 
-class TrackingEngine:
+class Tracking:
     def __init__(self):
         self.clicks = 0
 
     def track(self):
         self.clicks += 1
-        return {"clicks": self.clicks}
+        return self.clicks
 
-tracking = TrackingEngine()
+tracking = Tracking()
 
 # =========================
-# SCALE SYSTEM IMPORT
+# SIMPLE REVENUE SIMULATION
 # =========================
 
-from engine.scale_system_v1 import ScaleSystemV1
+class Revenue:
+    def __init__(self):
+        self.value = 0
 
-scale_engine = ScaleSystemV1()
+    def add(self, amount=5):
+        self.value += amount
+        return self.value
+
+revenue = Revenue()
+
+# =========================
+# AUTONOMY LOOP IMPORT
+# =========================
+
+from engine.v5_autonomy_loop import AutonomyLoopV5
+
+autonomy = AutonomyLoopV5()
 
 # =========================
 # LANDINGPAGE
 # =========================
 
-class LandingpageEngine:
+class Landingpage:
     def create(self, product_id):
         return {
             "product_id": product_id,
-            "title": f"{product_id} Vergleich 2026",
             "status": "CREATED"
         }
 
-landingpage = LandingpageEngine()
+landingpage = Landingpage()
 
 # =========================
-# REVENUE SIM (CONNECTED LATER)
-# =========================
-
-class Revenue:
-    def __init__(self):
-        self.revenue = 0
-
-    def add(self, value=5):
-        self.revenue += value
-        return self.revenue
-
-revenue = Revenue()
-
-# =========================
-# FLOW
+# PROCESS FLOW
 # =========================
 
 def process(product_id):
@@ -64,7 +63,7 @@ def process(product_id):
 
     revenue.add(5)
 
-    scale_engine.update(
+    autonomy.collect(
         traffic=1,
         clicks=1,
         leads=1,
@@ -73,9 +72,8 @@ def process(product_id):
 
     return {
         "product_id": product_id,
-        "landingpage": "OK",
-        "tracking": tracking.clicks,
-        "revenue": revenue.revenue
+        "clicks": tracking.clicks,
+        "revenue": revenue.value
     }
 
 # =========================
@@ -84,7 +82,7 @@ def process(product_id):
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "SCALE V1 ACTIVE"}
+    return {"status": "OK", "system": "V5 AUTONOMY ACTIVE"}
 
 # =========================
 # HEALTH
@@ -95,7 +93,7 @@ def health():
     return {"status": "OK", "ready": True}
 
 # =========================
-# RUN (MAIN ENTRY)
+# RUN LOOP (AUTONOMY CORE)
 # =========================
 
 @app.get("/run")
@@ -108,32 +106,30 @@ def run():
     for p in products:
         results.append(process(p))
 
-    decision = scale_engine.decision()
+    decision = autonomy.decide()
 
     return {
         "status": "RUN_OK",
         "results": results,
-        "scale": decision,
+        "autonomy": decision,
         "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# SCALE DECISION ONLY
+# DECISION ONLY
 # =========================
 
-@app.get("/scale")
-def scale():
-
-    return scale_engine.decision()
+@app.get("/decide")
+def decide():
+    return autonomy.decide()
 
 # =========================
-# RESET SCALE CYCLE
+# RESET LOOP
 # =========================
 
 @app.get("/reset")
 def reset():
-
-    return scale_engine.reset()
+    return autonomy.reset()
 
 # =========================
 # DASHBOARD
@@ -143,9 +139,9 @@ def reset():
 def dashboard():
 
     return {
-        "scale": scale_engine.decision(),
         "tracking": tracking.clicks,
-        "revenue": revenue.revenue,
-        "system": "SCALING ACTIVE",
+        "revenue": revenue.value,
+        "decision": autonomy.decide(),
+        "system": "AUTONOMY LOOP V5",
         "timestamp": datetime.utcnow().isoformat()
     }
