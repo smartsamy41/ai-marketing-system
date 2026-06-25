@@ -28,7 +28,7 @@ landingpage = Landingpage()
 sales = Sales()
 
 # =========================
-# ORCHESTRATOR (MINIMAL)
+# ORCHESTRATOR
 # =========================
 
 class Orchestrator:
@@ -41,18 +41,26 @@ class Orchestrator:
 
         return {
             "product_id": product_id,
-            "landingpage": lp
+            "landingpage": lp,
+            "youtube": {
+                "title": f"{product_id} Vergleich 2026",
+                "status": "READY"
+            },
+            "pinterest": {
+                "pin_title": f"{product_id} sparen & vergleichen",
+                "status": "READY"
+            }
         }
 
 orchestrator = Orchestrator()
 
 # =========================
-# CONTENT ACTIVATION ENGINE
+# LIVE POSTING ENGINE
 # =========================
 
-from engine.real_content_activation_v1 import RealContentActivationV1
+from engine.live_posting_activation_v1 import LivePostingActivationV1
 
-content_engine = RealContentActivationV1(orchestrator)
+publisher = LivePostingActivationV1()
 
 # =========================
 # ROOT
@@ -60,7 +68,7 @@ content_engine = RealContentActivationV1(orchestrator)
 
 @app.get("/")
 def root():
-    return {"status": "OK", "system": "REAL CONTENT ACTIVATION V1"}
+    return {"status": "OK", "system": "LIVE POSTING ACTIVATION V1"}
 
 # =========================
 # HEALTH
@@ -71,7 +79,7 @@ def health():
     return {"status": "OK", "ready": True}
 
 # =========================
-# RUN (FULL CONTENT GENERATION)
+# RUN FULL PIPELINE
 # =========================
 
 @app.get("/run")
@@ -79,23 +87,38 @@ def run():
 
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
-    result = content_engine.run_batch(products)
+    processed = []
+
+    for p in products:
+        result = orchestrator.run(p)
+        posted = publisher.post_product(result)
+
+        processed.append({
+            "orchestrator": result,
+            "live_posting": posted
+        })
 
     return {
-        "status": "CONTENT_GENERATED",
-        "results": result,
-        "report": content_engine.report(),
+        "status": "LIVE_POSTING_RUNNING",
+        "results": processed,
+        "report": publisher.report(),
         "timestamp": datetime.utcnow().isoformat()
     }
 
 # =========================
-# SINGLE PRODUCT
+# SINGLE FLOW
 # =========================
 
 @app.get("/flow/{product_id}")
 def flow(product_id: str):
 
-    return content_engine.run_product(product_id)
+    result = orchestrator.run(product_id)
+    posted = publisher.post_product(result)
+
+    return {
+        "orchestrator": result,
+        "live_posting": posted
+    }
 
 # =========================
 # REPORT
@@ -103,7 +126,7 @@ def flow(product_id: str):
 
 @app.get("/report")
 def report():
-    return content_engine.report()
+    return publisher.report()
 
 # =========================
 # DASHBOARD
@@ -112,7 +135,7 @@ def report():
 @app.get("/dashboard")
 def dashboard():
     return {
-        "report": content_engine.report(),
+        "posting_report": publisher.report(),
         "system": "LIVE CONTENT PIPELINE ACTIVE",
         "timestamp": datetime.utcnow().isoformat()
     }
