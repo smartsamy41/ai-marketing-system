@@ -1,76 +1,102 @@
-def run(self, product_id):
+from engine.landingpage_engine_v2 import landingpage
+from engine.tracking_engine import tracking
+from engine.api_connector import APIConnector
+from engine.profit_engine import ProfitEngine
+from engine.partner_commission_mapper import PartnerCommissionMapper
+from engine.compliance_engine import ComplianceEngine
 
-    try:
-        # =========================
-        # SAFE CORE DATA
-        # =========================
-        lp = landingpage.create(product_id) or {}
-        track = tracking.track(product_id) or {}
 
-        # =========================
-        # SAFE SALES HANDLING
-        # =========================
-        sales_raw = api.send_sales_lead(product_id)
+class OrchestratorCleanMaster:
 
-        if not isinstance(sales_raw, dict):
-            sales_raw = {
-                "status": "ERROR",
-                "code": 0,
-                "data": [],
-                "error": "Invalid sales response"
+    def __init__(self):
+
+        self.api = APIConnector()
+        self.profit_engine = ProfitEngine()
+        self.commission_mapper = PartnerCommissionMapper()
+        self.compliance_engine = ComplianceEngine()
+
+    # =========================
+    # SINGLE PRODUCT FLOW
+    # =========================
+    def run(self, product_id):
+
+        try:
+
+            # -------------------------
+            # CORE DATA
+            # -------------------------
+            lp = landingpage.create(product_id)
+            track = tracking.track(product_id)
+
+            # -------------------------
+            # SALES
+            # -------------------------
+            sales_raw = self.api.send_sales_lead(product_id)
+
+            if not isinstance(sales_raw, dict):
+                sales_raw = {
+                    "status": "ERROR",
+                    "code": 0,
+                    "data": [],
+                    "error": "Invalid response"
+                }
+
+            sales = {
+                "type": "sales",
+                "status": sales_raw.get("status"),
+                "code": sales_raw.get("code", 0),
+                "data": sales_raw.get("data", []),
+                "error": sales_raw.get("error")
             }
 
-        sales_status = sales_raw.get("status", "ERROR")
+            # -------------------------
+            # PROFIT
+            # -------------------------
+            profit = self.profit_engine.process_product(product_id)
 
-        sales = {
-            "type": "sales",
-            "status": sales_status,
-            "code": sales_raw.get("code", 0),
-            "data": sales_raw.get("data") if isinstance(sales_raw.get("data"), list) else [],
-            "error": sales_raw.get("error") if sales_status != "OK" else None
-        }
+            # -------------------------
+            # COMMISSION
+            # -------------------------
+            commission = self.commission_mapper.get(product_id)
 
-        # =========================
-        # SAFE OUTPUT SYSTEMS
-        # =========================
-        try:
-            youtube = api.upload_youtube_video(
-                title=f"{product_id} Vergleich 2026",
-                description="Auto Content"
+            # -------------------------
+            # COMPLIANCE
+            # -------------------------
+            compliance = self.compliance_engine.audit(
+                content=str(profit),
+                product={"source": "tarifcheck"}
             )
+
+            # -------------------------
+            # FINAL OUTPUT
+            # -------------------------
+            return {
+                "product_id": product_id,
+                "landingpage": lp,
+                "tracking": track,
+                "sales": sales,
+                "profit": profit,
+                "commission": commission,
+                "compliance": compliance,
+                "status": "OK"
+            }
+
         except Exception as e:
-            youtube = {
-                "type": "youtube",
-                "status": "ERROR",
+
+            return {
+                "product_id": product_id,
+                "status": "FAILED_SAFE",
                 "error": str(e)
             }
 
-        try:
-            pinterest = api.create_pinterest_pin(
-                title=f"{product_id} sparen & vergleichen"
-            )
-        except Exception as e:
-            pinterest = {
-                "type": "pinterest",
-                "status": "ERROR",
-                "error": str(e)
-            }
+    # =========================
+    # BATCH RUN
+    # =========================
+    def run_all(self, products):
 
-        # =========================
-        # FINAL RETURN (STABLE)
-        # =========================
-        return {
-            "product_id": product_id,
-            "landingpage": lp,
-            "tracking": track,
-            "sales": sales,
-            "youtube": youtube,
-            "pinterest": pinterest
-        }
+        results = []
 
-    except Exception as e:
-        return {
-            "product_id": product_id,
-            "status": "FAILED_SAFE",
-            "error": str(e)
-        }
+        for p in products:
+            results.append(self.run(p))
+
+        return results
