@@ -1,51 +1,36 @@
-from datetime import datetime
+class LandingpageQualityFixV1:
 
-class LandingpageEngineV2:
+    def build(self, product_id):
 
-    def __init__(self):
-        self.pages = {}
+        return {
+            "title": f"{product_id} Vergleich 2026 – Tarife einfach prüfen",
+            
+            "description": f"""
+            Finde schnell die besten Angebote für {product_id}.
 
-    # =========================
-    # CREATE CLEAN LANDINGPAGE
-    # =========================
-    def create(self, product_id, title, description):
+            ✔ Alle Tarife im Überblick
+            ✔ Einfach vergleichen
+            ✔ Passende Option finden
 
-        # overwrite protection = NO DUPLICATES
-        self.pages[product_id] = {
-            "product_id": product_id,
-            "title": title,
-            "description": description,
+            Jetzt vergleichen und sparen durch besseren Überblick.
+            """,
+
+            "seo": {
+                "keywords": [
+                    "vergleich",
+                    "tarife",
+                    product_id,
+                    "angebote",
+                    "finden"
+                ]
+            },
+
             "cta": "Vergleich starten",
-            "status": "ACTIVE",
-            "timestamp": datetime.utcnow().isoformat(),
-            "html": f"""
-            <html>
-                <head>
-                    <title>{title}</title>
-                </head>
-                <body>
-                    <h1>{title}</h1>
-                    <p>{description}</p>
-                    <a href="/compare/{product_id}">Vergleich starten</a>
-                </body>
-            </html>
-            """
+
+            "structure": {
+                "hook": f"{product_id} – beste Optionen im Überblick",
+                "value": "Schneller Vergleich ohne Aufwand",
+                "trust": "Alle Anbieter neutral dargestellt",
+                "action": "Jetzt vergleichen"
+            }
         }
-
-        return self.pages[product_id]
-
-    # =========================
-    # GET PAGE
-    # =========================
-    def get(self, product_id):
-
-        return self.pages.get(product_id, {
-            "status": "NOT_FOUND"
-        })
-
-    # =========================
-    # DELETE ALL (CLEAN RESET)
-    # =========================
-    def reset(self):
-        self.pages = {}
-        return {"status": "ALL_LANDINGPAGES_DELETED"}
