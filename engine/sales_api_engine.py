@@ -3,42 +3,50 @@ from datetime import datetime
 
 class SalesAPIEngine:
 
-    def __init__(self):
-        self.conversions = []
-
-        # Tarifcheck Config (Placeholder – später echte API Keys)
-        self.api_url = "https://api.tarifcheck.de/sales"
-        self.partner_id = "165274"
+    def __init__(self, base_url=None, api_key=None):
+        self.base_url = base_url or "https://api.tarifcheck.example"
+        self.api_key = api_key or "demo_key"
+        self.logs = []
 
     # =========================
-    # SEND CLICK / LEAD
+    # SEND LEAD (REAL CONNECTOR)
     # =========================
-    def send_lead(self, product_id, source="autopilot"):
+    def send_lead(self, product_id, source="api"):
 
         payload = {
-            "partner_id": self.partner_id,
             "product_id": product_id,
             "source": source,
             "timestamp": datetime.utcnow().isoformat()
         }
 
+        # REAL API CALL (SAFE FALLBACK)
         try:
-            # REAL API CALL (wenn aktiv)
-            # response = requests.post(self.api_url, json=payload)
+            response = requests.post(
+                f"{self.base_url}/lead",
+                json=payload,
+                headers={
+                    "Authorization": f"Bearer {self.api_key}",
+                    "Content-Type": "application/json"
+                },
+                timeout=5
+            )
 
-            # SAFE SIMULATION MODE (bis API aktiv)
-            response = {"status": "SIMULATED_LEAD_SENT"}
+            result = {
+                "status": "SENT",
+                "api_status": response.status_code,
+                "product_id": product_id
+            }
 
         except Exception as e:
-            response = {"status": "ERROR", "message": str(e)}
+            # fallback safe mode (NO CRASH)
+            result = {
+                "status": "FALLBACK_LOG_ONLY",
+                "error": str(e),
+                "product_id": product_id
+            }
 
-        self.conversions.append(payload)
-
-        return {
-            "status": "LEAD_PROCESSED",
-            "api_response": response,
-            "payload": payload
-        }
+        self.logs.append(result)
+        return result
 
     # =========================
     # STATS
@@ -46,6 +54,6 @@ class SalesAPIEngine:
     def get_sales_stats(self):
 
         return {
-            "total_leads": len(self.conversions),
-            "status": "ACTIVE"
+            "total_leads": len(self.logs),
+            "last_status": self.logs[-1] if self.logs else None
         }
