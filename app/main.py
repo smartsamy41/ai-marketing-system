@@ -57,4 +57,8 @@ def run():
 
 @app.get("/test-blogger-draft")
 def test_blogger_draft():
-    return blogger.create_draft("CHK24_001")
+    return blogger.create_draft_preview("CHK24_001")
+
+@app.get("/create-blogger-draft")
+def create_blogger_draft():
+    return blogger.create_real_blogger_draft("CHK24_001")
