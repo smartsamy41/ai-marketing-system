@@ -1,17 +1,13 @@
 from fastapi import FastAPI
 
-from engine.orchestrator_clean_master import OrchestratorCleanMaster
-
 app = FastAPI()
-
-orchestrator = OrchestratorCleanMaster()
 
 
 @app.get("/")
 def root():
     return {
         "status": "OK",
-        "system": "ORCHESTRATOR ACTIVE"
+        "system": "ORCHESTRATOR LAZY MODE"
     }
 
 
@@ -24,4 +20,15 @@ def health():
 
 @app.get("/run")
 def run():
-    return orchestrator.run_all(None)
+    try:
+        from engine.orchestrator_clean_master import OrchestratorCleanMaster
+
+        orchestrator = OrchestratorCleanMaster()
+        return orchestrator.run_all(None)
+
+    except Exception as e:
+        return {
+            "status": "FAILED_SAFE",
+            "error": str(e),
+            "note": "Cloud bleibt online. Fehler liegt im Orchestrator oder Engine Import."
+        }
