@@ -1,27 +1,35 @@
 FROM python:3.11-slim
 
+# =========================
+# SYSTEM DEPENDENCIES
+# =========================
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    fonts-dejavu-core \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# =========================
+# WORKDIR
+# =========================
 WORKDIR /app
 
 # =========================
-# INSTALL DEPENDENCIES
+# COPY PROJECT
 # =========================
-COPY requirements.txt .
+COPY . /app
+
+# =========================
+# PYTHON DEPENDENCIES
+# =========================
 RUN pip install --no-cache-dir -r requirements.txt
 
 # =========================
-# COPY CODE
+# ENV
 # =========================
-COPY app ./app
-COPY engine ./engine
-
-# =========================
-# ENVIRONMENT
-# =========================
-ENV PYTHONPATH=/app
 ENV PORT=8080
-ENV PYTHONUNBUFFERED=1
 
 # =========================
-# START
+# START APP
 # =========================
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
