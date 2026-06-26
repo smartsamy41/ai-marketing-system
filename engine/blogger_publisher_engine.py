@@ -1,32 +1,45 @@
-from datetime import datetime
+import os
 
 
-# =========================
-# BLOGGER AUTO PUBLISH ENGINE
-# =========================
-def publish_blog(product_id, landingpage_data=None):
+class BloggerPublisherEngine:
 
-    if landingpage_data is None:
-        landingpage_data = {}
+    def __init__(self):
+        self.blog_id = os.getenv("BLOGGER_BLOG_ID")
 
-    base_blog_url = "https://freebasics-online.blogspot.com"
+    def build_chk24_001_draft(self):
+        return {
+            "blog_id": self.blog_id,
+            "product_id": "CHK24_001",
+            "title": "Stromtarife 2026 prüfen – Free Basics Überblick",
+            "status": "DRAFT_READY",
+            "labels": ["Free Basics", "Strom", "Tarife", "Anzeige"],
+            "content": """
+<h1>Stromtarife 2026 einfach prüfen</h1>
 
-    title = f"Vergleich & Angebote für {product_id}"
+<p><strong>Werbung / Anzeige:</strong> Diese Seite enthält Affiliate-Links. Wenn du über einen Link einen Vergleich startest oder ein Angebot nutzt, kann Free Basics eine Provision erhalten.</p>
 
-    html_content = landingpage_data.get("html", f"""
-        <h1>{product_id}</h1>
-        <p>Automatisch generierter Vergleichsartikel</p>
-    """)
+<p>Viele Haushalte prüfen regelmäßig ihre Stromkosten. Mit einem Vergleich kannst du dir einen Überblick über passende Tarife verschaffen.</p>
 
-    post = {
-        "product_id": product_id,
-        "title": title,
-        "content": html_content,
-        "status": "DRAFT",
-        "created_at": datetime.utcnow().isoformat()
-    }
+<h2>Was du prüfen kannst</h2>
+<ul>
+  <li>Stromtarife nach Verbrauch</li>
+  <li>Vertragslaufzeiten</li>
+  <li>monatliche Kosten</li>
+  <li>passende Anbieter</li>
+</ul>
 
-    # SIMULATION (später echte Blogger API hier)
-    post["url"] = f"{base_blog_url}/search?q={product_id}"
+<p><strong>CTA:</strong> Vergleich starten</p>
 
-    return post
+<p>Hinweis: Free Basics ist Tippgeber und stellt Informationen sowie Weiterleitungen bereit.</p>
+"""
+        }
+
+    def create_draft(self, product_id):
+        if product_id == "CHK24_001":
+            return self.build_chk24_001_draft()
+
+        return {
+            "product_id": product_id,
+            "status": "SKIPPED",
+            "reason": "No draft template available yet"
+        }
