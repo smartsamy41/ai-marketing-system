@@ -3,105 +3,78 @@ from datetime import datetime
 
 class LiveDistributor:
 
-    def __init__(self, blogger_service=None, youtube_service=None):
-        self.blogger = blogger_service
-        self.youtube = youtube_service
+    def __init__(self):
 
-        self.LIVE_MODE = False  # SAFE DEFAULT
+        self.LIVE_MODE = False  # 🔒 LOCKED DEFAULT
 
     # =========================
-    # BLOGGER PUBLISH
+    # BLOGGER
     # =========================
     def publish_blogger(self, blog_id, title, html):
 
         if not self.LIVE_MODE:
             return {
-                "status": "SIMULATED_BLOGGER",
-                "blog_id": blog_id
+                "status": "LOCKED_BLOGGER",
+                "action": "NO_PUBLISH"
             }
 
-        try:
-            post = self.blogger.posts().insert(
-                blogId=blog_id,
-                body={
-                    "title": title,
-                    "content": html
-                },
-                isDraft=False
-            ).execute()
-
-            return {
-                "status": "BLOGGER_LIVE",
-                "post_id": post.get("id")
-            }
-
-        except Exception as e:
-            return {
-                "status": "BLOGGER_ERROR",
-                "error": str(e)
-            }
+        return {
+            "status": "READY_FOR_LIVE_BLOGGER"
+        }
 
     # =========================
-    # YOUTUBE UPLOAD (SAFE HOOK)
+    # YOUTUBE
     # =========================
     def publish_youtube(self, video_path, title):
 
         if not self.LIVE_MODE:
             return {
-                "status": "SIMULATED_YOUTUBE",
-                "file": video_path
+                "status": "LOCKED_YOUTUBE",
+                "action": "NO_UPLOAD"
             }
 
         return {
-            "status": "YOUTUBE_LIVE_READY",
-            "note": "Upload hook ready - needs OAuth user token"
+            "status": "READY_FOR_YOUTUBE"
         }
 
     # =========================
-    # PINTEREST QUEUE
+    # PINTEREST
     # =========================
     def publish_pinterest(self, title, description):
 
         return {
-            "status": "PIN_QUEUED",
-            "title": title,
-            "description": description
+            "status": "LOCKED_PINTEREST_QUEUE",
+            "action": "NO_PUSH"
         }
 
     # =========================
-    # FULL DISTRIBUTION
+    # DISTRIBUTE
     # =========================
-    def distribute(self, product_bundle):
+    def distribute(self, bundle):
 
         results = []
 
-        for item in product_bundle:
+        for item in bundle:
 
             results.append({
                 "product_id": item.get("product_id"),
-
                 "blogger": self.publish_blogger(
                     "6148350625430723499",
                     item.get("title"),
                     item.get("html")
                 ),
-
                 "youtube": self.publish_youtube(
                     item.get("video"),
                     item.get("title")
                 ),
-
                 "pinterest": self.publish_pinterest(
                     item.get("title"),
-                    item.get("description", "")
-                ),
-
-                "timestamp": datetime.utcnow().isoformat(),
-                "status": "DISTRIBUTED_SAFE"
+                    item.get("description")),
+                "status": "SAFE_LOCK_ACTIVE",
+                "timestamp": datetime.utcnow().isoformat()
             })
 
         return {
-            "status": "LIVE_DISTRIBUTION_READY",
-            "live_mode": self.LIVE_MODE,
+            "status": "DISTRIBUTION_LOCKED",
             "results": results
         }
