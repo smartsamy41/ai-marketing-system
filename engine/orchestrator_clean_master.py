@@ -3,6 +3,7 @@ from engine.publish_engine import PublishEngine
 from engine.product_layer import ProductLayer
 from engine.real_publish_layer import RealPublishLayer
 from engine.video_engine import VideoEngine
+from engine.youtube_auto_video_system import YouTubeAutoVideoSystem
 
 
 class OrchestratorCleanMaster:
@@ -14,6 +15,7 @@ class OrchestratorCleanMaster:
         self.real_publish = RealPublishLayer()
         self.products = ProductLayer()
         self.video = VideoEngine()
+        self.youtube = YouTubeAutoVideoSystem()
 
     # =========================
     # SINGLE PRODUCT FLOW
@@ -25,7 +27,7 @@ class OrchestratorCleanMaster:
             product = {"product_id": product_id}
 
             # =========================
-            # CORE CONTENT
+            # CORE
             # =========================
             content = {
                 "product_id": product_id,
@@ -34,7 +36,7 @@ class OrchestratorCleanMaster:
             }
 
             # =========================
-            # MONETIZATION LAYER
+            # MONETIZATION
             # =========================
             landing_html = self.monetization.build_landing_html(product)
             affiliate_link = self.monetization.build_affiliate_link(product_id)
@@ -49,27 +51,23 @@ class OrchestratorCleanMaster:
             }
 
             # =========================
-            # VIDEO ENGINE LAYER (NEW)
+            # VIDEO ENGINE
             # =========================
             video_package = self.video.build_video(product_id)
 
             # =========================
-            # LEGACY PUBLISH
+            # YOUTUBE AUTO SYSTEM (NEW FINAL LAYER)
             # =========================
-            legacy_publish = self.publisher.publish(
-                product_id,
-                monetized_content
-            )
+            youtube_result = self.youtube.process(video_package)
 
             # =========================
-            # REAL PUBLISH LAYER
+            # PUBLISH LAYERS
             # =========================
+            legacy_publish = self.publisher.publish(product_id, monetized_content)
+
             real_publish = self.real_publish.publish_all(
                 product_id,
-                {
-                    "title": f"{product_id} Vergleich 2026",
-                    "landing_html": landing_html
-                }
+                {"title": content["title"], "landing_html": landing_html}
             )
 
             # =========================
@@ -82,11 +80,12 @@ class OrchestratorCleanMaster:
                 "monetization": monetized_content,
 
                 "video": video_package,
+                "youtube": youtube_result,
 
                 "legacy_publish": legacy_publish,
                 "real_publish": real_publish,
 
-                "status": "FULL_SYSTEM_VIDEO_READY"
+                "status": "FULL_YOUTUBE_AUTOMATION_READY"
             }
 
         except Exception as e:
