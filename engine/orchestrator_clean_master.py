@@ -1,6 +1,9 @@
 import traceback
 from datetime import datetime
 
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
+
 
 class OrchestratorCleanMaster:
 
@@ -13,9 +16,41 @@ class OrchestratorCleanMaster:
         ]
 
         # =========================
-        # LIVE SWITCH CONTROL
+        # LIVE SWITCH
         # =========================
-        self.LIVE_MODE = False   # 👈 WICHTIG: SAFE DEFAULT
+        self.LIVE_MODE = False
+
+        # =========================
+        # GOOGLE CLOUD AUTH (SERVICE ACCOUNT)
+        # =========================
+        self.SCOPES = [
+            "https://www.googleapis.com/auth/blogger",
+            "https://www.googleapis.com/auth/youtube.upload",
+            "https://www.googleapis.com/auth/spreadsheets"
+        ]
+
+        self.SERVICE_ACCOUNT_FILE = "/secrets/service-account.json"
+
+    # =========================
+    # AUTH SERVICES
+    # =========================
+    def get_blogger_service(self):
+
+        creds = service_account.Credentials.from_service_account_file(
+            self.SERVICE_ACCOUNT_FILE,
+            scopes=self.SCOPES
+        )
+
+        return build("blogger", "v3", credentials=creds)
+
+    def get_youtube_service(self):
+
+        creds = service_account.Credentials.from_service_account_file(
+            self.SERVICE_ACCOUNT_FILE,
+            scopes=self.SCOPES
+        )
+
+        return build("youtube", "v3", credentials=creds)
 
     # =========================
     # CONTENT
@@ -25,7 +60,7 @@ class OrchestratorCleanMaster:
         return {
             "product_id": product_id,
             "title": f"{product_id} Vergleich 2026",
-            "status": "CONTENT_READY"
+            "status": "READY"
         }
 
     # =========================
@@ -41,7 +76,7 @@ class OrchestratorCleanMaster:
             <body>
                 <h1>{product_id} Vergleich 2026</h1>
                 <p>Vergleich starten für {product_id}</p>
-                <a href="/affiliate/{product_id}">👉 Jetzt vergleichen</a>
+                <a href="/affiliate/{product_id}">Jetzt vergleichen</a>
             </body>
         </html>
         """
@@ -49,29 +84,77 @@ class OrchestratorCleanMaster:
         return {
             "product_id": product_id,
             "html": html,
-            "status": "LANDING_READY"
+            "status": "READY"
         }
 
     # =========================
-    # MONETIZATION
+    # BLOGGER POST (REAL)
     # =========================
-    def build_monetization(self, product_id):
+    def publish_blogger(self, product_id, content):
 
-        return {
-            "product_id": product_id,
-            "affiliate_link": f"/affiliate/{product_id}",
-            "pinterest": {
-                "title": f"{product_id} sparen & vergleichen 2026",
-                "status": "PIN_READY"
-            },
-            "youtube": {
-                "title": f"{product_id} Vergleich 2026",
-                "status": "VIDEO_SCRIPT_READY"
+        try:
+            service = self.get_blogger_service()
+
+            blog_id = "6148350625430723499"
+
+            body = {
+                "title": content["title"],
+                "content": f"<h1>{content['title']}</h1><p>Automatischer Vergleich</p>"
             }
-        }
+
+            if self.LIVE_MODE:
+
+                post = service.posts().insert(
+                    blogId=blog_id,
+                    body=body,
+                    isDraft=False
+                ).execute()
+
+                return {
+                    "status": "BLOGGER_LIVE",
+                    "post_id": post.get("id")
+                }
+
+            return {
+                "status": "BLOGGER_SIMULATED"
+            }
+
+        except Exception as e:
+
+            return {
+                "status": "BLOGGER_ERROR",
+                "error": str(e)
+            }
 
     # =========================
-    # SAFE PIPELINE
+    # YOUTUBE UPLOAD (REAL PLACEHOLDER SAFE)
+    # =========================
+    def publish_youtube(self, product_id):
+
+        try:
+
+            service = self.get_youtube_service()
+
+            if self.LIVE_MODE:
+
+                return {
+                    "status": "YOUTUBE_LIVE_READY",
+                    "note": "Upload engine hook ready (MP4 pipeline required)"
+                }
+
+            return {
+                "status": "YOUTUBE_SIMULATED"
+            }
+
+        except Exception as e:
+
+            return {
+                "status": "YOUTUBE_ERROR",
+                "error": str(e)
+            }
+
+    # =========================
+    # PIPELINE
     # =========================
     def run_pipeline(self):
 
@@ -83,23 +166,20 @@ class OrchestratorCleanMaster:
 
                 content = self.build_content(p)
                 landing = self.build_landingpage(p)
-                monetization = self.build_monetization(p)
 
-                item = {
+                blogger = self.publish_blogger(p, content)
+                youtube = self.publish_youtube(p)
+
+                results.append({
                     "product_id": p,
                     "content": content,
                     "landingpage": landing,
-                    "monetization": monetization,
+                    "blogger": blogger,
+                    "youtube": youtube,
                     "status": "PIPELINE_OK",
                     "timestamp": datetime.utcnow().isoformat(),
-
-                    # =========================
-                    # LIVE SWITCH LOGIC
-                    # =========================
-                    "live_publish": self.publish_if_enabled(p, content, landing, monetization)
-                }
-
-                results.append(item)
+                    "live_mode": self.LIVE_MODE
+                })
 
             except Exception as e:
 
@@ -111,37 +191,11 @@ class OrchestratorCleanMaster:
                 })
 
         return {
-            "status": "PIPELINE_DONE",
-            "mode": "LIVE_SWITCH_READY",
+            "status": "DONE",
+            "mode": "REAL_API_LAYER_ACTIVE",
             "live_enabled": self.LIVE_MODE,
             "results": results
         }
 
-    # =========================
-    # LIVE PUBLISH GATE
-    # =========================
-    def publish_if_enabled(self, product_id, content, landing, monetization):
-
-        if not self.LIVE_MODE:
-
-            return {
-                "status": "SIMULATED",
-                "note": "LIVE_MODE is OFF - safe execution only"
-            }
-
-        # =========================
-        # REAL PUBLISH PLACEHOLDER
-        # =========================
-        return {
-            "status": "LIVE_EXECUTION_ACTIVE",
-            "product_id": product_id,
-            "blogger": "READY_TO_POST",
-            "pinterest": "READY_TO_PIN",
-            "youtube": "READY_TO_UPLOAD"
-        }
-
-    # =========================
-    # COMPATIBILITY
-    # =========================
     def run_all(self, _=None):
         return self.run_pipeline()
