@@ -1,15 +1,13 @@
 import traceback
 from datetime import datetime
 
-# =========================
-# ENGINES IMPORT
-# =========================
 from engine.mp4_video_pipeline import MP4VideoPipeline
 from engine.live_distributor import LiveDistributor
 from engine.monetization_control_layer import MonetizationControlLayer
 from engine.ai_learning_loop import AILearningLoop
 from engine.auto_scaling_engine import AutoScalingEngine
 from engine.product_generation_engine import ProductGenerationEngine
+from engine.keyword_discovery_engine import KeywordDiscoveryEngine
 
 
 class OrchestratorCleanMaster:
@@ -17,13 +15,11 @@ class OrchestratorCleanMaster:
     def __init__(self):
 
         # =========================
-        # PRODUCT GENERATION ENGINE (NEW)
+        # ENGINES
         # =========================
         self.product_engine = ProductGenerationEngine()
+        self.keyword_engine = KeywordDiscoveryEngine()
 
-        # =========================
-        # CORE ENGINES
-        # =========================
         self.video = MP4VideoPipeline()
         self.distributor = LiveDistributor()
         self.monetization = MonetizationControlLayer()
@@ -34,41 +30,27 @@ class OrchestratorCleanMaster:
         # CONTROL
         # =========================
         self.LIVE_MODE = False
-        self.LIVE_PRODUCT = "STROM_001"
+        self.LIVE_PRODUCT = "KW_0001"
 
     # =========================
-    # CONTENT ENGINE
+    # CONTENT
     # =========================
     def build_content(self, product):
 
         return {
             "product_id": product["product_id"],
             "title": product["title"],
-            "html": f"<h1>{product['title']}</h1>",
             "status": "CONTENT_READY"
         }
 
     # =========================
-    # LANDINGPAGE ENGINE
+    # LANDINGPAGE
     # =========================
     def build_landingpage(self, product):
 
-        pid = product["product_id"]
-
         return {
-            "product_id": pid,
-            "html": f"""
-            <html>
-                <head>
-                    <title>{product['title']}</title>
-                </head>
-                <body>
-                    <h1>{product['title']}</h1>
-                    <p>{product['description']}</p>
-                    <a href="/affiliate/{pid}">Vergleich starten</a>
-                </body>
-            </html>
-            """,
+            "product_id": product["product_id"],
+            "html": f"<h1>{product['title']}</h1>",
             "status": "LANDING_READY"
         }
 
@@ -93,62 +75,6 @@ class OrchestratorCleanMaster:
         return self.video.generate_video(product["product_id"])
 
     # =========================
-    # DISTRIBUTION
-    # =========================
-    def distribute(self, bundle):
-
-        results = []
-
-        for item in bundle:
-
-            pid = item["product_id"]
-
-            live = (pid == self.LIVE_PRODUCT)
-            self.distributor.LIVE_MODE = live
-
-            # =========================
-            # AI LEARNING FEED
-            # =========================
-            self.learning.log_event(pid, "view")
-            self.learning.log_event(pid, "click")
-            self.learning.log_event(pid, "video")
-
-            # =========================
-            # SCALING FEED
-            # =========================
-            self.scaling.update_metrics(pid, clicks=1, views=1, revenue=0)
-
-            results.append({
-
-                "product_id": pid,
-
-                "blogger": self.distributor.publish_blogger(
-                    "6148350625430723499",
-                    item["title"],
-                    item["html"]
-                ),
-
-                "youtube": self.distributor.publish_youtube(
-                    item["video"],
-                    item["title"]
-                ),
-
-                "pinterest": self.distributor.publish_pinterest(
-                    item["title"],
-                    item.get("description", "")
-                ),
-
-                "live_mode": live,
-                "status": "DISTRIBUTED_OK",
-                "timestamp": datetime.utcnow().isoformat()
-            })
-
-        return {
-            "status": "DISTRIBUTION_DONE",
-            "results": results
-        }
-
-    # =========================
     # PIPELINE
     # =========================
     def run_pipeline(self):
@@ -158,55 +84,43 @@ class OrchestratorCleanMaster:
         try:
 
             # =========================
-            # PRODUCT GENERATION (NEW CORE)
+            # KEYWORD DISCOVERY FIRST
             # =========================
-            product_data = self.product_engine.build_all_products()
+            keyword_data = self.keyword_engine.discover()
+            product_data = self.keyword_engine.to_products()
+
             products = product_data["products"]
 
             for p in products:
 
                 try:
 
-                    # =========================
-                    # BUILD ALL LAYERS
-                    # =========================
                     content = self.build_content(p)
                     landing = self.build_landingpage(p)
                     monetization = self.build_monetization(p)
                     video = self.build_video(p)
 
-                    # =========================
-                    # BUNDLE
-                    # =========================
                     bundle = [{
                         "product_id": p["product_id"],
                         "title": content["title"],
                         "html": landing["html"],
-                        "description": p["description"],
+                        "description": p["keyword"],
                         "video": video["video"]["file"]
                     }]
 
-                    # =========================
-                    # DISTRIBUTION
-                    # =========================
+                    self.distributor.LIVE_MODE = False
+
+                    self.learning.log_event(p["product_id"], "view")
+                    self.learning.log_event(p["product_id"], "click")
+                    self.learning.log_event(p["product_id"], "video")
+
+                    self.scaling.update_metrics(p["product_id"], clicks=1, views=1, revenue=0)
+
                     distribution = self.distribute(bundle)
 
-                    # =========================
-                    # MONETIZATION + AI
-                    # =========================
-                    self.monetization.track_click(p["product_id"], source="landingpage")
-
-                    self.scaling.update_metrics(
-                        p["product_id"],
-                        clicks=1,
-                        views=1,
-                        revenue=0
-                    )
-
                     results.append({
-
                         "product_id": p["product_id"],
-                        "category": p["category"],
+                        "keyword": p["keyword"],
 
                         "content": content,
                         "landingpage": landing,
@@ -216,9 +130,8 @@ class OrchestratorCleanMaster:
 
                         "learning": self.learning.optimize(),
                         "scaling": self.scaling.execute_scaling(),
-                        "monetization_report": self.monetization.get_report(),
 
-                        "status": "PIPELINE_OK",
+                        "status": "KEYWORD_PIPELINE_OK",
                         "timestamp": datetime.utcnow().isoformat()
                     })
 
@@ -226,7 +139,7 @@ class OrchestratorCleanMaster:
 
                     results.append({
                         "product_id": p.get("product_id"),
-                        "status": "PRODUCT_ERROR",
+                        "status": "ERROR",
                         "error": str(e),
                         "trace": traceback.format_exc()
                     })
@@ -234,14 +147,15 @@ class OrchestratorCleanMaster:
         except Exception as e:
 
             return {
-                "status": "PIPELINE_FAILED",
+                "status": "KEYWORD_DISCOVERY_FAILED",
                 "error": str(e),
                 "trace": traceback.format_exc()
             }
 
         return {
-            "status": "FULL_DYNAMIC_SYSTEM_ACTIVE",
-            "mode": "AUTO_PRODUCT_GENERATION",
+            "status": "FULL_KEYWORD_AUTONOMOUS_SYSTEM",
+            "mode": "SELF_EXPANDING_MARKET_ENGINE",
+            "keyword_count": len(keyword_data["keywords"]),
             "product_count": len(results),
             "results": results
         }
