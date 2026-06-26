@@ -1,38 +1,31 @@
-import os
 import traceback
 from datetime import datetime
 
 # =========================
-# SAFE CLOUD RUN MODE
+# CORE ENGINES (REAL ONLY)
 # =========================
-os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
-
-
-# =========================
-# CORE ENGINE IMPORTS
-# =========================
+from engine.product_generation_engine import ProductGenerationEngine
 from engine.mp4_video_pipeline import MP4VideoPipeline
-from engine.live_distributor import LiveDistributor
+from engine.real_publish_layer import RealPublishLayer
 from engine.monetization_control_layer import MonetizationControlLayer
 from engine.ai_learning_loop import AILearningLoop
 from engine.auto_scaling_engine import AutoScalingEngine
-from engine.product_generation_engine import ProductGenerationEngine
 
 
-# =========================
-# ORCHESTRATOR CLASS
-# =========================
 class OrchestratorCleanMaster:
 
     def __init__(self):
 
         # =========================
-        # SAFE INIT (NO NETWORK CALLS HERE)
+        # REAL PRODUCT SOURCE ONLY
         # =========================
         self.product_engine = ProductGenerationEngine()
 
+        # =========================
+        # CORE SYSTEMS
+        # =========================
         self.video = MP4VideoPipeline()
-        self.distributor = LiveDistributor()
+        self.publisher = RealPublishLayer()
         self.monetization = MonetizationControlLayer()
         self.learning = AILearningLoop()
         self.scaling = AutoScalingEngine()
@@ -51,6 +44,7 @@ class OrchestratorCleanMaster:
         return {
             "product_id": product["product_id"],
             "title": product["title"],
+            "description": product.get("description", ""),
             "status": "CONTENT_READY"
         }
 
@@ -61,34 +55,23 @@ class OrchestratorCleanMaster:
 
         pid = product["product_id"]
 
+        html = f"""
+        <html>
+            <head>
+                <title>{product['title']}</title>
+            </head>
+            <body>
+                <h1>{product['title']}</h1>
+                <p>{product.get('description','')}</p>
+                <a href="/affiliate/{pid}">Vergleich starten</a>
+            </body>
+        </html>
+        """
+
         return {
             "product_id": pid,
-            "html": f"""
-            <html>
-                <head>
-                    <title>{product['title']}</title>
-                </head>
-                <body>
-                    <h1>{product['title']}</h1>
-                    <p>{product.get('description', '')}</p>
-                    <a href="/affiliate/{pid}">Vergleich starten</a>
-                </body>
-            </html>
-            """,
+            "html": html,
             "status": "LANDING_READY"
-        }
-
-    # =========================
-    # MONETIZATION
-    # =========================
-    def build_monetization(self, product):
-
-        pid = product["product_id"]
-
-        return {
-            "product_id": pid,
-            "affiliate_link": f"/affiliate/{pid}",
-            "status": "MONETIZATION_READY"
         }
 
     # =========================
@@ -96,19 +79,10 @@ class OrchestratorCleanMaster:
     # =========================
     def build_video(self, product):
 
-        try:
-            return self.video.generate_video(product["product_id"])
-
-        except Exception as e:
-
-            return {
-                "product_id": product["product_id"],
-                "status": "VIDEO_FAILED",
-                "error": str(e)
-            }
+        return self.video.generate_video(product["product_id"])
 
     # =========================
-    # DISTRIBUTION (SAFE CALL WRAPPER)
+    # DISTRIBUTION (REAL PUBLISH)
     # =========================
     def distribute(self, bundle):
 
@@ -116,34 +90,41 @@ class OrchestratorCleanMaster:
 
         for item in bundle:
 
+            pid = item["product_id"]
+
             try:
 
-                pid = item["product_id"]
-
-                blogger = self.distributor.publish_blogger(
-                    "6148350625430723499",
-                    item["title"],
-                    item.get("html", "")
+                # =========================
+                # BLOGGER REAL PUBLISH
+                # =========================
+                blogger = self.publisher.publish_blogger(
+                    blog_id="6148350625430723499",
+                    title=item["title"],
+                    content=item.get("html", "")
                 )
 
-                youtube = self.distributor.publish_youtube(
-                    item.get("video"),
-                    item["title"]
+                # =========================
+                # YOUTUBE REAL UPLOAD
+                # =========================
+                youtube = self.publisher.publish_youtube(
+                    video_file=item.get("video"),
+                    title=item["title"],
+                    description=item.get("description", "")
                 )
 
                 results.append({
                     "product_id": pid,
                     "blogger": blogger,
                     "youtube": youtube,
-                    "status": "PUBLISHED",
+                    "status": "REAL_PUBLISHED",
                     "timestamp": datetime.utcnow().isoformat()
                 })
 
             except Exception as e:
 
                 results.append({
-                    "product_id": item.get("product_id"),
-                    "status": "DISTRIBUTION_ERROR",
+                    "product_id": pid,
+                    "status": "PUBLISH_ERROR",
                     "error": str(e),
                     "trace": traceback.format_exc()
                 })
@@ -151,7 +132,7 @@ class OrchestratorCleanMaster:
         return results
 
     # =========================
-    # MAIN PIPELINE (SAFE ENTRY POINT)
+    # MAIN PIPELINE
     # =========================
     def run_pipeline(self):
 
@@ -162,37 +143,38 @@ class OrchestratorCleanMaster:
             # =========================
             # LOAD REAL PRODUCTS ONLY
             # =========================
-            products = self.product_engine.build_all_products()["products"]
+            products_data = self.product_engine.build_all_products()
+            products = products_data["products"]
 
             for p in products:
 
                 try:
 
                     # =========================
-                    # BUILD ALL LAYERS
+                    # BUILD LAYERS
                     # =========================
                     content = self.build_content(p)
                     landing = self.build_landingpage(p)
-                    monetization = self.build_monetization(p)
                     video = self.build_video(p)
 
                     # =========================
-                    # BUNDLE
+                    # BUNDLE FOR PUBLISH
                     # =========================
                     bundle = [{
                         "product_id": p["product_id"],
                         "title": p["title"],
                         "html": landing["html"],
-                        "video": video.get("video", {}).get("file", "")
+                        "description": p.get("description", ""),
+                        "video": video["video"]["file"]
                     }]
 
                     # =========================
-                    # DISTRIBUTION
+                    # REAL DISTRIBUTION
                     # =========================
-                    distribution = self.distribute(bundle)
+                    publish = self.distribute(bundle)
 
                     # =========================
-                    # AI LOGGING (SAFE)
+                    # MONITORING
                     # =========================
                     self.learning.log_event(p["product_id"], "view")
                     self.scaling.update_metrics(p["product_id"], clicks=1, views=1, revenue=0)
@@ -201,9 +183,8 @@ class OrchestratorCleanMaster:
                         "product_id": p["product_id"],
                         "content": content,
                         "landingpage": landing,
-                        "monetization": monetization,
                         "video": video,
-                        "distribution": distribution,
+                        "publish": publish,
                         "status": "PIPELINE_OK",
                         "timestamp": datetime.utcnow().isoformat()
                     })
@@ -226,14 +207,14 @@ class OrchestratorCleanMaster:
             }
 
         return {
-            "status": "ORCHESTRATOR_SAFE_MODE_ACTIVE",
-            "mode": "CLOUD_RUN_STABLE",
+            "status": "PRODUCTION_ORCHESTRATOR_ACTIVE",
+            "mode": "REAL_PUBLISH_ENABLED",
             "product_count": len(results),
             "results": results
         }
 
     # =========================
-    # COMPATIBILITY WRAPPER
+    # COMPATIBILITY
     # =========================
     def run_all(self, _=None):
         return self.run_pipeline()
