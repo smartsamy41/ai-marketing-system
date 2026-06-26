@@ -1,25 +1,28 @@
 import traceback
 from datetime import datetime
 
+# =========================
+# ENGINES IMPORT
+# =========================
 from engine.mp4_video_pipeline import MP4VideoPipeline
 from engine.live_distributor import LiveDistributor
 from engine.monetization_control_layer import MonetizationControlLayer
 from engine.ai_learning_loop import AILearningLoop
 from engine.auto_scaling_engine import AutoScalingEngine
+from engine.product_generation_engine import ProductGenerationEngine
 
 
 class OrchestratorCleanMaster:
 
     def __init__(self):
 
-        self.products = [
-            "CHK24_001",
-            "TC_001",
-            "AMZ_001"
-        ]
+        # =========================
+        # PRODUCT GENERATION ENGINE (NEW)
+        # =========================
+        self.product_engine = ProductGenerationEngine()
 
         # =========================
-        # ENGINES
+        # CORE ENGINES
         # =========================
         self.video = MP4VideoPipeline()
         self.distributor = LiveDistributor()
@@ -28,52 +31,69 @@ class OrchestratorCleanMaster:
         self.scaling = AutoScalingEngine()
 
         # =========================
-        # FULL LIVE MODE ENABLED
+        # CONTROL
         # =========================
-        self.LIVE_MODE = True
-        self.LIVE_PRODUCT = "CHK24_001"
+        self.LIVE_MODE = False
+        self.LIVE_PRODUCT = "STROM_001"
 
     # =========================
-    # CONTENT
+    # CONTENT ENGINE
     # =========================
-    def build_content(self, product_id):
+    def build_content(self, product):
 
         return {
-            "product_id": product_id,
-            "title": f"{product_id} Vergleich 2026",
+            "product_id": product["product_id"],
+            "title": product["title"],
+            "html": f"<h1>{product['title']}</h1>",
             "status": "CONTENT_READY"
         }
 
     # =========================
-    # LANDINGPAGE
+    # LANDINGPAGE ENGINE
     # =========================
-    def build_landingpage(self, product_id):
+    def build_landingpage(self, product):
+
+        pid = product["product_id"]
 
         return {
-            "product_id": product_id,
-            "html": f"<h1>{product_id} Vergleich 2026</h1>",
+            "product_id": pid,
+            "html": f"""
+            <html>
+                <head>
+                    <title>{product['title']}</title>
+                </head>
+                <body>
+                    <h1>{product['title']}</h1>
+                    <p>{product['description']}</p>
+                    <a href="/affiliate/{pid}">Vergleich starten</a>
+                </body>
+            </html>
+            """,
             "status": "LANDING_READY"
         }
 
     # =========================
     # MONETIZATION
     # =========================
-    def build_monetization(self, product_id):
+    def build_monetization(self, product):
+
+        pid = product["product_id"]
 
         return {
-            "product_id": product_id,
-            "affiliate_link": f"/affiliate/{product_id}",
+            "product_id": pid,
+            "affiliate_link": f"/affiliate/{pid}",
             "status": "MONETIZATION_READY"
         }
 
     # =========================
     # VIDEO
     # =========================
-    def build_video(self, product_id):
-        return self.video.generate_video(product_id)
+    def build_video(self, product):
+
+        return self.video.generate_video(product["product_id"])
 
     # =========================
-    # DISTRIBUTION (REAL MODE)
+    # DISTRIBUTION
     # =========================
     def distribute(self, bundle):
 
@@ -83,29 +103,20 @@ class OrchestratorCleanMaster:
 
             pid = item["product_id"]
 
-            # =========================
-            # LIVE DECISION
-            # =========================
             live = (pid == self.LIVE_PRODUCT)
-
             self.distributor.LIVE_MODE = live
 
             # =========================
-            # TRACKING (REAL MODE)
+            # AI LEARNING FEED
             # =========================
             self.learning.log_event(pid, "view")
             self.learning.log_event(pid, "click")
             self.learning.log_event(pid, "video")
 
-            self.monetization.track_click(pid, source="LIVE")
-
-            if live:
-                self.monetization.track_revenue(pid, amount=1.0)
-
             # =========================
-            # AUTO SCALING FEED
+            # SCALING FEED
             # =========================
-            self.scaling.update_metrics(pid, clicks=1, views=1, revenue=1.0 if live else 0)
+            self.scaling.update_metrics(pid, clicks=1, views=1, revenue=0)
 
             results.append({
 
@@ -128,12 +139,12 @@ class OrchestratorCleanMaster:
                 ),
 
                 "live_mode": live,
-                "status": "FULL_LIVE_ACTIVE",
+                "status": "DISTRIBUTED_OK",
                 "timestamp": datetime.utcnow().isoformat()
             })
 
         return {
-            "status": "LIVE_DISTRIBUTION_ACTIVE",
+            "status": "DISTRIBUTION_DONE",
             "results": results
         }
 
@@ -144,59 +155,99 @@ class OrchestratorCleanMaster:
 
         results = []
 
-        for p in self.products:
+        try:
 
-            try:
+            # =========================
+            # PRODUCT GENERATION (NEW CORE)
+            # =========================
+            product_data = self.product_engine.build_all_products()
+            products = product_data["products"]
 
-                content = self.build_content(p)
-                landing = self.build_landingpage(p)
-                monetization = self.build_monetization(p)
-                video = self.build_video(p)
+            for p in products:
 
-                bundle = [{
-                    "product_id": p,
-                    "title": content["title"],
-                    "html": landing["html"],
-                    "description": "auto generated system content",
-                    "video": video["video"]["file"]
-                }]
-
-                distribution = self.distribute(bundle)
-
-                results.append({
-
-                    "product_id": p,
-                    "content": content,
-                    "landingpage": landing,
-                    "monetization": monetization,
-                    "video": video,
-                    "distribution": distribution,
+                try:
 
                     # =========================
-                    # AI SYSTEMS
+                    # BUILD ALL LAYERS
                     # =========================
-                    "learning": self.learning.optimize(),
-                    "scaling": self.scaling.execute_scaling(),
-                    "monetization_report": self.monetization.get_report(),
+                    content = self.build_content(p)
+                    landing = self.build_landingpage(p)
+                    monetization = self.build_monetization(p)
+                    video = self.build_video(p)
 
-                    "status": "FULL_MONEY_MODE_ACTIVE",
-                    "timestamp": datetime.utcnow().isoformat()
-                })
+                    # =========================
+                    # BUNDLE
+                    # =========================
+                    bundle = [{
+                        "product_id": p["product_id"],
+                        "title": content["title"],
+                        "html": landing["html"],
+                        "description": p["description"],
+                        "video": video["video"]["file"]
+                    }]
 
-            except Exception as e:
+                    # =========================
+                    # DISTRIBUTION
+                    # =========================
+                    distribution = self.distribute(bundle)
 
-                results.append({
-                    "product_id": p,
-                    "status": "ERROR",
-                    "error": str(e),
-                    "trace": traceback.format_exc()
-                })
+                    # =========================
+                    # MONETIZATION + AI
+                    # =========================
+                    self.monetization.track_click(p["product_id"], source="landingpage")
+
+                    self.scaling.update_metrics(
+                        p["product_id"],
+                        clicks=1,
+                        views=1,
+                        revenue=0
+                    )
+
+                    results.append({
+
+                        "product_id": p["product_id"],
+                        "category": p["category"],
+
+                        "content": content,
+                        "landingpage": landing,
+                        "monetization": monetization,
+                        "video": video,
+                        "distribution": distribution,
+
+                        "learning": self.learning.optimize(),
+                        "scaling": self.scaling.execute_scaling(),
+                        "monetization_report": self.monetization.get_report(),
+
+                        "status": "PIPELINE_OK",
+                        "timestamp": datetime.utcnow().isoformat()
+                    })
+
+                except Exception as e:
+
+                    results.append({
+                        "product_id": p.get("product_id"),
+                        "status": "PRODUCT_ERROR",
+                        "error": str(e),
+                        "trace": traceback.format_exc()
+                    })
+
+        except Exception as e:
+
+            return {
+                "status": "PIPELINE_FAILED",
+                "error": str(e),
+                "trace": traceback.format_exc()
+            }
 
         return {
-            "status": "FULL_LIVE_MONEY_ENGINE_RUNNING",
-            "mode": "REVENUE_AUTOMATION_ACTIVE",
+            "status": "FULL_DYNAMIC_SYSTEM_ACTIVE",
+            "mode": "AUTO_PRODUCT_GENERATION",
+            "product_count": len(results),
             "results": results
         }
 
+    # =========================
+    # COMPATIBILITY
+    # =========================
     def run_all(self, _=None):
         return self.run_pipeline()
