@@ -2,11 +2,12 @@ import traceback
 from datetime import datetime
 
 # =========================
-# CORE ENGINES
+# ENGINES
 # =========================
 from engine.mp4_video_pipeline import MP4VideoPipeline
 from engine.live_distributor import LiveDistributor
 from engine.monetization_control_layer import MonetizationControlLayer
+from engine.ai_learning_loop import AILearningLoop
 
 
 class OrchestratorCleanMaster:
@@ -23,22 +24,15 @@ class OrchestratorCleanMaster:
         ]
 
         # =========================
-        # VIDEO ENGINE
+        # CORE ENGINES
         # =========================
         self.video = MP4VideoPipeline()
-
-        # =========================
-        # DISTRIBUTION ENGINE
-        # =========================
         self.distributor = LiveDistributor()
-
-        # =========================
-        # MONETIZATION ENGINE (NEW)
-        # =========================
         self.monetization = MonetizationControlLayer()
+        self.learning = AILearningLoop()
 
         # =========================
-        # CONTROL FLAGS
+        # CONTROL
         # =========================
         self.LIVE_MODE = False
         self.LIVE_PRODUCT = "CHK24_001"
@@ -60,19 +54,21 @@ class OrchestratorCleanMaster:
     # =========================
     def build_landingpage(self, product_id):
 
+        html = f"""
+        <html>
+            <head>
+                <title>{product_id} Vergleich 2026</title>
+            </head>
+            <body>
+                <h1>{product_id} Vergleich 2026</h1>
+                <a href="/affiliate/{product_id}">Vergleich starten</a>
+            </body>
+        </html>
+        """
+
         return {
             "product_id": product_id,
-            "html": f"""
-            <html>
-                <head>
-                    <title>{product_id} Vergleich 2026</title>
-                </head>
-                <body>
-                    <h1>{product_id} Vergleich 2026</h1>
-                    <a href='/affiliate/{product_id}'>Vergleich starten</a>
-                </body>
-            </html>
-            """,
+            "html": html,
             "status": "LANDING_READY"
         }
 
@@ -91,7 +87,6 @@ class OrchestratorCleanMaster:
     # VIDEO ENGINE
     # =========================
     def build_video(self, product_id):
-
         return self.video.generate_video(product_id)
 
     # =========================
@@ -105,48 +100,35 @@ class OrchestratorCleanMaster:
 
             pid = item["product_id"]
 
-            # =========================
-            # SELECTIVE LIVE CONTROL
-            # =========================
             live = (pid == self.LIVE_PRODUCT)
 
             self.distributor.LIVE_MODE = live
+
+            # =========================
+            # EVENTS (AI LEARNING)
+            # =========================
+            self.learning.log_event(pid, "view")
+            self.learning.log_event(pid, "click")
+            self.learning.log_event(pid, "video")
 
             results.append({
 
                 "product_id": pid,
 
-                # =========================
-                # BLOGGER
-                # =========================
                 "blogger": self.distributor.publish_blogger(
                     "6148350625430723499",
                     item["title"],
                     item["html"]
                 ),
 
-                # =========================
-                # YOUTUBE
-                # =========================
                 "youtube": self.distributor.publish_youtube(
                     item["video"],
                     item["title"]
                 ),
 
-                # =========================
-                # PINTEREST
-                # =========================
                 "pinterest": self.distributor.publish_pinterest(
                     item["title"],
                     item.get("description", "")
-                ),
-
-                # =========================
-                # MONETIZATION TRACKING (NEW)
-                # =========================
-                "tracking": self.monetization.track_click(
-                    pid,
-                    source="orchestrator"
                 ),
 
                 "live_mode": live,
@@ -161,7 +143,7 @@ class OrchestratorCleanMaster:
         }
 
     # =========================
-    # MAIN PIPELINE
+    # PIPELINE
     # =========================
     def run_pipeline(self):
 
@@ -172,7 +154,7 @@ class OrchestratorCleanMaster:
             try:
 
                 # =========================
-                # CORE BUILD
+                # BUILD LAYERS
                 # =========================
                 content = self.build_content(p)
                 landing = self.build_landingpage(p)
@@ -200,6 +182,14 @@ class OrchestratorCleanMaster:
                 # =========================
                 distribution = self.distribute(bundle)
 
+                # =========================
+                # AI LEARNING OUTPUT
+                # =========================
+                ai_learning = self.learning.optimize()
+
+                # =========================
+                # FINAL RESULT
+                # =========================
                 results.append({
 
                     "product_id": p,
@@ -209,10 +199,8 @@ class OrchestratorCleanMaster:
                     "video": video,
                     "distribution": distribution,
 
-                    # =========================
-                    # MONETIZATION REPORT
-                    # =========================
                     "monetization_report": self.monetization.get_report(),
+                    "ai_learning": ai_learning,
 
                     "status": "PIPELINE_OK",
                     "timestamp": datetime.utcnow().isoformat()
@@ -228,8 +216,8 @@ class OrchestratorCleanMaster:
                 })
 
         return {
-            "status": "FULL_SYSTEM_ACTIVE",
-            "mode": "PRODUCTION_READY",
+            "status": "FULL_AI_SYSTEM_ACTIVE",
+            "mode": "SELF_LEARNING_ENGINE",
             "live_product": self.LIVE_PRODUCT,
             "results": results
         }
