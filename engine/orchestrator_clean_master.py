@@ -16,9 +16,10 @@ class OrchestratorCleanMaster:
         ]
 
         # =========================
-        # SAFETY MODE (DEFAULT)
+        # SELECTIVE LIVE CONTROL
         # =========================
         self.LIVE_MODE = False
+        self.LIVE_PRODUCT = "CHK24_001"   # 🔥 ONLY THIS PRODUCT GOES LIVE
 
         self.video = MP4VideoPipeline()
         self.distributor = LiveDistributor()
@@ -27,6 +28,7 @@ class OrchestratorCleanMaster:
     # CONTENT
     # =========================
     def build_content(self, product_id):
+
         return {
             "product_id": product_id,
             "title": f"{product_id} Vergleich 2026",
@@ -59,17 +61,63 @@ class OrchestratorCleanMaster:
     # VIDEO
     # =========================
     def build_video(self, product_id):
+
         return self.video.generate_video(product_id)
 
     # =========================
-    # SAFE DISTRIBUTION (LOCKED)
+    # SELECTIVE DISTRIBUTION LOGIC
     # =========================
     def distribute(self, bundle):
 
-        return self.distributor.distribute(bundle)
+        results = []
+
+        for item in bundle:
+
+            pid = item.get("product_id")
+
+            # =========================
+            # SELECTIVE LIVE RULE
+            # =========================
+            if pid == self.LIVE_PRODUCT:
+                live = True
+            else:
+                live = False
+
+            distributor = self.distributor
+            distributor.LIVE_MODE = live
+
+            results.append({
+                "product_id": pid,
+
+                "blogger": distributor.publish_blogger(
+                    "6148350625430723499",
+                    item.get("title"),
+                    item.get("html")
+                ),
+
+                "youtube": distributor.publish_youtube(
+                    item.get("video"),
+                    item.get("title")
+                ),
+
+                "pinterest": distributor.publish_pinterest(
+                    item.get("title"),
+                    item.get("description")
+                ),
+
+                "live_mode": live,
+                "status": "SELECTIVE_OK",
+                "timestamp": datetime.utcnow().isoformat()
+            })
+
+        return {
+            "status": "SELECTIVE_LIVE_ACTIVE",
+            "live_product": self.LIVE_PRODUCT,
+            "results": results
+        }
 
     # =========================
-    # MAIN PIPELINE
+    # PIPELINE
     # =========================
     def run_pipeline(self):
 
@@ -88,7 +136,7 @@ class OrchestratorCleanMaster:
                     "product_id": p,
                     "title": content["title"],
                     "html": landing["html"],
-                    "description": "Auto generated content",
+                    "description": "auto generated",
                     "video": video["video"]["file"]
                 }]
 
@@ -115,8 +163,8 @@ class OrchestratorCleanMaster:
                 })
 
         return {
-            "status": "LOCKED_SYSTEM_ACTIVE",
-            "live_mode": self.LIVE_MODE,
+            "status": "SELECTIVE_PIPELINE_DONE",
+            "live_product": self.LIVE_PRODUCT,
             "results": results
         }
 
