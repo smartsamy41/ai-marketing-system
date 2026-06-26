@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
+from engine.blogger_publisher_engine import BloggerPublisherEngine
+
 app = FastAPI()
 
-# =========================
-# CLEAN CORE SYSTEM
-# =========================
+blogger = BloggerPublisherEngine()
 
 @app.get("/")
 def root():
@@ -17,58 +17,35 @@ def root():
 def health():
     return {"status": "OK"}
 
-# =========================
-# CORE PIPELINE (NO CRASH SAFE)
-# =========================
 @app.get("/run")
 def run():
-
     products = ["CHK24_001", "TC_001", "AMZ_001"]
 
     results = []
 
     for p in products:
-
-        # -------------------------
-        # CORE CONTENT STRUCTURE
-        # -------------------------
-        content = {
-            "product_id": p,
-            "title": f"{p} Vergleich 2026",
-            "status": "CORE_CONTENT"
-        }
-
-        # -------------------------
-        # LANDINGPAGE STRUCTURE
-        # -------------------------
-        landingpage = {
-            "product_id": p,
-            "url": f"/landing/{p}",
-            "status": "CORE_LANDING"
-        }
-
-        # -------------------------
-        # SOCIAL OUTPUT STRUCTURE
-        # -------------------------
-        output = {
-            "youtube": {
-                "title": f"{p} Vergleich 2026",
-                "status": "READY"
-            },
-            "pinterest": {
-                "title": f"{p} sparen & vergleichen",
-                "status": "READY"
-            }
-        }
-
-        # -------------------------
-        # FINAL SAFE OBJECT
-        # -------------------------
         results.append({
             "product_id": p,
-            "content": content,
-            "landingpage": landingpage,
-            "output": output,
+            "content": {
+                "product_id": p,
+                "title": f"{p} Vergleich 2026",
+                "status": "CORE_CONTENT"
+            },
+            "landingpage": {
+                "product_id": p,
+                "url": f"/landing/{p}",
+                "status": "CORE_LANDING"
+            },
+            "output": {
+                "youtube": {
+                    "title": f"{p} Vergleich 2026",
+                    "status": "READY"
+                },
+                "pinterest": {
+                    "title": f"{p} sparen & vergleichen",
+                    "status": "READY"
+                }
+            },
             "status": "CLEAN_CORE_OK"
         })
 
@@ -77,3 +54,7 @@ def run():
         "mode": "CLEAN_CORE",
         "results": results
     }
+
+@app.get("/test-blogger-draft")
+def test_blogger_draft():
+    return blogger.create_draft("CHK24_001")
