@@ -1,37 +1,39 @@
 from fastapi import FastAPI
-from google.oauth2 import service_account
+from google.auth import default
 from googleapiclient.discovery import build
 
 from engine.blogger_publisher_engine import BloggerPublisherEngine
 
+# =========================
+# APP
+# =========================
 app = FastAPI()
 
-# =========================
-# BLOGGER ENGINE
-# =========================
 blogger = BloggerPublisherEngine()
 
 # =========================
-# GOOGLE SHEETS SETUP
+# GOOGLE SHEETS CONFIG
 # =========================
-SERVICE_ACCOUNT_FILE = "service_account.json"
-
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE,
-    scopes=SCOPES
-)
-
-service = build("sheets", "v4", credentials=credentials)
 
 SPREADSHEET_ID = "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
 
 
 # =========================
+# IAM AUTH (CLOUD RUN SAFE)
+# =========================
+def get_service():
+    creds, _ = default(scopes=SCOPES)
+    return build("sheets", "v4", credentials=creds)
+
+
+service = get_service()
+
+
+# =========================
 # SHEETS FUNCTIONS
 # =========================
-def read_sheet(range_name):
+def read_sheet(range_name: str):
     result = service.spreadsheets().values().get(
         spreadsheetId=SPREADSHEET_ID,
         range=range_name
@@ -40,7 +42,7 @@ def read_sheet(range_name):
     return result.get("values", [])
 
 
-def write_sheet(range_name, values):
+def write_sheet(range_name: str, values: list):
     return service.spreadsheets().values().append(
         spreadsheetId=SPREADSHEET_ID,
         range=range_name,
@@ -51,12 +53,34 @@ def write_sheet(range_name, values):
 
 
 # =========================
+# ROOT
+# =========================
+@app.get("/")
+def root():
+    return {
+        "status": "OK",
+        "system": "CLOUD RUN IAM FIX ACTIVE"
+    }
+
+
+# =========================
+# HEALTH CHECK
+# =========================
+@app.get("/health")
+def health():
+    return {
+        "status": "OK",
+        "ready": True
+    }
+
+
+# =========================
 # LANDINGPAGE ENGINE
 # =========================
-def generate_landingpage(product_id):
+def generate_landingpage(product_id: str):
 
     title = f"{product_id} Vergleich 2026"
-    desc = f"Finde die besten Angebote für {product_id} und vergleiche Tarife einfach online."
+    desc = f"Jetzt {product_id} vergleichen und passende Angebote finden."
 
     html = f"""
     <html>
@@ -95,24 +119,7 @@ def save_landingpage(data):
 
 
 # =========================
-# ROUTES
-# =========================
-
-@app.get("/")
-def root():
-    return {
-        "status": "OK",
-        "system": "CLEAN CORE + SHEETS ACTIVE"
-    }
-
-
-@app.get("/health")
-def health():
-    return {"status": "OK", "ready": True}
-
-
-# =========================
-# MAIN ENGINE RUN
+# MAIN RUN ENGINE
 # =========================
 @app.get("/run")
 def run():
@@ -122,6 +129,9 @@ def run():
     results = []
 
     for row in products:
+        if not row:
+            continue
+
         product_id = row[0]
 
         lp = generate_landingpage(product_id)
@@ -134,7 +144,7 @@ def run():
 
     return {
         "status": "DONE",
-        "mode": "FULL_AUTOMATION_V1",
+        "mode": "CLOUD_RUN_IAM_STABLE",
         "count": len(results),
         "results": results
     }
