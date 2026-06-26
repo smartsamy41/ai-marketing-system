@@ -8,6 +8,7 @@ from engine.ai_learning_loop import AILearningLoop
 from engine.auto_scaling_engine import AutoScalingEngine
 from engine.product_generation_engine import ProductGenerationEngine
 from engine.keyword_discovery_engine import KeywordDiscoveryEngine
+from engine.trend_prediction_engine import TrendPredictionEngine
 
 
 class OrchestratorCleanMaster:
@@ -19,6 +20,7 @@ class OrchestratorCleanMaster:
         # =========================
         self.product_engine = ProductGenerationEngine()
         self.keyword_engine = KeywordDiscoveryEngine()
+        self.trend_engine = TrendPredictionEngine()
 
         self.video = MP4VideoPipeline()
         self.distributor = LiveDistributor()
@@ -30,10 +32,10 @@ class OrchestratorCleanMaster:
         # CONTROL
         # =========================
         self.LIVE_MODE = False
-        self.LIVE_PRODUCT = "KW_0001"
+        self.LIVE_PRODUCT = "TREND_0001"
 
     # =========================
-    # CONTENT
+    # CORE BUILDERS
     # =========================
     def build_content(self, product):
 
@@ -43,9 +45,6 @@ class OrchestratorCleanMaster:
             "status": "CONTENT_READY"
         }
 
-    # =========================
-    # LANDINGPAGE
-    # =========================
     def build_landingpage(self, product):
 
         return {
@@ -54,9 +53,6 @@ class OrchestratorCleanMaster:
             "status": "LANDING_READY"
         }
 
-    # =========================
-    # MONETIZATION
-    # =========================
     def build_monetization(self, product):
 
         pid = product["product_id"]
@@ -67,9 +63,6 @@ class OrchestratorCleanMaster:
             "status": "MONETIZATION_READY"
         }
 
-    # =========================
-    # VIDEO
-    # =========================
     def build_video(self, product):
 
         return self.video.generate_video(product["product_id"])
@@ -84,10 +77,10 @@ class OrchestratorCleanMaster:
         try:
 
             # =========================
-            # KEYWORD DISCOVERY FIRST
+            # TREND ENGINE FIRST (NEW CORE BRAIN)
             # =========================
-            keyword_data = self.keyword_engine.discover()
-            product_data = self.keyword_engine.to_products()
+            trend_data = self.trend_engine.detect_trends()
+            product_data = self.trend_engine.to_products()
 
             products = product_data["products"]
 
@@ -120,7 +113,8 @@ class OrchestratorCleanMaster:
 
                     results.append({
                         "product_id": p["product_id"],
-                        "keyword": p["keyword"],
+                        "trend": p["keyword"],
+                        "score": p["score"],
 
                         "content": content,
                         "landingpage": landing,
@@ -130,8 +124,9 @@ class OrchestratorCleanMaster:
 
                         "learning": self.learning.optimize(),
                         "scaling": self.scaling.execute_scaling(),
+                        "top_trends": self.trend_engine.top_trends(),
 
-                        "status": "KEYWORD_PIPELINE_OK",
+                        "status": "TREND_PIPELINE_OK",
                         "timestamp": datetime.utcnow().isoformat()
                     })
 
@@ -147,21 +142,18 @@ class OrchestratorCleanMaster:
         except Exception as e:
 
             return {
-                "status": "KEYWORD_DISCOVERY_FAILED",
+                "status": "TREND_ENGINE_FAILED",
                 "error": str(e),
                 "trace": traceback.format_exc()
             }
 
         return {
-            "status": "FULL_KEYWORD_AUTONOMOUS_SYSTEM",
-            "mode": "SELF_EXPANDING_MARKET_ENGINE",
-            "keyword_count": len(keyword_data["keywords"]),
+            "status": "FULL_TREND_INTELLIGENCE_SYSTEM",
+            "mode": "PREDICTIVE_MARKET_AI",
+            "trend_count": len(trend_data["trends"]),
             "product_count": len(results),
             "results": results
         }
 
-    # =========================
-    # COMPATIBILITY
-    # =========================
     def run_all(self, _=None):
         return self.run_pipeline()
