@@ -3,9 +3,7 @@ from engine.publish_engine import PublishEngine
 from engine.product_layer import ProductLayer
 from engine.real_publish_layer import RealPublishLayer
 from engine.video_engine import VideoEngine
-from engine.youtube_auto_video_system import YouTubeAutoVideoSystem
-from engine.youtube_uploader import YouTubeUploader
-from engine.youtube_real_api import YouTubeRealAPI
+from engine.mp4_video_pipeline import MP4VideoPipeline
 
 
 class OrchestratorCleanMaster:
@@ -16,10 +14,8 @@ class OrchestratorCleanMaster:
         self.publisher = PublishEngine()
         self.real_publish = RealPublishLayer()
         self.products = ProductLayer()
-        self.video = VideoEngine()
-        self.youtube = YouTubeAutoVideoSystem()
-        self.uploader = YouTubeUploader()
-        self.youtube_api = YouTubeRealAPI()
+        self.video_engine = VideoEngine()
+        self.mp4 = MP4VideoPipeline()
 
     # =========================
     # SINGLE PRODUCT FLOW
@@ -50,17 +46,11 @@ class OrchestratorCleanMaster:
                 "youtube": youtube_script
             }
 
-            # VIDEO
-            video_package = self.video.build_video(product_id)
+            # VIDEO ENGINE (LOGIC)
+            video_package = self.video_engine.build_video(product_id)
 
-            # YOUTUBE PREPARATION
-            youtube_pre = self.youtube.process(video_package)
-
-            # SAFE UPLOAD LAYER
-            youtube_safe = self.uploader.upload(video_package)
-
-            # REAL API LAYER (NEW)
-            youtube_real = self.youtube_api.authenticate()
+            # MP4 PIPELINE (REAL VIDEO)
+            mp4_video = self.mp4.generate_video(product_id)
 
             # PUBLISH
             legacy_publish = self.publisher.publish(product_id, monetized_content)
@@ -74,13 +64,14 @@ class OrchestratorCleanMaster:
                 "product_id": product_id,
                 "content": content,
                 "monetization": monetized_content,
-                "video": video_package,
-                "youtube_pre": youtube_pre,
-                "youtube_safe": youtube_safe,
-                "youtube_real_api": youtube_real,
+
+                "video_logic": video_package,
+                "mp4_video": mp4_video,
+
                 "legacy_publish": legacy_publish,
                 "real_publish": real_publish,
-                "status": "YOUTUBE_REAL_API_ENABLED"
+
+                "status": "FULL_MP4_VIDEO_PIPELINE_ACTIVE"
             }
 
         except Exception as e:
