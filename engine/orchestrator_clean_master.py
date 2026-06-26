@@ -1,14 +1,16 @@
 import traceback
 from datetime import datetime
 
-from googleapiclient.discovery import build
-from google.oauth2 import service_account
+from engine.mp4_video_pipeline import MP4VideoPipeline
 
 
 class OrchestratorCleanMaster:
 
     def __init__(self):
 
+        # =========================
+        # FIXED PRODUCT SET
+        # =========================
         self.products = [
             "CHK24_001",
             "TC_001",
@@ -16,55 +18,23 @@ class OrchestratorCleanMaster:
         ]
 
         # =========================
-        # LIVE SWITCH
+        # VIDEO PIPELINE (YOUR FILE)
         # =========================
-        self.LIVE_MODE = False
-
-        # =========================
-        # GOOGLE CLOUD AUTH (SERVICE ACCOUNT)
-        # =========================
-        self.SCOPES = [
-            "https://www.googleapis.com/auth/blogger",
-            "https://www.googleapis.com/auth/youtube.upload",
-            "https://www.googleapis.com/auth/spreadsheets"
-        ]
-
-        self.SERVICE_ACCOUNT_FILE = "/secrets/service-account.json"
+        self.video = MP4VideoPipeline()
 
     # =========================
-    # AUTH SERVICES
-    # =========================
-    def get_blogger_service(self):
-
-        creds = service_account.Credentials.from_service_account_file(
-            self.SERVICE_ACCOUNT_FILE,
-            scopes=self.SCOPES
-        )
-
-        return build("blogger", "v3", credentials=creds)
-
-    def get_youtube_service(self):
-
-        creds = service_account.Credentials.from_service_account_file(
-            self.SERVICE_ACCOUNT_FILE,
-            scopes=self.SCOPES
-        )
-
-        return build("youtube", "v3", credentials=creds)
-
-    # =========================
-    # CONTENT
+    # CONTENT ENGINE (SAFE MOCK)
     # =========================
     def build_content(self, product_id):
 
         return {
             "product_id": product_id,
             "title": f"{product_id} Vergleich 2026",
-            "status": "READY"
+            "status": "CONTENT_READY"
         }
 
     # =========================
-    # LANDINGPAGE
+    # LANDINGPAGE ENGINE (SAFE MOCK)
     # =========================
     def build_landingpage(self, product_id):
 
@@ -84,77 +54,36 @@ class OrchestratorCleanMaster:
         return {
             "product_id": product_id,
             "html": html,
-            "status": "READY"
+            "status": "LANDING_READY"
         }
 
     # =========================
-    # BLOGGER POST (REAL)
+    # MONETIZATION LAYER (SAFE MOCK)
     # =========================
-    def publish_blogger(self, product_id, content):
+    def build_monetization(self, product_id):
 
-        try:
-            service = self.get_blogger_service()
-
-            blog_id = "6148350625430723499"
-
-            body = {
-                "title": content["title"],
-                "content": f"<h1>{content['title']}</h1><p>Automatischer Vergleich</p>"
+        return {
+            "product_id": product_id,
+            "affiliate_link": f"/affiliate/{product_id}",
+            "pinterest": {
+                "title": f"{product_id} sparen & vergleichen 2026",
+                "status": "PIN_READY"
+            },
+            "youtube": {
+                "title": f"{product_id} Vergleich 2026",
+                "status": "SCRIPT_READY"
             }
-
-            if self.LIVE_MODE:
-
-                post = service.posts().insert(
-                    blogId=blog_id,
-                    body=body,
-                    isDraft=False
-                ).execute()
-
-                return {
-                    "status": "BLOGGER_LIVE",
-                    "post_id": post.get("id")
-                }
-
-            return {
-                "status": "BLOGGER_SIMULATED"
-            }
-
-        except Exception as e:
-
-            return {
-                "status": "BLOGGER_ERROR",
-                "error": str(e)
-            }
+        }
 
     # =========================
-    # YOUTUBE UPLOAD (REAL PLACEHOLDER SAFE)
+    # VIDEO PIPELINE (REAL FFmpeg FILE SYSTEM)
     # =========================
-    def publish_youtube(self, product_id):
+    def build_video(self, product_id):
 
-        try:
-
-            service = self.get_youtube_service()
-
-            if self.LIVE_MODE:
-
-                return {
-                    "status": "YOUTUBE_LIVE_READY",
-                    "note": "Upload engine hook ready (MP4 pipeline required)"
-                }
-
-            return {
-                "status": "YOUTUBE_SIMULATED"
-            }
-
-        except Exception as e:
-
-            return {
-                "status": "YOUTUBE_ERROR",
-                "error": str(e)
-            }
+        return self.video.generate_video(product_id)
 
     # =========================
-    # PIPELINE
+    # FULL PIPELINE PER PRODUCT
     # =========================
     def run_pipeline(self):
 
@@ -166,19 +95,17 @@ class OrchestratorCleanMaster:
 
                 content = self.build_content(p)
                 landing = self.build_landingpage(p)
-
-                blogger = self.publish_blogger(p, content)
-                youtube = self.publish_youtube(p)
+                monetization = self.build_monetization(p)
+                video = self.build_video(p)
 
                 results.append({
                     "product_id": p,
                     "content": content,
                     "landingpage": landing,
-                    "blogger": blogger,
-                    "youtube": youtube,
+                    "monetization": monetization,
+                    "video": video,
                     "status": "PIPELINE_OK",
-                    "timestamp": datetime.utcnow().isoformat(),
-                    "live_mode": self.LIVE_MODE
+                    "timestamp": datetime.utcnow().isoformat()
                 })
 
             except Exception as e:
@@ -192,10 +119,12 @@ class OrchestratorCleanMaster:
 
         return {
             "status": "DONE",
-            "mode": "REAL_API_LAYER_ACTIVE",
-            "live_enabled": self.LIVE_MODE,
+            "mode": "CLEAN_ORCHESTRATOR_FINAL",
             "results": results
         }
 
+    # =========================
+    # COMPATIBILITY LAYER
+    # =========================
     def run_all(self, _=None):
         return self.run_pipeline()
