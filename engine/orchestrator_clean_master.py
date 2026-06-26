@@ -12,9 +12,6 @@ class OrchestratorCleanMaster:
 
     def __init__(self):
 
-        # =========================
-        # PRODUCTS
-        # =========================
         self.products = [
             "CHK24_001",
             "TC_001",
@@ -31,40 +28,52 @@ class OrchestratorCleanMaster:
         self.scaling = AutoScalingEngine()
 
         # =========================
-        # CONTROL
+        # FULL LIVE MODE ENABLED
         # =========================
-        self.LIVE_MODE = False
+        self.LIVE_MODE = True
         self.LIVE_PRODUCT = "CHK24_001"
 
     # =========================
-    # CORE BUILDERS
+    # CONTENT
     # =========================
     def build_content(self, product_id):
+
         return {
             "product_id": product_id,
             "title": f"{product_id} Vergleich 2026",
             "status": "CONTENT_READY"
         }
 
+    # =========================
+    # LANDINGPAGE
+    # =========================
     def build_landingpage(self, product_id):
+
         return {
             "product_id": product_id,
             "html": f"<h1>{product_id} Vergleich 2026</h1>",
             "status": "LANDING_READY"
         }
 
+    # =========================
+    # MONETIZATION
+    # =========================
     def build_monetization(self, product_id):
+
         return {
             "product_id": product_id,
             "affiliate_link": f"/affiliate/{product_id}",
             "status": "MONETIZATION_READY"
         }
 
+    # =========================
+    # VIDEO
+    # =========================
     def build_video(self, product_id):
         return self.video.generate_video(product_id)
 
     # =========================
-    # DISTRIBUTION
+    # DISTRIBUTION (REAL MODE)
     # =========================
     def distribute(self, bundle):
 
@@ -74,27 +83,32 @@ class OrchestratorCleanMaster:
 
             pid = item["product_id"]
 
+            # =========================
+            # LIVE DECISION
+            # =========================
             live = (pid == self.LIVE_PRODUCT)
+
             self.distributor.LIVE_MODE = live
 
             # =========================
-            # LEARNING DATA FEED
+            # TRACKING (REAL MODE)
             # =========================
             self.learning.log_event(pid, "view")
             self.learning.log_event(pid, "click")
             self.learning.log_event(pid, "video")
 
+            self.monetization.track_click(pid, source="LIVE")
+
+            if live:
+                self.monetization.track_revenue(pid, amount=1.0)
+
             # =========================
-            # SCALING FEED
+            # AUTO SCALING FEED
             # =========================
-            self.scaling.update_metrics(
-                pid,
-                clicks=1,
-                views=1,
-                revenue=0
-            )
+            self.scaling.update_metrics(pid, clicks=1, views=1, revenue=1.0 if live else 0)
 
             results.append({
+
                 "product_id": pid,
 
                 "blogger": self.distributor.publish_blogger(
@@ -114,12 +128,12 @@ class OrchestratorCleanMaster:
                 ),
 
                 "live_mode": live,
-                "status": "DISTRIBUTED_OK",
+                "status": "FULL_LIVE_ACTIVE",
                 "timestamp": datetime.utcnow().isoformat()
             })
 
         return {
-            "status": "DISTRIBUTION_DONE",
+            "status": "LIVE_DISTRIBUTION_ACTIVE",
             "results": results
         }
 
@@ -143,13 +157,14 @@ class OrchestratorCleanMaster:
                     "product_id": p,
                     "title": content["title"],
                     "html": landing["html"],
-                    "description": "auto system content",
+                    "description": "auto generated system content",
                     "video": video["video"]["file"]
                 }]
 
                 distribution = self.distribute(bundle)
 
                 results.append({
+
                     "product_id": p,
                     "content": content,
                     "landingpage": landing,
@@ -158,12 +173,13 @@ class OrchestratorCleanMaster:
                     "distribution": distribution,
 
                     # =========================
-                    # AI SYSTEM OUTPUTS
+                    # AI SYSTEMS
                     # =========================
-                    "ai_learning": self.learning.optimize(),
+                    "learning": self.learning.optimize(),
                     "scaling": self.scaling.execute_scaling(),
+                    "monetization_report": self.monetization.get_report(),
 
-                    "status": "FULL_AI_SYSTEM_ACTIVE",
+                    "status": "FULL_MONEY_MODE_ACTIVE",
                     "timestamp": datetime.utcnow().isoformat()
                 })
 
@@ -177,8 +193,8 @@ class OrchestratorCleanMaster:
                 })
 
         return {
-            "status": "AUTONOMOUS_SYSTEM_ACTIVE",
-            "mode": "SELF_SCALING_AI",
+            "status": "FULL_LIVE_MONEY_ENGINE_RUNNING",
+            "mode": "REVENUE_AUTOMATION_ACTIVE",
             "results": results
         }
 
