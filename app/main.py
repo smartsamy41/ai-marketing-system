@@ -1,33 +1,26 @@
 from fastapi import FastAPI
 
-from engine.orchestrator_clean_master import OrchestratorCleanMaster
-
 app = FastAPI()
 
-orchestrator = OrchestratorCleanMaster()
-
-# =========================
-# ROOT
-# =========================
 @app.get("/")
 def root():
-    return {
-        "status": "OK",
-        "system": "SAFE MODE ACTIVE"
-    }
+    return {"status": "OK", "step": "1"}
 
-# =========================
-# HEALTH
-# =========================
 @app.get("/health")
 def health():
-    return {
-        "status": "OK"
-    }
+    return {"status": "OK", "step": "2"}
 
-# =========================
-# RUN PIPELINE (SAFE ONLY)
-# =========================
 @app.get("/run")
 def run():
-    return orchestrator.execute_real_publish()
+    try:
+        from engine.orchestrator_clean_master import OrchestratorCleanMaster
+
+        o = OrchestratorCleanMaster()
+        return o.run_all()
+
+    except Exception as e:
+        return {
+            "status": "CRASH_DETECTED",
+            "error": str(e),
+            "step": "ORCHESTRATOR_IMPORT_FAILED"
+        }
