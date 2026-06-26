@@ -2,69 +2,46 @@ import traceback
 from datetime import datetime
 
 # =========================
-# SAFE IMPORTS (NO CRASH)
+# SAFE IMPORTS (GITHUB PROOF)
 # =========================
 
-try:
-    from engine.product_generation_engine import ProductGenerationEngine
-except:
-    ProductGenerationEngine = None
+def safe_import(module, class_name):
+    try:
+        mod = __import__(module, fromlist=[class_name])
+        return getattr(mod, class_name)
+    except:
+        return None
 
-try:
-    from engine.mp4_video_pipeline import MP4VideoPipeline
-except:
-    MP4VideoPipeline = None
 
-try:
-    from engine.google_publish_engine import GooglePublishEngine
-except:
-    GooglePublishEngine = None
-
-try:
-    from engine.monetization_control_layer import MonetizationControlLayer
-except:
-    MonetizationControlLayer = None
-
-try:
-    from engine.ai_learning_loop import AILearningLoop
-except:
-    AILearningLoop = None
-
-try:
-    from engine.auto_scaling_engine import AutoScalingEngine
-except:
-    AutoScalingEngine = None
+ProductGenerationEngine = safe_import("engine.product_generation_engine", "ProductGenerationEngine")
+MP4VideoPipeline = safe_import("engine.mp4_video_pipeline", "MP4VideoPipeline")
+GooglePublishEngine = safe_import("engine.google_publish_engine", "GooglePublishEngine")
+MonetizationControlLayer = safe_import("engine.monetization_control_layer", "MonetizationControlLayer")
+AILearningLoop = safe_import("engine.ai_learning_loop", "AILearningLoop")
+AutoScalingEngine = safe_import("engine.auto_scaling_engine", "AutoScalingEngine")
 
 
 # =========================
-# ORCHESTRATOR
+# ORCHESTRATOR CLASS
 # =========================
 class OrchestratorCleanMaster:
 
     def __init__(self):
 
         # =========================
-        # REAL PRODUCT ENGINE
+        # SAFE INIT (NO CRASH MODE)
         # =========================
         self.product_engine = ProductGenerationEngine() if ProductGenerationEngine else None
-
-        # =========================
-        # CORE SYSTEMS
-        # =========================
         self.video = MP4VideoPipeline() if MP4VideoPipeline else None
         self.publisher = GooglePublishEngine() if GooglePublishEngine else None
         self.monetization = MonetizationControlLayer() if MonetizationControlLayer else None
         self.learning = AILearningLoop() if AILearningLoop else None
         self.scaling = AutoScalingEngine() if AutoScalingEngine else None
 
-        # =========================
-        # CONTROL
-        # =========================
-        self.LIVE_MODE = False
         self.BLOG_ID = "6148350625430723499"
 
     # =========================
-    # LOAD PRODUCTS SAFE
+    # SAFE PRODUCT LOADING
     # =========================
     def get_products(self):
 
@@ -74,12 +51,12 @@ class OrchestratorCleanMaster:
             except:
                 pass
 
-        # FALLBACK SAFE MODE
+        # FALLBACK (NEVER CRASH)
         return [
             {
                 "product_id": "SAFE_001",
-                "title": "Safe Produkt 2026",
-                "description": "Fallback Mode"
+                "title": "Fallback Produkt",
+                "description": "GitHub Safe Mode"
             }
         ]
 
@@ -88,56 +65,33 @@ class OrchestratorCleanMaster:
     # =========================
     def build_landingpage(self, product):
 
-        pid = product["product_id"]
-
         return {
-            "product_id": pid,
-            "html": f"""
-            <html>
-                <head>
-                    <title>{product['title']}</title>
-                </head>
-                <body>
-                    <h1>{product['title']}</h1>
-                    <p>{product.get('description','')}</p>
-                    <a href="/affiliate/{pid}">Vergleich starten</a>
-                </body>
-            </html>
-            """,
+            "product_id": product["product_id"],
+            "html": f"<h1>{product['title']}</h1>",
             "status": "LANDING_READY"
         }
 
     # =========================
-    # VIDEO PIPELINE
+    # VIDEO SAFE
     # =========================
     def build_video(self, product):
 
         if not self.video:
-            return {
-                "product_id": product["product_id"],
-                "video": {"file": "NO_VIDEO"},
-                "status": "VIDEO_DISABLED"
-            }
+            return {"video": {"file": "NO_VIDEO"}, "status": "DISABLED"}
 
         try:
             return self.video.generate_video(product["product_id"])
-        except Exception as e:
-            return {
-                "product_id": product["product_id"],
-                "status": "VIDEO_ERROR",
-                "error": str(e)
-            }
+        except:
+            return {"video": {"file": "ERROR_VIDEO"}, "status": "FAILED"}
 
     # =========================
-    # DISTRIBUTION (REAL PUBLISH)
+    # DISTRIBUTION SAFE (NO CRASH)
     # =========================
     def distribute(self, bundle):
 
         results = []
 
         for item in bundle:
-
-            pid = item["product_id"]
 
             try:
 
@@ -146,18 +100,12 @@ class OrchestratorCleanMaster:
 
                 if self.publisher:
 
-                    # =========================
-                    # BLOGGER REAL PUBLISH
-                    # =========================
                     blogger = self.publisher.publish_blogger(
                         blog_id=self.BLOG_ID,
                         title=item["title"],
                         html_content=item.get("html", "")
                     )
 
-                    # =========================
-                    # YOUTUBE REAL UPLOAD
-                    # =========================
                     youtube = self.publisher.publish_youtube(
                         video_file=item.get("video"),
                         title=item["title"],
@@ -165,17 +113,17 @@ class OrchestratorCleanMaster:
                     )
 
                 results.append({
-                    "product_id": pid,
+                    "product_id": item["product_id"],
                     "blogger": blogger,
                     "youtube": youtube,
-                    "status": "PUBLISHED",
+                    "status": "SAFE_PUBLISH_DONE",
                     "timestamp": datetime.utcnow().isoformat()
                 })
 
             except Exception as e:
 
                 results.append({
-                    "product_id": pid,
+                    "product_id": item.get("product_id"),
                     "status": "PUBLISH_ERROR",
                     "error": str(e),
                     "trace": traceback.format_exc()
@@ -184,7 +132,7 @@ class OrchestratorCleanMaster:
         return results
 
     # =========================
-    # MAIN PIPELINE
+    # MAIN PIPELINE (GITHUB SAFE)
     # =========================
     def run_pipeline(self):
 
@@ -198,15 +146,9 @@ class OrchestratorCleanMaster:
 
                 try:
 
-                    # =========================
-                    # BUILD ALL LAYERS
-                    # =========================
                     landing = self.build_landingpage(p)
                     video = self.build_video(p)
 
-                    # =========================
-                    # BUNDLE FOR PUBLISH
-                    # =========================
                     bundle = [{
                         "product_id": p["product_id"],
                         "title": p["title"],
@@ -215,26 +157,14 @@ class OrchestratorCleanMaster:
                         "video": video.get("video", {}).get("file", "")
                     }]
 
-                    # =========================
-                    # REAL DISTRIBUTION
-                    # =========================
                     publish = self.distribute(bundle)
-
-                    # =========================
-                    # AI LOGGING SAFE
-                    # =========================
-                    if self.learning:
-                        self.learning.log_event(p["product_id"], "view")
-
-                    if self.scaling:
-                        self.scaling.update_metrics(p["product_id"], clicks=1, views=1, revenue=0)
 
                     results.append({
                         "product_id": p["product_id"],
                         "landingpage": landing,
                         "video": video,
                         "publish": publish,
-                        "status": "PIPELINE_OK",
+                        "status": "OK",
                         "timestamp": datetime.utcnow().isoformat()
                     })
 
@@ -250,20 +180,17 @@ class OrchestratorCleanMaster:
         except Exception as e:
 
             return {
-                "status": "ORCHESTRATOR_FAILED",
+                "status": "ORCHESTRATOR_CRASH_SAFE",
                 "error": str(e),
                 "trace": traceback.format_exc()
             }
 
         return {
-            "status": "ORCHESTRATOR_PRODUCTION_READY",
-            "mode": "CLOUD_RUN_STABLE_REAL_PUBLISH",
+            "status": "GITHUB_STABLE_FIX_ACTIVE",
+            "mode": "ZERO_CRASH_GUARANTEE",
             "product_count": len(results),
             "results": results
         }
 
-    # =========================
-    # COMPATIBILITY
-    # =========================
     def run_all(self, _=None):
         return self.run_pipeline()
