@@ -11,44 +11,44 @@ sys.path.append(BASE_DIR)
 sys.path.append(os.path.join(BASE_DIR, "engine"))
 
 # =========================
-# SAFE IMPORTS
-# =========================
-try:
-    from engine.orchestrator_clean_master import OrchestratorCleanMaster
-except:
-    OrchestratorCleanMaster = None
-
-try:
-    from blogger_publisher_engine import BloggerPublisherEngine
-except:
-    BloggerPublisherEngine = None
-
-try:
-    from real_publish_layer import RealPublishLayer
-except:
-    RealPublishLayer = None
-
-# =========================
 # APP INIT
 # =========================
 app = FastAPI(title="AI_MARKETING_SYSTEM")
 
-orchestrator = OrchestratorCleanMaster() if OrchestratorCleanMaster else None
-blogger = BloggerPublisherEngine() if BloggerPublisherEngine else None
-publisher = RealPublishLayer() if RealPublishLayer else None
+# =========================
+# SAFE IMPORTS
+# =========================
+try:
+    from engine.orchestrator_clean_master import OrchestratorCleanMaster
+    orchestrator = OrchestratorCleanMaster()
+except:
+    orchestrator = None
+
+try:
+    from blogger_publisher_engine import BloggerPublisherEngine
+    blogger = BloggerPublisherEngine()
+except:
+    blogger = None
+
+try:
+    from real_publish_layer import RealPublishLayer
+    publisher = RealPublishLayer()
+except:
+    publisher = None
 
 # =========================
-# MEMORY
+# MEMORY SYSTEM
 # =========================
 click_log = []
 revenue_log = []
-performance_log = {}
 
-# Affiliate Map
+# =========================
+# AFFILIATE LINKS (PLACEHOLDER)
+# =========================
 affiliate_map = {
-    "CHK24_001": "https://example-check24-link",
-    "AMZ_001": "https://amazon-link",
-    "TC_001": "https://tarifcheck-link"
+    "CHK24_001": "https://example-check24",
+    "TC_001": "https://tarifcheck-link",
+    "TEL_001": "https://free-basics.telekom-profis.de"
 }
 
 # =========================
@@ -87,37 +87,28 @@ def generate():
     return {"status": "generation_ready"}
 
 # =========================
-# PUBLISH
-# =========================
-@app.get("/publish")
-def publish():
-    if publisher:
-        return publisher.publish_all()
-    return {"error": "publisher_not_loaded"}
-
-# =========================
 # CLICK TRACKING
 # =========================
 @app.get("/click")
-def click(product_id: str, source: str = "direct"):
+def click(product_id: str, source: str = "blogger"):
     event = {
         "product_id": product_id,
         "source": source,
-        "affiliate": affiliate_map.get(product_id),
-        "timestamp": datetime.utcnow().isoformat()
+        "time": datetime.utcnow().isoformat(),
+        "affiliate": affiliate_map.get(product_id)
     }
     click_log.append(event)
     return {"status": "click_tracked", "event": event}
 
 # =========================
-# CONVERSION
+# CONVERSION TRACKING
 # =========================
 @app.get("/conversion")
 def conversion(product_id: str, amount: float):
     event = {
         "product_id": product_id,
         "amount": amount,
-        "timestamp": datetime.utcnow().isoformat()
+        "time": datetime.utcnow().isoformat()
     }
     revenue_log.append(event)
     return {"status": "conversion_tracked", "event": event}
@@ -127,29 +118,49 @@ def conversion(product_id: str, amount: float):
 # =========================
 @app.get("/stats")
 def stats():
-    total_clicks = len(click_log)
-    total_revenue = sum([x["amount"] for x in revenue_log]) if revenue_log else 0
-
     return {
-        "clicks": total_clicks,
+        "clicks": len(click_log),
         "conversions": len(revenue_log),
-        "revenue": total_revenue
+        "revenue": sum([x["amount"] for x in revenue_log]) if revenue_log else 0
     }
 
 # =========================
-# LANDINGPAGE GENERATOR
+# LANDINGPAGE API (WICHTIG FÜR BLOGGER)
 # =========================
-@app.get("/landingpage")
-def landingpage(product_id: str):
+@app.get("/landing")
+def landing(product_id: str):
     affiliate = affiliate_map.get(product_id, "#")
 
     html = f"""
     <html>
-    <head><title>{product_id}</title></head>
+    <head>
+        <title>{product_id} Vergleich</title>
+    </head>
     <body>
+
         <h1>{product_id} Angebot</h1>
-        <p>Beste Deals automatisch generiert</p>
-        <a href="{affiliate}">Jetzt vergleichen</a>
+
+        <p><b>Werbung / Anzeige</b></p>
+
+        <p>Vergleiche Tarife und finde das beste Angebot.</p>
+
+        <a href="{affiliate}">
+            👉 Jetzt vergleichen
+        </a>
+
+        <hr>
+
+        <p>Telekom Direktangebot:</p>
+        <a href="https://free-basics.telekom-profis.de">
+            Telekom Shop
+        </a>
+
+        <hr>
+
+        <small>
+            powered by TARIFCHECK24 GmbH
+        </small>
+
     </body>
     </html>
     """
@@ -161,19 +172,12 @@ def landingpage(product_id: str):
     }
 
 # =========================
-# LEARNING ENGINE
+# TRAFFIC INFO
 # =========================
-@app.get("/learn")
-def learn(product_id: str, clicks: int, conversions: int):
-    score = conversions / clicks if clicks > 0 else 0
-
-    performance_log[product_id] = {
-        "clicks": clicks,
-        "conversions": conversions,
-        "score": score
-    }
-
+@app.get("/traffic")
+def traffic():
     return {
-        "product_id": product_id,
-        "score": score
+        "channels": ["blogger", "pinterest", "youtube"],
+        "status": "ready",
+        "seo": True
     }
