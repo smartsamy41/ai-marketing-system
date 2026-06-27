@@ -1,3 +1,5 @@
+import os
+import re
 from datetime import datetime
 
 
@@ -6,86 +8,190 @@ class OrchestratorCleanMaster:
     def __init__(self):
         self.base_url = "https://freebasics-online.blogspot.com"
         self.telekom_shop_url = "https://free-basics.telekom-profis.de"
+        self.spreadsheet_id = os.getenv(
+            "SPREADSHEET_ID",
+            "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
+        )
+        self.sheet_range = os.getenv("PRODUCTS_RANGE", "products!A:Z")
 
-        self.products = [
-            {"product_id": "CHK24_001", "title": "Stromtarife 2026 prüfen", "type": "check24", "category": "Strom", "slug": "stromtarife-2026-pruefen", "cta": "Vergleich starten"},
-            {"product_id": "CHK24_002", "title": "Ökostromtarife 2026 prüfen", "type": "check24", "category": "Ökostrom", "slug": "oekostromtarife-2026-pruefen", "cta": "Vergleich starten"},
-            {"product_id": "CHK24_003", "title": "Gastarife 2026 prüfen", "type": "check24", "category": "Gas", "slug": "gastarife-2026-pruefen", "cta": "Vergleich starten"},
-            {"product_id": "CHK24_004", "title": "DSL Tarife 2026 prüfen", "type": "check24", "category": "DSL", "slug": "dsl-tarife-2026-pruefen", "cta": "Vergleich starten"},
-            {"product_id": "CHK24_005", "title": "Mobilfunktarife 2026 prüfen", "type": "check24", "category": "Mobilfunk", "slug": "mobilfunktarife-2026-pruefen", "cta": "Vergleich starten"},
-            {"product_id": "CHK24_006", "title": "Pauschalreisen 2026 prüfen", "type": "check24", "category": "Pauschalreise", "slug": "pauschalreisen-2026-pruefen", "cta": "Angebote vergleichen"},
-            {"product_id": "CHK24_007", "title": "Mietwagen Angebote 2026 prüfen", "type": "check24", "category": "Mietwagen", "slug": "mietwagen-angebote-2026-pruefen", "cta": "Angebote vergleichen"},
-            {"product_id": "CHK24_008", "title": "C24 Bank Angebot 2026 prüfen", "type": "check24", "category": "C24 Bank", "slug": "c24-bank-angebot-2026-pruefen", "cta": "Angebot prüfen"},
+    def slugify(self, text):
+        text = str(text).lower()
+        text = text.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")
+        text = re.sub(r"[^a-z0-9]+", "-", text)
+        return text.strip("-")
 
-            {"product_id": "TC_001", "title": "Solaranlage Angebote 2026 prüfen", "type": "tarifcheck", "category": "Solaranlage", "slug": "solaranlage-angebote-2026-pruefen", "cta": "Angebote vergleichen"},
-            {"product_id": "TC_002", "title": "Kfz Versicherung 2026 prüfen", "type": "tarifcheck", "category": "Kfz-Versicherung", "slug": "kfz-versicherung-2026-pruefen", "cta": "Tarife prüfen"},
-            {"product_id": "TC_003", "title": "Kredit Angebote 2026 prüfen", "type": "tarifcheck", "category": "Kredit", "slug": "kredit-angebote-2026-pruefen", "cta": "Angebote vergleichen"},
-            {"product_id": "TC_004", "title": "Girokonto Angebote 2026 prüfen", "type": "tarifcheck", "category": "Girokonto", "slug": "girokonto-angebote-2026-pruefen", "cta": "Angebote vergleichen"},
-            {"product_id": "TC_005", "title": "Baufinanzierung 2026 prüfen", "type": "tarifcheck", "category": "Baufinanzierung", "slug": "baufinanzierung-2026-pruefen", "cta": "Angebote vergleichen"},
-            {"product_id": "TC_006", "title": "Hausratversicherung 2026 prüfen", "type": "tarifcheck", "category": "Hausratversicherung", "slug": "hausratversicherung-2026-pruefen", "cta": "Tarife prüfen"},
-            {"product_id": "TC_007", "title": "Haftpflichtversicherung 2026 prüfen", "type": "tarifcheck", "category": "Haftpflichtversicherung", "slug": "haftpflichtversicherung-2026-pruefen", "cta": "Tarife prüfen"},
-            {"product_id": "TC_008", "title": "Rentenversicherung 2026 prüfen", "type": "tarifcheck", "category": "Rentenversicherung", "slug": "rentenversicherung-2026-pruefen", "cta": "Tarife prüfen"},
-            {"product_id": "TC_009", "title": "Private Krankenversicherung 2026 prüfen", "type": "tarifcheck", "category": "Private Krankenversicherung", "slug": "private-krankenversicherung-2026-pruefen", "cta": "Tarife prüfen"},
+    def normalize_partner(self, row):
+        raw = (
+            row.get("type")
+            or row.get("partner")
+            or row.get("anbieter")
+            or row.get("network")
+            or ""
+        ).lower()
 
-            {"product_id": "AMZ_001", "title": "Amazon Produkt 1 2026", "type": "amazon", "category": "Amazon", "slug": "amazon-produkt-1-2026", "cta": "Produkt ansehen"},
-            {"product_id": "AMZ_002", "title": "Amazon Produkt 2 2026", "type": "amazon", "category": "Amazon", "slug": "amazon-produkt-2-2026", "cta": "Produkt ansehen"},
-            {"product_id": "AMZ_003", "title": "Amazon Produkt 3 2026", "type": "amazon", "category": "Amazon", "slug": "amazon-produkt-3-2026", "cta": "Produkt ansehen"},
-            {"product_id": "AMZ_004", "title": "Amazon Produkt 4 2026", "type": "amazon", "category": "Amazon", "slug": "amazon-produkt-4-2026", "cta": "Produkt ansehen"},
-            {"product_id": "AMZ_005", "title": "Amazon Produkt 5 2026", "type": "amazon", "category": "Amazon", "slug": "amazon-produkt-5-2026", "cta": "Produkt ansehen"},
+        pid = row.get("product_id", "").upper()
 
-            {"product_id": "TELEKOM_001", "title": "Telekom Internet Angebot", "type": "telekom_direct", "category": "Telekom", "slug": "telekom-internet-angebot", "cta": "Zum Telekom Shop"},
-        ]
+        if "telekom" in raw or pid.startswith("TEL") or pid.startswith("TELEKOM"):
+            return "telekom_direct"
+        if "tarif" in raw or pid.startswith("TC_"):
+            return "tarifcheck"
+        if "check" in raw or pid.startswith("CHK24_"):
+            return "check24"
+        if "amazon" in raw or pid.startswith("AMZ_"):
+            return "amazon"
+
+        return raw or "unknown"
+
+    def load_products_from_sheet(self):
+        try:
+            from google.auth import default
+            from googleapiclient.discovery import build
+
+            creds, _ = default(scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
+            service = build("sheets", "v4", credentials=creds)
+
+            result = service.spreadsheets().values().get(
+                spreadsheetId=self.spreadsheet_id,
+                range=self.sheet_range
+            ).execute()
+
+            values = result.get("values", [])
+            if len(values) < 2:
+                return []
+
+            headers = [h.strip().lower() for h in values[0]]
+            products = []
+
+            for row_values in values[1:]:
+                row = {}
+                for i, header in enumerate(headers):
+                    row[header] = row_values[i].strip() if i < len(row_values) else ""
+
+                product_id = (
+                    row.get("product_id")
+                    or row.get("produkt_id")
+                    or row.get("id")
+                    or ""
+                ).strip()
+
+                if not product_id:
+                    continue
+
+                title = (
+                    row.get("title")
+                    or row.get("produktname")
+                    or row.get("name")
+                    or row.get("product_name")
+                    or product_id
+                ).strip()
+
+                partner_type = self.normalize_partner(row)
+
+                product = {
+                    "product_id": product_id,
+                    "title": title,
+                    "type": partner_type,
+                    "category": row.get("category") or row.get("kategorie") or partner_type,
+                    "cta": row.get("cta") or self.default_cta(partner_type),
+                    "affiliate_link": row.get("affiliate_link") or row.get("affiliate_url") or row.get("link") or "",
+                    "product_url": row.get("product_url") or row.get("produkt_url") or "",
+                    "image_url": row.get("image_url") or row.get("bild_url") or "",
+                    "asin": row.get("asin") or "",
+                    "slug": row.get("slug") or self.slugify(title),
+                    "status": row.get("status") or "active"
+                }
+
+                products.append(product)
+
+            return products
+
+        except Exception as e:
+            return [{
+                "product_id": "ERROR_PRODUCTS",
+                "title": "Products Sheet Fehler",
+                "type": "system_error",
+                "category": "System",
+                "cta": "Prüfen",
+                "affiliate_link": "",
+                "product_url": "",
+                "image_url": "",
+                "asin": "",
+                "slug": "products-sheet-fehler",
+                "status": "error",
+                "error": str(e)
+            }]
+
+    def default_cta(self, partner_type):
+        if partner_type == "amazon":
+            return "Produkt ansehen"
+        if partner_type == "tarifcheck":
+            return "Tarife prüfen"
+        if partner_type == "telekom_direct":
+            return "Zum Telekom Shop"
+        return "Vergleich starten"
 
     def product_url(self, product):
         if product["type"] == "telekom_direct":
             return self.telekom_shop_url
         return f"{self.base_url}/p/{product['slug']}.html"
 
-    def related_products(self, product):
-        pid = product["product_id"]
-        group_map = {
-            "CHK24_001": ["CHK24_002", "CHK24_003", "TC_001"],
-            "CHK24_002": ["CHK24_001", "CHK24_003", "TC_001"],
-            "CHK24_003": ["CHK24_001", "CHK24_002", "TC_001"],
-            "CHK24_004": ["CHK24_005", "TELEKOM_001"],
-            "CHK24_005": ["CHK24_004", "TELEKOM_001"],
-            "CHK24_006": ["CHK24_007"],
-            "CHK24_007": ["CHK24_006"],
-            "CHK24_008": ["TC_004", "TC_003"],
-            "TC_001": ["CHK24_001", "CHK24_002", "CHK24_003"],
-            "TC_002": ["TC_007", "TC_006"],
-            "TC_003": ["TC_004", "TC_005", "CHK24_008"],
-            "TC_004": ["TC_003", "TC_005", "CHK24_008"],
-            "TC_005": ["TC_003", "TC_004"],
-            "TC_006": ["TC_007", "TC_002"],
-            "TC_007": ["TC_006", "TC_002"],
-            "TC_008": ["TC_009"],
-            "TC_009": ["TC_008"],
-            "AMZ_001": ["AMZ_002", "AMZ_003"],
-            "AMZ_002": ["AMZ_001", "AMZ_003"],
-            "AMZ_003": ["AMZ_001", "AMZ_002", "AMZ_004"],
-            "AMZ_004": ["AMZ_003", "AMZ_005"],
-            "AMZ_005": ["AMZ_004", "AMZ_001"],
-            "TELEKOM_001": ["CHK24_004", "CHK24_005"],
-        }
+    def related_products(self, product, products):
+        same_category = [
+            p for p in products
+            if p["product_id"] != product["product_id"]
+            and p["type"] != "telekom_direct"
+            and p.get("category") == product.get("category")
+        ]
 
-        ids = group_map.get(pid, [])
-        return [p for p in self.products if p["product_id"] in ids]
+        same_partner = [
+            p for p in products
+            if p["product_id"] != product["product_id"]
+            and p["type"] == product["type"]
+            and p not in same_category
+        ]
 
-    def internal_links_html(self, product):
-        related = self.related_products(product)
+        cross_links = [
+            p for p in products
+            if p["product_id"] != product["product_id"]
+            and p["type"] != product["type"]
+            and p["type"] != "telekom_direct"
+        ]
+
+        telekom_links = [
+            p for p in products
+            if p["type"] == "telekom_direct"
+        ]
+
+        related = same_category[:3] + same_partner[:3] + cross_links[:2]
+
+        if product["type"] in ["check24", "amazon"] and telekom_links:
+            related += telekom_links[:1]
+
+        unique = []
+        seen = set()
+
+        for p in related:
+            if p["product_id"] not in seen:
+                unique.append(p)
+                seen.add(p["product_id"])
+
+        return unique[:8]
+
+    def internal_links_html(self, product, products):
+        related = self.related_products(product, products)
+
         if not related:
             return ""
 
-        items = []
+        items = ""
         for r in related:
-            items.append(f'<li><a href="{self.product_url(r)}">{r["title"]}</a></li>')
+            items += f'<li><a href="{self.product_url(r)}">{r["title"]}</a></li>\n'
 
         return f"""
 <section>
 <h2>Weitere passende Seiten</h2>
 <ul>
-{''.join(items)}
+{items}
 </ul>
 </section>
 """
@@ -102,6 +208,7 @@ class OrchestratorCleanMaster:
 <p>Newsletter werden nur mit Double-Opt-In, vollständigem Impressum und Abmeldelink genutzt. Kein Newsletter-Versand ohne Freigabe.</p>
 </section>
 """
+
         if product["type"] == "amazon":
             return """
 <section>
@@ -110,6 +217,7 @@ class OrchestratorCleanMaster:
 <p>Als Amazon-Partner kann Free Basics an qualifizierten Verkäufen verdienen.</p>
 </section>
 """
+
         return """
 <section>
 <h2>Hinweis</h2>
@@ -118,7 +226,7 @@ class OrchestratorCleanMaster:
 </section>
 """
 
-    def build_landingpage(self, product):
+    def build_landingpage(self, product, products):
         pid = product["product_id"]
 
         if product["type"] == "telekom_direct":
@@ -130,7 +238,16 @@ class OrchestratorCleanMaster:
                 "note": "Telekom Produkte nutzen direkt die Telekom Shopseite. Keine separate Landingpage."
             }
 
+        affiliate_link = product.get("affiliate_link") or f"/affiliate/{pid}"
         canonical_url = self.product_url(product)
+
+        image_html = ""
+        if product.get("image_url"):
+            image_html = f'<p><img src="{product["image_url"]}" alt="{product["title"]}" loading="lazy"></p>'
+
+        asin_html = ""
+        if product.get("asin"):
+            asin_html = f"<p>ASIN: {product['asin']}</p>"
 
         html = f"""<!DOCTYPE html>
 <html lang="de">
@@ -151,6 +268,8 @@ class OrchestratorCleanMaster:
 <section>
 <h2>{product['category']} prüfen</h2>
 <p>Hier findest du eine einfache Übersicht zu {product['category']}.</p>
+{image_html}
+{asin_html}
 </section>
 
 <section>
@@ -165,17 +284,19 @@ class OrchestratorCleanMaster:
 
 <section>
 <h2>{product['cta']}</h2>
-<p><a href="/affiliate/{pid}" rel="nofollow sponsored">{product['cta']}</a></p>
+<p><a href="{affiliate_link}" rel="nofollow sponsored">{product['cta']}</a></p>
 </section>
 
-{self.internal_links_html(product)}
+{self.internal_links_html(product, products)}
 
 <section>
 <h2>FAQ</h2>
 <h3>Ist diese Seite Werbung?</h3>
 <p>Ja. Diese Seite ist als Werbung / Anzeige gekennzeichnet.</p>
+
 <h3>Ist Free Basics Anbieter?</h3>
 <p>Nein. Free Basics ist Tippgeber.</p>
+
 <h3>Was passiert beim Klick?</h3>
 <p>Du wirst zum jeweiligen Partnerangebot weitergeleitet.</p>
 </section>
@@ -190,7 +311,7 @@ class OrchestratorCleanMaster:
             "meta_description": f"{product['title']} – informieren, prüfen und passende Angebote vergleichen.",
             "canonical_url": canonical_url,
             "html": html,
-            "related_count": len(self.related_products(product))
+            "related_count": len(self.related_products(product, products))
         }
 
     def indexing_entry(self, product):
@@ -202,28 +323,49 @@ class OrchestratorCleanMaster:
         }
 
     def run_pipeline(self):
+        products = self.load_products_from_sheet()
+
         results = []
         index_queue = []
 
-        for product in self.products:
+        for product in products:
+            landingpage = self.build_landingpage(product, products)
+
             results.append({
                 "product_id": product["product_id"],
                 "title": product["title"],
                 "type": product["type"],
-                "landingpage": self.build_landingpage(product),
-                "youtube": {"status": "READY_SCRIPT_ONLY", "title": product["title"]},
-                "pinterest": {"status": "READY_PIN_ONLY", "title": product["title"]},
-                "newsletter": {"status": "LOCKED", "reason": "Nur DOI + Freigabe, kein Versand jetzt"},
-                "sales_api": {"status": "READY_LATER", "provider": "tarifcheck" if product["type"] == "tarifcheck" else None},
-                "publish": {"status": "SAFE_NOT_LIVE"},
+                "category": product["category"],
+                "landingpage": landingpage,
+                "youtube": {
+                    "status": "READY_SCRIPT_ONLY",
+                    "title": product["title"]
+                },
+                "pinterest": {
+                    "status": "READY_PIN_ONLY",
+                    "title": product["title"],
+                    "target_url": self.product_url(product)
+                },
+                "newsletter": {
+                    "status": "LOCKED",
+                    "reason": "Nur DOI + Freigabe, kein Versand jetzt"
+                },
+                "sales_api": {
+                    "status": "READY_LATER",
+                    "provider": "tarifcheck" if product["type"] == "tarifcheck" else None
+                },
+                "publish": {
+                    "status": "SAFE_NOT_LIVE"
+                },
                 "status": "OK",
                 "timestamp": datetime.utcnow().isoformat()
             })
+
             index_queue.append(self.indexing_entry(product))
 
         return {
-            "status": "FINAL_LANDINGPAGE_CLUSTER_READY",
-            "mode": "REAL_PRODUCTS_ONLY_INTERNAL_LINKING",
+            "status": "FINAL_SHEET_PRODUCT_LANDINGPAGES_READY",
+            "mode": "GOOGLE_SHEET_PRODUCTS_INTERNAL_LINKING",
             "count": len(results),
             "index_queue_count": len(index_queue),
             "index_queue": index_queue,
