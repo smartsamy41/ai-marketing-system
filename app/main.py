@@ -1,17 +1,23 @@
-from fastapi import FastAPI
-from engine.orchestrator_clean_master import OrchestratorCleanMaster
+import os
+from fastapi import FastAPI, Query
+from fastapi.responses import JSONResponse
 
-app = FastAPI()
+from engine.blogger_publish_engine import BloggerPublishEngine
 
-orchestrator = OrchestratorCleanMaster()
+app = FastAPI(
+    title="AI Marketing System",
+    version="RC2C",
+    description="Free Basics Affiliate Publishing System"
+)
 
 
 @app.get("/")
 def root():
     return {
         "status": "OK",
-        "system": "AI_MARKETING_SYSTEM_RELEASE_1",
-        "mode": "PRODUCTION_AUDIT_READY"
+        "system": "AI_MARKETING_SYSTEM",
+        "release": "RC2C",
+        "mode": "CLOUD_RUN",
     }
 
 
@@ -19,15 +25,39 @@ def root():
 def health():
     return {
         "status": "OK",
-        "ready": True
+        "ready": True,
+        "service": "cloud_run",
     }
 
 
-@app.get("/run")
-def run():
-    return orchestrator.run_pipeline()
+@app.get("/rc/status")
+def rc_status():
+    return {
+        "rc1_1": "PASS",
+        "rc1_2": "PASS",
+        "rc2a": "PASS",
+        "rc2b": "PASS",
+        "rc2c": "READY_FOR_BLOGGER_TEST",
+    }
 
 
-@app.get("/audit/sheet")
-def audit_sheet():
-    return orchestrator.run_sheet_audit()
+@app.post("/rc2c/blogger/test")
+def rc2c_blogger_test(
+    product_id: str = Query(default="CHK24_001"),
+    draft: bool = Query(default=True)
+):
+    try:
+        engine = BloggerPublishEngine()
+        result = engine.publish_test(product_id=product_id, draft=draft)
+        return JSONResponse(content=result)
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "ERROR",
+                "endpoint": "/rc2c/blogger/test",
+                "product_id": product_id,
+                "draft": draft,
+                "error": str(e),
+            },
+        )
