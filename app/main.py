@@ -38,10 +38,20 @@ blogger = BloggerPublisherEngine() if BloggerPublisherEngine else None
 publisher = RealPublishLayer() if RealPublishLayer else None
 
 # =========================
-# MEMORY STORAGE (SIMPLE)
+# MEMORY STORAGE
 # =========================
 click_log = []
 revenue_log = []
+
+# =========================
+# AFFILIATE MAP (BASIC)
+# =========================
+affiliate_map = {
+    "CHK24_001": "https://example-check24-link",
+    "CHK24_002": "https://example-check24-link",
+    "AMZ_001": "https://amazon-partner-link",
+    "TC_001": "https://tarifcheck-link"
+}
 
 # =========================
 # ROOT
@@ -88,7 +98,7 @@ def publish():
     return {"error": "publisher_not_loaded"}
 
 # =========================
-# BLOGGER TEST
+# BLOGGER
 # =========================
 @app.get("/blogger")
 def blogger_post():
@@ -97,20 +107,31 @@ def blogger_post():
     return {"error": "blogger_not_loaded"}
 
 # =========================
-# MONETIZATION: CLICK TRACK
+# AFFILIATE LINK ENDPOINT
+# =========================
+@app.get("/affiliate")
+def get_affiliate(product_id: str):
+    return {
+        "product_id": product_id,
+        "affiliate_link": affiliate_map.get(product_id, "not_found")
+    }
+
+# =========================
+# CLICK TRACKING
 # =========================
 @app.get("/click")
 def track_click(product_id: str, source: str = "direct"):
     event = {
         "product_id": product_id,
         "source": source,
+        "affiliate_link": affiliate_map.get(product_id),
         "timestamp": datetime.utcnow().isoformat()
     }
     click_log.append(event)
     return {"status": "click_tracked", "event": event}
 
 # =========================
-# MONETIZATION: CONVERSION TRACK
+# CONVERSION TRACKING
 # =========================
 @app.get("/conversion")
 def track_conversion(product_id: str, amount: float):
@@ -123,7 +144,7 @@ def track_conversion(product_id: str, amount: float):
     return {"status": "conversion_tracked", "event": event}
 
 # =========================
-# MONETIZATION: STATS
+# STATS DASHBOARD
 # =========================
 @app.get("/stats")
 def stats():
@@ -134,4 +155,15 @@ def stats():
         "clicks": total_clicks,
         "conversions": len(revenue_log),
         "revenue": total_revenue
+    }
+
+# =========================
+# TRAFFIC ENGINE
+# =========================
+@app.get("/traffic")
+def traffic():
+    return {
+        "seo_ready": True,
+        "channels": ["blogger", "pinterest", "youtube"],
+        "auto_posting": "enabled"
     }
