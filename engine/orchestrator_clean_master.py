@@ -13,6 +13,37 @@ class OrchestratorCleanMaster:
             "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
         )
         self.sheet_range = os.getenv("PRODUCTS_RANGE", "products!A:Z")
+        self.sheet_error = None
+
+    def fallback_products(self):
+        return [
+            {"product_id": "CHK24_001", "title": "Stromtarife 2026 prüfen", "type": "check24", "category": "Strom", "cta": "Vergleich starten"},
+            {"product_id": "CHK24_002", "title": "Ökostromtarife 2026 prüfen", "type": "check24", "category": "Ökostrom", "cta": "Vergleich starten"},
+            {"product_id": "CHK24_003", "title": "Gastarife 2026 prüfen", "type": "check24", "category": "Gas", "cta": "Vergleich starten"},
+            {"product_id": "CHK24_004", "title": "DSL Tarife 2026 prüfen", "type": "check24", "category": "DSL", "cta": "Vergleich starten"},
+            {"product_id": "CHK24_005", "title": "Mobilfunktarife 2026 prüfen", "type": "check24", "category": "Mobilfunk", "cta": "Vergleich starten"},
+            {"product_id": "CHK24_006", "title": "Pauschalreisen 2026 prüfen", "type": "check24", "category": "Pauschalreise", "cta": "Angebote vergleichen"},
+            {"product_id": "CHK24_007", "title": "Mietwagen Angebote 2026 prüfen", "type": "check24", "category": "Mietwagen", "cta": "Angebote vergleichen"},
+            {"product_id": "CHK24_008", "title": "C24 Bank Angebot 2026 prüfen", "type": "check24", "category": "C24 Bank", "cta": "Angebot prüfen"},
+
+            {"product_id": "TC_001", "title": "Solaranlage Angebote 2026 prüfen", "type": "tarifcheck", "category": "Solaranlage", "cta": "Angebote vergleichen"},
+            {"product_id": "TC_002", "title": "Kfz Versicherung 2026 prüfen", "type": "tarifcheck", "category": "Kfz-Versicherung", "cta": "Tarife prüfen"},
+            {"product_id": "TC_003", "title": "Kredit Angebote 2026 prüfen", "type": "tarifcheck", "category": "Kredit", "cta": "Angebote vergleichen"},
+            {"product_id": "TC_004", "title": "Girokonto Angebote 2026 prüfen", "type": "tarifcheck", "category": "Girokonto", "cta": "Angebote vergleichen"},
+            {"product_id": "TC_005", "title": "Baufinanzierung 2026 prüfen", "type": "tarifcheck", "category": "Baufinanzierung", "cta": "Angebote vergleichen"},
+            {"product_id": "TC_006", "title": "Hausratversicherung 2026 prüfen", "type": "tarifcheck", "category": "Hausratversicherung", "cta": "Tarife prüfen"},
+            {"product_id": "TC_007", "title": "Haftpflichtversicherung 2026 prüfen", "type": "tarifcheck", "category": "Haftpflichtversicherung", "cta": "Tarife prüfen"},
+            {"product_id": "TC_008", "title": "Rentenversicherung 2026 prüfen", "type": "tarifcheck", "category": "Rentenversicherung", "cta": "Tarife prüfen"},
+            {"product_id": "TC_009", "title": "Private Krankenversicherung 2026 prüfen", "type": "tarifcheck", "category": "Private Krankenversicherung", "cta": "Tarife prüfen"},
+
+            {"product_id": "AMZ_001", "title": "Amazon Produkt 1 2026", "type": "amazon", "category": "Amazon", "cta": "Produkt ansehen"},
+            {"product_id": "AMZ_002", "title": "Amazon Produkt 2 2026", "type": "amazon", "category": "Amazon", "cta": "Produkt ansehen"},
+            {"product_id": "AMZ_003", "title": "Amazon Produkt 3 2026", "type": "amazon", "category": "Amazon", "cta": "Produkt ansehen"},
+            {"product_id": "AMZ_004", "title": "Amazon Produkt 4 2026", "type": "amazon", "category": "Amazon", "cta": "Produkt ansehen"},
+            {"product_id": "AMZ_005", "title": "Amazon Produkt 5 2026", "type": "amazon", "category": "Amazon", "cta": "Produkt ansehen"},
+
+            {"product_id": "TELEKOM_001", "title": "Telekom Internet Angebot", "type": "telekom_direct", "category": "Telekom", "cta": "Zum Telekom Shop"},
+        ]
 
     def slugify(self, text):
         text = str(text).lower()
@@ -20,15 +51,17 @@ class OrchestratorCleanMaster:
         text = re.sub(r"[^a-z0-9]+", "-", text)
         return text.strip("-")
 
-    def normalize_partner(self, row):
-        raw = (
-            row.get("type")
-            or row.get("partner")
-            or row.get("anbieter")
-            or row.get("network")
-            or ""
-        ).lower()
+    def default_cta(self, partner_type):
+        if partner_type == "amazon":
+            return "Produkt ansehen"
+        if partner_type == "tarifcheck":
+            return "Tarife prüfen"
+        if partner_type == "telekom_direct":
+            return "Zum Telekom Shop"
+        return "Vergleich starten"
 
+    def normalize_partner(self, row):
+        raw = (row.get("type") or row.get("partner") or row.get("anbieter") or "").lower()
         pid = row.get("product_id", "").upper()
 
         if "telekom" in raw or pid.startswith("TEL") or pid.startswith("TELEKOM"):
@@ -39,7 +72,6 @@ class OrchestratorCleanMaster:
             return "check24"
         if "amazon" in raw or pid.startswith("AMZ_"):
             return "amazon"
-
         return raw or "unknown"
 
     def load_products_from_sheet(self):
@@ -57,7 +89,8 @@ class OrchestratorCleanMaster:
 
             values = result.get("values", [])
             if len(values) < 2:
-                return []
+                self.sheet_error = "Sheet leer oder keine Produktdaten gefunden"
+                return self.fallback_products()
 
             headers = [h.strip().lower() for h in values[0]]
             products = []
@@ -67,29 +100,17 @@ class OrchestratorCleanMaster:
                 for i, header in enumerate(headers):
                     row[header] = row_values[i].strip() if i < len(row_values) else ""
 
-                product_id = (
-                    row.get("product_id")
-                    or row.get("produkt_id")
-                    or row.get("id")
-                    or ""
-                ).strip()
-
+                product_id = row.get("product_id") or row.get("produkt_id") or row.get("id") or ""
+                product_id = product_id.strip()
                 if not product_id:
                     continue
 
-                title = (
-                    row.get("title")
-                    or row.get("produktname")
-                    or row.get("name")
-                    or row.get("product_name")
-                    or product_id
-                ).strip()
+                title = row.get("title") or row.get("produktname") or row.get("name") or product_id
+                partner_type = self.normalize_partner({**row, "product_id": product_id})
 
-                partner_type = self.normalize_partner(row)
-
-                product = {
+                products.append({
                     "product_id": product_id,
-                    "title": title,
+                    "title": title.strip(),
                     "type": partner_type,
                     "category": row.get("category") or row.get("kategorie") or partner_type,
                     "cta": row.get("cta") or self.default_cta(partner_type),
@@ -99,77 +120,41 @@ class OrchestratorCleanMaster:
                     "asin": row.get("asin") or "",
                     "slug": row.get("slug") or self.slugify(title),
                     "status": row.get("status") or "active"
-                }
+                })
 
-                products.append(product)
+            if not products:
+                self.sheet_error = "Keine gültigen product_id Zeilen gefunden"
+                return self.fallback_products()
 
             return products
 
         except Exception as e:
-            return [{
-                "product_id": "ERROR_PRODUCTS",
-                "title": "Products Sheet Fehler",
-                "type": "system_error",
-                "category": "System",
-                "cta": "Prüfen",
-                "affiliate_link": "",
-                "product_url": "",
-                "image_url": "",
-                "asin": "",
-                "slug": "products-sheet-fehler",
-                "status": "error",
-                "error": str(e)
-            }]
-
-    def default_cta(self, partner_type):
-        if partner_type == "amazon":
-            return "Produkt ansehen"
-        if partner_type == "tarifcheck":
-            return "Tarife prüfen"
-        if partner_type == "telekom_direct":
-            return "Zum Telekom Shop"
-        return "Vergleich starten"
+            self.sheet_error = str(e)
+            return self.fallback_products()
 
     def product_url(self, product):
         if product["type"] == "telekom_direct":
             return self.telekom_shop_url
-        return f"{self.base_url}/p/{product['slug']}.html"
+        return f"{self.base_url}/p/{product.get('slug') or self.slugify(product['title'])}.html"
 
     def related_products(self, product, products):
-        same_category = [
-            p for p in products
-            if p["product_id"] != product["product_id"]
-            and p["type"] != "telekom_direct"
-            and p.get("category") == product.get("category")
-        ]
+        related = []
 
-        same_partner = [
-            p for p in products
-            if p["product_id"] != product["product_id"]
-            and p["type"] == product["type"]
-            and p not in same_category
-        ]
+        for p in products:
+            if p["product_id"] == product["product_id"]:
+                continue
 
-        cross_links = [
-            p for p in products
-            if p["product_id"] != product["product_id"]
-            and p["type"] != product["type"]
-            and p["type"] != "telekom_direct"
-        ]
+            same_category = p.get("category") == product.get("category")
+            same_type = p.get("type") == product.get("type")
 
-        telekom_links = [
-            p for p in products
-            if p["type"] == "telekom_direct"
-        ]
+            if same_category or same_type:
+                related.append(p)
 
-        related = same_category[:3] + same_partner[:3] + cross_links[:2]
-
-        if product["type"] in ["check24", "amazon"] and telekom_links:
-            related += telekom_links[:1]
+        if product["type"] in ["check24", "amazon"]:
+            related += [p for p in products if p["type"] == "telekom_direct"]
 
         unique = []
         seen = set()
-
         for p in related:
             if p["product_id"] not in seen:
                 unique.append(p)
@@ -179,7 +164,6 @@ class OrchestratorCleanMaster:
 
     def internal_links_html(self, product, products):
         related = self.related_products(product, products)
-
         if not related:
             return ""
 
@@ -187,14 +171,7 @@ class OrchestratorCleanMaster:
         for r in related:
             items += f'<li><a href="{self.product_url(r)}">{r["title"]}</a></li>\n'
 
-        return f"""
-<section>
-<h2>Weitere passende Seiten</h2>
-<ul>
-{items}
-</ul>
-</section>
-"""
+        return f"<section><h2>Weitere passende Seiten</h2><ul>{items}</ul></section>"
 
     def compliance_block(self, product):
         if product["type"] == "tarifcheck":
@@ -208,7 +185,6 @@ class OrchestratorCleanMaster:
 <p>Newsletter werden nur mit Double-Opt-In, vollständigem Impressum und Abmeldelink genutzt. Kein Newsletter-Versand ohne Freigabe.</p>
 </section>
 """
-
         if product["type"] == "amazon":
             return """
 <section>
@@ -217,7 +193,6 @@ class OrchestratorCleanMaster:
 <p>Als Amazon-Partner kann Free Basics an qualifizierten Verkäufen verdienen.</p>
 </section>
 """
-
         return """
 <section>
 <h2>Hinweis</h2>
@@ -245,10 +220,6 @@ class OrchestratorCleanMaster:
         if product.get("image_url"):
             image_html = f'<p><img src="{product["image_url"]}" alt="{product["title"]}" loading="lazy"></p>'
 
-        asin_html = ""
-        if product.get("asin"):
-            asin_html = f"<p>ASIN: {product['asin']}</p>"
-
         html = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -261,17 +232,13 @@ class OrchestratorCleanMaster:
 <header>
 <h1>{product['title']}</h1>
 </header>
-
 <main>
 {self.compliance_block(product)}
-
 <section>
 <h2>{product['category']} prüfen</h2>
 <p>Hier findest du eine einfache Übersicht zu {product['category']}.</p>
 {image_html}
-{asin_html}
 </section>
-
 <section>
 <h2>Was du prüfen kannst</h2>
 <ul>
@@ -281,22 +248,17 @@ class OrchestratorCleanMaster:
 <li>nächste Schritte zum Partnerangebot</li>
 </ul>
 </section>
-
 <section>
 <h2>{product['cta']}</h2>
 <p><a href="{affiliate_link}" rel="nofollow sponsored">{product['cta']}</a></p>
 </section>
-
 {self.internal_links_html(product, products)}
-
 <section>
 <h2>FAQ</h2>
 <h3>Ist diese Seite Werbung?</h3>
 <p>Ja. Diese Seite ist als Werbung / Anzeige gekennzeichnet.</p>
-
 <h3>Ist Free Basics Anbieter?</h3>
 <p>Nein. Free Basics ist Tippgeber.</p>
-
 <h3>Was passiert beim Klick?</h3>
 <p>Du wirst zum jeweiligen Partnerangebot weitergeleitet.</p>
 </section>
@@ -329,43 +291,26 @@ class OrchestratorCleanMaster:
         index_queue = []
 
         for product in products:
-            landingpage = self.build_landingpage(product, products)
-
             results.append({
                 "product_id": product["product_id"],
                 "title": product["title"],
                 "type": product["type"],
                 "category": product["category"],
-                "landingpage": landingpage,
-                "youtube": {
-                    "status": "READY_SCRIPT_ONLY",
-                    "title": product["title"]
-                },
-                "pinterest": {
-                    "status": "READY_PIN_ONLY",
-                    "title": product["title"],
-                    "target_url": self.product_url(product)
-                },
-                "newsletter": {
-                    "status": "LOCKED",
-                    "reason": "Nur DOI + Freigabe, kein Versand jetzt"
-                },
-                "sales_api": {
-                    "status": "READY_LATER",
-                    "provider": "tarifcheck" if product["type"] == "tarifcheck" else None
-                },
-                "publish": {
-                    "status": "SAFE_NOT_LIVE"
-                },
+                "landingpage": self.build_landingpage(product, products),
+                "youtube": {"status": "READY_SCRIPT_ONLY", "title": product["title"]},
+                "pinterest": {"status": "READY_PIN_ONLY", "title": product["title"], "target_url": self.product_url(product)},
+                "newsletter": {"status": "LOCKED", "reason": "Nur DOI + Freigabe, kein Versand jetzt"},
+                "sales_api": {"status": "READY_LATER", "provider": "tarifcheck" if product["type"] == "tarifcheck" else None},
+                "publish": {"status": "SAFE_NOT_LIVE"},
                 "status": "OK",
                 "timestamp": datetime.utcnow().isoformat()
             })
-
             index_queue.append(self.indexing_entry(product))
 
         return {
-            "status": "FINAL_SHEET_PRODUCT_LANDINGPAGES_READY",
-            "mode": "GOOGLE_SHEET_PRODUCTS_INTERNAL_LINKING",
+            "status": "FINAL_SHEET_OR_FALLBACK_LANDINGPAGES_READY",
+            "mode": "SHEET_FIRST_FALLBACK_SAFE",
+            "sheet_error": self.sheet_error,
             "count": len(results),
             "index_queue_count": len(index_queue),
             "index_queue": index_queue,
