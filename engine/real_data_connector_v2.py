@@ -1,132 +1,58 @@
-from datetime import datetime
-import random
+import os
+from google.auth import default
+from googleapiclient.discovery import build
 
 
-# =========================
-# SHEET DATA IMPORT LAYER
-# =========================
+class RealDataConnectorV2:
 
-def import_clicks_from_sheet(sheet_data):
-
-    clicks = []
-
-    for row in sheet_data or []:
-
-        try:
-            clicks.append({
-                "product_id": row.get("product_id"),
-                "clicks": int(row.get("clicks", 0)),
-                "timestamp": str(datetime.now())
-            })
-
-        except:
-            continue
-
-    return clicks
-
-
-# =========================
-# CONVERSION IMPORT LAYER
-# =========================
-
-def import_conversions(sheet_data):
-
-    conversions = []
-
-    for row in sheet_data or []:
-
-        try:
-            conversions.append({
-                "product_id": row.get("product_id"),
-                "conversions": int(row.get("conversions", 0)),
-                "revenue": float(row.get("revenue", 0)),
-                "timestamp": str(datetime.now())
-            })
-
-        except:
-            continue
-
-    return conversions
-
-
-# =========================
-# EPC CALCULATION ENGINE
-# =========================
-
-def calculate_epc(clicks, revenue):
-
-    if clicks == 0:
-        return 0.0
-
-    return round(revenue / clicks, 4)
-
-
-# =========================
-# REAL DATA MERGE ENGINE
-# =========================
-
-def merge_real_data(click_data, conversion_data):
-
-    merged = {}
-
-    for c in click_data:
-
-        pid = c["product_id"]
-
-        if pid not in merged:
-            merged[pid] = {
-                "product_id": pid,
-                "clicks": 0,
-                "revenue": 0.0
-            }
-
-        merged[pid]["clicks"] += c["clicks"]
-
-    for conv in conversion_data:
-
-        pid = conv["product_id"]
-
-        if pid not in merged:
-            merged[pid] = {
-                "product_id": pid,
-                "clicks": 0,
-                "revenue": 0.0
-            }
-
-        merged[pid]["revenue"] += conv["revenue"]
-
-    # EPC CALC
-    for pid in merged:
-
-        merged[pid]["epc"] = calculate_epc(
-            merged[pid]["clicks"],
-            merged[pid]["revenue"]
+    def __init__(self):
+        self.spreadsheet_id = os.getenv(
+            "SPREADSHEET_ID",
+            "1p3o008Q57LOP2tEZbvL6OyhTaNrZKKyGZmbpqC0KSKg"
         )
+        self.scopes = [
+            "https://www.googleapis.com/auth/spreadsheets.readonly"
+        ]
 
-        merged[pid]["decision"] = (
-            "SCALE" if merged[pid]["epc"] > 1.5 else "HOLD"
-        )
+    def get_service(self):
+        creds, _ = default(scopes=self.scopes)
+        return build("sheets", "v4", credentials=creds)
 
-    return merged
+    def read_sheet(self, range_name="products!A:Z"):
+        service = self.get_service()
 
+        result = service.spreadsheets().values().get(
+            spreadsheetId=self.spreadsheet_id,
+            range=range_name
+        ).execute()
 
-# =========================
-# MAIN CONNECTOR V2
-# =========================
+        return result.get("values", [])
 
-def run_real_data_connector_v2(sheet_clicks, sheet_conversions):
+    def get_products(self):
+        values = self.read_sheet("products!A:Z")
 
-    click_data = import_clicks_from_sheet(sheet_clicks)
-    conversion_data = import_conversions(sheet_conversions)
+        if not values or len(values) < 2:
+            return []
 
-    merged = merge_real_data(click_data, conversion_data)
+        headers = [h.strip().lower() for h in values[0]]
+        products = []
 
-    results = list(merged.values())
+        for row_values in values[1:]:
+            row = {}
 
-    return {
-        "status": "REAL_DATA_CONNECTOR_V2_ACTIVE",
-        "mode": "PRODUCTION_REAL_DATA",
-        "products": results,
-        "total_products": len(results),
-        "timestamp": str(datetime.now())
-    }
+            for i, header in enumerate(headers):
+                row[header] = row_values[i].strip() if i < len(row_values) else ""
+
+            product_id = (
+                row.get("product_id")
+                or row.get("produkt_id")
+                or row.get("id")
+                or ""
+            ).strip()
+
+            if not product_id:
+                continue
+
+            products.append(row)
+
+        return products
