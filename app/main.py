@@ -1,28 +1,20 @@
 from fastapi import FastAPI
-
 from engine.orchestrator_clean_master import OrchestratorCleanMaster
 
-# =========================
-# APP INIT (CLOUD RUN SAFE)
-# =========================
 app = FastAPI()
 
 orchestrator = OrchestratorCleanMaster()
 
-# =========================
-# ROOT
-# =========================
+
 @app.get("/")
 def root():
     return {
-        "status": "LIVE",
-        "system": "AI_MARKETING_SYSTEM",
-        "mode": "PRODUCTION"
+        "status": "OK",
+        "system": "AI_MARKETING_SYSTEM_RELEASE_1",
+        "mode": "PRODUCTION_AUDIT_READY"
     }
 
-# =========================
-# HEALTH CHECK (CRITICAL FOR CLOUD RUN)
-# =========================
+
 @app.get("/health")
 def health():
     return {
@@ -30,19 +22,12 @@ def health():
         "ready": True
     }
 
-# =========================
-# MAIN PIPELINE TRIGGER
-# =========================
+
 @app.get("/run")
 def run():
+    return orchestrator.run_pipeline()
 
-    try:
-        result = orchestrator.run_all()
-        return result
 
-    except Exception as e:
-
-        return {
-            "status": "CRASH_FIXED_SAFE_RETURN",
-            "error": str(e)
-        }
+@app.get("/audit/sheet")
+def audit_sheet():
+    return orchestrator.run_sheet_audit()
