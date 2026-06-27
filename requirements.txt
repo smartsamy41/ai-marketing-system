@@ -1,5 +1,9 @@
 fastapi
 uvicorn
-google-api-python-client
+gunicorn
+gspread
 google-auth
 google-auth-oauthlib
+google-api-python-client
+requests
+python-dotenv
