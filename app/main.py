@@ -15,17 +15,17 @@ sys.path.append(os.path.join(BASE_DIR, "engine"))
 # =========================
 try:
     from engine.orchestrator_clean_master import OrchestratorCleanMaster
-except Exception:
+except:
     OrchestratorCleanMaster = None
 
 try:
     from blogger_publisher_engine import BloggerPublisherEngine
-except Exception:
+except:
     BloggerPublisherEngine = None
 
 try:
     from real_publish_layer import RealPublishLayer
-except Exception:
+except:
     RealPublishLayer = None
 
 # =========================
@@ -38,18 +38,16 @@ blogger = BloggerPublisherEngine() if BloggerPublisherEngine else None
 publisher = RealPublishLayer() if RealPublishLayer else None
 
 # =========================
-# MEMORY STORAGE
+# MEMORY
 # =========================
 click_log = []
 revenue_log = []
+performance_log = {}
 
-# =========================
-# AFFILIATE MAP (BASIC)
-# =========================
+# Affiliate Map
 affiliate_map = {
     "CHK24_001": "https://example-check24-link",
-    "CHK24_002": "https://example-check24-link",
-    "AMZ_001": "https://amazon-partner-link",
+    "AMZ_001": "https://amazon-link",
     "TC_001": "https://tarifcheck-link"
 }
 
@@ -98,43 +96,24 @@ def publish():
     return {"error": "publisher_not_loaded"}
 
 # =========================
-# BLOGGER
-# =========================
-@app.get("/blogger")
-def blogger_post():
-    if blogger:
-        return blogger.publish({"demo": "content"})
-    return {"error": "blogger_not_loaded"}
-
-# =========================
-# AFFILIATE LINK ENDPOINT
-# =========================
-@app.get("/affiliate")
-def get_affiliate(product_id: str):
-    return {
-        "product_id": product_id,
-        "affiliate_link": affiliate_map.get(product_id, "not_found")
-    }
-
-# =========================
 # CLICK TRACKING
 # =========================
 @app.get("/click")
-def track_click(product_id: str, source: str = "direct"):
+def click(product_id: str, source: str = "direct"):
     event = {
         "product_id": product_id,
         "source": source,
-        "affiliate_link": affiliate_map.get(product_id),
+        "affiliate": affiliate_map.get(product_id),
         "timestamp": datetime.utcnow().isoformat()
     }
     click_log.append(event)
     return {"status": "click_tracked", "event": event}
 
 # =========================
-# CONVERSION TRACKING
+# CONVERSION
 # =========================
 @app.get("/conversion")
-def track_conversion(product_id: str, amount: float):
+def conversion(product_id: str, amount: float):
     event = {
         "product_id": product_id,
         "amount": amount,
@@ -144,7 +123,7 @@ def track_conversion(product_id: str, amount: float):
     return {"status": "conversion_tracked", "event": event}
 
 # =========================
-# STATS DASHBOARD
+# STATS
 # =========================
 @app.get("/stats")
 def stats():
@@ -158,12 +137,43 @@ def stats():
     }
 
 # =========================
-# TRAFFIC ENGINE
+# LANDINGPAGE GENERATOR
 # =========================
-@app.get("/traffic")
-def traffic():
+@app.get("/landingpage")
+def landingpage(product_id: str):
+    affiliate = affiliate_map.get(product_id, "#")
+
+    html = f"""
+    <html>
+    <head><title>{product_id}</title></head>
+    <body>
+        <h1>{product_id} Angebot</h1>
+        <p>Beste Deals automatisch generiert</p>
+        <a href="{affiliate}">Jetzt vergleichen</a>
+    </body>
+    </html>
+    """
+
     return {
-        "seo_ready": True,
-        "channels": ["blogger", "pinterest", "youtube"],
-        "auto_posting": "enabled"
+        "product_id": product_id,
+        "html": html,
+        "affiliate": affiliate
+    }
+
+# =========================
+# LEARNING ENGINE
+# =========================
+@app.get("/learn")
+def learn(product_id: str, clicks: int, conversions: int):
+    score = conversions / clicks if clicks > 0 else 0
+
+    performance_log[product_id] = {
+        "clicks": clicks,
+        "conversions": conversions,
+        "score": score
+    }
+
+    return {
+        "product_id": product_id,
+        "score": score
     }
