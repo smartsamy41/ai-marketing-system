@@ -2,6 +2,8 @@ import os
 import re
 from datetime import datetime
 
+from engine.sheet_audit_engine import SheetAuditEngine
+
 
 class OrchestratorCleanMaster:
 
@@ -14,6 +16,7 @@ class OrchestratorCleanMaster:
         )
         self.sheet_range = "products!A:Z"
         self.sheet_error = None
+        self.sheet_audit = SheetAuditEngine()
 
     def slugify(self, text):
         text = str(text).lower()
@@ -85,8 +88,10 @@ class OrchestratorCleanMaster:
         if self.is_telekom(product):
             return self.telekom_shop_url
 
-        if product.get("landingpage_url") and "deine-domain.de" not in product["landingpage_url"]:
-            return product["landingpage_url"]
+        url = product.get("landingpage_url", "")
+
+        if url and "deine-domain.de" not in url and not url.startswith("/landing/"):
+            return url
 
         return f"{self.base_url}/p/{product['slug']}.html"
 
@@ -249,6 +254,9 @@ class OrchestratorCleanMaster:
             "index_status": "DIRECT_SHOP_LINK" if self.is_telekom(product) else "READY_FOR_INDEXING",
             "priority": "high" if product["source"] in ["check24", "tarifcheck"] else "normal"
         }
+
+    def run_sheet_audit(self):
+        return self.sheet_audit.run_audit()
 
     def run_pipeline(self):
         products = self.load_products()
