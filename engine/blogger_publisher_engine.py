@@ -1,89 +1,210 @@
 import os
-from googleapiclient.discovery import build
+from datetime import datetime, timezone
+
+import gspread
+from google.auth import default
 from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
 
 
-class BloggerPublisherEngine:
+BLOGGER_SCOPES = ["https://www.googleapis.com/auth/blogger"]
 
+SHEETS_SCOPES = [
+    "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "https://www.googleapis.com/auth/drive.readonly",
+]
+
+
+class BloggerPublishEngine:
     def __init__(self):
-        self.blog_id = os.getenv("BLOGGER_BLOG_ID")
-        self.token = os.getenv("GOOGLE_OAUTH_TOKEN")
+        self.blog_id = os.getenv("BLOGGER_BLOG_ID", "6148350625430723499")
+        self.sheet_id = os.getenv("GOOGLE_SHEET_ID", "")
+        self.sheet_name = os.getenv("GOOGLE_SHEET_NAME", "AI_Marketing_System")
+        self.products_tab = os.getenv("PRODUCTS_TAB", "products")
 
-    def build_chk24_001_draft(self):
-        return {
-            "product_id": "CHK24_001",
-            "title": "Stromtarife 2026 prüfen – Free Basics Überblick",
-            "labels": ["Free Basics", "Strom", "Tarife", "Anzeige"],
-            "content": """
-<h1>Stromtarife 2026 einfach prüfen</h1>
+    def _blogger_service(self):
+        refresh_token = os.getenv("BLOGGER_REFRESH_TOKEN")
+        client_id = os.getenv("BLOGGER_CLIENT_ID")
+        client_secret = os.getenv("BLOGGER_CLIENT_SECRET")
 
-<p><strong>Werbung / Anzeige:</strong> Diese Seite enthält Affiliate-Links. Wenn du über einen Link einen Vergleich startest oder ein Angebot nutzt, kann Free Basics eine Provision erhalten.</p>
+        if not refresh_token or not client_id or not client_secret:
+            raise RuntimeError(
+                "Missing Blogger OAuth env vars: BLOGGER_REFRESH_TOKEN, BLOGGER_CLIENT_ID, BLOGGER_CLIENT_SECRET"
+            )
 
-<p>Viele Haushalte prüfen regelmäßig ihre Stromkosten. Mit einem Vergleich kannst du dir einen Überblick über passende Tarife verschaffen.</p>
+        creds = Credentials(
+            token=None,
+            refresh_token=refresh_token,
+            token_uri="https://oauth2.googleapis.com/token",
+            client_id=client_id,
+            client_secret=client_secret,
+            scopes=BLOGGER_SCOPES,
+        )
 
-<h2>Was du prüfen kannst</h2>
+        creds.refresh(Request())
+
+        return build("blogger", "v3", credentials=creds, cache_discovery=False)
+
+    def _sheet_rows(self):
+        creds, _ = default(scopes=SHEETS_SCOPES)
+        gc = gspread.authorize(creds)
+
+        if self.sheet_id:
+            sh = gc.open_by_key(self.sheet_id)
+        else:
+            sh = gc.open(self.sheet_name)
+
+        ws = sh.worksheet(self.products_tab)
+        return ws.get_all_records()
+
+    def _get_product(self, product_id):
+        rows = self._sheet_rows()
+
+        for row in rows:
+            if str(row.get("product_id", "")).strip() == product_id:
+                return row
+
+        return None
+
+    def _affiliate_link(self, row):
+        possible_columns = [
+            "affiliate_link",
+            "affiliate_url",
+            "tracking_link",
+            "product_url",
+            "url",
+            "link",
+            "deeplink",
+            "deep_link",
+        ]
+
+        for col in possible_columns:
+            value = str(row.get(col, "")).strip()
+            if value.startswith("http"):
+                return value
+
+        source = str(row.get("source", "")).lower().strip()
+        product_id = str(row.get("product_id", "")).strip()
+
+        if source == "amazon":
+            return f"https://www.amazon.de/dp/{product_id}?tag=freebasics-21"
+
+        if source == "telekom":
+            return "https://free-basics.telekom-profis.de"
+
+        return None
+
+    def _build_html(self, row, link):
+        product_name = str(row.get("product_name", "")).strip()
+        title = str(
+            row.get("blog_title")
+            or row.get("seo_title")
+            or product_name
+        ).strip()
+
+        meta_description = str(
+            row.get("meta_description")
+            or f"{product_name} bei Free Basics ansehen und passende Angebote prüfen."
+        ).strip()
+
+        source = str(row.get("source", "")).lower().strip()
+
+        powered_note = ""
+        if source == "tarifcheck":
+            powered_note = """
+<p><small>
+Powered by TARIFCHECK24 GmbH, Zollstr. 11b, 21465 Wentorf bei Hamburg.
+Free Basics ist Tippgeber und kein Versicherungsvermittler.
+</small></p>
+"""
+
+        return f"""
+<h1>{title}</h1>
+
+<p>{meta_description}</p>
+
+<p>
+<strong>{product_name}</strong> bei Free Basics ansehen. Prüfe passende Angebote direkt beim Partner.
+</p>
+
+<h2>Warum diese Seite?</h2>
 <ul>
-  <li>Stromtarife nach Verbrauch</li>
-  <li>Vertragslaufzeiten</li>
-  <li>monatliche Kosten</li>
-  <li>passende Anbieter</li>
+    <li>Klare Übersicht zum Produkt</li>
+    <li>Direkter Weg zum Partnerangebot</li>
+    <li>Für schnelle Prüfung optimiert</li>
 </ul>
 
-<p><strong>CTA:</strong> Vergleich starten</p>
+<p><strong>Anzeige / Werbung</strong></p>
 
-<p>Hinweis: Free Basics ist Tippgeber und stellt Informationen sowie Weiterleitungen bereit.</p>
+<p>
+<a href="{link}" target="_blank" rel="nofollow sponsored noopener">
+Jetzt vergleichen
+</a>
+</p>
+
+{powered_note}
+
+<hr>
+
+<p><small>
+Hinweis: Free Basics ist Tippgeber. Externe Vergleiche, Shops oder Formulare werden vom jeweiligen Partner bereitgestellt.
+</small></p>
 """
-        }
 
-    def create_draft_preview(self, product_id):
-        if product_id != "CHK24_001":
-            return {
-                "product_id": product_id,
-                "status": "SKIPPED",
-                "reason": "No template available"
-            }
+    def publish_test(self, product_id="CHK24_001", draft=True):
+        product = self._get_product(product_id)
 
-        draft = self.build_chk24_001_draft()
-        draft["blog_id"] = self.blog_id
-        draft["status"] = "DRAFT_READY"
-        return draft
-
-    def create_real_blogger_draft(self, product_id):
-        if not self.blog_id:
+        if not product:
             return {
                 "status": "ERROR",
-                "error": "Missing BLOGGER_BLOG_ID"
+                "message": "PRODUCT_NOT_FOUND",
+                "product_id": product_id,
             }
 
-        if not self.token:
+        link = self._affiliate_link(product)
+
+        if not link:
             return {
-                "status": "AUTH_REQUIRED",
-                "error": "Missing GOOGLE_OAUTH_TOKEN",
-                "note": "Draft not posted. OAuth token must be added safely in Cloud Run secrets."
+                "status": "ERROR",
+                "message": "AFFILIATE_LINK_MISSING",
+                "product_id": product_id,
+                "source": product.get("source"),
             }
 
-        draft = self.build_chk24_001_draft()
+        title = str(
+            product.get("blog_title")
+            or product.get("seo_title")
+            or product.get("product_name")
+        ).strip()
 
-        creds = Credentials(token=self.token)
-        service = build("blogger", "v3", credentials=creds)
+        content = self._build_html(product, link)
 
-        body = {
-            "kind": "blogger#post",
-            "title": draft["title"],
-            "content": draft["content"],
-            "labels": draft["labels"]
+        service = self._blogger_service()
+
+        post_body = {
+            "title": title,
+            "content": content,
+            "labels": [
+                "Free Basics",
+                "Affiliate",
+                str(product.get("source", "")).lower(),
+                str(product.get("product_id", "")),
+            ],
         }
 
-        post = service.posts().insert(
+        result = service.posts().insert(
             blogId=self.blog_id,
-            body=body,
-            isDraft=True
+            body=post_body,
+            isDraft=draft,
         ).execute()
 
         return {
-            "status": "BLOGGER_DRAFT_CREATED",
+            "status": "OK",
+            "mode": "DRAFT" if draft else "LIVE",
             "product_id": product_id,
-            "post_id": post.get("id"),
-            "url": post.get("url"),
-            "title": post.get("title")
+            "title": title,
+            "blogger_post_id": result.get("id"),
+            "url": result.get("url"),
+            "published_at": datetime.now(timezone.utc).isoformat(),
         }
