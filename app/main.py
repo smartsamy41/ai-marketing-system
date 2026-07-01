@@ -25,12 +25,6 @@ except:
     orchestrator = None
 
 try:
-    from blogger_publisher_engine import BloggerPublisherEngine
-    blogger = BloggerPublisherEngine()
-except:
-    blogger = None
-
-try:
     from real_publish_layer import RealPublishLayer
     publisher = RealPublishLayer()
 except:
@@ -59,7 +53,6 @@ def home():
     return {
         "status": "AI_MARKETING_SYSTEM_RUNNING",
         "orchestrator": orchestrator is not None,
-        "blogger": blogger is not None,
         "publisher": publisher is not None
     }
 
@@ -90,7 +83,7 @@ def generate():
 # CLICK TRACKING
 # =========================
 @app.get("/click")
-def click(product_id: str, source: str = "blogger"):
+def click(product_id: str, source: str = "landingpage"):
     event = {
         "product_id": product_id,
         "source": source,
@@ -125,7 +118,7 @@ def stats():
     }
 
 # =========================
-# LANDINGPAGE API (WICHTIG FÜR BLOGGER)
+# LANDINGPAGE API
 # =========================
 @app.get("/landing")
 def landing(product_id: str):
@@ -177,7 +170,7 @@ def landing(product_id: str):
 @app.get("/traffic")
 def traffic():
     return {
-        "channels": ["blogger", "pinterest", "youtube"],
+        "channels": ["landingpage", "pinterest", "youtube"],
         "status": "ready",
         "seo": True
     }
