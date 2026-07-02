@@ -1,4 +1,54 @@
+# Python
 __pycache__/
-*.pyc
-*.backup_*
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
 .env
+.env.*
+*.pem
+*.key
+credentials.json
+client_secret.json
+token.json
+youtube_token.pkl
+pinterest_token.pkl
+*.pkl
+
+# Logs / runtime data
+logs/
+*.log
+tmp/
+cache/
+exports/
+backups/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Local backups
+*.backup_*
+*.bak
+*.tmp
+
+# Colab / notebooks checkpoints
+.ipynb_checkpoints/
