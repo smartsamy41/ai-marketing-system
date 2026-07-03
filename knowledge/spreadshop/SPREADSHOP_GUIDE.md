@@ -106,3 +106,55 @@ Spreadshop is the master source for Print-on-Demand products.
 Manual editing of imported feed data should be avoided unless required.
 
 End of Document
+
+## Current Feed Engine Decision
+
+The Spreadshop RSS feed contains product variants, not final logical products.
+
+Current audit result:
+
+- RSS variants: 24,224
+- Logical designs after design-id grouping: 14
+- One design can contain more than 1,000 product variants
+
+## Design-Level Rule
+
+FBEP must group Spreadshop products by real design ID.
+
+Example:
+
+6a17cf18d69fce2b389646ab_812
+→ real design ID:
+6a17cf18d69fce2b389646ab
+
+## Platform Rule
+
+One real Spreadshop design equals one logical FBEP product group.
+
+The variants below that design may include:
+
+- shirts
+- hoodies
+- bags
+- accessories
+- mugs
+- stickers
+- colors
+- sizes
+- gender variants
+
+## SEO Rule
+
+Do not create one landingpage per RSS item.
+
+Create one landingpage per real design.
+
+Variants are displayed or referenced under the design-level page.
+
+## Pinterest / YouTube Future Rule
+
+Pinterest boards must later be created by real category, design family or campaign logic.
+
+AI-generated pins must be unique and must not mass-post duplicate variant content.
+
+YouTube videos must be humanized, story-based and connected to real design themes, not generic auto-generated product spam.

@@ -53,3 +53,4 @@ dist/
 # Colab / notebooks checkpoints
 .ipynb_checkpoints/
 .env
+tests/feed_samples/*.xml

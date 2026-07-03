@@ -53,3 +53,18 @@
 
 - Valid feed result converts into product record format
 - Existing product layer remains unchanged
+
+## [1.1.3] - 2026-07-03
+
+### Added
+
+- Added Spreadshop RSS parser
+- Added design-level grouping for Spreadshop products
+- Documented Spreadshop design-level rule
+- Documented Pinterest and YouTube future publishing rules for Spreadshop content
+
+### Verified
+
+- Spreadshop Google Merchant RSS feed parsed successfully
+- 24,224 RSS variants grouped into 14 logical designs
+- Large RSS XML sample excluded from Git through .gitignore
