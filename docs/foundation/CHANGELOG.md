@@ -68,3 +68,21 @@
 - Spreadshop Google Merchant RSS feed parsed successfully
 - 24,224 RSS variants grouped into 14 logical designs
 - Large RSS XML sample excluded from Git through .gitignore
+
+## [1.2.0] - 2026-07-03
+
+### Added
+
+- Added Unified Product Catalog core module
+- Added catalog product models
+- Added in-memory product repository
+- Added product catalog registration and lookup
+- Added product catalog sheet exporter
+- Added product catalog statistics
+
+### Verified
+
+- Product registration works
+- Product lookup works
+- Sheet row export works
+- Catalog statistics work
