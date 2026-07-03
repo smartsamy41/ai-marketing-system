@@ -1,34 +1,15 @@
 # FBEP-SPEC-0002
+# Enterprise Architecture
 
-# ENTERPRISE ARCHITECTURE
+Version: 1.0.0
+Status: Official
+Owner: Samy Jendoubi
+Project: Free Basics Enterprise Platform
 
----
+## Purpose
+Defines the technical architecture of FBEP.
 
-## Document Information
-
-| Field | Value |
-|-------|-------|
-| Document ID | FBEP-SPEC-0002 |
-| Title | Enterprise Architecture |
-| Version | 1.0.0 |
-| Status | Official |
-| Owner | Samy Jendoubi |
-| Project | Free Basics Enterprise Platform |
-| Category | Architecture |
-| Last Updated | 2026-07-03 |
-
----
-
-# Purpose
-
-This document defines the overall architecture of the Free Basics Enterprise Platform (FBEP).
-
-It is the technical reference for all future development.
-
----
-
-# Architecture Layers
-
+## Layers
 1. Presentation Layer
 2. API Layer
 3. Business Layer
@@ -36,34 +17,23 @@ It is the technical reference for all future development.
 5. Data Layer
 6. Infrastructure Layer
 
----
-
-# Core Infrastructure
-
-- GitHub
+## Infrastructure
+- freebasics.online
+- Cloudflare
+- Google Cloud Run
 - Docker
 - FastAPI
-- Google Cloud Run
-- Cloudflare
+- GitHub
 - Google Sheets
 - BigQuery
 - Google Drive
 
----
-
-# Data Sources
-
+## Data Sources
 - Spreadshop
 - Amazon
 - CHECK24
 - Tarifcheck
 - Telekom
 
----
-
-# Core Principle
-
-Every component has exactly one primary responsibility.
-
-Architecture changes must be documented before implementation.
-
+## Rule
+No new architecture without documentation.
