@@ -41,3 +41,15 @@
 - Feed to Google Sheets sync tested with fake connector
 - Valid feed products produce sync rows
 - Invalid feed products produce error sync rows
+
+## [1.1.2] - 2026-07-03
+
+### Added
+
+- Added Product Feed Adapter
+- Connected normalized Feed Engine output to product-layer-compatible records
+
+### Verified
+
+- Valid feed result converts into product record format
+- Existing product layer remains unchanged
