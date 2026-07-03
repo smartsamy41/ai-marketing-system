@@ -67,3 +67,30 @@ class GoogleSheetsConnector:
             valueInputOption="RAW",
             body={"values": [data]}
         ).execute()
+
+    # =========================
+    # APPEND ROWS
+    # =========================
+    def append_rows(self, range_name, rows):
+
+        if not rows:
+            return {
+                "status": "SKIPPED",
+                "reason": "no rows provided"
+            }
+
+        sheet = self.service.spreadsheets()
+
+        result = sheet.values().append(
+            spreadsheetId=self.sheet_id,
+            range=range_name,
+            valueInputOption="RAW",
+            insertDataOption="INSERT_ROWS",
+            body={"values": rows}
+        ).execute()
+
+        return {
+            "status": "OK",
+            "updated_range": result.get("updates", {}).get("updatedRange"),
+            "updated_rows": result.get("updates", {}).get("updatedRows", 0)
+        }

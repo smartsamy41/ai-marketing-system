@@ -71,3 +71,20 @@ def invalid_results_to_error_rows(results: list[dict[str, Any]]) -> list[list[An
         ])
 
     return rows
+
+
+class FeedSheetSync:
+    """
+    Sync layer for Feed Engine results into Google Sheets.
+    """
+
+    def __init__(self, sheets_connector):
+        self.sheets = sheets_connector
+
+    def append_valid_products(self, results, range_name="feed_products!A1"):
+        rows = valid_results_to_sheet_rows(results)
+        return self.sheets.append_rows(range_name, rows)
+
+    def append_validation_errors(self, results, range_name="feed_errors!A1"):
+        rows = invalid_results_to_error_rows(results)
+        return self.sheets.append_rows(range_name, rows)

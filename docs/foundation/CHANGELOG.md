@@ -27,3 +27,17 @@
 - Feed modules compile successfully
 - Valid feed records produce Google Sheets rows
 - Invalid feed records produce validation error rows
+
+## [1.1.1] - 2026-07-03
+
+### Added
+
+- Added generic append_rows support to GoogleSheetsConnector
+- Added FeedSheetSync for valid product rows
+- Added FeedSheetSync for validation error rows
+
+### Verified
+
+- Feed to Google Sheets sync tested with fake connector
+- Valid feed products produce sync rows
+- Invalid feed products produce error sync rows
