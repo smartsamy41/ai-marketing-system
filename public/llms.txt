@@ -1,0 +1,10 @@
+# Free Basics Enterprise Platform
+
+Primary domain:
+https://freebasics.online
+
+Documentation:
+docs/INDEX.md
+
+Purpose:
+Enterprise AI Commerce Platform with multi-feed product integration, SEO, accessibility, publishing and learning.

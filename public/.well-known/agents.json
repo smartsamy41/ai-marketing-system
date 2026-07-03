@@ -1,0 +1,9 @@
+{
+  "project": "Free Basics Enterprise Platform",
+  "agents": [
+    "ChatGPT",
+    "Gemini",
+    "future FBEP agents"
+  ],
+  "source_of_truth": "repository"
+}

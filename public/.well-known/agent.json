@@ -1,0 +1,6 @@
+{
+  "name": "Free Basics Enterprise Platform Agent",
+  "description": "AI assistant for FBEP documentation, architecture and automation",
+  "version": "1.0.0",
+  "source_of_truth": "repository"
+}
