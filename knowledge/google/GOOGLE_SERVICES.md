@@ -24,7 +24,6 @@ smartcontent2050
 - Google Cloud Run
 - Google Sheets API
 - Google Drive API
-- Blogger API
 - YouTube Data API v3
 - BigQuery
 - BigQuery Storage API
@@ -41,7 +40,6 @@ Important tabs:
 - config
 - products
 - landingpages
-- blog_posts
 - affiliate_assets
 - pin_queue
 - boards
@@ -61,8 +59,8 @@ Used for:
 - clicks
 - conversions
 - earnings
-- dashboard data
-- learning data
+- dashboard
+- learning
 - traffic sources
 - product performance
 - keyword performance
@@ -76,20 +74,22 @@ Used for:
 - assets
 - secrets
 - logs
-- recovery files
+- recovery
 
 ## YouTube
 
-YouTube API is available for future video publishing.
+The YouTube Data API is used for controlled publishing.
 
-Automation must remain controlled and quality-checked.
+Publishing is performed only after passing quality, SEO and compliance checks.
 
 ## Rule
 
-Google Sheets is operational memory.
+Google Sheets = Operational Database
 
-BigQuery is analytics memory.
+BigQuery = Analytics Layer
 
-Google Drive is file storage and backup memory.
+Google Drive = Storage & Backup
+
+Cloud Run = Production Runtime
 
 End of Document
