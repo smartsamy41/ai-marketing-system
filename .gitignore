@@ -52,3 +52,4 @@ dist/
 
 # Colab / notebooks checkpoints
 .ipynb_checkpoints/
+.env

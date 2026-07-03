@@ -37,3 +37,10 @@ Status: Foundation Secured
 - Finalize Spreadshop Feed Engine
 - Connect Feed Engine to Google Sheets
 - Build Quality Gates before automation
+
+## Foundation Security Update
+
+- .env removed from Git tracking
+- .env protected through .gitignore
+- Secrets must be stored in Secret Manager or local environment only
+- Repository must not contain live secrets
