@@ -1,0 +1,31 @@
+﻿--- PRODUCTS ---
+product_id;product_name;partner;category;url;status
+TC_KV_001;Kfz-Versicherung;Tarifcheck;Versicherung;https://www.tarifcheck.de/kfz-versicherung/;active
+TC_GV_001;Gasvergleich;Tarifcheck;Energie;https://www.tarifcheck.de/gasvergleich/;active
+C24_PR_001;Pauschalreise;CHECK24;Reisen;https://www.check24.de/pauschalreisen/;active
+C24_SV_001;Stromvergleich;CHECK24;Energie;https://www.check24.de/strom/;active
+TP_MZ_001;MagentaZuhause;Telekom Profis;Festnetz;https://www.telekom-profis.de/shop/;active
+TP_CM_001;congstar Mobilfunk;Telekom Profis;Mobilfunk;https://www.telekom-profis.de/shop/congstar;active
+AMZ_PR_001;Generic Amazon Product;Amazon;E-Commerce;https://www.amazon.de/;active
+
+--- COMMISSIONS ---
+partner;partner_id;product_id;product_name;commission_type;commission_value;currency;notes
+Tarifcheck;TC_165274;TC_KV_001;Kfz-Versicherung;CPL;45.0;EUR;45 Tage Bestätigungsfrist
+Tarifcheck;TC_165274;TC_GV_001;Gasvergleich;CPO;20.0;EUR;Variable Bearbeitungszeit
+Telekom Profis;TP_998877;TP_MZ_001;MagentaZuhause;CPO;121.0;EUR;zzgl MwSt bei Gewerbe
+Telekom Profis;TP_998877;TP_CM_001;congstar Mobilfunk;CPO;47.0;EUR;nur bei Direktabschluss
+Amazon;AMZ_112233;AMZ_PR_001;Generic Amazon;PPS;5.0;PERCENT;abhängig von Kategorie
+
+--- PARTNERS ---
+partner;partner_id;type;base_url;tracking_format;status
+Tarifcheck;TC_165274;Affiliate;https://www.tarifcheck.de;?tid=[ID];active
+CHECK24;C24_554433;Affiliate;https://www.check24.de;&tid=[ID];active
+Telekom Profis;TP_998877;Partner;https://www.telekom-profis.de;Shop-ID;active
+Amazon;AMZ_112233;Affiliate;https://www.amazon.de;tag=[ID];active
+
+--- RULES ---
+partner;allowed_words;forbidden_words;cta_rules;seo_rules;disclaimer
+Tarifcheck;Sparen,Vergleich,Günstig;Tarifcheck.de,CHECK24,Banken;Button-Click;Content > 300 Words;Werbekennzeichnung pflicht
+CHECK24;Vergleichen,Urlaub,Tarif;CHECK24,Banken;Klick auf Rechner;Kein Brand-Bidding;Werbekennzeichnung pflicht
+Telekom Profis;Telekom,Magenta,Congstar;Mitarbeiter,Angestellter;Shop-Eingabe;Keine Kaltakquise;Kein Mitarbeiter-Branding
+Amazon;Angebot,Deal,Produkt;Rabatt-Code,Geschenk,Spende;Partner-Link;Ehrliche Rezensionen;Partner-Hinweis pflicht

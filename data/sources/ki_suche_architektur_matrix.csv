@@ -1,0 +1,19 @@
+﻿Kategorie;Unterkategorie;Technischer Parameter / Metrik;Spezifikation / Anweisung / Code-Struktur
+GEO vs. AEO vs. SEO;Googlebot (SEO);Crawling & Rendering;Vollständiges JS-Rendering, Auswertung klassischer Core Web Vitals, Priorisierung von Domain-Autorität und EEAT-Signalen.
+GEO vs. AEO vs. SEO;Bingbot (AEO);Crawling & Rendering;Fokus auf Answer-Blocks, strukturierte FAQs, klare linguistische Formatierung, direkte Antwortbereitschaft im HTML-Markup.
+GEO vs. AEO vs. SEO;ChatGPT/Perplexity (GEO);Crawling & Rendering;Server-Side-Rendering (SSR) zwingend erforderlich (kein verlässliches JS-Rendering). Priorisiert reine Text-Chunks, Faktendichte und direkte Quellenangaben.
+GEO vs. AEO vs. SEO;Code-Snippet;JSON-LD QAPage & Schema;{'@context': 'https://schema.org', '@type': 'QAPage', 'mainEntity': {'@type': 'Question', 'name': 'Wie funktioniert KI-Suche?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'KI-Suche basiert auf Vektor-Embeddings und RAG...'}}}
+Die Chunk-Theorie;RAG-Optimierung;Ideale Chunk-Größe;100 bis 300 Wörter pro semantischer Einheit. Hohe Informationsdichte ohne Füllwörter.
+Die Chunk-Theorie;Inhaltsarchitektur;Modularer Aufbau;Überschrift (H2/H3) direkt gefolgt von einer präzisen Antwort. Keine verschachtelten Nebensätze. Jedes Modul muss autark verständlich sein.
+Die Chunk-Theorie;Anti-Generik-Filter;Spezifische Daten;Integration von proprietären Statistiken, konkreten Jahreszahlen (z.B. 2026), Experten-Zitaten und exakten numerischen Werten.
+Agentic Commerce;Maschinenlesbarkeit;Datenformate;Strikte Einhaltung von Schema.org/Product, JSON-LD Datenstruktur inklusive Echtzeit-Preisen, Währung und globaler Verfügbarkeit.
+Agentic Commerce;Code-Snippet;JSON-LD Product Spec;{'@context': 'https://schema.org', '@type': 'Product', 'name': 'AI Agent Core', 'offers': {'@type': 'Offer', 'price': '99.00', 'priceCurrency': 'EUR', 'availability': 'https://schema.org/InStock'}}}
+Agentic Commerce;Hybrid-UI;Product Profile;Zweigeteilte Struktur: Visuelle Schicht für Menschen (HTML), semantisch identische strukturierte Schicht im `<script type='application/ld+json'>` für autonome Einkaufs-Agenten.
+Plattform-SEO;Amazon (A9);Faktoren;Konvertierungsrate, Verkaufsgeschwindigkeit, exakte Backend-Keywords (maximal 250 Bytes), Preis-Leistungs-Verhältnis.
+Plattform-SEO;YouTube / Video;Faktoren;Retention-Rate, Klickrate (CTR), automatisierte Transkript-Optimierung, kapitelbasierte Strukturierung via Timestamps.
+Plattform-SEO;LinkedIn;Faktoren;Dwell-Time (Verweildauer), Interaktion in den ersten 60 Minuten, Relevanz für spezifische B2B-Branchensegmente.
+Messbarkeit & Metriken;Share of Model;Definition;Prozentualer Anteil der Markennennungen in einer Test-Kohorte von 1.000 standardisierten KI-Prompts (z.B. via Perplexity API).
+Messbarkeit & Metriken;Dark Traffic;Tracking-Methode;"Identifikation über Direct-Traffic-Spikes korrelierend mit KI-Crawl-Aktivitäten; Nutzung spezifischer Landingpage-Pfade für KI-Bots."
+Messbarkeit & Metriken;KPIs für Agenten;Top 3 Metriken;1. Zitierungsrate (Citation Rate), 2. Answer Snippet Presence (%), 3. Bot-to-Conversion Rate (Käufe durch Agenten).
+Ausblick & Roadmap;Trends 2026-2028;Generative UI & Agenten;"Dynamische, KI-generierte Benutzeroberflächen in Echtzeit; vollständige Autonomie von Einkaufs-Bots; Ablösung klassischer SERPs."
+Ausblick & Roadmap;Skalierung;5-Stufen-Plan;1. SSR-Architektur aufbauen -> 2. JSON-LD Automatisierung implementieren -> 3. RAG-Chunking-Validierung -> 4. Multi-Plattform-Distribution -> 5. Agentic Commerce API-Anbindung.
