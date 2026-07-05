@@ -5,7 +5,7 @@ from datetime import datetime
 app = FastAPI(title="AI_MARKETING_SYSTEM")
 
 # =========================
-# MEMORY
+# MEMORY STORAGE
 # =========================
 click_log = []
 revenue_log = []
@@ -20,14 +20,14 @@ affiliate_map = {
 }
 
 # =========================
-# ROOT (LANDING PAGE)
+# ROOT LANDING PAGE
 # =========================
 @app.get("/", response_class=HTMLResponse)
 def home():
     return """
     <html>
     <head>
-        <title>Free Basics AI System</title>
+        <title>Free Basics AI Marketing System</title>
         <style>
             body {
                 font-family: Arial;
@@ -42,10 +42,11 @@ def home():
                 border-radius: 20px;
                 width: 70%;
                 margin: auto;
+                box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
             }
             a {
                 display: inline-block;
-                margin-top: 20px;
+                margin-top: 15px;
                 padding: 12px 20px;
                 background: #22c55e;
                 color: white;
@@ -55,14 +56,18 @@ def home():
         </style>
     </head>
     <body>
+
         <div class="box">
             <h1>🚀 Free Basics AI Marketing System</h1>
-            <p>Status: LIVE</p>
+            <p>Status: LIVE PRODUCTION SYSTEM</p>
 
-            <a href="/landing?product_id=CHK24_001">Strom vergleichen</a><br>
-            <a href="/landing?product_id=TC_001">Solar vergleichen</a><br>
-            <a href="/stats">Stats anzeigen</a>
+            <h3>👉 Angebote starten</h3>
+
+            <a href="/landing?product_id=CHK24_001">⚡ Strom Vergleich</a><br>
+            <a href="/landing?product_id=TC_001">☀ Solar Vergleich</a><br>
+            <a href="/stats">📊 Stats Dashboard</a>
         </div>
+
     </body>
     </html>
     """
@@ -72,10 +77,10 @@ def home():
 # =========================
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "system": "AI_MARKETING_RUNNING"}
 
 # =========================
-# LANDING PAGE (DYNAMIC)
+# LANDING PAGE
 # =========================
 @app.get("/landing")
 def landing(product_id: str):
@@ -84,18 +89,24 @@ def landing(product_id: str):
     html = f"""
     <html>
     <head>
-        <title>{product_id} Vergleich</title>
+        <title>{product_id} Angebot</title>
     </head>
-    <body>
+    <body style="font-family:Arial;text-align:center;padding:40px;">
+
         <h1>{product_id}</h1>
 
         <p><b>Werbung / Anzeige</b></p>
 
-        <a href="{affiliate}">👉 Jetzt vergleichen</a>
+        <p>Vergleiche jetzt die besten Tarife und Angebote.</p>
+
+        <a href="{affiliate}" style="padding:12px 20px;background:green;color:white;text-decoration:none;">
+            👉 Jetzt vergleichen
+        </a>
 
         <hr>
 
         <p>Powered by AI Marketing System</p>
+
     </body>
     </html>
     """
@@ -127,7 +138,7 @@ def conversion(amount: float):
     return {"status": "conversion_saved", "event": event}
 
 # =========================
-# STATS
+# STATS DASHBOARD
 # =========================
 @app.get("/stats")
 def stats():
