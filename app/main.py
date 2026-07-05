@@ -1,176 +1,62 @@
-from fastapi import FastAPI
-import sys
-import os
-from datetime import datetime
+from fastapi.responses import HTMLResponse
 
-# =========================
-# PATH FIX
-# =========================
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(BASE_DIR)
-sys.path.append(os.path.join(BASE_DIR, "engine"))
-
-# =========================
-# APP INIT
-# =========================
-app = FastAPI(title="AI_MARKETING_SYSTEM")
-
-# =========================
-# SAFE IMPORTS
-# =========================
-try:
-    from engine.orchestrator_clean_master import OrchestratorCleanMaster
-    orchestrator = OrchestratorCleanMaster()
-except:
-    orchestrator = None
-
-try:
-    from real_publish_layer import RealPublishLayer
-    publisher = RealPublishLayer()
-except:
-    publisher = None
-
-# =========================
-# MEMORY SYSTEM
-# =========================
-click_log = []
-revenue_log = []
-
-# =========================
-# AFFILIATE LINKS (PLACEHOLDER)
-# =========================
-affiliate_map = {
-    "CHK24_001": "https://example-check24",
-    "TC_001": "https://tarifcheck-link",
-    "TEL_001": "https://free-basics.telekom-profis.de"
-}
-
-# =========================
-# ROOT
-# =========================
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def home():
-    return {
-        "status": "AI_MARKETING_SYSTEM_RUNNING",
-        "orchestrator": orchestrator is not None,
-        "publisher": publisher is not None
-    }
-
-# =========================
-# HEALTH
-# =========================
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-# =========================
-# AUDIT
-# =========================
-@app.get("/audit")
-def audit():
-    if orchestrator:
-        return orchestrator.run_sheet_audit()
-    return {"error": "orchestrator_not_loaded"}
-
-# =========================
-# GENERATE
-# =========================
-@app.get("/generate")
-def generate():
-    return {"status": "generation_ready"}
-
-# =========================
-# CLICK TRACKING
-# =========================
-@app.get("/click")
-def click(product_id: str, source: str = "landingpage"):
-    event = {
-        "product_id": product_id,
-        "source": source,
-        "time": datetime.utcnow().isoformat(),
-        "affiliate": affiliate_map.get(product_id)
-    }
-    click_log.append(event)
-    return {"status": "click_tracked", "event": event}
-
-# =========================
-# CONVERSION TRACKING
-# =========================
-@app.get("/conversion")
-def conversion(product_id: str, amount: float):
-    event = {
-        "product_id": product_id,
-        "amount": amount,
-        "time": datetime.utcnow().isoformat()
-    }
-    revenue_log.append(event)
-    return {"status": "conversion_tracked", "event": event}
-
-# =========================
-# STATS
-# =========================
-@app.get("/stats")
-def stats():
-    return {
-        "clicks": len(click_log),
-        "conversions": len(revenue_log),
-        "revenue": sum([x["amount"] for x in revenue_log]) if revenue_log else 0
-    }
-
-# =========================
-# LANDINGPAGE API
-# =========================
-@app.get("/landing")
-def landing(product_id: str):
-    affiliate = affiliate_map.get(product_id, "#")
-
-    html = f"""
+    return """
     <html>
     <head>
-        <title>{product_id} Vergleich</title>
+        <title>Free Basics - AI Marketing System</title>
+        <style>
+            body {
+                font-family: Arial;
+                background: #0f172a;
+                color: white;
+                text-align: center;
+                padding: 50px;
+            }
+            .box {
+                background: #1e293b;
+                padding: 30px;
+                border-radius: 20px;
+                width: 70%;
+                margin: auto;
+            }
+            a {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 15px 25px;
+                background: #22c55e;
+                color: white;
+                text-decoration: none;
+                border-radius: 10px;
+            }
+        </style>
     </head>
     <body>
 
-        <h1>{product_id} Angebot</h1>
+        <div class="box">
+            <h1>🚀 Free Basics AI Marketing System</h1>
+            <p>Status: LIVE SYSTEM ACTIVE</p>
 
-        <p><b>Werbung / Anzeige</b></p>
+            <h3>Vergleiche jetzt die besten Tarife</h3>
 
-        <p>Vergleiche Tarife und finde das beste Angebot.</p>
+            <a href="/landing?product_id=CHK24_001">
+                👉 Strom vergleichen
+            </a>
 
-        <a href="{affiliate}">
-            👉 Jetzt vergleichen
-        </a>
+            <br><br>
 
-        <hr>
+            <a href="/landing?product_id=TC_001">
+                👉 Solar vergleichen
+            </a>
 
-        <p>Telekom Direktangebot:</p>
-        <a href="https://free-basics.telekom-profis.de">
-            Telekom Shop
-        </a>
+            <br><br>
 
-        <hr>
-
-        <small>
-            powered by TARIFCHECK24 GmbH
-        </small>
+            <a href="/stats">
+                📊 System Stats
+            </a>
+        </div>
 
     </body>
     </html>
     """
-
-    return {
-        "product_id": product_id,
-        "html": html,
-        "affiliate": affiliate
-    }
-
-# =========================
-# TRAFFIC INFO
-# =========================
-@app.get("/traffic")
-def traffic():
-    return {
-        "channels": ["landingpage", "pinterest", "youtube"],
-        "status": "ready",
-        "seo": True
-    }
