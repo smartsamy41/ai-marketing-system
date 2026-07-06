@@ -12,15 +12,21 @@ class AutopilotEngine:
         # 1. AI DECISION
         decision = self.ai.decide_next_action()
 
-        # 2. WAIT STATE
+        # 2. SAFETY CHECK: WAIT STATE
         if decision["action"] == "WAIT":
             return {
                 "status": "WAIT",
-                "reason": decision["reason"]
+                "reason": decision.get("reason", "no reason provided")
             }
 
         # 3. PRODUCT SELECTION
-        product = decision["product"]
+        product = decision.get("product")
+
+        if not product:
+            return {
+                "status": "ERROR",
+                "reason": "no product returned by AI decision engine"
+            }
 
         # 4. CONTENT GENERATION
         content = self.content.generate(product)
@@ -29,7 +35,7 @@ class AutopilotEngine:
         return {
             "status": "READY_TO_PUBLISH",
             "product": product,
-            "title": content["title"],
-            "description": content["description"],
-            "reason": decision["reason"]
+            "title": content.get("title"),
+            "description": content.get("description"),
+            "reason": decision.get("reason", "ai_selected_best_product")
         }
