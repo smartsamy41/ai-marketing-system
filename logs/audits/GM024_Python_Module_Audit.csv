@@ -1,0 +1,41 @@
+file,lines,classes,functions,imports,status
+ads_optimization_engine.py,78,AdsOptimizationEngine,"__init__, feed, calculate_score, get_best, optimize",datetime,OK
+app/main.py,176,,"home, health, audit, generate, click, conversion, stats, landing, traffic","datetime, engine.orchestrator_clean_master, fastapi, os, real_publish_layer, sys",OK
+app/main_debug.py,73,,"root, health, run","engine.orchestrator_clean_master, fastapi",OK
+archive/blogger_removed_gm014/blogger_publisher_engine.py,10,BloggerPublisherEngine,"__init__, publish",,OK
+archive/blogger_removed_gm014/google_publish_engine.py,102,GooglePublishEngine,"__init__, publish_blogger, publish_youtube","datetime, google.auth, googleapiclient.discovery, googleapiclient.http, traceback",OK
+archive/blogger_removed_gm014/live_distributor.py,80,LiveDistributor,"__init__, publish_blogger, publish_youtube, publish_pinterest, distribute",datetime,OK
+auto_scaling_engine.py,122,AutoScalingEngine,"__init__, update_metrics, calculate_score, get_best_product, scaling_decision, _get_low_performers, execute_scaling",datetime,OK
+engine/__init__.py,1,,,,OK
+engine/ai_learning_loop.py,100,AILearningLoop,"__init__, log_event, calculate_score, get_best_product, optimize",datetime,OK
+engine/api_connector.py,78,APIConnector,"send_sales_lead, upload_youtube_video, create_pinterest_pin, report","os, requests, requests.auth",OK
+engine/auto_scaling_engine.py,122,AutoScalingEngine,"__init__, update_metrics, calculate_score, get_best_product, scaling_decision, _get_low_performers, execute_scaling",datetime,OK
+engine/compliance_engine.py,178,ComplianceEngine,"_text, check_forbidden_terms, check_required_notices, build_compliance_notice, audit_content, apply_compliance, __init__, audit, apply",datetime,OK
+engine/content_engine.py,7,ContentEngine,generate,,OK
+engine/dashboard_live_engine.py,27,DashboardLiveEngine,"__init__, get_live",,OK
+engine/data_layer_engine.py,7,DataLayerEngine,load,,OK
+engine/landingpage_audit_engine.py,135,LandingpageAuditEngine,"__init__, is_empty, contains_forbidden, audit_product, audit_all","datetime, re",OK
+engine/landingpage_engine_v2.py,8,LandingPageEngineV2,build,,OK
+engine/live_data_layer.py,24,LiveDataLayer,"__init__, get_products","engine.google_sheets_connector, os",OK
+engine/monetization_control_layer.py,93,MonetizationControlLayer,"__init__, track_click, track_conversion, track_revenue, get_report, safe_live_trigger",datetime,OK
+engine/monetization_engine.py,59,MonetizationEngine,"build_landing_html, build_affiliate_link, build_pinterest, build_youtube_script",,OK
+engine/mp4_video_pipeline.py,84,MP4VideoPipeline,"__init__, build_scene_files, render_video, generate_video","os, subprocess",OK
+engine/orchestrator_clean_master.py,13,OrchestratorCleanMaster,"__init__, run, run_sheet_audit",,OK
+engine/output_layer.py,7,OutputLayer,export,,OK
+engine/partner_commission_mapper.py,41,PartnerCommissionMapper,"__init__, get, calculate",,OK
+engine/product_generation_engine.py,69,ProductGenerationEngine,"__init__, generate_product, expand_category, build_all_products",datetime,OK
+engine/product_layer.py,23,ProductLayer,"__init__, get_all_products, get_by_partner, load_product",,OK
+engine/profit_engine.py,88,ProfitEngine,"__init__, get_commission_value, process_product, run_all",datetime,OK
+engine/publish_engine.py,84,PublishEngine,"route_product, compliance_check, publish",,OK
+engine/real_data_connector_v2.py,58,RealDataConnectorV2,"__init__, get_service, read_sheet, get_products","google.auth, googleapiclient.discovery, os",OK
+engine/real_publish_layer.py,10,RealPublishLayer,"__init__, publish_all",,OK
+engine/sheet_audit_engine.py,268,SheetAuditEngine,"__init__, load_sheet, is_empty, audit_columns, audit_counts, audit_duplicates, audit_required_fields, run_audit","datetime, google.auth, googleapiclient.discovery, os",OK
+engine/tarifcheck_sales_engine.py,12,,test_sales,engine.tarifcheck_sales_engine,OK
+engine/tracking_engine.py,13,TrackingEngine,track,,OK
+engine/video_engine.py,75,VideoEngine,"__init__, generate_script, build_scenes, select_voice, select_style, build_video",random,OK
+engine/youtube_auto_video_system.py,8,YouTubeAutoVideoSystem,create_script,,OK
+engine/youtube_real_api.py,63,YouTubeRealAPI,"__init__, authenticate, upload_video","google.oauth2.credentials, googleapiclient.discovery, googleapiclient.http, os",OK
+google_sheets_connector.py,69,GoogleSheetsConnector,"__init__, _auth, read_products, write_log","google.oauth2.service_account, googleapiclient.discovery, os",OK
+keyword_discovery_engine.py,94,KeywordDiscoveryEngine,"__init__, expand_keyword, discover, to_products",datetime,OK
+trend_prediction_engine.py,107,TrendPredictionEngine,"__init__, expand_signal, detect_trends, top_trends, to_products",datetime,OK
+youtube_uploader.py,35,YouTubeUploader,"__init__, prepare_upload, upload",os,OK
