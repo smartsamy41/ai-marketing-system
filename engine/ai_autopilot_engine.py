@@ -1,34 +1,28 @@
-class AIAutopilotEngine:
+class AutopilotEngine:
 
-    def __init__(self, sheets):
+    def __init__(self, ai_core, content_ai):
 
-        self.sheets = sheets
+        self.ai = ai_core
+        self.content = content_ai
 
     # =========================
-    # DECISION ENGINE
+    # MAIN LOOP
     # =========================
-    def decide(self):
+    def run(self):
 
-        data = self.sheets.get_all()
+        decision = self.ai.decide_next_action()
 
-        clicks = data["clicks"]
+        if decision["action"] == "WAIT":
 
-        score = {}
+            return decision
 
-        for c in clicks:
-            p = c["product"]
-            score[p] = score.get(p, 0) + 1
+        product = decision["product"]
 
-        if not score:
-            return {
-                "action": "WAIT",
-                "reason": "no data"
-            }
-
-        best = max(score, key=score.get)
+        content = self.content.generate(product)
 
         return {
-            "action": "POST",
-            "product": best,
-            "reason": "highest engagement"
+            "status": "READY_TO_PUBLISH",
+            "product": product,
+            "content": content,
+            "reason": decision["reason"]
         }
