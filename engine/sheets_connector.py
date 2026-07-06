@@ -1,41 +1,67 @@
-import json
 from datetime import datetime
 
 class SheetsConnector:
 
     def __init__(self):
-        self.storage = {
+
+        # Local fallback memory (später echte Google Sheets API)
+        self.db = {
             "clicks": [],
             "conversions": [],
-            "content": [],
-            "traffic": []
+            "events": [],
+            "products": []
         }
 
     # =========================
-    # WRITE CLICK
+    # CLICK TRACKING
     # =========================
-    def write_click(self, product, source="direct"):
+    def log_click(self, product: str, source: str = "web"):
 
-        self.storage["clicks"].append({
+        self.db["clicks"].append({
             "product": product,
             "source": source,
-            "time": datetime.utcnow().isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         })
 
-    # =========================
-    # WRITE CONVERSION
-    # =========================
-    def write_conversion(self, product, value):
+        return {
+            "status": "click_logged",
+            "product": product
+        }
 
-        self.storage["conversions"].append({
+    # =========================
+    # CONVERSION TRACKING
+    # =========================
+    def log_conversion(self, product: str, value: float):
+
+        self.db["conversions"].append({
             "product": product,
             "value": value,
-            "time": datetime.utcnow().isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         })
 
-    # =========================
-    # GET ALL DATA
-    # =========================
-    def get_all(self):
+        return {
+            "status": "conversion_logged",
+            "product": product,
+            "value": value
+        }
 
-        return self.storage
+    # =========================
+    # PRODUCT STORAGE
+    # =========================
+    def add_product(self, product: dict):
+
+        self.db["products"].append({
+            "data": product,
+            "timestamp": datetime.utcnow().isoformat()
+        })
+
+        return {
+            "status": "product_saved"
+        }
+
+    # =========================
+    # EXPORT (FOR AI / ANALYTICS)
+    # =========================
+    def export(self):
+
+        return self.db
