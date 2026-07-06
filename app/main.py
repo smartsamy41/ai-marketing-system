@@ -5,122 +5,82 @@ from datetime import datetime
 app = FastAPI(title="AI_MARKETING_SYSTEM")
 
 # =========================
-# SAFE STATE STORAGE
+# STORAGE
 # =========================
 clicks = []
 conversions = []
 
 # =========================
-# AFFILIATE MAP (SIMPLE CORE)
+# AFFILIATE MAP (CLEAN ONLY ONE)
 # =========================
-AFFILIATE = {
+affiliate_map = {
     "CHK24_001": "https://example-check24",
     "TC_001": "https://tarifcheck-link",
+    "AMZ_001": "https://amazon.de/dp/XXXX?tag=freebasics-21",
     "TEL_001": "https://free-basics.telekom-profis.de"
 }
 
 # =========================
-# ROOT WEBSITE (HTML)
+# HOME
 # =========================
 @app.get("/", response_class=HTMLResponse)
 def home():
     return """
     <html>
-    <head>
-        <title>Free Basics AI System</title>
-        <style>
-            body {
-                font-family: Arial;
-                background: #0f172a;
-                color: white;
-                text-align: center;
-                padding: 50px;
-            }
-            .card {
-                background: #1e293b;
-                padding: 40px;
-                border-radius: 20px;
-                width: 70%;
-                margin: auto;
-            }
-            a {
-                display: inline-block;
-                margin: 10px;
-                padding: 12px 18px;
-                background: #22c55e;
-                color: white;
-                text-decoration: none;
-                border-radius: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <h1>🚀 AI Marketing System</h1>
-            <p>Status: LIVE</p>
+    <body style="font-family:Arial;text-align:center;padding:40px;">
+        <h1>AI Marketing System</h1>
 
-            <a href="/landing?product_id=CHK24_001">⚡ Strom Vergleich</a>
-            <a href="/landing?product_id=TC_001">☀ Solar Vergleich</a>
-            <a href="/stats">📊 Stats</a>
-        </div>
+        <a href="/landing?product_id=CHK24_001">Strom</a><br>
+        <a href="/landing?product_id=AMZ_001">Amazon Produkt</a><br>
+        <a href="/stats">Stats</a>
     </body>
     </html>
     """
 
 # =========================
-# HEALTH CHECK
+# HEALTH
 # =========================
 @app.get("/health")
 def health():
-    return {
-        "status": "ok",
-        "system": "AI_MARKETING_SYSTEM",
-        "time": datetime.utcnow().isoformat()
-    }
+    return {"status": "ok"}
 
 # =========================
-# LANDING PAGE (DYNAMIC)
+# LANDING
 # =========================
 @app.get("/landing", response_class=HTMLResponse)
 def landing(product_id: str):
-    link = AFFILIATE.get(product_id, "#")
+    link = affiliate_map.get(product_id, "#")
 
-    return f"""
+    html = f"""
     <html>
     <body style="font-family:Arial;text-align:center;padding:40px;">
         <h1>{product_id}</h1>
 
         <p><b>Werbung / Anzeige</b></p>
 
-        <p>Vergleiche Tarife und finde das beste Angebot.</p>
-
-        <a href="{link}" style="padding:12px 20px;background:green;color:white;text-decoration:none;">
-            👉 Jetzt vergleichen
+        <a href="{link}" style="padding:12px 20px;background:green;color:white;">
+            Jetzt öffnen
         </a>
-
-        <hr>
-
-        <p>Telekom Direktlink</p>
-        <a href="https://free-basics.telekom-profis.de">Shop</a>
-
     </body>
     </html>
     """
 
+    return HTMLResponse(content=html)
+
 # =========================
-# CLICK TRACKING
+# CLICK
 # =========================
 @app.get("/click")
 def click(product_id: str):
     event = {
-        "product": product_id,
+        "product_id": product_id,
         "time": datetime.utcnow().isoformat()
     }
     clicks.append(event)
-    return {"status": "click_saved", "event": event}
+    return {"status": "ok"}
 
 # =========================
-# CONVERSION TRACKING
+# CONVERSION
 # =========================
 @app.get("/conversion")
 def conversion(amount: float):
@@ -129,25 +89,17 @@ def conversion(amount: float):
         "time": datetime.utcnow().isoformat()
     }
     conversions.append(event)
-    return {"status": "conversion_saved", "event": event}
+    return {"status": "ok"}
 
 # =========================
 # STATS
 # =========================
 @app.get("/stats")
 def stats():
+    revenue = sum(c["amount"] for c in conversions)
+
     return {
         "clicks": len(clicks),
         "conversions": len(conversions),
-        "revenue": sum([c["amount"] for c in conversions]) if conversions else 0
-    }
-
-# =========================
-# TRAFFIC INFO
-# =========================
-@app.get("/traffic")
-def traffic():
-    return {
-        "channels": ["landingpage", "seo", "social"],
-        "status": "active"
+        "revenue": revenue
     }
