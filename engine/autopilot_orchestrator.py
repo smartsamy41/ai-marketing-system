@@ -1,6 +1,15 @@
 class AutopilotOrchestrator:
 
-    def __init__(self, ai, content, sheets, yt, pin, revenue):
+    def __init__(
+        self,
+        ai,
+        content,
+        sheets,
+        yt,
+        pin,
+        revenue,
+        affiliate=None
+    ):
 
         self.ai = ai
         self.content = content
@@ -8,41 +17,91 @@ class AutopilotOrchestrator:
         self.youtube = yt
         self.pinterest = pin
         self.revenue = revenue
+        self.affiliate = affiliate
+
+
+    # =========================
+    # MAIN AUTOPILOT CYCLE
+    # =========================
 
     def run(self):
 
         decision = self.ai.decide_next_action()
 
-        if decision["action"] == "WAIT":
-            return decision
 
-        product = decision["product"]
+        if decision.get("action") == "WAIT":
+
+            return {
+                "status": "WAIT",
+                "reason": decision.get("reason")
+            }
+
+
+        product = decision.get("product")
+
 
         content = self.content.generate(product)
 
-        # TRACK
-        self.sheets.log_click(product)
+
+        # =========================
+        # AFFILIATE LINK
+        # =========================
+
+        affiliate_link = "/"
+
+        if self.affiliate:
+
+            affiliate_link = self.affiliate.get_affiliate_link(
+                product
+            )
+
+
+        # =========================
+        # TRACK CLICK
+        # =========================
+
+        self.sheets.log_click(
+            product,
+            source="autopilot"
+        )
+
+
         self.revenue.track_click()
 
-        # PUBLISH YOUTUBE
-        yt_result = self.youtube.upload(
-            "video.mp4",
-            content["title"],
-            content["description"]
-        )
 
-        # PUBLISH PINTEREST
-        pin_result = self.pinterest.create_pin(
-            "board_id",
-            content["title"],
-            "https://freebasics.online",
-            "https://image.url"
-        )
+        # =========================
+        # YOUTUBE
+        # =========================
+
+        youtube_result = {
+            "status": "not_ready",
+            "reason": "video asset missing"
+        }
+
+
+        # =========================
+        # PINTEREST
+        # =========================
+
+        pinterest_result = {
+            "status": "not_ready",
+            "reason": "image asset missing"
+        }
+
 
         return {
-            "status": "LIVE_PUBLISHED",
+
+            "status": "READY",
+
             "product": product,
-            "youtube": yt_result,
-            "pinterest": pin_result,
+
+            "content": content,
+
+            "affiliate_link": affiliate_link,
+
+            "youtube": youtube_result,
+
+            "pinterest": pinterest_result,
+
             "revenue": self.revenue.stats()
         }
