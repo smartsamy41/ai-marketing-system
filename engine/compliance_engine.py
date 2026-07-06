@@ -1,10 +1,5 @@
 from datetime import datetime
 
-
-# =========================
-# RULE SET
-# =========================
-
 FORBIDDEN_TERMS = [
     "ohne schufa",
     "schufa-frei",
@@ -19,160 +14,71 @@ FORBIDDEN_TERMS = [
     "sparen"
 ]
 
-BRAND_TERMS = [
-    "check24-strompreise",
-    "check24-strom",
-    "check24-gas",
-    "tarifcheck24",
-    "tarifcheck-24"
-]
+BRAND_MAP = {
+    "energie": "CHECK24",
+    "finanzen": "TARIFCHECK",
+    "tech": "AMAZON",
+    "telekom": "TELEKOM"
+}
 
 
 # =========================
-# INTERNAL HELPERS
+# CORE CHECK
 # =========================
+def check_content(content: str):
 
-def _text(value):
-    return str(value or "").lower()
+    text = str(content or "").lower()
 
+    found_forbidden = [
+        t for t in FORBIDDEN_TERMS if t in text
+    ]
 
-def check_forbidden_terms(content):
-    text = _text(content)
-    found = []
-
-    for term in FORBIDDEN_TERMS + BRAND_TERMS:
-        if term in text:
-            found.append(term)
-
-    return found
+    return {
+        "blocked": len(found_forbidden) > 0,
+        "violations": found_forbidden
+    }
 
 
-def check_required_notices(content, source):
-    text = _text(content)
-    source = _text(source)
+# =========================
+# STRICT VALIDATION (NEW)
+# =========================
+def validate_landingpage(content: str, category: str):
+
+    text = str(content or "").lower()
+    category = str(category or "").lower()
 
     errors = []
 
-    # affiliate disclosure
+    # affiliate disclosure mandatory
     if "werbung" not in text and "anzeige" not in text:
-        errors.append("affiliate_notice_missing")
+        errors.append("missing_affiliate_label")
 
-    # tarifcheck rules
-    if "tarifcheck" in source:
+    # partner isolation rule
+    expected = BRAND_MAP.get(category)
 
-        if "tippgeber" not in text:
-            errors.append("tippgeber_notice_missing")
+    if expected and expected.lower() not in text:
+        errors.append("missing_partner_reference")
 
-        if "powered by tarifcheck24 gmbh" not in text:
-            errors.append("tarifcheck_powered_by_missing")
-
-        if "zollstr" not in text and "zollstraße" not in text:
-            errors.append("tarifcheck_impressum_missing")
-
-    return errors
-
-
-def build_compliance_notice(product):
-    source = _text(product.get("source"))
-
-    if "tarifcheck" in source:
-        return (
-            "⚠️ Werbung / Anzeige. Free Basics ist Tippgeber und kein "
-            "Versicherungsvermittler. Alle Vergleiche powered by "
-            "TARIFCHECK24 GmbH, Zollstr. 11b, 21465 Wentorf bei Hamburg, "
-            "Tel. 040 - 73098288, Fax 040 - 73098289, "
-            "E-Mail: info@tarifcheck.de."
-        )
-
-    return (
-        "⚠️ Werbung / Anzeige. Diese Seite enthält Affiliate-Links. "
-        "Für qualifizierte Leads kann eine Provision entstehen."
-    )
-
-
-# =========================
-# CORE AUDIT ENGINE
-# =========================
-
-def audit_content(content, product=None, rules=None):
-
-    product = product if isinstance(product, dict) else {}
-    source = product.get("source")
-
-    errors = []
-    warnings = []
-
-    # forbidden check
-    forbidden = check_forbidden_terms(content)
-    if forbidden:
-        errors.append({
-            "type": "forbidden_terms_found",
-            "terms": forbidden
-        })
-
-    # required notices
-    notice_errors = check_required_notices(content, source)
-    errors.extend(notice_errors)
-
-    # scoring system
-    score = 100
-    score -= len(errors) * 20
-    score -= len(warnings) * 5
-
-    if score < 0:
-        score = 0
-
-    status = "COMPLIANT" if not errors else "BLOCKED"
+    # forbidden terms
+    forbidden = check_content(content)
+    if forbidden["blocked"]:
+        errors.append("forbidden_terms_detected")
 
     return {
-        "status": status,
-        "score": score,
+        "status": "BLOCKED" if errors else "OK",
         "errors": errors,
-        "warnings": warnings,
         "timestamp": str(datetime.now())
     }
 
 
 # =========================
-# APPLY COMPLIANCE FIX
+# COMPLIANCE ENGINE CLASS
 # =========================
-
-def apply_compliance(content, product=None, rules=None):
-
-    product = product if isinstance(product, dict) else {}
-
-    notice = build_compliance_notice(product)
-
-    safe_content = str(content or "")
-
-    if "werbung" not in safe_content.lower() and "anzeige" not in safe_content.lower():
-        safe_content += "\n\n" + notice
-
-    audit = audit_content(
-        content=safe_content,
-        product=product,
-        rules=rules
-    )
-
-    return {
-        "status": audit.get("status"),
-        "content": safe_content,
-        "audit": audit,
-        "timestamp": str(datetime.now())
-    }
-
-
-# =========================
-# ENGINE CLASS
-# =========================
-
 class ComplianceEngine:
 
-    def __init__(self):
-        print("🟢 ComplianceEngine ACTIVE")
+    def audit(self, content, category):
+        return validate_landingpage(content, category)
 
-    def audit(self, content, product=None, rules=None):
-        return audit_content(content, product, rules)
-
-    def apply(self, content, product=None, rules=None):
-        return apply_compliance(content, product, rules)
+    def is_allowed(self, content, category):
+        result = self.audit(content, category)
+        return result["status"] == "OK"
