@@ -44,7 +44,7 @@ class AutopilotOrchestrator:
 
 
         # =========================
-        # AFFILIATE LINK
+        # AFFILIATE
         # =========================
 
         affiliate_link = "/"
@@ -57,7 +57,7 @@ class AutopilotOrchestrator:
 
 
         # =========================
-        # TRACK CLICK
+        # TRACKING
         # =========================
 
         self.sheets.log_click(
@@ -65,27 +65,24 @@ class AutopilotOrchestrator:
             source="autopilot"
         )
 
-
         self.revenue.track_click()
 
 
         # =========================
-        # YOUTUBE
+        # PUBLISH STATUS
         # =========================
 
         youtube_result = {
-            "status": "not_ready",
-            "reason": "video asset missing"
+
+            "status": "waiting_for_video_asset"
+
         }
 
 
-        # =========================
-        # PINTEREST
-        # =========================
-
         pinterest_result = {
-            "status": "not_ready",
-            "reason": "image asset missing"
+
+            "status": "waiting_for_image_asset"
+
         }
 
 
@@ -104,4 +101,5 @@ class AutopilotOrchestrator:
             "pinterest": pinterest_result,
 
             "revenue": self.revenue.stats()
+
         }
