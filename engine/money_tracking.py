@@ -8,6 +8,7 @@ class MoneyTracking:
         self.sheets = sheets
         self.bigquery = bigquery
 
+
     # =========================
     # CLICK TRACKING
     # =========================
@@ -33,7 +34,7 @@ class MoneyTracking:
 
         return {
             "status": "click_saved",
-            "data": event
+            "event": event
         }
 
 
@@ -62,28 +63,24 @@ class MoneyTracking:
 
         return {
             "status": "conversion_saved",
-            "data": event
+            "event": event
         }
 
 
     # =========================
-    # REVENUE CALCULATION
+    # REVENUE
     # =========================
 
-    def revenue(self, conversions):
+    def calculate_revenue(self, conversions):
 
-        total = 0
-
-        for item in conversions:
-            total += float(
-                item.get("value", 0)
-            )
-
-        return total
+        return sum(
+            float(item.get("value", 0))
+            for item in conversions
+        )
 
 
     # =========================
-    # CATEGORY PERFORMANCE
+    # REPORT
     # =========================
 
     def category_report(self, events):
@@ -104,30 +101,24 @@ class MoneyTracking:
                     "revenue": 0
                 }
 
-
             if event["type"] == "click":
                 report[category]["clicks"] += 1
 
-
             if event["type"] == "conversion":
-
                 report[category]["conversions"] += 1
-
                 report[category]["revenue"] += float(
-                    event.get("value",0)
+                    event.get("value", 0)
                 )
-
 
         return report
 
 
     # =========================
-    # STORAGE CONNECTOR
+    # SAVE LAYER
     # =========================
 
-    def _save(self,event):
+    def _save(self, event):
 
-        # Google Sheets
         if self.sheets:
 
             try:
@@ -135,12 +126,10 @@ class MoneyTracking:
                     "tracking",
                     event
                 )
-
             except Exception:
                 pass
 
 
-        # BigQuery
         if self.bigquery:
 
             try:
@@ -148,6 +137,5 @@ class MoneyTracking:
                     "money_event",
                     event
                 )
-
             except Exception:
                 pass
