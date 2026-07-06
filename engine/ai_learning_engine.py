@@ -1,77 +1,94 @@
-class AILearningEngine:
+class AILearningLoop:
 
-    def __init__(self, sheets_engine):
-        self.sheets = sheets_engine
+    def __init__(self, sheets, revenue_engine):
+
+        self.sheets = sheets
+        self.revenue = revenue_engine
+
 
     # =========================
-    # ANALYZE SYSTEM PERFORMANCE
+    # ANALYZE PERFORMANCE
     # =========================
+
     def analyze(self):
 
-        data = self.sheets.export_data()
+        data = self.sheets.export()
 
         clicks = data.get("clicks", [])
         conversions = data.get("conversions", [])
 
-        # -------------------------
-        # CLICK ANALYSIS
-        # -------------------------
-        product_scores = {}
 
-        for c in clicks:
-            product = c.get("product")
-            if product:
-                product_scores[product] = product_scores.get(product, 0) + 1
+        product_score = {}
 
-        # -------------------------
-        # REVENUE CALCULATION
-        # -------------------------
-        revenue = 0.0
+        for click in clicks:
 
-        for conv in conversions:
-            revenue += conv.get("value", 0)
+            product = click.get(
+                "product",
+                "unknown"
+            )
 
-        # -------------------------
-        # SORT TOP PRODUCTS
-        # -------------------------
-        sorted_products = sorted(
-            product_scores.items(),
-            key=lambda x: x[1],
-            reverse=True
-        )
+            product_score[product] = (
+                product_score.get(product, 0) + 1
+            )
+
+
+        best_product = None
+
+        if product_score:
+
+            best_product = max(
+                product_score,
+                key=product_score.get
+            )
+
+
+        revenue = 0
+
+        for conversion in conversions:
+
+            revenue += float(
+                conversion.get("value", 0)
+            )
+
 
         return {
+
+            "best_product": best_product,
+
             "total_clicks": len(clicks),
+
             "total_conversions": len(conversions),
+
             "revenue": revenue,
-            "top_products": sorted_products
+
+            "product_scores": product_score
         }
 
+
     # =========================
-    # AI RECOMMENDATION SYSTEM
+    # OPTIMIZATION DECISION
     # =========================
-    def suggest(self):
+
+    def optimize(self):
 
         analysis = self.analyze()
 
-        if analysis["total_clicks"] == 0:
+
+        if not analysis["best_product"]:
+
             return {
-                "status": "no_data",
-                "message": "No clicks available yet"
+                "status": "no_data"
             }
 
-        top_products = analysis["top_products"]
-
-        if not top_products:
-            return {
-                "status": "no_products_found"
-            }
-
-        best_product = top_products[0][0]
 
         return {
-            "status": "ok",
-            "best_product": best_product,
-            "reason": "highest click performance",
+
+            "status": "optimized",
+
+            "action": "BOOST_PRODUCT",
+
+            "product": analysis["best_product"],
+
             "revenue": analysis["revenue"]
+
         }
