@@ -1,23 +1,26 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from engine.sheets_engine import SheetsEngine
-from engine.ai_learning_engine import AILearningEngine
+from engine.sheets_connector import SheetsConnector
+from engine.ai_autopilot_engine import AIAutopilotEngine
+from engine.content_generator import ContentGenerator
+from engine.publish_engine import PublishEngine
 
 app = FastAPI(title="FREE BASICS")
 
 # =========================
-# SYSTEM INIT
+# INIT SYSTEM
 # =========================
-sheets = SheetsEngine()
-ai = AILearningEngine(sheets)
+sheets = SheetsConnector()
+ai = AIAutopilotEngine(sheets)
+content = ContentGenerator()
+publisher = PublishEngine()
 
 # =========================
 # HOME
 # =========================
 @app.get("/", response_class=HTMLResponse)
 def home():
-
     return """
     <h1>Free Basics</h1>
     <p>Werbung / Anzeige</p>
@@ -29,73 +32,55 @@ def home():
     """
 
 # =========================
-# CLICK TRACKING ROUTE
+# CLICK TRACKING
 # =========================
 @app.get("/click")
 def click(product: str):
 
-    result = sheets.log_click(product)
+    sheets.write_click(product)
+
+    return {"status": "tracked", "product": product}
+
+# =========================
+# AI AUTOPILOT RUN
+# =========================
+@app.get("/autopilot")
+def autopilot():
+
+    decision = ai.decide()
+
+    if decision["action"] == "WAIT":
+        return decision
+
+    product = decision["product"]
+
+    content_data = content.generate(product)
+
+    yt = publisher.publish_youtube(content_data)
+    pin = publisher.publish_pinterest(content_data)
 
     return {
-        "status": "ok",
-        "data": result
+        "decision": decision,
+        "content": content_data,
+        "youtube": yt,
+        "pinterest": pin
     }
 
 # =========================
-# CONVERSION TRACKING ROUTE
-# =========================
-@app.get("/conversion")
-def conversion(product: str, value: float):
-
-    result = sheets.log_conversion(product, value)
-
-    return {
-        "status": "ok",
-        "data": result
-    }
-
-# =========================
-# AI ANALYSIS
-# =========================
-@app.get("/ai")
-def ai_analysis():
-
-    return ai.analyze()
-
-# =========================
-# HOME PAGES
+# SIMPLE LANDING PAGES
 # =========================
 @app.get("/energie", response_class=HTMLResponse)
 def energie():
-    return """
-    <h1>Energie</h1>
-    <p>Werbung / Anzeige</p>
-    <a href="/click?product=strom">Strom</a><br>
-    <a href="/click?product=gas">Gas</a><br>
-    """
+    return "<h1>Energie</h1><a href='/click?product=strom'>Strom</a>"
 
 @app.get("/finanzen", response_class=HTMLResponse)
 def finanzen():
-    return """
-    <h1>Finanzen</h1>
-    <p>Werbung / Anzeige</p>
-    <a href="/click?product=kredit">Kredit</a><br>
-    <a href="/click?product=girokonto">Girokonto</a><br>
-    """
+    return "<h1>Finanzen</h1><a href='/click?product=kredit'>Kredit</a>"
 
 @app.get("/tech", response_class=HTMLResponse)
 def tech():
-    return """
-    <h1>Tech</h1>
-    <p>Werbung / Anzeige</p>
-    <a href="/click?product=laptop">Laptop</a><br>
-    <a href="/click?product=headphones">Headphones</a><br>
-    """
+    return "<h1>Tech</h1><a href='/click?product=laptop'>Laptop</a>"
 
 @app.get("/telekom", response_class=HTMLResponse)
 def telekom():
-    return """
-    <h1>Telekom</h1>
-    <p>Werbung / Anzeige</p>
-    <a href="https://free-basics.telekom-profis.de">Magenta</a><br>
-    """
+    return "<h1>Telekom</h1><a href='https://free-basics.telekom-profis.de'>Magenta</a>"
