@@ -1,4 +1,4 @@
-class MoneyEngineV3:
+class MoneyEngineV4:
 
     def __init__(self):
 
@@ -8,27 +8,34 @@ class MoneyEngineV3:
             "tech": {"clicks": 0, "leads": 0, "revenue": 0.0}
         }
 
+        self.blocked = set()
+        self.boost_factor = {}
+
     # =========================
-    # TRACK CLICK
+    # CLICK TRACKING
     # =========================
     def track_click(self, category: str):
 
-        if category in self.data:
-            self.data[category]["clicks"] += 1
+        if category in self.blocked:
+            return
+
+        self.data[category]["clicks"] += 1
 
     # =========================
-    # TRACK LEAD (REAL MONEY SIGNAL)
+    # LEAD TRACKING (REAL MONEY)
     # =========================
     def track_lead(self, category: str, value: float = 1.0):
 
-        if category in self.data:
-            self.data[category]["leads"] += 1
-            self.data[category]["revenue"] += value
+        if category in self.blocked:
+            return
+
+        self.data[category]["leads"] += 1
+        self.data[category]["revenue"] += value
 
     # =========================
-    # ROI SCORE (CORE INTELLIGENCE)
+    # REVENUE INTELLIGENCE SCORE
     # =========================
-    def roi_score(self, category: str):
+    def score(self, category: str):
 
         d = self.data.get(category, {})
 
@@ -39,66 +46,66 @@ class MoneyEngineV3:
         if clicks == 0:
             return 0
 
-        # Gewichtung: Revenue > Leads > Clicks
-        return (revenue * 20) + (leads * 8) + (clicks * 1)
+        # aggressive weighting: revenue dominates
+        return (revenue * 25) + (leads * 10) + clicks
 
     # =========================
-    # BEST CATEGORY DETECTION
+    # AUTO BLOCKING SYSTEM
     # =========================
-    def best_category(self):
+    def auto_block(self):
 
-        scores = {}
+        for cat, data in self.data.items():
 
-        for cat in self.data.keys():
-            scores[cat] = self.roi_score(cat)
+            if data["clicks"] > 20 and data["revenue"] == 0:
+                self.blocked.add(cat)
+
+        return list(self.blocked)
+
+    # =========================
+    # BOOST SYSTEM
+    # =========================
+    def boost(self):
+
+        scores = {c: self.score(c) for c in self.data}
 
         best = max(scores, key=scores.get)
 
+        self.boost_factor = {
+            best: 1.0,
+            **{k: round(v / (sum(scores.values()) or 1), 2) for k, v in scores.items()}
+        }
+
         return {
             "best_category": best,
-            "scores": scores
+            "boost_map": self.boost_factor
         }
 
     # =========================
-    # TRAFFIC BOOST DECISION ENGINE
+    # CONTENT PRIORITY ENGINE
     # =========================
-    def boost_signals(self):
+    def content_priority(self):
 
-        best = self.best_category()["best_category"]
+        boost_data = self.boost()
 
         return {
-            "boost": best,
-            "action": "INCREASE_CONTENT_WEIGHT",
-            "instruction": f"FOCUS ALL SEO + CONTENT ON {best.upper()}"
+            "focus": boost_data["best_category"],
+            "instruction": f"PRIORITIZE {boost_data['best_category'].upper()} CONTENT",
+            "distribution": boost_data["boost_map"]
         }
 
     # =========================
-    # CONTENT WEIGHT SYSTEM
-    # =========================
-    def content_weights(self):
-
-        scores = self.best_category()["scores"]
-
-        total = sum(scores.values()) or 1
-
-        weights = {}
-
-        for k, v in scores.items():
-            weights[k] = round(v / total, 2)
-
-        return weights
-
-    # =========================
-    # FULL AI DECISION OUTPUT
+    # FULL AUTONOMOUS DECISION
     # =========================
     def decision(self):
 
-        best = self.best_category()
-        weights = self.content_weights()
+        blocked = self.auto_block()
+        boost = self.boost()
+        priority = self.content_priority()
 
         return {
-            "best_category": best["best_category"],
-            "weights": weights,
-            "boost_instruction": self.boost_signals(),
-            "status": "SELF_OPTIMIZING_ACTIVE"
+            "status": "V4_ACTIVE",
+            "best_category": boost["best_category"],
+            "blocked_categories": blocked,
+            "boost": boost["boost_map"],
+            "priority": priority
         }
