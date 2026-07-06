@@ -1,2 +1,2 @@
 # ai-marketing-system
-AI Marketing System with Cloud Run, Blogger, Pinterest and YouTube automation
+AI Marketing System with Cloud Run,Pinterest and YouTube automation
