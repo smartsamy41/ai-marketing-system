@@ -1,6 +1,6 @@
 fastapi
 uvicorn
 gunicorn
+pandas
 google-api-python-client
 google-auth
-pandas
