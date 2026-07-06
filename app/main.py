@@ -2,36 +2,18 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from datetime import datetime
 
-app = FastAPI(title="AI_MARKETING_SYSTEM_CLEAN")
+app = FastAPI(title="FREE_BASICS")
 
-# =========================
-# DATA
-# =========================
 clicks = []
 conversions = []
 
 EMAIL = "samyjendoubi@gmail.com"
 
-# =========================
-# AFFILIATE SYSTEM
-# =========================
-products = {
-    "CHK24_001": {
-        "name": "Energie Vergleich",
-        "link": "https://example-check24"
-    },
-    "TC_001": {
-        "name": "Finanz Vergleich",
-        "link": "https://tarifcheck-link"
-    },
-    "AMZ_001": {
-        "name": "Amazon Produkt",
-        "link": "https://amazon.de/dp/XXXX?tag=freebasics-21"
-    },
-    "TEL_001": {
-        "name": "Telekom Internet",
-        "link": "https://free-basics.telekom-profis.de"
-    }
+links = {
+    "CHK24_001": "https://example-check24",
+    "TC_001": "https://tarifcheck-link",
+    "AMZ_001": "https://amazon.de/dp/XXXX?tag=freebasics-21",
+    "TEL_001": "https://free-basics.telekom-profis.de"
 }
 
 # =========================
@@ -41,17 +23,20 @@ products = {
 def home():
     return """
     <html>
+    <head>
+        <title>Free Basics – Vergleiche & Angebote</title>
+        <meta name="description" content="Vergleiche Strom, Kredit, Amazon Produkte und Telekom Angebote">
+    </head>
+
     <body style="font-family:Arial;text-align:center;padding:40px">
 
-        <h1>🚀 AI Marketing System</h1>
+        <h1>Free Basics</h1>
 
         <p><b>Werbung / Anzeige</b></p>
 
-        <h2>Cluster</h2>
-
-        <a href="/cluster/energie">⚡ Energie</a><br>
-        <a href="/cluster/finanzen">💰 Finanzen</a><br>
-        <a href="/cluster/tech">🛒 Tech (Amazon + Telekom)</a><br>
+        <a href="/energie">⚡ Energie</a><br>
+        <a href="/finanzen">💰 Finanzen</a><br>
+        <a href="/tech">🛒 Tech</a><br>
 
         <hr>
 
@@ -64,73 +49,40 @@ def home():
     """
 
 # =========================
-# ENERGY CLUSTER
+# ENERGIE
 # =========================
-@app.get("/cluster/energie", response_class=HTMLResponse)
+@app.get("/energie", response_class=HTMLResponse)
 def energie():
     return f"""
-    <html>
-    <body style="font-family:Arial;padding:30px">
+    <h1>⚡ Energie Vergleich</h1>
+    <p><b>Werbung / Anzeige</b></p>
 
-        <h1>⚡ Energie Cluster</h1>
-
-        <p><b>Werbung / Anzeige</b></p>
-
-        <a href="{products['CHK24_001']['link']}">Strom Vergleich</a><br>
-
-        <hr>
-
-        <a href="/">← Zurück</a>
-
-    </body>
-    </html>
+    <a href="{links['CHK24_001']}">Strom vergleichen</a><br>
     """
 
 # =========================
-# FINANCE CLUSTER
+# FINANZEN
 # =========================
-@app.get("/cluster/finanzen", response_class=HTMLResponse)
+@app.get("/finanzen", response_class=HTMLResponse)
 def finanzen():
     return f"""
-    <html>
-    <body style="font-family:Arial;padding:30px">
+    <h1>💰 Finanzen Vergleich</h1>
+    <p><b>Werbung / Anzeige</b></p>
 
-        <h1>💰 Finanzen Cluster</h1>
-
-        <p><b>Werbung / Anzeige</b></p>
-
-        <a href="{products['TC_001']['link']}">Kredit Vergleich</a><br>
-
-        <hr>
-
-        <a href="/">← Zurück</a>
-
-    </body>
-    </html>
+    <a href="{links['TC_001']}">Kredit vergleichen</a><br>
     """
 
 # =========================
-# TECH CLUSTER (AMAZON + TELEKOM)
+# TECH (AMAZON + TELEKOM)
 # =========================
-@app.get("/cluster/tech", response_class=HTMLResponse)
+@app.get("/tech", response_class=HTMLResponse)
 def tech():
     return f"""
-    <html>
-    <body style="font-family:Arial;padding:30px">
+    <h1>🛒 Tech Angebote</h1>
+    <p><b>Werbung / Anzeige</b></p>
 
-        <h1>🛒 Tech Cluster</h1>
-
-        <p><b>Werbung / Anzeige</b></p>
-
-        <a href="{products['AMZ_001']['link']}">Amazon Produkt</a><br>
-        <a href="{products['TEL_001']['link']}">Telekom Internet</a><br>
-
-        <hr>
-
-        <a href="/">← Zurück</a>
-
-    </body>
-    </html>
+    <a href="{links['AMZ_001']}">Amazon Produkt</a><br>
+    <a href="{links['TEL_001']}">Telekom Internet</a><br>
     """
 
 # =========================
@@ -141,21 +93,21 @@ def impressum():
     return f"""
     <h1>Impressum</h1>
     <p>{EMAIL}</p>
-    <p>AI Marketing System</p>
+    <p>Free Basics Platform</p>
     """
 
 @app.get("/legal/datenschutz", response_class=HTMLResponse)
 def datenschutz():
     return """
     <h1>Datenschutz</h1>
-    <p>Affiliate Tracking & Cookies werden verwendet.</p>
+    <p>Cookies & Tracking für Affiliate Systeme</p>
     """
 
 @app.get("/cookies", response_class=HTMLResponse)
 def cookies():
     return """
-    <h1>Cookie Consent</h1>
-    <p>Tracking aktiv für Performance Analyse</p>
+    <h1>Cookie Hinweis</h1>
+    <p>Diese Seite nutzt Cookies für Analyse</p>
     <button>Akzeptieren</button>
     <button>Ablehnen</button>
     """
