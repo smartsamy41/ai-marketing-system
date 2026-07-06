@@ -1,10 +1,32 @@
-clicks = []
-conversions = []
+from datetime import datetime
 
-def track_click(product):
-    clicks.append(product)
-    return {"status": "ok"}
+click_log = []
+conversion_log = []
 
-def track_conversion(value):
-    conversions.append(value)
-    return {"status": "ok"}
+
+def track_click(product: str, source: str = "direct"):
+    click_log.append({
+        "product": product,
+        "source": source,
+        "time": datetime.utcnow().isoformat()
+    })
+    return True
+
+
+def track_conversion(product: str, value: float):
+    conversion_log.append({
+        "product": product,
+        "value": value,
+        "time": datetime.utcnow().isoformat()
+    })
+    return True
+
+
+def get_stats():
+    revenue = sum(c["value"] for c in conversion_log) if conversion_log else 0
+
+    return {
+        "clicks": len(click_log),
+        "conversions": len(conversion_log),
+        "revenue": revenue
+    }
