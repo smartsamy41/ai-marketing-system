@@ -1,35 +1,31 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 
-from engine.sheets_connector import SheetsConnector
-from engine.ai_autopilot_engine import AIAutopilotEngine
-from engine.content_generator import ContentGenerator
-from engine.publish_engine import PublishEngine
+from engine.sheets_api import SheetsAPI
+from engine.ai_core_engine import AICoreEngine
+from engine.content_ai import ContentAI
+from engine.autopilot_engine import AutopilotEngine
 
-app = FastAPI(title="FREE BASICS")
+app = FastAPI(title="FREE BASICS AI AUTOPILOT")
 
 # =========================
-# INIT SYSTEM
+# SYSTEM INIT
 # =========================
-sheets = SheetsConnector()
-ai = AIAutopilotEngine(sheets)
-content = ContentGenerator()
-publisher = PublishEngine()
+sheets = SheetsAPI()
+ai = AICoreEngine(sheets)
+content = ContentAI()
+autopilot = AutopilotEngine(ai, content)
 
 # =========================
 # HOME
 # =========================
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 def home():
-    return """
-    <h1>Free Basics</h1>
-    <p>Werbung / Anzeige</p>
 
-    <a href="/energie">Energie</a><br>
-    <a href="/finanzen">Finanzen</a><br>
-    <a href="/tech">Tech</a><br>
-    <a href="/telekom">Telekom</a><br>
-    """
+    return {
+        "system": "FREE BASICS",
+        "status": "LIVE",
+        "mode": "PHASE_5_AUTOPILOT"
+    }
 
 # =========================
 # CLICK TRACKING
@@ -42,45 +38,29 @@ def click(product: str):
     return {"status": "tracked", "product": product}
 
 # =========================
+# CONVERSION TRACKING
+# =========================
+@app.get("/conversion")
+def conversion(product: str, value: float):
+
+    sheets.write_conversion(product, value)
+
+    return {"status": "conversion_saved"}
+
+# =========================
 # AI AUTOPILOT RUN
 # =========================
 @app.get("/autopilot")
-def autopilot():
+def run_autopilot():
 
-    decision = ai.decide()
+    result = autopilot.run()
 
-    if decision["action"] == "WAIT":
-        return decision
-
-    product = decision["product"]
-
-    content_data = content.generate(product)
-
-    yt = publisher.publish_youtube(content_data)
-    pin = publisher.publish_pinterest(content_data)
-
-    return {
-        "decision": decision,
-        "content": content_data,
-        "youtube": yt,
-        "pinterest": pin
-    }
+    return result
 
 # =========================
-# SIMPLE LANDING PAGES
+# DEBUG DATA
 # =========================
-@app.get("/energie", response_class=HTMLResponse)
-def energie():
-    return "<h1>Energie</h1><a href='/click?product=strom'>Strom</a>"
+@app.get("/data")
+def data():
 
-@app.get("/finanzen", response_class=HTMLResponse)
-def finanzen():
-    return "<h1>Finanzen</h1><a href='/click?product=kredit'>Kredit</a>"
-
-@app.get("/tech", response_class=HTMLResponse)
-def tech():
-    return "<h1>Tech</h1><a href='/click?product=laptop'>Laptop</a>"
-
-@app.get("/telekom", response_class=HTMLResponse)
-def telekom():
-    return "<h1>Telekom</h1><a href='https://free-basics.telekom-profis.de'>Magenta</a>"
+    return sheets.export()
