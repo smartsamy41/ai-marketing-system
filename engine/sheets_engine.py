@@ -1,23 +1,51 @@
 from datetime import datetime
 
-DATA = {
-    "clicks": [],
-    "conversions": [],
-    "products": []
-}
+class SheetsEngine:
 
-def log_click(product):
-    DATA["clicks"].append({
-        "product": product,
-        "time": datetime.utcnow().isoformat()
-    })
+    def __init__(self):
+        self.data = {
+            "clicks": [],
+            "conversions": [],
+            "products": [],
+            "pages": []
+        }
 
-def log_conversion(product, value):
-    DATA["conversions"].append({
-        "product": product,
-        "value": value,
-        "time": datetime.utcnow().isoformat()
-    })
+    # =========================
+    # CLICK TRACKING
+    # =========================
+    def log_click(self, product: str, source: str = "direct"):
 
-def get_learning_data():
-    return DATA
+        self.data["clicks"].append({
+            "product": product,
+            "source": source,
+            "timestamp": datetime.utcnow().isoformat()
+        })
+
+        return {
+            "status": "click_logged",
+            "product": product
+        }
+
+    # =========================
+    # CONVERSION TRACKING
+    # =========================
+    def log_conversion(self, product: str, value: float):
+
+        self.data["conversions"].append({
+            "product": product,
+            "value": value,
+            "timestamp": datetime.utcnow().isoformat()
+        })
+
+        return {
+            "status": "conversion_logged",
+            "product": product,
+            "value": value
+        }
+
+    # =========================
+    # DATA EXPORT (FOR AI LATER)
+    # =========================
+    def export_data(self):
+
+        return self.data
