@@ -1,53 +1,56 @@
 from fastapi import FastAPI
 
 from engine.cloud_scheduler_trigger import CloudSchedulerTrigger
-from engine.secret_manager import SecretManager
 
 from engine.sheets_engine import SheetsEngine
 from engine.ai_core_engine import AICoreEngine
 from engine.content_ai import ContentAI
 
 from engine.revenue_engine import RevenueEngine
-
 from engine.ai_learning_engine import AILearningLoop
 
 from engine.autopilot_orchestrator import AutopilotOrchestrator
 from engine.autonomous_orchestrator import AutonomousOrchestrator
 
 
-app = FastAPI(title="FREE BASICS AI MARKETING SYSTEM")
+app = FastAPI(
+    title="FREE BASICS AI MARKETING SYSTEM"
+)
 
 
 # =========================
-# CORE SERVICES
-# =========================
-
-secrets = SecretManager()
-
-
 # DATA LAYER
+# =========================
 
 sheets = SheetsEngine()
 
 
-# AI
+# =========================
+# AI CORE
+# =========================
 
 ai = AICoreEngine(
     sheets
 )
 
 
+# =========================
 # CONTENT
+# =========================
 
 content = ContentAI()
 
 
+# =========================
 # MONEY
+# =========================
 
 revenue = RevenueEngine()
 
 
+# =========================
 # LEARNING
+# =========================
 
 learning = AILearningLoop(
     sheets,
@@ -56,7 +59,7 @@ learning = AILearningLoop(
 
 
 # =========================
-# SAFE PUBLISH PLACEHOLDERS
+# SAFE PUBLISHERS
 # =========================
 
 class SafeYouTube:
@@ -69,7 +72,7 @@ class SafeYouTube:
     ):
 
         return {
-            "status": "waiting_for_youtube_asset"
+            "status": "waiting_for_video_asset"
         }
 
 
@@ -85,7 +88,7 @@ class SafePinterest:
     ):
 
         return {
-            "status": "waiting_for_pinterest_asset"
+            "status": "waiting_for_image_asset"
         }
 
 
@@ -120,7 +123,6 @@ trigger = CloudSchedulerTrigger(
 )
 
 
-
 # =========================
 # HEALTH
 # =========================
@@ -129,19 +131,15 @@ trigger = CloudSchedulerTrigger(
 def home():
 
     return {
-
         "system": "FREE BASICS",
-
-        "phase": "PRODUCTION CONNECTED",
-
+        "phase": "CONNECTED",
         "status": "READY"
-
     }
 
 
 
 # =========================
-# AI CYCLE
+# AI RUN
 # =========================
 
 @app.post("/run")
