@@ -1,41 +1,34 @@
 from fastapi import FastAPI
 
-from engine.sheets_api import SheetsAPI
-from engine.ai_core_engine import AICoreEngine
-from engine.content_ai import ContentAI
-from engine.autopilot_engine import AutopilotEngine
+from engine.google_sheets_real import GoogleSheetsReal
+from engine.ai_real_optimizer import AIRealOptimizer
 
-app = FastAPI(title="FREE BASICS AI AUTOPILOT")
+app = FastAPI(title="FREE BASICS REAL SYSTEM")
 
 # =========================
-# SYSTEM INIT
+# INIT REAL SYSTEM
 # =========================
-sheets = SheetsAPI()
-ai = AICoreEngine(sheets)
-content = ContentAI()
-autopilot = AutopilotEngine(ai, content)
+sheets = GoogleSheetsReal("YOUR_SHEET_ID")
+ai = AIRealOptimizer(sheets)
 
 # =========================
 # HOME
 # =========================
 @app.get("/")
 def home():
-
     return {
         "system": "FREE BASICS",
-        "status": "LIVE",
-        "mode": "PHASE_5_AUTOPILOT"
+        "mode": "PHASE_6_REAL_INTEGRATION",
+        "status": "LIVE"
     }
 
 # =========================
-# CLICK TRACKING
+# CLICK TRACKING (REAL SHEETS)
 # =========================
 @app.get("/click")
 def click(product: str):
 
-    sheets.write_click(product)
-
-    return {"status": "tracked", "product": product}
+    return sheets.log_click(product)
 
 # =========================
 # CONVERSION TRACKING
@@ -43,24 +36,18 @@ def click(product: str):
 @app.get("/conversion")
 def conversion(product: str, value: float):
 
-    sheets.write_conversion(product, value)
-
-    return {"status": "conversion_saved"}
+    return sheets.log_conversion(product, value)
 
 # =========================
-# AI AUTOPILOT RUN
+# AI PICK BEST PRODUCT
 # =========================
-@app.get("/autopilot")
-def run_autopilot():
+@app.get("/ai/best")
+def best():
 
-    result = autopilot.run()
+    # (später echte Sheets Read API)
+    clicks = [["strom"], ["strom"], ["kredit"]]
+    conversions = [[100], [50]]
 
-    return result
-
-# =========================
-# DEBUG DATA
-# =========================
-@app.get("/data")
-def data():
-
-    return sheets.export()
+    return {
+        "best_product": ai.pick_best(clicks, conversions)
+    }
