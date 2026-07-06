@@ -1,34 +1,48 @@
 from fastapi import FastAPI
 
-from engine.google_sheets_real import GoogleSheetsReal
-from engine.ai_real_optimizer import AIRealOptimizer
+from engine.ai_autopilot_engine import AutopilotEngine
+from engine.publisher_youtube import YouTubePublisher
+from engine.publisher_pinterest import PinterestPublisher
+from engine.money_tracking import MoneyTracking
+from engine.ai_feedback_loop import AIFeedbackLoop
+from engine.content_ai import ContentAI
 
-app = FastAPI(title="FREE BASICS REAL SYSTEM")
+app = FastAPI(title="FREE BASICS PHASE 7")
 
 # =========================
-# INIT REAL SYSTEM
+# INIT SYSTEM
 # =========================
-sheets = GoogleSheetsReal("YOUR_SHEET_ID")
-ai = AIRealOptimizer(sheets)
+content_ai = ContentAI()
+tracking = MoneyTracking()
+feedback = AIFeedbackLoop(tracking)
+
+youtube = YouTubePublisher()
+pinterest = PinterestPublisher()
+
+autopilot = AutopilotEngine(
+    ai_core=feedback,
+    content_ai=content_ai
+)
 
 # =========================
 # HOME
 # =========================
 @app.get("/")
 def home():
+
     return {
         "system": "FREE BASICS",
-        "mode": "PHASE_6_REAL_INTEGRATION",
-        "status": "LIVE"
+        "phase": 7,
+        "status": "LIVE AUTOPILOT ACTIVE"
     }
 
 # =========================
-# CLICK TRACKING (REAL SHEETS)
+# CLICK TRACKING
 # =========================
 @app.get("/click")
 def click(product: str):
 
-    return sheets.log_click(product)
+    return tracking.log_click(product)
 
 # =========================
 # CONVERSION TRACKING
@@ -36,18 +50,34 @@ def click(product: str):
 @app.get("/conversion")
 def conversion(product: str, value: float):
 
-    return sheets.log_conversion(product, value)
+    return tracking.log_conversion(product, value)
 
 # =========================
-# AI PICK BEST PRODUCT
+# AUTOPILOT ENGINE
 # =========================
-@app.get("/ai/best")
-def best():
+@app.get("/autopilot")
+def run_autopilot():
 
-    # (später echte Sheets Read API)
-    clicks = [["strom"], ["strom"], ["kredit"]]
-    conversions = [[100], [50]]
+    result = autopilot.run()
+
+    if result["status"] == "WAIT":
+        return result
+
+    content = result["content"]
+
+    yt = youtube.publish(content)
+    pin = pinterest.publish(content)
 
     return {
-        "best_product": ai.pick_best(clicks, conversions)
+        "autopilot": result,
+        "youtube": yt,
+        "pinterest": pin
     }
+
+# =========================
+# ANALYTICS
+# =========================
+@app.get("/analytics")
+def analytics():
+
+    return feedback.optimize()
