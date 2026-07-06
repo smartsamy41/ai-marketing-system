@@ -2,15 +2,31 @@ from datetime import datetime
 
 
 class MoneyTracking:
+    """
+    Production Money Tracking Layer
+
+    Erfasst:
+    - Klicks
+    - Conversions
+    - Revenue
+    - Partner
+    - Kategorien
+
+    Optional:
+    - Google Sheets
+    - BigQuery
+    """
 
     def __init__(self, sheets=None, bigquery=None):
 
         self.sheets = sheets
         self.bigquery = bigquery
 
+        self.events = []
+
 
     # =========================
-    # CLICK TRACKING
+    # CLICK EVENT
     # =========================
 
     def log_click(
@@ -22,7 +38,7 @@ class MoneyTracking:
     ):
 
         event = {
-            "type": "click",
+            "event": "click",
             "product": product,
             "category": category,
             "partner": partner,
@@ -30,7 +46,9 @@ class MoneyTracking:
             "timestamp": datetime.utcnow().isoformat()
         }
 
-        self._save(event)
+        self.events.append(event)
+
+        self._store(event)
 
         return {
             "status": "click_saved",
@@ -39,7 +57,7 @@ class MoneyTracking:
 
 
     # =========================
-    # CONVERSION TRACKING
+    # CONVERSION EVENT
     # =========================
 
     def log_conversion(
@@ -51,7 +69,7 @@ class MoneyTracking:
     ):
 
         event = {
-            "type": "conversion",
+            "event": "conversion",
             "product": product,
             "category": category,
             "partner": partner,
@@ -59,7 +77,9 @@ class MoneyTracking:
             "timestamp": datetime.utcnow().isoformat()
         }
 
-        self._save(event)
+        self.events.append(event)
+
+        self._store(event)
 
         return {
             "status": "conversion_saved",
@@ -68,56 +88,72 @@ class MoneyTracking:
 
 
     # =========================
-    # REVENUE
+    # TOTAL REVENUE
     # =========================
 
-    def calculate_revenue(self, conversions):
+    def revenue(self):
 
-        return sum(
-            float(item.get("value", 0))
-            for item in conversions
-        )
+        total = 0
+
+        for event in self.events:
+
+            if event.get("event") == "conversion":
+
+                total += float(
+                    event.get("value", 0)
+                )
+
+        return total
 
 
     # =========================
-    # REPORT
+    # CATEGORY REPORT
     # =========================
 
-    def category_report(self, events):
+    def report(self):
 
-        report = {}
+        result = {}
 
-        for event in events:
+        for event in self.events:
 
             category = event.get(
                 "category",
                 "unknown"
             )
 
-            if category not in report:
-                report[category] = {
+            if category not in result:
+
+                result[category] = {
                     "clicks": 0,
                     "conversions": 0,
                     "revenue": 0
                 }
 
-            if event["type"] == "click":
-                report[category]["clicks"] += 1
 
-            if event["type"] == "conversion":
-                report[category]["conversions"] += 1
-                report[category]["revenue"] += float(
+            if event["event"] == "click":
+
+                result[category]["clicks"] += 1
+
+
+            if event["event"] == "conversion":
+
+                result[category]["conversions"] += 1
+
+                result[category]["revenue"] += float(
                     event.get("value", 0)
                 )
 
-        return report
+
+        return result
 
 
     # =========================
-    # SAVE LAYER
+    # STORAGE CONNECTION
     # =========================
 
-    def _save(self, event):
+    def _store(self, event):
+
+        # Google Sheets
 
         if self.sheets:
 
@@ -126,16 +162,21 @@ class MoneyTracking:
                     "tracking",
                     event
                 )
+
             except Exception:
                 pass
 
 
+        # BigQuery
+
         if self.bigquery:
 
             try:
+
                 self.bigquery.log(
-                    "money_event",
+                    "money_tracking",
                     event
                 )
+
             except Exception:
                 pass
