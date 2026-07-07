@@ -29,7 +29,9 @@ class GoogleSheetsLive:
 
         self.credentials = service_account.Credentials.from_service_account_info(
             credentials_info,
-            scopes=["https://www.googleapis.com/auth/spreadsheets"]
+            scopes=[
+                "https://www.googleapis.com/auth/spreadsheets"
+            ]
         )
 
         self.service = build(
@@ -37,6 +39,7 @@ class GoogleSheetsLive:
             "v4",
             credentials=self.credentials
         )
+
 
     # =========================
     # READ RAW VALUES
@@ -55,6 +58,7 @@ class GoogleSheetsLive:
 
         return result.get("values", [])
 
+
     # =========================
     # READ AS RECORDS
     # =========================
@@ -65,12 +69,16 @@ class GoogleSheetsLive:
         range_name="A:Z"
     ):
 
-        rows = self.read(sheet, range_name)
+        rows = self.read(
+            sheet,
+            range_name
+        )
 
         if not rows:
             return []
 
         headers = rows[0]
+
         records = []
 
         for row in rows[1:]:
@@ -79,14 +87,19 @@ class GoogleSheetsLive:
 
             for index, header in enumerate(headers):
 
-                item[header] = row[index] if index < len(row) else ""
+                item[header] = (
+                    row[index]
+                    if index < len(row)
+                    else ""
+                )
 
             records.append(item)
 
         return records
 
+
     # =========================
-    # WRITE DATA
+    # APPEND DATA
     # =========================
 
     def append(
@@ -96,7 +109,9 @@ class GoogleSheetsLive:
     ):
 
         body = {
-            "values": [values]
+            "values": [
+                values
+            ]
         }
 
         return self.service.spreadsheets().values().append(
@@ -105,6 +120,29 @@ class GoogleSheetsLive:
             valueInputOption="RAW",
             body=body
         ).execute()
+
+
+    # =========================
+    # WRITE / REPLACE SHEET
+    # =========================
+
+    def write_rows(
+        self,
+        sheet,
+        rows
+    ):
+
+        body = {
+            "values": rows
+        }
+
+        return self.service.spreadsheets().values().update(
+            spreadsheetId=self.spreadsheet_id,
+            range=f"{sheet}!A1",
+            valueInputOption="RAW",
+            body=body
+        ).execute()
+
 
     # =========================
     # TRACKING
@@ -123,6 +161,7 @@ class GoogleSheetsLive:
                 source
             ]
         )
+
 
     def log_conversion(
         self,
