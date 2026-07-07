@@ -1,25 +1,103 @@
+import json
+import os
+
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
+
 class GoogleSheetsLive:
 
-    def __init__(self, spreadsheet_id: str, credentials_file: str):
+    def __init__(
+        self,
+        spreadsheet_id=None,
+        credentials_json=None
+    ):
 
-        self.spreadsheet_id = spreadsheet_id
+        self.spreadsheet_id = spreadsheet_id or os.getenv("GOOGLE_SHEET_ID")
 
-        self.credentials = service_account.Credentials.from_service_account_file(
-            credentials_file,
+        raw_credentials = credentials_json or os.getenv(
+            "GOOGLE_APPLICATION_CREDENTIALS_JSON"
+        )
+
+        if not self.spreadsheet_id:
+            raise Exception("Missing GOOGLE_SHEET_ID")
+
+        if not raw_credentials:
+            raise Exception("Missing GOOGLE_APPLICATION_CREDENTIALS_JSON")
+
+        credentials_info = json.loads(raw_credentials)
+
+        self.credentials = service_account.Credentials.from_service_account_info(
+            credentials_info,
             scopes=["https://www.googleapis.com/auth/spreadsheets"]
         )
 
-        self.service = build("sheets", "v4", credentials=self.credentials)
+        self.service = build(
+            "sheets",
+            "v4",
+            credentials=self.credentials
+        )
+
+    # =========================
+    # READ RAW VALUES
+    # =========================
+
+    def read(
+        self,
+        sheet,
+        range_name="A:Z"
+    ):
+
+        result = self.service.spreadsheets().values().get(
+            spreadsheetId=self.spreadsheet_id,
+            range=f"{sheet}!{range_name}"
+        ).execute()
+
+        return result.get("values", [])
+
+    # =========================
+    # READ AS RECORDS
+    # =========================
+
+    def read_records(
+        self,
+        sheet,
+        range_name="A:Z"
+    ):
+
+        rows = self.read(sheet, range_name)
+
+        if not rows:
+            return []
+
+        headers = rows[0]
+        records = []
+
+        for row in rows[1:]:
+
+            item = {}
+
+            for index, header in enumerate(headers):
+
+                item[header] = row[index] if index < len(row) else ""
+
+            records.append(item)
+
+        return records
 
     # =========================
     # WRITE DATA
     # =========================
-    def append(self, sheet: str, values: list):
 
-        body = {"values": [values]}
+    def append(
+        self,
+        sheet,
+        values
+    ):
+
+        body = {
+            "values": [values]
+        }
 
         return self.service.spreadsheets().values().append(
             spreadsheetId=self.spreadsheet_id,
@@ -29,15 +107,33 @@ class GoogleSheetsLive:
         ).execute()
 
     # =========================
-    # CLICK LOG
+    # TRACKING
     # =========================
-    def log_click(self, product: str):
 
-        return self.append("clicks", [product])
+    def log_click(
+        self,
+        product,
+        source="web"
+    ):
 
-    # =========================
-    # CONVERSION LOG
-    # =========================
-    def log_conversion(self, product: str, value: float):
+        return self.append(
+            "clicks",
+            [
+                product,
+                source
+            ]
+        )
 
-        return self.append("conversions", [product, value])
+    def log_conversion(
+        self,
+        product,
+        value
+    ):
+
+        return self.append(
+            "conversions",
+            [
+                product,
+                value
+            ]
+        )
