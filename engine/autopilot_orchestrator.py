@@ -8,7 +8,8 @@ class AutopilotOrchestrator:
         yt,
         pin,
         revenue,
-        affiliate=None
+        affiliate=None,
+        compliance=None
     ):
 
         self.ai = ai
@@ -18,6 +19,7 @@ class AutopilotOrchestrator:
         self.pinterest = pin
         self.revenue = revenue
         self.affiliate = affiliate
+        self.compliance = compliance
 
 
     # =========================
@@ -44,10 +46,37 @@ class AutopilotOrchestrator:
 
 
         # =========================
+        # COMPLIANCE CHECK
+        # =========================
+
+        if self.compliance:
+
+            audit = self.compliance.audit(
+                content
+            )
+
+
+            if audit.get("status") == "BLOCKED":
+
+                return {
+
+                    "status": "BLOCKED",
+
+                    "reason": "COMPLIANCE_FAILED",
+
+                    "audit": audit,
+
+                    "product": product
+
+                }
+
+
+        # =========================
         # AFFILIATE
         # =========================
 
         affiliate_link = "/"
+
 
         if self.affiliate:
 
