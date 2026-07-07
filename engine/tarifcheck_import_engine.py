@@ -1,4 +1,3 @@
-from datetime import datetime
 from engine.tarifcheck_sales_api import TarifcheckSalesAPI
 from engine.google_sheets_live import GoogleSheetsLive
 
@@ -23,6 +22,8 @@ class TarifcheckImportEngine:
             creds
         )
 
+        self.sheet_id = sheet_id
+
 
     # =========================
     # STATUS FILTER
@@ -37,28 +38,99 @@ class TarifcheckImportEngine:
 
 
     # =========================
-    # PRODUCT MAPPING
+    # TARIFCHECK PRODUCT MAPPING
     # =========================
 
     def map_product(self, insurance):
 
         mapping = {
 
-            "Kredit":
-                "TC_003",
-
             "Kfz":
-                "TC_002",
+                "TC_0",
 
-            "Hausrat":
-                "TC_006",
+            "Motorrad":
+                "TC_1",
 
-            "Rente":
-                "TC_008",
+            "Solaranlage":
+                "TC_2",
 
-            "Private Krankenversicherung":
-                "TC_009"
+            "Girokonto":
+                "TC_3",
 
+            "Kredit":
+                "TC_4",
+
+            "Kreditkarte":
+                "TC_5",
+
+            "Kreditkarte (Bunq/N26)":
+                "TC_6",
+
+            "Baufinanzierung":
+                "TC_7",
+
+            "Hausratversicherung":
+                "TC_8",
+
+            "Private Haftpflicht":
+                "TC_9",
+
+            "Wohngebäudeversicherung":
+                "TC_10",
+
+            "Rechtsschutz":
+                "TC_11",
+
+            "Hundekrankenversicherung":
+                "TC_12",
+
+            "Tierhalter-/Pferdehaftpflicht":
+                "TC_13",
+
+            "Haus- und Grundbesitzerhaftpflicht":
+                "TC_14",
+
+            "Firmenversicherung":
+                "TC_15",
+
+            "PKV Beamte":
+                "TC_16",
+
+            "PKV über 55":
+                "TC_17",
+
+            "PKV Studenten":
+                "TC_18",
+
+            "Private Krankenzusatzversicherung":
+                "TC_19",
+
+            "Private Krankenvollversicherung":
+                "TC_20",
+
+            "Pflegezusatzversicherung":
+                "TC_21",
+
+            "Berufsunfähigkeitsversicherung":
+                "TC_22",
+
+            "Lebensversicherung":
+                "TC_23",
+
+            "Rentenversicherung":
+                "TC_24",
+
+            "Riester-Rente":
+                "TC_25",
+
+            "Rürup-Rente":
+                "TC_26",
+
+            "Risikolebensversicherung":
+                "TC_27",
+
+            "Unfallversicherung":
+                "TC_28"
         }
 
         return mapping.get(
@@ -67,7 +139,7 @@ class TarifcheckImportEngine:
 
 
     # =========================
-    # IMPORT
+    # IMPORT SALES
     # =========================
 
     def import_sales(self):
@@ -93,8 +165,13 @@ class TarifcheckImportEngine:
                 continue
 
 
+            insurance = lead.get(
+                "insurance"
+            )
+
+
             product_id = self.map_product(
-                lead.get("insurance")
+                insurance
             )
 
 
@@ -104,7 +181,7 @@ class TarifcheckImportEngine:
 
             row = [
 
-                f"TC_{lead['id']}",
+                f"TC_{lead.get('id')}",
 
                 lead.get(
                     "created"
@@ -114,9 +191,7 @@ class TarifcheckImportEngine:
 
                 product_id,
 
-                lead.get(
-                    "insurance"
-                ),
+                insurance,
 
                 "",
 
@@ -138,7 +213,7 @@ class TarifcheckImportEngine:
 
             self.sheets.service.spreadsheets().values().append(
 
-                spreadsheetId=self.sheets.sheet_id,
+                spreadsheetId=self.sheet_id,
 
                 range="conversions!A:K",
 
@@ -155,6 +230,9 @@ class TarifcheckImportEngine:
 
 
         return {
-            "status":"completed",
-            "imported":imported
+
+            "status": "completed",
+
+            "imported": imported
+
         }
