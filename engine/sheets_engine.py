@@ -14,6 +14,7 @@ class SheetsEngine:
     - BigQuery Sync
     """
 
+
     def __init__(self):
 
         self.data = {
@@ -46,6 +47,7 @@ class SheetsEngine:
         }
 
         self.data["clicks"].append(event)
+
         self.data["events"].append({
             "type": "click",
             **event
@@ -92,6 +94,62 @@ class SheetsEngine:
 
 
     # =========================
+    # AUTOMATIC COMMISSION CONVERSION
+    # =========================
+
+    def log_product_conversion(
+        self,
+        product_id: str,
+        category: str = None,
+        partner: str = None
+    ):
+
+        from engine.commission_engine import CommissionEngine
+
+
+        sheet_id = open(
+            "/tmp/fb_secrets/sheet_id.txt"
+        ).read().strip()
+
+
+        creds = open(
+            "/tmp/fb_secrets/service_account.json"
+        ).read().strip()
+
+
+        commission = CommissionEngine(
+            sheet_id,
+            creds
+        )
+
+
+        data = commission.get_commission(
+            product_id
+        )
+
+
+        if data.get("status") == "NOT_FOUND":
+
+            return {
+                "status": "commission_not_found",
+                "product": product_id
+            }
+
+
+        value = float(
+            data.get("value", 0)
+        )
+
+
+        return self.log_conversion(
+            product_id,
+            value,
+            category,
+            partner or data.get("partner")
+        )
+
+
+    # =========================
     # EXPORT FOR AI
     # =========================
 
@@ -113,7 +171,10 @@ class SheetsEngine:
     # PRODUCTS
     # =========================
 
-    def add_product(self, product):
+    def add_product(
+        self,
+        product
+    ):
 
         self.data["products"].append(product)
 
@@ -126,7 +187,10 @@ class SheetsEngine:
     # PAGES
     # =========================
 
-    def add_page(self, page):
+    def add_page(
+        self,
+        page
+    ):
 
         self.data["pages"].append(page)
 
