@@ -125,7 +125,7 @@ trigger = CloudSchedulerTrigger(
 
 
 # =========================
-# HOME API
+# ROOT API
 # =========================
 
 @app.get("/")
@@ -140,7 +140,7 @@ def home():
 
 
 # =========================
-# PINTEREST DOMAIN VERIFICATION
+# PINTEREST HTML TAG VERIFY
 # =========================
 
 @app.get(
@@ -161,6 +161,26 @@ def pinterest_verification():
     </body>
     </html>
     """
+
+
+
+# =========================
+# PINTEREST FILE VERIFY
+# =========================
+
+@app.get(
+    "/pinterest-bc276.html",
+    response_class=HTMLResponse
+)
+def pinterest_file():
+
+    with open(
+        "pinterest-bc276.html",
+        "r",
+        encoding="utf-8"
+    ) as file:
+
+        return file.read()
 
 
 
