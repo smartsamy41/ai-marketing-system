@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 from engine.cloud_scheduler_trigger import CloudSchedulerTrigger
 
@@ -124,7 +125,7 @@ trigger = CloudSchedulerTrigger(
 
 
 # =========================
-# HEALTH
+# HOME API
 # =========================
 
 @app.get("/")
@@ -135,6 +136,31 @@ def home():
         "phase": "CONNECTED",
         "status": "READY"
     }
+
+
+
+# =========================
+# PINTEREST DOMAIN VERIFICATION
+# =========================
+
+@app.get(
+    "/pinterest-verification",
+    response_class=HTMLResponse
+)
+def pinterest_verification():
+
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="p:domain_verify" content="bc27656eea0774520fbe08d0a275427d"/>
+        <title>Free Basics</title>
+    </head>
+    <body>
+        Free Basics
+    </body>
+    </html>
+    """
 
 
 
