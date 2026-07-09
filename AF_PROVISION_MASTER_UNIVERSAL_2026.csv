@@ -1,0 +1,212 @@
+partner,partner_id,produkt_id,produkt_name,kategorie,provision_typ,provision_wert,waehrung,laufzeit,bemerkung,quelle,tracking_info,status,updated_at
+Amazon,uniquetshir0f-21,AMZ_0,Amazon Fashion Eigenmarken,Fashion,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_1,Bekleidung & Accessoires,Fashion,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_2,Luxus,Fashion,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_3,Luxus Beauty Stores,Beauty,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_4,Luxus Fashion Stores,Fashion,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_5,"Schuhe, Handtaschen & Geldbörsen",Fashion,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_6,Uhren,Fashion,%,6.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_7,Amazon Instant Video,Unterhaltung,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_8,Audible Hörbücher,Unterhaltung,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_9,Auto & Motorrad,Auto,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_10,Bücher,Medien,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_11,Digitale Musik,Medien,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_12,Möbel,Wohnen,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_13,Handmade,Wohnen,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_14,Wohnen,Wohnen,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_15,Baumarkt,Wohnen,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_16,Schmuck,Fashion,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_17,Kindle eBooks,Medien,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_18,Küche & Esszimmer,Wohnen,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_19,Musik,Medien,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_20,Elektro- & Handwerkzeuge,Wohnen,%,5.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_21,Beauty,Beauty,%,4.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_22,Gepäck,Fashion,%,4.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_23,Körperpflegegeräte,Beauty,%,4.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_24,Sport & Fitness,Sport,%,4.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_25,Haushaltsgroßgeräte,Wohnen,%,2.5,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_26,Fire TV Geräte,Elektronik,%,2.5,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_27,Mobile Elektronik,Elektronik,%,2.5,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_28,Amazon Fresh,Lebensmittel,%,1.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_29,Lebensmittel,Lebensmittel,%,1.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_30,Vorratskammer,Lebensmittel,%,1.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_31,Spielkonsolen,Elektronik,%,1.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_32,Videospiele,Elektronik,%,1.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_33,Android-Apps,Elektronik,%,0.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_34,Geschenkkarten,Sonstige,%,0.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_35,Kindle Unlimited,Medien,%,0.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_36,Andere Geschenkkarten-Marken,Sonstige,%,0.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_37,Coach Produkte,Fashion,%,0.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_38,Wein,Lebensmittel,%,0.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Amazon,uniquetshir0f-21,AMZ_39,Alle anderen Kategorien,Sonstige,%,3.0,%,,,Amazon PartnerNet,StoreID: uniquetshir0f-21,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_0,Kfz-Versicherung,Versicherung/Finanz,SALE,70.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_1,Motorradversicherung,Versicherung/Finanz,SALE,10.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_2,Solaranlage,Versicherung/Finanz,SALE,30.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_3,Girokonto,Versicherung/Finanz,SALE,40.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_4,Kredit,Versicherung/Finanz,%,1.75,%,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_5,Kreditkarte,Versicherung/Finanz,SALE,40.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_6,Kreditkarte (Bunq/N26),Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_7,Baufinanzierung,Versicherung/Finanz,SALE,7.5,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_8,Hausratversicherung,Versicherung/Finanz,SALE,30.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_9,Private Haftpflicht,Versicherung/Finanz,SALE,16.5,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_10,Wohngebäudeversicherung,Versicherung/Finanz,SALE,75.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_11,Rechtsschutz,Versicherung/Finanz,SALE,50.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_12,Hundekrankenversicherung,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_13,Tierhalter-/Pferdehaftpflicht,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_14,Haus- und Grundbesitzerhaftpflicht,Versicherung/Finanz,SALE,15.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_15,Firmenversicherung,Versicherung/Finanz,SALE,5.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_16,PKV Beamte,Versicherung/Finanz,SALE,15.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_17,PKV über 55,Versicherung/Finanz,SALE,15.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_18,PKV Studenten,Versicherung/Finanz,SALE,5.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_19,Private Krankenzusatzversicherung,Versicherung/Finanz,SALE,5.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_20,Private Krankenvollversicherung,Versicherung/Finanz,SALE,67.5,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_21,Pflegezusatzversicherung,Versicherung/Finanz,SALE,5.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_22,Berufsunfähigkeitsversicherung,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_23,Lebensversicherung,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_24,Rentenversicherung,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_25,Riester-Rente,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_26,Rürup-Rente,Versicherung/Finanz,SALE,25.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_27,Risikolebensversicherung,Versicherung/Finanz,SALE,5.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Tarifcheck,NOCH_EINTRAGEN,TC_28,Unfallversicherung,Versicherung/Finanz,SALE,50.0,EUR,,,Tarifcheck,,ACTIVE,2026-07-07
+Check24,354456,C24_0,Kfz-Versicherung,Auto & Fahrzeuge,SALE,50.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_1,Autokredit,Auto & Fahrzeuge,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_2,Girokonto,Finanzen,SALE,30.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_3,Tagesgeld,Finanzen,LEAD,5.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_4,Festgeld,Finanzen,LEAD,5.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_5,Kredit,Finanzen,%,1.5,%,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_6,Kreditkarte,Finanzen,SALE,25.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_7,Lebensversicherung,Vorsorge,SALE,50.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_8,Rentenversicherung,Vorsorge,SALE,50.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_9,Riester-Rente,Vorsorge,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_10,Rürup-Rente,Vorsorge,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_11,Berufsunfähigkeit,Vorsorge,SALE,60.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_12,Unfallversicherung,Vorsorge,SALE,30.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_13,Risikolebensversicherung,Vorsorge,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_14,Pflegezusatz,Vorsorge,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_15,Private Krankenvoll,Krankenversicherung,SALE,80.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_16,Private Krankenzusatz,Krankenversicherung,SALE,15.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_17,PKV Beamte,Krankenversicherung,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_18,Hundekranken,Krankenversicherung,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_19,Zahnzusatz,Krankenversicherung,SALE,15.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_20,Hausrat,Sachversicherung,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_21,Haftpflicht,Sachversicherung,SALE,15.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_22,Wohngebäude,Sachversicherung,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_23,Rechtsschutz,Sachversicherung,SALE,30.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_24,Tierhaftpflicht,Sachversicherung,SALE,15.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_25,Hausbesitzer,Sachversicherung,SALE,15.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_26,Firmenversicherung,Sachversicherung,SALE,10.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_27,Reisegepäck,Sachversicherung,SALE,10.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_28,Strom,Energie,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_29,Gas,Energie,SALE,20.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_30,Ökostrom,Energie,SALE,25.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_31,Pauschalreise,Reisen,%,7.0,%,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_32,Hotel,Reisen,%,6.0,%,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_33,Handytarif,Mobilfunk,SALE,25.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_34,SIM-only,Mobilfunk,SALE,15.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_35,Prepaid,Mobilfunk,LEAD,5.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_36,DSL 1,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_37,DSL 2,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_38,DSL 3,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_39,DSL 4,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_40,DSL 5,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_41,DSL 6,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_42,DSL 7,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_43,DSL 8,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Check24,354456,C24_44,DSL 9,DSL,SALE,40.0,EUR,,,Check24 Partnerprogramm,ID: 354456,ACTIVE,2026-07-07
+Telekom,100228979,MZ_START,MagentaZuhause Start,Festnetz,SALE,7.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_M_Y_H,MagentaZuhause M / Young / Hybrid,Festnetz,SALE,50.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_L_Y_H,MagentaZuhause L / Young / Hybrid,Festnetz,SALE,55.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_M_ON,MagentaZuhause M On-Net,Festnetz,SALE,50.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_M_ALL,MagentaZuhause M All-Net,Festnetz,SALE,65.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_M_REG,MagentaZuhause M Regio,Festnetz,SALE,50.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_XL_REG,MagentaZuhause XL Regio,Festnetz,SALE,65.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_XL_VVL,MagentaZuhause XL / Hybrid (VVL Upgrade),Festnetz,SALE,35.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_XL_REG_VVL,MagentaZuhause XL Regio (VVL Upgrade),Festnetz,SALE,35.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_L_HYB_VVL,MagentaZuhause L / Hybrid (VVL Neutral),Festnetz,SALE,9.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MZ_XL_REG_VVLN,MagentaZuhause XL Regio (VVL Neutral),Festnetz,SALE,9.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_INST,Persönliche Installation 2.0,Zubuchbar,SALE,3.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_SIC_M,Telekom Sicherheitspaket M,Zubuchbar,SALE,3.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_SIC_L,Telekom Sicherheitspaket L,Zubuchbar,SALE,3.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_MAIL,Mail M,Zubuchbar,SALE,1.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_CL_L,MagentaCloud L,Zubuchbar,SALE,3.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_CL_XL,MagentaCloud XL,Zubuchbar,SALE,7.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_DHS_S,Digital Home Service S,Zubuchbar,SALE,10.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_DHS_M,Digital Home Service M,Zubuchbar,SALE,15.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_DHS_L,Digital Home Service L,Zubuchbar,SALE,20.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_SCHUTZ,Digital Schutzpaket,Zubuchbar,SALE,20.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_WLAN,WLAN Paket (Miete),Zubuchbar,SALE,5.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_WLAN_C,WLAN Comfort (Miete),Zubuchbar,SALE,5.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_WLAN_CG,WLAN Comfort Glasfaser (Miete),Zubuchbar,SALE,5.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_WLAN_C5,WLAN Comfort und 5G-Empfänger (Miete),Zubuchbar,SALE,5.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_XS,congstar Allnet Flat XS,Mobilfunk,SALE,20.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_S,congstar Allnet Flat S,Mobilfunk,SALE,25.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_M,congstar Allnet Flat M,Mobilfunk,SALE,35.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_L,congstar Allnet Flat L,Mobilfunk,SALE,40.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_HS_GS,congstar Homespot & Go S,Mobilfunk,SALE,30.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_HS_GM,congstar Homespot & Go M,Mobilfunk,SALE,40.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_HS_GL,congstar Homespot & Go L,Mobilfunk,SALE,40.0,EUR,24M,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_XSF,congstar Allnet Flat XS Flex,Mobilfunk,SALE,15.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_SF,congstar Allnet Flat S Flex,Mobilfunk,SALE,20.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_MF,congstar Allnet Flat M Flex,Mobilfunk,SALE,30.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_AF_LF,congstar Allnet Flat L Flex,Mobilfunk,SALE,35.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_HS_GSF,congstar Homespot & Go S Flex,Mobilfunk,SALE,25.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_HS_GMF,congstar Homespot & Go M Flex,Mobilfunk,SALE,35.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_HS_GLF,congstar Homespot & Go L Flex,Mobilfunk,SALE,40.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_ZH_100F,congstar Zuhause 100 Flex,Festnetz,SALE,30.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_ZH_250F,congstar Zuhause 250 Flex,Festnetz,SALE,40.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_ZH_G600F,congstar Zuhause (Glasfaser) 600 Flex,Festnetz,SALE,45.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_ZH_G1000F,congstar Zuhause (Glasfaser) 1000 Flex,Festnetz,SALE,50.0,EUR,Flex,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_STICK,congstar Prepaid Internet Stick,Prepaid,SALE,7.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_AXS,congstar Prepaid Allnet XS,Prepaid,SALE,2.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_AS,congstar Prepaid Allnet S,Prepaid,SALE,3.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_AM,congstar Prepaid Allnet M,Prepaid,SALE,5.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_AL,congstar Prepaid Allnet L,Prepaid,SALE,7.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_AXL,congstar Prepaid Allnet XL,Prepaid,SALE,9.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_WIIW,congstar Prepaid wie ich will,Prepaid,SALE,7.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Congstar,100228979,C_PRE_JAH,congstar Prepaid Jahrespaket,Prepaid,SALE,15.0,EUR,,,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_1,Glasfaser 150 - MagentaTV Smart,Festnetz,SALE,95.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_2,Glasfaser 300 - MagentaTV Smart,Festnetz,SALE,105.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_3,Glasfaser 600 - MagentaTV Smart,Festnetz,SALE,115.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_4,Glasfaser 1.000 - MagentaTV Smart,Festnetz,SALE,120.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_5,Glasfaser 150 - MagentaTV SmartStream,Festnetz,SALE,105.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_6,Glasfaser 600 - MagentaTV SmartStream,Festnetz,SALE,125.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_7,Glasfaser 150 - MagentaTV MegaStream,Festnetz,SALE,110.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_8,Glasfaser 600 - MagentaTV MegaStream,Festnetz,SALE,130.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_C_9,Glasfaser 1.000 - MagentaTV MegaStream,Festnetz,SALE,135.0,EUR,,Connected - Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_CU_1,Glasfaser 150 - MagentaTV Smart (LU),Festnetz,SALE,65.0,EUR,,Connected - Bestandsgeschäft LU,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_CU_2,Glasfaser 300 - MagentaTV Smart (LU),Festnetz,SALE,70.0,EUR,,Connected - Bestandsgeschäft LU,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_CU_3,Glasfaser 600 - MagentaTV SmartStream (LU),Festnetz,SALE,75.0,EUR,,Connected - Bestandsgeschäft LU,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_VV_1,Vorvermarktung Glasfaser 150,Festnetz,SALE,50.0,EUR,,Vorvermarktung,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,GF_NV_1,Nachvermarktung Glasfaser 150,Festnetz,SALE,65.0,EUR,,Nachvermarktung,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_1,MagentaZuhause S mit MagentaTV Smart / Young,Festnetz,SALE,90.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_2,MagentaZuhause M mit MagentaTV Smart / Young / Hybrid,Festnetz,SALE,90.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_3,MagentaZuhause XL mit MagentaTV Smart / Young / Hybrid,Festnetz,SALE,105.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_4,MagentaZuhause M mit MagentaTV SmartStream / Young,Festnetz,SALE,100.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_5,MagentaZuhause M mit MagentaTV MegaStream / Young / Hybrid,Festnetz,SALE,120.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_6,MagentaZuhause XXL Hybrid mit MagentaTV MegaStream,Festnetz,SALE,135.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_7,MagentaTV Smart ohne Internet,Festnetz,SALE,10.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_8,MagentaTV SmartStream ohne Internet,Festnetz,SALE,15.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_N_9,MagentaTV MegaStream ohne Internet,Festnetz,SALE,20.0,EUR,,Neugeschäft,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_LU_1,MagentaZuhause M mit MagentaTV Smart / Hybrid (LU),Festnetz,SALE,50.0,EUR,,Layer Upgrade,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_LU_2,MagentaZuhause L mit MagentaTV SmartStream (LU),Festnetz,SALE,55.0,EUR,,Layer Upgrade,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_LU_3,MagentaZuhause XL mit MagentaTV MegaStream / Hybrid (LU),Festnetz,SALE,80.0,EUR,,Layer Upgrade,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MTV_LU_4,MagentaZuhause XXL Hybrid mit MagentaTV MegaStream (LU),Festnetz,SALE,90.0,EUR,,Layer Upgrade,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,ZUB_SERV_MR,Servicepaket Mediareceiver MagentaTV One (Miete),Zubuchbar,SALE,10.0,EUR,,Zubuchbar,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_1,MagentaMobil S / Young,Mobilfunk,SALE,40.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_2,MagentaMobil M / Young,Mobilfunk,SALE,50.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_3,MagentaMobil L / Young,Mobilfunk,SALE,50.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_4,MagentaMobil XL / Young,Mobilfunk,SALE,55.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_5,MagentaMobil M Flex / Young,Mobilfunk,SALE,9.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_6,MagentaMobil PlusKarte,Mobilfunk,SALE,40.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_7,MagentaMobil PlusKarte+,Mobilfunk,SALE,25.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_8,MagentaMobil PlusKarte Kids & Teens,Mobilfunk,SALE,25.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_9,MagentaMobil Data S,Mobilfunk,SALE,35.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_10,MagentaMobil Data M,Mobilfunk,SALE,40.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_11,MagentaMobil Data L,Mobilfunk,SALE,40.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_N_12,MagentaMobil PlusKarte Data,Mobilfunk,SALE,25.0,EUR,,Neuanschluss,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_VVL_1,MagentaMobil XS mit Smartphone,Mobilfunk,SALE,9.0,EUR,,VVL,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_VVL_2,MagentaMobil S mit Smartphone / Young,Mobilfunk,SALE,10.0,EUR,,VVL,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_PRE_1,MagentaMobil Prepaid M,Prepaid,SALE,4.0,EUR,,Prepaid,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_PRE_2,MagentaMobil Prepaid XL,Prepaid,SALE,6.0,EUR,,Prepaid,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_PRE_3,MagentaMobil Prepaid Jahrestarif,Prepaid,SALE,7.0,EUR,,Prepaid,Telekom Profis,,ACTIVE,2026-07-07
+Telekom,100228979,MOFU_PRE_4,Smart Connect S Prepaid SIM-Only,Prepaid,SALE,3.0,EUR,,Prepaid,Telekom Profis,,ACTIVE,2026-07-07
