@@ -1,0 +1,41 @@
+AI MARKETING SYSTEM / FREE BASICS – MASTER STATUS V4
+
+Projekt: AI Marketing System / FBEP
+
+Marke: Free Basics
+
+Betreiber: Samy Jendoubi
+
+Domain: https://freebasics.online
+
+Google Cloud: smartcontent2050 Region: europe-west1
+
+Cloud Run: ai-marketing-system Status: READY
+
+AKTUELLER MODUS: FINAL PRODUCTION AUDIT
+
+REGELN: - Nicht neu bauen - Keine neue Architektur ohne Audit - Erst
+Status prüfen - Bestehende Struktur nutzen
+
+YOUTUBE STATUS: Kanal: Free Basics Channel ID: UCLb3VdLsfhd1HlcNH73cO3g
+OAuth: OK Refresh Token: OK Secret Manager: OK Cloud Run Zugriff: OK
+
+PINTEREST STATUS: Account: freebasics_official API: OK Access Token: OK
+Refresh Token: OK CAPI: OK Tag: OK
+
+KI: OpenAI OK Groq OK Gemini OK HuggingFace OK ElevenLabs OK
+
+AFFILIATE: Amazon aktiv Check24 integriert Tarifcheck Partner ID 165274
+Telekom Direkt-Shop verwenden
+
+NÄCHSTE SCHRITTE: 1. YouTube Upload Engine prüfen 2. Pinterest Test Pin
+3. Video Pipeline prüfen 4. Landingpages final Audit 5. Rechtliche
+Seiten finalisieren 6. Newsletter System vorbereiten 7. End-to-End
+Produktionslauf:
+
+Produkt -> Content -> Landingpage -> Blog -> Pinterest -> YouTube ->
+Tracking -> BigQuery Learning
+
+Danach Skalierung.
+
+Weiterarbeiten ab: FINAL PRODUCTION AUDIT
