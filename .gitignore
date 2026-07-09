@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# OAuth / Secrets
+youtube_client_secret.json
+.env
+*.pkl
+
+# Local OAuth tests
+youtube_oauth.py
+
+# Backups
+*_backup_*
+*_before_*
+
+# CSV backups
+landingpages_backup_before_compliance.csv
+landingpages_before_final_compliance.csv
+pin_queue_backup_20260708_001259.csv
