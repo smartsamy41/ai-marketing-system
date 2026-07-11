@@ -1,9 +1,15 @@
+import json
+import os
 import time
+import uuid
+from datetime import datetime, timezone
 from threading import RLock
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, RedirectResponse
+from google.cloud import bigquery
+from google.oauth2 import service_account
 
 from engine.cloud_scheduler_trigger import CloudSchedulerTrigger
 from engine.google_sheets_live import GoogleSheetsLive
@@ -555,6 +561,105 @@ def landingpage(
         canonical_path=f"/lp/{product_id}",
         description=meta_description
     )
+
+
+@app.get("/track")
+def track_real_click(
+    pid: str,
+    source: str = "direct",
+    platform: str = "web"
+):
+    product_id = str(pid or "").strip()
+
+    if not product_id:
+        raise HTTPException(
+            status_code=400,
+            detail="product_id fehlt"
+        )
+
+    affiliate_data = affiliate.get_product_data(
+        product_id
+    )
+
+    if affiliate_data.get("status") != "FOUND":
+        raise HTTPException(
+            status_code=404,
+            detail="Produkt nicht gefunden"
+        )
+
+    target_url = str(
+        affiliate_data.get("affiliate_url")
+        or ""
+    ).strip()
+
+    if not target_url:
+        raise HTTPException(
+            status_code=503,
+            detail="Partnerlink nicht verfügbar"
+        )
+
+    credentials_json = os.environ.get(
+        "GOOGLE_APPLICATION_CREDENTIALS_JSON",
+        ""
+    ).strip()
+
+    project_id = os.environ.get(
+        "BIGQUERY_PROJECT_ID",
+        "smartcontent2050"
+    ).strip()
+
+    dataset = os.environ.get(
+        "BIGQUERY_DATASET",
+        "smartcontent"
+    ).strip()
+
+    if not credentials_json:
+        raise HTTPException(
+            status_code=503,
+            detail="BigQuery-Anmeldung fehlt"
+        )
+
+    try:
+        credentials = service_account.Credentials.from_service_account_info(
+            json.loads(credentials_json)
+        )
+
+        client = bigquery.Client(
+            project=project_id,
+            credentials=credentials
+        )
+
+        click_id = str(uuid.uuid4())
+
+        row = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "product_id": product_id,
+            "source": str(source or "direct")[:100],
+            "platform": str(platform or "web")[:100],
+            "url": target_url,
+            "click_id": click_id,
+            "note": "real_user_redirect"
+        }
+
+        errors = client.insert_rows_json(
+            f"{project_id}.{dataset}.clicks",
+            [row]
+        )
+
+        if errors:
+            raise RuntimeError(str(errors))
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail=f"Klick konnte nicht protokolliert werden: {exc}"
+        ) from exc
+
+    return RedirectResponse(
+        url=target_url,
+        status_code=302
+    )
+
 
 
 # ============================================================
