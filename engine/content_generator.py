@@ -2,15 +2,17 @@ class ContentGenerator:
 
     def generate(self, product):
 
+        product_name = str(product or "").strip()
+
         return {
-            "title": f"{product} – Beste Angebote 2026",
+            "title": f"{product_name} – Angebote prüfen",
             "body": f"""
-            Vergleiche {product} Angebote jetzt direkt.
+            Informationen und Angebote zu {product_name} prüfen.
 
-            ✔ Schnell
+            ✔ Übersichtlich
             ✔ Einfach
-            ✔ Werbung / Anzeige enthalten
+            ✔ Werbung / Anzeige gekennzeichnet
 
-            Jetzt informieren und passende Angebote finden.
+            Jetzt informieren und passende Angebote prüfen.
             """
         }

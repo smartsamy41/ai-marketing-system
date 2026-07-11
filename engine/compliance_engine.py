@@ -1,12 +1,14 @@
+from typing import Any
+
 from engine.google_sheets_live import GoogleSheetsLive
 
 
 FORBIDDEN_RULES = [
-
     "wir übernehmen",
     "unabhängig",
     "objektiver vergleich",
     "beste",
+    "besten",
     "günstig",
     "profitieren",
     "garantiert",
@@ -14,178 +16,172 @@ FORBIDDEN_RULES = [
     "kosten senken",
     "schufa-frei",
     "ohne schufa",
-    "preisversprechen"
-
+    "preisversprechen",
 ]
 
 
 class ComplianceEngine:
 
-
     def __init__(
         self,
-        sheet_id=None,
-        credentials=None
+        sheet_id: str | None = None,
+        credentials: str | None = None
     ):
 
-        self.rules = []
+        self.sheets = GoogleSheetsLive(
+            spreadsheet_id=sheet_id,
+            credentials_json=credentials
+        )
 
-        if sheet_id and credentials:
+        self.rules: list[dict[str, Any]] = []
 
-            self.sheets = GoogleSheetsLive(
-                sheet_id,
-                credentials
-            )
-
-            self.load_rules()
+        self.load_rules()
 
 
+    # ========================================================
+    # NORMALIZATION
+    # ========================================================
 
-    # =========================
+    @staticmethod
+    def _normalize(value: Any) -> str:
+
+        return str(
+            value or ""
+        ).strip().lower()
+
+
+    # ========================================================
     # LOAD RULES
-    # =========================
+    # ========================================================
 
-    def load_rules(self):
+    def load_rules(self) -> None:
 
         self.rules = self.sheets.read_records(
-            "affiliate_rules"
+            "affiliate_rules",
+            "A:ZZ"
         )
 
 
-
-    # =========================
+    # ========================================================
     # TEXT CHECK
-    # =========================
+    # ========================================================
 
     def check_forbidden_words(
         self,
-        content
-    ):
+        content: Any
+    ) -> list[str]:
 
-        text = str(content).lower()
+        text = self._normalize(
+            content
+        )
 
         return [
-
             rule
-
             for rule in FORBIDDEN_RULES
-
             if rule in text
-
         ]
 
 
-
-    # =========================
+    # ========================================================
     # PARTNER RULE CHECK
-    # =========================
+    # ========================================================
 
     def check_partner_rules(
         self,
-        partner
-    ):
+        partner: str | None
+    ) -> list[dict[str, Any]]:
+
+        normalized_partner = self._normalize(
+            partner
+        )
+
+        if not normalized_partner:
+            return []
 
         results = []
 
-
         for rule in self.rules:
 
-            if rule.get("partner") == partner:
+            rule_partner = self._normalize(
+                rule.get("partner")
+            )
 
-                results.append({
+            if rule_partner != normalized_partner:
+                continue
 
-                    "rule_id":
-                        rule.get("rule_id"),
-
-                    "type":
-                        rule.get("regel_typ"),
-
-                    "regel":
-                        rule.get("regel")
-
-                })
-
+            results.append({
+                "rule_id": rule.get("rule_id"),
+                "partner": rule.get("partner"),
+                "bereich": rule.get("bereich"),
+                "type": rule.get("regel_typ"),
+                "regel": rule.get("regel"),
+                "aktion": rule.get("aktion"),
+                "pflicht": rule.get("pflicht"),
+                "verbot": rule.get("verbot"),
+                "quelle": rule.get("quelle"),
+                "status": rule.get("status"),
+            })
 
         return results
 
 
-
-    # =========================
+    # ========================================================
     # FULL AUDIT
-    # =========================
+    # ========================================================
 
     def audit(
         self,
-        content,
-        partner=None
-    ):
-
+        content: Any,
+        partner: str | None = None
+    ) -> dict[str, Any]:
 
         errors = self.check_forbidden_words(
             content
         )
 
-
-        partner_rules = []
-
-
-        if partner:
-
-            partner_rules = self.check_partner_rules(
-                partner
-            )
-
+        partner_rules = self.check_partner_rules(
+            partner
+        )
 
         return {
-
-            "status":
+            "status": (
                 "BLOCKED"
                 if errors
-                else "COMPLIANT",
-
-
-            "errors":
-                errors,
-
-
-            "partner_rules":
-                partner_rules
-
+                else "COMPLIANT"
+            ),
+            "errors": errors,
+            "partner_rules": partner_rules,
         }
 
 
+# ============================================================
+# COMPATIBILITY FUNCTIONS
+# ============================================================
 
-# =========================
-# COMPATIBILITY FUNCTION
-# =========================
+def check(content: Any) -> list[str]:
 
-def check(content):
-
-    text = str(content).lower()
+    text = str(
+        content or ""
+    ).strip().lower()
 
     return [
-
         rule
-
         for rule in FORBIDDEN_RULES
-
         if rule in text
-
     ]
 
 
-def audit(content):
+def audit(content: Any) -> dict[str, Any]:
 
-    errors = check(content)
+    errors = check(
+        content
+    )
 
     return {
-
-        "status":
+        "status": (
             "COMPLIANT"
             if not errors
-            else "BLOCKED",
-
-        "errors":
-            errors
-
+            else "BLOCKED"
+        ),
+        "errors": errors,
     }
