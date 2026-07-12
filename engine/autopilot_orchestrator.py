@@ -1,3 +1,7 @@
+from engine.cycle_manager import CycleManager
+from engine.cycle_logger import CycleLogger
+
+
 class AutopilotOrchestrator:
 
     def __init__(
@@ -20,6 +24,10 @@ class AutopilotOrchestrator:
         self.revenue = revenue
         self.affiliate = affiliate
         self.compliance = compliance
+
+        # Learning Loop Cycle Control
+        self.cycle_manager = CycleManager()
+        self.cycle_logger = CycleLogger()
 
 
     # ========================================================
@@ -48,6 +56,40 @@ class AutopilotOrchestrator:
                 "status": "BLOCKED",
                 "reason": "MISSING_PRODUCT"
             }
+
+
+        # ====================================================
+        # CYCLE MANAGEMENT
+        # ====================================================
+
+        if isinstance(product, dict):
+
+            product_id = (
+                product.get("product_id")
+                or product.get("id")
+                or "UNKNOWN_PRODUCT"
+            )
+
+        else:
+
+            product_id = str(product)
+
+
+        cycle = self.cycle_manager.create_run(
+            product_id=product_id,
+            platform="CONTENT",
+            cycle_id="ROUND_1"
+        )
+
+
+        self.cycle_logger.log_run(
+            run_id=cycle["run_id"],
+            cycle_id=cycle["cycle_id"],
+            product_id=cycle["product_id"],
+            platform=cycle["platform"],
+            status="PROCESSING",
+            note="Autopilot cycle started"
+        )
 
 
         generated_content = self.content.generate(
@@ -93,6 +135,15 @@ class AutopilotOrchestrator:
 
             if compliance_result.get("status") == "BLOCKED":
 
+                self.cycle_logger.log_run(
+                    run_id=cycle["run_id"],
+                    cycle_id=cycle["cycle_id"],
+                    product_id=cycle["product_id"],
+                    platform=cycle["platform"],
+                    status="BLOCKED",
+                    note="Compliance failed"
+                )
+
                 return {
                     "status": "BLOCKED",
                     "reason": "COMPLIANCE_FAILED",
@@ -130,24 +181,7 @@ class AutopilotOrchestrator:
 
 
         # ====================================================
-        # TRACKING
-        # ====================================================
-        #
-        # WICHTIG:
-        # Hier werden keine Klicks protokolliert.
-        #
-        # Klicks dürfen ausschließlich durch eine echte
-        # Nutzeraktion an der Tracking-Route entstehen.
-        #
-        # Ebenso wird hier kein Umsatz erzeugt.
-        # ====================================================
-
-
-        # ====================================================
-        # PUBLISH STATUS
-        # ====================================================
-        #
-        # Es wird weiterhin nichts real veröffentlicht.
+        # SAFE PUBLISH STATUS
         # ====================================================
 
         youtube_result = {
@@ -162,6 +196,9 @@ class AutopilotOrchestrator:
 
         return {
             "status": "READY",
+            "run_id": cycle["run_id"],
+            "cycle_id": cycle["cycle_id"],
+            "product_id": cycle["product_id"],
             "product": product,
             "content": generated_content,
             "partner": partner,

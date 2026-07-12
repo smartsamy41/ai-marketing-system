@@ -1,20 +1,88 @@
-# Python
+# ==================================================
+# PYTHON
+# ==================================================
+
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# OAuth / Secrets
-youtube_client_secret.json
+
+# ==================================================
+# VIRTUAL ENVIRONMENTS
+# ==================================================
+
+.venv/
+.venv*/
+venv/
+
+
+# ==================================================
+# SECRETS / OAUTH / TOKENS
+# ==================================================
+
 .env
+*.env
+
 *.pkl
+*.token
 
-# Local OAuth tests
-youtube_oauth.py
+token.txt
 
-# Backups
+client_secret*.json
+youtube_client_secret*.json
+
+# rotated secrets
+*_rotated.json
+
+
+# ==================================================
+# LOCAL DEVELOPMENT
+# ==================================================
+
+FETCH_HEAD
+
+.vscode/
+.idea/
+
+
+# ==================================================
+# BACKUPS / AUDITS
+# ==================================================
+
+backups/
+audits/
+
 *_backup_*
 *_before_*
 
-# CSV backups
-landingpages_backup_before_compliance.csv
-landingpages_before_final_compliance.csv
-pin_queue_backup_20260708_001259.csv
+app/*.backup_*
+
+
+# ==================================================
+# LOCAL TEST FILES
+# ==================================================
+
+youtube_oauth.py
+
+
+# ==================================================
+# TEMP IMPORT FILES
+# ==================================================
+
+Master_Affiliate_Provisionen*.csv
+
+
+# ==================================================
+# LOGS / TEMP FILES
+# ==================================================
+
+*.log
+*.tmp
+
+
+# ==================================================
+# GENERATED FILES
+# ==================================================
+
+*.cache
