@@ -13,7 +13,8 @@ class AutopilotOrchestrator:
         pin,
         revenue,
         affiliate=None,
-        compliance=None
+        compliance=None,
+        winner_engine=None
     ):
 
         self.ai = ai
@@ -25,9 +26,12 @@ class AutopilotOrchestrator:
         self.affiliate = affiliate
         self.compliance = compliance
 
-        # Learning Loop Cycle Control
+        # Learning Loop
         self.cycle_manager = CycleManager()
         self.cycle_logger = CycleLogger()
+
+        # Winner Gate
+        self.winner_engine = winner_engine
 
 
     # ========================================================
@@ -80,6 +84,11 @@ class AutopilotOrchestrator:
             platform="CONTENT",
             cycle_id="ROUND_1"
         )
+
+
+        if cycle.get("status") == "BLOCKED":
+
+            return cycle
 
 
         self.cycle_logger.log_run(
@@ -144,13 +153,51 @@ class AutopilotOrchestrator:
                     note="Compliance failed"
                 )
 
+
                 return {
                     "status": "BLOCKED",
                     "reason": "COMPLIANCE_FAILED",
-                    "audit": compliance_result,
-                    "product": product,
-                    "content": generated_content
+                    "audit": compliance_result
                 }
+
+
+        # ====================================================
+        # WINNER GATE
+        # ====================================================
+
+        winner_result = {
+
+            "winner_status": False,
+
+            "video_allowed": False,
+
+            "voice_allowed": False,
+
+            "reason": "NO_WINNER_ENGINE"
+
+        }
+
+
+        if self.winner_engine:
+
+
+            winner_result = self.winner_engine.evaluate(
+
+                money_score=0,
+
+                ctr=0,
+
+                conversions=0,
+
+                earnings=0,
+
+                compliance_status=
+                    compliance_result.get(
+                        "status",
+                        "OK"
+                    )
+
+            )
 
 
         # ====================================================
@@ -185,28 +232,65 @@ class AutopilotOrchestrator:
         # ====================================================
 
         youtube_result = {
-            "status": "waiting_for_video_asset"
+
+            "status": (
+                "WINNER_APPROVED"
+                if winner_result.get(
+                    "video_allowed"
+                )
+                else "NOT_ALLOWED"
+            ),
+
+            "voice_allowed":
+                winner_result.get(
+                    "voice_allowed"
+                ),
+
+            "reason":
+                winner_result.get(
+                    "reason"
+                )
         }
 
 
         pinterest_result = {
-            "status": "waiting_for_image_asset"
+
+            "status":
+                "waiting_for_image_asset"
+
         }
 
 
         return {
+
             "status": "READY",
+
             "run_id": cycle["run_id"],
+
             "cycle_id": cycle["cycle_id"],
+
             "product_id": cycle["product_id"],
+
             "product": product,
+
             "content": generated_content,
+
             "partner": partner,
+
             "affiliate_link": affiliate_link,
+
             "tracking_link": tracking_link,
+
             "product_data": product_data,
+
             "compliance": compliance_result,
+
+            "winner": winner_result,
+
             "youtube": youtube_result,
+
             "pinterest": pinterest_result,
+
             "revenue": self.revenue.stats()
+
         }
