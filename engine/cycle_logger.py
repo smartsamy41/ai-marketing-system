@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+
 from google.cloud import bigquery
 
 
@@ -19,6 +20,10 @@ class CycleLogger:
         )
 
 
+    # ========================================================
+    # CREATE RUN EVENT
+    # ========================================================
+
     def log_run(
         self,
         run_id: str,
@@ -29,26 +34,81 @@ class CycleLogger:
         note: str = ""
     ):
 
+        return self._insert_status_event(
+            run_id,
+            cycle_id,
+            product_id,
+            platform,
+            status,
+            note
+        )
+
+
+    # ========================================================
+    # STATUS CHANGE EVENT
+    # ========================================================
+
+    def update_status(
+        self,
+        run_id: str,
+        cycle_id: str,
+        product_id: str,
+        platform: str,
+        status: str,
+        note: str = ""
+    ):
+
+        return self._insert_status_event(
+            run_id,
+            cycle_id,
+            product_id,
+            platform,
+            status,
+            note
+        )
+
+
+    # ========================================================
+    # BIGQUERY INSERT
+    # ========================================================
+
+    def _insert_status_event(
+        self,
+        run_id: str,
+        cycle_id: str,
+        product_id: str,
+        platform: str,
+        status: str,
+        note: str
+    ):
+
         row = {
-            "timestamp": datetime.now(
-                timezone.utc
-            ).isoformat(),
 
-            "job_name": (
-                "PRODUCT_CYCLE"
-            ),
+            "timestamp":
+                datetime.now(
+                    timezone.utc
+                ).isoformat(),
 
-            "status": status,
+            "job_name":
+                "PRODUCT_CYCLE",
 
-            "note": note,
+            "status":
+                status,
 
-            "run_id": run_id,
+            "note":
+                note,
 
-            "cycle_id": cycle_id,
+            "run_id":
+                run_id,
 
-            "product_id": product_id,
+            "cycle_id":
+                cycle_id,
 
-            "platform": platform
+            "product_id":
+                product_id,
+
+            "platform":
+                platform
         }
 
 
@@ -56,6 +116,7 @@ class CycleLogger:
             self.table,
             [row]
         )
+
 
         return {
             "errors": errors,
