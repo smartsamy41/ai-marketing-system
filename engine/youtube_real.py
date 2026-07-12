@@ -21,7 +21,7 @@ class YouTubeReal:
                     "description": description
                 },
                 "status": {
-                    "privacyStatus": "public"
+                    "privacyStatus": "private"
                 }
             },
             media_body=MediaFileUpload(file_path)

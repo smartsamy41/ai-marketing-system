@@ -1,5 +1,6 @@
 from engine.cycle_manager import CycleManager
 from engine.cycle_logger import CycleLogger
+from engine.learning_reader import LearningReader
 
 
 class AutopilotOrchestrator:
@@ -29,14 +30,11 @@ class AutopilotOrchestrator:
         # Learning Loop
         self.cycle_manager = CycleManager()
         self.cycle_logger = CycleLogger()
+        self.learning_reader = LearningReader()
 
         # Winner Gate
         self.winner_engine = winner_engine
 
-
-    # ========================================================
-    # MAIN AUTOPILOT CYCLE
-    # ========================================================
 
     def run(self):
 
@@ -62,10 +60,6 @@ class AutopilotOrchestrator:
             }
 
 
-        # ====================================================
-        # CYCLE MANAGEMENT
-        # ====================================================
-
         if isinstance(product, dict):
 
             product_id = (
@@ -79,6 +73,7 @@ class AutopilotOrchestrator:
             product_id = str(product)
 
 
+
         cycle = self.cycle_manager.create_run(
             product_id=product_id,
             platform="CONTENT",
@@ -89,6 +84,7 @@ class AutopilotOrchestrator:
         if cycle.get("status") == "BLOCKED":
 
             return cycle
+
 
 
         self.cycle_logger.log_run(
@@ -106,14 +102,12 @@ class AutopilotOrchestrator:
         )
 
 
-        # ====================================================
-        # COMPLIANCE CHECK
-        # ====================================================
-
         compliance_result = {
+
             "status": "NOT_CONFIGURED",
             "errors": [],
             "partner_rules": []
+
         }
 
 
@@ -126,12 +120,12 @@ class AutopilotOrchestrator:
                 product
             )
 
-
             if product_data.get("status") == "FOUND":
 
                 partner = product_data.get(
                     "source"
                 )
+
 
 
         if self.compliance:
@@ -144,35 +138,41 @@ class AutopilotOrchestrator:
 
             if compliance_result.get("status") == "BLOCKED":
 
+
                 self.cycle_logger.log_run(
+
                     run_id=cycle["run_id"],
+
                     cycle_id=cycle["cycle_id"],
+
                     product_id=cycle["product_id"],
+
                     platform=cycle["platform"],
+
                     status="BLOCKED",
+
                     note="Compliance failed"
+
                 )
 
 
                 return {
+
                     "status": "BLOCKED",
+
                     "reason": "COMPLIANCE_FAILED",
+
                     "audit": compliance_result
+
                 }
 
 
-        # ====================================================
-        # WINNER GATE
-        # ====================================================
 
         winner_result = {
 
             "winner_status": False,
-
             "video_allowed": False,
-
             "voice_allowed": False,
-
             "reason": "NO_WINNER_ENGINE"
 
         }
@@ -181,15 +181,66 @@ class AutopilotOrchestrator:
         if self.winner_engine:
 
 
+            learning_data = (
+                self.learning_reader.get_product_learning(
+                    product_id
+                )
+            )
+
+
+            if learning_data:
+
+                money_score = float(
+                    learning_data.get(
+                        "money_score",
+                        0
+                    )
+                    or 0
+                )
+
+                ctr = float(
+                    learning_data.get(
+                        "ctr",
+                        0
+                    )
+                    or 0
+                )
+
+                conversions = int(
+                    learning_data.get(
+                        "conversions",
+                        0
+                    )
+                    or 0
+                )
+
+                earnings = float(
+                    learning_data.get(
+                        "earnings",
+                        0
+                    )
+                    or 0
+                )
+
+
+            else:
+
+                money_score = 0
+                ctr = 0
+                conversions = 0
+                earnings = 0
+
+
+
             winner_result = self.winner_engine.evaluate(
 
-                money_score=0,
+                money_score=money_score,
 
-                ctr=0,
+                ctr=ctr,
 
-                conversions=0,
+                conversions=conversions,
 
-                earnings=0,
+                earnings=earnings,
 
                 compliance_status=
                     compliance_result.get(
@@ -200,9 +251,6 @@ class AutopilotOrchestrator:
             )
 
 
-        # ====================================================
-        # AFFILIATE
-        # ====================================================
 
         affiliate_link = None
         tracking_link = None
@@ -227,18 +275,19 @@ class AutopilotOrchestrator:
                 )
 
 
-        # ====================================================
-        # SAFE PUBLISH STATUS
-        # ====================================================
 
         youtube_result = {
 
             "status": (
+
                 "WINNER_APPROVED"
+
                 if winner_result.get(
                     "video_allowed"
                 )
+
                 else "NOT_ALLOWED"
+
             ),
 
             "voice_allowed":
@@ -250,6 +299,7 @@ class AutopilotOrchestrator:
                 winner_result.get(
                     "reason"
                 )
+
         }
 
 
@@ -259,6 +309,7 @@ class AutopilotOrchestrator:
                 "waiting_for_image_asset"
 
         }
+
 
 
         return {

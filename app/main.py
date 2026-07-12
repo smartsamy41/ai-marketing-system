@@ -15,6 +15,7 @@ from engine.cloud_scheduler_trigger import CloudSchedulerTrigger
 from engine.google_sheets_live import GoogleSheetsLive
 from engine.affiliate_engine import AffiliateEngine
 from engine.compliance_engine import ComplianceEngine
+from engine.winner_engine import WinnerEngine
 
 from engine.sheets_engine import SheetsEngine
 from engine.ai_core_engine import AICoreEngine
@@ -121,6 +122,7 @@ learning = AILearningLoop(
 
 affiliate = AffiliateEngine()
 compliance = ComplianceEngine()
+winner_engine = WinnerEngine()
 
 
 # ============================================================
@@ -174,7 +176,8 @@ autopilot = AutopilotOrchestrator(
     pinterest,
     revenue,
     affiliate=affiliate,
-    compliance=compliance
+    compliance=compliance,
+    winner_engine=winner_engine
 )
 
 
