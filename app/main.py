@@ -462,6 +462,65 @@ def landingpage(
     )
 
 
+    assets = affiliate_data.get("assets", [])
+
+    asset_html = ""
+
+    for asset in assets:
+
+        vergleich = str(
+            asset.get("vergleichsrechner_html") or ""
+        )
+
+        kurz = str(
+            asset.get("kurzrechner_html") or ""
+        )
+
+        banner300 = str(
+            asset.get("banner_300x250_html") or ""
+        )
+
+        banner728 = str(
+            asset.get("banner_728x90_html") or ""
+        )
+
+
+        if vergleich and vergleich.lower() != "nan":
+            asset_html += f"""
+            <section>
+                <h2>Vergleichsformular</h2>
+                {vergleich}
+            </section>
+            """
+
+
+        if kurz and kurz.lower() != "nan":
+            asset_html += f"""
+            <section>
+                <h2>Kurzrechner</h2>
+                {kurz}
+            </section>
+            """
+
+
+        if banner300 and banner300.lower() != "nan":
+            asset_html += f"""
+            <section>
+                <h2>Werbung / Anzeige</h2>
+                {banner300}
+            </section>
+            """
+
+
+        if banner728 and banner728.lower() != "nan":
+            asset_html += f"""
+            <section>
+                <h2>Werbung / Anzeige</h2>
+                {banner728}
+            </section>
+            """
+
+
     tracking_url = str(
         affiliate_data.get("tracking_url")
         or affiliate_data.get("affiliate_url")
@@ -550,6 +609,8 @@ def landingpage(
         <h1>{product_name}</h1>
 
         {page_html}
+
+        {asset_html}
 
         {advertisement}
 
