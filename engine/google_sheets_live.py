@@ -3,6 +3,7 @@ import os
 
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+from googleapiclient.http import HttpRequest
 
 
 class GoogleSheetsLive:
@@ -13,31 +14,45 @@ class GoogleSheetsLive:
         credentials_json=None
     ):
 
-        self.spreadsheet_id = spreadsheet_id or os.getenv("GOOGLE_SHEET_ID")
+        self.spreadsheet_id = (
+            spreadsheet_id
+            or os.getenv("GOOGLE_SHEET_ID")
+        )
 
-        raw_credentials = credentials_json or os.getenv(
-            "GOOGLE_APPLICATION_CREDENTIALS_JSON"
+        raw_credentials = (
+            credentials_json
+            or os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
         )
 
         if not self.spreadsheet_id:
-            raise Exception("Missing GOOGLE_SHEET_ID")
+            raise Exception(
+                "Missing GOOGLE_SHEET_ID"
+            )
 
         if not raw_credentials:
-            raise Exception("Missing GOOGLE_APPLICATION_CREDENTIALS_JSON")
+            raise Exception(
+                "Missing GOOGLE_APPLICATION_CREDENTIALS_JSON"
+            )
 
-        credentials_info = json.loads(raw_credentials)
+        credentials_info = json.loads(
+            raw_credentials
+        )
 
-        self.credentials = service_account.Credentials.from_service_account_info(
-            credentials_info,
-            scopes=[
-                "https://www.googleapis.com/auth/spreadsheets"
-            ]
+        self.credentials = (
+            service_account.Credentials
+            .from_service_account_info(
+                credentials_info,
+                scopes=[
+                    "https://www.googleapis.com/auth/spreadsheets"
+                ]
+            )
         )
 
         self.service = build(
             "sheets",
             "v4",
-            credentials=self.credentials
+            credentials=self.credentials,
+            cache_discovery=False
         )
 
 
@@ -51,16 +66,28 @@ class GoogleSheetsLive:
         range_name="A:Z"
     ):
 
-        result = self.service.spreadsheets().values().get(
-            spreadsheetId=self.spreadsheet_id,
-            range=f"{sheet}!{range_name}"
-        ).execute()
+        request = (
+            self.service
+            .spreadsheets()
+            .values()
+            .get(
+                spreadsheetId=self.spreadsheet_id,
+                range=f"{sheet}!{range_name}"
+            )
+        )
 
-        return result.get("values", [])
+        response = request.execute(
+            num_retries=5
+        )
+
+        return response.get(
+            "values",
+            []
+        )
 
 
     # =========================
-    # READ AS RECORDS
+    # READ RECORDS
     # =========================
 
     def read_records(
@@ -99,7 +126,7 @@ class GoogleSheetsLive:
 
 
     # =========================
-    # APPEND DATA
+    # APPEND
     # =========================
 
     def append(
@@ -114,16 +141,24 @@ class GoogleSheetsLive:
             ]
         }
 
-        return self.service.spreadsheets().values().append(
-            spreadsheetId=self.spreadsheet_id,
-            range=f"{sheet}!A:Z",
-            valueInputOption="RAW",
-            body=body
-        ).execute()
+        return (
+            self.service
+            .spreadsheets()
+            .values()
+            .append(
+                spreadsheetId=self.spreadsheet_id,
+                range=f"{sheet}!A:Z",
+                valueInputOption="RAW",
+                body=body
+            )
+            .execute(
+                num_retries=5
+            )
+        )
 
 
     # =========================
-    # WRITE / REPLACE SHEET
+    # WRITE
     # =========================
 
     def write_rows(
@@ -136,43 +171,17 @@ class GoogleSheetsLive:
             "values": rows
         }
 
-        return self.service.spreadsheets().values().update(
-            spreadsheetId=self.spreadsheet_id,
-            range=f"{sheet}!A1",
-            valueInputOption="RAW",
-            body=body
-        ).execute()
-
-
-    # =========================
-    # TRACKING
-    # =========================
-
-    def log_click(
-        self,
-        product,
-        source="web"
-    ):
-
-        return self.append(
-            "clicks",
-            [
-                product,
-                source
-            ]
-        )
-
-
-    def log_conversion(
-        self,
-        product,
-        value
-    ):
-
-        return self.append(
-            "conversions",
-            [
-                product,
-                value
-            ]
+        return (
+            self.service
+            .spreadsheets()
+            .values()
+            .update(
+                spreadsheetId=self.spreadsheet_id,
+                range=f"{sheet}!A:Z",
+                valueInputOption="RAW",
+                body=body
+            )
+            .execute(
+                num_retries=5
+            )
         )
