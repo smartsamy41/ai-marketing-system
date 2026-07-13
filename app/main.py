@@ -464,7 +464,12 @@ def landingpage(
 
     assets = affiliate_data.get("assets", [])
 
+    print("DEBUG PRODUCT:", product_id)
+    print("DEBUG ASSETS:", len(assets))
+
     asset_html = ""
+
+    print("DEBUG LP ASSETS COUNT:", len(assets))
 
     for asset in assets:
 
@@ -520,6 +525,8 @@ def landingpage(
             </section>
             """
 
+
+    print("DEBUG ASSET HTML LENGTH:", len(asset_html))
 
     tracking_url = str(
         affiliate_data.get("tracking_url")
@@ -597,6 +604,8 @@ def landingpage(
     </section>
     """
 
+
+    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
@@ -737,6 +746,8 @@ def track_real_click(
 )
 def impressum():
 
+    print("DEBUG FINAL ASSET HTML:", len(asset_html))
+
     body = f"""
     <main>
         <h1>Impressum</h1>
@@ -850,6 +861,8 @@ def impressum():
     response_class=HTMLResponse
 )
 def datenschutz():
+
+    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
@@ -1114,6 +1127,8 @@ def affiliate_hinweis():
     response_class=HTMLResponse
 )
 def kontakt():
+
+    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
