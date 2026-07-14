@@ -27,19 +27,16 @@ class AutopilotOrchestrator:
         self.affiliate = affiliate
         self.compliance = compliance
 
-        # Learning Loop
         self.cycle_manager = CycleManager()
         self.cycle_logger = CycleLogger()
         self.learning_reader = LearningReader()
 
-        # Winner Gate
         self.winner_engine = winner_engine
 
 
     def run(self):
 
         decision = self.ai.decide_next_action()
-
 
         if decision.get("action") == "WAIT":
 
@@ -50,7 +47,6 @@ class AutopilotOrchestrator:
 
 
         product = decision.get("product")
-
 
         if not product:
 
@@ -73,7 +69,6 @@ class AutopilotOrchestrator:
             product_id = str(product)
 
 
-
         cycle = self.cycle_manager.create_run(
             product_id=product_id,
             platform="CONTENT",
@@ -84,7 +79,6 @@ class AutopilotOrchestrator:
         if cycle.get("status") == "BLOCKED":
 
             return cycle
-
 
 
         self.cycle_logger.log_run(
@@ -103,11 +97,9 @@ class AutopilotOrchestrator:
 
 
         compliance_result = {
-
             "status": "NOT_CONFIGURED",
             "errors": [],
             "partner_rules": []
-
         }
 
 
@@ -116,16 +108,15 @@ class AutopilotOrchestrator:
 
         if self.affiliate:
 
-            product_data = self.affiliate.get_product_data(
+            initial_product_data = self.affiliate.get_product_data(
                 product
             )
 
-            if product_data.get("status") == "FOUND":
+            if initial_product_data.get("status") == "FOUND":
 
-                partner = product_data.get(
+                partner = initial_product_data.get(
                     "source"
                 )
-
 
 
         if self.compliance:
@@ -138,34 +129,21 @@ class AutopilotOrchestrator:
 
             if compliance_result.get("status") == "BLOCKED":
 
-
                 self.cycle_logger.log_run(
-
                     run_id=cycle["run_id"],
-
                     cycle_id=cycle["cycle_id"],
-
                     product_id=cycle["product_id"],
-
                     platform=cycle["platform"],
-
                     status="BLOCKED",
-
                     note="Compliance failed"
-
                 )
 
 
                 return {
-
                     "status": "BLOCKED",
-
                     "reason": "COMPLIANCE_FAILED",
-
                     "audit": compliance_result
-
                 }
-
 
 
         winner_result = {
@@ -180,7 +158,6 @@ class AutopilotOrchestrator:
 
         if self.winner_engine:
 
-
             learning_data = (
                 self.learning_reader.get_product_learning(
                     product_id
@@ -194,32 +171,28 @@ class AutopilotOrchestrator:
                     learning_data.get(
                         "money_score",
                         0
-                    )
-                    or 0
+                    ) or 0
                 )
 
                 ctr = float(
                     learning_data.get(
                         "ctr",
                         0
-                    )
-                    or 0
+                    ) or 0
                 )
 
                 conversions = int(
                     learning_data.get(
                         "conversions",
                         0
-                    )
-                    or 0
+                    ) or 0
                 )
 
                 earnings = float(
                     learning_data.get(
                         "earnings",
                         0
-                    )
-                    or 0
+                    ) or 0
                 )
 
 
@@ -229,7 +202,6 @@ class AutopilotOrchestrator:
                 ctr = 0
                 conversions = 0
                 earnings = 0
-
 
 
             winner_result = self.winner_engine.evaluate(
@@ -251,9 +223,9 @@ class AutopilotOrchestrator:
             )
 
 
-
         affiliate_link = None
         tracking_link = None
+        landingpage_link = None
         product_data = None
 
 
@@ -274,21 +246,19 @@ class AutopilotOrchestrator:
                     "tracking_url"
                 )
 
+                landingpage_link = product_data.get(
+                    "landingpage_url"
+                )
 
 
         youtube_result = {
 
-            "status": (
-
+            "status":
                 "WINNER_APPROVED"
-
                 if winner_result.get(
                     "video_allowed"
                 )
-
-                else "NOT_ALLOWED"
-
-            ),
+                else "NOT_ALLOWED",
 
             "voice_allowed":
                 winner_result.get(
@@ -306,10 +276,12 @@ class AutopilotOrchestrator:
         pinterest_result = {
 
             "status":
-                "waiting_for_image_asset"
+                "waiting_for_image_asset",
+
+            "target_url":
+                landingpage_link
 
         }
-
 
 
         return {
@@ -331,6 +303,8 @@ class AutopilotOrchestrator:
             "affiliate_link": affiliate_link,
 
             "tracking_link": tracking_link,
+
+            "landingpage_link": landingpage_link,
 
             "product_data": product_data,
 
