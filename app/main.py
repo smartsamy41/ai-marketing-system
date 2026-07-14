@@ -811,7 +811,7 @@ def landingpage(
             <a href="{tracking_url}"
                target="_blank"
                rel="sponsored nofollow noopener">
-                Angebote prüfen
+                Vergleich starten
             </a>
         </p>
     </section>
