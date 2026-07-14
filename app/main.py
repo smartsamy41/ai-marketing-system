@@ -5,9 +5,10 @@ import uuid
 from datetime import datetime, timezone
 from threading import RLock
 from typing import Any
+from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, Response
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
@@ -310,6 +311,7 @@ def render_page(
 ) -> HTMLResponse:
 
     canonical_url = f"{SITE_URL}{canonical_path}"
+    social_image_url = f"{SITE_URL}/social-card.png"
 
     html = f"""<!DOCTYPE html>
 <html lang="de">
@@ -317,12 +319,42 @@ def render_page(
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
+
     <title>{title}</title>
+
     <meta name="description"
           content="{description}">
+
     <link rel="canonical"
           href="{canonical_url}">
+
+    <meta property="og:type"
+          content="website">
+    <meta property="og:site_name"
+          content="{SITE_NAME}">
+    <meta property="og:title"
+          content="{title}">
+    <meta property="og:description"
+          content="{description}">
+    <meta property="og:url"
+          content="{canonical_url}">
+    <meta property="og:image"
+          content="{social_image_url}">
+    <meta property="og:image:width"
+          content="1200">
+    <meta property="og:image:height"
+          content="630">
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+    <meta name="twitter:title"
+          content="{title}">
+    <meta name="twitter:description"
+          content="{description}">
+    <meta name="twitter:image"
+          content="{social_image_url}">
 </head>
+
 <body style="
     font-family:Arial,sans-serif;
     line-height:1.6;
@@ -342,17 +374,195 @@ def render_page(
 
 
 # ============================================================
-# ROOT API
+# PUBLIC WEBSITE ROOT
 # ============================================================
 
-@app.get("/")
+@app.get(
+    "/",
+    response_class=HTMLResponse
+)
 def home():
 
-    return {
-        "system": "FREE BASICS",
-        "phase": "CONNECTED",
-        "status": "READY"
-    }
+    body = """
+    <main>
+        <header>
+            <p><strong>Free Basics</strong></p>
+
+            <h1>
+                Produkte, Tarife und Angebote übersichtlich prüfen
+            </h1>
+
+            <p>
+                Free Basics stellt Informationen zu Technik,
+                Internet, Energie, Finanzen, Reisen, Büchern,
+                Haushalt und weiteren Themen bereit.
+            </p>
+        </header>
+
+        <section>
+            <h2>Informationen und Vergleiche</h2>
+
+            <p>
+                Auf unseren Seiten finden Nutzer
+                Produktinformationen, Vergleichsmöglichkeiten
+                und Hinweise zu ausgewählten Angeboten.
+            </p>
+
+            <p>
+                Externe Partnerbereiche und Affiliate-Links
+                werden transparent als Werbung oder Anzeige
+                gekennzeichnet.
+            </p>
+        </section>
+
+        <section>
+            <h2>Unsere Themen</h2>
+
+            <ul>
+                <li>Technik und Internet</li>
+                <li>Strom und Energie</li>
+                <li>Finanzen und Versicherungen</li>
+                <li>Reisen und Mobilität</li>
+                <li>Produkte für Alltag und Haushalt</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Transparenz</h2>
+
+            <p>
+                Free Basics kann für qualifizierte Käufe,
+                Abschlüsse oder Anfragen eine Provision erhalten.
+                Für Nutzer entstehen dadurch keine zusätzlichen
+                Kosten.
+            </p>
+
+            <p>
+                Weitere Informationen stehen im
+                <a href="/affiliate-hinweis">
+                    Affiliate-Hinweis
+                </a>.
+            </p>
+        </section>
+    </main>
+    """
+
+    return render_page(
+        title="Free Basics | Produkte und Angebote prüfen",
+        body=body,
+        canonical_path="/",
+        description=(
+            "Free Basics bietet Informationen zu Produkten, "
+            "Tarifen, Vergleichen und ausgewählten Angeboten."
+        )
+    )
+
+
+@app.get(
+    "/robots.txt",
+    response_class=Response
+)
+def robots_txt():
+
+    content = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /run\n"
+        "Disallow: /track\n"
+        f"Sitemap: {SITE_URL}/sitemap.xml\n"
+    )
+
+    return Response(
+        content=content,
+        media_type="text/plain; charset=utf-8"
+    )
+
+
+@app.get(
+    "/sitemap.xml",
+    response_class=Response
+)
+def sitemap_xml():
+
+    static_paths = [
+        "/",
+        "/impressum",
+        "/datenschutz",
+        "/affiliate-hinweis",
+        "/kontakt",
+    ]
+
+    product_paths = []
+
+    try:
+        landingpage_records = read_records(
+            "landingpages"
+        )
+
+        for record in landingpage_records:
+
+            product_id = normalize_product_id(
+                record.get("product_id")
+                or record.get("produkt_id")
+            )
+
+            if product_id:
+                product_paths.append(
+                    f"/lp/{product_id}"
+                )
+
+    except Exception:
+        product_paths = []
+
+    all_paths = list(
+        dict.fromkeys(
+            static_paths + product_paths
+        )
+    )
+
+    url_entries = []
+
+    for path in all_paths:
+        url_entries.append(
+            "  <url>\n"
+            f"    <loc>{SITE_URL}{path}</loc>\n"
+            "  </url>"
+        )
+
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(url_entries)
+        + "\n</urlset>\n"
+    )
+
+    return Response(
+        content=xml,
+        media_type="application/xml; charset=utf-8"
+    )
+
+
+@app.get(
+    "/social-card.png",
+    response_class=FileResponse
+)
+def social_card():
+
+    image_path = Path(
+        "app/static/free-basics-social.png"
+    )
+
+    if not image_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="Social Preview nicht gefunden"
+        )
+
+    return FileResponse(
+        path=image_path,
+        media_type="image/png",
+        filename="free-basics-social.png"
+    )
 
 
 # ============================================================
