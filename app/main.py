@@ -605,7 +605,6 @@ def landingpage(
     """
 
 
-    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
@@ -746,7 +745,6 @@ def track_real_click(
 )
 def impressum():
 
-    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
@@ -862,7 +860,6 @@ def impressum():
 )
 def datenschutz():
 
-    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
@@ -1128,7 +1125,6 @@ def affiliate_hinweis():
 )
 def kontakt():
 
-    print("DEBUG FINAL ASSET HTML:", len(asset_html))
 
     body = f"""
     <main>
