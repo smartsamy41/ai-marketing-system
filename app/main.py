@@ -506,7 +506,10 @@ def sitemap_xml():
                 or record.get("produkt_id")
             )
 
-            if product_id:
+            if (
+                product_id
+                and not product_id.upper().startswith("TEL_")
+            ):
                 product_paths.append(
                     f"/lp/{product_id}"
                 )
