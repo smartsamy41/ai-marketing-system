@@ -11,47 +11,24 @@ class AICoreEngine:
         self.learning = LearningReader()
 
 
-    # =========================
-    # FULL ANALYSIS LOOP
-    # =========================
-
     def run_analysis(self):
 
-        try:
+        performance = self.performance.get_summary()
 
-            performance = self.performance.get_summary()
+        clicks = performance.get(
+            "clicks",
+            []
+        )
 
-            clicks = performance.get(
-                "clicks",
-                []
-            )
+        conversions = performance.get(
+            "conversions",
+            []
+        )
 
-            conversions = performance.get(
-                "conversions",
-                []
-            )
-
-            earnings = performance.get(
-                "earnings",
-                []
-            )
-
-
-        except Exception:
-
-            data = self.sheets.export()
-
-            clicks = data.get(
-                "clicks",
-                []
-            )
-
-            conversions = data.get(
-                "conversions",
-                []
-            )
-
-            earnings = []
+        earnings = performance.get(
+            "earnings",
+            []
+        )
 
 
         score = {}
@@ -63,12 +40,12 @@ class AICoreEngine:
                 "product_id"
             )
 
-
             if product:
 
                 score[product] = (
                     score.get(product, 0)
-                    + int(
+                    +
+                    int(
                         item.get(
                             "clicks",
                             0
@@ -115,10 +92,6 @@ class AICoreEngine:
         }
 
 
-    # =========================
-    # LEARNING ANALYSIS
-    # =========================
-
     def get_learning_priority(self):
 
         winners = self.learning.get_winners()
@@ -127,13 +100,8 @@ class AICoreEngine:
 
             return None
 
-
         return winners[0]
 
-
-    # =========================
-    # AUTO DECISION ENGINE
-    # =========================
 
     def decide_next_action(self):
 
@@ -173,23 +141,10 @@ class AICoreEngine:
                     "not enough data",
 
                 "cycle":
-                    "ROUND_1"
+                    "ROUND_1",
 
-            }
-
-
-        if not analysis["top_products"]:
-
-            return {
-
-                "action":
-                    "WAIT",
-
-                "reason":
-                    "no products yet",
-
-                "cycle":
-                    "ROUND_1"
+                "debug":
+                    analysis
 
             }
 
@@ -209,6 +164,9 @@ class AICoreEngine:
                 "highest performance detected",
 
             "cycle":
-                "ROUND_1"
+                "ROUND_1",
+
+            "debug":
+                analysis
 
         }
