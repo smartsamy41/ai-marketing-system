@@ -1,4 +1,5 @@
 from engine.learning_reader import LearningReader
+from engine.performance_reader import PerformanceReader
 
 
 class AICoreEngine:
@@ -6,6 +7,7 @@ class AICoreEngine:
     def __init__(self, sheets_api):
 
         self.sheets = sheets_api
+        self.performance = PerformanceReader()
         self.learning = LearningReader()
 
 
@@ -15,50 +17,81 @@ class AICoreEngine:
 
     def run_analysis(self):
 
-        data = self.sheets.export()
+        try:
 
-        clicks = data.get(
-            "clicks",
-            []
-        )
+            performance = self.performance.get_summary()
 
-        conversions = data.get(
-            "conversions",
-            []
-        )
+            clicks = performance.get(
+                "clicks",
+                []
+            )
+
+            conversions = performance.get(
+                "conversions",
+                []
+            )
+
+            earnings = performance.get(
+                "earnings",
+                []
+            )
+
+
+        except Exception:
+
+            data = self.sheets.export()
+
+            clicks = data.get(
+                "clicks",
+                []
+            )
+
+            conversions = data.get(
+                "conversions",
+                []
+            )
+
+            earnings = []
 
 
         score = {}
 
 
-        for c in clicks:
+        for item in clicks:
 
-            product = c.get(
-                "product"
+            product = item.get(
+                "product_id"
             )
+
 
             if product:
 
                 score[product] = (
                     score.get(product, 0)
-                    + 1
+                    + int(
+                        item.get(
+                            "clicks",
+                            0
+                        )
+                    )
                 )
 
 
         revenue = 0
 
 
-        for c in conversions:
+        for item in earnings:
 
             revenue += float(
-                c.get(
-                    "value",
+                item.get(
+                    "earnings",
                     0
                 )
+                or 0
             )
 
 
-        top = sorted(
+        top_products = sorted(
             score.items(),
             key=lambda x: x[1],
             reverse=True
@@ -68,7 +101,7 @@ class AICoreEngine:
         return {
 
             "clicks":
-                len(clicks),
+                sum(score.values()),
 
             "conversions":
                 len(conversions),
@@ -77,7 +110,7 @@ class AICoreEngine:
                 revenue,
 
             "top_products":
-                top
+                top_products
 
         }
 
@@ -107,9 +140,6 @@ class AICoreEngine:
         learning = self.get_learning_priority()
 
 
-        # ROUND 2:
-        # Gewinner aus Learning bevorzugen
-
         if learning:
 
             return {
@@ -128,9 +158,6 @@ class AICoreEngine:
 
             }
 
-
-        # ROUND 1:
-        # normale Datensammlung
 
         analysis = self.run_analysis()
 

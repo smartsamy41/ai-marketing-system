@@ -9,11 +9,17 @@ class PerformanceReader:
         dataset="smartcontent"
     ):
 
-        self.client = bigquery.Client()
-
         self.project_id = project_id
         self.dataset = dataset
 
+        self.client = bigquery.Client(
+            project=project_id
+        )
+
+
+    # =========================
+    # CLICK PERFORMANCE
+    # =========================
 
     def get_clicks(self):
 
@@ -26,13 +32,19 @@ class PerformanceReader:
         ORDER BY clicks DESC
         """
 
-        rows = self.client.query(query)
+        rows = self.client.query(
+            query
+        )
 
         return [
             dict(row)
             for row in rows
         ]
 
+
+    # =========================
+    # CONVERSION PERFORMANCE
+    # =========================
 
     def get_conversions(self):
 
@@ -45,13 +57,19 @@ class PerformanceReader:
         ORDER BY conversions DESC
         """
 
-        rows = self.client.query(query)
+        rows = self.client.query(
+            query
+        )
 
         return [
             dict(row)
             for row in rows
         ]
 
+
+    # =========================
+    # EARNINGS PERFORMANCE
+    # =========================
 
     def get_earnings(self):
 
@@ -64,7 +82,9 @@ class PerformanceReader:
         ORDER BY earnings DESC
         """
 
-        rows = self.client.query(query)
+        rows = self.client.query(
+            query
+        )
 
         return [
             dict(row)
@@ -72,10 +92,21 @@ class PerformanceReader:
         ]
 
 
+    # =========================
+    # COMPLETE SUMMARY
+    # =========================
+
     def get_summary(self):
 
         return {
-            "clicks": self.get_clicks(),
-            "conversions": self.get_conversions(),
-            "earnings": self.get_earnings()
+
+            "clicks":
+                self.get_clicks(),
+
+            "conversions":
+                self.get_conversions(),
+
+            "earnings":
+                self.get_earnings()
+
         }
