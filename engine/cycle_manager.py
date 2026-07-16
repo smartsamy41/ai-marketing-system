@@ -30,7 +30,12 @@ class CycleManager:
 
         self.runs = {}
 
-        self.client = bigquery.Client()
+        self.project_id = project_id
+        self.dataset = dataset
+
+        self.client = bigquery.Client(
+            project=project_id
+        )
 
         self.table = (
             f"{project_id}."
