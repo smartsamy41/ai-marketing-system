@@ -1,0 +1,390 @@
+{
+  "standard_id": "FBEP_MASTER_LANDINGPAGE_V1",
+  "project": "AI Marketing System / FBEP",
+  "owner": "Samy Jendoubi",
+  "domain": "https://freebasics.online",
+  "google_cloud_project": "smartcontent2050",
+  "repository": "smartsamy41/ai-marketing-system",
+  "version": "1.0.0",
+  "status": "PRODUCTION_STANDARD",
+  "updated_at": "2026-07-17T16:27:01.248803+00:00",
+  "mission": "Universelle fachliche und redaktionelle Produktionsvorlage für zukünftige Affiliate-Landingpages.",
+  "valid_for": [
+    "Check24",
+    "Tarifcheck",
+    "Amazon",
+    "zukünftige Affiliate-Partner"
+  ],
+  "telekom_rule": {
+    "own_product_landingpages": false,
+    "destination": "https://free-basics.telekom-profis.de",
+    "rule": "Telekom-Produkte verwenden den bestehenden Telekom-Shop und keine eigenen Produktlandingpages."
+  },
+  "quality_principles": [
+    "ehrlich",
+    "verständlich",
+    "aktuell",
+    "hilfreich",
+    "transparent",
+    "vertrauenswürdig",
+    "barrierearm",
+    "mobile first",
+    "partnerkonform",
+    "keine erfundenen Bewertungen",
+    "keine erfundenen Tests",
+    "keine garantierten Einsparungen",
+    "keine künstliche Verknappung"
+  ],
+  "sections": [
+    {
+      "nr": "01",
+      "bereich": "Technische Seitendaten",
+      "pflicht": true,
+      "inhalt": [
+        "URL-Struktur",
+        "Seitentitel",
+        "Meta Description",
+        "Canonical",
+        "Seitensprache",
+        "Indexierungsstatus",
+        "Open Graph",
+        "Twitter Cards",
+        "Strukturierte Daten"
+      ]
+    },
+    {
+      "nr": "02",
+      "bereich": "Globale Navigation",
+      "pflicht": true,
+      "inhalt": [
+        "Logo und Startseitenlink",
+        "Hauptnavigation",
+        "Kontaktzugang",
+        "Barrierefreier Zugang zum Hauptinhalt"
+      ]
+    },
+    {
+      "nr": "03",
+      "bereich": "Breadcrumbs",
+      "pflicht": true,
+      "inhalt": [
+        "Startseite",
+        "Kategorie",
+        "Aktuelle Landingpage"
+      ]
+    },
+    {
+      "nr": "04",
+      "bereich": "Werbekennzeichnung",
+      "pflicht": true,
+      "inhalt": [
+        "Werbung oder Anzeige",
+        "Vor kommerziellen Elementen sichtbar",
+        "Auch mobil eindeutig erkennbar"
+      ]
+    },
+    {
+      "nr": "05",
+      "bereich": "Hero-Bereich",
+      "pflicht": true,
+      "inhalt": [
+        "Hauptüberschrift H1",
+        "Kurzbeschreibung",
+        "Zentrale Kernaussage",
+        "Optional zulässiges Hauptbild",
+        "Primärer CTA",
+        "Hinweis auf externe Weiterleitung"
+      ]
+    },
+    {
+      "nr": "06",
+      "bereich": "Nutzerproblem",
+      "pflicht": true,
+      "inhalt": [
+        "Ausgangssituation",
+        "Informationsbedarf",
+        "Zu treffende Entscheidung"
+      ]
+    },
+    {
+      "nr": "07",
+      "bereich": "Lösung",
+      "pflicht": true,
+      "inhalt": [
+        "Wie das Angebot helfen kann",
+        "Rolle von Free Basics",
+        "Rolle des Partners",
+        "Rolle des eigentlichen Anbieters"
+      ]
+    },
+    {
+      "nr": "08",
+      "bereich": "Produkt- oder Angebotsinformationen",
+      "pflicht": true,
+      "inhalt": [
+        "Produktname",
+        "Partner",
+        "Kategorie",
+        "Zweck",
+        "Funktionsweise",
+        "Konditionen",
+        "Datenstand"
+      ]
+    },
+    {
+      "nr": "09",
+      "bereich": "Eigenschaften",
+      "pflicht": true,
+      "inhalt": [
+        "Leistungsumfang",
+        "Vertragsart",
+        "Laufzeit",
+        "Kündigung",
+        "Verfügbarkeit",
+        "Technische oder persönliche Bedingungen"
+      ]
+    },
+    {
+      "nr": "10",
+      "bereich": "Voraussetzungen",
+      "pflicht": true,
+      "inhalt": [
+        "Mindestalter",
+        "Wohnort oder Region",
+        "Bonitätsprüfung",
+        "Technische Voraussetzungen",
+        "Erforderliche Unterlagen",
+        "Sonstige Bedingungen"
+      ]
+    },
+    {
+      "nr": "11",
+      "bereich": "Geeignet für",
+      "pflicht": true,
+      "inhalt": [
+        "Passende Nutzergruppen",
+        "Sachliche Begründung"
+      ]
+    },
+    {
+      "nr": "12",
+      "bereich": "Weniger geeignet für",
+      "pflicht": true,
+      "inhalt": [
+        "Unpassende Nutzergruppen",
+        "Mögliche Ausschlussgründe"
+      ]
+    },
+    {
+      "nr": "13",
+      "bereich": "Vorteile",
+      "pflicht": true,
+      "inhalt": [
+        "Konkrete Vorteile",
+        "Nur überprüfbare Aussagen",
+        "Keine Superlative ohne Nachweis"
+      ]
+    },
+    {
+      "nr": "14",
+      "bereich": "Nachteile",
+      "pflicht": true,
+      "inhalt": [
+        "Mögliche Nachteile",
+        "Variable Konditionen",
+        "Externe Abhängigkeiten"
+      ]
+    },
+    {
+      "nr": "15",
+      "bereich": "Ehrliche Einschränkungen",
+      "pflicht": true,
+      "inhalt": [
+        "Regionale Unterschiede",
+        "Zeitabhängige Preise",
+        "Persönliche Voraussetzungen",
+        "Nicht garantierte Ergebnisse"
+      ]
+    },
+    {
+      "nr": "16",
+      "bereich": "Kosten und Konditionen",
+      "pflicht": true,
+      "inhalt": [
+        "Preis oder Kostenmodell",
+        "Währung",
+        "Bezugszeitraum",
+        "Datenstand",
+        "Hinweis auf mögliche Änderungen"
+      ]
+    },
+    {
+      "nr": "17",
+      "bereich": "Ablauf",
+      "pflicht": true,
+      "inhalt": [
+        "Information lesen",
+        "Externes Angebot öffnen",
+        "Angaben beim Partner eingeben",
+        "Bedingungen prüfen",
+        "Entscheidung beim Partner treffen"
+      ]
+    },
+    {
+      "nr": "18",
+      "bereich": "Vergleich und Alternativen",
+      "pflicht": false,
+      "inhalt": [
+        "Vergleichskriterien",
+        "Alternative Angebote",
+        "Keine unbelegte Rangfolge"
+      ]
+    },
+    {
+      "nr": "19",
+      "bereich": "Entscheidungshilfe",
+      "pflicht": true,
+      "inhalt": [
+        "Wann sinnvoll",
+        "Wann weiter vergleichen",
+        "Welche Bedingungen prüfen"
+      ]
+    },
+    {
+      "nr": "20",
+      "bereich": "FAQ",
+      "pflicht": true,
+      "inhalt": [
+        "Drei bis acht relevante Fragen",
+        "Direkte Antworten",
+        "Keine künstlichen Keyword-Fragen"
+      ]
+    },
+    {
+      "nr": "21",
+      "bereich": "Quellen",
+      "pflicht": true,
+      "inhalt": [
+        "Offizielle Produktquellen",
+        "Partnerunterlagen",
+        "Vertragsbedingungen",
+        "Prüfdatum"
+      ]
+    },
+    {
+      "nr": "22",
+      "bereich": "Autor und redaktionelle Verantwortung",
+      "pflicht": true,
+      "inhalt": [
+        "Autor",
+        "Rolle",
+        "Verantwortliche Redaktion",
+        "Keine erfundenen Qualifikationen"
+      ]
+    },
+    {
+      "nr": "23",
+      "bereich": "Veröffentlichungs- und Aktualisierungsdaten",
+      "pflicht": true,
+      "inhalt": [
+        "Erstveröffentlichung",
+        "Letzte fachliche Prüfung",
+        "Letzte Aktualisierung"
+      ]
+    },
+    {
+      "nr": "24",
+      "bereich": "Affiliate-Hinweis",
+      "pflicht": true,
+      "inhalt": [
+        "Vergütung transparent erklären",
+        "Kein versteckter kommerzieller Zusammenhang",
+        "Partnerabhängige Pflichttexte ergänzen"
+      ]
+    },
+    {
+      "nr": "25",
+      "bereich": "Partnerhinweis",
+      "pflicht": true,
+      "inhalt": [
+        "Externer Partner eindeutig benennen",
+        "Free Basics nicht als Anbieter darstellen",
+        "Tarifcheck-Tippgeberregel beachten",
+        "Telekom-Shop-Sonderregel beachten"
+      ]
+    },
+    {
+      "nr": "26",
+      "bereich": "Interne Links",
+      "pflicht": true,
+      "inhalt": [
+        "Übergeordnete Kategorie",
+        "Relevanter Ratgeber",
+        "Verwandte Inhalte"
+      ]
+    },
+    {
+      "nr": "27",
+      "bereich": "YouTube",
+      "pflicht": false,
+      "inhalt": [
+        "Nur bei echtem Mehrwert",
+        "Untertitel",
+        "Textzusammenfassung"
+      ]
+    },
+    {
+      "nr": "28",
+      "bereich": "Pinterest",
+      "pflicht": false,
+      "inhalt": [
+        "Passende redaktionelle Verknüpfung",
+        "Zulässige Bilder",
+        "Keine Ablenkung vom Hauptinhalt"
+      ]
+    },
+    {
+      "nr": "29",
+      "bereich": "Newsletter",
+      "pflicht": false,
+      "inhalt": [
+        "Freiwillige Anmeldung",
+        "Double-Opt-in",
+        "Datenschutzhinweis",
+        "Abmeldemöglichkeit"
+      ]
+    },
+    {
+      "nr": "30",
+      "bereich": "Zusammenfassung",
+      "pflicht": true,
+      "inhalt": [
+        "Kernaussagen",
+        "Wichtige Einschränkungen",
+        "Nächster sinnvoller Schritt"
+      ]
+    },
+    {
+      "nr": "31",
+      "bereich": "Abschließender CTA",
+      "pflicht": true,
+      "inhalt": [
+        "Werbekennzeichnung direkt davor",
+        "Klares Klickziel",
+        "Keine irreführende Formulierung"
+      ]
+    },
+    {
+      "nr": "32",
+      "bereich": "Footer und Rechtliches",
+      "pflicht": true,
+      "inhalt": [
+        "Kontakt",
+        "Impressum",
+        "Datenschutz",
+        "Cookie-Einstellungen",
+        "Affiliate-Transparenz"
+      ]
+    }
+  ]
+}

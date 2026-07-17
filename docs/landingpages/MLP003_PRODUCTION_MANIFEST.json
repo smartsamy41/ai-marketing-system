@@ -1,0 +1,37 @@
+{
+  "operation": "MLP-003_MASTER_LANDINGPAGE_SYSTEM_INTEGRATION",
+  "project": "AI Marketing System / FBEP",
+  "owner": "Samy Jendoubi",
+  "domain": "https://freebasics.online",
+  "standard_id": "FBEP_MASTER_LANDINGPAGE_V1",
+  "status": "PRODUCTION_STANDARD",
+  "timestamp_utc": "2026-07-17T16:29:24.482871+00:00",
+  "systems": {
+    "google_sheets": {
+      "spreadsheet": "AI_Marketing_System",
+      "tab": "master_landingpage_sections",
+      "records": 126,
+      "status": "ACTIVE"
+    },
+    "google_drive": {
+      "path": "/content/drive/MyDrive/AI_Agent/content/master_landingpage",
+      "status": "ACTIVE"
+    },
+    "bigquery": {
+      "table": "smartcontent2050.smartcontent.master_landingpage_sections",
+      "records": 126,
+      "status": "ACTIVE"
+    },
+    "github": {
+      "repository": "smartsamy41/ai-marketing-system",
+      "branch": "main",
+      "status": "PENDING_COMMIT"
+    }
+  },
+  "repository_files": [
+    "config/landingpages/master_landingpage_standard_v1.json",
+    "config/landingpages/master_landingpage_sections_v1.csv",
+    "docs/landingpages/MASTER_LANDINGPAGE_STANDARD_V1.md",
+    "docs/landingpages/MLP003_PRODUCTION_MANIFEST.json"
+  ]
+}
