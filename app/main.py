@@ -7,10 +7,11 @@ from threading import RLock
 from typing import Any
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, Response
 from google.cloud import bigquery
-from google.oauth2 import service_account
+from google.oauth2 import service_account, id_token
+from google.auth.transport import requests as google_auth_requests
 
 from engine.cloud_scheduler_trigger import CloudSchedulerTrigger
 from engine.google_sheets_live import GoogleSheetsLive
@@ -32,6 +33,71 @@ from engine.autonomous_orchestrator import AutonomousOrchestrator
 app = FastAPI(
     title="FREE BASICS AI MARKETING SYSTEM"
 )
+
+RUN_ENDPOINT_AUDIENCE = os.getenv(
+    "RUN_ENDPOINT_AUDIENCE",
+    "https://ai-marketing-system-dqyj2hir5a-ew.a.run.app"
+)
+
+RUN_ENDPOINT_SERVICE_ACCOUNT = os.getenv(
+    "RUN_ENDPOINT_SERVICE_ACCOUNT",
+    "1081897051313-compute@developer.gserviceaccount.com"
+)
+
+
+def verify_run_request(request: Request) -> dict[str, Any]:
+    authorization = request.headers.get(
+        "Authorization",
+        ""
+    ).strip()
+
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(
+            status_code=401,
+            detail="Missing bearer token"
+        )
+
+    token = authorization.removeprefix(
+        "Bearer "
+    ).strip()
+
+    if not token:
+        raise HTTPException(
+            status_code=401,
+            detail="Missing bearer token"
+        )
+
+    try:
+        claims = id_token.verify_oauth2_token(
+            token,
+            google_auth_requests.Request(),
+            audience=RUN_ENDPOINT_AUDIENCE
+        )
+    except Exception:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid identity token"
+        )
+
+    token_email = str(
+        claims.get("email", "")
+    ).strip().lower()
+
+    email_verified = claims.get(
+        "email_verified"
+    )
+
+    if (
+        token_email
+        != RUN_ENDPOINT_SERVICE_ACCOUNT.lower()
+        or email_verified is not True
+    ):
+        raise HTTPException(
+            status_code=403,
+            detail="Unauthorized service account"
+        )
+
+    return claims
 
 
 # ============================================================
@@ -1438,6 +1504,8 @@ def pinterest_file():
 # ============================================================
 
 @app.post("/run")
-def run_system():
+def run_system(request: Request):
+
+    verify_run_request(request)
 
     return trigger.execute()
