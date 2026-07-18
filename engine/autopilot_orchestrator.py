@@ -451,6 +451,16 @@ class AutopilotOrchestrator:
         }
 
 
+        self.cycle_logger.update_status(
+            run_id=cycle["run_id"],
+            cycle_id=cycle["cycle_id"],
+            product_id=cycle["product_id"],
+            platform=cycle["platform"],
+            status="ROUND_1_COMPLETE",
+            note="Production content cycle completed"
+        )
+
+
         return {
 
             "status": "READY",
