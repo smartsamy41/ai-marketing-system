@@ -126,6 +126,26 @@ class GoogleSheetsLive:
 
 
     # =========================
+    # READ HEADERS
+    # =========================
+
+    def get_headers(
+        self,
+        sheet
+    ):
+
+        rows = self.read(
+            sheet,
+            "1:1"
+        )
+
+        if not rows:
+            return []
+
+        return rows[0]
+
+
+    # =========================
     # APPEND
     # =========================
 
