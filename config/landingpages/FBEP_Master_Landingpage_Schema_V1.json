@@ -1,0 +1,7310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://freebasics.online/schemas/master-landingpage-v1.schema.json",
+  "title": "FBEP Master Landingpage Schema V1",
+  "description": "Kanonisches Landingpage-Datenmodell des AI Marketing System / FBEP.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "page_id": {
+      "title": "Page Id",
+      "description": "Seitenzuordnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_002",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "slug": {
+      "title": "Slug",
+      "description": "URL-Slug der Landingpage",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_002",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "canonical_url": {
+      "title": "Canonical Url",
+      "description": "Kanonische URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_010",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "page_url": {
+      "title": "Page Url",
+      "description": "Öffentliche Seiten-URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_004",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Publisher",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Seitensprache",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_005",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "country": {
+      "title": "Country",
+      "description": "Zielland",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_006",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "currency": {
+      "title": "Currency",
+      "description": "Währung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_004",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "page_title": {
+      "title": "Page Title",
+      "description": "Interner Seitentitel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_008",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "meta_description": {
+      "title": "Meta Description",
+      "description": "Meta-Beschreibung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_007",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "meta_keywords": {
+      "title": "Meta Keywords",
+      "description": "Optionale Suchbegriffe",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_010",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "robots_index": {
+      "title": "Robots Index",
+      "description": "Indexierung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LIFE_016",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "robots_follow": {
+      "title": "Robots Follow",
+      "description": "Linkverfolgung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SEO_012",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "og_title": {
+      "title": "Og Title",
+      "description": "Open-Graph-Titel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_013",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "og_description": {
+      "title": "Og Description",
+      "description": "Open-Graph-Beschreibung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_014",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "og_image": {
+      "title": "Og Image",
+      "description": "Open-Graph-Bild",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_015",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "twitter_title": {
+      "title": "Twitter Title",
+      "description": "Social-Titel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_016",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "twitter_description": {
+      "title": "Twitter Description",
+      "description": "Social-Beschreibung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_017",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "twitter_image": {
+      "title": "Twitter Image",
+      "description": "Social-Vorschaubild",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_018",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "schema_type": {
+      "title": "Schema Type",
+      "description": "Primärer Schema.org-Typ",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_019",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "schema_json": {
+      "title": "Schema Json",
+      "description": "JSON-LD BreadcrumbList",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_015",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "hreflang": {
+      "title": "Hreflang",
+      "description": "Sprach- und Länderzuordnungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_021",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "sitemap_status": {
+      "title": "Sitemap Status",
+      "description": "Sitemap-Status",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_022",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "publish_status": {
+      "title": "Publish Status",
+      "description": "Veröffentlichungsstatus",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_023",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Workflow Engine",
+      "x-required-mode": "YES"
+    },
+    "created_at": {
+      "title": "Created At",
+      "description": "Erstellungszeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_024",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "System",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "description": "Letzte Änderung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_025",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "System",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "published_at": {
+      "title": "Published At",
+      "description": "Veröffentlichung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_015",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Publisher",
+      "x-required-mode": "NO",
+      "format": "date-time"
+    },
+    "last_review_at": {
+      "title": "Last Review At",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_027",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "version": {
+      "title": "Version",
+      "description": "Versionsnummer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_019",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "template_version": {
+      "title": "Template Version",
+      "description": "Template-Version",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_029",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "compliance_version": {
+      "title": "Compliance Version",
+      "description": "Regelversion",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_015",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "seo_score": {
+      "title": "Seo Score",
+      "description": "Interner Qualitätswert",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "SEO_018",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "accessibility_score": {
+      "title": "Accessibility Score",
+      "description": "Accessibility-Wert",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "TECH_032",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "quality_score": {
+      "title": "Quality Score",
+      "description": "Gesamtqualitätswert",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "TECH_033",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "author_id": {
+      "title": "Author Id",
+      "description": "Autor oder Engine",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_034",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "reviewer_id": {
+      "title": "Reviewer Id",
+      "description": "Prüfer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_011",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Redaktion",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "ai_model": {
+      "title": "Ai Model",
+      "description": "Modell",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_004",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Content Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "generation_id": {
+      "title": "Generation Id",
+      "description": "Generierungs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_007",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Content Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "source_system": {
+      "title": "Source System",
+      "description": "Ursprungssystem",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_038",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "page_status": {
+      "title": "Page Status",
+      "description": "ACTIVE, REVIEW oder DISABLED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_039",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "notes": {
+      "title": "Notes",
+      "description": "Interne Hinweise",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TECH_040",
+      "x-section-id": "MLP_SECTION_01",
+      "x-source": "Redaktion",
+      "x-required-mode": "NO"
+    },
+    "navigation_id": {
+      "title": "Navigation Id",
+      "description": "Eindeutige Navigations-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_001",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "navigation_version": {
+      "title": "Navigation Version",
+      "description": "Version der Navigation",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_002",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "logo_url": {
+      "title": "Logo Url",
+      "description": "Freigegebenes Logo",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_015",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "logo_alt": {
+      "title": "Logo Alt",
+      "description": "Alternativtext des Logos",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_004",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "home_url": {
+      "title": "Home Url",
+      "description": "Link zur Startseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_005",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Config",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "primary_menu": {
+      "title": "Primary Menu",
+      "description": "Hauptmenü",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_006",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "secondary_menu": {
+      "title": "Secondary Menu",
+      "description": "Zusatzmenü",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_007",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "NO"
+    },
+    "mobile_menu": {
+      "title": "Mobile Menu",
+      "description": "Mobile Navigation",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_008",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "sticky_navigation": {
+      "title": "Sticky Navigation",
+      "description": "Sticky Header aktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "NAV_009",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Config",
+      "x-required-mode": "NO"
+    },
+    "search_enabled": {
+      "title": "Search Enabled",
+      "description": "Seitensuche aktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "NAV_010",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "search_placeholder": {
+      "title": "Search Placeholder",
+      "description": "Suchfeld-Platzhalter",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_011",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "category_menu": {
+      "title": "Category Menu",
+      "description": "Kategorienavigation",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_012",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "footer_navigation": {
+      "title": "Footer Navigation",
+      "description": "Footer-Menü",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_013",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "language_switcher": {
+      "title": "Language Switcher",
+      "description": "Sprachumschaltung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "NAV_014",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Config",
+      "x-required-mode": "NO"
+    },
+    "current_language": {
+      "title": "Current Language",
+      "description": "Aktive Sprache",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_015",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "accessibility_skiplink": {
+      "title": "Accessibility Skiplink",
+      "description": "Skip-Link vorhanden",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "NAV_016",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "breadcrumb_enabled": {
+      "title": "Breadcrumb Enabled",
+      "description": "Breadcrumb aktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "BCR_002",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "breadcrumb_source": {
+      "title": "Breadcrumb Source",
+      "description": "Automatisch oder manuell",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_018",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "active_menu_item": {
+      "title": "Active Menu Item",
+      "description": "Aktiver Menüpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_019",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "navigation_status": {
+      "title": "Navigation Status",
+      "description": "ACTIVE, REVIEW oder DISABLED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "NAV_020",
+      "x-section-id": "MLP_SECTION_02",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "breadcrumb_id": {
+      "title": "Breadcrumb Id",
+      "description": "Eindeutige Breadcrumb-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_001",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "breadcrumb_type": {
+      "title": "Breadcrumb Type",
+      "description": "Hierarchisch, Kategorie oder benutzerdefiniert",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_003",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "breadcrumb_depth": {
+      "title": "Breadcrumb Depth",
+      "description": "Anzahl der Ebenen",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "BCR_004",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "breadcrumb_items": {
+      "title": "Breadcrumb Items",
+      "description": "Gesamte Breadcrumb-Struktur",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_005",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "level_1_name": {
+      "title": "Level 1 Name",
+      "description": "Name der Startseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_006",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "level_1_url": {
+      "title": "Level 1 Url",
+      "description": "URL der Startseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_007",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Config",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "level_2_name": {
+      "title": "Level 2 Name",
+      "description": "Hauptkategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_008",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Category Engine",
+      "x-required-mode": "YES"
+    },
+    "level_2_url": {
+      "title": "Level 2 Url",
+      "description": "URL der Hauptkategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_009",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Category Engine",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "level_3_name": {
+      "title": "Level 3 Name",
+      "description": "Unterkategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_010",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Category Engine",
+      "x-required-mode": "NO"
+    },
+    "level_3_url": {
+      "title": "Level 3 Url",
+      "description": "URL der Unterkategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_011",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Category Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "current_page_name": {
+      "title": "Current Page Name",
+      "description": "Aktuelle Seite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_012",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Landingpage Engine",
+      "x-required-mode": "YES"
+    },
+    "current_page_url": {
+      "title": "Current Page Url",
+      "description": "URL der aktuellen Seite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "BCR_013",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "Landingpage Engine",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "schema_enabled": {
+      "title": "Schema Enabled",
+      "description": "Schema-Ausgabe aktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "FAQ_016",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "visible_on_page": {
+      "title": "Visible On Page",
+      "description": "Sichtbarkeit",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "FAQ_014",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "crawl_priority": {
+      "title": "Crawl Priority",
+      "description": "Crawl-Priorität",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "BCR_017",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "internal_link_score": {
+      "title": "Internal Link Score",
+      "description": "Interne Linkbewertung",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "BCR_018",
+      "x-section-id": "MLP_SECTION_03",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "validation_status": {
+      "title": "Validation Status",
+      "description": "VALID, WARNING oder ERROR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_019",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "status": {
+      "title": "Status",
+      "description": "ACTIVE, REVIEW oder DISABLED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_020",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "disclosure_id": {
+      "title": "Disclosure Id",
+      "description": "Eindeutige Kennzeichnungs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_001",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "advertising_label": {
+      "title": "Advertising Label",
+      "description": "Werbung oder Anzeige",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_009",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "disclosure_text": {
+      "title": "Disclosure Text",
+      "description": "Standard-Hinweistext",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_003",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "disclosure_position": {
+      "title": "Disclosure Position",
+      "description": "Position der Kennzeichnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_010",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "disclosure_visible": {
+      "title": "Disclosure Visible",
+      "description": "Sichtbar für Besucher",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_005",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "disclosure_mobile": {
+      "title": "Disclosure Mobile",
+      "description": "Mobil sichtbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_006",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "disclosure_desktop": {
+      "title": "Disclosure Desktop",
+      "description": "Desktop sichtbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_007",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_links_present": {
+      "title": "Affiliate Links Present",
+      "description": "Affiliate-Links vorhanden",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_008",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_network": {
+      "title": "Affiliate Network",
+      "description": "Amazon, Check24, Tarifcheck, Telekom oder sonstige",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_009",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "partner_notice": {
+      "title": "Partner Notice",
+      "description": "Partnerbezogener Hinweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_010",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "transparency_text": {
+      "title": "Transparency Text",
+      "description": "Transparenz über Vergütung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_011",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "external_provider_notice": {
+      "title": "External Provider Notice",
+      "description": "Hinweis auf externen Anbieter",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_012",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "freebasics_role": {
+      "title": "Freebasics Role",
+      "description": "Tippgeber oder Informationsportal",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_013",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "provider_name": {
+      "title": "Provider Name",
+      "description": "Tatsächlicher Anbieter",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_004",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "legal_basis": {
+      "title": "Legal Basis",
+      "description": "Interner Rechtsgrundlagenverweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_015",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "compliance_status": {
+      "title": "Compliance Status",
+      "description": "Compliance-Status",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_006",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "last_compliance_check": {
+      "title": "Last Compliance Check",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ADV_017",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "auto_generated": {
+      "title": "Auto Generated",
+      "description": "Automatisch eingefügt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_019",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "locked": {
+      "title": "Locked",
+      "description": "Darf nicht entfernt werden",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ADV_020",
+      "x-section-id": "MLP_SECTION_04",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "hero_id": {
+      "title": "Hero Id",
+      "description": "Eindeutige Hero-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_001",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "hero_variant": {
+      "title": "Hero Variant",
+      "description": "Hero-Layoutvariante",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_002",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_h1": {
+      "title": "Hero H1",
+      "description": "Hauptüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_003",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_subheadline": {
+      "title": "Hero Subheadline",
+      "description": "Unterüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_004",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_intro": {
+      "title": "Hero Intro",
+      "description": "Kurze Einleitung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_005",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_summary": {
+      "title": "Hero Summary",
+      "description": "Zusammenfassung des Angebots",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_006",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_primary_cta": {
+      "title": "Hero Primary Cta",
+      "description": "Primärer CTA-Text",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_007",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_primary_cta_url": {
+      "title": "Hero Primary Cta Url",
+      "description": "Ziel des primären CTA",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_008",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "hero_secondary_cta": {
+      "title": "Hero Secondary Cta",
+      "description": "Sekundärer CTA",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_009",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_secondary_cta_url": {
+      "title": "Hero Secondary Cta Url",
+      "description": "Ziel des sekundären CTA",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_010",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Link Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "hero_image_url": {
+      "title": "Hero Image Url",
+      "description": "Hero-Bild",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_011",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "hero_image_alt": {
+      "title": "Hero Image Alt",
+      "description": "Alternativtext",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_012",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_image_caption": {
+      "title": "Hero Image Caption",
+      "description": "Bildbeschreibung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_013",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_video_url": {
+      "title": "Hero Video Url",
+      "description": "Hero-Video",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_014",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Video Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "hero_badges": {
+      "title": "Hero Badges",
+      "description": "Belegbare Vertrauenshinweise",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_015",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_partner_name": {
+      "title": "Hero Partner Name",
+      "description": "Affiliate-Partner",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_016",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_provider_name": {
+      "title": "Hero Provider Name",
+      "description": "Tatsächlicher Anbieter",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_017",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_external_notice": {
+      "title": "Hero External Notice",
+      "description": "Hinweis auf externe Weiterleitung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "HERO_018",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_layout": {
+      "title": "Hero Layout",
+      "description": "Desktop- und Mobile-Layout",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_019",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_alignment": {
+      "title": "Hero Alignment",
+      "description": "Textausrichtung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_020",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "hero_background_type": {
+      "title": "Hero Background Type",
+      "description": "Farbe, Bild oder Verlauf",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_021",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Template Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_background_asset": {
+      "title": "Hero Background Asset",
+      "description": "Hintergrundgrafik",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_022",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "hero_reading_time": {
+      "title": "Hero Reading Time",
+      "description": "Geschätzte Lesezeit",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "HERO_023",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "hero_last_updated": {
+      "title": "Hero Last Updated",
+      "description": "Letzte Aktualisierung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_024",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "hero_status": {
+      "title": "Hero Status",
+      "description": "ACTIVE, REVIEW oder DISABLED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "HERO_025",
+      "x-section-id": "MLP_SECTION_05",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "problem_id": {
+      "title": "Problem Id",
+      "description": "Eindeutige Problem-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_001",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "problem_category": {
+      "title": "Problem Category",
+      "description": "Problemkategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_002",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "user_intent": {
+      "title": "User Intent",
+      "description": "Suchabsicht",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_012",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "target_audience": {
+      "title": "Target Audience",
+      "description": "Zielgruppe",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_004",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "problem_title": {
+      "title": "Problem Title",
+      "description": "Kurzbezeichnung des Problems",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_005",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "problem_description": {
+      "title": "Problem Description",
+      "description": "Beschreibung der Ausgangssituation",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_006",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "pain_points": {
+      "title": "Pain Points",
+      "description": "Zentrale Herausforderungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_007",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "user_questions": {
+      "title": "User Questions",
+      "description": "Typische Nutzerfragen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_008",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "decision_factors": {
+      "title": "Decision Factors",
+      "description": "Entscheidungskriterien",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_009",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "urgency_level": {
+      "title": "Urgency Level",
+      "description": "Niedrig, Mittel oder Hoch",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_010",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "misconceptions": {
+      "title": "Misconceptions",
+      "description": "Häufige Missverständnisse",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_011",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "prerequisites": {
+      "title": "Prerequisites",
+      "description": "Voraussetzungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_012",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "regional_limitations": {
+      "title": "Regional Limitations",
+      "description": "Regionale Einschränkungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_013",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "legal_limitations": {
+      "title": "Legal Limitations",
+      "description": "Rechtliche Einschränkungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_014",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "financial_considerations": {
+      "title": "Financial Considerations",
+      "description": "Kostenaspekte",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_015",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "technical_considerations": {
+      "title": "Technical Considerations",
+      "description": "Technische Voraussetzungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_016",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "comparison_needed": {
+      "title": "Comparison Needed",
+      "description": "Vergleich sinnvoll",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "PROB_017",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "expert_tip": {
+      "title": "Expert Tip",
+      "description": "Neutraler Hinweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_018",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Redaktion",
+      "x-required-mode": "NO"
+    },
+    "readability_level": {
+      "title": "Readability Level",
+      "description": "Einfach, Standard oder fachlich",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PROB_019",
+      "x-section-id": "MLP_SECTION_06",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "solution_id": {
+      "title": "Solution Id",
+      "description": "Eindeutige Lösungs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_001",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "product_id": {
+      "title": "Product Id",
+      "description": "Produktzuordnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_002",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "partner_name": {
+      "title": "Partner Name",
+      "description": "Partner",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_003",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "product_name": {
+      "title": "Product Name",
+      "description": "Produktbezeichnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_005",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "product_category": {
+      "title": "Product Category",
+      "description": "Produktkategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_006",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "solution_headline": {
+      "title": "Solution Headline",
+      "description": "Abschnittsüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_007",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "solution_intro": {
+      "title": "Solution Intro",
+      "description": "Einleitung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_008",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "solution_description": {
+      "title": "Solution Description",
+      "description": "Sachliche Produktbeschreibung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_009",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "key_features": {
+      "title": "Key Features",
+      "description": "Hauptmerkmale",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_010",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "key_benefits": {
+      "title": "Key Benefits",
+      "description": "Wesentliche Vorteile",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_011",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "limitations": {
+      "title": "Limitations",
+      "description": "Einschränkungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_008",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "target_users": {
+      "title": "Target Users",
+      "description": "Geeignete Zielgruppen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_013",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "unsuitable_for": {
+      "title": "Unsuitable For",
+      "description": "Weniger geeignete Zielgruppen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_014",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "requirements": {
+      "title": "Requirements",
+      "description": "Voraussetzungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_015",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "availability": {
+      "title": "Availability",
+      "description": "Regional, national oder online",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_016",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "official_source": {
+      "title": "Official Source",
+      "description": "Offizielle Quelle",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOL_017",
+      "x-section-id": "MLP_SECTION_07",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "last_verified": {
+      "title": "Last Verified",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_017",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "content_version": {
+      "title": "Content Version",
+      "description": "Version",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_019",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "comparison_id": {
+      "title": "Comparison Id",
+      "description": "Eindeutige Vergleichs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_001",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "section_title": {
+      "title": "Section Title",
+      "description": "Abschnittsüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_002",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "summary": {
+      "title": "Summary",
+      "description": "Kurze Zusammenfassung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_003",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "advantages": {
+      "title": "Advantages",
+      "description": "Liste der Vorteile",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_004",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "disadvantages": {
+      "title": "Disadvantages",
+      "description": "Liste der Nachteile",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_005",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "neutral_observations": {
+      "title": "Neutral Observations",
+      "description": "Neutrale Hinweise",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_006",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "strongest_advantage": {
+      "title": "Strongest Advantage",
+      "description": "Wichtigster Vorteil",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_007",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "biggest_limitation": {
+      "title": "Biggest Limitation",
+      "description": "Größte Einschränkung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_008",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "suitable_for": {
+      "title": "Suitable For",
+      "description": "Geeignete Nutzergruppen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_009",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "less_suitable_for": {
+      "title": "Less Suitable For",
+      "description": "Weniger geeignete Zielgruppen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_010",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "feature_completeness": {
+      "title": "Feature Completeness",
+      "description": "Basis, Standard oder Premium",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_011",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "usability_rating": {
+      "title": "Usability Rating",
+      "description": "Interne Bewertung",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "COMP_012",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Quality Engine",
+      "x-required-mode": "NO"
+    },
+    "complexity_level": {
+      "title": "Complexity Level",
+      "description": "Einfach, mittel oder komplex",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_013",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "maintenance_required": {
+      "title": "Maintenance Required",
+      "description": "Laufende Pflege notwendig",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "COMP_014",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "alternatives_available": {
+      "title": "Alternatives Available",
+      "description": "Alternativen vorhanden",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "COMP_015",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "comparison_last_review": {
+      "title": "Comparison Last Review",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_016",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "reviewer": {
+      "title": "Reviewer",
+      "description": "Prüfer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_017",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Redaktion",
+      "x-required-mode": "NO"
+    },
+    "source_reference": {
+      "title": "Source Reference",
+      "description": "Verwendete Quellen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMP_018",
+      "x-section-id": "MLP_SECTION_08",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "quality_status": {
+      "title": "Quality Status",
+      "description": "VALID, WARNING oder ERROR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_019",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "specification_id": {
+      "title": "Specification Id",
+      "description": "Eindeutige Spezifikations-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_001",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "specification_version": {
+      "title": "Specification Version",
+      "description": "Versionsnummer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_003",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "feature_list": {
+      "title": "Feature List",
+      "description": "Vollständige Funktionsliste",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_004",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "technical_specifications": {
+      "title": "Technical Specifications",
+      "description": "Technische Daten",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_005",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "supported_platforms": {
+      "title": "Supported Platforms",
+      "description": "Unterstützte Plattformen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_006",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "compatibility": {
+      "title": "Compatibility",
+      "description": "Kompatibilität",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_007",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "minimum_requirements": {
+      "title": "Minimum Requirements",
+      "description": "Mindestanforderungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_008",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "maximum_capacity": {
+      "title": "Maximum Capacity",
+      "description": "Maximale Leistung oder Kapazität",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_009",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "performance_metrics": {
+      "title": "Performance Metrics",
+      "description": "Leistungskennzahlen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_010",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "supported_languages": {
+      "title": "Supported Languages",
+      "description": "Verfügbare Sprachen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_011",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "regional_availability": {
+      "title": "Regional Availability",
+      "description": "Regionale Verfügbarkeit",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_012",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "integration_options": {
+      "title": "Integration Options",
+      "description": "Schnittstellen und Integrationen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_013",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "update_frequency": {
+      "title": "Update Frequency",
+      "description": "Update- oder Wartungsrhythmus",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_014",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "documentation_url": {
+      "title": "Documentation Url",
+      "description": "Offizielle Dokumentation",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_015",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "api_available": {
+      "title": "Api Available",
+      "description": "API verfügbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SPEC_016",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "mobile_support": {
+      "title": "Mobile Support",
+      "description": "Mobile Unterstützung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SPEC_017",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "accessibility_features": {
+      "title": "Accessibility Features",
+      "description": "Barrierefreiheitsfunktionen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SPEC_018",
+      "x-section-id": "MLP_SECTION_09",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "verified_at": {
+      "title": "Verified At",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_013",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "pricing_id": {
+      "title": "Pricing Id",
+      "description": "Eindeutige Preis-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_001",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "pricing_model": {
+      "title": "Pricing Model",
+      "description": "Einmalig, monatlich, jährlich oder variabel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_003",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "base_price": {
+      "title": "Base Price",
+      "description": "Grundpreis",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "PRICE_005",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "recurring_price": {
+      "title": "Recurring Price",
+      "description": "Wiederkehrender Preis",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "PRICE_006",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "setup_fee": {
+      "title": "Setup Fee",
+      "description": "Einrichtungsgebühr",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "PRICE_007",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "shipping_cost": {
+      "title": "Shipping Cost",
+      "description": "Versandkosten",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "PRICE_008",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "minimum_term": {
+      "title": "Minimum Term",
+      "description": "Mindestlaufzeit in Monaten",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PRICE_009",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "cancellation_period": {
+      "title": "Cancellation Period",
+      "description": "Kündigungsfrist",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_010",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "payment_methods": {
+      "title": "Payment Methods",
+      "description": "Unterstützte Zahlungsarten",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_011",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "discounts_available": {
+      "title": "Discounts Available",
+      "description": "Rabatte verfügbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "PRICE_012",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "discount_description": {
+      "title": "Discount Description",
+      "description": "Beschreibung von Rabatten",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_013",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "additional_fees": {
+      "title": "Additional Fees",
+      "description": "Weitere Kosten",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_014",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "tax_information": {
+      "title": "Tax Information",
+      "description": "Steuerhinweise",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_015",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "price_source": {
+      "title": "Price Source",
+      "description": "Offizielle Preisquelle",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PRICE_016",
+      "x-section-id": "MLP_SECTION_10",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "valid_from": {
+      "title": "Valid From",
+      "description": "Gültigkeitsbeginn",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_011",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "date"
+    },
+    "verification_status": {
+      "title": "Verification Status",
+      "description": "VALID, OUTDATED oder REJECTED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_019",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "comparison_title": {
+      "title": "Comparison Title",
+      "description": "Abschnittsüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_003",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "comparison_summary": {
+      "title": "Comparison Summary",
+      "description": "Kurze Einleitung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_004",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "comparison_criteria": {
+      "title": "Comparison Criteria",
+      "description": "Vergleichskriterien",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_005",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "compared_features": {
+      "title": "Compared Features",
+      "description": "Verglichene Eigenschaften",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_006",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "strengths": {
+      "title": "Strengths",
+      "description": "Stärken des Produkts",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_007",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "alternatives": {
+      "title": "Alternatives",
+      "description": "Alternative Produkte",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_009",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "alternative_categories": {
+      "title": "Alternative Categories",
+      "description": "Alternative Lösungsarten",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_010",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO"
+    },
+    "best_for": {
+      "title": "Best For",
+      "description": "Geeignet für",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_011",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "not_best_for": {
+      "title": "Not Best For",
+      "description": "Weniger geeignet für",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_012",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "decision_matrix": {
+      "title": "Decision Matrix",
+      "description": "Entscheidungshilfe",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_013",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "recommendation_logic": {
+      "title": "Recommendation Logic",
+      "description": "Regelbasierte Empfehlung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_014",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "System",
+      "x-required-mode": "NO"
+    },
+    "recommendation_reason": {
+      "title": "Recommendation Reason",
+      "description": "Begründung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_015",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "source_references": {
+      "title": "Source References",
+      "description": "Datengrundlagen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "COMPARE_016",
+      "x-section-id": "MLP_SECTION_11",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "faq_section_id": {
+      "title": "Faq Section Id",
+      "description": "Eindeutige Abschnitts-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_001",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "faq_title": {
+      "title": "Faq Title",
+      "description": "Abschnittsüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_002",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "faq_intro": {
+      "title": "Faq Intro",
+      "description": "Kurze Einführung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_003",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "faq_items": {
+      "title": "Faq Items",
+      "description": "Liste aus Fragen und Antworten",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_004",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "question": {
+      "title": "Question",
+      "description": "Konkrete Nutzerfrage",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_005",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "answer": {
+      "title": "Answer",
+      "description": "Sachliche Antwort",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_006",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "answer_summary": {
+      "title": "Answer Summary",
+      "description": "Kurzantwort",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_007",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "answer_source": {
+      "title": "Answer Source",
+      "description": "Belegquellen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_008",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "answer_verified": {
+      "title": "Answer Verified",
+      "description": "Antwort geprüft",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "FAQ_009",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "answer_verified_at": {
+      "title": "Answer Verified At",
+      "description": "Prüfzeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_010",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Quality Engine",
+      "x-required-mode": "NO",
+      "format": "date-time"
+    },
+    "faq_category": {
+      "title": "Faq Category",
+      "description": "FAQ-Kategorie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_011",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "priority": {
+      "title": "Priority",
+      "description": "Reihenfolge",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "FAQ_013",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "schema_eligible": {
+      "title": "Schema Eligible",
+      "description": "Schema zulässig",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "REVIEW_018",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "duplicate_check": {
+      "title": "Duplicate Check",
+      "description": "VALID, DUPLICATE oder REVIEW",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "FAQ_017",
+      "x-section-id": "MLP_SECTION_12",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "review_section_id": {
+      "title": "Review Section Id",
+      "description": "Abschnitts-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_001",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "review_id": {
+      "title": "Review Id",
+      "description": "Bewertungs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_002",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "review_type": {
+      "title": "Review Type",
+      "description": "Kunde, Redaktion oder Plattform",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_003",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "reviewer_name": {
+      "title": "Reviewer Name",
+      "description": "Anzeigename",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_004",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "reviewer_verified": {
+      "title": "Reviewer Verified",
+      "description": "Identität oder Herkunft geprüft",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "REVIEW_005",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "review_title": {
+      "title": "Review Title",
+      "description": "Überschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_006",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "review_text": {
+      "title": "Review Text",
+      "description": "Erfahrungsbericht",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_007",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "YES"
+    },
+    "rating_value": {
+      "title": "Rating Value",
+      "description": "Bewertung",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "REVIEW_008",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "rating_scale": {
+      "title": "Rating Scale",
+      "description": "Maximalwert",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "REVIEW_009",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "review_date": {
+      "title": "Review Date",
+      "description": "Bewertungsdatum",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_010",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "review_source": {
+      "title": "Review Source",
+      "description": "Herkunft",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_011",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Source Engine",
+      "x-required-mode": "YES"
+    },
+    "source_url": {
+      "title": "Source Url",
+      "description": "Ursprungsquelle",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_006",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "consent_documented": {
+      "title": "Consent Documented",
+      "description": "Nutzungserlaubnis",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "REVIEW_013",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "edited_for_length": {
+      "title": "Edited For Length",
+      "description": "Text gekürzt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "REVIEW_014",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "material_changes": {
+      "title": "Material Changes",
+      "description": "Inhaltlich verändert",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "REVIEW_015",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "incentivized": {
+      "title": "Incentivized",
+      "description": "Gegenleistung erfolgt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "REVIEW_016",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "aggregate_rating": {
+      "title": "Aggregate Rating",
+      "description": "Gesamtbewertung",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "REVIEW_017",
+      "x-section-id": "MLP_SECTION_13",
+      "x-source": "Review Engine",
+      "x-required-mode": "NO"
+    },
+    "trust_section_id": {
+      "title": "Trust Section Id",
+      "description": "Abschnitts-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_001",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "trust_title": {
+      "title": "Trust Title",
+      "description": "Überschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_002",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "trust_items": {
+      "title": "Trust Items",
+      "description": "Vertrauenselemente",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_003",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Trust Engine",
+      "x-required-mode": "YES"
+    },
+    "trust_type": {
+      "title": "Trust Type",
+      "description": "Sicherheit, Redaktion, Partner oder Aktualität",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_004",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "trust_label": {
+      "title": "Trust Label",
+      "description": "Sichtbarer Text",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_005",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "trust_description": {
+      "title": "Trust Description",
+      "description": "Erläuterung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_006",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "evidence_type": {
+      "title": "Evidence Type",
+      "description": "Nachweisart",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_007",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "evidence_reference": {
+      "title": "Evidence Reference",
+      "description": "Nachweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_008",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "evidence_url": {
+      "title": "Evidence Url",
+      "description": "Referenz",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_009",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "issuer_name": {
+      "title": "Issuer Name",
+      "description": "Herausgeber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_010",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "valid_until": {
+      "title": "Valid Until",
+      "description": "Gültigkeitsende",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_012",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "date"
+    },
+    "verified_by": {
+      "title": "Verified By",
+      "description": "Prüfer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_014",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "logo_usage_authorized": {
+      "title": "Logo Usage Authorized",
+      "description": "Nutzungsrecht",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "TRUST_016",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "display_position": {
+      "title": "Display Position",
+      "description": "Position",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "TRUST_017",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "schema_relevant": {
+      "title": "Schema Relevant",
+      "description": "Schema-Relevanz",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "TRUST_018",
+      "x-section-id": "MLP_SECTION_14",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "cta_id": {
+      "title": "Cta Id",
+      "description": "CTA-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_001",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "cta_type": {
+      "title": "Cta Type",
+      "description": "Primär, sekundär oder Textlink",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_002",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "cta_text": {
+      "title": "Cta Text",
+      "description": "Sichtbarer CTA",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_003",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "cta_url": {
+      "title": "Cta Url",
+      "description": "Ziel-URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_004",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "cta_target_type": {
+      "title": "Cta Target Type",
+      "description": "Intern, extern oder Partner",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_005",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_link": {
+      "title": "Affiliate Link",
+      "description": "Affiliate-Link",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "CTA_008",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES"
+    },
+    "external_redirect_notice": {
+      "title": "External Redirect Notice",
+      "description": "Weiterleitungshinweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_011",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "open_new_tab": {
+      "title": "Open New Tab",
+      "description": "Neues Fenster",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "CTA_012",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "rel_attributes": {
+      "title": "Rel Attributes",
+      "description": "Linkattribute",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "CTA_013",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "tracking_id": {
+      "title": "Tracking Id",
+      "description": "Tracking-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_009",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Partner Config",
+      "x-required-mode": "NO"
+    },
+    "campaign_id": {
+      "title": "Campaign Id",
+      "description": "Kampagne",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_012",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "NO"
+    },
+    "placement_id": {
+      "title": "Placement Id",
+      "description": "Position",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_014",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "YES"
+    },
+    "mobile_visible": {
+      "title": "Mobile Visible",
+      "description": "Mobil sichtbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "CTA_017",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "desktop_visible": {
+      "title": "Desktop Visible",
+      "description": "Desktop sichtbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "CTA_018",
+      "x-section-id": "MLP_SECTION_15",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_link_id": {
+      "title": "Affiliate Link Id",
+      "description": "Eindeutige Link-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_001",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "partner_id": {
+      "title": "Partner Id",
+      "description": "Partner-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_004",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Partner Config",
+      "x-required-mode": "YES"
+    },
+    "network_name": {
+      "title": "Network Name",
+      "description": "Affiliate-Netzwerk",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_005",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Partner Config",
+      "x-required-mode": "NO"
+    },
+    "base_url": {
+      "title": "Base Url",
+      "description": "Ausgangs-URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_006",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Partner Config",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "destination_url": {
+      "title": "Destination Url",
+      "description": "Finale Ziel-URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_007",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "deeplink": {
+      "title": "Deeplink",
+      "description": "Deeplink",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "AFF_008",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Link Engine",
+      "x-required-mode": "YES"
+    },
+    "tracking_parameter": {
+      "title": "Tracking Parameter",
+      "description": "URL-Parameter",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_010",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Partner Config",
+      "x-required-mode": "NO"
+    },
+    "sub_id": {
+      "title": "Sub Id",
+      "description": "Sub-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_011",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "NO"
+    },
+    "content_id": {
+      "title": "Content Id",
+      "description": "Content-Zuordnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_013",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "NO"
+    },
+    "advertising_disclosure": {
+      "title": "Advertising Disclosure",
+      "description": "Werbekennzeichnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_015",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "link_checked_at": {
+      "title": "Link Checked At",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AFF_016",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "http_status": {
+      "title": "Http Status",
+      "description": "HTTP-Status",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "AFF_017",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Link Monitor",
+      "x-required-mode": "NO"
+    },
+    "redirect_valid": {
+      "title": "Redirect Valid",
+      "description": "Ziel erreichbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "AFF_018",
+      "x-section-id": "MLP_SECTION_16",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES"
+    },
+    "internal_link_set_id": {
+      "title": "Internal Link Set Id",
+      "description": "Eindeutige Linkstruktur-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_001",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "source_page_id": {
+      "title": "Source Page Id",
+      "description": "Ausgangsseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_002",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Landingpage Engine",
+      "x-required-mode": "YES"
+    },
+    "target_page_id": {
+      "title": "Target Page Id",
+      "description": "Zielseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_003",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Landingpage Engine",
+      "x-required-mode": "YES"
+    },
+    "target_url": {
+      "title": "Target Url",
+      "description": "Interne Ziel-URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_004",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "System",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "anchor_text": {
+      "title": "Anchor Text",
+      "description": "Sichtbarer Linktext",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_005",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "link_context": {
+      "title": "Link Context",
+      "description": "Textumfeld des Links",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_006",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "link_type": {
+      "title": "Link Type",
+      "description": "Kategorie, Produkt, Blog oder Ratgeber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_007",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "cluster_id": {
+      "title": "Cluster Id",
+      "description": "Themencluster",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_008",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "pillar_page_id": {
+      "title": "Pillar Page Id",
+      "description": "Zentrale Themenseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_009",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "relationship_type": {
+      "title": "Relationship Type",
+      "description": "Parent, Child, Related oder Alternative",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_010",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "placement_section": {
+      "title": "Placement Section",
+      "description": "Position auf der Seite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_011",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "placement_priority": {
+      "title": "Placement Priority",
+      "description": "Reihenfolge und Priorität",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "LINK_012",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "relevance_score": {
+      "title": "Relevance Score",
+      "description": "Inhaltliche Relevanz",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "LINK_013",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "link_depth": {
+      "title": "Link Depth",
+      "description": "Klicktiefe ab Startseite",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "LINK_014",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Navigation Engine",
+      "x-required-mode": "YES"
+    },
+    "crawl_enabled": {
+      "title": "Crawl Enabled",
+      "description": "Für Crawler erreichbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LINK_015",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "follow_enabled": {
+      "title": "Follow Enabled",
+      "description": "Follow-Status",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LINK_016",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "broken_link_status": {
+      "title": "Broken Link Status",
+      "description": "VALID, REDIRECT oder BROKEN",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_017",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES"
+    },
+    "last_checked_at": {
+      "title": "Last Checked At",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LINK_018",
+      "x-section-id": "MLP_SECTION_17",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "description": "Eindeutige Quellen-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_001",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "source_type": {
+      "title": "Source Type",
+      "description": "Eigene Datei, Partner oder Anbieter",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_005",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "YES"
+    },
+    "source_title": {
+      "title": "Source Title",
+      "description": "Titel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_003",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Source Engine",
+      "x-required-mode": "YES"
+    },
+    "source_author": {
+      "title": "Source Author",
+      "description": "Autor oder Organisation",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_004",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO"
+    },
+    "publisher_name": {
+      "title": "Publisher Name",
+      "description": "Herausgeber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_005",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Source Engine",
+      "x-required-mode": "YES"
+    },
+    "source_document_id": {
+      "title": "Source Document Id",
+      "description": "Interne Dokument-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_007",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Drive",
+      "x-required-mode": "NO"
+    },
+    "publication_date": {
+      "title": "Publication Date",
+      "description": "Veröffentlichungsdatum",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_008",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Source Engine",
+      "x-required-mode": "NO",
+      "format": "date"
+    },
+    "accessed_at": {
+      "title": "Accessed At",
+      "description": "Abrufzeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_009",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "System",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "last_verified_at": {
+      "title": "Last Verified At",
+      "description": "Letzte Quellenprüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_010",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "claim_ids": {
+      "title": "Claim Ids",
+      "description": "Zugeordnete Aussagen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_011",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "evidence_excerpt": {
+      "title": "Evidence Excerpt",
+      "description": "Relevanter Auszug",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_012",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Redaktion",
+      "x-required-mode": "NO"
+    },
+    "evidence_location": {
+      "title": "Evidence Location",
+      "description": "Seite, Abschnitt oder Absatz",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_013",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Redaktion",
+      "x-required-mode": "NO"
+    },
+    "source_language": {
+      "title": "Source Language",
+      "description": "Sprache",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_014",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Source Engine",
+      "x-required-mode": "YES"
+    },
+    "authority_level": {
+      "title": "Authority Level",
+      "description": "Primär, sekundär oder ergänzend",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_015",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "commercial_source": {
+      "title": "Commercial Source",
+      "description": "Kommerzielle Quelle",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SOURCE_016",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_partner_source": {
+      "title": "Affiliate Partner Source",
+      "description": "Partnerquelle",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SOURCE_017",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "license_status": {
+      "title": "License Status",
+      "description": "Zulässigkeit der Nutzung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SOURCE_018",
+      "x-section-id": "MLP_SECTION_18",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "media_id": {
+      "title": "Media Id",
+      "description": "Eindeutige Medien-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_001",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "YES"
+    },
+    "media_type": {
+      "title": "Media Type",
+      "description": "Bild, Video, PDF oder Grafik",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_003",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "YES"
+    },
+    "media_role": {
+      "title": "Media Role",
+      "description": "Hero, Inhalt, Thumbnail oder Download",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_004",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Layout Engine",
+      "x-required-mode": "YES"
+    },
+    "storage_path": {
+      "title": "Storage Path",
+      "description": "Speicherort",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_007",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Drive",
+      "x-required-mode": "YES"
+    },
+    "public_url": {
+      "title": "Public Url",
+      "description": "Veröffentlichte URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_008",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Publisher",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "filename": {
+      "title": "Filename",
+      "description": "Dateiname",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_009",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "YES"
+    },
+    "mime_type": {
+      "title": "Mime Type",
+      "description": "Dateityp",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_010",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "YES"
+    },
+    "width": {
+      "title": "Width",
+      "description": "Breite",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "MEDIA_011",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO"
+    },
+    "height": {
+      "title": "Height",
+      "description": "Höhe",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "MEDIA_012",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "NO"
+    },
+    "file_size_bytes": {
+      "title": "File Size Bytes",
+      "description": "Dateigröße",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "MEDIA_013",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Asset Engine",
+      "x-required-mode": "YES"
+    },
+    "alt_text": {
+      "title": "Alt Text",
+      "description": "Alternativtext",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_014",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Content Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "caption": {
+      "title": "Caption",
+      "description": "Bildunterschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_015",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Content Engine",
+      "x-required-mode": "NO"
+    },
+    "copyright_holder": {
+      "title": "Copyright Holder",
+      "description": "Rechteinhaber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_016",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "usage_permission": {
+      "title": "Usage Permission",
+      "description": "Freigegeben, begrenzt oder verboten",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_017",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "optimization_status": {
+      "title": "Optimization Status",
+      "description": "OPTIMIZED, REVIEW oder ERROR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "MEDIA_018",
+      "x-section-id": "MLP_SECTION_19",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "accessibility_status": {
+      "title": "Accessibility Status",
+      "description": "Accessibility-Status",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_007",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "seo_record_id": {
+      "title": "Seo Record Id",
+      "description": "Eindeutige SEO-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_001",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "primary_keyword": {
+      "title": "Primary Keyword",
+      "description": "Hauptsuchbegriff",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_003",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "secondary_keywords": {
+      "title": "Secondary Keywords",
+      "description": "Ergänzende Suchbegriffe",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_004",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "search_intent": {
+      "title": "Search Intent",
+      "description": "Informational, Commercial oder Transactional",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_005",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "seo_title": {
+      "title": "Seo Title",
+      "description": "Suchergebnistitel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_006",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "h1": {
+      "title": "H1",
+      "description": "Hauptüberschrift",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_008",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "heading_structure": {
+      "title": "Heading Structure",
+      "description": "H2- bis H6-Struktur",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_009",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "sitemap_included": {
+      "title": "Sitemap Included",
+      "description": "Sitemap-Status",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SEO_013",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "hreflang_entries": {
+      "title": "Hreflang Entries",
+      "description": "Sprach- und Länderziele",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_014",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "content_freshness_date": {
+      "title": "Content Freshness Date",
+      "description": "Aktualitätsdatum",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SEO_015",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "internal_link_count": {
+      "title": "Internal Link Count",
+      "description": "Interne Links",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "SEO_016",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "external_source_count": {
+      "title": "External Source Count",
+      "description": "Externe Quellen",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "SEO_017",
+      "x-section-id": "MLP_SECTION_20",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "schema_record_id": {
+      "title": "Schema Record Id",
+      "description": "Eindeutige Schema-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_001",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "primary_schema_type": {
+      "title": "Primary Schema Type",
+      "description": "WebPage, Article, Product oder Service",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_003",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "additional_schema_types": {
+      "title": "Additional Schema Types",
+      "description": "Ergänzende Typen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_004",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "NO"
+    },
+    "webpage_schema": {
+      "title": "Webpage Schema",
+      "description": "WebPage-Daten",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_005",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "organization_schema": {
+      "title": "Organization Schema",
+      "description": "Betreiberangaben",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_006",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "NO"
+    },
+    "breadcrumb_schema": {
+      "title": "Breadcrumb Schema",
+      "description": "BreadcrumbList",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_007",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "faq_schema": {
+      "title": "Faq Schema",
+      "description": "FAQPage",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_008",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "product_schema": {
+      "title": "Product Schema",
+      "description": "Product",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_009",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "service_schema": {
+      "title": "Service Schema",
+      "description": "Service",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_010",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "offer_schema": {
+      "title": "Offer Schema",
+      "description": "Offer",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_011",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "review_schema": {
+      "title": "Review Schema",
+      "description": "Review",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_012",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "aggregate_rating_schema": {
+      "title": "Aggregate Rating Schema",
+      "description": "AggregateRating",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_013",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "image_object_schema": {
+      "title": "Image Object Schema",
+      "description": "ImageObject",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_014",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "NO"
+    },
+    "video_object_schema": {
+      "title": "Video Object Schema",
+      "description": "VideoObject",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_015",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Schema Engine",
+      "x-required-mode": "NO"
+    },
+    "publisher_reference": {
+      "title": "Publisher Reference",
+      "description": "Publisher-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_016",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "source_consistency_valid": {
+      "title": "Source Consistency Valid",
+      "description": "Übereinstimmung mit Seiteninhalt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_017",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "schema_validation_result": {
+      "title": "Schema Validation Result",
+      "description": "Prüfergebnis",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "SCHEMA_018",
+      "x-section-id": "MLP_SECTION_21",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "accessibility_record_id": {
+      "title": "Accessibility Record Id",
+      "description": "Eindeutige Accessibility-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_001",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "wcag_target_level": {
+      "title": "Wcag Target Level",
+      "description": "A, AA oder AAA",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_003",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "document_language": {
+      "title": "Document Language",
+      "description": "Seitensprache",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_004",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "skip_link_enabled": {
+      "title": "Skip Link Enabled",
+      "description": "Sprunglink vorhanden",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_005",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "landmark_structure_valid": {
+      "title": "Landmark Structure Valid",
+      "description": "Header, Main, Nav und Footer korrekt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_006",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "heading_order_valid": {
+      "title": "Heading Order Valid",
+      "description": "Überschriftenhierarchie",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_007",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "keyboard_navigation_valid": {
+      "title": "Keyboard Navigation Valid",
+      "description": "Tastaturbedienung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_008",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "focus_visibility_valid": {
+      "title": "Focus Visibility Valid",
+      "description": "Fokus sichtbar",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_009",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "color_contrast_valid": {
+      "title": "Color Contrast Valid",
+      "description": "Kontrast ausreichend",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_010",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "image_alt_status": {
+      "title": "Image Alt Status",
+      "description": "VALID, WARNING oder ERROR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_011",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "form_label_status": {
+      "title": "Form Label Status",
+      "description": "Formularbeschriftung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_012",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "aria_usage_status": {
+      "title": "Aria Usage Status",
+      "description": "ARIA-Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_013",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "link_text_status": {
+      "title": "Link Text Status",
+      "description": "Verständliche Linktexte",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_014",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "media_caption_status": {
+      "title": "Media Caption Status",
+      "description": "Untertitel vorhanden",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_015",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Media Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "transcript_status": {
+      "title": "Transcript Status",
+      "description": "Transkript vorhanden",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_016",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Media Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "reduced_motion_supported": {
+      "title": "Reduced Motion Supported",
+      "description": "Bewegungsreduktion",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "A11Y_017",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "automated_test_result": {
+      "title": "Automated Test Result",
+      "description": "Automatisiertes Testergebnis",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_018",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "manual_review_status": {
+      "title": "Manual Review Status",
+      "description": "VALID, REVIEW oder ERROR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "A11Y_019",
+      "x-section-id": "MLP_SECTION_22",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "legal_record_id": {
+      "title": "Legal Record Id",
+      "description": "Eindeutige Rechts-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_001",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "operator_name": {
+      "title": "Operator Name",
+      "description": "Seitenbetreiber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_003",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "operator_role": {
+      "title": "Operator Role",
+      "description": "Tippgeber, Publisher oder Händler",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_004",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "imprint_url": {
+      "title": "Imprint Url",
+      "description": "Impressum",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_005",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Config",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "privacy_url": {
+      "title": "Privacy Url",
+      "description": "Datenschutz",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_006",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Config",
+      "x-required-mode": "YES",
+      "format": "uri"
+    },
+    "cookie_policy_url": {
+      "title": "Cookie Policy Url",
+      "description": "Cookie-Hinweise",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_007",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Config",
+      "x-required-mode": "CONDITIONAL",
+      "format": "uri"
+    },
+    "affiliate_disclosure": {
+      "title": "Affiliate Disclosure",
+      "description": "Affiliate-Hinweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_008",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "advertising_label_required": {
+      "title": "Advertising Label Required",
+      "description": "Kennzeichnungspflicht",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LEGAL_009",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "partner_legal_notice": {
+      "title": "Partner Legal Notice",
+      "description": "Partnerpflichttext",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_010",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Partner Config",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "provider_disclaimer": {
+      "title": "Provider Disclaimer",
+      "description": "Anbieterhinweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_011",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "mediation_disclaimer": {
+      "title": "Mediation Disclaimer",
+      "description": "Keine Vermittlung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_012",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "price_disclaimer": {
+      "title": "Price Disclaimer",
+      "description": "Preisänderungshinweis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_013",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "data_processing_basis": {
+      "title": "Data Processing Basis",
+      "description": "Rechtsgrundlage",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_014",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Privacy Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "consent_required": {
+      "title": "Consent Required",
+      "description": "Einwilligung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LOC_018",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Privacy Engine",
+      "x-required-mode": "YES"
+    },
+    "prohibited_terms_check": {
+      "title": "Prohibited Terms Check",
+      "description": "Verbotene Begriffe",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_016",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "partner_rules_version": {
+      "title": "Partner Rules Version",
+      "description": "Regelversion",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_017",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "legal_reviewed_at": {
+      "title": "Legal Reviewed At",
+      "description": "Letzte Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LEGAL_018",
+      "x-section-id": "MLP_SECTION_23",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "performance_record_id": {
+      "title": "Performance Record Id",
+      "description": "Performance-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PERF_001",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "page_weight_bytes": {
+      "title": "Page Weight Bytes",
+      "description": "Gesamtgröße",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_003",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "html_size_bytes": {
+      "title": "Html Size Bytes",
+      "description": "HTML-Größe",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_004",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "css_size_bytes": {
+      "title": "Css Size Bytes",
+      "description": "CSS-Größe",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_005",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "js_size_bytes": {
+      "title": "Js Size Bytes",
+      "description": "JavaScript-Größe",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_006",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "image_weight_bytes": {
+      "title": "Image Weight Bytes",
+      "description": "Bildgröße",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_007",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "request_count": {
+      "title": "Request Count",
+      "description": "Anzahl Requests",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_008",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "lcp_ms": {
+      "title": "Lcp Ms",
+      "description": "Largest Contentful Paint",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_009",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "inp_ms": {
+      "title": "Inp Ms",
+      "description": "Interaction to Next Paint",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_010",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "cls_score": {
+      "title": "Cls Score",
+      "description": "Cumulative Layout Shift",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "PERF_011",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "ttfb_ms": {
+      "title": "Ttfb Ms",
+      "description": "Serverantwort",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "PERF_012",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "lazy_loading_enabled": {
+      "title": "Lazy Loading Enabled",
+      "description": "Lazy Loading",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "PERF_013",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Template Engine",
+      "x-required-mode": "YES"
+    },
+    "responsive_images_enabled": {
+      "title": "Responsive Images Enabled",
+      "description": "Responsive Bilder",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "PERF_014",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Media Engine",
+      "x-required-mode": "YES"
+    },
+    "compression_enabled": {
+      "title": "Compression Enabled",
+      "description": "Komprimierung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "PERF_015",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Deployment",
+      "x-required-mode": "YES"
+    },
+    "caching_enabled": {
+      "title": "Caching Enabled",
+      "description": "Caching",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "PERF_016",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Deployment",
+      "x-required-mode": "YES"
+    },
+    "third_party_scripts": {
+      "title": "Third Party Scripts",
+      "description": "Fremdskripte",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PERF_017",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "performance_score": {
+      "title": "Performance Score",
+      "description": "Gesamtwert",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "PERF_018",
+      "x-section-id": "MLP_SECTION_24",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "analytics_record_id": {
+      "title": "Analytics Record Id",
+      "description": "Tracking-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_001",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "analytics_enabled": {
+      "title": "Analytics Enabled",
+      "description": "Tracking aktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_003",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "consent_category": {
+      "title": "Consent Category",
+      "description": "Statistik oder Marketing",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_005",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Privacy Engine",
+      "x-required-mode": "YES"
+    },
+    "page_view_event": {
+      "title": "Page View Event",
+      "description": "Seitenereignis",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_006",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_click_event": {
+      "title": "Affiliate Click Event",
+      "description": "Affiliate-Klick",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_007",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "YES"
+    },
+    "cta_click_event": {
+      "title": "Cta Click Event",
+      "description": "CTA-Klick",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_008",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "YES"
+    },
+    "form_start_event": {
+      "title": "Form Start Event",
+      "description": "Formularstart",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_009",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "form_complete_event": {
+      "title": "Form Complete Event",
+      "description": "Formularabschluss",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_010",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "outbound_click_event": {
+      "title": "Outbound Click Event",
+      "description": "Externer Klick",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_011",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "YES"
+    },
+    "campaign_parameters": {
+      "title": "Campaign Parameters",
+      "description": "UTM- oder Sub-ID",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_012",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "NO"
+    },
+    "partner_tracking_id": {
+      "title": "Partner Tracking Id",
+      "description": "Partner-Tracking",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_013",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Partner Config",
+      "x-required-mode": "NO"
+    },
+    "conversion_id": {
+      "title": "Conversion Id",
+      "description": "Conversion-Zuordnung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_014",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "NO"
+    },
+    "revenue_value": {
+      "title": "Revenue Value",
+      "description": "Vergütung",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_015",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Attribution Engine",
+      "x-required-mode": "NO"
+    },
+    "revenue_currency": {
+      "title": "Revenue Currency",
+      "description": "Währung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_016",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Attribution Engine",
+      "x-required-mode": "NO"
+    },
+    "anonymization_enabled": {
+      "title": "Anonymization Enabled",
+      "description": "Anonymisierung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_017",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Privacy Engine",
+      "x-required-mode": "YES"
+    },
+    "retention_days": {
+      "title": "Retention Days",
+      "description": "Aufbewahrung",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "ANALYTICS_018",
+      "x-section-id": "MLP_SECTION_25",
+      "x-source": "Privacy Engine",
+      "x-required-mode": "YES"
+    },
+    "localization_record_id": {
+      "title": "Localization Record Id",
+      "description": "Lokalisierungs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_001",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "default_language": {
+      "title": "Default Language",
+      "description": "Standardsprache",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_003",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "available_languages": {
+      "title": "Available Languages",
+      "description": "Sprachen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_004",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "default_country": {
+      "title": "Default Country",
+      "description": "Standardland",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_005",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "available_countries": {
+      "title": "Available Countries",
+      "description": "Zielländer",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_006",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "default_currency": {
+      "title": "Default Currency",
+      "description": "Währung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_007",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "locale_code": {
+      "title": "Locale Code",
+      "description": "Gebietsschema",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_008",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "translated_content": {
+      "title": "Translated Content",
+      "description": "Übersetzungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_009",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Translation Engine",
+      "x-required-mode": "NO"
+    },
+    "translation_status": {
+      "title": "Translation Status",
+      "description": "VALID, REVIEW oder MISSING",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_010",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Translation Engine",
+      "x-required-mode": "YES"
+    },
+    "hreflang_mapping": {
+      "title": "Hreflang Mapping",
+      "description": "Sprachzuordnung",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_011",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "regional_disclaimer": {
+      "title": "Regional Disclaimer",
+      "description": "Regionale Hinweise",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_013",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "NO"
+    },
+    "device_variant": {
+      "title": "Device Variant",
+      "description": "Desktop oder Mobile",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_014",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Layout Engine",
+      "x-required-mode": "NO"
+    },
+    "traffic_source_variant": {
+      "title": "Traffic Source Variant",
+      "description": "Kampagnenvariante",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_015",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Campaign Engine",
+      "x-required-mode": "NO"
+    },
+    "personalization_basis": {
+      "title": "Personalization Basis",
+      "description": "Sprache, Region oder Quelle",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LOC_016",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Personalization Engine",
+      "x-required-mode": "NO"
+    },
+    "user_profile_required": {
+      "title": "User Profile Required",
+      "description": "Profil nötig",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LOC_017",
+      "x-section-id": "MLP_SECTION_26",
+      "x-source": "Privacy Engine",
+      "x-required-mode": "YES"
+    },
+    "ai_quality_record_id": {
+      "title": "Ai Quality Record Id",
+      "description": "Governance-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_001",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "ai_generated": {
+      "title": "Ai Generated",
+      "description": "AI-Inhalt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "AIQ_003",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "prompt_id": {
+      "title": "Prompt Id",
+      "description": "Prompt-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_005",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Prompt Registry",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "prompt_version": {
+      "title": "Prompt Version",
+      "description": "Prompt-Version",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_014",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Prompt Registry",
+      "x-required-mode": "NO"
+    },
+    "source_grounded": {
+      "title": "Source Grounded",
+      "description": "Quellengebunden",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "AIQ_008",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "source_ids": {
+      "title": "Source Ids",
+      "description": "Quellen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_009",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Source Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "factual_claims": {
+      "title": "Factual Claims",
+      "description": "Faktenbehauptungen",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_010",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "unsupported_claims_count": {
+      "title": "Unsupported Claims Count",
+      "description": "Unbelegte Aussagen",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "AIQ_011",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "hallucination_risk": {
+      "title": "Hallucination Risk",
+      "description": "LOW, MEDIUM oder HIGH",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_012",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "prohibited_terms_found": {
+      "title": "Prohibited Terms Found",
+      "description": "Verbotsbegriffe",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_013",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "duplicate_content_score": {
+      "title": "Duplicate Content Score",
+      "description": "Duplikatwert",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "AIQ_014",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "readability_score": {
+      "title": "Readability Score",
+      "description": "Lesbarkeit",
+      "type": [
+        "number",
+        "null"
+      ],
+      "x-field-id": "AIQ_015",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "tone_validation": {
+      "title": "Tone Validation",
+      "description": "VALID, REVIEW oder ERROR",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_016",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "human_review_required": {
+      "title": "Human Review Required",
+      "description": "Prüfung nötig",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "AIQ_017",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Governance",
+      "x-required-mode": "YES"
+    },
+    "human_review_status": {
+      "title": "Human Review Status",
+      "description": "PENDING, APPROVED oder REJECTED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "AIQ_018",
+      "x-section-id": "MLP_SECTION_27",
+      "x-source": "Redaktion",
+      "x-required-mode": "YES"
+    },
+    "publication_record_id": {
+      "title": "Publication Record Id",
+      "description": "Veröffentlichungs-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_001",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "workflow_status": {
+      "title": "Workflow Status",
+      "description": "DRAFT, REVIEW, APPROVED oder PUBLISHED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_003",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Workflow Engine",
+      "x-required-mode": "YES"
+    },
+    "content_status": {
+      "title": "Content Status",
+      "description": "Inhaltsstatus",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_004",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Content Engine",
+      "x-required-mode": "YES"
+    },
+    "seo_status": {
+      "title": "Seo Status",
+      "description": "SEO-Status",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_005",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "performance_status": {
+      "title": "Performance Status",
+      "description": "Performance-Status",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_008",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "schema_status": {
+      "title": "Schema Status",
+      "description": "Schema-Status",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_009",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "link_status": {
+      "title": "Link Status",
+      "description": "Linkstatus",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_010",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES"
+    },
+    "approved_by": {
+      "title": "Approved By",
+      "description": "Freigeber",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_012",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Workflow Engine",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "approved_at": {
+      "title": "Approved At",
+      "description": "Freigabezeit",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_013",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Workflow Engine",
+      "x-required-mode": "CONDITIONAL",
+      "format": "date-time"
+    },
+    "scheduled_publish_at": {
+      "title": "Scheduled Publish At",
+      "description": "Planung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_014",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Publisher",
+      "x-required-mode": "NO",
+      "format": "date-time"
+    },
+    "publication_target": {
+      "title": "Publication Target",
+      "description": "Cloud Run oder Blogger",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_016",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Publisher",
+      "x-required-mode": "YES"
+    },
+    "publication_url": {
+      "title": "Publication Url",
+      "description": "Öffentliche URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_017",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Publisher",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "publication_result": {
+      "title": "Publication Result",
+      "description": "Ergebnis",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_018",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Publisher",
+      "x-required-mode": "NO"
+    },
+    "blocking_errors": {
+      "title": "Blocking Errors",
+      "description": "Blockierende Fehler",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "PUB_019",
+      "x-section-id": "MLP_SECTION_28",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "version_record_id": {
+      "title": "Version Record Id",
+      "description": "Versions-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_001",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "version_number": {
+      "title": "Version Number",
+      "description": "Versionsnummer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_003",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "previous_version": {
+      "title": "Previous Version",
+      "description": "Vorgänger",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_004",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "NO"
+    },
+    "change_type": {
+      "title": "Change Type",
+      "description": "CREATE, UPDATE, FIX oder ROLLBACK",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_005",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "changed_fields": {
+      "title": "Changed Fields",
+      "description": "Geänderte Felder",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_006",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "previous_values": {
+      "title": "Previous Values",
+      "description": "Alte Werte",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_007",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "NO"
+    },
+    "new_values": {
+      "title": "New Values",
+      "description": "Neue Werte",
+      "type": [
+        "object",
+        "array",
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_008",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "NO"
+    },
+    "change_reason": {
+      "title": "Change Reason",
+      "description": "Begründung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_009",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "changed_by": {
+      "title": "Changed By",
+      "description": "Benutzer oder Engine",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_010",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "changed_at": {
+      "title": "Changed At",
+      "description": "Zeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_011",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "System",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "source_commit": {
+      "title": "Source Commit",
+      "description": "Commit",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_012",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "GitHub",
+      "x-required-mode": "NO"
+    },
+    "source_run_id": {
+      "title": "Source Run Id",
+      "description": "Lauf-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_013",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Engine",
+      "x-required-mode": "NO"
+    },
+    "rollback_available": {
+      "title": "Rollback Available",
+      "description": "Rollback möglich",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "VER_016",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "YES"
+    },
+    "rollback_target": {
+      "title": "Rollback Target",
+      "description": "Zielversion",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_017",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Version Engine",
+      "x-required-mode": "NO"
+    },
+    "snapshot_location": {
+      "title": "Snapshot Location",
+      "description": "Snapshot",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "VER_018",
+      "x-section-id": "MLP_SECTION_29",
+      "x-source": "Drive",
+      "x-required-mode": "YES"
+    },
+    "lifecycle_record_id": {
+      "title": "Lifecycle Record Id",
+      "description": "Lifecycle-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_001",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "lifecycle_status": {
+      "title": "Lifecycle Status",
+      "description": "ACTIVE, EXPIRING oder ARCHIVED",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_003",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Lifecycle Engine",
+      "x-required-mode": "YES"
+    },
+    "activation_date": {
+      "title": "Activation Date",
+      "description": "Aktivierung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_004",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "System",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "expiration_date": {
+      "title": "Expiration Date",
+      "description": "Ablaufdatum",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_005",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Product Engine",
+      "x-required-mode": "NO",
+      "format": "date"
+    },
+    "review_due_date": {
+      "title": "Review Due Date",
+      "description": "Nächste Prüfung",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_006",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date"
+    },
+    "deactivation_reason": {
+      "title": "Deactivation Reason",
+      "description": "Grund",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_007",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "System",
+      "x-required-mode": "NO"
+    },
+    "product_discontinued": {
+      "title": "Product Discontinued",
+      "description": "Produkt eingestellt",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LIFE_008",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Product Engine",
+      "x-required-mode": "YES"
+    },
+    "partner_inactive": {
+      "title": "Partner Inactive",
+      "description": "Partner inaktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LIFE_009",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Partner Engine",
+      "x-required-mode": "YES"
+    },
+    "affiliate_link_inactive": {
+      "title": "Affiliate Link Inactive",
+      "description": "Link inaktiv",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LIFE_010",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES"
+    },
+    "replacement_page_id": {
+      "title": "Replacement Page Id",
+      "description": "Ersatzseite",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_011",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Lifecycle Engine",
+      "x-required-mode": "NO"
+    },
+    "redirect_required": {
+      "title": "Redirect Required",
+      "description": "Weiterleitung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LIFE_012",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "redirect_type": {
+      "title": "Redirect Type",
+      "description": "301, 302 oder 410",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_013",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO"
+    },
+    "redirect_target_url": {
+      "title": "Redirect Target Url",
+      "description": "Ziel",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_014",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "SEO Engine",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "remove_from_sitemap": {
+      "title": "Remove From Sitemap",
+      "description": "Sitemap-Entfernung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "LIFE_015",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "archive_snapshot_path": {
+      "title": "Archive Snapshot Path",
+      "description": "Archivkopie",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_017",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Drive",
+      "x-required-mode": "YES"
+    },
+    "archived_at": {
+      "title": "Archived At",
+      "description": "Archivzeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "LIFE_018",
+      "x-section-id": "MLP_SECTION_30",
+      "x-source": "Lifecycle Engine",
+      "x-required-mode": "NO",
+      "format": "date-time"
+    },
+    "qa_record_id": {
+      "title": "Qa Record Id",
+      "description": "QA-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "QA_001",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "required_fields_complete": {
+      "title": "Required Fields Complete",
+      "description": "Pflichtfelder vollständig",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_003",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "factual_validation_passed": {
+      "title": "Factual Validation Passed",
+      "description": "Faktenprüfung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_004",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "source_validation_passed": {
+      "title": "Source Validation Passed",
+      "description": "Quellenprüfung",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_005",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "compliance_validation_passed": {
+      "title": "Compliance Validation Passed",
+      "description": "Compliance",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_006",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "seo_validation_passed": {
+      "title": "Seo Validation Passed",
+      "description": "SEO",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_007",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "SEO Engine",
+      "x-required-mode": "YES"
+    },
+    "schema_validation_passed": {
+      "title": "Schema Validation Passed",
+      "description": "Schema",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_008",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Schema Engine",
+      "x-required-mode": "YES"
+    },
+    "accessibility_validation_passed": {
+      "title": "Accessibility Validation Passed",
+      "description": "Accessibility",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_009",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Accessibility Engine",
+      "x-required-mode": "YES"
+    },
+    "performance_validation_passed": {
+      "title": "Performance Validation Passed",
+      "description": "Performance",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_010",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Performance Engine",
+      "x-required-mode": "YES"
+    },
+    "link_validation_passed": {
+      "title": "Link Validation Passed",
+      "description": "Links",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_011",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Link Monitor",
+      "x-required-mode": "YES"
+    },
+    "media_validation_passed": {
+      "title": "Media Validation Passed",
+      "description": "Medien",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_012",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Media Engine",
+      "x-required-mode": "YES"
+    },
+    "tracking_validation_passed": {
+      "title": "Tracking Validation Passed",
+      "description": "Tracking",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_013",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Tracking Engine",
+      "x-required-mode": "YES"
+    },
+    "duplicate_validation_passed": {
+      "title": "Duplicate Validation Passed",
+      "description": "Duplikate",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_014",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "prohibited_terms_passed": {
+      "title": "Prohibited Terms Passed",
+      "description": "Verbotsbegriffe",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "x-field-id": "QA_015",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Compliance Engine",
+      "x-required-mode": "YES"
+    },
+    "warning_count": {
+      "title": "Warning Count",
+      "description": "Warnungen",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "QA_016",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "error_count": {
+      "title": "Error Count",
+      "description": "Fehler",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "x-field-id": "QA_017",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "release_decision": {
+      "title": "Release Decision",
+      "description": "APPROVED, BLOCKED oder REVIEW",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "QA_018",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES"
+    },
+    "reviewed_at": {
+      "title": "Reviewed At",
+      "description": "Prüfzeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "QA_019",
+      "x-section-id": "MLP_SECTION_31",
+      "x-source": "Quality Engine",
+      "x-required-mode": "YES",
+      "format": "date-time"
+    },
+    "system_record_id": {
+      "title": "System Record Id",
+      "description": "System-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_001",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "System",
+      "x-required-mode": "YES"
+    },
+    "project_name": {
+      "title": "Project Name",
+      "description": "Projektname",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_003",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "project_id": {
+      "title": "Project Id",
+      "description": "Cloud-Projekt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_004",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Config",
+      "x-required-mode": "YES"
+    },
+    "environment": {
+      "title": "Environment",
+      "description": "DEVELOPMENT, STAGING oder PRODUCTION",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_005",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Deployment",
+      "x-required-mode": "YES"
+    },
+    "repository": {
+      "title": "Repository",
+      "description": "Repository",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_006",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "GitHub",
+      "x-required-mode": "YES"
+    },
+    "branch": {
+      "title": "Branch",
+      "description": "Branch",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_007",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "GitHub",
+      "x-required-mode": "YES"
+    },
+    "commit_sha": {
+      "title": "Commit Sha",
+      "description": "Commit",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_008",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "GitHub",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "build_id": {
+      "title": "Build Id",
+      "description": "Build-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_009",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Cloud Build",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "deployment_id": {
+      "title": "Deployment Id",
+      "description": "Deployment-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_010",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Deployment",
+      "x-required-mode": "CONDITIONAL"
+    },
+    "service_name": {
+      "title": "Service Name",
+      "description": "Dienst",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_011",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Cloud Run",
+      "x-required-mode": "YES"
+    },
+    "region": {
+      "title": "Region",
+      "description": "Region",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_012",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Cloud Run",
+      "x-required-mode": "YES"
+    },
+    "deployment_url": {
+      "title": "Deployment Url",
+      "description": "Ziel-URL",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_013",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Cloud Run",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "healthcheck_url": {
+      "title": "Healthcheck Url",
+      "description": "Healthcheck",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_014",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Monitoring",
+      "x-required-mode": "NO",
+      "format": "uri"
+    },
+    "deployment_status": {
+      "title": "Deployment Status",
+      "description": "SUCCESS, FAILED oder PENDING",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_015",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Deployment",
+      "x-required-mode": "YES"
+    },
+    "deployed_at": {
+      "title": "Deployed At",
+      "description": "Zeitpunkt",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_016",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Deployment",
+      "x-required-mode": "NO",
+      "format": "date-time"
+    },
+    "log_reference": {
+      "title": "Log Reference",
+      "description": "Log-ID",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_017",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Logging",
+      "x-required-mode": "NO"
+    },
+    "monitoring_status": {
+      "title": "Monitoring Status",
+      "description": "HEALTHY, DEGRADED oder DOWN",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_018",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Monitoring",
+      "x-required-mode": "YES"
+    },
+    "rollback_version": {
+      "title": "Rollback Version",
+      "description": "Rollback",
+      "type": [
+        "string",
+        "null"
+      ],
+      "x-field-id": "SYS_019",
+      "x-section-id": "MLP_SECTION_32",
+      "x-source": "Deployment",
+      "x-required-mode": "NO"
+    }
+  },
+  "required": [
+    "accessed_at",
+    "accessibility_record_id",
+    "accessibility_score",
+    "accessibility_skiplink",
+    "accessibility_status",
+    "accessibility_validation_passed",
+    "activation_date",
+    "active_menu_item",
+    "advantages",
+    "advertising_disclosure",
+    "advertising_label",
+    "advertising_label_required",
+    "affiliate_click_event",
+    "affiliate_link",
+    "affiliate_link_id",
+    "affiliate_link_inactive",
+    "affiliate_links_present",
+    "affiliate_network",
+    "affiliate_partner_source",
+    "ai_generated",
+    "ai_quality_record_id",
+    "alternatives_available",
+    "analytics_enabled",
+    "analytics_record_id",
+    "anchor_text",
+    "anonymization_enabled",
+    "answer",
+    "answer_verified",
+    "archive_snapshot_path",
+    "aria_usage_status",
+    "author_id",
+    "authority_level",
+    "auto_generated",
+    "automated_test_result",
+    "available_countries",
+    "available_languages",
+    "base_url",
+    "best_for",
+    "blocking_errors",
+    "branch",
+    "breadcrumb_depth",
+    "breadcrumb_enabled",
+    "breadcrumb_id",
+    "breadcrumb_items",
+    "breadcrumb_source",
+    "breadcrumb_type",
+    "broken_link_status",
+    "caching_enabled",
+    "canonical_url",
+    "category_menu",
+    "change_reason",
+    "change_type",
+    "changed_at",
+    "changed_by",
+    "changed_fields",
+    "claim_ids",
+    "cls_score",
+    "color_contrast_valid",
+    "commercial_source",
+    "compared_features",
+    "comparison_criteria",
+    "comparison_id",
+    "comparison_last_review",
+    "comparison_needed",
+    "comparison_summary",
+    "comparison_title",
+    "compliance_status",
+    "compliance_validation_passed",
+    "compliance_version",
+    "compression_enabled",
+    "consent_category",
+    "consent_documented",
+    "consent_required",
+    "content_freshness_date",
+    "content_status",
+    "content_version",
+    "copyright_holder",
+    "country",
+    "crawl_enabled",
+    "created_at",
+    "css_size_bytes",
+    "cta_click_event",
+    "cta_id",
+    "cta_target_type",
+    "cta_text",
+    "cta_type",
+    "cta_url",
+    "currency",
+    "current_language",
+    "current_page_name",
+    "current_page_url",
+    "decision_factors",
+    "deeplink",
+    "default_country",
+    "default_currency",
+    "default_language",
+    "deployment_status",
+    "desktop_visible",
+    "destination_url",
+    "disadvantages",
+    "disclosure_desktop",
+    "disclosure_id",
+    "disclosure_mobile",
+    "disclosure_position",
+    "disclosure_text",
+    "disclosure_visible",
+    "display_position",
+    "document_language",
+    "duplicate_check",
+    "duplicate_content_score",
+    "duplicate_validation_passed",
+    "edited_for_length",
+    "environment",
+    "error_count",
+    "evidence_type",
+    "external_provider_notice",
+    "external_source_count",
+    "factual_claims",
+    "factual_validation_passed",
+    "faq_category",
+    "faq_items",
+    "faq_section_id",
+    "faq_title",
+    "feature_list",
+    "file_size_bytes",
+    "filename",
+    "focus_visibility_valid",
+    "follow_enabled",
+    "footer_navigation",
+    "freebasics_role",
+    "h1",
+    "hallucination_risk",
+    "heading_order_valid",
+    "heading_structure",
+    "hero_alignment",
+    "hero_external_notice",
+    "hero_h1",
+    "hero_id",
+    "hero_intro",
+    "hero_last_updated",
+    "hero_layout",
+    "hero_partner_name",
+    "hero_primary_cta",
+    "hero_primary_cta_url",
+    "hero_provider_name",
+    "hero_status",
+    "hero_summary",
+    "hero_variant",
+    "home_url",
+    "html_size_bytes",
+    "human_review_required",
+    "human_review_status",
+    "image_alt_status",
+    "image_weight_bytes",
+    "imprint_url",
+    "incentivized",
+    "inp_ms",
+    "internal_link_count",
+    "internal_link_set_id",
+    "js_size_bytes",
+    "key_benefits",
+    "key_features",
+    "keyboard_navigation_valid",
+    "landmark_structure_valid",
+    "language",
+    "last_checked_at",
+    "last_compliance_check",
+    "last_review_at",
+    "last_verified",
+    "last_verified_at",
+    "lazy_loading_enabled",
+    "lcp_ms",
+    "legal_record_id",
+    "legal_reviewed_at",
+    "level_1_name",
+    "level_1_url",
+    "level_2_name",
+    "level_2_url",
+    "license_status",
+    "lifecycle_record_id",
+    "lifecycle_status",
+    "link_checked_at",
+    "link_depth",
+    "link_status",
+    "link_text_status",
+    "link_type",
+    "link_validation_passed",
+    "locale_code",
+    "localization_record_id",
+    "locked",
+    "logo_alt",
+    "logo_url",
+    "logo_usage_authorized",
+    "manual_review_status",
+    "material_changes",
+    "media_id",
+    "media_role",
+    "media_type",
+    "media_validation_passed",
+    "meta_description",
+    "mime_type",
+    "mobile_menu",
+    "mobile_visible",
+    "monitoring_status",
+    "navigation_id",
+    "navigation_status",
+    "navigation_version",
+    "og_description",
+    "og_title",
+    "open_new_tab",
+    "operator_name",
+    "operator_role",
+    "optimization_status",
+    "outbound_click_event",
+    "page_id",
+    "page_status",
+    "page_title",
+    "page_url",
+    "page_view_event",
+    "page_weight_bytes",
+    "pain_points",
+    "partner_id",
+    "partner_inactive",
+    "partner_name",
+    "partner_rules_version",
+    "performance_record_id",
+    "performance_score",
+    "performance_status",
+    "performance_validation_passed",
+    "placement_id",
+    "placement_priority",
+    "placement_section",
+    "pricing_id",
+    "pricing_model",
+    "primary_keyword",
+    "primary_menu",
+    "primary_schema_type",
+    "priority",
+    "privacy_url",
+    "problem_category",
+    "problem_description",
+    "problem_id",
+    "problem_title",
+    "product_category",
+    "product_discontinued",
+    "product_id",
+    "product_name",
+    "prohibited_terms_check",
+    "prohibited_terms_found",
+    "prohibited_terms_passed",
+    "project_id",
+    "project_name",
+    "provider_name",
+    "publication_record_id",
+    "publication_target",
+    "publish_status",
+    "publisher_name",
+    "publisher_reference",
+    "qa_record_id",
+    "quality_score",
+    "quality_status",
+    "question",
+    "readability_level",
+    "readability_score",
+    "redirect_required",
+    "redirect_valid",
+    "reduced_motion_supported",
+    "region",
+    "rel_attributes",
+    "relationship_type",
+    "release_decision",
+    "relevance_score",
+    "remove_from_sitemap",
+    "repository",
+    "request_count",
+    "required_fields_complete",
+    "responsive_images_enabled",
+    "retention_days",
+    "review_date",
+    "review_due_date",
+    "review_id",
+    "review_section_id",
+    "review_source",
+    "review_text",
+    "review_type",
+    "reviewed_at",
+    "reviewer_verified",
+    "robots_follow",
+    "robots_index",
+    "rollback_available",
+    "schema_eligible",
+    "schema_enabled",
+    "schema_json",
+    "schema_record_id",
+    "schema_relevant",
+    "schema_status",
+    "schema_type",
+    "schema_validation_passed",
+    "schema_validation_result",
+    "search_enabled",
+    "search_intent",
+    "section_title",
+    "seo_record_id",
+    "seo_score",
+    "seo_status",
+    "seo_title",
+    "seo_validation_passed",
+    "service_name",
+    "sitemap_included",
+    "sitemap_status",
+    "skip_link_enabled",
+    "slug",
+    "snapshot_location",
+    "solution_description",
+    "solution_headline",
+    "solution_id",
+    "solution_intro",
+    "source_consistency_valid",
+    "source_grounded",
+    "source_id",
+    "source_language",
+    "source_page_id",
+    "source_system",
+    "source_title",
+    "source_type",
+    "source_validation_passed",
+    "specification_id",
+    "specification_version",
+    "status",
+    "storage_path",
+    "strengths",
+    "strongest_advantage",
+    "suitable_for",
+    "summary",
+    "system_record_id",
+    "target_audience",
+    "target_page_id",
+    "target_url",
+    "target_users",
+    "technical_specifications",
+    "template_version",
+    "third_party_scripts",
+    "tone_validation",
+    "tracking_validation_passed",
+    "translation_status",
+    "transparency_text",
+    "trust_description",
+    "trust_items",
+    "trust_label",
+    "trust_section_id",
+    "trust_title",
+    "trust_type",
+    "ttfb_ms",
+    "unsupported_claims_count",
+    "updated_at",
+    "usage_permission",
+    "user_intent",
+    "user_profile_required",
+    "user_questions",
+    "validation_status",
+    "verification_status",
+    "verified_at",
+    "verified_by",
+    "version",
+    "version_number",
+    "version_record_id",
+    "visible_on_page",
+    "warning_count",
+    "wcag_target_level",
+    "webpage_schema",
+    "workflow_status"
+  ],
+  "x-project": "smartcontent2050",
+  "x-sections-total": 32,
+  "x-fields-total": 665,
+  "x-version": "1.0.0"
+}

@@ -1,0 +1,39 @@
+{
+  "manifest_id": "FBEP-MLP-005-PRODUCTION",
+  "project": "AI Marketing System / FBEP",
+  "project_id": "smartcontent2050",
+  "environment": "PRODUCTION",
+  "version": "1.0.0",
+  "sections_total": 32,
+  "fields_total": 665,
+  "destinations": {
+    "google_sheets": {
+      "spreadsheet": "AI_Marketing_System",
+      "tab": "master_landingpage_fields"
+    },
+    "bigquery": {
+      "project": "smartcontent2050",
+      "dataset": "smartcontent",
+      "table": "master_landingpage_fields"
+    },
+    "google_drive": {
+      "recommended_path": "AI_Agent/config/landingpages/"
+    },
+    "github": {
+      "repository": "smartsamy41/ai-marketing-system",
+      "branch": "main",
+      "config_path": "config/landingpages/",
+      "docs_path": "docs/landingpages/"
+    }
+  },
+  "artifacts": [
+    "FBEP_Master_Landingpage_Field_Library_V1.csv",
+    "FBEP_Master_Landingpage_Field_Library_V1.json",
+    "FBEP_Master_Landingpage_Schema_V1.json",
+    "FBEP_Master_Landingpage_Field_Library_V1.md",
+    "FBEP_MLP005_Production_Import.py",
+    "FBEP_Master_Landingpage_Field_Library_V1.xlsx"
+  ],
+  "created_at": "2026-07-17T00:00:00+02:00",
+  "status": "READY_FOR_PRODUCTION_IMPORT"
+}
