@@ -17,7 +17,8 @@ class AutopilotOrchestrator:
         affiliate=None,
         compliance=None,
         winner_engine=None,
-        landingpage_source=None
+        landingpage_source=None,
+        content_storage=None
     ):
 
         self.ai = ai
@@ -35,6 +36,7 @@ class AutopilotOrchestrator:
 
         self.winner_engine = winner_engine
         self.landingpage_source = landingpage_source
+        self.content_storage = content_storage
         self.landingpage_validator = LandingpageValidator()
 
 
@@ -98,6 +100,37 @@ class AutopilotOrchestrator:
         generated_content = self.content.generate(
             product
         )
+
+
+        blog_storage_result = {
+            "status": "SKIPPED",
+            "reason": "NO_STORAGE"
+        }
+
+
+        if self.content_storage:
+
+            try:
+
+                blog_storage_result = self.content_storage.append(
+                    "blog_posts",
+                    [
+                        product_id,
+                        generated_content.get("title", ""),
+                        generated_content.get("seo_title", ""),
+                        generated_content.get("description", ""),
+                        generated_content.get("body", ""),
+                        str(generated_content.get("faq", "")),
+                        "generated"
+                    ]
+                )
+
+            except Exception as error:
+
+                blog_storage_result = {
+                    "status": "ERROR",
+                    "error": str(error)
+                }
 
 
         landingpage_validation = {
