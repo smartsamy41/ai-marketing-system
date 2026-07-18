@@ -3,6 +3,9 @@ from engine.cycle_logger import CycleLogger
 from engine.learning_reader import LearningReader
 from engine.landingpage_validator import LandingpageValidator
 
+from datetime import datetime, timezone
+from google.cloud import bigquery
+
 
 class AutopilotOrchestrator:
 
@@ -38,6 +41,49 @@ class AutopilotOrchestrator:
         self.landingpage_source = landingpage_source
         self.content_storage = content_storage
         self.landingpage_validator = LandingpageValidator()
+
+
+    def log_post(
+        self,
+        product_id: str,
+        platform: str = "blog",
+        post_url: str = "",
+        status: str = "generated"
+    ):
+
+        client = bigquery.Client(
+            project="smartcontent2050"
+        )
+
+        table = (
+            "smartcontent2050."
+            "smartcontent."
+            "posts"
+        )
+
+        row = {
+            "timestamp": datetime.now(
+                timezone.utc
+            ).isoformat(),
+
+            "product_id": product_id,
+
+            "platform": platform,
+
+            "post_url": post_url,
+
+            "status": status
+        }
+
+        errors = client.insert_rows_json(
+            table,
+            [row]
+        )
+
+        return {
+            "errors": errors,
+            "row": row
+        }
 
 
     def run(self):
@@ -99,6 +145,13 @@ class AutopilotOrchestrator:
 
         generated_content = self.content.generate(
             product
+        )
+
+
+        post_logging_result = self.log_post(
+            product_id=product_id,
+            platform="blog",
+            status="generated"
         )
 
 
