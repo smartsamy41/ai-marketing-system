@@ -34,6 +34,17 @@ app = FastAPI(
     title="FREE BASICS AI MARKETING SYSTEM"
 )
 
+
+@app.get("/health")
+def health():
+
+    return {
+        "status": "OK",
+        "system": "FREE BASICS AI MARKETING SYSTEM",
+        "version": "MLP005"
+    }
+
+
 RUN_ENDPOINT_AUDIENCE = os.getenv(
     "RUN_ENDPOINT_AUDIENCE",
     "https://ai-marketing-system-dqyj2hir5a-ew.a.run.app"
