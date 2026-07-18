@@ -90,22 +90,26 @@ def verify_run_request(request: Request) -> dict[str, Any]:
             detail="Invalid identity token"
         )
 
-    token_email = str(
-        claims.get("email", "")
-    ).strip().lower()
-
-    email_verified = claims.get(
-        "email_verified"
+    issuer = claims.get(
+        "iss",
+        ""
     )
 
-    if (
-        token_email
-        != RUN_ENDPOINT_SERVICE_ACCOUNT.lower()
-        or email_verified is not True
-    ):
+    audience = claims.get(
+        "aud",
+        ""
+    )
+
+    if issuer != "https://accounts.google.com":
         raise HTTPException(
             status_code=403,
-            detail="Unauthorized service account"
+            detail="Unauthorized issuer"
+        )
+
+    if audience != RUN_ENDPOINT_AUDIENCE:
+        raise HTTPException(
+            status_code=403,
+            detail="Unauthorized audience"
         )
 
     return claims
