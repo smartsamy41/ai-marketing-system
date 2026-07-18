@@ -1,6 +1,7 @@
 from engine.cycle_manager import CycleManager
 from engine.cycle_logger import CycleLogger
 from engine.learning_reader import LearningReader
+from engine.landingpage_validator import LandingpageValidator
 
 
 class AutopilotOrchestrator:
@@ -15,7 +16,8 @@ class AutopilotOrchestrator:
         revenue,
         affiliate=None,
         compliance=None,
-        winner_engine=None
+        winner_engine=None,
+        landingpage_source=None
     ):
 
         self.ai = ai
@@ -32,6 +34,8 @@ class AutopilotOrchestrator:
         self.learning_reader = LearningReader()
 
         self.winner_engine = winner_engine
+        self.landingpage_source = landingpage_source
+        self.landingpage_validator = LandingpageValidator()
 
 
     def run(self):
@@ -94,6 +98,83 @@ class AutopilotOrchestrator:
         generated_content = self.content.generate(
             product
         )
+
+
+        landingpage_validation = {
+            "status": "NOT_CONFIGURED",
+            "product_id": product_id,
+            "errors": [],
+            "warnings": []
+        }
+
+
+        if self.landingpage_source:
+
+            landingpage_records = (
+                self.landingpage_source.read_records(
+                    "landingpages",
+                    "A:ZZ"
+                )
+            )
+
+            landingpage_record = next(
+                (
+                    record
+                    for record in landingpage_records
+                    if str(
+                        record.get("product_id") or ""
+                    ).strip().lower()
+                    == str(product_id).strip().lower()
+                ),
+                None
+            )
+
+            if landingpage_record:
+
+                landingpage_validation = (
+                    self.landingpage_validator.validate(
+                        landingpage_record,
+                        partner=landingpage_record.get(
+                            "partner"
+                        )
+                    )
+                )
+
+            else:
+
+                landingpage_validation = {
+                    "status": "NOT_FOUND",
+                    "product_id": product_id,
+                    "errors": [],
+                    "warnings": [
+                        "Landingpage record not found"
+                    ]
+                }
+
+
+        if landingpage_validation.get(
+            "status"
+        ) == "BLOCKED":
+
+            self.cycle_logger.log_run(
+                run_id=cycle["run_id"],
+                cycle_id=cycle["cycle_id"],
+                product_id=cycle["product_id"],
+                platform=cycle["platform"],
+                status="BLOCKED",
+                note=(
+                    "MLP005 Landingpage validation failed | "
+                    f"status={landingpage_validation.get('status')} | "
+                    f"errors={landingpage_validation.get('errors')}"
+                )
+            )
+
+
+            return {
+                "status": "BLOCKED",
+                "reason": "LANDINGPAGE_VALIDATION_FAILED",
+                "landingpage_validation": landingpage_validation
+            }
 
 
         compliance_result = {
@@ -307,6 +388,8 @@ class AutopilotOrchestrator:
             "landingpage_link": landingpage_link,
 
             "product_data": product_data,
+
+            "landingpage_validation": landingpage_validation,
 
             "compliance": compliance_result,
 

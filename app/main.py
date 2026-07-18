@@ -244,7 +244,8 @@ autopilot = AutopilotOrchestrator(
     revenue,
     affiliate=affiliate,
     compliance=compliance,
-    winner_engine=winner_engine
+    winner_engine=winner_engine,
+    landingpage_source=live_sheets
 )
 
 
