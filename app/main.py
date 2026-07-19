@@ -28,6 +28,7 @@ from engine.ai_learning_engine import AILearningLoop
 
 from engine.autopilot_orchestrator import AutopilotOrchestrator
 from engine.autonomous_orchestrator import AutonomousOrchestrator
+from engine.youtube_real import YouTubeReal
 
 
 app = FastAPI(
@@ -243,7 +244,51 @@ class SafePinterest:
         }
 
 
-youtube = SafeYouTube()
+def create_youtube_client():
+    import json
+    from google.oauth2.credentials import Credentials
+
+    client_secret = os.environ.get(
+        "YOUTUBE_CLIENT_SECRET_JSON"
+    )
+
+    refresh_token = os.environ.get(
+        "YOUTUBE_REFRESH_TOKEN"
+    )
+
+    if not client_secret or not refresh_token:
+        return SafeYouTube()
+
+    data = json.loads(client_secret)
+
+    config = data.get(
+        "installed",
+        data.get("web", {})
+    )
+
+    credentials = Credentials(
+        token=None,
+        refresh_token=refresh_token,
+        token_uri=config.get(
+            "token_uri",
+            "https://oauth2.googleapis.com/token"
+        ),
+        client_id=config.get(
+            "client_id"
+        ),
+        client_secret=config.get(
+            "client_secret"
+        ),
+        scopes=[
+            "https://www.googleapis.com/auth/youtube.upload",
+            "https://www.googleapis.com/auth/youtube"
+        ]
+    )
+
+    return YouTubeReal(credentials)
+
+
+youtube = create_youtube_client()
 pinterest = SafePinterest()
 
 
