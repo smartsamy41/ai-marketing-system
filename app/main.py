@@ -1034,6 +1034,80 @@ def blog_detail(slug: str):
     )
 
 
+
+
+@app.get(
+    "/dashboard",
+    response_class=HTMLResponse
+)
+def dashboard_page():
+
+    products = read_records(
+        "products"
+    )
+
+    landingpages = read_records(
+        "landingpages"
+    )
+
+    blog_articles = read_records(
+        "blog_articles"
+    )
+
+    assets = read_records(
+        "affiliate_assets"
+    )
+
+
+    body = f"""
+    <section>
+
+        <h1>Free Basics Dashboard</h1>
+
+        <h2>System Status</h2>
+
+        <p>
+            🟢 FREE BASICS AI MARKETING SYSTEM ONLINE
+        </p>
+
+
+        <h2>Content Übersicht</h2>
+
+        <ul>
+            <li>Produkte: {len(products)}</li>
+            <li>Landingpages: {len(landingpages)}</li>
+            <li>Blogartikel: {len(blog_articles)}</li>
+            <li>Affiliate Assets: {len(assets)}</li>
+        </ul>
+
+
+        <h2>Content Flow</h2>
+
+        <p>
+            Produkt → Blog → Landingpage → Affiliate
+        </p>
+
+
+        <h2>Tracking</h2>
+
+        <ul>
+            <li>Clicks: 0</li>
+            <li>Conversions: 0</li>
+            <li>Revenue: 0</li>
+        </ul>
+
+    </section>
+    """
+
+
+    return render_page(
+        title="Dashboard | Free Basics",
+        body=body,
+        canonical_path="/dashboard",
+        description="Free Basics AI Marketing System Dashboard."
+    )
+
+
 # ============================================================
 # EXISTING LANDINGPAGE URL
 # Google Sheets is the master source
