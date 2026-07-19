@@ -436,6 +436,30 @@ def render_page(
           content="{description}">
     <meta name="twitter:image"
           content="{social_image_url}">
+
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Free Basics",
+      "url": "{SITE_URL}",
+      "email": "info@freebasics.online",
+      "founder": {{
+        "@type": "Person",
+        "name": "Samy ben Chedli Jendoubi"
+      }}
+    }}
+    </script>
+
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Free Basics",
+      "url": "{SITE_URL}"
+    }}
+    </script>
+
 </head>
 
 <body style="
@@ -557,6 +581,48 @@ def robots_txt():
 
     return Response(
         content=content,
+        media_type="text/plain; charset=utf-8"
+    )
+
+
+@app.get(
+    "/llms.txt",
+    response_class=Response
+)
+def llms_txt():
+
+    content = """
+# Free Basics
+
+Name:
+Free Basics
+
+Website:
+https://freebasics.online
+
+Description:
+Free Basics provides information about products, tariffs, comparisons and selected offers.
+
+Topics:
+- Technology and Internet
+- Energy and Electricity
+- Finance and Insurance
+- Travel and Mobility
+- Everyday Products
+
+Transparency:
+Free Basics may receive commissions from qualified purchases, requests or partner actions.
+Affiliate relationships are disclosed transparently.
+
+Legal:
+- https://freebasics.online/impressum
+- https://freebasics.online/datenschutz
+- https://freebasics.online/affiliate-hinweis
+- https://freebasics.online/kontakt
+"""
+
+    return Response(
+        content=content.strip(),
         media_type="text/plain; charset=utf-8"
     )
 
@@ -922,6 +988,31 @@ def landingpage(
     </main>
     """
 
+
+    breadcrumb_schema = f"""
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "{SITE_URL}"
+        }},
+        {{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{product_name}",
+          "item": "{SITE_URL}/lp/{product_id}"
+        }}
+      ]
+    }}
+    </script>
+    """
+
+    body = body + breadcrumb_schema
 
     return render_page(
         title=seo_title,
