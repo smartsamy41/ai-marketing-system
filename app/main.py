@@ -693,9 +693,34 @@ def sitemap_xml():
     except Exception:
         product_paths = []
 
+
+    blog_paths = []
+
+    try:
+        blog_records = read_records(
+            "blog_articles"
+        )
+
+        blog_paths.append("/blog")
+
+        for article in blog_records:
+
+            slug = str(
+                article.get("slug")
+                or ""
+            ).strip()
+
+            if slug:
+                blog_paths.append(
+                    f"/blog/{slug}"
+                )
+
+    except Exception:
+        blog_paths = []
+
     all_paths = list(
         dict.fromkeys(
-            static_paths + product_paths
+            static_paths + product_paths + blog_paths
         )
     )
 
@@ -756,13 +781,16 @@ def products_page():
         "products"
     )
 
-    items = []
+    cards = []
 
     for product in products:
 
         product_id = normalize_product_id(
             product.get("product_id")
         )
+
+        if not product_id:
+            continue
 
         name = str(
             product.get("product_name")
@@ -771,39 +799,81 @@ def products_page():
 
         category = str(
             product.get("category")
-            or ""
+            or "Produkt"
         )
 
-        source = str(
-            product.get("source")
-            or ""
+        image = str(
+            product.get("image_url")
+            or "/social-card.png"
         )
 
-        if product_id:
+        cards.append(
+            f"""
+            <article class="product-card">
 
-            items.append(
-                f"""
-                <article>
-                    <h2>{name}</h2>
-                    <p>Kategorie: {category}</p>
-                    <p>Partner: {source}</p>
-                    <a href="/lp/{product_id}">
-                        Produkt ansehen
-                    </a>
-                </article>
-                """
-            )
+                <img 
+                src="{image}" 
+                alt="{name}"
+                loading="lazy">
+
+                <h2>{name}</h2>
+
+                <p>
+                    Kategorie:
+                    {category}
+                </p>
+
+                <a href="/lp/{product_id}">
+                    Produkt ansehen
+                </a>
+
+            </article>
+            """
+        )
+
 
     body = f"""
     <section>
-        <h1>Produkte</h1>
+
+        <h1>
+        Produkte entdecken
+        </h1>
+
         <p>
-        Übersicht aller verfügbaren Produktinformationen.
+        Übersicht ausgewählter Produkte,
+        Tarife und Angebote.
         </p>
 
-        {''.join(items)}
+        <div class="product-grid">
+
+        {''.join(cards)}
+
+        </div>
 
     </section>
+
+    <style>
+
+    .product-grid {{
+        display:grid;
+        grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+    }}
+
+    .product-card {{
+        padding:20px;
+        border:1px solid #ddd;
+        border-radius:12px;
+    }}
+
+    .product-card img {{
+        max-width:100%;
+        height:180px;
+        object-fit:contain;
+    }}
+
+    </style>
     """
 
     return render_page(
@@ -815,8 +885,6 @@ def products_page():
             "bei Free Basics."
         )
     )
-
-
 
 
 @app.get(
