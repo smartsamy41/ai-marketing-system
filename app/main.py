@@ -115,6 +115,8 @@ def verify_run_request(request: Request) -> dict[str, Any]:
     return claims
 
 
+
+
 # ============================================================
 # PROJECT DATA
 # ============================================================
@@ -894,6 +896,73 @@ def blog_page():
         body=body,
         canonical_path="/blog",
         description="Informationen, Ratgeber und Produktwissen."
+    )
+
+
+
+
+@app.get(
+    "/blog/{slug}",
+    response_class=HTMLResponse
+)
+def blog_detail(slug: str):
+
+    articles = read_records(
+        "blog_articles"
+    )
+
+    article = None
+
+    for item in articles:
+        if str(item.get("slug")) == slug:
+            article = item
+            break
+
+    if not article:
+        raise HTTPException(
+            status_code=404,
+            detail="Artikel nicht gefunden"
+        )
+
+    title = str(
+        article.get("title")
+        or "Artikel"
+    )
+
+    content = str(
+        article.get("content")
+        or ""
+    )
+
+    related = str(
+        article.get("related_landingpage")
+        or "/produkte"
+    )
+
+    body = f"""
+    <article>
+        <h1>{title}</h1>
+
+        <div>
+            {content}
+        </div>
+
+        <hr>
+
+        <a href="{related}">
+            Passendes Produkt ansehen
+        </a>
+    </article>
+    """
+
+    return render_page(
+        title=f"{title} | Free Basics",
+        body=body,
+        canonical_path=f"/blog/{slug}",
+        description=str(
+            article.get("meta_description")
+            or ""
+        )
     )
 
 
