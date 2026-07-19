@@ -408,7 +408,7 @@ def render_page(
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG6E1DPH35"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){{dataLayer.push(arguments);}}
       gtag('js', new Date());
       gtag('config', 'G-EG6E1DPH35');
     </script>
