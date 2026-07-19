@@ -517,6 +517,21 @@ def home():
         </header>
 
         <section>
+            <h2>Produkte entdecken</h2>
+
+            <p>
+                Entdecken Sie unsere Produktbereiche und prüfen Sie
+                passende Informationen zu ausgewählten Angeboten.
+            </p>
+
+            <p>
+                <a href="/produkte">
+                    Alle Produkte ansehen
+                </a>
+            </p>
+        </section>
+
+        <section>
             <h2>Informationen und Vergleiche</h2>
 
             <p>
