@@ -800,6 +800,88 @@ def products_page():
     )
 
 
+
+
+@app.get(
+    "/blog",
+    response_class=HTMLResponse
+)
+def blog_page():
+
+    articles = []
+
+    try:
+        articles = read_records(
+            "blog_articles"
+        )
+    except Exception:
+        articles = []
+
+
+    items = []
+
+    for article in articles:
+
+        title = str(
+            article.get("title")
+            or "Artikel"
+        )
+
+        slug = str(
+            article.get("slug")
+            or ""
+        )
+
+        product_link = str(
+            article.get("related_landingpage")
+            or ""
+        )
+
+        items.append(
+            f"""
+            <article>
+                <h2>{title}</h2>
+                <p>
+                    {article.get("meta_description","")}
+                </p>
+                <a href="/blog/{slug}">
+                    Artikel lesen
+                </a>
+                <br>
+                <a href="{product_link}">
+                    Produkt ansehen
+                </a>
+            </article>
+            """
+        )
+
+
+    if not items:
+        items.append(
+            """
+            <p>
+            Aktuell werden neue Artikel vorbereitet.
+            </p>
+            """
+        )
+
+
+    body = """
+    <section>
+        <h1>Free Basics Blog</h1>
+        """ + "\n".join(items) + """
+    </section>
+    """
+
+
+    return render_page(
+        title="Blog | Free Basics",
+        body=body,
+        canonical_path="/blog",
+        description="Informationen, Ratgeber und Produktwissen."
+    )
+
+
 # ============================================================
 # EXISTING LANDINGPAGE URL
 # Google Sheets is the master source
