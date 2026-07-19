@@ -727,6 +727,79 @@ def social_card():
     )
 
 
+
+
+@app.get(
+    "/produkte",
+    response_class=HTMLResponse
+)
+def products_page():
+
+    products = read_records(
+        "products"
+    )
+
+    items = []
+
+    for product in products:
+
+        product_id = normalize_product_id(
+            product.get("product_id")
+        )
+
+        name = str(
+            product.get("product_name")
+            or product_id
+        )
+
+        category = str(
+            product.get("category")
+            or ""
+        )
+
+        source = str(
+            product.get("source")
+            or ""
+        )
+
+        if product_id:
+
+            items.append(
+                f"""
+                <article>
+                    <h2>{name}</h2>
+                    <p>Kategorie: {category}</p>
+                    <p>Partner: {source}</p>
+                    <a href="/lp/{product_id}">
+                        Produkt ansehen
+                    </a>
+                </article>
+                """
+            )
+
+    body = f"""
+    <section>
+        <h1>Produkte</h1>
+        <p>
+        Übersicht aller verfügbaren Produktinformationen.
+        </p>
+
+        {''.join(items)}
+
+    </section>
+    """
+
+    return render_page(
+        title="Produkte | Free Basics",
+        body=body,
+        canonical_path="/produkte",
+        description=(
+            "Übersicht aller Produkte und Angebote "
+            "bei Free Basics."
+        )
+    )
+
+
 # ============================================================
 # EXISTING LANDINGPAGE URL
 # Google Sheets is the master source
