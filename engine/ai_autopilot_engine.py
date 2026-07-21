@@ -1,8 +1,9 @@
 class AutopilotEngine:
 
-    def __init__(self, ai_core, content_ai):
+    def __init__(self, ai_core, content_ai, affiliate=None):
         self.ai = ai_core
         self.content = content_ai
+        self.affiliate = affiliate
 
     # =========================
     # MAIN AUTOPILOT LOOP
@@ -29,7 +30,19 @@ class AutopilotEngine:
             }
 
         # 4. CONTENT GENERATION
-        content = self.content.generate(product)
+        content_input = product
+
+        if self.affiliate:
+            product_data = self.affiliate.get_product_data(
+                product
+            )
+
+            if product_data.get("status") == "FOUND":
+                content_input = product_data
+
+        content = self.content.generate(
+            content_input
+        )
 
         # 5. FINAL OUTPUT (CLEAN PIPELINE)
         return {

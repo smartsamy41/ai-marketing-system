@@ -143,8 +143,18 @@ class AutopilotOrchestrator:
         )
 
 
+        content_input = product
+
+        if self.affiliate:
+            loaded_product = self.affiliate.get_product_data(
+                product
+            )
+
+            if loaded_product.get("status") == "FOUND":
+                content_input = loaded_product
+
         generated_content = self.content.generate(
-            product
+            content_input
         )
 
 

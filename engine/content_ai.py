@@ -2,7 +2,14 @@ class ContentAI:
 
     def generate(self, product):
 
-        product_name = str(product or "").strip()
+        if isinstance(product, dict):
+            product_name = str(
+                product.get("product_name")
+                or product.get("product_id")
+                or ""
+            ).strip()
+        else:
+            product_name = str(product or "").strip()
 
         return {
             "title": f"{product_name} – Informationen und Angebote prüfen",
