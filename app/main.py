@@ -439,7 +439,8 @@ def render_page(
     title: str,
     body: str,
     canonical_path: str,
-    description: str = ""
+    description: str = "",
+    schema: str = ""
 ) -> HTMLResponse:
 
     canonical_url = f"{SITE_URL}{canonical_path}"
@@ -518,6 +519,8 @@ def render_page(
       "url": "{SITE_URL}"
     }}
     </script>
+
+    {schema}
 
 </head>
 
@@ -1463,7 +1466,8 @@ def landingpage(
         title=seo_title,
         body=body,
         canonical_path=f"/lp/{product_id}",
-        description=meta_description
+        description=meta_description,
+        schema=product_schema
     )
 
 
@@ -2023,7 +2027,8 @@ def pinterest_verification():
         <meta name="p:domain_verify"
               content="bc27656eea0774520fbe08d0a275427d"/>
         <title>Free Basics</title>
-    </head>
+
+  </head>
     <body>
         Free Basics
     </body>
