@@ -29,6 +29,8 @@ from engine.ai_learning_engine import AILearningLoop
 from engine.autopilot_orchestrator import AutopilotOrchestrator
 from engine.autonomous_orchestrator import AutonomousOrchestrator
 from engine.youtube_real import YouTubeReal
+from app.schema_generator import generate_product_schema
+
 
 
 app = FastAPI(
@@ -1448,6 +1450,13 @@ def landingpage(
     </script>
     """
 
+    product_schema = generate_product_schema(
+        name=product_name,
+        description=meta_description,
+        url=f"{SITE_URL}/lp/{product_id}"
+    )
+
+    body = body + product_schema
     body = body + breadcrumb_schema
 
     return render_page(
