@@ -1,0 +1,449 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Product Entity Registry for GEO and Knowledge Graph",
+  "status": "ACTIVE",
+  "count": 44,
+  "products": [
+    {
+      "product_id": "CHK24_004",
+      "name": "DSL",
+      "partner": "check24",
+      "category": "DSL",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_004&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Ddsl-anbieterwechsel%26cat%3D4",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_005",
+      "name": "Mobilfunk",
+      "partner": "check24",
+      "category": "Mobilfunk",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_005&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dhandytarife%26cat%3D7",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_002",
+      "name": "Oekostrom",
+      "partner": "check24",
+      "category": "Oekostrom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_002&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Doekostrom%26cat%3D5",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_001",
+      "name": "Strom",
+      "partner": "check24",
+      "category": "Strom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_001&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dstromanbieter-wechseln%26cat%3D1",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_003",
+      "name": "Gas",
+      "partner": "check24",
+      "category": "Gas",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_003&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dgasanbieter-wechseln%26cat%3D3",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_006",
+      "name": "Pauschalreise",
+      "partner": "check24",
+      "category": "Reisen",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_006&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dpauschalreisen-vergleich%26cat%3D9",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_007",
+      "name": "Mietwagen",
+      "partner": "check24",
+      "category": "Reisen",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_007&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dmietwagen-preisvergleich%26cat%3D10",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "CHK24_008",
+      "name": "C24 Bank",
+      "partner": "check24",
+      "category": "Finanzen",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_008&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dc24bank%26cat%3D14",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_001",
+      "name": "Solaranlage",
+      "partner": "tarifcheck",
+      "category": "Solaranlage",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_001&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dsolaranlage",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_002",
+      "name": "Kfz-Versicherung",
+      "partner": "tarifcheck",
+      "category": "Versicherung",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_002&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkfz-versicherung",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_003",
+      "name": "Kredit",
+      "partner": "tarifcheck",
+      "category": "Kredit",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_003&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkredit",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_004",
+      "name": "Girokonto",
+      "partner": "tarifcheck",
+      "category": "Girokonto",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_004&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dgirokonto",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_005",
+      "name": "Baufinanzierung",
+      "partner": "tarifcheck",
+      "category": "Baufinanzierung",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_005&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dbaufinanzierung",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_006",
+      "name": "Hausratversicherung",
+      "partner": "tarifcheck",
+      "category": "Versicherung",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_006&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhausratversicherung",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_007",
+      "name": "Haftpflichtversicherung",
+      "partner": "tarifcheck",
+      "category": "Versicherung",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_007&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhaftpflichtversicherung",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_008",
+      "name": "Rentenversicherung",
+      "partner": "tarifcheck",
+      "category": "Vorsorge",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_008&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Drentenversicherung",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "TC_009",
+      "name": "Private Krankenversicherung",
+      "partner": "tarifcheck",
+      "category": "Versicherung",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_009&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dprivate-krankenversicherung",
+      "system_source": "cloud_landingpages_only",
+      "status": "official_assets_ready"
+    },
+    {
+      "product_id": "B0FQF32239",
+      "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+      "partner": "amazon",
+      "category": "Bluetooth-Kopfhörer",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FQF32239&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FQF32239%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44049d07107531e7ad6d6dfe2f054065%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0CFPWLGF2",
+      "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+      "partner": "amazon",
+      "category": "E-Reader",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0CFPWLGF2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CFPWLGF2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44d0788340e0256001696d3ece88528d%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0DFYN8174",
+      "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+      "partner": "amazon",
+      "category": "Körperpflege & Elektrorasierer",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0DFYN8174&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DFYN8174%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Df29cec1e2851f7a806babd846a9ddfc4%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0FPXFBL13",
+      "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "partner": "amazon",
+      "category": "Bauspielzeugsets",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXFBL13&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXFBL13%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D06fcb046b24b9cd38f1784f7219533ca%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0FPXDCDX2",
+      "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "partner": "amazon",
+      "category": "Bauspielzeugsets",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXDCDX2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDCDX2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D5af01d4132de4d9c81c7b720665a5974%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0FPXGJL6H",
+      "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "partner": "amazon",
+      "category": "Bauspielzeugsets",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXGJL6H&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXGJL6H%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D38c487ba09e0fd7845e695ad0cd319e7%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0FPXDRR63",
+      "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+      "partner": "amazon",
+      "category": "Bauspielzeugsets",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXDRR63&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDRR63%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D0a52b5924b86de2297fba57c9ae1b02b%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "3424631078",
+      "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+      "partner": "amazon",
+      "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3424631078&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3424631078%3Fsmid%3DA1JC316NLNMF97%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D3230f2a54418561cda1437a62636751a%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0FNX7HC9M",
+      "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+      "partner": "amazon",
+      "category": "Bücher - Psychothriller",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FNX7HC9M&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FNX7HC9M%3Fsmid%3DAL5JXES37EDG7%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D411dad09febceb05b8d53957ad711075%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "3423209690",
+      "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+      "partner": "amazon",
+      "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3423209690&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3423209690%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D79007b57baece76e191e2663d00af73c%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "3832167242",
+      "name": "22 Bahnen Roman Lieblingsbuch 2023",
+      "partner": "amazon",
+      "category": "Bücher - Roman & Gegenwartsliteratur",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3832167242&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3832167242%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D6b3e47793fe11a33da23977f37721e53%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "3426281759",
+      "name": "Der Nachbar Psychothriller",
+      "partner": "amazon",
+      "category": "Bücher - Psychothriller",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3426281759&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3426281759%3Fsmid%3DAQJOK2ISQB5Q5%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Dd964d6eb9b49e87def7735dbf9b7913c%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0DXLBZF4Q",
+      "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+      "partner": "amazon",
+      "category": "Körperpflege & Elektrorasierer",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0DXLBZF4Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DXLBZF4Q%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D7d4e32a08a825498bee7382c530296e8%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0CVXSK4D3",
+      "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+      "partner": "amazon",
+      "category": "Rasierklingen & Zubehör",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0CVXSK4D3&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CVXSK4D3%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D2febca87ab6dce8c73180e79c99357a6%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B08P4YPB8Q",
+      "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+      "partner": "amazon",
+      "category": "Kosmetik - Wimperntusche",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B08P4YPB8Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B08P4YPB8Q%3Fsmid%3DALAJG0TLJF7AF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Db596d267acc19dfded98b049ca2e358c%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0FMS3V43J",
+      "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+      "partner": "amazon",
+      "category": "Nahrungsergänzung - Magnesium",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FMS3V43J&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FMS3V43J%3Fsmid%3DA1KKPIBTTVQSPQ%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D32623354b1c45bca2728d97a7e1aee82%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "B0D1YKBX82",
+      "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+      "partner": "amazon",
+      "category": "Bücher - Liebesromane / New Adult",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0D1YKBX82&partner=amazon_no_api&target=https%3A//www.amazon.de/Off-Campus-Reihe-neuen-Look-exklusives-Postkartenset/dp/B0D1YKBX82%3Fpd_rd_w%3Dxylrd%26content-id%3Damzn1.sym.2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_p%3D2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_r%3DF1QVTK61EB04BBPR6N0F%26pd_rd_wg%3DPITh0%26pd_rd_r%3D50058732-d05a-4c21-b3a9-6fa7140cd969%26pd_rd_i%3DB0D1YKBX82%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D4ac87f6407fab4d74ef588cbc2dd89c0%26ref_%3Das_li_ss_tl",
+      "system_source": "cloud_landingpages_only",
+      "status": "original_image_done"
+    },
+    {
+      "product_id": "TEL_001",
+      "name": "MagentaTV",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_001&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_002",
+      "name": "Glasfaser",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_002&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_003",
+      "name": "MagentaZuhause",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_003&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_004",
+      "name": "MagentaMobil",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_004&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_005",
+      "name": "MagentaMobil Young",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_005&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_006",
+      "name": "MagentaMobil Prepaid",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_006&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_007",
+      "name": "congstar Allnet",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_007&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_008",
+      "name": "congstar Homespot",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_008&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_009",
+      "name": "TV + Internet + Festnetz",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_009&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    },
+    {
+      "product_id": "TEL_010",
+      "name": "Datentarife",
+      "partner": "telekom",
+      "category": "telekom",
+      "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+      "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_010&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+      "system_source": "cloud_landingpages_only",
+      "status": "active"
+    }
+  ]
+}
