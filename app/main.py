@@ -1459,7 +1459,6 @@ def landingpage(
         url=f"{SITE_URL}/lp/{product_id}"
     )
 
-    body = body + product_schema
     body = body + breadcrumb_schema
 
     return render_page(
