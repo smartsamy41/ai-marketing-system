@@ -30,6 +30,7 @@ from engine.autopilot_orchestrator import AutopilotOrchestrator
 from engine.autonomous_orchestrator import AutonomousOrchestrator
 from engine.youtube_real import YouTubeReal
 from app.schema_generator import generate_product_schema
+from engine.tiktok_tracking import TikTokTracking
 
 
 
@@ -1124,75 +1125,207 @@ def blog_detail(slug: str):
 
 
 
+
 @app.get(
     "/dashboard",
     response_class=HTMLResponse
 )
 def dashboard_page():
 
-    products = read_records(
-        "products"
-    )
+    products = read_records("products")
+    landingpages = read_records("landingpages")
+    blog_articles = read_records("blog_articles")
+    assets = read_records("affiliate_assets")
 
-    landingpages = read_records(
-        "landingpages"
-    )
 
-    blog_articles = read_records(
-        "blog_articles"
-    )
+    clicks = 0
+    conversions = 0
+    revenue = 0.0
 
-    assets = read_records(
-        "affiliate_assets"
-    )
+
+    try:
+        credentials_json = os.environ.get(
+            "GOOGLE_APPLICATION_CREDENTIALS_JSON",
+            ""
+        )
+
+        project_id = os.environ.get(
+            "BIGQUERY_PROJECT_ID",
+            "smartcontent2050"
+        )
+
+        dataset = os.environ.get(
+            "BIGQUERY_DATASET",
+            "smartcontent"
+        )
+
+
+        credentials = service_account.Credentials.from_service_account_info(
+            json.loads(credentials_json)
+        )
+
+
+        client = bigquery.Client(
+            project=project_id,
+            credentials=credentials
+        )
+
+
+        q1 = f"""
+        SELECT COUNT(*) AS total
+        FROM `{project_id}.{dataset}.clicks`
+        """
+
+        q2 = f"""
+        SELECT COUNT(*) AS total
+        FROM `{project_id}.{dataset}.conversions`
+        """
+
+        q3 = f"""
+        SELECT IFNULL(SUM(amount),0) AS total
+        FROM `{project_id}.{dataset}.earnings`
+        """
+
+
+        clicks = list(client.query(q1))[0].total
+        conversions = list(client.query(q2))[0].total
+        revenue = list(client.query(q3))[0].total
+
+
+    except Exception as exc:
+        print("Dashboard BigQuery Error:", exc)
+
 
 
     body = f"""
-    <section>
 
-        <h1>Free Basics Dashboard</h1>
+<style>
 
-        <h2>System Status</h2>
+.dashboard-grid {{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}}
 
-        <p>
-            🟢 FREE BASICS AI MARKETING SYSTEM ONLINE
-        </p>
+.card {{
+background:#ffffff;
+border-radius:18px;
+padding:25px;
+box-shadow:0 5px 25px rgba(0,0,0,0.08);
+}}
+
+.number {{
+font-size:40px;
+font-weight:bold;
+}}
+
+.green {{
+color:#16a34a;
+}}
+
+.blue {{
+color:#2563eb;
+}}
+
+.orange {{
+color:#ea580c;
+}}
+
+</style>
 
 
-        <h2>Content Übersicht</h2>
+<h1>🚀 Free Basics AI Marketing Dashboard</h1>
 
-        <ul>
-            <li>Produkte: {len(products)}</li>
-            <li>Landingpages: {len(landingpages)}</li>
-            <li>Blogartikel: {len(blog_articles)}</li>
-            <li>Affiliate Assets: {len(assets)}</li>
-        </ul>
+<p class="green">
+🟢 Produktionssystem Online
+</p>
 
 
-        <h2>Content Flow</h2>
-
-        <p>
-            Produkt → Blog → Landingpage → Affiliate
-        </p>
+<div class="dashboard-grid">
 
 
-        <h2>Tracking</h2>
+<div class="card">
+<h3>Produkte</h3>
+<div class="number blue">{len(products)}</div>
+</div>
 
-        <ul>
-            <li>Clicks: 0</li>
-            <li>Conversions: 0</li>
-            <li>Revenue: 0</li>
-        </ul>
 
-    </section>
-    """
+<div class="card">
+<h3>Landingpages</h3>
+<div class="number blue">{len(landingpages)}</div>
+</div>
+
+
+<div class="card">
+<h3>Blogartikel</h3>
+<div class="number blue">{len(blog_articles)}</div>
+</div>
+
+
+<div class="card">
+<h3>Affiliate Assets</h3>
+<div class="number blue">{len(assets)}</div>
+</div>
+
+
+<div class="card">
+<h3>Clicks</h3>
+<div class="number orange">{clicks}</div>
+</div>
+
+
+<div class="card">
+<h3>Conversions</h3>
+<div class="number">{conversions}</div>
+</div>
+
+
+<div class="card">
+<h3>Revenue</h3>
+<div class="number green">{revenue:.2f} €</div>
+</div>
+
+
+</div>
+
+
+
+<h2>Tracking Systeme</h2>
+
+<ul>
+<li>✅ Google Analytics 4</li>
+<li>✅ Google Tag Manager / Google Tag</li>
+<li>✅ TikTok Pixel</li>
+<li>✅ TikTok Events API</li>
+<li>🟡 Pinterest Tag/API</li>
+<li>✅ BigQuery Tracking</li>
+</ul>
+
+
+<h2>AI Marketing Pipeline</h2>
+
+<p>
+Produkt → Knowledge Layer → Blog → Landingpage → Social → Tracking → Learning
+</p>
+
+
+<h2>Datenstatus</h2>
+
+<ul>
+<li>Google Sheets: verbunden</li>
+<li>BigQuery: verbunden</li>
+<li>Cloud Run: aktiv</li>
+<li>AI Engine: bereit</li>
+</ul>
+
+"""
 
 
     return render_page(
         title="Dashboard | Free Basics",
         body=body,
         canonical_path="/dashboard",
-        description="Free Basics AI Marketing System Dashboard."
+        description="Free Basics AI Marketing System Live Dashboard."
     )
 
 
@@ -1599,6 +1732,15 @@ def track_real_click(
             status_code=503,
             detail=f"Klick konnte nicht protokolliert werden: {exc}"
         ) from exc
+
+    try:
+        TikTokTracking().click_button(
+            url=target_url,
+            product_id=product_id,
+            product_name=product_id
+        )
+    except Exception as exc:
+        print("TikTok ClickButton Error:", exc)
 
     return RedirectResponse(
         url=target_url,
