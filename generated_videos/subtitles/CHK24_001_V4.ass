@@ -1,0 +1,15 @@
+
+[Script Info]
+ScriptType: v4.00+
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Alignment, MarginV
+
+Style: Default,Arial,32,&H00FFFFFF,&H00000000,&H80000000,2,180
+
+[Events]
+Format: Start, End, Style, Text
+Dialogue: 0:00:00.00,0:00:03.00,Default,⚡ Stromtarife prüfen
+Dialogue: 0:00:03.00,0:00:15.00,Default,Informationen zu Stromtarifen und passenden Angeboten.
+Dialogue: 0:00:15.00,0:00:25.00,Default,Angebote und Informationen vergleichen
+Dialogue: 0:00:25.00,0:00:30.00,Default,Mehr Informationen auf freebasics.online oder über den Link in der Bio
