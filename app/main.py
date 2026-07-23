@@ -743,91 +743,29 @@ Legal:
     )
 
 
+
 @app.get(
     "/sitemap.xml",
     response_class=Response
 )
 def sitemap_xml():
 
-    static_paths = [
-        "/",
-        "/impressum",
-        "/datenschutz",
-        "/affiliate-hinweis",
-        "/kontakt",
-    ]
-
-    product_paths = []
-
-    try:
-        landingpage_records = read_records(
-            "landingpages"
-        )
-
-        for record in landingpage_records:
-
-            product_id = normalize_product_id(
-                record.get("product_id")
-                or record.get("produkt_id")
-            )
-
-            if (
-                product_id
-                and not product_id.upper().startswith("TEL_")
-            ):
-                product_paths.append(
-                    f"/lp/{product_id}"
-                )
-
-    except Exception:
-        product_paths = []
-
-
-    blog_paths = []
-
-    try:
-        blog_records = read_records(
-            "blog_articles"
-        )
-
-        blog_paths.append("/blog")
-
-        for article in blog_records:
-
-            slug = str(
-                article.get("slug")
-                or ""
-            ).strip()
-
-            if slug:
-                blog_paths.append(
-                    f"/blog/{slug}"
-                )
-
-    except Exception:
-        blog_paths = []
-
-    all_paths = list(
-        dict.fromkeys(
-            static_paths + product_paths + blog_paths
-        )
+    sitemap_file = Path(
+        "public_web_assets/sitemap.xml"
     )
 
-    url_entries = []
+    if not sitemap_file.exists():
 
-    for path in all_paths:
-        url_entries.append(
-            "  <url>\n"
-            f"    <loc>{SITE_URL}{path}</loc>\n"
-            "  </url>"
+        raise HTTPException(
+            status_code=404,
+            detail="Production sitemap not found"
         )
 
-    xml = (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "\n".join(url_entries)
-        + "\n</urlset>\n"
+
+    xml = sitemap_file.read_text(
+        encoding="utf-8"
     )
+
 
     return Response(
         content=xml,
