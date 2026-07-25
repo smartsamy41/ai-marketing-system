@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Partner Network Registry",
+  "status": "ACTIVE",
+  "partners": [
+    {
+      "partner_id": "AMAZON",
+      "name": "amazon",
+      "product_count": 17,
+      "source": "product_master_44"
+    },
+    {
+      "partner_id": "CHECK24",
+      "name": "check24",
+      "product_count": 8,
+      "source": "product_master_44"
+    },
+    {
+      "partner_id": "TARIFCHECK",
+      "name": "tarifcheck",
+      "product_count": 9,
+      "source": "product_master_44"
+    },
+    {
+      "partner_id": "TELEKOM",
+      "name": "telekom",
+      "product_count": 10,
+      "source": "product_master_44"
+    },
+    {
+      "partner_id": "TELEKOM_PROFIS",
+      "name": "Telekom Profis",
+      "product_count": 10,
+      "source": "direct_shop_routing"
+    }
+  ]
+}

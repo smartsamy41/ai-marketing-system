@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "validator": "quality_validator",
+
+  "purpose": "Validate content quality and completeness",
+
+  "checks": [
+    "content_structure",
+    "readability",
+    "completeness",
+    "internal_links"
+  ],
+
+  "rules": {
+    "minimum_structure_required": true,
+    "empty_content_blocked": true,
+    "quality_check_required": true
+  },
+
+  "status": "READY"
+}

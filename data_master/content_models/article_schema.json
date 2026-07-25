@@ -1,0 +1,43 @@
+{
+  "type": "article",
+
+  "required_fields": [
+    "article_id",
+    "title",
+    "summary",
+    "content",
+    "sources",
+    "author",
+    "reviewed_by",
+    "published_at",
+    "updated_at"
+  ],
+
+  "structure": {
+
+    "header": {
+      "title": "",
+      "author": "Redaktion Free Basics",
+      "reviewed_by": "Samy ben Chedli Jendoubi",
+      "published_at": "",
+      "updated_at": ""
+    },
+
+    "management_summary": {
+      "text": ""
+    },
+
+    "content": {
+      "table_of_contents": [],
+      "sections": []
+    },
+
+    "internal_links": [],
+
+    "sources": [],
+
+    "methodology": {
+      "text": ""
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "monitor": "indexing_monitor",
+
+  "purpose": "Monitor search engine indexing status",
+
+  "metrics": {
+    "indexed_pages": 0,
+    "excluded_pages": 0,
+    "crawl_errors": 0,
+    "coverage_status": "unknown"
+  },
+
+  "sources": {
+    "google_search_console": true,
+    "sitemap": true,
+    "analytics": true
+  },
+
+  "alerts": {
+    "indexing_errors": true,
+    "coverage_changes": true,
+    "crawl_failures": true
+  },
+
+  "status": "READY"
+}

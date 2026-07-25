@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "check": "seo_check",
+
+  "purpose": "Validate SEO production assets",
+
+  "checks": {
+    "robots_txt": true,
+    "sitemap_xml": true,
+    "structured_data": true,
+    "canonical_links": true
+  },
+
+  "assets": {
+    "robots": "/robots.txt",
+    "sitemap": "/sitemap.xml",
+    "json_ld": true
+  },
+
+  "rules": {
+    "public_access_required": true,
+    "approved_content_only": true
+  },
+
+  "status": "READY"
+}

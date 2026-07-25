@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+
+  "model": "article_content_model",
+
+  "structure": {
+
+    "eeat": {
+      "author": true,
+      "reviewer": true,
+      "published_date": true,
+      "updated_date": true
+    },
+
+    "content": {
+      "summary": true,
+      "knowledge_article": true,
+      "facts": true,
+      "faq": true
+    },
+
+    "sources": {
+      "primary_sources": true,
+      "references": true
+    },
+
+    "entity": {
+      "wikidata": true,
+      "knowledge_graph": true
+    },
+
+    "seo": {
+      "article_schema": true,
+      "canonical": true,
+      "internal_links": true
+    }
+
+  },
+
+  "status": "READY"
+}

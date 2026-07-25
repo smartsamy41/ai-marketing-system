@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "dashboard": "traffic_metrics",
+
+  "metrics": {
+    "visitors": 0,
+    "page_views": 0,
+    "search_queries": 0,
+    "clicks": 0
+  },
+
+  "sources": {
+    "google_analytics": true,
+    "google_search_console": true,
+    "bigquery": true,
+    "affiliate_tracking": true
+  },
+
+  "status": "READY_FOR_DATA"
+}

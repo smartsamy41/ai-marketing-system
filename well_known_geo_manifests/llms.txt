@@ -1,0 +1,67 @@
+# Free Basics
+
+Name:
+Free Basics
+
+Website:
+https://freebasics.online
+
+
+Description:
+Free Basics is a knowledge and content platform for products,
+guides, comparisons and selected partner offers.
+
+
+Knowledge Structure:
+
+- Product Catalog: 44 products
+- Product Entities
+- Knowledge Graph
+- GEO optimized content
+- Source based information
+
+
+Main Areas:
+
+- Technology and Internet
+- Energy
+- Finance
+- Insurance
+- Travel
+- Everyday Products
+
+
+Machine Readable Data:
+
+- /datasets/verified-products.json
+- /datasets/verified-products.jsonld
+- /datasets/knowledge-graph.json
+
+
+Content Structure:
+
+- Landingpages
+- Blog Articles
+- Knowledge Articles
+- Product Information
+
+
+Transparency:
+
+Free Basics clearly discloses affiliate relationships.
+Partner content is marked as advertising where applicable.
+
+
+Sources:
+
+- Primary source documents
+- Official partner information
+- Public knowledge sources
+
+
+Legal:
+
+- https://freebasics.online/impressum
+- https://freebasics.online/datenschutz
+- https://freebasics.online/affiliate-hinweis
+- https://freebasics.online/kontakt

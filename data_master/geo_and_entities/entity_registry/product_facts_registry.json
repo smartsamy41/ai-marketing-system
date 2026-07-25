@@ -1,0 +1,806 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Product Facts Registry",
+  "rules": {
+    "source_required": true,
+    "fact_validation_required": true,
+    "no_fabricated_information": true
+  },
+  "products": [
+    {
+      "product_id": "CHK24_004",
+      "name": "DSL",
+      "category": "DSL",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_005",
+      "name": "Mobilfunk",
+      "category": "Mobilfunk",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_002",
+      "name": "Oekostrom",
+      "category": "Oekostrom",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_001",
+      "name": "Strom",
+      "category": "Strom",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_003",
+      "name": "Gas",
+      "category": "Gas",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_006",
+      "name": "Pauschalreise",
+      "category": "Reisen",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_007",
+      "name": "Mietwagen",
+      "category": "Reisen",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "CHK24_008",
+      "name": "C24 Bank",
+      "category": "Finanzen",
+      "partner": "check24",
+      "source": "check24",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_001",
+      "name": "Solaranlage",
+      "category": "Solaranlage",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_002",
+      "name": "Kfz-Versicherung",
+      "category": "Versicherung",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_003",
+      "name": "Kredit",
+      "category": "Kredit",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_004",
+      "name": "Girokonto",
+      "category": "Girokonto",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_005",
+      "name": "Baufinanzierung",
+      "category": "Baufinanzierung",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_006",
+      "name": "Hausratversicherung",
+      "category": "Versicherung",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_007",
+      "name": "Haftpflichtversicherung",
+      "category": "Versicherung",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_008",
+      "name": "Rentenversicherung",
+      "category": "Vorsorge",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TC_009",
+      "name": "Private Krankenversicherung",
+      "category": "Versicherung",
+      "partner": "tarifcheck",
+      "source": "tarifcheck",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FQF32239",
+      "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+      "category": "Bluetooth-Kopfhörer",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0CFPWLGF2",
+      "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+      "category": "E-Reader",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0DFYN8174",
+      "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+      "category": "Körperpflege & Elektrorasierer",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FPXFBL13",
+      "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "category": "Bauspielzeugsets",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FPXDCDX2",
+      "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "category": "Bauspielzeugsets",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FPXGJL6H",
+      "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "category": "Bauspielzeugsets",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FPXDRR63",
+      "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+      "category": "Bauspielzeugsets",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "3424631078",
+      "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+      "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FNX7HC9M",
+      "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+      "category": "Bücher - Psychothriller",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "3423209690",
+      "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+      "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "3832167242",
+      "name": "22 Bahnen Roman Lieblingsbuch 2023",
+      "category": "Bücher - Roman & Gegenwartsliteratur",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "3426281759",
+      "name": "Der Nachbar Psychothriller",
+      "category": "Bücher - Psychothriller",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0DXLBZF4Q",
+      "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+      "category": "Körperpflege & Elektrorasierer",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0CVXSK4D3",
+      "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+      "category": "Rasierklingen & Zubehör",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B08P4YPB8Q",
+      "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+      "category": "Kosmetik - Wimperntusche",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0FMS3V43J",
+      "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+      "category": "Nahrungsergänzung - Magnesium",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "B0D1YKBX82",
+      "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+      "category": "Bücher - Liebesromane / New Adult",
+      "partner": "amazon",
+      "source": "amazon",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_001",
+      "name": "MagentaTV",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_002",
+      "name": "Glasfaser",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_003",
+      "name": "MagentaZuhause",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_004",
+      "name": "MagentaMobil",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_005",
+      "name": "MagentaMobil Young",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_006",
+      "name": "MagentaMobil Prepaid",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_007",
+      "name": "congstar Allnet",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_008",
+      "name": "congstar Homespot",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_009",
+      "name": "TV + Internet + Festnetz",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    },
+    {
+      "product_id": "TEL_010",
+      "name": "Datentarife",
+      "category": "telekom",
+      "partner": "telekom",
+      "source": "telekom",
+      "knowledge_graph": {
+        "wikidata_id": null,
+        "google_mid": null,
+        "status": "pending_verification"
+      },
+      "facts_status": "source_available",
+      "validation": {
+        "source_required": true,
+        "fact_validation_required": true,
+        "fabricated_information": false
+      }
+    }
+  ],
+  "count": 44,
+  "status": "ACTIVE"
+}

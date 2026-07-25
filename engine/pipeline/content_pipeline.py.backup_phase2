@@ -1,0 +1,88 @@
+from engine.knowledge_adapter import KnowledgeAdapter
+from engine.url_management.url_resolver import URLResolver
+from engine.content_generation.landingpage_builder import LandingpageBuilder
+from engine.content_generation.blog_article_builder import BlogArticleBuilder
+
+
+class ContentPipeline:
+
+    def __init__(self):
+
+        self.knowledge = KnowledgeAdapter()
+        self.urls = URLResolver()
+
+        self.landingpage_builder = LandingpageBuilder()
+        self.article_builder = BlogArticleBuilder()
+
+
+    def process(self, product):
+
+        knowledge_data = self.knowledge.build_product_context(
+            product["product_id"]
+        )
+
+        if not knowledge_data:
+            return {
+                "status": "ERROR",
+                "message": "Product not found"
+            }
+
+
+        product.update(
+            knowledge_data
+        )
+
+
+        product["landingpage_url"] = (
+            self.urls.landingpage_url(product)
+        )
+
+        product["article_url"] = (
+            self.urls.article_url(product)
+        )
+
+
+        landingpage = self.landingpage_builder.build(
+            product
+        )
+
+
+        article = self.article_builder.build(
+            product,
+            facts=knowledge_data
+        )
+
+
+        return {
+            "product": product,
+            "landingpage": landingpage,
+            "article": article,
+            "status": "READY"
+        }
+
+
+
+if __name__ == "__main__":
+
+    pipeline = ContentPipeline()
+
+
+    result = pipeline.process(
+        {
+            "product_id": "CHK24_001",
+            "name": "Strom",
+            "partner": "check24",
+            "category": "Energie"
+        }
+    )
+
+
+    import json
+
+    print(
+        json.dumps(
+            result,
+            indent=2,
+            ensure_ascii=False
+        )
+    )

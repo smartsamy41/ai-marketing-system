@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "status": "ACTIVE",
+
+  "primary_source": {
+    "domain": "https://freebasics.online",
+    "role": "original_content_source"
+  },
+
+  "syndication_rules": {
+
+    "blog": {
+      "publish_first": true,
+      "canonical_target": "https://freebasics.online/blog/{slug}"
+    },
+
+    "medium": {
+      "enabled": false,
+      "canonical_required": true,
+      "target": "https://freebasics.online/blog/{slug}"
+    },
+
+    "pinterest": {
+      "role": "traffic_distribution",
+      "canonical_target": "https://freebasics.online"
+    },
+
+    "youtube": {
+      "role": "traffic_distribution",
+      "canonical_target": "https://freebasics.online"
+    },
+
+    "tiktok": {
+      "role": "traffic_distribution",
+      "canonical_target": "https://freebasics.online"
+    }
+  }
+}

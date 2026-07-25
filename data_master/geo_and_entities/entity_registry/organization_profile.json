@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+
+  "entity_type": "Organization",
+
+  "name": "Free Basics",
+
+  "domain": "https://freebasics.online",
+
+  "description": "Digitale Informationsplattform für Tarifinformationen, digitale Themen und Partnerangebote.",
+
+  "identity": {
+    "official_domain": true,
+    "impressum_available": true,
+    "contact_available": true
+  },
+
+  "knowledge_ids": {
+    "wikidata": null,
+    "google_mid": null
+  },
+
+  "rules": {
+    "external_ids_only_verified": true,
+    "no_placeholder_ids": true
+  },
+
+  "status": "ACTIVE"
+}

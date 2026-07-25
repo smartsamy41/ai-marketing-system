@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "generator": "schema_generator",
+
+  "purpose": "Generate structured data for GEO content",
+
+  "input": {
+    "content": true,
+    "product_data": true,
+    "entity_data": true,
+    "faq_data": true
+  },
+
+  "schemas": [
+    "Product",
+    "Article",
+    "FAQPage",
+    "Organization",
+    "WebSite"
+  ],
+
+  "validation": {
+    "schema_required": true,
+    "structured_data_check": true,
+    "source_reference_required": true
+  },
+
+  "output": {
+    "format": "JSON-LD",
+    "location": "public_web_assets/datasets/"
+  },
+
+  "status": "READY"
+}

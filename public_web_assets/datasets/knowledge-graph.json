@@ -1,0 +1,815 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Public Knowledge Graph",
+  "status": "ACTIVE",
+  "nodes": [
+    {
+      "id": "CHK24_004",
+      "type": "Product",
+      "name": "DSL"
+    },
+    {
+      "id": "check24",
+      "type": "Partner",
+      "name": "check24"
+    },
+    {
+      "id": "DSL",
+      "type": "Category",
+      "name": "DSL"
+    },
+    {
+      "id": "CHK24_005",
+      "type": "Product",
+      "name": "Mobilfunk"
+    },
+    {
+      "id": "Mobilfunk",
+      "type": "Category",
+      "name": "Mobilfunk"
+    },
+    {
+      "id": "CHK24_002",
+      "type": "Product",
+      "name": "Oekostrom"
+    },
+    {
+      "id": "Oekostrom",
+      "type": "Category",
+      "name": "Oekostrom"
+    },
+    {
+      "id": "CHK24_001",
+      "type": "Product",
+      "name": "Strom"
+    },
+    {
+      "id": "Strom",
+      "type": "Category",
+      "name": "Strom"
+    },
+    {
+      "id": "CHK24_003",
+      "type": "Product",
+      "name": "Gas"
+    },
+    {
+      "id": "Gas",
+      "type": "Category",
+      "name": "Gas"
+    },
+    {
+      "id": "CHK24_006",
+      "type": "Product",
+      "name": "Pauschalreise"
+    },
+    {
+      "id": "Reisen",
+      "type": "Category",
+      "name": "Reisen"
+    },
+    {
+      "id": "CHK24_007",
+      "type": "Product",
+      "name": "Mietwagen"
+    },
+    {
+      "id": "CHK24_008",
+      "type": "Product",
+      "name": "C24 Bank"
+    },
+    {
+      "id": "Finanzen",
+      "type": "Category",
+      "name": "Finanzen"
+    },
+    {
+      "id": "TC_001",
+      "type": "Product",
+      "name": "Solaranlage"
+    },
+    {
+      "id": "tarifcheck",
+      "type": "Partner",
+      "name": "tarifcheck"
+    },
+    {
+      "id": "Solaranlage",
+      "type": "Category",
+      "name": "Solaranlage"
+    },
+    {
+      "id": "TC_002",
+      "type": "Product",
+      "name": "Kfz-Versicherung"
+    },
+    {
+      "id": "Versicherung",
+      "type": "Category",
+      "name": "Versicherung"
+    },
+    {
+      "id": "TC_003",
+      "type": "Product",
+      "name": "Kredit"
+    },
+    {
+      "id": "Kredit",
+      "type": "Category",
+      "name": "Kredit"
+    },
+    {
+      "id": "TC_004",
+      "type": "Product",
+      "name": "Girokonto"
+    },
+    {
+      "id": "Girokonto",
+      "type": "Category",
+      "name": "Girokonto"
+    },
+    {
+      "id": "TC_005",
+      "type": "Product",
+      "name": "Baufinanzierung"
+    },
+    {
+      "id": "Baufinanzierung",
+      "type": "Category",
+      "name": "Baufinanzierung"
+    },
+    {
+      "id": "TC_006",
+      "type": "Product",
+      "name": "Hausratversicherung"
+    },
+    {
+      "id": "TC_007",
+      "type": "Product",
+      "name": "Haftpflichtversicherung"
+    },
+    {
+      "id": "TC_008",
+      "type": "Product",
+      "name": "Rentenversicherung"
+    },
+    {
+      "id": "Vorsorge",
+      "type": "Category",
+      "name": "Vorsorge"
+    },
+    {
+      "id": "TC_009",
+      "type": "Product",
+      "name": "Private Krankenversicherung"
+    },
+    {
+      "id": "B0FQF32239",
+      "type": "Product",
+      "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer"
+    },
+    {
+      "id": "amazon",
+      "type": "Partner",
+      "name": "amazon"
+    },
+    {
+      "id": "Bluetooth-Kopfhörer",
+      "type": "Category",
+      "name": "Bluetooth-Kopfhörer"
+    },
+    {
+      "id": "B0CFPWLGF2",
+      "type": "Product",
+      "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz"
+    },
+    {
+      "id": "E-Reader",
+      "type": "Category",
+      "name": "E-Reader"
+    },
+    {
+      "id": "B0DFYN8174",
+      "type": "Product",
+      "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30"
+    },
+    {
+      "id": "Körperpflege & Elektrorasierer",
+      "type": "Category",
+      "name": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "id": "B0FPXFBL13",
+      "type": "Product",
+      "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+    },
+    {
+      "id": "Bauspielzeugsets",
+      "type": "Category",
+      "name": "Bauspielzeugsets"
+    },
+    {
+      "id": "B0FPXDCDX2",
+      "type": "Product",
+      "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+    },
+    {
+      "id": "B0FPXGJL6H",
+      "type": "Product",
+      "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+    },
+    {
+      "id": "B0FPXDRR63",
+      "type": "Product",
+      "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020"
+    },
+    {
+      "id": "3424631078",
+      "type": "Product",
+      "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme"
+    },
+    {
+      "id": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+      "type": "Category",
+      "name": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+    },
+    {
+      "id": "B0FNX7HC9M",
+      "type": "Product",
+      "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set"
+    },
+    {
+      "id": "Bücher - Psychothriller",
+      "type": "Category",
+      "name": "Bücher - Psychothriller"
+    },
+    {
+      "id": "3423209690",
+      "type": "Product",
+      "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens"
+    },
+    {
+      "id": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+      "type": "Category",
+      "name": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+    },
+    {
+      "id": "3832167242",
+      "type": "Product",
+      "name": "22 Bahnen Roman Lieblingsbuch 2023"
+    },
+    {
+      "id": "Bücher - Roman & Gegenwartsliteratur",
+      "type": "Category",
+      "name": "Bücher - Roman & Gegenwartsliteratur"
+    },
+    {
+      "id": "3426281759",
+      "type": "Product",
+      "name": "Der Nachbar Psychothriller"
+    },
+    {
+      "id": "B0DXLBZF4Q",
+      "type": "Product",
+      "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31"
+    },
+    {
+      "id": "B0CVXSK4D3",
+      "type": "Product",
+      "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50"
+    },
+    {
+      "id": "Rasierklingen & Zubehör",
+      "type": "Category",
+      "name": "Rasierklingen & Zubehör"
+    },
+    {
+      "id": "B08P4YPB8Q",
+      "type": "Product",
+      "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml"
+    },
+    {
+      "id": "Kosmetik - Wimperntusche",
+      "type": "Category",
+      "name": "Kosmetik - Wimperntusche"
+    },
+    {
+      "id": "B0FMS3V43J",
+      "type": "Product",
+      "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen"
+    },
+    {
+      "id": "Nahrungsergänzung - Magnesium",
+      "type": "Category",
+      "name": "Nahrungsergänzung - Magnesium"
+    },
+    {
+      "id": "B0D1YKBX82",
+      "type": "Product",
+      "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset"
+    },
+    {
+      "id": "Bücher - Liebesromane / New Adult",
+      "type": "Category",
+      "name": "Bücher - Liebesromane / New Adult"
+    },
+    {
+      "id": "TEL_001",
+      "type": "Product",
+      "name": "MagentaTV"
+    },
+    {
+      "id": "telekom",
+      "type": "Category",
+      "name": "telekom"
+    },
+    {
+      "id": "TEL_002",
+      "type": "Product",
+      "name": "Glasfaser"
+    },
+    {
+      "id": "TEL_003",
+      "type": "Product",
+      "name": "MagentaZuhause"
+    },
+    {
+      "id": "TEL_004",
+      "type": "Product",
+      "name": "MagentaMobil"
+    },
+    {
+      "id": "TEL_005",
+      "type": "Product",
+      "name": "MagentaMobil Young"
+    },
+    {
+      "id": "TEL_006",
+      "type": "Product",
+      "name": "MagentaMobil Prepaid"
+    },
+    {
+      "id": "TEL_007",
+      "type": "Product",
+      "name": "congstar Allnet"
+    },
+    {
+      "id": "TEL_008",
+      "type": "Product",
+      "name": "congstar Homespot"
+    },
+    {
+      "id": "TEL_009",
+      "type": "Product",
+      "name": "TV + Internet + Festnetz"
+    },
+    {
+      "id": "TEL_010",
+      "type": "Product",
+      "name": "Datentarife"
+    }
+  ],
+  "edges": [
+    {
+      "from": "CHK24_004",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_004",
+      "to": "DSL",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_005",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_005",
+      "to": "Mobilfunk",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_002",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_002",
+      "to": "Oekostrom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_001",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_001",
+      "to": "Strom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_003",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_003",
+      "to": "Gas",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_006",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_006",
+      "to": "Reisen",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_007",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_007",
+      "to": "Reisen",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "CHK24_008",
+      "to": "check24",
+      "relation": "provided_by"
+    },
+    {
+      "from": "CHK24_008",
+      "to": "Finanzen",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_001",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_001",
+      "to": "Solaranlage",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_002",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_002",
+      "to": "Versicherung",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_003",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_003",
+      "to": "Kredit",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_004",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_004",
+      "to": "Girokonto",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_005",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_005",
+      "to": "Baufinanzierung",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_006",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_006",
+      "to": "Versicherung",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_007",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_007",
+      "to": "Versicherung",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_008",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_008",
+      "to": "Vorsorge",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TC_009",
+      "to": "tarifcheck",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TC_009",
+      "to": "Versicherung",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FQF32239",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FQF32239",
+      "to": "Bluetooth-Kopfhörer",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0CFPWLGF2",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0CFPWLGF2",
+      "to": "E-Reader",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0DFYN8174",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0DFYN8174",
+      "to": "Körperpflege & Elektrorasierer",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FPXFBL13",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FPXFBL13",
+      "to": "Bauspielzeugsets",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FPXDCDX2",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FPXDCDX2",
+      "to": "Bauspielzeugsets",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FPXGJL6H",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FPXGJL6H",
+      "to": "Bauspielzeugsets",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FPXDRR63",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FPXDRR63",
+      "to": "Bauspielzeugsets",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "3424631078",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "3424631078",
+      "to": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FNX7HC9M",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FNX7HC9M",
+      "to": "Bücher - Psychothriller",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "3423209690",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "3423209690",
+      "to": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "3832167242",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "3832167242",
+      "to": "Bücher - Roman & Gegenwartsliteratur",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "3426281759",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "3426281759",
+      "to": "Bücher - Psychothriller",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0DXLBZF4Q",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0DXLBZF4Q",
+      "to": "Körperpflege & Elektrorasierer",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0CVXSK4D3",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0CVXSK4D3",
+      "to": "Rasierklingen & Zubehör",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B08P4YPB8Q",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B08P4YPB8Q",
+      "to": "Kosmetik - Wimperntusche",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0FMS3V43J",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0FMS3V43J",
+      "to": "Nahrungsergänzung - Magnesium",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "B0D1YKBX82",
+      "to": "amazon",
+      "relation": "provided_by"
+    },
+    {
+      "from": "B0D1YKBX82",
+      "to": "Bücher - Liebesromane / New Adult",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_001",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_001",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_002",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_002",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_003",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_003",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_004",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_004",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_005",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_005",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_006",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_006",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_007",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_007",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_008",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_008",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_009",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_009",
+      "to": "telekom",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "TEL_010",
+      "to": "telekom",
+      "relation": "provided_by"
+    },
+    {
+      "from": "TEL_010",
+      "to": "telekom",
+      "relation": "belongs_to"
+    }
+  ]
+}

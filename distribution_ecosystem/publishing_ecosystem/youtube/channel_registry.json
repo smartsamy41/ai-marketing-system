@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "platform": "YouTube",
+  "status": "PENDING_CHANNEL_MAPPING",
+
+  "channel": {
+    "name": "Free Basics",
+    "url": "https://www.youtube.com/@freebasics_online"
+  },
+
+  "integration": {
+    "api_enabled": true,
+    "oauth_available": true,
+    "upload_automation": false,
+    "token_status": "available"
+  },
+
+  "rules": {
+    "role": "video_distribution",
+    "canonical_target": "https://freebasics.online",
+    "content_source": "freebasics.online/blog"
+  }
+}

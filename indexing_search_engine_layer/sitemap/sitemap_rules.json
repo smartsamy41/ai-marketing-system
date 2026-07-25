@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "component": "sitemap_rules",
+
+  "content_types": {
+    "homepage": {
+      "priority": 1.0,
+      "change_frequency": "daily"
+    },
+
+    "landingpages": {
+      "priority": 0.8,
+      "change_frequency": "weekly"
+    },
+
+    "blog_articles": {
+      "priority": 0.7,
+      "change_frequency": "weekly"
+    },
+
+    "knowledge_articles": {
+      "priority": 0.6,
+      "change_frequency": "monthly"
+    }
+  },
+
+  "rules": {
+    "include_published": true,
+    "include_drafts": false,
+    "include_archived": false
+  },
+
+  "status": "READY"
+}

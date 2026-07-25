@@ -1,0 +1,173 @@
+# Free Basics - Full Knowledge Manifest
+
+
+## Identity
+
+Name:
+Free Basics
+
+Website:
+https://freebasics.online
+
+System:
+FREE BASICS AI MARKETING SYSTEM
+
+
+## Purpose
+
+Free Basics provides structured information,
+guides and product knowledge.
+
+The platform combines:
+
+- Product information
+- Knowledge articles
+- GEO optimized content
+- Source based information
+- Partner offer references
+
+
+## Product Knowledge Layer
+
+Current Product Catalog:
+
+44 Products
+
+Categories include:
+
+- Technology
+- Internet
+- Energy
+- Finance
+- Insurance
+- Travel
+- Consumer Products
+
+
+## Data Architecture
+
+Main Data Sources:
+
+/datasets/verified-products.json
+
+Public product registry.
+
+
+/datasets/verified-products.jsonld
+
+Schema.org structured product data.
+
+
+/datasets/knowledge-graph.json
+
+Entity relationship graph.
+
+
+## Knowledge Graph
+
+Entities:
+
+- Products
+- Partners
+- Categories
+
+Relations:
+
+- provided_by
+- belongs_to
+
+
+## Content System
+
+Content types:
+
+- Landingpages
+- Blog Articles
+- Knowledge Guides
+- Product Information
+
+
+Content workflow:
+
+AI Draft
+→ Review
+→ Approved
+→ Published
+
+
+## GEO Optimization
+
+The system uses:
+
+- Structured data
+- Entity references
+- Source references
+- FAQ structures
+- Author information
+
+
+## Publishing Ecosystem
+
+Distribution channels:
+
+- Pinterest
+- YouTube
+- TikTok
+- Medium
+
+Primary source:
+
+https://freebasics.online
+
+
+## Canonical Policy
+
+Original content is published first on Free Basics.
+
+External distribution must reference the original source.
+
+
+## Transparency
+
+Affiliate relationships are disclosed.
+
+Partner content is marked as advertising where applicable.
+
+Free Basics acts as information provider and Tippgeber.
+
+
+## Data Quality
+
+The system uses:
+
+- Verified product records
+- Source references
+- Structured datasets
+- Automated validation
+
+
+## Legal Information
+
+Imprint:
+https://freebasics.online/impressum
+
+Privacy:
+https://freebasics.online/datenschutz
+
+Affiliate Information:
+https://freebasics.online/affiliate-hinweis
+
+
+## Machine Access
+
+Available structured resources:
+
+- Product Dataset
+- JSON-LD Dataset
+- Knowledge Graph
+- API Documentation
+
+
+Status:
+
+ACTIVE

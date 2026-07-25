@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "dashboard": "system_health",
+
+  "environment": {
+    "cloud": "Google Cloud Run",
+    "status": "active"
+  },
+
+  "services": {
+    "fastapi": "active",
+    "bigquery": "active",
+    "google_sheets": "active",
+    "google_drive": "active"
+  },
+
+  "ai_modules": {
+    "content_engine": "active",
+    "geo_engine": "active",
+    "knowledge_graph": "active",
+    "self_learning_agent": "prepared"
+  },
+
+  "integrations": {
+    "amazon": "active",
+    "check24": "active",
+    "tarifcheck": "active",
+    "telekom": "active",
+    "pinterest": "pending"
+  },
+
+  "status": "READY"
+}

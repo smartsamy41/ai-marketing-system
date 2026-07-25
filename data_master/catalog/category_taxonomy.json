@@ -1,0 +1,208 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Product Category Taxonomy",
+  "status": "ACTIVE",
+  "categories": [
+    {
+      "name": "Baufinanzierung",
+      "product_count": 1,
+      "products": [
+        "TC_005"
+      ]
+    },
+    {
+      "name": "Bauspielzeugsets",
+      "product_count": 4,
+      "products": [
+        "B0FPXFBL13",
+        "B0FPXDCDX2",
+        "B0FPXGJL6H",
+        "B0FPXDRR63"
+      ]
+    },
+    {
+      "name": "Bluetooth-Kopfhörer",
+      "product_count": 1,
+      "products": [
+        "B0FQF32239"
+      ]
+    },
+    {
+      "name": "Bücher - Liebesromane / New Adult",
+      "product_count": 1,
+      "products": [
+        "B0D1YKBX82"
+      ]
+    },
+    {
+      "name": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+      "product_count": 1,
+      "products": [
+        "3423209690"
+      ]
+    },
+    {
+      "name": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+      "product_count": 1,
+      "products": [
+        "3424631078"
+      ]
+    },
+    {
+      "name": "Bücher - Psychothriller",
+      "product_count": 2,
+      "products": [
+        "B0FNX7HC9M",
+        "3426281759"
+      ]
+    },
+    {
+      "name": "Bücher - Roman & Gegenwartsliteratur",
+      "product_count": 1,
+      "products": [
+        "3832167242"
+      ]
+    },
+    {
+      "name": "DSL",
+      "product_count": 1,
+      "products": [
+        "CHK24_004"
+      ]
+    },
+    {
+      "name": "E-Reader",
+      "product_count": 1,
+      "products": [
+        "B0CFPWLGF2"
+      ]
+    },
+    {
+      "name": "Finanzen",
+      "product_count": 1,
+      "products": [
+        "CHK24_008"
+      ]
+    },
+    {
+      "name": "Gas",
+      "product_count": 1,
+      "products": [
+        "CHK24_003"
+      ]
+    },
+    {
+      "name": "Girokonto",
+      "product_count": 1,
+      "products": [
+        "TC_004"
+      ]
+    },
+    {
+      "name": "Kosmetik - Wimperntusche",
+      "product_count": 1,
+      "products": [
+        "B08P4YPB8Q"
+      ]
+    },
+    {
+      "name": "Kredit",
+      "product_count": 1,
+      "products": [
+        "TC_003"
+      ]
+    },
+    {
+      "name": "Körperpflege & Elektrorasierer",
+      "product_count": 2,
+      "products": [
+        "B0DFYN8174",
+        "B0DXLBZF4Q"
+      ]
+    },
+    {
+      "name": "Mobilfunk",
+      "product_count": 1,
+      "products": [
+        "CHK24_005"
+      ]
+    },
+    {
+      "name": "Nahrungsergänzung - Magnesium",
+      "product_count": 1,
+      "products": [
+        "B0FMS3V43J"
+      ]
+    },
+    {
+      "name": "Oekostrom",
+      "product_count": 1,
+      "products": [
+        "CHK24_002"
+      ]
+    },
+    {
+      "name": "Rasierklingen & Zubehör",
+      "product_count": 1,
+      "products": [
+        "B0CVXSK4D3"
+      ]
+    },
+    {
+      "name": "Reisen",
+      "product_count": 2,
+      "products": [
+        "CHK24_006",
+        "CHK24_007"
+      ]
+    },
+    {
+      "name": "Solaranlage",
+      "product_count": 1,
+      "products": [
+        "TC_001"
+      ]
+    },
+    {
+      "name": "Strom",
+      "product_count": 1,
+      "products": [
+        "CHK24_001"
+      ]
+    },
+    {
+      "name": "Versicherung",
+      "product_count": 4,
+      "products": [
+        "TC_002",
+        "TC_006",
+        "TC_007",
+        "TC_009"
+      ]
+    },
+    {
+      "name": "Vorsorge",
+      "product_count": 1,
+      "products": [
+        "TC_008"
+      ]
+    },
+    {
+      "name": "telekom",
+      "product_count": 10,
+      "products": [
+        "TEL_001",
+        "TEL_002",
+        "TEL_003",
+        "TEL_004",
+        "TEL_005",
+        "TEL_006",
+        "TEL_007",
+        "TEL_008",
+        "TEL_009",
+        "TEL_010"
+      ]
+    }
+  ]
+}

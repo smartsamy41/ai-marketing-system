@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "platform": "Pinterest",
+  "status": "PENDING_DOMAIN_REVIEW",
+
+  "channel": {
+    "username": "freebasics_official"
+  },
+
+  "integration": {
+    "api_enabled": false,
+    "app_id": "1578175",
+    "token_available": true,
+    "publishing_automation": false
+  },
+
+  "rules": {
+    "role": "traffic_distribution",
+    "canonical_target": "https://freebasics.online"
+  }
+}

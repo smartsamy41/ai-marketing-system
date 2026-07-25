@@ -1,0 +1,9 @@
+Contact: mailto:security@freebasics.online
+
+Canonical: https://freebasics.online/.well-known/security.txt
+
+Policy: https://freebasics.online/security
+
+Preferred-Languages: de,en
+
+Expires: 2027-07-22

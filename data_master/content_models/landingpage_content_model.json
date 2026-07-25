@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+
+  "model": "landingpage_content_model",
+
+  "structure": {
+
+    "identity": {
+      "product_id": true,
+      "title": true,
+      "category": true,
+      "partner": true
+    },
+
+    "geo": {
+      "entity": true,
+      "wikidata": true,
+      "knowledge_context": true
+    },
+
+    "content": {
+      "ai_summary": true,
+      "introduction": true,
+      "facts": true,
+      "faq": true
+    },
+
+    "trust": {
+      "sources": true,
+      "author_information": true,
+      "update_date": true
+    },
+
+    "affiliate": {
+      "disclosure": true,
+      "tracking_link": true
+    },
+
+    "seo": {
+      "canonical": true,
+      "schema": true,
+      "internal_links": true
+    }
+
+  },
+
+  "status": "READY"
+}

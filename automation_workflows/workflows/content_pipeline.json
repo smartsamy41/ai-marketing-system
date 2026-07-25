@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "workflow": "content_pipeline",
+
+  "purpose": "Automated content creation workflow",
+
+  "steps": [
+    "load_product",
+    "load_knowledge",
+    "generate_content",
+    "apply_template",
+    "validate_sources",
+    "review",
+    "approve"
+  ],
+
+  "outputs": {
+    "landingpage": true,
+    "blog_article": true,
+    "schema": true,
+    "knowledge_chunk": true
+  },
+
+  "rules": {
+    "source_required": true,
+    "compliance_check": true,
+    "human_review_required": true
+  },
+
+  "status": "READY"
+}

@@ -1,0 +1,158 @@
+import json
+
+from engine.template_renderer import TemplateRenderer
+from engine.schema_graph.schema_graph_builder import SchemaGraphBuilder
+
+
+class ProductionRenderer:
+
+
+    def __init__(self):
+
+        self.renderer = TemplateRenderer()
+        self.schema = SchemaGraphBuilder()
+
+
+
+    def render_landingpage(
+        self,
+        product
+    ):
+
+
+        schema_product = {
+
+            **product,
+
+            "name":
+                product.get(
+                    "name",
+                    product.get("title")
+                )
+
+        }
+
+
+        product_schema = json.dumps(
+
+            self.schema.product_schema(
+                schema_product
+            ),
+
+            indent=2,
+
+            ensure_ascii=False
+
+        )
+
+
+
+        data = {
+
+            **product,
+
+
+            "title":
+                product.get(
+                    "title",
+                    product.get("name")
+                ),
+
+
+            "schema_json":
+                product_schema,
+
+
+            "canonical_url":
+                product.get(
+                    "landingpage_url",
+                    "https://freebasics.online/angebote/"
+                    +
+                    product.get("product_id")
+                )
+
+        }
+
+
+
+        return self.renderer.render(
+
+            "landingpages/geo_optimized_landingpage.html",
+
+            data
+
+        )
+
+
+
+    def render_article(
+        self,
+        article
+    ):
+
+
+        article_schema = json.dumps(
+
+            self.schema.article_schema(
+                article
+            ),
+
+            indent=2,
+
+            ensure_ascii=False
+
+        )
+
+
+
+        return self.renderer.render(
+
+            "blog/geo_authority_article.html",
+
+            {
+
+                **article,
+
+                "article_schema":
+                    article_schema,
+
+
+                "canonical_url":
+                    article.get(
+                        "article_url"
+                    )
+
+            }
+
+        )
+
+
+
+if __name__ == "__main__":
+
+
+    renderer = ProductionRenderer()
+
+
+    html = renderer.render_landingpage(
+
+        {
+
+            "product_id":
+                "CHK24_001",
+
+            "title":
+                "Strom",
+
+            "category":
+                "Energie",
+
+            "partner":
+                "check24"
+
+        }
+
+    )
+
+
+    print(html[:500])

@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "dashboard": "conversion_metrics",
+
+  "metrics": {
+    "affiliate_clicks": 0,
+    "leads": 0,
+    "conversions": 0,
+    "earnings": 0
+  },
+
+  "sources": {
+    "affiliate_tracking": true,
+    "partner_networks": true,
+    "bigquery": true
+  },
+
+  "partners": [
+    "amazon",
+    "check24",
+    "tarifcheck",
+    "telekom"
+  ],
+
+  "status": "READY_FOR_DATA"
+}

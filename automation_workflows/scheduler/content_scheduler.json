@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "scheduler": "content_scheduler",
+
+  "purpose": "Automated content production control",
+
+  "input": {
+    "source": "product_master_44",
+    "knowledge": "knowledge_graph",
+    "facts": "primary_sources"
+  },
+
+  "pipeline": {
+    "landingpages": {
+      "enabled": true,
+      "template": "geo_optimized_landingpage"
+    },
+
+    "articles": {
+      "enabled": true,
+      "template": "geo_authority_article"
+    }
+  },
+
+  "rules": {
+    "require_sources": true,
+    "require_review": true,
+    "require_schema": true
+  },
+
+  "status": "READY"
+}

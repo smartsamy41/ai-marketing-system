@@ -1,0 +1,14 @@
+{
+  "name": "Free Basics",
+  "short_name": "Free Basics",
+  "description": "Free Basics AI Marketing System - Informationen, Ratgeber und Partnerangebote.",
+  "start_url": "https://freebasics.online/",
+  "scope": "https://freebasics.online/",
+  "display": "standalone",
+  "lang": "de",
+  "categories": [
+    "technology",
+    "finance",
+    "shopping"
+  ]
+}

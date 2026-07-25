@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "validator": "source_validator",
+
+  "purpose": "Validate source references and factual foundation",
+
+  "checks": [
+    "source_exists",
+    "source_reference",
+    "primary_source",
+    "fact_validation"
+  ],
+
+  "rules": {
+    "source_required": true,
+    "reference_required": true,
+    "unverified_information_blocked": true
+  },
+
+  "status": "READY"
+}

@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "check": "domain_check",
+
+  "purpose": "Validate public domain availability",
+
+  "checks": {
+    "https_enabled": true,
+    "domain_resolves": true,
+    "homepage_available": true,
+    "canonical_domain": true
+  },
+
+  "target": {
+    "domain": "https://freebasics.online"
+  },
+
+  "status": "READY"
+}

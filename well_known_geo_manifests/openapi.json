@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Free Basics AI Marketing System API",
+    "version": "1.0",
+    "description": "Public API documentation for Free Basics."
+  },
+
+  "servers": [
+    {
+      "url": "https://freebasics.online"
+    }
+  ],
+
+  "paths": {
+
+    "/health": {
+      "get": {
+        "summary": "System health status",
+        "responses": {
+          "200": {
+            "description": "System available"
+          }
+        }
+      }
+    },
+
+    "/": {
+      "get": {
+        "summary": "Free Basics homepage",
+        "responses": {
+          "200": {
+            "description": "Homepage available"
+          }
+        }
+      }
+    },
+
+    "/lp/{product_id}": {
+      "get": {
+        "summary": "Product landingpage",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Landingpage available"
+          }
+        }
+      }
+    }
+
+  }
+}

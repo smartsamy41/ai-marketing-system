@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "platform": "Medium",
+  "status": "PREPARED",
+
+  "channel": {
+    "username": "freebasics-online",
+    "url": "https://freebasics-online.medium.com",
+    "email": "info@freebasics.online"
+  },
+
+  "integration": {
+    "api_enabled": false,
+    "token_available": false,
+    "publishing_automation": false
+  },
+
+  "rules": {
+    "publish_original_first": true,
+    "canonical_required": true,
+    "canonical_target": "https://freebasics.online/blog/{slug}"
+  },
+
+  "role": "content_distribution_only"
+}

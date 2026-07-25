@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Standard API Response Schema",
+
+  "response": {
+    "status": "string",
+    "message": "string",
+    "data": "object",
+    "timestamp": "datetime"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+
+  "sources": [
+
+    {
+      "name": "Official Website",
+      "type": "website",
+      "url": "https://freebasics.online",
+      "status": "active"
+    },
+
+    {
+      "name": "GitHub",
+      "type": "developer_profile",
+      "url": null,
+      "status": "pending"
+    },
+
+    {
+      "name": "Medium",
+      "type": "publishing_profile",
+      "url": null,
+      "status": "pending"
+    },
+
+    {
+      "name": "LinkedIn",
+      "type": "company_profile",
+      "url": null,
+      "status": "pending"
+    }
+
+  ],
+
+  "rules": {
+    "no_unverified_profiles": true
+  },
+
+  "status": "ACTIVE"
+}

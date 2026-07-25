@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+
+  "publisher": {
+    "name": "Free Basics",
+    "domain": "https://freebasics.online"
+  },
+
+  "entities": [],
+
+  "rules": {
+    "external_ids_only_if_verified": true,
+    "no_placeholder_ids": true
+  },
+
+  "status": "ACTIVE"
+}

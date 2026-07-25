@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "description": "Product API Schema",
+
+  "product": {
+    "product_id": "string",
+    "name": "string",
+    "partner": "string",
+    "category": "string",
+    "landingpage": "url",
+    "tracking_url": "url",
+    "status": "string"
+  }
+}

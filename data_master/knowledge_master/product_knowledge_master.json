@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+
+  "description": "Unified Product Knowledge Layer",
+
+  "rules": {
+    "source_required": true,
+    "verified_data_only": true,
+    "external_ids_only_verified": true
+  },
+
+  "products": [],
+
+  "status": "READY"
+}

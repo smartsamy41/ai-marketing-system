@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+
+  "organization": "Free Basics",
+
+  "profiles": [
+
+  ],
+
+  "rules": {
+    "official_profiles_only": true,
+    "sameAs_only_verified": true
+  },
+
+  "status": "ACTIVE"
+}

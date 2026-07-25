@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "workflow": "seo_pipeline",
+
+  "purpose": "SEO and GEO optimization workflow",
+
+  "steps": [
+    "analyze_content",
+    "generate_schema",
+    "optimize_entities",
+    "create_internal_links",
+    "update_sitemap",
+    "monitor_indexing"
+  ],
+
+  "outputs": {
+    "schema": true,
+    "internal_links": true,
+    "sitemap": true,
+    "seo_signals": true
+  },
+
+  "rules": {
+    "source_based": true,
+    "no_keyword_spam": true,
+    "structured_data_required": true
+  },
+
+  "status": "READY"
+}

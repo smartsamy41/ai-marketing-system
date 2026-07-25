@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "component": "llm_discovery",
+
+  "purpose": "Enable machine readable discovery for AI systems",
+
+  "resources": {
+    "llms_txt": "/.well-known/llms.txt",
+    "llms_full": "/.well-known/llms-full.txt",
+    "knowledge_graph": "/datasets/knowledge-graph.json",
+    "product_dataset": "/datasets/verified-products.jsonld",
+    "openapi": "/.well-known/openapi.json"
+  },
+
+  "signals": {
+    "entities": true,
+    "structured_data": true,
+    "source_references": true,
+    "public_knowledge": true
+  },
+
+  "rules": {
+    "transparent_information": true,
+    "no_hidden_content": true,
+    "machine_readable": true
+  },
+
+  "status": "READY"
+}

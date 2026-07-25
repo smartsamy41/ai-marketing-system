@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>{{title}}</title>
+
+<meta name="description"
+      content="{{description}}">
+
+<link rel="canonical"
+      href="{{canonical_url}}">
+
+
+<script type="application/ld+json">
+{{schema_json}}
+</script>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>{{title}}</h1>
+
+<p>
+<strong>Werbung / Anzeige</strong>
+</p>
+
+</header>
+
+
+
+<section>
+
+<h2>Das Wichtigste auf einen Blick</h2>
+
+<p>
+{{ai_summary}}
+</p>
+
+</section>
+
+
+
+<section>
+
+<h2>KI-Faktenübersicht</h2>
+
+<ul>
+
+<li>
+Produkt-ID:
+{{product_id}}
+</li>
+
+
+<li>
+Kategorie:
+{{category}}
+</li>
+
+
+<li>
+Partner:
+{{partner}}
+</li>
+
+</ul>
+
+</section>
+
+
+
+<section>
+
+<h2>Informationen</h2>
+
+<p>
+{{introduction}}
+</p>
+
+</section>
+
+
+
+<section>
+
+<h2>Fakten & Quellen</h2>
+
+<ul>
+
+{% for source in sources %}
+
+<li>
+{{source}}
+</li>
+
+{% endfor %}
+
+</ul>
+
+</section>
+
+
+
+<section>
+
+<h2>Angebot prüfen</h2>
+
+<a href="{{tracking_url}}"
+   rel="sponsored">
+
+Vergleich starten
+
+</a>
+
+</section>
+
+
+
+<section>
+
+<h2>Häufige Fragen</h2>
+
+{{faq}}
+
+</section>
+
+
+
+<section>
+
+<h2>Weitere Informationen</h2>
+
+<p>
+{{content}}
+</p>
+
+</section>
+
+
+
+<footer>
+
+<p>
+Autor: {{author}}
+</p>
+
+
+<p>
+Letzte Aktualisierung:
+{{updated_at}}
+</p>
+
+
+<p>
+Affiliate-Beziehung transparent gekennzeichnet.
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

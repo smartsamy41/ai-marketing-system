@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "generator": "article_generator",
+
+  "purpose": "Generate GEO optimized knowledge articles",
+
+  "input": {
+    "product_master": true,
+    "knowledge_chunks": true,
+    "primary_sources": true,
+    "keywords": true
+  },
+
+  "template": {
+    "name": "geo_authority_article",
+    "location": "templates/blog/"
+  },
+
+  "sections": [
+    "title",
+    "introduction",
+    "knowledge_content",
+    "entity_information",
+    "sources",
+    "faq",
+    "author_reviewer"
+  ],
+
+  "validation": {
+    "source_required": true,
+    "schema_required": true,
+    "quality_required": true,
+    "review_required": true
+  },
+
+  "status": "READY"
+}

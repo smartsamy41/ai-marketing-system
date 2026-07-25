@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "workflow": "publishing_pipeline",
+
+  "purpose": "Content publishing and distribution workflow",
+
+  "steps": [
+    "validate_approved_content",
+    "publish_primary_source",
+    "apply_canonical",
+    "prepare_distribution",
+    "collect_analytics",
+    "send_learning_signals"
+  ],
+
+  "outputs": {
+    "published_content": true,
+    "distribution_ready": true,
+    "analytics_events": true,
+    "learning_data": true
+  },
+
+  "rules": {
+    "primary_source_first": true,
+    "canonical_required": true,
+    "approval_required": true
+  },
+
+  "status": "READY"
+}

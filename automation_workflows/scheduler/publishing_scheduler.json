@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "scheduler": "publishing_scheduler",
+
+  "purpose": "Content publishing workflow control",
+
+  "input": {
+    "source": "approved_content",
+    "repository": "content_repository"
+  },
+
+  "publishing_order": {
+    "primary": {
+      "platform": "freebasics.online",
+      "priority": 1
+    },
+
+    "distribution": [
+      "youtube",
+      "pinterest",
+      "tiktok",
+      "medium"
+    ]
+  },
+
+  "rules": {
+    "canonical_required": true,
+    "affiliate_disclosure_required": true,
+    "approval_required": true
+  },
+
+  "status": "READY"
+}

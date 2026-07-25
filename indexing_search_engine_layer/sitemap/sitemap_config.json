@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "component": "sitemap_config",
+
+  "domain": "https://freebasics.online",
+
+  "sources": {
+    "homepage": true,
+    "landingpages": true,
+    "blog_articles": true,
+    "knowledge_articles": true,
+    "datasets": true
+  },
+
+  "rules": {
+    "published_only": true,
+    "approved_content_only": true,
+    "canonical_urls_only": true
+  },
+
+  "status": "READY"
+}

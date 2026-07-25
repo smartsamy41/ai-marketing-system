@@ -1,0 +1,59 @@
+{
+  "type": "landingpage",
+
+  "required_fields": [
+    "product_id",
+    "name",
+    "category",
+    "partner",
+    "hero_title",
+    "summary",
+    "key_facts",
+    "comparison_matrix",
+    "faq",
+    "sources",
+    "author",
+    "reviewed_by",
+    "updated_at"
+  ],
+
+  "structure": {
+
+    "identity": {
+      "product_id": "",
+      "name": "",
+      "category": "",
+      "partner": ""
+    },
+
+    "hero": {
+      "hero_title": "",
+      "summary": "",
+      "key_facts": []
+    },
+
+    "conversion": {
+      "cta": "",
+      "affiliate_disclosure": "",
+      "sponsored": true
+    },
+
+    "comparison": {
+      "comparison_matrix": []
+    },
+
+    "trust": {
+      "sources": [],
+      "entity_id": "",
+      "sameAs": []
+    },
+
+    "faq": [],
+
+    "editorial": {
+      "author": "Redaktion Free Basics",
+      "reviewed_by": "Samy ben Chedli Jendoubi",
+      "updated_at": ""
+    }
+  }
+}

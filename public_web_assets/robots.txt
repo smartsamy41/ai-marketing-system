@@ -1,0 +1,14 @@
+User-agent: *
+
+Allow: /
+Allow: /blog/
+Allow: /lp/
+Allow: /produkte/
+
+Disallow: /run
+Disallow: /track
+Disallow: /admin
+Disallow: /internal
+Disallow: /logs
+
+Sitemap: https://freebasics.online/sitemap.xml

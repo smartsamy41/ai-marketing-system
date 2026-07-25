@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "generator": "landingpage_generator",
+
+  "purpose": "Generate GEO optimized product landingpages",
+
+  "input": {
+    "product_master": true,
+    "knowledge_chunks": true,
+    "source_references": true
+  },
+
+  "template": {
+    "name": "geo_optimized_landingpage",
+    "location": "templates/landingpages/"
+  },
+
+  "sections": [
+    "title",
+    "summary",
+    "product_information",
+    "sources",
+    "faq",
+    "affiliate_disclosure"
+  ],
+
+  "validation": {
+    "schema_required": true,
+    "compliance_required": true,
+    "review_required": true
+  },
+
+  "status": "READY"
+}

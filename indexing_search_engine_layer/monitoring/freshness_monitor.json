@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "monitor": "freshness_monitor",
+
+  "purpose": "Monitor content freshness and update signals",
+
+  "metrics": {
+    "last_update": null,
+    "content_age": 0,
+    "stale_content_detected": false,
+    "refresh_required": false
+  },
+
+  "sources": {
+    "content_repository": true,
+    "analytics": true,
+    "search_console": true
+  },
+
+  "signals": {
+    "traffic_change": true,
+    "ranking_change": true,
+    "content_age": true
+  },
+
+  "status": "READY"
+}

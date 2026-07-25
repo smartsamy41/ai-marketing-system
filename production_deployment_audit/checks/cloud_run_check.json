@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "check": "cloud_run_check",
+
+  "purpose": "Validate Cloud Run production service",
+
+  "checks": {
+    "service_exists": true,
+    "deployment_active": true,
+    "health_endpoint": true,
+    "public_access": true
+  },
+
+  "target": {
+    "service": "ai-marketing-system",
+    "region": "europe-west1",
+    "domain": "https://freebasics.online"
+  },
+
+  "status": "READY"
+}

@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "check": "security_check",
+
+  "purpose": "Validate production security configuration",
+
+  "checks": {
+    "security_txt": true,
+    "https_enabled": true,
+    "internal_paths_protected": true,
+    "configuration_safe": true
+  },
+
+  "assets": {
+    "security": "/.well-known/security.txt"
+  },
+
+  "rules": {
+    "no_sensitive_data_public": true,
+    "secure_configuration_required": true
+  },
+
+  "status": "READY"
+}

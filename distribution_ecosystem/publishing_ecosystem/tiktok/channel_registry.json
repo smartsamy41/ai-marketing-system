@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "platform": "TikTok",
+  "status": "PREPARED",
+
+  "channel": {
+    "name": "Free Basics",
+    "url": null
+  },
+
+  "integration": {
+    "api_enabled": false,
+    "token_available": false,
+    "publishing_automation": false
+  },
+
+  "rules": {
+    "role": "video_distribution",
+    "canonical_target": "https://freebasics.online",
+    "content_source": "freebasics.online/blog"
+  }
+}

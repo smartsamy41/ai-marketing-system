@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "checklist": "launch_checklist",
+
+  "pre_launch": {
+    "cloud_run_verified": true,
+    "domain_verified": true,
+    "seo_verified": true,
+    "geo_verified": true,
+    "security_verified": true
+  },
+
+  "content": {
+    "landingpages_ready": true,
+    "articles_ready": true,
+    "schema_ready": true,
+    "internal_links_ready": true
+  },
+
+  "distribution": {
+    "primary_domain": true,
+    "pinterest": "pending",
+    "youtube": "pending",
+    "tiktok": "later"
+  },
+
+  "growth_strategy": {
+    "organic_search": true,
+    "paid_ads": false,
+    "content_first": true
+  },
+
+  "status": "READY_FOR_LAUNCH"
+}

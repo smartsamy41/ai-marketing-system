@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "strategy": "internal_link_strategy",
+
+  "purpose": "Build structured internal content relationships",
+
+  "link_targets": [
+    "landingpages",
+    "blog_articles",
+    "knowledge_articles",
+    "product_entities"
+  ],
+
+  "rules": {
+    "entity_based_links": true,
+    "topic_cluster_links": true,
+    "contextual_links_required": true,
+    "no_artificial_links": true
+  },
+
+  "signals": {
+    "product_relationship": true,
+    "category_relationship": true,
+    "knowledge_relationship": true
+  },
+
+  "status": "READY"
+}

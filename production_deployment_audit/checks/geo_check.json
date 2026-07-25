@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "check": "geo_check",
+
+  "purpose": "Validate GEO and AI discovery assets",
+
+  "checks": {
+    "llms_txt": true,
+    "llms_full_txt": true,
+    "knowledge_graph": true,
+    "product_dataset": true,
+    "openapi": true
+  },
+
+  "assets": {
+    "llms": "/.well-known/llms.txt",
+    "llms_full": "/.well-known/llms-full.txt",
+    "knowledge_graph": "/datasets/knowledge-graph.json",
+    "products": "/datasets/verified-products.jsonld",
+    "api": "/.well-known/openapi.json"
+  },
+
+  "rules": {
+    "machine_readable": true,
+    "transparent_information": true,
+    "no_hidden_content": true
+  },
+
+  "status": "READY"
+}

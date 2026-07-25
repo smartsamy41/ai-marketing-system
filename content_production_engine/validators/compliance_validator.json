@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "validator": "compliance_validator",
+
+  "purpose": "Validate content compliance rules",
+
+  "checks": [
+    "affiliate_disclosure",
+    "partner_transparency",
+    "prohibited_terms",
+    "legal_information"
+  ],
+
+  "rules": {
+    "advertising_disclosure_required": true,
+    "tippgeber_transparency_required": true,
+    "unsupported_claims_blocked": true
+  },
+
+  "status": "READY"
+}

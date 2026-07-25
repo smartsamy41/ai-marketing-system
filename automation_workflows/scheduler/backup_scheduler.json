@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "scheduler": "backup_scheduler",
+
+  "purpose": "System backup and recovery control",
+
+  "targets": {
+    "repository": true,
+    "content_repository": true,
+    "data_master": true,
+    "configuration": true
+  },
+
+  "backup_types": {
+    "daily": true,
+    "versioned": true,
+    "recovery_ready": true
+  },
+
+  "rules": {
+    "preserve_history": true,
+    "no_delete_without_archive": true
+  },
+
+  "status": "READY"
+}

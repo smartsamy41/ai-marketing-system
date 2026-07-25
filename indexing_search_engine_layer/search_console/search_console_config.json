@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "component": "search_console_config",
+
+  "purpose": "Search engine monitoring configuration",
+
+  "property": {
+    "domain": "https://freebasics.online",
+    "verification_required": true
+  },
+
+  "tracking": {
+    "search_queries": true,
+    "impressions": true,
+    "clicks": true,
+    "average_position": true,
+    "index_status": true
+  },
+
+  "integration": {
+    "analytics_dashboard": true,
+    "bigquery_export": true,
+    "learning_agent": true
+  },
+
+  "status": "READY"
+}
