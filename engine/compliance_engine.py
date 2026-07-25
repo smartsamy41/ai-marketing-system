@@ -20,6 +20,16 @@ FORBIDDEN_RULES = [
 ]
 
 
+PARTNER_ALIASES = {
+    "amazon": "amazon partnernet",
+    "amazon partnernet": "amazon partnernet",
+    "check24": "check24",
+    "tarifcheck": "tarifcheck",
+    "telekom": "telekom",
+    "congstar": "congstar",
+}
+
+
 class ComplianceEngine:
 
     def __init__(
@@ -45,9 +55,14 @@ class ComplianceEngine:
     @staticmethod
     def _normalize(value: Any) -> str:
 
-        return str(
+        normalized = str(
             value or ""
         ).strip().lower()
+
+        return PARTNER_ALIASES.get(
+            normalized,
+            normalized
+        )
 
 
     # ========================================================
