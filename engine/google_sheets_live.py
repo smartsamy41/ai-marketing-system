@@ -146,6 +146,75 @@ class GoogleSheetsLive:
 
 
     # =========================
+    # ENSURE SHEET
+    # =========================
+
+    def ensure_sheet(
+        self,
+        sheet,
+        headers
+    ):
+
+        if not sheet or not isinstance(sheet, str):
+            raise ValueError("sheet must be a non-empty string")
+
+        if not isinstance(headers, list) or not headers:
+            raise ValueError("headers must be a non-empty list")
+
+        metadata = (
+            self.service
+            .spreadsheets()
+            .get(
+                spreadsheetId=self.spreadsheet_id,
+                fields="sheets.properties.title"
+            )
+            .execute(
+                num_retries=5
+            )
+        )
+
+        titles = {
+            entry.get("properties", {}).get("title")
+            for entry in metadata.get("sheets", [])
+        }
+
+        created = False
+
+        if sheet not in titles:
+            self.service.spreadsheets().batchUpdate(
+                spreadsheetId=self.spreadsheet_id,
+                body={
+                    "requests": [
+                        {
+                            "addSheet": {
+                                "properties": {
+                                    "title": sheet
+                                }
+                            }
+                        }
+                    ]
+                }
+            ).execute(num_retries=5)
+            created = True
+
+        existing_headers = self.get_headers(sheet)
+
+        if not existing_headers:
+            self.service.spreadsheets().values().update(
+                spreadsheetId=self.spreadsheet_id,
+                range=f"{sheet}!A1",
+                valueInputOption="RAW",
+                body={"values": [headers]}
+            ).execute(num_retries=5)
+
+        return {
+            "sheet": sheet,
+            "created": created,
+            "headers": headers
+        }
+
+
+    # =========================
     # APPEND
     # =========================
 
