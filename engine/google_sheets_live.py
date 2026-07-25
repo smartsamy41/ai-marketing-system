@@ -178,6 +178,40 @@ class GoogleSheetsLive:
 
 
     # =========================
+    # UPDATE SINGLE ROW
+    # =========================
+
+    def update_row(
+        self,
+        sheet,
+        row_number,
+        values
+    ):
+
+        if not isinstance(row_number, int) or row_number < 2:
+            raise ValueError("row_number must be an integer >= 2")
+
+        body = {
+            "values": [values]
+        }
+
+        return (
+            self.service
+            .spreadsheets()
+            .values()
+            .update(
+                spreadsheetId=self.spreadsheet_id,
+                range=f"{sheet}!A{row_number}:Z{row_number}",
+                valueInputOption="RAW",
+                body=body
+            )
+            .execute(
+                num_retries=5
+            )
+        )
+
+
+    # =========================
     # WRITE
     # =========================
 
