@@ -52,7 +52,7 @@ def confirm_doi_token(token: str) -> bool:
     for email, data in subs.items():
         if data.get("token_hash") == token_hash and data.get("status") == "PENDING":
             data["status"] = "CONFIRMED"
-            data["confirmed_at"] = datetime.now(timezone.utc).isoformat(),
+            data["confirmed_at"] = datetime.now(timezone.utc).isoformat()
             _write_subscribers(subs)
             return True
     return False
