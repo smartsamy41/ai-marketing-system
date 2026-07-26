@@ -1081,6 +1081,48 @@ def dashboard_page():
     assets = read_records("affiliate_assets")
 
 
+    # ============================================================
+    # NEWSLETTER DASHBOARD DATA
+    # ============================================================
+
+    newsletter = []
+
+    try:
+        newsletter = read_records(
+            "newsletter_subscribers"
+        )
+
+    except Exception as exc:
+        print(
+            "Newsletter Dashboard Error:",
+            exc
+        )
+
+
+    newsletter_total = len(newsletter)
+
+    newsletter_confirmed = len(
+        [
+            x for x in newsletter
+            if x.get("status") == "CONFIRMED"
+        ]
+    )
+
+    newsletter_pending = len(
+        [
+            x for x in newsletter
+            if x.get("status") == "PENDING"
+        ]
+    )
+
+    newsletter_unsubscribed = len(
+        [
+            x for x in newsletter
+            if x.get("status") == "UNSUBSCRIBED"
+        ]
+    )
+
+
     clicks = 0
     conversions = 0
     revenue = 0.0
@@ -1208,6 +1250,27 @@ color:#ea580c;
 <div class="card">
 <h3>Affiliate Assets</h3>
 <div class="number blue">{len(assets)}</div>
+</div>
+
+
+<div class="card">
+<h3>Newsletter</h3>
+<div class="number blue">{newsletter_total}</div>
+<p>Gesamt</p>
+</div>
+
+
+<div class="card">
+<h3>DOI bestätigt</h3>
+<div class="number green">{newsletter_confirmed}</div>
+<p>Bestätigte Abonnenten</p>
+</div>
+
+
+<div class="card">
+<h3>DOI offen</h3>
+<div class="number orange">{newsletter_pending}</div>
+<p>Warten auf Bestätigung</p>
 </div>
 
 
