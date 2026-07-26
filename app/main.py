@@ -1567,9 +1567,14 @@ def landingpage(
     """
 
     product_schema = generate_product_schema(
-        name=product_name,
-        description=meta_description,
-        url=f"{SITE_URL}/lp/{product_id}"
+        {
+            "product_id": product_id,
+            "name": product_name,
+            "description": meta_description,
+            "url": f"{SITE_URL}/lp/{product_id}",
+            "category": product_name,
+            "partner": product.get("partner", "")
+        }
     )
 
     body = body + breadcrumb_schema
