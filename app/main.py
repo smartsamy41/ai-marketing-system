@@ -25,6 +25,7 @@ from engine.content_ai import ContentAI
 
 from engine.revenue_engine import RevenueEngine
 from engine.ai_learning_engine import AILearningLoop
+from engine.learning_logger import LearningLogger
 
 from engine.autopilot_orchestrator import AutopilotOrchestrator
 from engine.autonomous_orchestrator import AutonomousOrchestrator
@@ -202,6 +203,8 @@ learning = AILearningLoop(
     revenue
 )
 
+learning_logger = LearningLogger()
+
 
 # ============================================================
 # AFFILIATE AND COMPLIANCE
@@ -317,7 +320,8 @@ autopilot = AutopilotOrchestrator(
 
 system = AutonomousOrchestrator(
     autopilot,
-    learning
+    learning,
+    learning_logger
 )
 
 
