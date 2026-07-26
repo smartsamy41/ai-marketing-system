@@ -32,6 +32,7 @@ from engine.autonomous_orchestrator import AutonomousOrchestrator
 from engine.youtube_real import YouTubeReal
 from app.schema_generator import generate_product_schema
 from engine.tiktok_tracking import TikTokTracking
+from app.compliance_newsletter import register_doi_pending, confirm_doi_token
 
 
 
@@ -2193,3 +2194,55 @@ def run_system(request: Request):
     verify_run_request(request)
 
     return trigger.execute()
+
+
+# ============================================================
+# NEWSLETTER DOI SYSTEM
+# ============================================================
+
+@app.post("/api/newsletter/subscribe")
+async def api_newsletter_subscribe(request: Request):
+
+    form = await request.form()
+
+    email = form.get("email")
+    consent = form.get("consent") == "on"
+
+    if not email or not consent:
+        return HTMLResponse(
+            "E-Mail und Datenschutz-Zustimmung erforderlich.",
+            status_code=400
+        )
+
+    token = register_doi_pending(
+        email=email,
+        consent_given=True,
+        source="website"
+    )
+
+    return HTMLResponse(
+        """
+        <h2>Vielen Dank!</h2>
+        <p>Bitte bestätige deine E-Mail-Adresse.</p>
+        """
+    )
+
+
+@app.get("/newsletter/confirm")
+def newsletter_confirm(token: str):
+
+    success = confirm_doi_token(token)
+
+    if success:
+        return HTMLResponse(
+            """
+            <h1>Anmeldung bestätigt</h1>
+            <p>Vielen Dank für deine Bestätigung.</p>
+            """
+        )
+
+    return HTMLResponse(
+        "Ungültiger Bestätigungslink.",
+        status_code=400
+    )
+
