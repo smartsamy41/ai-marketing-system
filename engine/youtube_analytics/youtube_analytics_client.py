@@ -19,38 +19,56 @@ class YouTubeAnalyticsClient:
             "YOUTUBE_CLIENT_SECRET"
         )
 
-
         self.scopes = [
             "https://www.googleapis.com/auth/yt-analytics.readonly"
         ]
 
-
         self.service = None
+
 
 
     def connect(self):
 
         credentials = Credentials(
+
             token=None,
+
             refresh_token=self.refresh_token,
+
+            token_uri=(
+                "https://oauth2.googleapis.com/token"
+            ),
+
             client_id=self.client_id,
+
             client_secret=self.client_secret,
+
             scopes=self.scopes
+
         )
 
 
         self.service = build(
+
             "youtubeAnalytics",
+
             "v2",
+
             credentials=credentials
+
         )
 
 
         return {
+
             "status": "CONNECTED",
+
             "service": "youtubeAnalytics",
+
             "version": "v2"
+
         }
+
 
 
     def get_channel_metrics(
@@ -60,37 +78,54 @@ class YouTubeAnalyticsClient:
     ):
 
         if not self.service:
+
             self.connect()
 
 
-        response = self.service.reports().query(
-            ids="channel==MINE",
+        response = (
 
-            startDate=start_date,
+            self.service.reports()
 
-            endDate=end_date,
+            .query(
 
-            metrics=(
-                "views,"
-                "estimatedMinutesWatched,"
-                "averageViewDuration,"
-                "subscribersGained,"
-                "subscribersLost"
-            ),
+                ids="channel==MINE",
 
-            dimensions="day"
-        ).execute()
+                startDate=start_date,
+
+                endDate=end_date,
+
+                metrics=(
+                    "views,"
+                    "estimatedMinutesWatched,"
+                    "averageViewDuration,"
+                    "subscribersGained,"
+                    "subscribersLost"
+                ),
+
+                dimensions="day"
+
+            )
+
+            .execute()
+
+        )
 
 
         return {
+
             "status": "SUCCESS",
+
             "start_date": start_date,
+
             "end_date": end_date,
+
             "rows": response.get(
                 "rows",
                 []
             )
+
         }
+
 
 
     def get_video_metrics(
@@ -101,43 +136,61 @@ class YouTubeAnalyticsClient:
     ):
 
         if not self.service:
+
             self.connect()
 
 
-        response = self.service.reports().query(
-            ids="channel==MINE",
+        response = (
 
-            startDate=start_date,
+            self.service.reports()
 
-            endDate=end_date,
+            .query(
 
-            metrics=(
-                "views,"
-                "estimatedMinutesWatched,"
-                "averageViewDuration,"
-                "likes,"
-                "comments"
-            ),
+                ids="channel==MINE",
 
-            filters=f"video=={video_id}"
+                startDate=start_date,
 
-        ).execute()
+                endDate=end_date,
+
+                metrics=(
+                    "views,"
+                    "estimatedMinutesWatched,"
+                    "averageViewDuration,"
+                    "likes,"
+                    "comments"
+                ),
+
+                filters=(
+                    f"video=={video_id}"
+                )
+
+            )
+
+            .execute()
+
+        )
 
 
         return {
+
             "status": "SUCCESS",
+
             "video_id": video_id,
+
             "rows": response.get(
                 "rows",
                 []
             )
+
         }
 
 
 
 if __name__ == "__main__":
 
+
     client = YouTubeAnalyticsClient()
+
 
     print(
         client.connect()
