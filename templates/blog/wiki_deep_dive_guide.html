@@ -10,12 +10,47 @@
 <meta name="description"
 content="{{description}}">
 
+
 <link rel="canonical"
 href="{{canonical_url}}">
+
+
+<meta property="og:type"
+content="article">
+
+<meta property="og:site_name"
+content="Free Basics">
+
+<meta property="og:title"
+content="{{title}}">
+
+<meta property="og:description"
+content="{{description}}">
+
+<meta property="og:url"
+content="{{canonical_url}}">
+
+<meta property="og:image"
+content="{{og_image_url}}">
+
+
+<meta name="twitter:card"
+content="summary_large_image">
+
+<meta name="twitter:title"
+content="{{title}}">
+
+<meta name="twitter:description"
+content="{{description}}">
+
+<meta name="twitter:image"
+content="{{og_image_url}}">
+
 
 <script type="application/ld+json">
 {{article_schema}}
 </script>
+
 
 </head>
 
@@ -31,13 +66,35 @@ href="{{canonical_url}}">
 Wissensartikel | Free Basics Knowledge Layer
 </p>
 
+<p>
+Autor:
+{{author}}
+</p>
+
+<p>
+Geprüft von:
+{{reviewer}}
+</p>
+
+<p>
+Erstveröffentlichung:
+{{published_at}}
+</p>
+
+<p>
+Letztes Update:
+{{updated_at}}
+</p>
+
 </header>
 
 
 
 <section>
 
-<h2>KI-Zusammenfassung</h2>
+<h2>
+KI-Zusammenfassung
+</h2>
 
 <div>
 
@@ -51,7 +108,9 @@ Wissensartikel | Free Basics Knowledge Layer
 
 <section>
 
-<h2>Grundwissen</h2>
+<h2>
+Grundwissen
+</h2>
 
 <article>
 
@@ -65,7 +124,10 @@ Wissensartikel | Free Basics Knowledge Layer
 
 <section>
 
-<h2>Entität & Fakten</h2>
+<h2>
+Entität & Fakten
+</h2>
+
 
 <ul>
 
@@ -74,17 +136,21 @@ Entity:
 {{entity_name}}
 </li>
 
+
 <li>
 Wikidata:
 {{wikidata_id}}
 </li>
+
 
 <li>
 Kategorie:
 {{category}}
 </li>
 
+
 </ul>
+
 
 </section>
 
@@ -92,7 +158,10 @@ Kategorie:
 
 <section>
 
-<h2>Quellen</h2>
+<h2>
+Quellen
+</h2>
+
 
 <ul>
 
@@ -100,13 +169,17 @@ Kategorie:
 
 </ul>
 
+
 </section>
 
 
 
 <section>
 
-<h2>Verknüpfte Produkte</h2>
+<h2>
+Verknüpfte Produkte
+</h2>
+
 
 <div>
 
@@ -114,17 +187,33 @@ Kategorie:
 
 </div>
 
+
 </section>
 
 
 
-<footer>
+<section>
+
+<h2>
+Knowledge Layer Status
+</h2>
 
 <p>
-Quellen und Partnerbeziehungen werden transparent dargestellt.
+Dieser Artikel basiert auf strukturierten Informationen,
+Entitäten, Quellen und dokumentierten Produktdaten.
 </p>
 
-</footer>
+
+</section>
+
+
+
+{{footer}}
+
+
+
+{{cookie_consent}}
+
 
 
 </body>

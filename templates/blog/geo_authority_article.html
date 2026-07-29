@@ -10,12 +10,47 @@
 <meta name="description"
 content="{{description}}">
 
+
 <link rel="canonical"
 href="{{canonical_url}}">
+
+
+<meta property="og:type"
+content="article">
+
+<meta property="og:site_name"
+content="Free Basics">
+
+<meta property="og:title"
+content="{{title}}">
+
+<meta property="og:description"
+content="{{description}}">
+
+<meta property="og:url"
+content="{{canonical_url}}">
+
+<meta property="og:image"
+content="{{og_image_url}}">
+
+
+<meta name="twitter:card"
+content="summary_large_image">
+
+<meta name="twitter:title"
+content="{{title}}">
+
+<meta name="twitter:description"
+content="{{description}}">
+
+<meta name="twitter:image"
+content="{{og_image_url}}">
+
 
 <script type="application/ld+json">
 {{article_schema}}
 </script>
+
 
 </head>
 
@@ -27,23 +62,30 @@ href="{{canonical_url}}">
 
 <h1>{{title}}</h1>
 
-<p>
-Autor: {{author}}
-</p>
 
 <p>
-Geprüft von: {{reviewer}}
+Autor:
+{{author}}
 </p>
+
+
+<p>
+Geprüft von:
+{{reviewer}}
+</p>
+
 
 <p>
 Erstveröffentlichung:
 {{published_at}}
 </p>
 
+
 <p>
 Letztes Update:
 {{updated_at}}
 </p>
+
 
 </header>
 
@@ -51,7 +93,10 @@ Letztes Update:
 
 <section>
 
-<h2>Das Wichtigste auf einen Blick</h2>
+<h2>
+Das Wichtigste auf einen Blick
+</h2>
+
 
 <div>
 
@@ -59,13 +104,18 @@ Letztes Update:
 
 </div>
 
+
 </section>
+
 
 
 
 <section>
 
-<h2>Ratgeber</h2>
+<h2>
+Ratgeber
+</h2>
+
 
 <article>
 
@@ -73,13 +123,18 @@ Letztes Update:
 
 </article>
 
+
 </section>
+
 
 
 
 <section>
 
-<h2>Fakten & Quellen</h2>
+<h2>
+Fakten & Quellen
+</h2>
+
 
 <ul>
 
@@ -87,13 +142,18 @@ Letztes Update:
 
 </ul>
 
+
 </section>
+
 
 
 
 <section>
 
-<h2>Passende Angebote</h2>
+<h2>
+Passende Angebote
+</h2>
+
 
 <nav>
 
@@ -101,17 +161,36 @@ Letztes Update:
 
 </nav>
 
+
 </section>
 
 
 
-<footer>
+
+<section>
+
+<h2>
+Free Basics Knowledge Layer
+</h2>
+
 
 <p>
-Informationen und Partnerbeziehungen werden transparent gekennzeichnet.
+Dieser Artikel basiert auf strukturierten Informationen,
+Quellen und dokumentierten Produktdaten.
 </p>
 
-</footer>
+
+</section>
+
+
+
+
+{{footer}}
+
+
+
+{{cookie_consent}}
+
 
 
 </body>

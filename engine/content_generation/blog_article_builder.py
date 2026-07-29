@@ -2,6 +2,11 @@ from engine.template_renderer import TemplateRenderer
 from datetime import datetime, timezone
 import json
 
+from app.templates.base_components import (
+    get_eeat_footer,
+    get_cookie_consent_script
+)
+
 
 class BlogArticleBuilder:
 
@@ -111,6 +116,13 @@ class BlogArticleBuilder:
                 ),
 
 
+            "og_image_url":
+                product.get(
+                    "image_url",
+                    "https://freebasics.online/assets/og-default.webp"
+                ),
+
+
             "ai_summary":
                 product.get(
                     "summary",
@@ -154,10 +166,6 @@ Passendes Angebot prüfen
                 facts or {},
 
 
-            "article_schema":
-                "",
-
-
             "type":
                 "blog_article",
 
@@ -168,6 +176,7 @@ Passendes Angebot prüfen
 
             "system":
                 self.system
+
         }
 
 
@@ -247,10 +256,15 @@ Passendes Angebot prüfen
         }
 
 
+
         sources_html = "\n".join(
             f"<li>{source}</li>"
-            for source in article.get("sources", [])
+            for source in article.get(
+                "sources",
+                []
+            )
         )
+
 
 
         return self.renderer.render(
@@ -260,6 +274,22 @@ Passendes Angebot prüfen
             {
 
                 **article,
+
+
+                "og_image_url":
+                    article.get(
+                        "og_image_url",
+                        "https://freebasics.online/assets/og-default.webp"
+                    ),
+
+
+                "footer":
+                    get_eeat_footer(),
+
+
+                "cookie_consent":
+                    get_cookie_consent_script(),
+
 
                 "sources":
                     sources_html,
@@ -325,6 +355,7 @@ Passendes Angebot prüfen
                 missing
 
         }
+
 
 
 

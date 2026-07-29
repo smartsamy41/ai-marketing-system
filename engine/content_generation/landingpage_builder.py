@@ -1,4 +1,8 @@
 from engine.template_renderer import TemplateRenderer
+from app.templates.base_components import (
+    get_eeat_footer,
+    get_cookie_consent_script
+)
 from datetime import datetime, timezone
 import json
 
@@ -23,11 +27,9 @@ class LandingpageBuilder:
         sources=None
     ):
 
-
         now = datetime.now(
             timezone.utc
         ).isoformat()
-
 
 
         product_id = product.get(
@@ -42,12 +44,10 @@ class LandingpageBuilder:
         )
 
 
-
         summary = product.get(
             "summary",
             ""
         )
-
 
 
         return {
@@ -57,7 +57,6 @@ class LandingpageBuilder:
                 product_id,
 
 
-
             "title":
                 product.get(
                     "hero_title",
@@ -65,10 +64,8 @@ class LandingpageBuilder:
                 ),
 
 
-
             "description":
                 summary,
-
 
 
             "canonical_url":
@@ -78,10 +75,8 @@ class LandingpageBuilder:
                 ),
 
 
-
             "product_name":
                 name,
-
 
 
             "brand_name":
@@ -91,7 +86,6 @@ class LandingpageBuilder:
                 ),
 
 
-
             "category":
                 product.get(
                     "category",
@@ -99,13 +93,11 @@ class LandingpageBuilder:
                 ),
 
 
-
             "partner":
                 product.get(
                     "partner",
                     ""
                 ),
-
 
 
             "tracking_url":
@@ -116,13 +108,11 @@ class LandingpageBuilder:
 
 
 
-            # KI Direktantwort
             "ai_summary":
                 summary,
 
 
 
-            # Kontext
             "introduction":
                 (
                     f"Bei {name} spielen verschiedene Faktoren "
@@ -132,7 +122,6 @@ class LandingpageBuilder:
 
 
 
-            # Tiefere Informationen
             "content":
                 (
                     f"Weitere Informationen zu {name} "
@@ -190,10 +179,18 @@ class LandingpageBuilder:
 
 
 
+            "footer":
+                get_eeat_footer(),
+
+
+
+            "cookie_consent":
+                get_cookie_consent_script(),
+
+
+
             "system":
                 self.system
-
-
 
         }
 
@@ -269,7 +266,6 @@ class LandingpageBuilder:
                 }
 
 
-
         }
 
 
@@ -286,7 +282,6 @@ class LandingpageBuilder:
                 **landingpage,
 
 
-
                 "schema_json":
 
                     json.dumps(
@@ -295,9 +290,7 @@ class LandingpageBuilder:
                         ensure_ascii=False
                     )
 
-
             }
 
 
         )
-
