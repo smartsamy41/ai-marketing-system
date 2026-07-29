@@ -1594,8 +1594,6 @@ def landingpage(
             <span>{product_name}</span>
         </nav>
 
-        <h1>{product_name}</h1>
-
         {page_html}
 
         {asset_html}
@@ -1637,7 +1635,12 @@ def landingpage(
             "description": meta_description,
             "url": f"{SITE_URL}/lp/{product_id}",
             "category": product_name,
-            "partner": product.get("partner", "")
+            "partner": (
+                product.get("partner")
+                or product.get("tracking_partner")
+                or product.get("source")
+                or ""
+            )
         }
     )
 
@@ -1648,7 +1651,7 @@ def landingpage(
         body=body,
         canonical_path=f"/lp/{product_id}",
         description=meta_description,
-        schema=product_schema
+        schema=f'<script type="application/ld+json">{json.dumps(product_schema, ensure_ascii=False)}</script>'
     )
 
 
