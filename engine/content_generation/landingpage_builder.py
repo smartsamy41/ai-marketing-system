@@ -69,7 +69,6 @@ class LandingPageBuilder:
         )
 
 
-        # Telekom bleibt externe Shop Weiterleitung
         external_shop = False
 
         if partner.lower() == "telekom":
@@ -117,7 +116,7 @@ class LandingPageBuilder:
 
 
             "landingpage_url":
-                f"https://freebasics.online/angebote/{product_id}",
+                f"https://freebasics.online/lp/{product_id}",
 
 
             "article_url":
@@ -244,7 +243,6 @@ class LandingPageBuilder:
 
         schema = {
 
-
             "@context":
                 "https://schema.org",
 
@@ -270,7 +268,6 @@ class LandingPageBuilder:
                     "category"
                 )
 
-
         }
 
 
@@ -289,6 +286,7 @@ class LandingPageBuilder:
 
 
         internal_html = ""
+
 
         for link in page.get(
             "internal_links",
@@ -318,12 +316,14 @@ class LandingPageBuilder:
 
         faq_html = ""
 
+
         for item in page.get(
             "faq",
             []
         ):
 
             faq_html += f"""
+
 <div class="faq-item">
 
 <h3>{item.get("question","")}</h3>
@@ -331,7 +331,9 @@ class LandingPageBuilder:
 <p>{item.get("answer","")}</p>
 
 </div>
+
 """
+
 
 
         newsletter_html = """
@@ -377,6 +379,7 @@ Newsletter Anmeldung
 
                 "newsletter":
                     newsletter_html,
+
 
                 "faq":
                     faq_html,
@@ -470,22 +473,7 @@ if __name__ == "__main__":
             "partner":
                 "check24"
 
-        },
-
-
-        related_products=[
-
-            {
-
-                "product_id":
-                    "TC_001",
-
-                "category":
-                    "solaranlage"
-
-            }
-
-        ]
+        }
 
     )
 
