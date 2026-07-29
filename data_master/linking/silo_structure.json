@@ -1,0 +1,104 @@
+{
+  "silos": {
+    "energie": {
+      "name": "Energie",
+      "hub": "/energie",
+      "products": [
+        "CHK24_001",
+        "CHK24_002",
+        "CHK24_003",
+        "TC_001"
+      ],
+      "related_categories": [
+        "strom",
+        "oekostrom",
+        "gas",
+        "solaranlage"
+      ]
+    },
+
+    "internet_mobilfunk": {
+      "name": "Internet & Mobilfunk",
+      "hub": "/internet",
+      "products": [
+        "CHK24_004",
+        "CHK24_005"
+      ],
+      "related_categories": [
+        "dsl",
+        "glasfaser",
+        "mobilfunk",
+        "datentarife"
+      ]
+    },
+
+    "versicherung": {
+      "name": "Versicherung",
+      "hub": "/versicherung",
+      "products": [
+        "TC_002",
+        "TC_006",
+        "TC_007",
+        "TC_008",
+        "TC_009"
+      ],
+      "related_categories": [
+        "kfz",
+        "haftpflicht",
+        "hausrat",
+        "rente",
+        "pkv"
+      ]
+    },
+
+    "finanzen": {
+      "name": "Finanzen",
+      "hub": "/finanzen",
+      "products": [
+        "TC_003",
+        "TC_004",
+        "TC_005",
+        "CHK24_008"
+      ],
+      "related_categories": [
+        "kredit",
+        "girokonto",
+        "baufinanzierung"
+      ]
+    },
+
+    "reisen": {
+      "name": "Reisen",
+      "hub": "/reisen",
+      "products": [
+        "CHK24_006",
+        "CHK24_007"
+      ],
+      "related_categories": [
+        "pauschalreise",
+        "mietwagen"
+      ]
+    },
+
+    "amazon_shopping": {
+      "name": "Amazon Shopping",
+      "hub": "/shopping",
+      "products": [
+        "amazon_products"
+      ],
+      "related_categories": [
+        "elektronik",
+        "beauty",
+        "buecher",
+        "lego"
+      ]
+    },
+
+    "telekom": {
+      "name": "Telekom",
+      "hub": "/telekom",
+      "type": "external_shop",
+      "note": "Direkte Weiterleitung zum Telekom Shop. Keine eigene Affiliate Landingpage."
+    }
+  }
+}

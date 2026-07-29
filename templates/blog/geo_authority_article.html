@@ -10,7 +10,6 @@
 <meta name="description"
 content="{{description}}">
 
-
 <link rel="canonical"
 href="{{canonical_url}}">
 
@@ -60,47 +59,31 @@ content="{{og_image_url}}">
 
 <header>
 
-<h1>{{title}}</h1>
-
-
-<p>
-Autor:
-{{author}}
-</p>
-
+<h1>
+{{title}}
+</h1>
 
 <p>
-Geprüft von:
-{{reviewer}}
+{{ai_summary}}
 </p>
-
-
-<p>
-Erstveröffentlichung:
-{{published_at}}
-</p>
-
-
-<p>
-Letztes Update:
-{{updated_at}}
-</p>
-
 
 </header>
 
 
 
+<main>
+
+
 <section>
 
 <h2>
-Das Wichtigste auf einen Blick
+Wissensartikel
 </h2>
 
 
 <div>
 
-{{ai_summary}}
+{{content}}
 
 </div>
 
@@ -113,26 +96,7 @@ Das Wichtigste auf einen Blick
 <section>
 
 <h2>
-Ratgeber
-</h2>
-
-
-<article>
-
-{{content}}
-
-</article>
-
-
-</section>
-
-
-
-
-<section>
-
-<h2>
-Fakten & Quellen
+Quellen und Datenbasis
 </h2>
 
 
@@ -148,18 +112,19 @@ Fakten & Quellen
 
 
 
+
 <section>
 
 <h2>
-Passende Angebote
+Passende Themen und Angebote
 </h2>
 
 
-<nav>
+<div>
 
 {{related_products}}
 
-</nav>
+</div>
 
 
 </section>
@@ -167,17 +132,44 @@ Passende Angebote
 
 
 
+
 <section>
 
 <h2>
-Free Basics Knowledge Layer
+Weitere Themen aus dieser Kategorie
+</h2>
+
+
+<div>
+
+{{internal_links}}
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+<h2>
+Newsletter
 </h2>
 
 
 <p>
-Dieser Artikel basiert auf strukturierten Informationen,
-Quellen und dokumentierten Produktdaten.
+Erhalte neue Informationen, Ratgeber und Hinweise zu passenden Themen.
 </p>
+
+
+<div>
+
+{{newsletter}}
+
+</div>
 
 
 </section>
@@ -185,7 +177,63 @@ Quellen und dokumentierten Produktdaten.
 
 
 
+
+<section>
+
+<h2>
+FAQ
+</h2>
+
+
+<div>
+
+{{faq}}
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<footer>
+
+
 {{footer}}
+
+
+<nav>
+
+<a href="/impressum">
+Impressum
+</a>
+
+
+|
+
+<a href="/datenschutz">
+Datenschutz
+</a>
+
+
+|
+
+<a href="/affiliate-hinweis">
+Affiliate-Hinweis
+</a>
+
+
+</nav>
+
+
+</footer>
+
 
 
 

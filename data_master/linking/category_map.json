@@ -1,0 +1,95 @@
+{
+  "categories": {
+
+    "strom": {
+      "silo": "energie",
+      "article": "/blog/strom-ratgeber",
+      "landingpage": "/angebote/CHK24_001",
+      "product_id": "CHK24_001"
+    },
+
+    "oekostrom": {
+      "silo": "energie",
+      "article": "/blog/oekostrom-ratgeber",
+      "landingpage": "/angebote/CHK24_002",
+      "product_id": "CHK24_002"
+    },
+
+    "gas": {
+      "silo": "energie",
+      "article": "/blog/gas-ratgeber",
+      "landingpage": "/angebote/CHK24_003",
+      "product_id": "CHK24_003"
+    },
+
+    "solaranlage": {
+      "silo": "energie",
+      "article": "/blog/solaranlage-ratgeber",
+      "landingpage": "/angebote/TC_001",
+      "product_id": "TC_001"
+    },
+
+    "dsl": {
+      "silo": "internet_mobilfunk",
+      "article": "/blog/dsl-ratgeber",
+      "landingpage": "/angebote/CHK24_004",
+      "product_id": "CHK24_004"
+    },
+
+    "mobilfunk": {
+      "silo": "internet_mobilfunk",
+      "article": "/blog/mobilfunk-ratgeber",
+      "landingpage": "/angebote/CHK24_005",
+      "product_id": "CHK24_005"
+    },
+
+    "versicherung": {
+      "silo": "versicherung",
+      "article": "/versicherung",
+      "landingpage": "",
+      "product_ids": [
+        "TC_002",
+        "TC_006",
+        "TC_007",
+        "TC_008",
+        "TC_009"
+      ]
+    },
+
+    "finanzen": {
+      "silo": "finanzen",
+      "article": "/finanzen",
+      "landingpage": "",
+      "product_ids": [
+        "TC_003",
+        "TC_004",
+        "TC_005",
+        "CHK24_008"
+      ]
+    },
+
+    "reisen": {
+      "silo": "reisen",
+      "article": "/reisen",
+      "landingpage": "",
+      "product_ids": [
+        "CHK24_006",
+        "CHK24_007"
+      ]
+    },
+
+    "shopping": {
+      "silo": "amazon_shopping",
+      "article": "/shopping",
+      "landingpage": "",
+      "product_id": "amazon_products"
+    },
+
+    "telekom": {
+      "silo": "telekom",
+      "type": "external_shop",
+      "landingpage": false
+    }
+
+  }
+}

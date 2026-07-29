@@ -1,4 +1,6 @@
 from engine.template_renderer import TemplateRenderer
+from engine.self_learning_agent.internal_linking_optimizer import InternalLinkingOptimizer
+
 from datetime import datetime, timezone
 import json
 
@@ -10,7 +12,6 @@ from app.templates.base_components import (
 
 class BlogArticleBuilder:
 
-
     def __init__(
         self,
         system="FREE BASICS AI MARKETING SYSTEM"
@@ -18,13 +19,15 @@ class BlogArticleBuilder:
 
         self.system = system
         self.renderer = TemplateRenderer()
+        self.link_optimizer = InternalLinkingOptimizer()
 
 
 
     def build(
         self,
         product,
-        facts=None
+        facts=None,
+        related_products=None
     ):
 
         now = datetime.now(
@@ -47,7 +50,29 @@ class BlogArticleBuilder:
         )
 
 
+        category = product.get(
+            "category",
+            ""
+        )
+
+
+        newsletter_segment = (
+            category.lower()
+            .replace(" ", "_")
+        )
+
+
+        link_result = self.link_optimizer.suggest_links(
+            {
+                "slug": slug,
+                "category": category
+            },
+            related_products or []
+        )
+
+
         return {
+
 
             "product_id":
                 product.get(
@@ -68,10 +93,7 @@ class BlogArticleBuilder:
 
 
             "category":
-                product.get(
-                    "category",
-                    ""
-                ),
+                category,
 
 
             "partner":
@@ -85,11 +107,13 @@ class BlogArticleBuilder:
                 f"https://freebasics.online/blog/{slug}-ratgeber",
 
 
+
             "author":
                 product.get(
                     "author",
                     "Redaktion Free Basics"
                 ),
+
 
 
             "reviewer":
@@ -99,14 +123,13 @@ class BlogArticleBuilder:
                 ),
 
 
+
             "published_at":
                 product.get(
                     "published_at",
-                    product.get(
-                        "updated_at",
-                        now
-                    )
+                    now
                 ),
+
 
 
             "updated_at":
@@ -116,11 +139,13 @@ class BlogArticleBuilder:
                 ),
 
 
+
             "og_image_url":
                 product.get(
                     "image_url",
                     "https://freebasics.online/assets/og-default.webp"
                 ),
+
 
 
             "ai_summary":
@@ -130,14 +155,13 @@ class BlogArticleBuilder:
                 ),
 
 
+
             "content":
                 product.get(
                     "content",
-                    product.get(
-                        "summary",
-                        "Weitere Informationen und Wissensinhalte."
-                    )
+                    "Weitere Informationen und Wissensinhalte."
                 ),
+
 
 
             "sources":
@@ -147,12 +171,25 @@ class BlogArticleBuilder:
                 ),
 
 
-            "related_products":
-                f"""
-<a href="{product.get('landingpage_url', '#')}">
-Passendes Angebot prüfen
-</a>
-""",
+
+            "link_data":
+                link_result,
+
+
+
+            "newsletter_enabled":
+                True,
+
+
+
+            "newsletter_segment":
+                newsletter_segment,
+
+
+
+            "newsletter_topic":
+                f"Informationen zu {category}",
+
 
 
             "faq":
@@ -162,23 +199,26 @@ Passendes Angebot prüfen
                 ),
 
 
+
             "facts":
                 facts or {},
+
 
 
             "type":
                 "blog_article",
 
 
+
             "status":
                 "ready_for_review",
+
 
 
             "system":
                 self.system
 
         }
-
 
 
 
@@ -211,8 +251,7 @@ Passendes Angebot prüfen
 
                     "name":
                         article.get(
-                            "author",
-                            "Redaktion Free Basics"
+                            "author"
                         )
                 },
 
@@ -267,32 +306,79 @@ Passendes Angebot prüfen
 
 
 
+        internal_links_html = ""
+
+
+        for link in article.get(
+            "link_data",
+            {}
+        ).get(
+            "links",
+            []
+        ):
+
+            internal_links_html += f"""
+
+<div class="internal-link">
+
+<a href="/angebote/{link.get('to')}">
+
+{link.get('reason')}
+:
+{link.get('to')}
+
+</a>
+
+</div>
+
+"""
+
+
+
+        newsletter_html = """
+
+<section class="newsletter-box">
+
+<h3>
+Newsletter
+</h3>
+
+
+<p>
+Erhalte neue Informationen,
+Ratgeber und Hinweise zu passenden Themen.
+</p>
+
+
+<p>
+Thema:
+%s
+</p>
+
+
+<a href="/newsletter">
+Newsletter Anmeldung
+</a>
+
+
+</section>
+
+""" % article.get(
+            "newsletter_topic",
+            ""
+        )
+
+
+
         return self.renderer.render(
 
             "blog/geo_authority_article.html",
 
             {
 
+
                 **article,
 
-
-                "og_image_url":
-                    article.get(
-                        "og_image_url",
-                        "https://freebasics.online/assets/og-default.webp"
-                    ),
-
-
-                "footer":
-                    get_eeat_footer(),
-
-
-                "cookie_consent":
-                    get_cookie_consent_script(),
-
-
-                "sources":
-                    sources_html,
 
 
                 "canonical_url":
@@ -301,7 +387,34 @@ Passendes Angebot prüfen
                     ),
 
 
+
+                "sources":
+                    sources_html,
+
+
+
+                "internal_links":
+                    internal_links_html,
+
+
+
+                "newsletter":
+                    newsletter_html,
+
+
+
+                "footer":
+                    get_eeat_footer(),
+
+
+
+                "cookie_consent":
+                    get_cookie_consent_script(),
+
+
+
                 "article_schema":
+
                     json.dumps(
                         schema,
                         indent=2,
@@ -311,6 +424,7 @@ Passendes Angebot prüfen
             }
 
         )
+
 
 
 
@@ -368,7 +482,6 @@ if __name__ == "__main__":
     article = builder.build(
 
         {
-
             "product_id":
                 "CHK24_001",
 
@@ -379,26 +492,48 @@ if __name__ == "__main__":
                 "Energie",
 
             "partner":
-                "check24"
+                "check24",
 
-        }
+            "summary":
+                "Informationen zu Stromtarifen"
+
+        },
+
+
+        related_products=[
+
+            {
+                "product_id":
+                    "CHK24_001",
+
+                "category":
+                    "strom"
+
+            },
+
+            {
+                "product_id":
+                    "TC_001",
+
+                "category":
+                    "solaranlage"
+
+            }
+
+        ]
 
     )
 
 
     print(
-
         builder.validate(
             article
         )
-
     )
 
 
     print(
-
         builder.render(
             article
-        )[:500]
-
+        )[:1000]
     )

@@ -1,0 +1,102 @@
+{
+  "internal_linking": {
+
+    "max_links_per_article": 8,
+
+    "priority": [
+      "same_category",
+      "same_silo",
+      "related_products",
+      "knowledge_articles"
+    ],
+
+    "rules": {
+
+      "same_category": {
+        "priority": 100,
+        "type": "strong"
+      },
+
+      "same_silo": {
+        "priority": 70,
+        "type": "medium"
+      },
+
+      "cross_silo": {
+        "priority": 20,
+        "type": "weak"
+      }
+
+    },
+
+    "partner_rules": {
+
+      "check24": {
+        "allowed_related": [
+          "energie",
+          "internet_mobilfunk",
+          "reisen",
+          "finanzen"
+        ]
+      },
+
+      "tarifcheck": {
+        "allowed_related": [
+          "energie",
+          "versicherung",
+          "finanzen"
+        ]
+      },
+
+      "amazon": {
+        "allowed_related": [
+          "amazon_shopping"
+        ],
+        "isolated": true
+      },
+
+      "telekom": {
+        "type": "external_shop_only",
+        "internal_landingpage": false
+      }
+
+    },
+
+
+    "link_targets": {
+
+      "article": {
+        "links_to": [
+          "related_articles",
+          "knowledge_pages",
+          "landingpages"
+        ]
+      },
+
+      "landingpage": {
+        "links_to": [
+          "supporting_articles",
+          "faq",
+          "legal_pages"
+        ]
+      }
+
+    },
+
+
+    "affiliate_flow": {
+
+      "entry": "article",
+
+      "conversion_path": [
+        "article",
+        "landingpage",
+        "affiliate_click"
+      ],
+
+      "tracking_required": true
+
+    }
+
+  }
+}
