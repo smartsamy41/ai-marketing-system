@@ -16,16 +16,18 @@ class ProductionRenderer:
 
     def render_landingpage(
         self,
-        product
+        landingpage
     ):
 
-        product_schema = json.dumps(
+
+        schema_json = json.dumps(
 
             self.schema.product_schema(
-                product
+                landingpage
             ),
 
             indent=2,
+
             ensure_ascii=False
 
         )
@@ -33,96 +35,103 @@ class ProductionRenderer:
 
         data = {
 
-            **product,
+
+            **landingpage,
 
 
             "title":
-                product.get(
-                    "hero_title",
-                    product.get(
-                        "name",
-                        ""
-                    )
+                landingpage.get(
+                    "title",
+                    ""
                 ),
 
 
             "description":
-                product.get(
-                    "summary",
+                landingpage.get(
+                    "description",
                     ""
                 ),
 
 
             "ai_summary":
-                product.get(
-                    "summary",
+                landingpage.get(
+                    "ai_summary",
                     ""
                 ),
 
 
-            "key_facts":
-                product.get(
-                    "key_facts",
-                    []
+            "introduction":
+                landingpage.get(
+                    "introduction",
+                    ""
                 ),
 
 
-            "comparison_matrix":
-                product.get(
-                    "comparison_matrix",
-                    []
+            "content":
+                landingpage.get(
+                    "content",
+                    ""
+                ),
+
+
+            "tracking_url":
+                landingpage.get(
+                    "tracking_url",
+                    "#"
                 ),
 
 
             "sources":
-                product.get(
+                landingpage.get(
                     "sources",
                     []
                 ),
 
 
             "faq":
-                product.get(
+                landingpage.get(
                     "faq",
                     []
                 ),
 
 
             "author":
-                product.get(
+                landingpage.get(
                     "author",
                     "Redaktion Free Basics"
                 ),
 
 
             "reviewed_by":
-                product.get(
+                landingpage.get(
                     "reviewed_by",
-                    "Samy ben Chedli Jendoubi"
+                    ""
                 ),
 
 
             "updated_at":
-                product.get(
+                landingpage.get(
                     "updated_at",
                     ""
                 ),
 
 
-            "schema_json":
-                product_schema,
-
-
             "canonical_url":
-                product.get(
-                    "landingpage_url",
-                    "https://freebasics.online/angebote/"
-                    +
-                    product.get(
-                        "product_id",
-                        ""
-                    )
-                )
+                landingpage.get(
+                    "canonical_url",
+                    ""
+                ),
+
+
+            "og_image_url":
+                landingpage.get(
+                    "og_image_url",
+                    ""
+                ),
+
+
+            "schema_json":
+                schema_json
 
         }
 
@@ -157,29 +166,38 @@ class ProductionRenderer:
         )
 
 
+        sources_html = "\n".join(
+            f"<li>{source}</li>"
+            for source in article.get(
+                "sources",
+                []
+            )
+        )
+
+
         data = {
+
 
             **article,
 
 
-            "article_schema":
-                article_schema,
+            "sources":
+                sources_html,
 
 
-            "author":
+            "canonical_url":
                 article.get(
-                    "author",
-                    "Redaktion Free Basics"
+                    "article_url",
+                    ""
                 ),
 
 
-            "reviewed_by":
-                article.get(
-                    "reviewed_by",
-                    "Samy ben Chedli Jendoubi"
-                )
+            "article_schema":
+                article_schema
+
 
         }
+
 
 
         return self.renderer.render(

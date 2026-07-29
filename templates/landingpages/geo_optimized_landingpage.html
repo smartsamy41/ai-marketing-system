@@ -4,19 +4,100 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>{{title}}</title>
 
-<meta name="description"
-      content="{{description}}">
+<meta name="description" content="{{description}}">
 
-<link rel="canonical"
-      href="{{canonical_url}}">
+<link rel="canonical" href="{{canonical_url}}">
 
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Free Basics">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical_url}}">
+<meta property="og:image" content="{{og_image_url}}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{og_image_url}}">
+
+<meta name="ai-agent-policy" content="allow-indexing, allow-citation, allow-summarization">
 
 <script type="application/ld+json">
 {{schema_json}}
 </script>
+
+
+<style>
+
+body {
+font-family: Arial, sans-serif;
+line-height:1.6;
+max-width:900px;
+margin:auto;
+padding:20px;
+color:#222;
+}
+
+h1,h2,h3 {
+color:#111;
+}
+
+.box {
+padding:20px;
+margin:25px 0;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.summary {
+background:#f4f7ff;
+border-left:5px solid #0055ff;
+}
+
+table {
+width:100%;
+border-collapse:collapse;
+}
+
+td,th {
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+.cta {
+border:2px solid #0055ff;
+text-align:center;
+padding:30px;
+}
+
+.button {
+background:#0055ff;
+color:white;
+padding:14px 30px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
+}
+
+footer {
+margin-top:50px;
+border-top:1px solid #ddd;
+padding-top:20px;
+font-size:0.9em;
+}
+
+footer a {
+margin-right:15px;
+}
+
+</style>
 
 </head>
 
@@ -29,18 +110,33 @@
 <h1>{{title}}</h1>
 
 <p>
-<strong>Werbung / Anzeige</strong>
+Herausgeber:
+<strong>{{author}}</strong>
+</p>
+
+<p>
+Geprüft von:
+<strong>{{reviewed_by}}</strong>
+</p>
+
+<p>
+Stand:
+{{updated_at}}
 </p>
 
 </header>
 
 
 
-<section>
+<main>
+
+
+<section class="box summary">
 
 <h2>Das Wichtigste auf einen Blick</h2>
 
 <p>
+<strong>KI-Direktantwort:</strong>
 {{ai_summary}}
 </p>
 
@@ -48,36 +144,39 @@
 
 
 
-<section>
+<section class="box">
 
 <h2>KI-Faktenübersicht</h2>
 
-<ul>
 
-<li>
-Produkt-ID:
-{{product_id}}
-</li>
+<table>
 
-
-<li>
-Kategorie:
-{{category}}
-</li>
+<tr>
+<th>Produkt-ID</th>
+<td>{{product_id}}</td>
+</tr>
 
 
-<li>
-Partner:
-{{partner}}
-</li>
+<tr>
+<th>Kategorie</th>
+<td>{{category}}</td>
+</tr>
 
-</ul>
+
+<tr>
+<th>Partner</th>
+<td>{{partner}}</td>
+</tr>
+
+
+</table>
 
 </section>
 
 
 
-<section>
+
+<section class="box">
 
 <h2>Informationen</h2>
 
@@ -89,7 +188,10 @@ Partner:
 
 
 
-<section>
+
+{% if sources %}
+
+<section class="box">
 
 <h2>Fakten & Quellen</h2>
 
@@ -97,9 +199,7 @@ Partner:
 
 {% for source in sources %}
 
-<li>
-{{source}}
-</li>
+<li>{{source}}</li>
 
 {% endfor %}
 
@@ -107,34 +207,76 @@ Partner:
 
 </section>
 
+{% endif %}
 
 
-<section>
+
+
+<section class="cta">
+
+<p>
+<strong>Werbung / Anzeige</strong>
+</p>
+
 
 <h2>Angebot prüfen</h2>
 
-<a href="{{tracking_url}}"
-   rel="sponsored">
+
+<p>
+Prüfe aktuelle Informationen direkt beim Partner.
+</p>
+
+
+<a class="button"
+href="{{tracking_url}}"
+rel="sponsored nofollow"
+target="_blank">
 
 Vergleich starten
 
 </a>
 
+
 </section>
 
 
 
-<section>
+
+
+{% if faq %}
+
+<section class="box">
 
 <h2>Häufige Fragen</h2>
 
-{{faq}}
+
+{% for item in faq %}
+
+
+<h3>
+{{item.question}}
+</h3>
+
+
+<p>
+{{item.answer}}
+</p>
+
+
+{% endfor %}
+
 
 </section>
 
+{% endif %}
 
 
-<section>
+
+
+
+{% if content %}
+
+<section class="box">
 
 <h2>Weitere Informationen</h2>
 
@@ -142,26 +284,74 @@ Vergleich starten
 {{content}}
 </p>
 
+
 </section>
+
+{% endif %}
+
+
+
+</main>
 
 
 
 <footer>
 
+
 <p>
-Autor: {{author}}
+Free Basics stellt Informationen zu Produkten und Angeboten bereit.
+Links zu Partnern können Affiliate-Links enthalten.
+Bei erfolgreicher Vermittlung kann eine Provision entstehen.
+Für Nutzer entstehen dadurch keine Mehrkosten.
 </p>
 
 
+
 <p>
-Letzte Aktualisierung:
-{{updated_at}}
+
+<a href="/ueber-uns">
+Über uns
+</a>
+
+
+<a href="/kontakt">
+Kontakt
+</a>
+
+
+<a href="/faq">
+FAQ
+</a>
+
+
+<a href="/affiliate-hinweis">
+Affiliate-Hinweis
+</a>
+
+
+<a href="/impressum">
+Impressum
+</a>
+
+
+<a href="/datenschutz">
+Datenschutz
+</a>
+
+
+<a href="/barrierefreiheit">
+Barrierefreiheit
+</a>
+
+
 </p>
 
 
+
 <p>
-Affiliate-Beziehung transparent gekennzeichnet.
+© 2026 Free Basics
 </p>
+
 
 </footer>
 

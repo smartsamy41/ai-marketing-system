@@ -26,7 +26,27 @@ class LandingpageBuilder:
 
         now = datetime.now(
             timezone.utc
-        ).strftime("%Y-%m-%d")
+        ).isoformat()
+
+
+
+        product_id = product.get(
+            "product_id",
+            ""
+        )
+
+
+        name = product.get(
+            "name",
+            ""
+        )
+
+
+
+        summary = product.get(
+            "summary",
+            ""
+        )
 
 
 
@@ -34,28 +54,40 @@ class LandingpageBuilder:
 
 
             "product_id":
-                product.get(
-                    "product_id",
-                    ""
-                ),
+                product_id,
 
 
 
             "title":
                 product.get(
                     "hero_title",
-                    product.get(
-                        "name",
-                        ""
-                    )
+                    name
                 ),
 
 
 
             "description":
+                summary,
+
+
+
+            "canonical_url":
                 product.get(
-                    "summary",
-                    f"Informationen zu {product.get('name','Produkt')}"
+                    "landingpage_url",
+                    f"https://freebasics.online/angebote/{product_id}"
+                ),
+
+
+
+            "product_name":
+                name,
+
+
+
+            "brand_name":
+                product.get(
+                    "partner",
+                    ""
                 ),
 
 
@@ -84,48 +116,29 @@ class LandingpageBuilder:
 
 
 
+            # KI Direktantwort
             "ai_summary":
-                product.get(
-                    "summary",
-                    ""
-                ),
+                summary,
 
 
 
+            # Kontext
             "introduction":
-                product.get(
-                    "summary",
-                    ""
+                (
+                    f"Bei {name} spielen verschiedene Faktoren "
+                    "eine Rolle. Dazu gehören Produktinformationen, "
+                    "Vertragsbedingungen und relevante Merkmale."
                 ),
 
 
 
+            # Tiefere Informationen
             "content":
-                product.get(
-                    "content",
-                    ""
+                (
+                    f"Weitere Informationen zu {name} "
+                    "basieren auf strukturierten Produktdaten "
+                    "und dokumentierten Partnerinformationen."
                 ),
-
-
-
-            "key_facts":
-                product.get(
-                    "key_facts",
-                    []
-                ),
-
-
-
-            "comparison_matrix":
-                product.get(
-                    "comparison_matrix",
-                    []
-                ),
-
-
-
-            "facts":
-                facts or {},
 
 
 
@@ -137,9 +150,9 @@ class LandingpageBuilder:
 
 
 
-            "internal_links":
+            "faq":
                 product.get(
-                    "internal_links",
+                    "faq",
                     []
                 ),
 
@@ -169,32 +182,18 @@ class LandingpageBuilder:
 
 
 
-            "faq":
+            "og_image_url":
                 product.get(
-                    "faq",
-                    []
+                    "image_url",
+                    "https://freebasics.online/assets/og-default.webp"
                 ),
-
-
-
-            "methodology":
-                "Die Inhalte basieren auf strukturierten Produktdaten, "
-                "offiziellen Quellen und dokumentierten Datenmodellen.",
-
-
-
-            "type":
-                "landingpage",
-
-
-
-            "status":
-                "ready_for_render",
 
 
 
             "system":
                 self.system
+
+
 
         }
 
@@ -220,9 +219,26 @@ class LandingpageBuilder:
 
 
 
+            "@id":
+                landingpage.get(
+                    "canonical_url",
+                    ""
+                )
+                +
+                "#product",
+
+
+
             "name":
                 landingpage.get(
                     "title"
+                ),
+
+
+
+            "description":
+                landingpage.get(
+                    "description"
                 ),
 
 
@@ -237,7 +253,22 @@ class LandingpageBuilder:
             "productID":
                 landingpage.get(
                     "product_id"
-                )
+                ),
+
+
+
+            "brand":
+                {
+                    "@type":
+                        "Organization",
+
+                    "name":
+                        landingpage.get(
+                            "partner"
+                        )
+                }
+
+
 
         }
 
@@ -245,116 +276,28 @@ class LandingpageBuilder:
 
         return self.renderer.render(
 
+
             "landingpages/geo_optimized_landingpage.html",
 
+
             {
+
 
                 **landingpage,
 
 
-                "canonical_url":
-                    f"https://freebasics.online/angebote/{landingpage['product_id']}",
-
-
 
                 "schema_json":
+
                     json.dumps(
                         schema,
                         indent=2,
                         ensure_ascii=False
                     )
 
+
             }
 
+
         )
 
-
-
-
-    def validate(
-        self,
-        landingpage
-    ):
-
-
-        required = [
-
-            "product_id",
-            "title",
-            "partner",
-            "author",
-            "reviewed_by",
-            "updated_at"
-
-        ]
-
-
-
-        missing = [
-
-            field
-
-            for field in required
-
-            if not landingpage.get(field)
-
-        ]
-
-
-
-        return {
-
-            "valid":
-                len(missing) == 0,
-
-
-            "missing":
-                missing
-
-        }
-
-
-
-if __name__ == "__main__":
-
-
-    builder = LandingpageBuilder()
-
-
-    page = builder.build(
-
-        {
-
-            "product_id":
-                "CHK24_001",
-
-            "name":
-                "Strom",
-
-            "category":
-                "Energie",
-
-            "partner":
-                "check24"
-
-        }
-
-    )
-
-
-    print(
-
-        builder.validate(
-            page
-        )
-
-    )
-
-
-    print(
-
-        builder.render(
-            page
-        )[:500]
-
-    )

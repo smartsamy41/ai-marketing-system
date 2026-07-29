@@ -10,6 +10,7 @@ class BlogArticleBuilder:
         self,
         system="FREE BASICS AI MARKETING SYSTEM"
     ):
+
         self.system = system
         self.renderer = TemplateRenderer()
 
@@ -28,7 +29,7 @@ class BlogArticleBuilder:
 
         name = product.get(
             "name",
-            "artikel"
+            "Artikel"
         )
 
 
@@ -43,9 +44,11 @@ class BlogArticleBuilder:
 
         return {
 
-
             "product_id":
-                product.get("product_id"),
+                product.get(
+                    "product_id",
+                    ""
+                ),
 
 
             "title":
@@ -54,93 +57,105 @@ class BlogArticleBuilder:
 
             "description":
                 product.get(
-                    "description",
+                    "summary",
                     "Wissensartikel zu diesem Thema."
                 ),
 
 
             "category":
-                product.get("category"),
+                product.get(
+                    "category",
+                    ""
+                ),
 
 
             "partner":
-                product.get("partner"),
-
+                product.get(
+                    "partner",
+                    ""
+                ),
 
 
             "article_url":
                 f"https://freebasics.online/blog/{slug}-ratgeber",
 
 
-
             "author":
-                "Free Basics Redaktion",
+                product.get(
+                    "author",
+                    "Redaktion Free Basics"
+                ),
 
 
             "reviewer":
-                "Free Basics Qualitätsprüfung",
-
+                product.get(
+                    "reviewed_by",
+                    "Free Basics Qualitätsprüfung"
+                ),
 
 
             "published_at":
-                now,
+                product.get(
+                    "published_at",
+                    product.get(
+                        "updated_at",
+                        now
+                    )
+                ),
 
 
             "updated_at":
-                now,
-
+                product.get(
+                    "updated_at",
+                    now
+                ),
 
 
             "ai_summary":
-                f"Zusammenfassung der wichtigsten Informationen zu {name}.",
-
+                product.get(
+                    "summary",
+                    f"Zusammenfassung der wichtigsten Informationen zu {name}."
+                ),
 
 
             "content":
                 product.get(
                     "content",
-                    "Weitere Informationen und Wissensinhalte."
+                    product.get(
+                        "summary",
+                        "Weitere Informationen und Wissensinhalte."
+                    )
                 ),
 
 
-
             "sources":
-                """
-<li>Produktdaten aus dem Master-Katalog</li>
-<li>Offizielle Partnerinformationen</li>
-<li>Öffentliche Wissensquellen</li>
-""",
-
+                product.get(
+                    "sources",
+                    []
+                ),
 
 
             "related_products":
                 f"""
-<a href="/angebote/{product.get('product_id')}">
+<a href="{product.get('landingpage_url', '#')}">
 Passendes Angebot prüfen
 </a>
 """,
 
 
-
             "faq":
-                """
-<ul>
-<li>Was ist dieses Thema?</li>
-<li>Welche Informationen sind verfügbar?</li>
-<li>Wo finden Nutzer weitere Details?</li>
-</ul>
-""",
-
+                product.get(
+                    "faq",
+                    []
+                ),
 
 
             "facts":
                 facts or {},
 
 
-
             "article_schema":
-                "{}",
-
+                "",
 
 
             "type":
@@ -154,6 +169,7 @@ Passendes Angebot prüfen
             "system":
                 self.system
         }
+
 
 
 
@@ -174,7 +190,9 @@ Passendes Angebot prüfen
 
 
             "headline":
-                article.get("title"),
+                article.get(
+                    "title"
+                ),
 
 
             "author":
@@ -183,7 +201,10 @@ Passendes Angebot prüfen
                         "Organization",
 
                     "name":
-                        "Free Basics Redaktion"
+                        article.get(
+                            "author",
+                            "Redaktion Free Basics"
+                        )
                 },
 
 
@@ -201,11 +222,15 @@ Passendes Angebot prüfen
 
 
             "datePublished":
-                article.get("published_at"),
+                article.get(
+                    "published_at"
+                ),
 
 
             "dateModified":
-                article.get("updated_at"),
+                article.get(
+                    "updated_at"
+                ),
 
 
             "mainEntityOfPage":
@@ -214,19 +239,37 @@ Passendes Angebot prüfen
                         "WebPage",
 
                     "@id":
-                        article.get("article_url")
+                        article.get(
+                            "article_url"
+                        )
                 }
 
         }
 
 
+        sources_html = "\n".join(
+            f"<li>{source}</li>"
+            for source in article.get("sources", [])
+        )
+
+
         return self.renderer.render(
+
             "blog/geo_authority_article.html",
+
             {
+
                 **article,
 
+                "sources":
+                    sources_html,
+
+
                 "canonical_url":
-                    article.get("article_url"),
+                    article.get(
+                        "article_url"
+                    ),
+
 
                 "article_schema":
                     json.dumps(
@@ -234,7 +277,9 @@ Passendes Angebot prüfen
                         indent=2,
                         ensure_ascii=False
                     )
+
             }
+
         )
 
 
@@ -243,6 +288,7 @@ Passendes Angebot prüfen
         self,
         article
     ):
+
 
         required = [
 
@@ -259,8 +305,12 @@ Passendes Angebot prüfen
         missing = [
 
             field
+
             for field in required
-            if not article.get(field)
+
+            if not article.get(
+                field
+            )
 
         ]
 
@@ -270,7 +320,54 @@ Passendes Angebot prüfen
             "valid":
                 len(missing) == 0,
 
+
             "missing":
                 missing
 
         }
+
+
+
+if __name__ == "__main__":
+
+
+    builder = BlogArticleBuilder()
+
+
+    article = builder.build(
+
+        {
+
+            "product_id":
+                "CHK24_001",
+
+            "name":
+                "Strom",
+
+            "category":
+                "Energie",
+
+            "partner":
+                "check24"
+
+        }
+
+    )
+
+
+    print(
+
+        builder.validate(
+            article
+        )
+
+    )
+
+
+    print(
+
+        builder.render(
+            article
+        )[:500]
+
+    )

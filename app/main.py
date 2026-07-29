@@ -21,7 +21,7 @@ from engine.winner_engine import WinnerEngine
 
 from engine.sheets_engine import SheetsEngine
 from engine.ai_core_engine import AICoreEngine
-from engine.content_ai import ContentAI
+from engine.content_pipeline_adapter import ContentPipelineAdapter
 
 from engine.revenue_engine import RevenueEngine
 from engine.ai_learning_engine import AILearningLoop
@@ -182,10 +182,10 @@ ai = AICoreEngine(
 
 
 # ============================================================
-# CONTENT
+# CONTENT PIPELINE
 # ============================================================
 
-content = ContentAI()
+content = ContentPipelineAdapter()
 
 
 # ============================================================

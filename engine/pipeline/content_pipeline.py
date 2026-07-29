@@ -6,16 +6,24 @@ from engine.content_generation.blog_article_builder import BlogArticleBuilder
 
 class ContentPipeline:
 
+
     def __init__(self):
 
         self.knowledge = KnowledgeAdapter()
+
         self.urls = URLResolver()
 
         self.landingpage_builder = LandingpageBuilder()
+
         self.article_builder = BlogArticleBuilder()
 
 
-    def process(self, product):
+
+    def process(
+        self,
+        product
+    ):
+
 
         knowledge_data = self.knowledge.build_product_context(
             product["product_id"]
@@ -25,18 +33,25 @@ class ContentPipeline:
         if not knowledge_data:
 
             return {
+
                 "status": "ERROR",
+
                 "message": "Product not found"
+
             }
 
 
-        # Master Daten + Knowledge Daten verbinden
+
+        # Master Daten + Knowledge Layer verbinden
+
         product.update(
             knowledge_data
         )
 
 
+
         # Produktions URLs
+
         product["landingpage_url"] = (
             self.urls.landingpage_url(product)
         )
@@ -47,47 +62,59 @@ class ContentPipeline:
         )
 
 
-        # Neue GEO / E-E-A-T Felder absichern
+
+        # Sicherheitsfelder
 
         product.setdefault(
             "hero_title",
-            product.get("name","")
+            product.get(
+                "name",
+                ""
+            )
         )
+
 
         product.setdefault(
             "summary",
             ""
         )
 
+
         product.setdefault(
             "key_facts",
             []
         )
+
 
         product.setdefault(
             "comparison_matrix",
             []
         )
 
+
         product.setdefault(
             "faq",
             []
         )
+
 
         product.setdefault(
             "sources",
             []
         )
 
+
         product.setdefault(
             "author",
             "Redaktion Free Basics"
         )
 
+
         product.setdefault(
             "reviewed_by",
             "Samy ben Chedli Jendoubi"
         )
+
 
         product.setdefault(
             "updated_at",
@@ -95,88 +122,125 @@ class ContentPipeline:
         )
 
 
-        # Landingpage neues Modell
 
-        landingpage = {
+        # NEU:
+        # echte LandingpageBuilder Ausgabe
 
-            **product,
+        landingpage = self.landingpage_builder.build(
 
-            "title":
-                product.get(
-                    "hero_title",
-                    product.get("name","")
-                ),
-
-            "ai_summary":
-                product.get(
-                    "summary",
-                    ""
-                ),
-
-            "content":
-                product.get(
-                    "summary",
-                    ""
-                )
-
-        }
-
-
-        # Blog neues Modell
-
-        article = self.article_builder.build(
             product,
-            facts=knowledge_data
+
+            facts=knowledge_data,
+
+            sources=product.get(
+                "sources",
+                []
+            )
+
         )
 
 
-        article.update({
 
-            "summary":
-                product.get(
-                    "summary",
-                    ""
-                ),
+        # Blog Artikel erstellen
 
-            "sources":
-                product.get(
-                    "sources",
-                    []
-                ),
+        landingpage_html = self.landingpage_builder.render(
+            landingpage
+        )
 
-            "author":
-                product.get(
-                    "author"
-                ),
 
-            "reviewed_by":
-                product.get(
-                    "reviewed_by"
-                ),
+        article = self.article_builder.build(
 
-            "updated_at":
-                product.get(
-                    "updated_at"
-                )
+            product,
 
-        })
+            facts=knowledge_data
+
+        )
+
+
+
+        article.update(
+
+            {
+
+                "summary":
+                    product.get(
+                        "summary",
+                        ""
+                    ),
+
+
+                "sources":
+                    product.get(
+                        "sources",
+                        []
+                    ),
+
+
+                "author":
+                    product.get(
+                        "author"
+                    ),
+
+
+                "reviewed_by":
+                    product.get(
+                        "reviewed_by"
+                    ),
+
+
+                "updated_at":
+                    product.get(
+                        "updated_at"
+                    )
+
+            }
+
+        )
+
+
+        article_html = self.article_builder.render(
+            article
+        )
+
 
 
         return {
 
-            "product": product,
 
-            "landingpage": landingpage,
+            "product":
+                product,
 
-            "article": article,
 
-            "status": "READY"
+            "landingpage":
+                landingpage,
+
+
+            "landingpage_html":
+                landingpage_html,
+
+
+            "article":
+                article,
+
+
+            "article_html":
+                article_html,
+
+
+            "status":
+                "READY"
+
 
         }
 
 
 
+
+
 if __name__ == "__main__":
+
+
+    import json
 
 
     pipeline = ContentPipeline()
@@ -185,24 +249,34 @@ if __name__ == "__main__":
     result = pipeline.process(
 
         {
-            "product_id": "CHK24_001",
-            "name": "Strom",
-            "partner": "check24",
-            "category": "Energie"
+
+            "product_id":
+                "CHK24_001",
+
+            "name":
+                "Strom",
+
+            "partner":
+                "check24",
+
+            "category":
+                "Strom"
+
         }
 
     )
 
 
-    import json
-
-
     print(
 
         json.dumps(
+
             result,
+
             indent=2,
+
             ensure_ascii=False
+
         )
 
     )

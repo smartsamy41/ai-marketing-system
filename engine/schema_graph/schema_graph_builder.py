@@ -232,6 +232,50 @@ class SchemaGraphBuilder:
                     "title"
                 ),
 
+
+            "url":
+                article.get(
+                    "article_url",
+                    ""
+                ),
+
+
+            "mainEntityOfPage":
+                {
+                    "@type":
+                        "WebPage",
+
+                    "@id":
+                        article.get(
+                            "article_url",
+                            ""
+                        )
+                },
+
+
+            "description":
+                article.get(
+                    "description",
+                    ""
+                ),
+
+
+            "datePublished":
+                article.get(
+                    "published_at",
+                    article.get(
+                        "updated_at",
+                        ""
+                    )
+                ),
+
+
+            "dateModified":
+                article.get(
+                    "updated_at",
+                    ""
+                ),
+
             "author":
                 {
 

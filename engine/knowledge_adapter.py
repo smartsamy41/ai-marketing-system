@@ -4,93 +4,58 @@ from pathlib import Path
 
 class KnowledgeAdapter:
 
+
     def __init__(self):
 
-        self.product_file = Path(
-            "data_master/catalog/product_master_44.json"
+        self.master_file = Path(
+            "data_master/knowledge_master/product_knowledge_master.json"
         )
 
-        self.llm_file = Path(
-            "data_master/geo_and_entities/llm_knowledge_chunks.json"
-        )
-
-        self.source_file = Path(
-            "data_master/geo_and_entities/primary_sources_index.json"
-        )
-
-        self.wikidata_file = Path(
-            "data_master/geo_and_entities/wikidata_entities.json"
+        self.master = self._load(
+            self.master_file
         )
 
 
-    def load_json(self, file):
+    def _load(
+        self,
+        path
+    ):
 
-        if not file.exists():
+        if not path.exists():
+
             return {}
 
         with open(
-            file,
+            path,
             "r",
             encoding="utf-8"
-        ) as f:
-            return json.load(f)
+        ) as file:
+
+            return json.load(file)
 
 
-    def find_llm_context(self, product_id):
 
-        data = self.load_json(
-            self.llm_file
-        )
+    def _find_product(
+        self,
+        product_id
+    ):
 
-        chunks = data.get(
-            "chunks",
+        products = self.master.get(
+            "products",
             []
         )
 
-        for chunk in chunks:
+        for product in products:
 
-            if chunk.get("product_id") == product_id:
+            if product.get(
+                "product_id"
+            ) == product_id:
 
-                return chunk
+                return product
+
 
         return {}
 
-
-    def find_source_context(self, product_id):
-
-        data = self.load_json(
-            self.source_file
-        )
-
-        if isinstance(data, dict):
-
-            for item in data.get("sources", []):
-
-                if item.get("product_id") == product_id:
-                    return item
-
-        return {}
-
-
-    def find_wikidata_context(self, product_id):
-
-        data = self.load_json(
-            self.wikidata_file
-        )
-
-        if isinstance(data, dict):
-
-            entities = data.get(
-                "entities",
-                []
-            )
-
-            for entity in entities:
-
-                if entity.get("product_id") == product_id:
-                    return entity
-
-        return {}
 
 
     def build_product_context(
@@ -98,45 +63,44 @@ class KnowledgeAdapter:
         product_id
     ):
 
-        products = self.load_json(
-            self.product_file
-        ).get(
-            "products",
-            []
-        )
-
-
-        product = next(
-            (
-                p for p in products
-                if p.get("product_id") == product_id
-            ),
-            None
-        )
-
-
-        if not product:
-            return None
-
-
-
-        llm_context = self.find_llm_context(
+        master_product = self._find_product(
             product_id
         )
 
 
-        source_context = self.find_source_context(
-            product_id
+        if not master_product:
+
+            return {}
+
+
+
+        identity = master_product.get(
+            "identity",
+            {}
         )
 
 
-        wikidata_context = self.find_wikidata_context(
-            product_id
+        catalog = master_product.get(
+            "catalog",
+            {}
         )
 
 
-        facts = llm_context.get(
-            "facts",
+        knowledge = master_product.get(
+            "knowledge",
+            {}
+        )
+
+
+        validation = master_product.get(
+            "validation",
+            {}
+        )
+
+
+
+        llm_context = knowledge.get(
+            "llm_context",
             {}
         )
 
@@ -144,48 +108,168 @@ class KnowledgeAdapter:
         return {
 
             "product_id":
-                product.get("product_id"),
+                master_product.get(
+                    "product_id",
+                    ""
+                ),
 
 
             "name":
-                product.get("name"),
+                identity.get(
+                    "name",
+                    ""
+                ),
 
 
             "partner":
-                product.get("partner"),
+                identity.get(
+                    "partner",
+                    ""
+                ),
 
 
             "category":
-                product.get("category"),
+                identity.get(
+                    "category",
+                    ""
+                ),
 
 
             "landingpage":
-                product.get("landingpage"),
+                catalog.get(
+                    "landingpage",
+                    ""
+                ),
 
 
             "tracking_url":
-                product.get("tracking_url"),
+                catalog.get(
+                    "tracking_url",
+                    ""
+                ),
+
+
+            "hero_title":
+                catalog.get(
+                    "hero_title",
+                    identity.get(
+                        "name",
+                        ""
+                    )
+                ),
+
+
+            "summary":
+                catalog.get(
+                    "summary",
+                    ""
+                ),
+
+
+            "key_facts":
+                catalog.get(
+                    "key_facts",
+                    []
+                ),
+
+
+            "comparison_matrix":
+                catalog.get(
+                    "comparison_matrix",
+                    []
+                ),
+
+
+            "faq":
+                catalog.get(
+                    "faq",
+                    []
+                ),
+
+
+            "sources":
+                catalog.get(
+                    "sources",
+                    []
+                ),
+
+
+            "author":
+                catalog.get(
+                    "author",
+                    "Redaktion Free Basics"
+                ),
+
+
+            "reviewed_by":
+                catalog.get(
+                    "reviewed_by",
+                    ""
+                ),
+
+
+            "updated_at":
+                catalog.get(
+                    "updated_at",
+                    ""
+                ),
+
+
+            "internal_links":
+                catalog.get(
+                    "internal_links",
+                    []
+                ),
+
+
+            "entity":
+                catalog.get(
+                    "entity",
+                    {}
+                ),
 
 
             "facts":
-                facts,
+                llm_context.get(
+                    "facts",
+                    {}
+                ),
 
 
             "llm_context":
                 llm_context,
 
 
-            "sources":
-                source_context,
+            "product_facts_registry":
+                knowledge.get(
+                    "facts_registry",
+                    {}
+                ),
 
 
             "wikidata":
-                wikidata_context,
+                knowledge.get(
+                    "wikidata",
+                    {}
+                ),
+
+
+            "mediawiki":
+                knowledge.get(
+                    "mediawiki",
+                    {}
+                ),
+
+
+            "validation":
+                validation,
 
 
             "knowledge_status":
-                "READY"
-
+                master_product.get(
+                    "status",
+                    "READY"
+                )
         }
 
 

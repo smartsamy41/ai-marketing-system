@@ -1,16 +1,4444 @@
 {
   "version": "1.0",
   "system": "FREE BASICS AI MARKETING SYSTEM",
-
-  "description": "Unified Product Knowledge Layer",
-
+  "description": "Unified Product Knowledge Master",
   "rules": {
-    "source_required": true,
     "verified_data_only": true,
-    "external_ids_only_verified": true
+    "source_required": true,
+    "no_fabricated_facts": true
   },
-
-  "products": [],
-
+  "products": [
+    {
+      "product_id": "CHK24_004",
+      "identity": {
+        "name": "DSL",
+        "category": "DSL",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_004",
+        "name": "DSL",
+        "partner": "check24",
+        "category": "DSL",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_004&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Ddsl-anbieterwechsel%26cat%3D4",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "DSL",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215304+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_004",
+          "entity": "DSL",
+          "category": "DSL",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_004",
+            "entity_type": "Product",
+            "name": "DSL",
+            "partner": "check24",
+            "category": "DSL",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_004",
+          "name": "DSL",
+          "category": "DSL",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_004",
+          "name": "DSL",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_004",
+          "name": "DSL",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545537+00:00"
+    },
+    {
+      "product_id": "CHK24_005",
+      "identity": {
+        "name": "Mobilfunk",
+        "category": "Mobilfunk",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_005",
+        "name": "Mobilfunk",
+        "partner": "check24",
+        "category": "Mobilfunk",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_005&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dhandytarife%26cat%3D7",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Mobilfunk",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215349+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_005",
+          "entity": "Mobilfunk",
+          "category": "Mobilfunk",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_005",
+            "entity_type": "Product",
+            "name": "Mobilfunk",
+            "partner": "check24",
+            "category": "Mobilfunk",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_005",
+          "name": "Mobilfunk",
+          "category": "Mobilfunk",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_005",
+          "name": "Mobilfunk",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_005",
+          "name": "Mobilfunk",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545597+00:00"
+    },
+    {
+      "product_id": "CHK24_002",
+      "identity": {
+        "name": "Oekostrom",
+        "category": "Oekostrom",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_002",
+        "name": "Oekostrom",
+        "partner": "check24",
+        "category": "Oekostrom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_002&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Doekostrom%26cat%3D5",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Oekostrom",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215360+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_002",
+          "entity": "Oekostrom",
+          "category": "Oekostrom",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_002",
+            "entity_type": "Product",
+            "name": "Oekostrom",
+            "partner": "check24",
+            "category": "Oekostrom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_002",
+          "name": "Oekostrom",
+          "category": "Oekostrom",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_002",
+          "name": "Oekostrom",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_002",
+          "name": "Oekostrom",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545607+00:00"
+    },
+    {
+      "product_id": "CHK24_001",
+      "identity": {
+        "name": "Strom",
+        "category": "Strom",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_001",
+        "name": "Strom",
+        "partner": "check24",
+        "category": "Strom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_001&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dstromanbieter-wechseln%26cat%3D1",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Strom",
+        "summary": "Informationen zu Stromtarifen und wichtigen Kriterien wie Verbrauch, Vertragsbedingungen und Tarifdetails.",
+        "key_facts": [
+          "Stromtarife anhand wichtiger Vertragsdaten prüfen",
+          "Verbrauch und Tarifdetails berücksichtigen",
+          "Anbieterinformationen transparent darstellen"
+        ],
+        "comparison_matrix": [
+          {
+            "field": "Kategorie",
+            "value": "Strom"
+          },
+          {
+            "field": "Datenbasis",
+            "value": "Produktinformationen und Partnerdaten"
+          },
+          {
+            "field": "Status",
+            "value": "aktiv"
+          }
+        ],
+        "faq": [
+          {
+            "question": "Was sollte bei einem Stromtarif geprüft werden?",
+            "answer": "Wichtige Punkte sind Verbrauch, Vertragslaufzeit und Tarifbedingungen."
+          },
+          {
+            "question": "Wo erfolgt die weitere Abwicklung?",
+            "answer": "Die weitere Bearbeitung erfolgt über den jeweiligen Partner."
+          }
+        ],
+        "sources": [
+          "Offizielle Partnerinformationen",
+          "Produktdaten aus dem Free Basics Master Katalog"
+        ],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T18:01:51.294407+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": [
+          "/blog/strom-ratgeber"
+        ]
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_001",
+          "entity": "Strom",
+          "category": "Strom",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_001",
+            "entity_type": "Product",
+            "name": "Strom",
+            "partner": "check24",
+            "category": "Strom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_001",
+          "name": "Strom",
+          "category": "Strom",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_001",
+          "name": "Strom",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_001",
+          "name": "Strom",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545615+00:00"
+    },
+    {
+      "product_id": "CHK24_003",
+      "identity": {
+        "name": "Gas",
+        "category": "Gas",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_003",
+        "name": "Gas",
+        "partner": "check24",
+        "category": "Gas",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_003&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dgasanbieter-wechseln%26cat%3D3",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Gas",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215372+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_003",
+          "entity": "Gas",
+          "category": "Gas",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_003",
+            "entity_type": "Product",
+            "name": "Gas",
+            "partner": "check24",
+            "category": "Gas",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_003",
+          "name": "Gas",
+          "category": "Gas",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_003",
+          "name": "Gas",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_003",
+          "name": "Gas",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545623+00:00"
+    },
+    {
+      "product_id": "CHK24_006",
+      "identity": {
+        "name": "Pauschalreise",
+        "category": "Reisen",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_006",
+        "name": "Pauschalreise",
+        "partner": "check24",
+        "category": "Reisen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_006&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dpauschalreisen-vergleich%26cat%3D9",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Pauschalreise",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215376+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_006",
+          "entity": "Pauschalreise",
+          "category": "Reisen",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_006",
+            "entity_type": "Product",
+            "name": "Pauschalreise",
+            "partner": "check24",
+            "category": "Reisen",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_006",
+          "name": "Pauschalreise",
+          "category": "Reisen",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_006",
+          "name": "Pauschalreise",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_006",
+          "name": "Pauschalreise",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545632+00:00"
+    },
+    {
+      "product_id": "CHK24_007",
+      "identity": {
+        "name": "Mietwagen",
+        "category": "Reisen",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_007",
+        "name": "Mietwagen",
+        "partner": "check24",
+        "category": "Reisen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_007&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dmietwagen-preisvergleich%26cat%3D10",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Mietwagen",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215602+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_007",
+          "entity": "Mietwagen",
+          "category": "Reisen",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_007",
+            "entity_type": "Product",
+            "name": "Mietwagen",
+            "partner": "check24",
+            "category": "Reisen",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_007",
+          "name": "Mietwagen",
+          "category": "Reisen",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_007",
+          "name": "Mietwagen",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_007",
+          "name": "Mietwagen",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545641+00:00"
+    },
+    {
+      "product_id": "CHK24_008",
+      "identity": {
+        "name": "C24 Bank",
+        "category": "Finanzen",
+        "partner": "check24"
+      },
+      "catalog": {
+        "product_id": "CHK24_008",
+        "name": "C24 Bank",
+        "partner": "check24",
+        "category": "Finanzen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=CHK24_008&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dc24bank%26cat%3D14",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "C24 Bank",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215615+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "CHK24_008",
+          "entity": "C24 Bank",
+          "category": "Finanzen",
+          "partner": "check24",
+          "facts": {
+            "product_id": "CHK24_008",
+            "entity_type": "Product",
+            "name": "C24 Bank",
+            "partner": "check24",
+            "category": "Finanzen",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "check24",
+            "geo_ready": true
+          },
+          "source_reference": "check24",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "CHK24_008",
+          "name": "C24 Bank",
+          "category": "Finanzen",
+          "partner": "check24",
+          "source": "check24",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "CHK24_008",
+          "name": "C24 Bank",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "CHK24_008",
+          "name": "C24 Bank",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545650+00:00"
+    },
+    {
+      "product_id": "TC_001",
+      "identity": {
+        "name": "Solaranlage",
+        "category": "Solaranlage",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_001",
+        "name": "Solaranlage",
+        "partner": "tarifcheck",
+        "category": "Solaranlage",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_001&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dsolaranlage",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Solaranlage",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215619+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_001",
+          "entity": "Solaranlage",
+          "category": "Solaranlage",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_001",
+            "entity_type": "Product",
+            "name": "Solaranlage",
+            "partner": "tarifcheck",
+            "category": "Solaranlage",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_001",
+          "name": "Solaranlage",
+          "category": "Solaranlage",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_001",
+          "name": "Solaranlage",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_001",
+          "name": "Solaranlage",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545658+00:00"
+    },
+    {
+      "product_id": "TC_002",
+      "identity": {
+        "name": "Kfz-Versicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_002",
+        "name": "Kfz-Versicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_002&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkfz-versicherung",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Kfz-Versicherung",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215622+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_002",
+          "entity": "Kfz-Versicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_002",
+            "entity_type": "Product",
+            "name": "Kfz-Versicherung",
+            "partner": "tarifcheck",
+            "category": "Versicherung",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_002",
+          "name": "Kfz-Versicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_002",
+          "name": "Kfz-Versicherung",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_002",
+          "name": "Kfz-Versicherung",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545666+00:00"
+    },
+    {
+      "product_id": "TC_003",
+      "identity": {
+        "name": "Kredit",
+        "category": "Kredit",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_003",
+        "name": "Kredit",
+        "partner": "tarifcheck",
+        "category": "Kredit",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_003&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkredit",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Kredit",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215626+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_003",
+          "entity": "Kredit",
+          "category": "Kredit",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_003",
+            "entity_type": "Product",
+            "name": "Kredit",
+            "partner": "tarifcheck",
+            "category": "Kredit",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_003",
+          "name": "Kredit",
+          "category": "Kredit",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_003",
+          "name": "Kredit",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_003",
+          "name": "Kredit",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545674+00:00"
+    },
+    {
+      "product_id": "TC_004",
+      "identity": {
+        "name": "Girokonto",
+        "category": "Girokonto",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_004",
+        "name": "Girokonto",
+        "partner": "tarifcheck",
+        "category": "Girokonto",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_004&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dgirokonto",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Girokonto",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215629+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_004",
+          "entity": "Girokonto",
+          "category": "Girokonto",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_004",
+            "entity_type": "Product",
+            "name": "Girokonto",
+            "partner": "tarifcheck",
+            "category": "Girokonto",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_004",
+          "name": "Girokonto",
+          "category": "Girokonto",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_004",
+          "name": "Girokonto",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_004",
+          "name": "Girokonto",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545693+00:00"
+    },
+    {
+      "product_id": "TC_005",
+      "identity": {
+        "name": "Baufinanzierung",
+        "category": "Baufinanzierung",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_005",
+        "name": "Baufinanzierung",
+        "partner": "tarifcheck",
+        "category": "Baufinanzierung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_005&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dbaufinanzierung",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Baufinanzierung",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215636+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_005",
+          "entity": "Baufinanzierung",
+          "category": "Baufinanzierung",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_005",
+            "entity_type": "Product",
+            "name": "Baufinanzierung",
+            "partner": "tarifcheck",
+            "category": "Baufinanzierung",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_005",
+          "name": "Baufinanzierung",
+          "category": "Baufinanzierung",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_005",
+          "name": "Baufinanzierung",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_005",
+          "name": "Baufinanzierung",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545702+00:00"
+    },
+    {
+      "product_id": "TC_006",
+      "identity": {
+        "name": "Hausratversicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_006",
+        "name": "Hausratversicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_006&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhausratversicherung",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Hausratversicherung",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215639+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_006",
+          "entity": "Hausratversicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_006",
+            "entity_type": "Product",
+            "name": "Hausratversicherung",
+            "partner": "tarifcheck",
+            "category": "Versicherung",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_006",
+          "name": "Hausratversicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_006",
+          "name": "Hausratversicherung",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_006",
+          "name": "Hausratversicherung",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545720+00:00"
+    },
+    {
+      "product_id": "TC_007",
+      "identity": {
+        "name": "Haftpflichtversicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_007",
+        "name": "Haftpflichtversicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_007&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhaftpflichtversicherung",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Haftpflichtversicherung",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215646+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_007",
+          "entity": "Haftpflichtversicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_007",
+            "entity_type": "Product",
+            "name": "Haftpflichtversicherung",
+            "partner": "tarifcheck",
+            "category": "Versicherung",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_007",
+          "name": "Haftpflichtversicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_007",
+          "name": "Haftpflichtversicherung",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_007",
+          "name": "Haftpflichtversicherung",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545730+00:00"
+    },
+    {
+      "product_id": "TC_008",
+      "identity": {
+        "name": "Rentenversicherung",
+        "category": "Vorsorge",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_008",
+        "name": "Rentenversicherung",
+        "partner": "tarifcheck",
+        "category": "Vorsorge",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_008&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Drentenversicherung",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Rentenversicherung",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215650+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_008",
+          "entity": "Rentenversicherung",
+          "category": "Vorsorge",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_008",
+            "entity_type": "Product",
+            "name": "Rentenversicherung",
+            "partner": "tarifcheck",
+            "category": "Vorsorge",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_008",
+          "name": "Rentenversicherung",
+          "category": "Vorsorge",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_008",
+          "name": "Rentenversicherung",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_008",
+          "name": "Rentenversicherung",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545741+00:00"
+    },
+    {
+      "product_id": "TC_009",
+      "identity": {
+        "name": "Private Krankenversicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      "catalog": {
+        "product_id": "TC_009",
+        "name": "Private Krankenversicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TC_009&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dprivate-krankenversicherung",
+        "system_source": "cloud_landingpages_only",
+        "status": "official_assets_ready",
+        "hero_title": "Private Krankenversicherung",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215653+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TC_009",
+          "entity": "Private Krankenversicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "facts": {
+            "product_id": "TC_009",
+            "entity_type": "Product",
+            "name": "Private Krankenversicherung",
+            "partner": "tarifcheck",
+            "category": "Versicherung",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+            "tracking_available": true,
+            "asset_status": "official_assets_ready",
+            "source_reference": "tarifcheck",
+            "geo_ready": true
+          },
+          "source_reference": "tarifcheck",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TC_009",
+          "name": "Private Krankenversicherung",
+          "category": "Versicherung",
+          "partner": "tarifcheck",
+          "source": "tarifcheck",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TC_009",
+          "name": "Private Krankenversicherung",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TC_009",
+          "name": "Private Krankenversicherung",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545758+00:00"
+    },
+    {
+      "product_id": "B0FQF32239",
+      "identity": {
+        "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "category": "Bluetooth-Kopfhörer",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FQF32239",
+        "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "partner": "amazon",
+        "category": "Bluetooth-Kopfhörer",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FQF32239&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FQF32239%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44049d07107531e7ad6d6dfe2f054065%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215657+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FQF32239",
+          "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+          "category": "Bluetooth-Kopfhörer",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FQF32239",
+            "entity_type": "Product",
+            "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+            "partner": "amazon",
+            "category": "Bluetooth-Kopfhörer",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FQF32239",
+          "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+          "category": "Bluetooth-Kopfhörer",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FQF32239",
+          "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FQF32239",
+          "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545769+00:00"
+    },
+    {
+      "product_id": "B0CFPWLGF2",
+      "identity": {
+        "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "category": "E-Reader",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0CFPWLGF2",
+        "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "partner": "amazon",
+        "category": "E-Reader",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0CFPWLGF2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CFPWLGF2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44d0788340e0256001696d3ece88528d%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215660+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0CFPWLGF2",
+          "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+          "category": "E-Reader",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0CFPWLGF2",
+            "entity_type": "Product",
+            "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+            "partner": "amazon",
+            "category": "E-Reader",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0CFPWLGF2",
+          "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+          "category": "E-Reader",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0CFPWLGF2",
+          "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0CFPWLGF2",
+          "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545780+00:00"
+    },
+    {
+      "product_id": "B0DFYN8174",
+      "identity": {
+        "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "category": "Körperpflege & Elektrorasierer",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0DFYN8174",
+        "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "partner": "amazon",
+        "category": "Körperpflege & Elektrorasierer",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0DFYN8174&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DFYN8174%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Df29cec1e2851f7a806babd846a9ddfc4%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215664+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0DFYN8174",
+          "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+          "category": "Körperpflege & Elektrorasierer",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0DFYN8174",
+            "entity_type": "Product",
+            "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+            "partner": "amazon",
+            "category": "Körperpflege & Elektrorasierer",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0DFYN8174",
+          "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+          "category": "Körperpflege & Elektrorasierer",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0DFYN8174",
+          "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0DFYN8174",
+          "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545790+00:00"
+    },
+    {
+      "product_id": "B0FPXFBL13",
+      "identity": {
+        "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FPXFBL13",
+        "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXFBL13&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXFBL13%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D06fcb046b24b9cd38f1784f7219533ca%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215668+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FPXFBL13",
+          "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FPXFBL13",
+            "entity_type": "Product",
+            "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+            "partner": "amazon",
+            "category": "Bauspielzeugsets",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FPXFBL13",
+          "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FPXFBL13",
+          "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FPXFBL13",
+          "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545800+00:00"
+    },
+    {
+      "product_id": "B0FPXDCDX2",
+      "identity": {
+        "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FPXDCDX2",
+        "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXDCDX2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDCDX2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D5af01d4132de4d9c81c7b720665a5974%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215671+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FPXDCDX2",
+          "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FPXDCDX2",
+            "entity_type": "Product",
+            "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+            "partner": "amazon",
+            "category": "Bauspielzeugsets",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FPXDCDX2",
+          "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FPXDCDX2",
+          "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FPXDCDX2",
+          "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545811+00:00"
+    },
+    {
+      "product_id": "B0FPXGJL6H",
+      "identity": {
+        "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FPXGJL6H",
+        "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXGJL6H&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXGJL6H%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D38c487ba09e0fd7845e695ad0cd319e7%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215681+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FPXGJL6H",
+          "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FPXGJL6H",
+            "entity_type": "Product",
+            "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+            "partner": "amazon",
+            "category": "Bauspielzeugsets",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FPXGJL6H",
+          "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FPXGJL6H",
+          "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FPXGJL6H",
+          "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545827+00:00"
+    },
+    {
+      "product_id": "B0FPXDRR63",
+      "identity": {
+        "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FPXDRR63",
+        "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FPXDRR63&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDRR63%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D0a52b5924b86de2297fba57c9ae1b02b%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215685+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FPXDRR63",
+          "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FPXDRR63",
+            "entity_type": "Product",
+            "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+            "partner": "amazon",
+            "category": "Bauspielzeugsets",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FPXDRR63",
+          "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+          "category": "Bauspielzeugsets",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FPXDRR63",
+          "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FPXDRR63",
+          "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545844+00:00"
+    },
+    {
+      "product_id": "3424631078",
+      "identity": {
+        "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "3424631078",
+        "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "partner": "amazon",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3424631078&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3424631078%3Fsmid%3DA1JC316NLNMF97%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D3230f2a54418561cda1437a62636751a%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215688+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "3424631078",
+          "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+          "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "3424631078",
+            "entity_type": "Product",
+            "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+            "partner": "amazon",
+            "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "3424631078",
+          "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+          "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "3424631078",
+          "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "3424631078",
+          "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545856+00:00"
+    },
+    {
+      "product_id": "B0FNX7HC9M",
+      "identity": {
+        "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "category": "Bücher - Psychothriller",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FNX7HC9M",
+        "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "partner": "amazon",
+        "category": "Bücher - Psychothriller",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FNX7HC9M&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FNX7HC9M%3Fsmid%3DAL5JXES37EDG7%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D411dad09febceb05b8d53957ad711075%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215692+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FNX7HC9M",
+          "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+          "category": "Bücher - Psychothriller",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FNX7HC9M",
+            "entity_type": "Product",
+            "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+            "partner": "amazon",
+            "category": "Bücher - Psychothriller",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FNX7HC9M",
+          "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+          "category": "Bücher - Psychothriller",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FNX7HC9M",
+          "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FNX7HC9M",
+          "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545867+00:00"
+    },
+    {
+      "product_id": "3423209690",
+      "identity": {
+        "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "3423209690",
+        "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "partner": "amazon",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3423209690&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3423209690%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D79007b57baece76e191e2663d00af73c%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215695+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "3423209690",
+          "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+          "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "3423209690",
+            "entity_type": "Product",
+            "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+            "partner": "amazon",
+            "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "3423209690",
+          "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+          "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "3423209690",
+          "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "3423209690",
+          "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545887+00:00"
+    },
+    {
+      "product_id": "3832167242",
+      "identity": {
+        "name": "22 Bahnen Roman Lieblingsbuch 2023",
+        "category": "Bücher - Roman & Gegenwartsliteratur",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "3832167242",
+        "name": "22 Bahnen Roman Lieblingsbuch 2023",
+        "partner": "amazon",
+        "category": "Bücher - Roman & Gegenwartsliteratur",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3832167242&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3832167242%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D6b3e47793fe11a33da23977f37721e53%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "22 Bahnen Roman Lieblingsbuch 2023",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215699+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "3832167242",
+          "entity": "22 Bahnen Roman Lieblingsbuch 2023",
+          "category": "Bücher - Roman & Gegenwartsliteratur",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "3832167242",
+            "entity_type": "Product",
+            "name": "22 Bahnen Roman Lieblingsbuch 2023",
+            "partner": "amazon",
+            "category": "Bücher - Roman & Gegenwartsliteratur",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "3832167242",
+          "name": "22 Bahnen Roman Lieblingsbuch 2023",
+          "category": "Bücher - Roman & Gegenwartsliteratur",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "3832167242",
+          "name": "22 Bahnen Roman Lieblingsbuch 2023",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "3832167242",
+          "name": "22 Bahnen Roman Lieblingsbuch 2023",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545901+00:00"
+    },
+    {
+      "product_id": "3426281759",
+      "identity": {
+        "name": "Der Nachbar Psychothriller",
+        "category": "Bücher - Psychothriller",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "3426281759",
+        "name": "Der Nachbar Psychothriller",
+        "partner": "amazon",
+        "category": "Bücher - Psychothriller",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=3426281759&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3426281759%3Fsmid%3DAQJOK2ISQB5Q5%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Dd964d6eb9b49e87def7735dbf9b7913c%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Der Nachbar Psychothriller",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215703+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "3426281759",
+          "entity": "Der Nachbar Psychothriller",
+          "category": "Bücher - Psychothriller",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "3426281759",
+            "entity_type": "Product",
+            "name": "Der Nachbar Psychothriller",
+            "partner": "amazon",
+            "category": "Bücher - Psychothriller",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "3426281759",
+          "name": "Der Nachbar Psychothriller",
+          "category": "Bücher - Psychothriller",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "3426281759",
+          "name": "Der Nachbar Psychothriller",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "3426281759",
+          "name": "Der Nachbar Psychothriller",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545912+00:00"
+    },
+    {
+      "product_id": "B0DXLBZF4Q",
+      "identity": {
+        "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "category": "Körperpflege & Elektrorasierer",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0DXLBZF4Q",
+        "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "partner": "amazon",
+        "category": "Körperpflege & Elektrorasierer",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0DXLBZF4Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DXLBZF4Q%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D7d4e32a08a825498bee7382c530296e8%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215709+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0DXLBZF4Q",
+          "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+          "category": "Körperpflege & Elektrorasierer",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0DXLBZF4Q",
+            "entity_type": "Product",
+            "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+            "partner": "amazon",
+            "category": "Körperpflege & Elektrorasierer",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0DXLBZF4Q",
+          "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+          "category": "Körperpflege & Elektrorasierer",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0DXLBZF4Q",
+          "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0DXLBZF4Q",
+          "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545925+00:00"
+    },
+    {
+      "product_id": "B0CVXSK4D3",
+      "identity": {
+        "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "category": "Rasierklingen & Zubehör",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0CVXSK4D3",
+        "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "partner": "amazon",
+        "category": "Rasierklingen & Zubehör",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0CVXSK4D3&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CVXSK4D3%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D2febca87ab6dce8c73180e79c99357a6%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215715+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0CVXSK4D3",
+          "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+          "category": "Rasierklingen & Zubehör",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0CVXSK4D3",
+            "entity_type": "Product",
+            "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+            "partner": "amazon",
+            "category": "Rasierklingen & Zubehör",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0CVXSK4D3",
+          "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+          "category": "Rasierklingen & Zubehör",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0CVXSK4D3",
+          "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0CVXSK4D3",
+          "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545937+00:00"
+    },
+    {
+      "product_id": "B08P4YPB8Q",
+      "identity": {
+        "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "category": "Kosmetik - Wimperntusche",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B08P4YPB8Q",
+        "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "partner": "amazon",
+        "category": "Kosmetik - Wimperntusche",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B08P4YPB8Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B08P4YPB8Q%3Fsmid%3DALAJG0TLJF7AF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Db596d267acc19dfded98b049ca2e358c%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215719+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B08P4YPB8Q",
+          "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+          "category": "Kosmetik - Wimperntusche",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B08P4YPB8Q",
+            "entity_type": "Product",
+            "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+            "partner": "amazon",
+            "category": "Kosmetik - Wimperntusche",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B08P4YPB8Q",
+          "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+          "category": "Kosmetik - Wimperntusche",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B08P4YPB8Q",
+          "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B08P4YPB8Q",
+          "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545950+00:00"
+    },
+    {
+      "product_id": "B0FMS3V43J",
+      "identity": {
+        "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "category": "Nahrungsergänzung - Magnesium",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0FMS3V43J",
+        "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "partner": "amazon",
+        "category": "Nahrungsergänzung - Magnesium",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0FMS3V43J&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FMS3V43J%3Fsmid%3DA1KKPIBTTVQSPQ%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D32623354b1c45bca2728d97a7e1aee82%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215723+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0FMS3V43J",
+          "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+          "category": "Nahrungsergänzung - Magnesium",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0FMS3V43J",
+            "entity_type": "Product",
+            "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+            "partner": "amazon",
+            "category": "Nahrungsergänzung - Magnesium",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0FMS3V43J",
+          "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+          "category": "Nahrungsergänzung - Magnesium",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0FMS3V43J",
+          "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0FMS3V43J",
+          "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545967+00:00"
+    },
+    {
+      "product_id": "B0D1YKBX82",
+      "identity": {
+        "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "category": "Bücher - Liebesromane / New Adult",
+        "partner": "amazon"
+      },
+      "catalog": {
+        "product_id": "B0D1YKBX82",
+        "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "partner": "amazon",
+        "category": "Bücher - Liebesromane / New Adult",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=B0D1YKBX82&partner=amazon_no_api&target=https%3A//www.amazon.de/Off-Campus-Reihe-neuen-Look-exklusives-Postkartenset/dp/B0D1YKBX82%3Fpd_rd_w%3Dxylrd%26content-id%3Damzn1.sym.2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_p%3D2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_r%3DF1QVTK61EB04BBPR6N0F%26pd_rd_wg%3DPITh0%26pd_rd_r%3D50058732-d05a-4c21-b3a9-6fa7140cd969%26pd_rd_i%3DB0D1YKBX82%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D4ac87f6407fab4d74ef588cbc2dd89c0%26ref_%3Das_li_ss_tl",
+        "system_source": "cloud_landingpages_only",
+        "status": "original_image_done",
+        "hero_title": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215729+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "B0D1YKBX82",
+          "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+          "category": "Bücher - Liebesromane / New Adult",
+          "partner": "amazon",
+          "facts": {
+            "product_id": "B0D1YKBX82",
+            "entity_type": "Product",
+            "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+            "partner": "amazon",
+            "category": "Bücher - Liebesromane / New Adult",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+            "tracking_available": true,
+            "asset_status": "original_image_done",
+            "source_reference": "amazon",
+            "geo_ready": true
+          },
+          "source_reference": "amazon",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "B0D1YKBX82",
+          "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+          "category": "Bücher - Liebesromane / New Adult",
+          "partner": "amazon",
+          "source": "amazon",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "B0D1YKBX82",
+          "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "B0D1YKBX82",
+          "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545981+00:00"
+    },
+    {
+      "product_id": "TEL_001",
+      "identity": {
+        "name": "MagentaTV",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_001",
+        "name": "MagentaTV",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_001&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "MagentaTV",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215733+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_001",
+          "entity": "MagentaTV",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_001",
+            "entity_type": "Product",
+            "name": "MagentaTV",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_001",
+          "name": "MagentaTV",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_001",
+          "name": "MagentaTV",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_001",
+          "name": "MagentaTV",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.545994+00:00"
+    },
+    {
+      "product_id": "TEL_002",
+      "identity": {
+        "name": "Glasfaser",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_002",
+        "name": "Glasfaser",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_002&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "Glasfaser",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215737+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_002",
+          "entity": "Glasfaser",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_002",
+            "entity_type": "Product",
+            "name": "Glasfaser",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_002",
+          "name": "Glasfaser",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_002",
+          "name": "Glasfaser",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_002",
+          "name": "Glasfaser",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546017+00:00"
+    },
+    {
+      "product_id": "TEL_003",
+      "identity": {
+        "name": "MagentaZuhause",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_003",
+        "name": "MagentaZuhause",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_003&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "MagentaZuhause",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215740+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_003",
+          "entity": "MagentaZuhause",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_003",
+            "entity_type": "Product",
+            "name": "MagentaZuhause",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_003",
+          "name": "MagentaZuhause",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_003",
+          "name": "MagentaZuhause",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_003",
+          "name": "MagentaZuhause",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546030+00:00"
+    },
+    {
+      "product_id": "TEL_004",
+      "identity": {
+        "name": "MagentaMobil",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_004",
+        "name": "MagentaMobil",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_004&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "MagentaMobil",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215744+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_004",
+          "entity": "MagentaMobil",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_004",
+            "entity_type": "Product",
+            "name": "MagentaMobil",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_004",
+          "name": "MagentaMobil",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_004",
+          "name": "MagentaMobil",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_004",
+          "name": "MagentaMobil",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546044+00:00"
+    },
+    {
+      "product_id": "TEL_005",
+      "identity": {
+        "name": "MagentaMobil Young",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_005",
+        "name": "MagentaMobil Young",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_005&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "MagentaMobil Young",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215748+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_005",
+          "entity": "MagentaMobil Young",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_005",
+            "entity_type": "Product",
+            "name": "MagentaMobil Young",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_005",
+          "name": "MagentaMobil Young",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_005",
+          "name": "MagentaMobil Young",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_005",
+          "name": "MagentaMobil Young",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546059+00:00"
+    },
+    {
+      "product_id": "TEL_006",
+      "identity": {
+        "name": "MagentaMobil Prepaid",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_006",
+        "name": "MagentaMobil Prepaid",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_006&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "MagentaMobil Prepaid",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215754+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_006",
+          "entity": "MagentaMobil Prepaid",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_006",
+            "entity_type": "Product",
+            "name": "MagentaMobil Prepaid",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_006",
+          "name": "MagentaMobil Prepaid",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_006",
+          "name": "MagentaMobil Prepaid",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_006",
+          "name": "MagentaMobil Prepaid",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546077+00:00"
+    },
+    {
+      "product_id": "TEL_007",
+      "identity": {
+        "name": "congstar Allnet",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_007",
+        "name": "congstar Allnet",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_007&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "congstar Allnet",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215758+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_007",
+          "entity": "congstar Allnet",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_007",
+            "entity_type": "Product",
+            "name": "congstar Allnet",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_007",
+          "name": "congstar Allnet",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_007",
+          "name": "congstar Allnet",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_007",
+          "name": "congstar Allnet",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546091+00:00"
+    },
+    {
+      "product_id": "TEL_008",
+      "identity": {
+        "name": "congstar Homespot",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_008",
+        "name": "congstar Homespot",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_008&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "congstar Homespot",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215761+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_008",
+          "entity": "congstar Homespot",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_008",
+            "entity_type": "Product",
+            "name": "congstar Homespot",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_008",
+          "name": "congstar Homespot",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_008",
+          "name": "congstar Homespot",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_008",
+          "name": "congstar Homespot",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546106+00:00"
+    },
+    {
+      "product_id": "TEL_009",
+      "identity": {
+        "name": "TV + Internet + Festnetz",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_009",
+        "name": "TV + Internet + Festnetz",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_009&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "TV + Internet + Festnetz",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215767+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_009",
+          "entity": "TV + Internet + Festnetz",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_009",
+            "entity_type": "Product",
+            "name": "TV + Internet + Festnetz",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_009",
+          "name": "TV + Internet + Festnetz",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_009",
+          "name": "TV + Internet + Festnetz",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_009",
+          "name": "TV + Internet + Festnetz",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546121+00:00"
+    },
+    {
+      "product_id": "TEL_010",
+      "identity": {
+        "name": "Datentarife",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      "catalog": {
+        "product_id": "TEL_010",
+        "name": "Datentarife",
+        "partner": "telekom",
+        "category": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+        "tracking_url": "https://ai-marketing-system-1081897051313.europe-west3.run.app/track?pid=TEL_010&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
+        "system_source": "cloud_landingpages_only",
+        "status": "active",
+        "hero_title": "Datentarife",
+        "summary": "",
+        "key_facts": [],
+        "comparison_matrix": [],
+        "faq": [],
+        "sources": [],
+        "author": "Redaktion Free Basics",
+        "reviewed_by": "Samy ben Chedli Jendoubi",
+        "updated_at": "2026-07-23T17:53:44.215772+00:00",
+        "entity": {
+          "wikidata_id": "",
+          "sameAs": []
+        },
+        "internal_links": []
+      },
+      "knowledge": {
+        "llm_context": {
+          "product_id": "TEL_010",
+          "entity": "Datentarife",
+          "category": "telekom",
+          "partner": "telekom",
+          "facts": {
+            "product_id": "TEL_010",
+            "entity_type": "Product",
+            "name": "Datentarife",
+            "partner": "telekom",
+            "category": "telekom",
+            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+            "tracking_available": true,
+            "asset_status": "active",
+            "source_reference": "telekom",
+            "geo_ready": true
+          },
+          "source_reference": "telekom",
+          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+          "status": "READY_FOR_LLM_CONTEXT"
+        },
+        "facts_registry": {
+          "product_id": "TEL_010",
+          "name": "Datentarife",
+          "category": "telekom",
+          "partner": "telekom",
+          "source": "telekom",
+          "knowledge_graph": {
+            "wikidata_id": null,
+            "google_mid": null,
+            "status": "pending_verification"
+          },
+          "facts_status": "source_available",
+          "validation": {
+            "source_required": true,
+            "fact_validation_required": true,
+            "fabricated_information": false
+          }
+        },
+        "wikidata": {
+          "product_id": "TEL_010",
+          "name": "Datentarife",
+          "entity_type": "Product",
+          "wikidata_id": null,
+          "wikidata_status": "pending_mapping",
+          "source": "product_master_44"
+        },
+        "mediawiki": {
+          "product_id": "TEL_010",
+          "name": "Datentarife",
+          "mediawiki_title": null,
+          "summary": null,
+          "references": [],
+          "status": "pending_enrichment"
+        }
+      },
+      "validation": {
+        "product_available": true,
+        "llm_context_available": true,
+        "facts_available": true,
+        "source_available": true,
+        "affiliate_available": true,
+        "wikidata_status": "pending_mapping",
+        "mediawiki_status": "pending_enrichment"
+      },
+      "status": "READY",
+      "updated_at": "2026-07-29T07:41:10.546135+00:00"
+    }
+  ],
   "status": "READY"
 }
