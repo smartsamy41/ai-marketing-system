@@ -14,22 +14,9 @@
 
 <meta name="robots" content="index, follow">
 
-<meta property="og:type" content="product">
-<meta property="og:site_name" content="Free Basics">
-<meta property="og:title" content="{{title}}">
-<meta property="og:description" content="{{description}}">
-<meta property="og:url" content="{{canonical_url}}">
-<meta property="og:image" content="{{og_image_url}}">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{title}}">
-<meta name="twitter:description" content="{{description}}">
-<meta name="twitter:image" content="{{og_image_url}}">
-
-<meta name="ai-agent-policy" content="allow-indexing, allow-citation, allow-summarization">
 
 <script type="application/ld+json">
-{{schema_json}}
+{{page_schema}}
 </script>
 
 
@@ -44,10 +31,6 @@ padding:20px;
 color:#222;
 }
 
-h1,h2,h3 {
-color:#111;
-}
-
 .box {
 padding:20px;
 margin:25px 0;
@@ -55,26 +38,10 @@ border:1px solid #ddd;
 border-radius:8px;
 }
 
-.summary {
-background:#f4f7ff;
-border-left:5px solid #0055ff;
-}
-
-table {
-width:100%;
-border-collapse:collapse;
-}
-
-td,th {
-padding:12px;
-border-bottom:1px solid #ddd;
-text-align:left;
-}
-
 .cta {
 border:2px solid #0055ff;
-text-align:center;
 padding:30px;
+text-align:center;
 }
 
 .button {
@@ -83,21 +50,18 @@ color:white;
 padding:14px 30px;
 border-radius:6px;
 text-decoration:none;
-display:inline-block;
 }
 
-footer {
-margin-top:50px;
-border-top:1px solid #ddd;
-padding-top:20px;
-font-size:0.9em;
-}
-
-footer a {
-margin-right:15px;
+.internal-link,
+.newsletter-box {
+padding:20px;
+margin:20px 0;
+border:1px solid #ddd;
+border-radius:8px;
 }
 
 </style>
+
 
 </head>
 
@@ -131,48 +95,15 @@ Stand:
 <main>
 
 
-<section class="box summary">
+<section class="box">
 
 <h2>Das Wichtigste auf einen Blick</h2>
 
 <p>
-<strong>KI-Direktantwort:</strong>
-{{ai_summary}}
+{{description}}
 </p>
 
 </section>
-
-
-
-<section class="box">
-
-<h2>KI-Faktenübersicht</h2>
-
-
-<table>
-
-<tr>
-<th>Produkt-ID</th>
-<td>{{product_id}}</td>
-</tr>
-
-
-<tr>
-<th>Kategorie</th>
-<td>{{category}}</td>
-</tr>
-
-
-<tr>
-<th>Partner</th>
-<td>{{partner}}</td>
-</tr>
-
-
-</table>
-
-</section>
-
 
 
 
@@ -181,11 +112,10 @@ Stand:
 <h2>Informationen</h2>
 
 <p>
-{{introduction}}
+{{content}}
 </p>
 
 </section>
-
 
 
 
@@ -197,11 +127,7 @@ Stand:
 
 <ul>
 
-{% for source in sources %}
-
-<li>{{source}}</li>
-
-{% endfor %}
+{{sources}}
 
 </ul>
 
@@ -211,6 +137,19 @@ Stand:
 
 
 
+{% if faq %}
+
+<section class="box">
+
+<h2>Häufige Fragen</h2>
+
+{{faq}}
+
+</section>
+
+{% endif %}
+
+
 
 <section class="cta">
 
@@ -218,14 +157,7 @@ Stand:
 <strong>Werbung / Anzeige</strong>
 </p>
 
-
 <h2>Angebot prüfen</h2>
-
-
-<p>
-Prüfe aktuelle Informationen direkt beim Partner.
-</p>
-
 
 <a class="button"
 href="{{tracking_url}}"
@@ -236,58 +168,15 @@ Vergleich starten
 
 </a>
 
-
 </section>
 
 
 
-
-
-{% if faq %}
-
-<section class="box">
-
-<h2>Häufige Fragen</h2>
-
-
-{% for item in faq %}
-
-
-<h3>
-{{item.question}}
-</h3>
-
-
-<p>
-{{item.answer}}
-</p>
-
-
-{% endfor %}
-
-
-</section>
-
-{% endif %}
+{{internal_links}}
 
 
 
-
-
-{% if content %}
-
-<section class="box">
-
-<h2>Weitere Informationen</h2>
-
-<p>
-{{content}}
-</p>
-
-
-</section>
-
-{% endif %}
+{{newsletter}}
 
 
 
@@ -297,63 +186,12 @@ Vergleich starten
 
 <footer>
 
-
-<p>
-Free Basics stellt Informationen zu Produkten und Angeboten bereit.
-Links zu Partnern können Affiliate-Links enthalten.
-Bei erfolgreicher Vermittlung kann eine Provision entstehen.
-Für Nutzer entstehen dadurch keine Mehrkosten.
-</p>
-
-
-
-<p>
-
-<a href="/ueber-uns">
-Über uns
-</a>
-
-
-<a href="/kontakt">
-Kontakt
-</a>
-
-
-<a href="/faq">
-FAQ
-</a>
-
-
-<a href="/affiliate-hinweis">
-Affiliate-Hinweis
-</a>
-
-
-<a href="/impressum">
-Impressum
-</a>
-
-
-<a href="/datenschutz">
-Datenschutz
-</a>
-
-
-<a href="/barrierefreiheit">
-Barrierefreiheit
-</a>
-
-
-</p>
-
-
-
-<p>
-© 2026 Free Basics
-</p>
-
+{{footer}}
 
 </footer>
+
+
+{{cookie_consent}}
 
 
 </body>

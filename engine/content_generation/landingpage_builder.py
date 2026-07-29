@@ -316,6 +316,24 @@ class LandingPageBuilder:
 
 
 
+        faq_html = ""
+
+        for item in page.get(
+            "faq",
+            []
+        ):
+
+            faq_html += f"""
+<div class="faq-item">
+
+<h3>{item.get("question","")}</h3>
+
+<p>{item.get("answer","")}</p>
+
+</div>
+"""
+
+
         newsletter_html = """
 
 <section class="newsletter-box">
@@ -359,6 +377,9 @@ Newsletter Anmeldung
 
                 "newsletter":
                     newsletter_html,
+
+                "faq":
+                    faq_html,
 
 
                 "sources":
