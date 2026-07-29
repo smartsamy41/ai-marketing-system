@@ -5,6 +5,7 @@ from engine.knowledge_adapter import KnowledgeAdapter
 from engine.url_management.url_resolver import URLResolver
 from engine.content_generation.landingpage_builder import LandingPageBuilder
 from engine.content_generation.blog_article_builder import BlogArticleBuilder
+from engine.self_learning_agent.product_relationship_resolver import ProductRelationshipResolver
 
 
 class ContentPipeline:
@@ -20,92 +21,7 @@ class ContentPipeline:
 
         self.article_builder = BlogArticleBuilder()
 
-        self.catalog_file = Path(
-            "data_master/catalog/product_master_44.json"
-        )
-
-
-
-    def load_catalog(self):
-
-        if not self.catalog_file.exists():
-
-            return []
-
-
-        data = json.loads(
-            self.catalog_file.read_text(
-                encoding="utf-8"
-            )
-        )
-
-
-        return data.get(
-            "products",
-            []
-        )
-
-
-
-    def get_related_products(
-        self,
-        product
-    ):
-
-        catalog = self.load_catalog()
-
-
-        current_id = product.get(
-            "product_id"
-        )
-
-
-        current_category = product.get(
-            "category",
-            ""
-        ).lower()
-
-
-        related = []
-
-
-        for item in catalog:
-
-
-            if item.get(
-                "product_id"
-            ) == current_id:
-
-                continue
-
-
-
-            item_category = item.get(
-                "category",
-                ""
-            ).lower()
-
-
-
-            if item_category == current_category:
-
-                related.append(
-                    {
-                        "product_id":
-                            item.get(
-                                "product_id"
-                            ),
-
-                        "category":
-                            item.get(
-                                "category"
-                            )
-                    }
-                )
-
-
-
-        return related[:8]
+        self.relationship_resolver = ProductRelationshipResolver()
 
 
 
@@ -118,7 +34,6 @@ class ContentPipeline:
         knowledge_data = self.knowledge.build_product_context(
             product["product_id"]
         )
-
 
 
         if not knowledge_data:
@@ -146,7 +61,6 @@ class ContentPipeline:
                 product
             )
         )
-
 
 
         product["article_url"] = (
@@ -197,6 +111,40 @@ class ContentPipeline:
 
 
 
+        relationship_data = (
+            self.relationship_resolver.resolve(
+                product
+            )
+        )
+
+
+
+        product.update(
+            {
+
+                "related_products":
+                    relationship_data.get(
+                        "related_products",
+                        []
+                    ),
+
+                "newsletter_segment":
+                    relationship_data.get(
+                        "newsletter_segment",
+                        ""
+                    ),
+
+                "product_type":
+                    relationship_data.get(
+                        "type",
+                        ""
+                    )
+
+            }
+        )
+
+
+
         landingpage = self.landingpage_builder.build(
 
             product,
@@ -206,15 +154,8 @@ class ContentPipeline:
         )
 
 
-
         landingpage_html = self.landingpage_builder.render(
             landingpage
-        )
-
-
-
-        related_products = self.get_related_products(
-            product
         )
 
 
@@ -225,7 +166,31 @@ class ContentPipeline:
 
             facts=knowledge_data,
 
-            related_products=related_products
+            related_products=product.get(
+                "related_products",
+                []
+            )
+
+        )
+
+
+        article.update(
+
+            {
+
+                "newsletter_segment":
+                    product.get(
+                        "newsletter_segment",
+                        ""
+                    ),
+
+                "product_type":
+                    product.get(
+                        "product_type",
+                        ""
+                    )
+
+            }
 
         )
 
@@ -244,8 +209,8 @@ class ContentPipeline:
                 product,
 
 
-            "related_products":
-                related_products,
+            "relationship":
+                relationship_data,
 
 
             "landingpage":
@@ -271,10 +236,8 @@ class ContentPipeline:
 
 
 
+
 if __name__ == "__main__":
-
-
-    import json
 
 
     pipeline = ContentPipeline()
@@ -302,9 +265,15 @@ if __name__ == "__main__":
 
 
     print(
+
         json.dumps(
+
             result,
+
             indent=2,
+
             ensure_ascii=False
+
         )
+
     )
