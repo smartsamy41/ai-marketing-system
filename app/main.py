@@ -1001,50 +1001,109 @@ def blog_page():
 
 
 
+
+
 @app.get(
     "/blog/{slug}",
     response_class=HTMLResponse
 )
 def blog_detail(slug: str):
 
-    articles = read_records(
-        "blog_articles"
+    products = read_records(
+        "products"
     )
 
-    article = None
 
-    for item in articles:
-        if str(item.get("slug")) == slug:
-            article = item
+    product = None
+
+
+    for item in products:
+
+        product_id = str(
+            item.get("product_id")
+            or ""
+        )
+
+
+        if slug == "strom-ratgeber" and product_id == "CHK24_001":
+
+            product = item
             break
 
-    if not article:
+
+        article_url = str(
+            item.get("article_url")
+            or item.get("blog_url")
+            or ""
+        )
+
+
+        if slug in article_url:
+
+            product = item
+            break
+
+
+
+    if not product:
+
         raise HTTPException(
             status_code=404,
             detail="Artikel nicht gefunden"
         )
 
+
+
+    pipeline_result = content.generate(
+        product
+    )
+
+
+    if pipeline_result.get("status") not in [
+        "generated",
+        "READY"
+    ]:
+
+        raise HTTPException(
+            status_code=503,
+            detail="ContentPipeline nicht verfügbar"
+        )
+
+
+
+    article = pipeline_result.get(
+        "article",
+        {}
+    )
+
+
+
     title = str(
         article.get("title")
+        or product.get("product_name")
         or "Artikel"
     )
 
-    content = str(
+
+
+    article_content = str(
         article.get("content")
         or ""
     )
 
-    related = str(
-        article.get("related_landingpage")
-        or "/produkte"
-    )
+
+
+    related = f"/lp/{product.get('product_id')}"
+
+
 
     body = f"""
     <article>
+
         <h1>{title}</h1>
 
         <div>
-            {content}
+            {article_content}
         </div>
 
         <hr>
@@ -1052,21 +1111,21 @@ def blog_detail(slug: str):
         <a href="{related}">
             Passendes Produkt ansehen
         </a>
+
     </article>
     """
+
+
 
     return render_page(
         title=f"{title} | Free Basics",
         body=body,
         canonical_path=f"/blog/{slug}",
         description=str(
-            article.get("meta_description")
+            article.get("description")
             or ""
         )
     )
-
-
-
 
 
 @app.get(
@@ -1340,6 +1399,7 @@ Produkt → Knowledge Layer → Blog → Landingpage → Social → Tracking →
 # Google Sheets is the master source
 # ============================================================
 
+
 @app.get(
     "/lp/{product_id}",
     response_class=HTMLResponse
@@ -1350,10 +1410,6 @@ def landingpage(
 
     products = read_records(
         "products"
-    )
-
-    landingpages = read_records(
-        "landingpages"
     )
 
     product = find_record(
@@ -1388,43 +1444,44 @@ def landingpage(
         )
 
 
-    landing_record = find_record(
-        landingpages,
-        product_id
+    pipeline_result = content.generate(
+        product
     )
 
-    if not landing_record:
+
+    if pipeline_result.get("status") not in [
+        "generated",
+        "READY"
+    ]:
 
         raise HTTPException(
-            status_code=404,
-            detail="Landingpage nicht gefunden"
+            status_code=503,
+            detail="ContentPipeline nicht verfügbar"
         )
 
 
     product_name = str(
         product.get("product_name")
-        or landing_record.get("product_name")
+        or product.get("name")
         or product_id
     ).strip()
 
 
     seo_title = str(
-        product.get("seo_title")
-        or landing_record.get("seo_title")
+        pipeline_result.get("seo_title")
         or f"{product_name} prüfen | Free Basics"
     ).strip()
 
 
     meta_description = str(
-        product.get("meta_description")
-        or landing_record.get("meta_description")
+        pipeline_result.get("description")
         or f"Informationen zu {product_name}."
     ).strip()
 
 
     page_html = str(
-        landing_record.get("html")
-        or product.get("html")
+        pipeline_result.get("landingpage", {}).get("html")
+        or pipeline_result.get("body")
         or ""
     ).strip()
 
@@ -1433,7 +1490,7 @@ def landingpage(
 
         raise HTTPException(
             status_code=503,
-            detail="Landingpage-Inhalt nicht verfügbar"
+            detail="Pipeline Inhalt nicht verfügbar"
         )
 
 
@@ -1441,36 +1498,39 @@ def landingpage(
         product_id
     )
 
+    assets = affiliate_data.get(
+        "assets",
+        []
+    )
 
-    assets = affiliate_data.get("assets", [])
-
-    print("DEBUG PRODUCT:", product_id)
-    print("DEBUG ASSETS:", len(assets))
 
     asset_html = ""
-
-    print("DEBUG LP ASSETS COUNT:", len(assets))
 
     for asset in assets:
 
         vergleich = str(
-            asset.get("vergleichsrechner_html") or ""
+            asset.get("vergleichsrechner_html")
+            or ""
         )
 
         kurz = str(
-            asset.get("kurzrechner_html") or ""
+            asset.get("kurzrechner_html")
+            or ""
         )
 
         banner300 = str(
-            asset.get("banner_300x250_html") or ""
+            asset.get("banner_300x250_html")
+            or ""
         )
 
         banner728 = str(
-            asset.get("banner_728x90_html") or ""
+            asset.get("banner_728x90_html")
+            or ""
         )
 
 
-        if vergleich and vergleich.lower() != "nan":
+        if vergleich:
+
             asset_html += f"""
             <section>
                 <h2>Vergleichsformular</h2>
@@ -1479,7 +1539,8 @@ def landingpage(
             """
 
 
-        if kurz and kurz.lower() != "nan":
+        if kurz:
+
             asset_html += f"""
             <section>
                 <h2>Kurzrechner</h2>
@@ -1488,7 +1549,8 @@ def landingpage(
             """
 
 
-        if banner300 and banner300.lower() != "nan":
+        if banner300:
+
             asset_html += f"""
             <section>
                 <h2>Werbung / Anzeige</h2>
@@ -1497,7 +1559,8 @@ def landingpage(
             """
 
 
-        if banner728 and banner728.lower() != "nan":
+        if banner728:
+
             asset_html += f"""
             <section>
                 <h2>Werbung / Anzeige</h2>
@@ -1506,8 +1569,6 @@ def landingpage(
             """
 
 
-    print("DEBUG ASSET HTML LENGTH:", len(asset_html))
-
     tracking_url = str(
         affiliate_data.get("tracking_url")
         or affiliate_data.get("affiliate_url")
@@ -1515,83 +1576,32 @@ def landingpage(
     ).strip()
 
 
-    if not tracking_url:
-
-        raise HTTPException(
-            status_code=503,
-            detail="Partnerlink nicht verfügbar"
-        )
-
-
-    partner_notice = ""
-
-
-    if source == "tarifcheck":
-
-        partner_notice = """
-        <section style="
-            margin:24px 0;
-            padding:16px;
-            border:2px solid #ccc;
-        ">
-            <p>
-                Free Basics ist Tippgeber und kein
-                Versicherungsvermittler oder Anbieter.
-            </p>
-
-            <p>
-                <strong>
-                    Alle Vergleiche powered by
-                    TARIFCHECK24 GmbH
-                </strong>
-            </p>
-
-            <address>
-                TARIFCHECK24 GmbH<br>
-                Zollstr. 11b<br>
-                21465 Wentorf bei Hamburg<br>
-                Tel. 040 - 73098288<br>
-                Fax 040 - 73098289<br>
-                E-Mail: info@tarifcheck.de
-            </address>
-        </section>
-        """
-
-
     advertisement = f"""
-    <section style="
-        margin:24px 0;
-        padding:16px;
-        border:1px solid #ccc;
-    ">
-        <p>
-            <strong>Werbung / Anzeige</strong>
-        </p>
+    <section>
+        <strong>Werbung / Anzeige</strong>
 
         <p>
-            Dieser Bereich enthält einen Affiliate-
-            oder Partnerlink. Für Nutzer entstehen
-            dadurch keine zusätzlichen Kosten.
+        Dieser Bereich enthält einen Affiliate-
+        oder Partnerlink.
         </p>
 
-        <p>
-            <a href="{tracking_url}"
-               target="_blank"
-               rel="sponsored nofollow noopener">
-                Vergleich starten
-            </a>
-        </p>
+        <a href="{tracking_url}"
+        target="_blank"
+        rel="sponsored nofollow noopener">
+        Vergleich starten
+        </a>
+
     </section>
     """
 
 
-
     body = f"""
     <main>
-        <nav aria-label="Breadcrumb">
-            <a href="/">Startseite</a>
-            &nbsp;›&nbsp;
-            <span>{product_name}</span>
+
+        <nav>
+        <a href="/">Startseite</a>
+        ›
+        {product_name}
         </nav>
 
         {page_html}
@@ -1600,33 +1610,9 @@ def landingpage(
 
         {advertisement}
 
-        {partner_notice}
     </main>
     """
 
-
-    breadcrumb_schema = f"""
-    <script type="application/ld+json">
-    {{
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Startseite",
-          "item": "{SITE_URL}"
-        }},
-        {{
-          "@type": "ListItem",
-          "position": 2,
-          "name": "{product_name}",
-          "item": "{SITE_URL}/lp/{product_id}"
-        }}
-      ]
-    }}
-    </script>
-    """
 
     product_schema = generate_product_schema(
         {
@@ -1637,14 +1623,12 @@ def landingpage(
             "category": product_name,
             "partner": (
                 product.get("partner")
-                or product.get("tracking_partner")
                 or product.get("source")
                 or ""
             )
         }
     )
 
-    body = body + breadcrumb_schema
 
     return render_page(
         title=seo_title,
