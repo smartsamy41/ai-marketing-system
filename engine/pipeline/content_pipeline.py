@@ -176,6 +176,9 @@ class ContentPipeline:
         )
 
 
+        landingpage["html"] = landingpage_html
+
+
         knowledge_content = ""
 
 
