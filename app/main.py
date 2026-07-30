@@ -8,6 +8,7 @@ from typing import Any
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, Response
 from google.cloud import bigquery
 from google.oauth2 import service_account, id_token
@@ -38,6 +39,19 @@ from app.compliance_newsletter import register_doi_pending, confirm_doi_token
 
 app = FastAPI(
     title="FREE BASICS AI MARKETING SYSTEM"
+)
+
+
+# ============================================================
+# STATIC BRAND ASSETS
+# ============================================================
+
+app.mount(
+    "/assets",
+    StaticFiles(
+        directory="assets"
+    ),
+    name="assets"
 )
 
 
@@ -481,6 +495,36 @@ def render_page(
 <html lang="de">
 <head>
     <meta charset="utf-8">
+
+    <!-- FREE BASICS BRAND ICONS -->
+    <link rel="icon"
+          type="image/x-icon"
+          href="/assets/brand/logo/favicon.ico">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/brand/logo/favicon-32x32.png">
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/brand/logo/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="/assets/brand/logo/apple-touch-icon.png">
+
+    <!-- OPEN GRAPH BRAND -->
+    <meta property="og:image"
+          content="https://freebasics.online/assets/brand/logo/free_basics_logo.png">
+
+    <meta name="twitter:card"
+          content="summary">
+
+    <meta name="twitter:image"
+          content="https://freebasics.online/assets/brand/logo/free_basics_logo.png">
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
 
@@ -572,6 +616,7 @@ def render_page(
       "@type": "Organization",
       "name": "Free Basics",
       "url": "{SITE_URL}",
+      "logo": "https://freebasics.online/assets/brand/logo/free_basics_logo.png",
       "email": "info@freebasics.online",
       "founder": {{
         "@type": "Person",
