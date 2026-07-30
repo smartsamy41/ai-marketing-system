@@ -1529,44 +1529,13 @@ def landingpage(
         )
 
 
-        if vergleich:
+        # PHASE 6 FINAL:
+        # Pro Produkt genau ein Affiliate Bereich.
+        # Keine Mehrfachbanner.
+        # Keine zusätzlichen Rechner.
+        # CTA erfolgt über advertisement Block.
 
-            asset_html += f"""
-            <section>
-                <h2>Vergleichsformular</h2>
-                {vergleich}
-            </section>
-            """
-
-
-        if kurz:
-
-            asset_html += f"""
-            <section>
-                <h2>Kurzrechner</h2>
-                {kurz}
-            </section>
-            """
-
-
-        if banner300:
-
-            asset_html += f"""
-            <section>
-                <h2>Werbung / Anzeige</h2>
-                {banner300}
-            </section>
-            """
-
-
-        if banner728:
-
-            asset_html += f"""
-            <section>
-                <h2>Werbung / Anzeige</h2>
-                {banner728}
-            </section>
-            """
+        asset_html = ""
 
 
     tracking_url = str(
