@@ -158,8 +158,40 @@ class BlogArticleBuilder:
 
             "content":
                 product.get(
-                    "content",
-                    "Weitere Informationen und Wissensinhalte."
+                    "content"
+                )
+                or
+                (
+                    "<section>"
+                    "<h2>Informationen</h2>"
+                    f"<p>{product.get('summary', '')}</p>"
+                    "</section>"
+                    "<section>"
+                    "<h2>Wichtige Fakten</h2>"
+                    "<ul>"
+                    +
+                    "".join(
+                        f"<li>{fact}</li>"
+                        for fact in product.get(
+                            "key_facts",
+                            []
+                        )
+                    )
+                    +
+                    "</ul>"
+                    "</section>"
+                    "<section>"
+                    "<h2>Häufige Fragen</h2>"
+                    +
+                    "".join(
+                        f"<p><strong>{faq.get('question','')}</strong><br>{faq.get('answer','')}</p>"
+                        for faq in product.get(
+                            "faq",
+                            []
+                        )
+                    )
+                    +
+                    "</section>"
                 ),
 
 

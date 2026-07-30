@@ -1,5 +1,4 @@
 import json
-from pathlib import Path
 
 from engine.knowledge_adapter import KnowledgeAdapter
 from engine.url_management.url_resolver import URLResolver
@@ -39,19 +38,43 @@ class ContentPipeline:
         if not knowledge_data:
 
             return {
-
-                "status":
-                    "ERROR",
-
-                "message":
-                    "Product not found"
-
+                "status": "ERROR",
+                "message": "Product not found"
             }
 
 
 
         product.update(
             knowledge_data
+        )
+
+
+        product["summary"] = (
+            knowledge_data.get("summary")
+            or product.get("summary")
+            or ""
+        )
+
+
+        product["key_facts"] = (
+            knowledge_data.get("key_facts")
+            or knowledge_data.get("facts")
+            or product.get("key_facts")
+            or []
+        )
+
+
+        product["faq"] = (
+            knowledge_data.get("faq")
+            or product.get("faq")
+            or []
+        )
+
+
+        product["sources"] = (
+            knowledge_data.get("sources")
+            or product.get("sources")
+            or []
         )
 
 
@@ -77,24 +100,6 @@ class ContentPipeline:
                 "name",
                 ""
             )
-        )
-
-
-        product.setdefault(
-            "summary",
-            ""
-        )
-
-
-        product.setdefault(
-            "faq",
-            []
-        )
-
-
-        product.setdefault(
-            "sources",
-            []
         )
 
 
@@ -159,6 +164,80 @@ class ContentPipeline:
         )
 
 
+        knowledge_content = ""
+
+
+        summary = str(
+            knowledge_data.get(
+                "summary",
+                ""
+            )
+        ).strip()
+
+
+        key_facts = knowledge_data.get(
+            "key_facts",
+            []
+        )
+
+
+        faq = knowledge_data.get(
+            "faq",
+            []
+        )
+
+
+        sources = knowledge_data.get(
+            "sources",
+            []
+        )
+
+
+        knowledge_content += (
+            "<section>"
+            "<h2>Informationen</h2>"
+            f"<p>{summary}</p>"
+            "</section>"
+        )
+
+
+        if key_facts:
+
+            knowledge_content += (
+                "<section>"
+                "<h2>Wichtige Fakten</h2>"
+                "<ul>"
+                +
+                "".join(
+                    f"<li>{fact}</li>"
+                    for fact in key_facts
+                )
+                +
+                "</ul>"
+                "</section>"
+            )
+
+
+        if faq:
+
+            knowledge_content += (
+                "<section>"
+                "<h2>Häufige Fragen</h2>"
+                +
+                "".join(
+                    f"<p><strong>{item.get('question','')}</strong><br>{item.get('answer','')}</p>"
+                    for item in faq
+                )
+                +
+                "</section>"
+            )
+
+
+        product["content"] = knowledge_content
+
+        product["sources"] = sources
+
+
 
         article = self.article_builder.build(
 
@@ -175,7 +254,6 @@ class ContentPipeline:
 
 
         article.update(
-
             {
 
                 "newsletter_segment":
@@ -191,7 +269,6 @@ class ContentPipeline:
                     )
 
             }
-
         )
 
 
@@ -204,30 +281,23 @@ class ContentPipeline:
 
         return {
 
-
             "product":
                 product,
-
 
             "relationship":
                 relationship_data,
 
-
             "landingpage":
                 landingpage,
-
 
             "landingpage_html":
                 landingpage_html,
 
-
             "article":
                 article,
 
-
             "article_html":
                 article_html,
-
 
             "status":
                 "READY"
@@ -236,17 +306,13 @@ class ContentPipeline:
 
 
 
-
 if __name__ == "__main__":
 
-
     pipeline = ContentPipeline()
-
 
     result = pipeline.process(
 
         {
-
             "product_id":
                 "CHK24_001",
 
@@ -258,22 +324,15 @@ if __name__ == "__main__":
 
             "partner":
                 "check24"
-
         }
 
     )
 
 
     print(
-
         json.dumps(
-
             result,
-
             indent=2,
-
             ensure_ascii=False
-
         )
-
     )
