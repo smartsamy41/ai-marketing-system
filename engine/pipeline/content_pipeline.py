@@ -139,6 +139,18 @@ class ContentPipeline:
                         ""
                     ),
 
+                "silo":
+                    relationship_data.get(
+                        "silo",
+                        ""
+                    ),
+
+                "cluster":
+                    relationship_data.get(
+                        "category",
+                        ""
+                    ),
+
                 "product_type":
                     relationship_data.get(
                         "type",
