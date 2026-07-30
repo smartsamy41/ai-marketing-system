@@ -1,5 +1,6 @@
 {
   "silos": {
+
     "energie": {
       "name": "Energie",
       "hub": "/energie",
@@ -17,6 +18,7 @@
       ]
     },
 
+
     "internet_mobilfunk": {
       "name": "Internet & Mobilfunk",
       "hub": "/internet",
@@ -31,6 +33,7 @@
         "datentarife"
       ]
     },
+
 
     "versicherung": {
       "name": "Versicherung",
@@ -51,6 +54,7 @@
       ]
     },
 
+
     "finanzen": {
       "name": "Finanzen",
       "hub": "/finanzen",
@@ -67,6 +71,7 @@
       ]
     },
 
+
     "reisen": {
       "name": "Reisen",
       "hub": "/reisen",
@@ -80,19 +85,63 @@
       ]
     },
 
+
     "amazon_shopping": {
       "name": "Amazon Shopping",
       "hub": "/shopping",
       "products": [
-        "amazon_products"
+        "B0FQF32239",
+        "B0CFPWLGF2",
+        "B0DFYN8174",
+        "B0FPXFBL13",
+        "B0FPXDCDX2",
+        "B0FPXGJL6H",
+        "B0FPXDRR63",
+        "3424631078",
+        "B0FNX7HC9M",
+        "3423209690",
+        "3832167242",
+        "3426281759",
+        "B0DXLBZF4Q",
+        "B0CVXSK4D3",
+        "B08P4YPB8Q",
+        "B0FMS3V43J",
+        "B0D1YKBX82"
       ],
-      "related_categories": [
-        "elektronik",
-        "beauty",
-        "buecher",
-        "lego"
-      ]
+      "clusters": {
+
+        "elektronik": [
+          "B0FQF32239",
+          "B0CFPWLGF2"
+        ],
+
+        "beauty": [
+          "B0DFYN8174",
+          "B0DXLBZF4Q",
+          "B0CVXSK4D3",
+          "B08P4YPB8Q",
+          "B0FMS3V43J"
+        ],
+
+        "spielzeug": [
+          "B0FPXFBL13",
+          "B0FPXDCDX2",
+          "B0FPXGJL6H",
+          "B0FPXDRR63"
+        ],
+
+        "buecher": [
+          "3424631078",
+          "B0FNX7HC9M",
+          "3423209690",
+          "3832167242",
+          "3426281759",
+          "B0D1YKBX82"
+        ]
+
+      }
     },
+
 
     "telekom": {
       "name": "Telekom",
@@ -100,5 +149,6 @@
       "type": "external_shop",
       "note": "Direkte Weiterleitung zum Telekom Shop. Keine eigene Affiliate Landingpage."
     }
+
   }
 }

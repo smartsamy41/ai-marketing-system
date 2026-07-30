@@ -78,12 +78,108 @@
       ]
     },
 
+
+    "bluetooth-kopfhörer": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/bluetooth-kopfhoerer",
+      "product_id": "B0FQF32239"
+    },
+
+
+    "e-reader": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/e-reader",
+      "product_id": "B0CFPWLGF2"
+    },
+
+
+    "körperpflege & elektrorasierer": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/koerperpflege",
+      "product_ids": [
+        "B0DFYN8174",
+        "B0DXLBZF4Q"
+      ]
+    },
+
+
+    "rasierklingen & zubehör": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/rasierklingen",
+      "product_id": "B0CVXSK4D3"
+    },
+
+
+    "kosmetik - wimperntusche": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/kosmetik",
+      "product_id": "B08P4YPB8Q"
+    },
+
+
+    "nahrungsergänzung - magnesium": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/magnesium",
+      "product_id": "B0FMS3V43J"
+    },
+
+
+    "bauspielzeugsets": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/bauspielzeug",
+      "product_ids": [
+        "B0FPXFBL13",
+        "B0FPXDCDX2",
+        "B0FPXGJL6H",
+        "B0FPXDRR63"
+      ]
+    },
+
+
+    "bücher - psychologie & persönlichkeitsentwicklung": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/buecher-psychologie",
+      "product_id": "3424631078"
+    },
+
+
+    "bücher - psychothriller": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/psychothriller",
+      "product_ids": [
+        "B0FNX7HC9M",
+        "3426281759"
+      ]
+    },
+
+
+    "bücher - persönlichkeitsentwicklung & lebenshilfe": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/persoenlichkeitsentwicklung",
+      "product_id": "3423209690"
+    },
+
+
+    "bücher - roman & gegenwartsliteratur": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/romane",
+      "product_id": "3832167242"
+    },
+
+
+    "bücher - liebesromane / new adult": {
+      "silo": "amazon_shopping",
+      "article": "/shopping/new-adult",
+      "product_id": "B0D1YKBX82"
+    },
+
+
     "shopping": {
       "silo": "amazon_shopping",
       "article": "/shopping",
-      "landingpage": "",
       "product_id": "amazon_products"
     },
+
 
     "telekom": {
       "silo": "telekom",

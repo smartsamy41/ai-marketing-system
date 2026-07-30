@@ -57,9 +57,9 @@ class LandingPageBuilder:
         slug = (
             name.lower()
             .replace(" ", "-")
-            .replace("ö","oe")
-            .replace("ä","ae")
-            .replace("ü","ue")
+            .replace("ö", "oe")
+            .replace("ä", "ae")
+            .replace("ü", "ue")
         )
 
 
@@ -71,8 +71,25 @@ class LandingPageBuilder:
 
         external_shop = False
 
+
         if partner.lower() == "telekom":
+
             external_shop = True
+
+
+
+        resolved_related_products = (
+
+            related_products
+
+            or
+
+            product.get(
+                "related_products",
+                []
+            )
+
+        )
 
 
 
@@ -83,158 +100,195 @@ class LandingPageBuilder:
                 "category": category
             },
 
-            related_products or []
+            resolved_related_products
 
         )
 
 
 
-        newsletter_segment = (
-            category.lower()
-            .replace(" ","_")
+        silo = product.get(
+            "silo",
+            ""
         )
 
+
+        cluster = product.get(
+            "cluster",
+            category
+        )
+
+
+        newsletter_segment = product.get(
+            "newsletter_segment",
+            silo
+            or
+            category.lower().replace(
+                " ",
+                "_"
+            )
+        )
 
 
         return {
 
 
             "product_id":
+
                 product_id,
 
 
             "title":
+
                 name,
 
 
             "category":
+
                 category,
 
 
             "partner":
+
                 partner,
 
 
+            "silo":
+
+                silo,
+
+
+            "cluster":
+
+                cluster,
+
+
+            "related_products":
+
+                resolved_related_products,
+
+
             "landingpage_url":
+
                 f"https://freebasics.online/lp/{product_id}",
 
 
             "article_url":
+
                 f"https://freebasics.online/blog/{slug}-ratgeber",
 
 
-
             "tracking_url":
+
                 product.get(
                     "tracking_url",
                     ""
                 ),
 
 
-
             "external_shop":
+
                 external_shop,
 
 
             "shop_url":
+
                 product.get(
                     "shop_url",
                     ""
                 ),
 
 
-
             "description":
+
                 product.get(
                     "summary",
                     "Informationen und Wissensartikel."
                 ),
 
 
-
             "content":
+
                 product.get(
                     "content",
                     "Weitere Informationen zum Angebot."
                 ),
 
 
-
             "sources":
+
                 product.get(
                     "sources",
                     []
                 ),
 
 
-
             "faq":
+
                 product.get(
                     "faq",
                     []
                 ),
 
 
-
             "internal_links":
+
                 link_result,
 
 
-
             "newsletter_enabled":
+
                 True,
 
 
             "newsletter_segment":
+
                 newsletter_segment,
 
 
             "newsletter_topic":
+
                 f"Neue Informationen zu {category}",
 
 
-
             "facts":
+
                 facts or {},
 
 
-
             "author":
+
                 product.get(
                     "author",
                     "Redaktion Free Basics"
                 ),
 
 
-
             "reviewer":
+
                 product.get(
                     "reviewed_by",
                     "Free Basics Qualitätsprüfung"
                 ),
 
 
-
             "updated_at":
+
                 product.get(
                     "updated_at",
                     now
                 ),
 
 
-
             "status":
+
                 "ready_for_review",
 
 
-
             "system":
+
                 self.system
 
         }
-
-
-
     def render(
         self,
         page
@@ -244,26 +298,31 @@ class LandingPageBuilder:
         schema = {
 
             "@context":
+
                 "https://schema.org",
 
 
             "@type":
+
                 "WebPage",
 
 
             "name":
+
                 page.get(
                     "title"
                 ),
 
 
             "url":
+
                 page.get(
                     "landingpage_url"
                 ),
 
 
             "about":
+
                 page.get(
                     "category"
                 )
@@ -314,6 +373,79 @@ class LandingPageBuilder:
 
 
 
+        related_html = ""
+
+
+        for item in page.get(
+            "related_products",
+            []
+        ):
+
+
+            related_html += f"""
+
+<div class="related-product">
+
+<a href="/lp/{item.get('product_id')}">
+
+{item.get('product_id')}
+-
+{item.get('category','')}
+
+</a>
+
+</div>
+
+"""
+
+
+
+        cluster_html = f"""
+
+<section class="cluster-box">
+
+<h2>
+Themenbereich
+</h2>
+
+
+<p>
+Silo:
+{page.get('silo','')}
+</p>
+
+
+<p>
+Cluster:
+{page.get('cluster','')}
+</p>
+
+
+<p>
+Newsletter Segment:
+{page.get('newsletter_segment','')}
+</p>
+
+
+</section>
+
+
+<section class="related-products">
+
+<h2>
+Verwandte Produkte
+</h2>
+
+
+{related_html}
+
+
+</section>
+
+"""
+
+
+
         faq_html = ""
 
 
@@ -322,13 +454,20 @@ class LandingPageBuilder:
             []
         ):
 
+
             faq_html += f"""
 
 <div class="faq-item">
 
-<h3>{item.get("question","")}</h3>
+<h3>
+{item.get("question","")}
+</h3>
 
-<p>{item.get("answer","")}</p>
+
+<p>
+{item.get("answer","")}
+</p>
+
 
 </div>
 
@@ -344,20 +483,20 @@ class LandingPageBuilder:
 Newsletter
 </h3>
 
+
 <p>
 Neue Ratgeber und Informationen erhalten.
 </p>
+
 
 <a href="/newsletter">
 Newsletter Anmeldung
 </a>
 
+
 </section>
 
 """
-
-
-
         return self.renderer.render(
 
             "landingpages/geo_optimized_landingpage.html",
@@ -368,40 +507,57 @@ Newsletter Anmeldung
 
 
                 "canonical_url":
+
                     page.get(
                         "landingpage_url"
                     ),
 
 
                 "internal_links":
+
                     internal_html,
 
 
+                "cluster":
+
+                    cluster_html,
+
+
                 "newsletter":
+
                     newsletter_html,
 
 
                 "faq":
+
                     faq_html,
 
 
                 "sources":
+
                     sources_html,
 
 
                 "footer":
+
                     get_eeat_footer(),
 
 
                 "cookie_consent":
+
                     get_cookie_consent_script(),
 
 
                 "page_schema":
+
                     json.dumps(
+
                         schema,
+
                         indent=2,
+
                         ensure_ascii=False
+
                     )
 
             }
@@ -419,8 +575,11 @@ Newsletter Anmeldung
         required = [
 
             "product_id",
+
             "title",
+
             "landingpage_url",
+
             "updated_at"
 
         ]
@@ -441,10 +600,12 @@ Newsletter Anmeldung
 
 
             "valid":
-                len(missing)==0,
+
+                len(missing) == 0,
 
 
             "missing":
+
                 missing
 
         }
@@ -462,16 +623,33 @@ if __name__ == "__main__":
         {
 
             "product_id":
+
                 "CHK24_001",
 
+
             "name":
+
                 "Strom",
 
+
             "category":
-                "strom",
+
+                "energie",
+
 
             "partner":
-                "check24"
+
+                "check24",
+
+
+            "silo":
+
+                "energie",
+
+
+            "cluster":
+
+                "strom"
 
         }
 
@@ -479,11 +657,18 @@ if __name__ == "__main__":
 
 
     print(
-        builder.validate(page)
+
+        builder.validate(
+            page
+        )
+
     )
 
 
     print(
-        builder.render(page)[:1000]
-    )
 
+        builder.render(
+            page
+        )[:1000]
+
+    )
