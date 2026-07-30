@@ -1,55 +1,135 @@
 from datetime import datetime, timezone
 
 from engine.google_sheets_live import GoogleSheetsLive
-from engine.secret_manager import SecretManager
-from engine.bigquery_logger import BigQueryLogger
 
 
 class NewsletterLearningEngine:
 
+
     def __init__(self):
-        secrets = SecretManager()
 
-        self.sheets = GoogleSheetsLive(
-            spreadsheet_id=secrets.get("GOOGLE_SHEET_ID"),
-            credentials_json=secrets.get("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+        self.sheets = GoogleSheetsLive()
+
+
+
+    def now(self):
+
+        return datetime.now(
+            timezone.utc
+        ).isoformat()
+
+
+
+    def analyze_campaign(
+        self,
+        campaign_id
+    ):
+
+        events = self.sheets.read_records(
+            "newsletter_events"
         )
 
-        self.bq = BigQueryLogger(
-            project_id="smartcontent2050",
-            dataset="smartcontent",
-            table="events"
-        )
 
-    def learn(self, campaign_id, event_type):
+        campaign_events = [
 
-        row = {
+            e for e in events
+
+            if e.get("campaign_id")
+            ==
+            campaign_id
+
+        ]
+
+
+        opened = False
+        clicked = False
+        visited = False
+        conversion = False
+
+
+        for event in campaign_events:
+
+            event_type = event.get(
+                "event_type",
+                ""
+            )
+
+
+            if event_type == "OPENED":
+                opened = True
+
+
+            if event_type == "CLICKED":
+                clicked = True
+
+
+            if event_type == "VISITED_LANDINGPAGE":
+                visited = True
+
+
+            if event_type == "CONVERSION":
+                conversion = True
+
+
+
+        result = "NO_ACTIVITY"
+
+
+        if conversion:
+
+            result = "CONVERSION"
+
+
+        elif clicked:
+
+            result = "CLICKED"
+
+
+        elif opened:
+
+            result = "OPENED"
+
+
+
+        return {
+
             "campaign_id": campaign_id,
-            "opened": event_type == "OPENED",
-            "clicked": event_type == "CLICKED",
-            "visited_freebasics": event_type == "VISITED_FREEBASICS",
-            "conversion": event_type == "CONVERSION",
-            "result": event_type
+
+            "opened": opened,
+
+            "clicked": clicked,
+
+            "visited_freebasics": visited,
+
+            "conversion": conversion,
+
+            "result": result
+
         }
+
+
+
+    def save_learning(
+        self,
+        campaign_id
+    ):
+
+        data = self.analyze_campaign(
+            campaign_id
+        )
+
 
         self.sheets.append(
             "ai_campaign_learning",
             [
-                campaign_id,
-                row["opened"],
-                row["clicked"],
-                row["visited_freebasics"],
-                row["conversion"],
-                row["result"]
+                data["campaign_id"],
+                str(data["opened"]),
+                str(data["clicked"]),
+                str(data["visited_freebasics"]),
+                str(data["conversion"]),
+                data["result"]
             ]
         )
 
-        self.bq.log(
-            "NEWSLETTER_LEARNING",
-            {
-                "campaign_id": campaign_id,
-                "event_type": event_type
-            }
-        )
 
-        return row
+        return data

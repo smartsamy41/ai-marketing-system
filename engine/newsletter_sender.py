@@ -1,10 +1,12 @@
 import smtplib
+
 from email.message import EmailMessage
 
 from engine.secret_manager import SecretManager
 
 
 class NewsletterSender:
+
 
     def __init__(self):
 
@@ -22,6 +24,7 @@ class NewsletterSender:
         self.smtp_port = 465
 
 
+
     def send_doi_mail(
         self,
         recipient,
@@ -32,6 +35,7 @@ class NewsletterSender:
             "https://freebasics.online/newsletter/confirm?token="
             + token
         )
+
 
         msg = EmailMessage()
 
@@ -50,7 +54,7 @@ Hallo,
 
 vielen Dank für deine Anmeldung zum Free Basics Newsletter.
 
-Bitte bestätige deine E-Mail-Adresse über diesen Link:
+Bitte bestätige deine E-Mail-Adresse:
 
 {confirm_url}
 
@@ -62,6 +66,56 @@ Free Basics
 """
         )
 
+
+        self._send(
+            msg
+        )
+
+
+        return True
+
+
+
+    def send_html_mail(
+        self,
+        recipient,
+        subject,
+        html
+    ):
+
+        msg = EmailMessage()
+
+        msg["Subject"] = subject
+
+        msg["From"] = self.email
+
+        msg["To"] = recipient
+
+
+        msg.set_content(
+            "Bitte HTML Ansicht aktivieren."
+        )
+
+
+        msg.add_alternative(
+            html,
+            subtype="html"
+        )
+
+
+        self._send(
+            msg
+        )
+
+
+        return True
+
+
+
+    def _send(
+        self,
+        msg
+    ):
 
         with smtplib.SMTP_SSL(
             self.smtp_host,
@@ -76,6 +130,3 @@ Free Basics
             server.send_message(
                 msg
             )
-
-
-        return True
