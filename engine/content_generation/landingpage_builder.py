@@ -508,8 +508,10 @@ Newsletter Anmeldung
 
                 "canonical_url":
 
-                    page.get(
-                        "landingpage_url"
+                    (
+                        page.get("landingpage_url")
+                        or page.get("final_url")
+                        or f"https://freebasics.online/lp/{page.get('product_id','')}"
                     ),
 
 
