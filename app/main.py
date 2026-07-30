@@ -425,6 +425,31 @@ def find_record(
     return None
 
 
+def load_silo_structure() -> dict:
+    """
+    Lädt die zentrale Silo/Cluster Struktur
+    für Startseite und Hub-Seiten.
+    """
+
+    path = Path(
+        "data_master/linking/silo_structure.json"
+    )
+
+    if not path.exists():
+        return {}
+
+    try:
+        return json.loads(
+            path.read_text(
+                encoding="utf-8"
+            )
+        )
+
+    except Exception:
+        return {}
+
+
+
 def legal_navigation() -> str:
 
     return """
@@ -596,74 +621,151 @@ def render_page(
 )
 def home():
 
-    body = """
+    silo_data = load_silo_structure()
+
+    silos = silo_data.get(
+        "silos",
+        {}
+    )
+
+    silo_html = ""
+
+    for silo_id, silo in silos.items():
+
+        silo_name = silo.get(
+            "name",
+            silo_id
+        )
+
+        hub = silo.get(
+            "hub",
+            "#"
+        )
+
+        categories = silo.get(
+            "related_categories",
+            []
+        )
+
+        products = silo.get(
+            "products",
+            []
+        )
+
+
+        category_html = "".join(
+            f"""
+            <li>{category}</li>
+            """
+            for category in categories
+        )
+
+
+        product_html = "".join(
+            f"""
+            <li>
+                <a href="/lp/{product}">
+                    {product}
+                </a>
+            </li>
+            """
+            for product in products
+        )
+
+
+        silo_html += f"""
+
+        <section>
+
+            <h2>
+                <a href="{hub}">
+                    {silo_name}
+                </a>
+            </h2>
+
+
+            <h3>
+                Cluster
+            </h3>
+
+            <ul>
+                {category_html}
+            </ul>
+
+
+            <h3>
+                Produkte
+            </h3>
+
+            <ul>
+                {product_html}
+            </ul>
+
+        </section>
+
+        """
+
+
+    body = f"""
     <main>
+
         <header>
-            <p><strong>Free Basics</strong></p>
+
+            <p>
+                <strong>
+                    Free Basics
+                </strong>
+            </p>
+
 
             <h1>
                 Produkte, Tarife und Angebote übersichtlich prüfen
             </h1>
 
+
             <p>
                 Free Basics stellt Informationen zu Technik,
-                Internet, Energie, Finanzen, Reisen, Büchern,
+                Internet, Energie, Finanzen, Reisen,
                 Haushalt und weiteren Themen bereit.
             </p>
+
         </header>
 
+
+
         <section>
-            <h2>Produkte entdecken</h2>
+
+            <h2>
+                Unsere Bereiche
+            </h2>
+
 
             <p>
-                Entdecken Sie unsere Produktbereiche und prüfen Sie
-                passende Informationen zu ausgewählten Angeboten.
+                Entdecken Sie unsere Themenbereiche,
+                Cluster und ausgewählte Produkte.
             </p>
 
-            <p>
-                <a href="/produkte">
-                    Alle Produkte ansehen
-                </a>
-            </p>
         </section>
 
-        <section>
-            <h2>Informationen und Vergleiche</h2>
 
-            <p>
-                Auf unseren Seiten finden Nutzer
-                Produktinformationen, Vergleichsmöglichkeiten
-                und Hinweise zu ausgewählten Angeboten.
-            </p>
+
+        {silo_html}
+
+
+
+        <section>
+
+            <h2>
+                Transparenz
+            </h2>
+
 
             <p>
                 Externe Partnerbereiche und Affiliate-Links
                 werden transparent als Werbung oder Anzeige
                 gekennzeichnet.
             </p>
-        </section>
 
-        <section>
-            <h2>Unsere Themen</h2>
-
-            <ul>
-                <li>Technik und Internet</li>
-                <li>Strom und Energie</li>
-                <li>Finanzen und Versicherungen</li>
-                <li>Reisen und Mobilität</li>
-                <li>Produkte für Alltag und Haushalt</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Transparenz</h2>
-
-            <p>
-                Free Basics kann für qualifizierte Käufe,
-                Abschlüsse oder Anfragen eine Provision erhalten.
-                Für Nutzer entstehen dadurch keine zusätzlichen
-                Kosten.
-            </p>
 
             <p>
                 Weitere Informationen stehen im
@@ -671,9 +773,14 @@ def home():
                     Affiliate-Hinweis
                 </a>.
             </p>
+
+
         </section>
+
+
     </main>
     """
+
 
     return render_page(
         title="Free Basics | Produkte und Angebote prüfen",
