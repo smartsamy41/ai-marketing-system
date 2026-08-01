@@ -42,6 +42,17 @@ from engine.canva.canva_oauth import (
 
 
 
+
+# ==================================================
+# CANVA PKCE TEMP STORAGE
+# ==================================================
+
+CANVA_PKCE_STORE = {}
+
+# ==================================================
+# END CANVA PKCE TEMP STORAGE
+# ==================================================
+
 app = FastAPI(
     title="FREE BASICS AI MARKETING SYSTEM"
 )
@@ -2406,6 +2417,11 @@ def canva_login():
     authorization_url, state, code_verifier = create_canva_authorization_url(
         redirect_uri
     )
+
+    CANVA_PKCE_STORE[state] = {
+        "redirect_uri": redirect_uri,
+        "code_verifier": code_verifier
+    }
 
     return {
         "status": "CANVA_OAUTH_START",

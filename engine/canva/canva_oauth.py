@@ -1,6 +1,8 @@
 import os
 import secrets
 import urllib.parse
+import hashlib
+import base64
 import requests
 
 
@@ -17,12 +19,24 @@ def get_canva_client_secret():
 
 
 def create_canva_authorization_url(redirect_uri):
+
     client_id = get_canva_client_id()
+
+    code_verifier = secrets.token_urlsafe(64)
+
+    challenge = hashlib.sha256(
+        code_verifier.encode("utf-8")
+    ).digest()
+
+    code_challenge = base64.urlsafe_b64encode(
+        challenge
+    ).decode("utf-8").rstrip("=")
 
     state = secrets.token_urlsafe(32)
 
     params = {
         "code_challenge_method": "s256",
+        "code_challenge": code_challenge,
         "response_type": "code",
         "client_id": client_id,
         "redirect_uri": redirect_uri,
@@ -41,7 +55,7 @@ def create_canva_authorization_url(redirect_uri):
         CANVA_AUTH_URL
         + "?"
         + urllib.parse.urlencode(params)
-    ), state
+    ), state, code_verifier
 
 
 def exchange_canva_code(code, redirect_uri, code_verifier):
