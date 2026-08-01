@@ -1,0 +1,268 @@
+{
+  "project": "FREE BASICS AI MARKETING SYSTEM",
+  "version": "1.0",
+  "updated": "2026-08-01",
+  "apis": [
+    {
+      "api_name": "Google Sheets API",
+      "provider": "Google",
+      "secret_name": "GOOGLE_SHEET_ID",
+      "module": "Google Sheets Engine",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Google Drive API",
+      "provider": "Google",
+      "secret_name": "GOOGLE_DRIVE_FOLDER_ID",
+      "module": "Drive Asset Engine",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "BigQuery API",
+      "provider": "Google",
+      "secret_name": "BIGQUERY_PROJECT_ID",
+      "module": "Data Layer",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Cloud Storage API",
+      "provider": "Google",
+      "secret_name": "",
+      "module": "Backup Storage",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Cloud Run API",
+      "provider": "Google",
+      "secret_name": "CLOUD_RUN_URL",
+      "module": "Runtime",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Cloud Monitoring API",
+      "provider": "Google",
+      "secret_name": "",
+      "module": "Monitoring",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "OpenAI API",
+      "provider": "OpenAI",
+      "secret_name": "OPENAI_API_KEY",
+      "module": "AI Engine",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Gemini API",
+      "provider": "Google",
+      "secret_name": "GEMINI_API_KEY",
+      "module": "AI Engine",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Groq API",
+      "provider": "Groq",
+      "secret_name": "GROQ_API_KEY",
+      "module": "AI Engine",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Hugging Face API",
+      "provider": "Hugging Face",
+      "secret_name": "HF_TOKEN",
+      "module": "AI Engine",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Pinterest API",
+      "provider": "Pinterest",
+      "secret_name": "PINTEREST_ACCESS_TOKEN",
+      "module": "Publishing Engine",
+      "status": "CONNECTED",
+      "last_test": "REVIEW",
+      "error": ""
+    },
+    {
+      "api_name": "YouTube Data API",
+      "provider": "Google",
+      "secret_name": "YOUTUBE_REFRESH_TOKEN",
+      "module": "Video Publishing",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "TikTok API",
+      "provider": "TikTok",
+      "secret_name": "TIKTOK_CLIENT_SECRET",
+      "module": "Publishing Tracking",
+      "status": "CONNECTED",
+      "last_test": "REVIEW",
+      "error": ""
+    },
+    {
+      "api_name": "Google Search Console API",
+      "provider": "Google",
+      "secret_name": "GOOGLE_APPLICATION_CREDENTIALS_JSON",
+      "module": "Search Discovery",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Bing Webmaster API",
+      "provider": "Microsoft",
+      "secret_name": "BING_WEBMASTER_API_KEY",
+      "module": "Search Discovery",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "IndexNow",
+      "provider": "Microsoft",
+      "secret_name": "INDEXNOW_KEY",
+      "module": "Index Engine",
+      "status": "READY",
+      "last_test": "PENDING",
+      "error": ""
+    },
+    {
+      "api_name": "Google Analytics Data API",
+      "provider": "Google",
+      "secret_name": "GOOGLE_APPLICATION_CREDENTIALS_JSON",
+      "module": "Analytics Engine",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "YouTube Analytics API",
+      "provider": "Google",
+      "secret_name": "YOUTUBE_REFRESH_TOKEN",
+      "module": "Video Analytics",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Google Tag Manager",
+      "provider": "Google",
+      "secret_name": "GOOGLE_TAG_MANAGER_ID",
+      "module": "Tracking Engine",
+      "status": "READY",
+      "last_test": "PENDING",
+      "error": ""
+    },
+    {
+      "api_name": "Microsoft Clarity",
+      "provider": "Microsoft",
+      "secret_name": "CLARITY_PROJECT_ID",
+      "module": "User Analytics",
+      "status": "READY",
+      "last_test": "PENDING",
+      "error": ""
+    },
+    {
+      "api_name": "Wikidata SPARQL API",
+      "provider": "Wikimedia",
+      "secret_name": "",
+      "module": "Knowledge Graph",
+      "status": "READY",
+      "last_test": "PENDING",
+      "error": ""
+    },
+    {
+      "api_name": "MediaWiki API",
+      "provider": "Wikimedia",
+      "secret_name": "",
+      "module": "Knowledge Graph",
+      "status": "READY",
+      "last_test": "PENDING",
+      "error": ""
+    },
+    {
+      "api_name": "Schema.org",
+      "provider": "Schema.org",
+      "secret_name": "",
+      "module": "Structured Data",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "JSON-LD",
+      "provider": "Schema.org",
+      "secret_name": "",
+      "module": "Structured Data",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "OpenGraph",
+      "provider": "Open Graph Protocol",
+      "secret_name": "",
+      "module": "Social Metadata",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "llms.txt",
+      "provider": "Web Standard",
+      "secret_name": "",
+      "module": "AI Discovery",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "MCP",
+      "provider": "Model Context Protocol",
+      "secret_name": "",
+      "module": "AI Discovery",
+      "status": "READY",
+      "last_test": "PENDING",
+      "error": ""
+    },
+    {
+      "api_name": "OpenAPI",
+      "provider": "OpenAPI Initiative",
+      "secret_name": "",
+      "module": "API Documentation",
+      "status": "ACTIVE",
+      "last_test": "PASS",
+      "error": ""
+    },
+    {
+      "api_name": "Canva Connect API",
+      "provider": "Canva",
+      "secret_name": "CANVA_CLIENT_ID,CANVA_CLIENT_SECRET",
+      "module": "Design Engine",
+      "status": "CONNECTED",
+      "last_test": "PASS",
+      "error": ""
+    }
+  ]
+}

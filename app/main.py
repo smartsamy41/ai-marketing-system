@@ -34,12 +34,45 @@ from engine.youtube_real import YouTubeReal
 from app.schema_generator import generate_product_schema
 from engine.tiktok_tracking import TikTokTracking
 from app.compliance_newsletter import register_doi_pending, confirm_doi_token
+from engine.canva.canva_oauth import (
+    create_canva_authorization_url,
+    exchange_canva_code
+)
+
 
 
 
 app = FastAPI(
     title="FREE BASICS AI MARKETING SYSTEM"
 )
+
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = (
+        "camera=(), microphone=(), geolocation=(), payment=()"
+    )
+    response.headers["Strict-Transport-Security"] = (
+        "max-age=31536000; includeSubDomains"
+    )
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; "
+        "img-src 'self' data: https:; "
+        "style-src 'self' 'unsafe-inline'; "
+        "script-src 'self' 'unsafe-inline' https:; "
+        "font-src 'self' data: https:; "
+        "connect-src 'self' https:; "
+        "frame-src 'self' https:; "
+        "object-src 'none'; "
+        "base-uri 'self'; "
+        "frame-ancestors 'self';"
+    )
+
+    return response
 
 
 # ============================================================
@@ -2358,6 +2391,52 @@ def pinterest_file():
 # AI RUN
 # Existing safe behavior
 # ============================================================
+
+
+
+# ==================================================
+# CANVA CONNECT API OAUTH
+# ==================================================
+
+@app.get("/canva/login")
+def canva_login():
+
+    redirect_uri = "https://freebasics.online/canva/callback"
+
+    authorization_url, state = create_canva_authorization_url(
+        redirect_uri
+    )
+
+    return {
+        "status": "CANVA_OAUTH_START",
+        "authorization_url": authorization_url,
+        "state": state
+    }
+
+
+@app.get("/canva/callback")
+def canva_callback(
+    code: str = None,
+    state: str = None
+):
+
+    if not code:
+        raise HTTPException(
+            status_code=400,
+            detail="Missing Canva authorization code"
+        )
+
+    return {
+        "status": "CANVA_CALLBACK_RECEIVED",
+        "code_received": True,
+        "state_received": bool(state)
+    }
+
+
+# ==================================================
+# END CANVA CONNECT API OAUTH
+# ==================================================
+
 
 @app.post("/run")
 def run_system(request: Request):
