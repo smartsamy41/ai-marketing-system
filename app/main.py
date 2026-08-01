@@ -2427,10 +2427,31 @@ def canva_callback(
             detail="Missing Canva authorization code"
         )
 
+    if not state:
+        raise HTTPException(
+            status_code=400,
+            detail="Missing Canva OAuth state"
+        )
+
+    session = CANVA_PKCE_STORE.get(state)
+
+    if not session:
+        raise HTTPException(
+            status_code=400,
+            detail="Unknown Canva OAuth state"
+        )
+
+    token = exchange_canva_code(
+        code,
+        session["redirect_uri"],
+        session["code_verifier"]
+    )
+
     return {
-        "status": "CANVA_CALLBACK_RECEIVED",
-        "code_received": True,
-        "state_received": bool(state)
+        "status": "CANVA_CONNECTED",
+        "token_received": True,
+        "token_type": token.get("token_type"),
+        "expires_in": token.get("expires_in")
     }
 
 
