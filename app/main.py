@@ -2403,14 +2403,15 @@ def canva_login():
 
     redirect_uri = "https://freebasics.online/canva/callback"
 
-    authorization_url, state = create_canva_authorization_url(
+    authorization_url, state, code_verifier = create_canva_authorization_url(
         redirect_uri
     )
 
     return {
         "status": "CANVA_OAUTH_START",
         "authorization_url": authorization_url,
-        "state": state
+        "state": state,
+        "code_verifier": code_verifier
     }
 
 
