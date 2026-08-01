@@ -77,6 +77,9 @@ def exchange_canva_code(code, redirect_uri, code_verifier):
         timeout=30,
     )
 
+    print("CANVA_STATUS:", response.status_code)
+    print("CANVA_RESPONSE:", response.text)
+
     response.raise_for_status()
 
     return response.json()
