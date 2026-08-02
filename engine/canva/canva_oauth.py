@@ -64,26 +64,26 @@ def exchange_canva_code(code, redirect_uri, code_verifier):
     client_secret = get_canva_client_secret()
 
     print("CANVA DEBUG CLIENT_ID:", client_id)
-    print("CANVA DEBUG SECRET LENGTH:", len(client_secret) if client_secret else None)
-    print("CANVA DEBUG SECRET START:", client_secret[:10] if client_secret else None)
+    print(
+        "CANVA DEBUG SECRET LENGTH:",
+        len(client_secret) if client_secret else None
+    )
 
     data = {
         "grant_type": "authorization_code",
         "code": code,
         "redirect_uri": redirect_uri,
         "code_verifier": code_verifier,
-        
     }
 
     response = requests.post(
-    CANVA_TOKEN_URL,
-    data=data,
-    auth=(client_id, client_secret),
-    timeout=30,
-)
+        CANVA_TOKEN_URL,
+        data=data,
+        auth=(client_id, client_secret),
+        timeout=30,
     )
 
-    print("CANVA_STATUS:", us_code)
+    print("CANVA_STATUS:", response.status_code)
     print("CANVA_RESPONSE:", response.text)
 
     response.raise_for_status()
