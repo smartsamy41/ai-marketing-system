@@ -72,17 +72,18 @@ def exchange_canva_code(code, redirect_uri, code_verifier):
         "code": code,
         "redirect_uri": redirect_uri,
         "code_verifier": code_verifier,
-        "client_id": client_id,
-        "client_secret": client_secret,
+        
     }
 
     response = requests.post(
-        CANVA_TOKEN_URL,
-        data=data,
-        timeout=30,
+    CANVA_TOKEN_URL,
+    data=data,
+    auth=(client_id, client_secret),
+    timeout=30,
+)
     )
 
-    print("CANVA_STATUS:", response.status_code)
+    print("CANVA_STATUS:", us_code)
     print("CANVA_RESPONSE:", response.text)
 
     response.raise_for_status()
