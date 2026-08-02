@@ -68,12 +68,13 @@ def exchange_canva_code(code, redirect_uri, code_verifier):
         "code": code,
         "redirect_uri": redirect_uri,
         "code_verifier": code_verifier,
+        "client_id": client_id,
+        "client_secret": client_secret,
     }
 
     response = requests.post(
         CANVA_TOKEN_URL,
         data=data,
-        auth=(client_id, client_secret),
         timeout=30,
     )
 
