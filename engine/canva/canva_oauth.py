@@ -63,6 +63,10 @@ def exchange_canva_code(code, redirect_uri, code_verifier):
     client_id = get_canva_client_id()
     client_secret = get_canva_client_secret()
 
+    print("CANVA DEBUG CLIENT_ID:", client_id)
+    print("CANVA DEBUG SECRET LENGTH:", len(client_secret) if client_secret else None)
+    print("CANVA DEBUG SECRET START:", client_secret[:10] if client_secret else None)
+
     data = {
         "grant_type": "authorization_code",
         "code": code,
