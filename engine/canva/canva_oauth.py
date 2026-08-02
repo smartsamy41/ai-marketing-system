@@ -24,12 +24,12 @@ def create_canva_authorization_url(redirect_uri):
 
     code_verifier = secrets.token_urlsafe(64)
 
-    challenge = hashlib.sha256(
+    digest = hashlib.sha256(
         code_verifier.encode("utf-8")
     ).digest()
 
     code_challenge = base64.urlsafe_b64encode(
-        challenge
+        digest
     ).decode("utf-8").rstrip("=")
 
     state = secrets.token_urlsafe(32)
@@ -51,11 +51,13 @@ def create_canva_authorization_url(redirect_uri):
         "state": state,
     }
 
-    return (
+    url = (
         CANVA_AUTH_URL
         + "?"
         + urllib.parse.urlencode(params)
-    ), state, code_verifier
+    )
+
+    return url, state, code_verifier
 
 
 def exchange_canva_code(code, redirect_uri, code_verifier):
@@ -79,13 +81,20 @@ def exchange_canva_code(code, redirect_uri, code_verifier):
     response = requests.post(
         CANVA_TOKEN_URL,
         data=data,
-        auth=(client_id, client_secret),
+        auth=(
+            client_id,
+            client_secret
+        ),
         timeout=30,
     )
 
     print("CANVA_STATUS:", response.status_code)
     print("CANVA_RESPONSE:", response.text)
 
-    response.raise_for_status()
+    if response.status_code != 200:
+        raise Exception(
+            "CANVA TOKEN ERROR: "
+            + response.text
+        )
 
     return response.json()
