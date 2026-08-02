@@ -1,3 +1,5 @@
+import json
+
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
@@ -18,7 +20,7 @@ class DriveAssetManager:
         )
 
         credentials = Credentials.from_service_account_info(
-            eval(credentials_json)
+            json.loads(credentials_json)
         )
 
         self.drive = build(

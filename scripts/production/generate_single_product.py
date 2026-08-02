@@ -17,6 +17,11 @@ from engine.publishing.repository_publisher import RepositoryPublisher
 
 
 
+# HIER DAS PRODUKT ÄNDERN
+PRODUCT_ID = "CHK24_004"
+
+
+
 pipeline = ContentPipeline()
 
 renderer = ProductionRenderer()
@@ -38,9 +43,15 @@ product = next(
 
     p for p in catalog["products"]
 
-    if p["product_id"] == "CHK24_001"
+    if p["product_id"] == PRODUCT_ID
 
 )
+
+
+
+print("PRODUCT:")
+print(product["product_id"])
+print(product["name"])
 
 
 
@@ -59,8 +70,19 @@ landing_html = renderer.render_landingpage(
 
 
 
+slug = (
+    product["name"]
+    .lower()
+    .replace("ä","ae")
+    .replace("ö","oe")
+    .replace("ü","ue")
+    .replace(" ","-")
+)
+
+
+
 landing_path = publisher.save_landingpage(
-    "strom",
+    slug,
     landing_html
 )
 
@@ -73,14 +95,13 @@ article_html = renderer.render_article(
 
 
 article_path = publisher.save_article(
-    "strom-ratgeber",
+    slug + "-ratgeber",
     article_html
 )
 
 
 
+print()
 print("PRODUCTION CREATED")
-
 print(landing_path)
-
 print(article_path)

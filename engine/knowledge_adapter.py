@@ -16,13 +16,9 @@ class KnowledgeAdapter:
         )
 
 
-    def _load(
-        self,
-        path
-    ):
+    def _load(self, path):
 
         if not path.exists():
-
             return {}
 
         with open(
@@ -35,33 +31,18 @@ class KnowledgeAdapter:
 
 
 
-    def _find_product(
-        self,
-        product_id
-    ):
+    def _find_product(self, product_id):
 
-        products = self.master.get(
-            "products",
-            []
-        )
+        for product in self.master.get("products", []):
 
-        for product in products:
-
-            if product.get(
-                "product_id"
-            ) == product_id:
-
+            if product.get("product_id") == product_id:
                 return product
-
 
         return {}
 
 
 
-    def build_product_context(
-        self,
-        product_id
-    ):
+    def build_product_context(self, product_id):
 
         master_product = self._find_product(
             product_id
@@ -69,7 +50,6 @@ class KnowledgeAdapter:
 
 
         if not master_product:
-
             return {}
 
 
@@ -98,11 +78,11 @@ class KnowledgeAdapter:
         )
 
 
-
         llm_context = knowledge.get(
             "llm_context",
             {}
         )
+
 
 
         return {
@@ -113,13 +93,11 @@ class KnowledgeAdapter:
                     ""
                 ),
 
-
             "name":
                 identity.get(
                     "name",
                     ""
                 ),
-
 
             "partner":
                 identity.get(
@@ -127,13 +105,11 @@ class KnowledgeAdapter:
                     ""
                 ),
 
-
             "category":
                 identity.get(
                     "category",
                     ""
                 ),
-
 
             "landingpage":
                 catalog.get(
@@ -141,13 +117,11 @@ class KnowledgeAdapter:
                     ""
                 ),
 
-
             "tracking_url":
                 catalog.get(
                     "tracking_url",
                     ""
                 ),
-
 
             "hero_title":
                 catalog.get(
@@ -158,13 +132,11 @@ class KnowledgeAdapter:
                     )
                 ),
 
-
             "summary":
                 catalog.get(
                     "summary",
                     ""
                 ),
-
 
             "key_facts":
                 catalog.get(
@@ -172,13 +144,11 @@ class KnowledgeAdapter:
                     []
                 ),
 
-
             "comparison_matrix":
                 catalog.get(
                     "comparison_matrix",
                     []
                 ),
-
 
             "faq":
                 catalog.get(
@@ -186,13 +156,11 @@ class KnowledgeAdapter:
                     []
                 ),
 
-
             "sources":
                 catalog.get(
                     "sources",
                     []
                 ),
-
 
             "author":
                 catalog.get(
@@ -200,13 +168,11 @@ class KnowledgeAdapter:
                     "Redaktion Free Basics"
                 ),
 
-
             "reviewed_by":
                 catalog.get(
                     "reviewed_by",
                     ""
                 ),
-
 
             "updated_at":
                 catalog.get(
@@ -214,13 +180,11 @@ class KnowledgeAdapter:
                     ""
                 ),
 
-
             "internal_links":
                 catalog.get(
                     "internal_links",
                     []
                 ),
-
 
             "entity":
                 catalog.get(
@@ -228,17 +192,14 @@ class KnowledgeAdapter:
                     {}
                 ),
 
-
             "facts":
                 llm_context.get(
                     "facts",
                     {}
                 ),
 
-
             "llm_context":
                 llm_context,
-
 
             "product_facts_registry":
                 knowledge.get(
@@ -246,13 +207,11 @@ class KnowledgeAdapter:
                     {}
                 ),
 
-
             "wikidata":
                 knowledge.get(
                     "wikidata",
                     {}
                 ),
-
 
             "mediawiki":
                 knowledge.get(
@@ -260,10 +219,8 @@ class KnowledgeAdapter:
                     {}
                 ),
 
-
             "validation":
                 validation,
-
 
             "knowledge_status":
                 master_product.get(
@@ -276,14 +233,11 @@ class KnowledgeAdapter:
 
 if __name__ == "__main__":
 
-
     adapter = KnowledgeAdapter()
-
 
     result = adapter.build_product_context(
         "CHK24_001"
     )
-
 
     print(
         json.dumps(

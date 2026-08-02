@@ -1,6 +1,7 @@
 from typing import Any
 
 from engine.google_sheets_live import GoogleSheetsLive
+from engine.secret_manager import SecretManager
 
 
 class AffiliateEngine:
@@ -10,17 +11,6 @@ class AffiliateEngine:
 
     Regel:
     Ein Produkt = ein Primary Asset
-
-    Ausgabe:
-    product_id
-    primary_asset
-    cta
-    tracking_url
-    alt_text
-
-    Datenquellen:
-    1. products
-    2. affiliate_assets_clean
     """
 
 
@@ -30,16 +20,23 @@ class AffiliateEngine:
         credentials_json: str | None = None
     ):
 
+        secrets = SecretManager()
+
         self.sheets = GoogleSheetsLive(
-            spreadsheet_id=sheet_id,
-            credentials_json=credentials_json
+            spreadsheet_id=(
+                sheet_id
+                or secrets.get("GOOGLE_SHEET_ID")
+            ),
+            credentials_json=(
+                credentials_json
+                or secrets.get("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+            )
         )
 
         self.products = []
         self.assets = []
 
         self.reload()
-
 
 
     def reload(self):
@@ -55,22 +52,16 @@ class AffiliateEngine:
         )
 
 
-
     @staticmethod
-    def _normalize(
-        value: Any
-    ) -> str:
+    def _normalize(value: Any) -> str:
 
         return str(
             value or ""
         ).strip().lower()
 
 
-
     @staticmethod
-    def _product_id(
-        record
-    ) -> str:
+    def _product_id(record):
 
         return str(
             record.get("product_id")
@@ -79,15 +70,9 @@ class AffiliateEngine:
         ).strip()
 
 
+    def find_product(self, product):
 
-    def find_product(
-        self,
-        product
-    ):
-
-        search = self._normalize(
-            product
-        )
+        search = self._normalize(product)
 
         for record in self.products:
 
@@ -102,16 +87,13 @@ class AffiliateEngine:
                 )
 
             }:
+
                 return record
 
         return None
 
 
-
-    def find_assets(
-        self,
-        product_id
-    ):
+    def find_assets(self, product_id):
 
         result = []
 
@@ -128,23 +110,16 @@ class AffiliateEngine:
 
             if asset_id == target:
 
-                result.append(
-                    asset
-                )
+                result.append(asset)
 
         return result
 
 
-
-    def select_primary_asset(
-        self,
-        product_id
-    ):
+    def select_primary_asset(self, product_id):
 
         assets = self.find_assets(
             product_id
         )
-
 
         if not assets:
 
@@ -153,156 +128,47 @@ class AffiliateEngine:
 
         asset = assets[0]
 
-
         return {
 
-            "asset_id":
-                asset.get(
-                    "asset_id",
-                    ""
-                ),
-
             "asset_type":
-                asset.get(
-                    "asset_type",
-                    ""
-                ),
+                asset.get("werbemittel_typ")
+                or asset.get("asset_type")
+                or "",
 
             "html":
-                asset.get(
-                    "html"
-                    or
-                    "banner_html"
-                    or
-                    "vergleichsrechner_html"
-                    or
-                    ""
-                ),
+                asset.get("html_code")
+                or asset.get("html")
+                or asset.get("banner_300x250_html")
+                or asset.get("vergleichsrechner_html")
+                or "",
 
-            "image_url":
-                asset.get(
-                    "image_url",
-                    ""
-                ),
-
-            "alt_text":
-                asset.get(
-                    "alt_text"
-                    or
-                    f"Werbung für {product_id}"
-                ),
+            "affiliate_url":
+                asset.get("affiliate_url")
+                or asset.get("direktlink")
+                or "",
 
             "cta":
-                asset.get(
-                    "cta"
-                    or
-                    "Vergleich starten"
-                )
+                asset.get("cta")
+                or "Vergleich starten",
+
+            "kennzeichnung":
+                asset.get("kennzeichnung")
+                or "Werbung / Anzeige"
 
         }
 
 
-
-    def get_tracking_link(
-        self,
-        product
-    ):
+    def get_product_data(self, product):
 
         record = self.find_product(
             product
         )
-
-        if not record:
-
-            return None
-
-
-        return str(
-
-            record.get(
-                "tracking_url_v3"
-            )
-
-            or
-
-            record.get(
-                "tracking_url"
-            )
-
-            or
-
-            record.get(
-                "affiliate_url"
-            )
-
-            or
-            ""
-
-        ).strip()
-
-
-
-    def get_affiliate_link(
-        self,
-        product
-    ):
-
-        record = self.find_product(
-            product
-        )
-
-        if not record:
-
-            return None
-
-
-        return str(
-
-            record.get(
-                "affiliate_url"
-            )
-
-            or
-
-            record.get(
-                "official_direct_link"
-            )
-
-            or
-
-            record.get(
-                "target_url"
-            )
-
-            or
-            ""
-
-        ).strip()
-
-
-
-    def get_product_data(
-        self,
-        product
-    ):
-
-        record = self.find_product(
-            product
-        )
-
 
         if not record:
 
             return {
-
-                "status":
-                    "NOT_FOUND",
-
-                "product":
-                    product
-
+                "status": "NOT_FOUND"
             }
-
 
 
         product_id = self._product_id(
@@ -317,80 +183,22 @@ class AffiliateEngine:
 
         return {
 
+            "status": "FOUND",
 
-            "status":
-                "FOUND",
-
-
-            "product_id":
-                product_id,
-
+            "product_id": product_id,
 
             "product_name":
                 record.get(
                     "product_name"
                 ),
 
-
-            "source":
-                record.get(
-                    "source"
-                ),
-
-
-            "category":
-                record.get(
-                    "category"
-                ),
-
-
             "primary_asset":
                 primary_asset,
 
-
-            "cta":
-                (
-                    primary_asset.get(
-                        "cta"
-                    )
-                    if primary_asset
-                    else
-                    "Vergleich starten"
-                ),
-
-
             "tracking_url":
-                self.get_tracking_link(
-                    product_id
-                ),
-
-
-            "affiliate_url":
-                self.get_affiliate_link(
-                    product_id
+                record.get(
+                    "tracking_url"
+                    or ""
                 )
 
         }
-
-
-
-_default_engine = None
-
-
-
-def get_affiliate_link(
-    product
-):
-
-    global _default_engine
-
-
-    if _default_engine is None:
-
-        _default_engine = AffiliateEngine()
-
-
-
-    return _default_engine.get_affiliate_link(
-        product
-    )
