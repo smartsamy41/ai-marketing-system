@@ -2418,7 +2418,7 @@ def pinterest_file():
 @app.get("/canva/login")
 def canva_login():
 
-    redirect_uri = "https://canva-debug-real---ai-marketing-system-dqyj2hir5a-ew.a.run.app/canva/callback"
+    redirect_uri = "https://freebasics.online/canva/callback"
 
     authorization_url, state, code_verifier = create_canva_authorization_url(
         redirect_uri
