@@ -1,21 +1,40 @@
-import os
 import secrets
-import urllib.parse
 import hashlib
 import base64
 import requests
 
+from google.cloud import secretmanager
 
-CANVA_AUTH_URL = "https://www.canva.com/api/oauth/authorize"
+
 CANVA_TOKEN_URL = "https://api.canva.com/rest/v1/oauth/token"
 
 
+def get_secret(name):
+
+    client = secretmanager.SecretManagerServiceClient()
+
+    path = (
+        f"projects/smartcontent2050/secrets/{name}/versions/latest"
+    )
+
+    result = client.access_secret_version(
+        request={"name": path}
+    )
+
+    return result.payload.data.decode().strip()
+
+
+
 def get_canva_client_id():
-    return os.environ.get("CANVA_CLIENT_ID")
+
+    return get_secret("CANVA_CLIENT_ID")
+
 
 
 def get_canva_client_secret():
-    return os.environ.get("CANVA_CLIENT_SECRET")
+
+    return get_secret("CANVA_CLIENT_SECRET")
+
 
 
 def create_canva_authorization_url(redirect_uri):
@@ -24,77 +43,94 @@ def create_canva_authorization_url(redirect_uri):
 
     code_verifier = secrets.token_urlsafe(64)
 
-    digest = hashlib.sha256(
-        code_verifier.encode("utf-8")
-    ).digest()
-
-    code_challenge = base64.urlsafe_b64encode(
-        digest
-    ).decode("utf-8").rstrip("=")
+    code_challenge = (
+        base64.urlsafe_b64encode(
+            hashlib.sha256(
+                code_verifier.encode()
+            ).digest()
+        )
+        .decode()
+        .replace("=", "")
+    )
 
     state = secrets.token_urlsafe(32)
 
-    params = {
-        "code_challenge_method": "s256",
-        "code_challenge": code_challenge,
-        "response_type": "code",
-        "client_id": client_id,
-        "redirect_uri": redirect_uri,
-        "scope": (
-            "asset:read "
-            "asset:write "
-            "design:content:read "
-            "design:content:write "
-            "profile:read "
-            "brandtemplate:meta:read"
-        ),
-        "state": state,
-    }
+    scope = (
+        "asset:read "
+        "asset:write "
+        "design:content:read "
+        "design:content:write "
+        "profile:read "
+        "brandtemplate:meta:read"
+    )
 
     url = (
-        CANVA_AUTH_URL
-        + "?"
-        + urllib.parse.urlencode(params)
+        "https://www.canva.com/api/oauth/authorize?"
+        f"code_challenge_method=s256"
+        f"&code_challenge={code_challenge}"
+        f"&response_type=code"
+        f"&client_id={client_id}"
+        f"&redirect_uri={redirect_uri}"
+        f"&scope={scope.replace(' ', '+')}"
+        f"&state={state}"
     )
 
     return url, state, code_verifier
 
 
-def exchange_canva_code(code, redirect_uri, code_verifier):
+
+def exchange_canva_code(
+    code,
+    redirect_uri,
+    code_verifier
+):
 
     client_id = get_canva_client_id()
     client_secret = get_canva_client_secret()
 
-    print("CANVA DEBUG CLIENT_ID:", client_id)
-    print(
-        "CANVA DEBUG SECRET LENGTH:",
-        len(client_secret) if client_secret else None
-    )
 
-    data = {
-        "grant_type": "authorization_code",
-        "code": code,
-        "redirect_uri": redirect_uri,
-        "code_verifier": code_verifier,
-    }
+    print("CANVA TOKEN DEBUG")
+    print("CLIENT ID:", client_id)
+    print("REDIRECT:", redirect_uri)
+    print("CODE LENGTH:", len(code))
+    print("VERIFIER LENGTH:", len(code_verifier))
+
 
     response = requests.post(
         CANVA_TOKEN_URL,
-        data=data,
+
+        data={
+            "grant_type": "authorization_code",
+            "code": code,
+            "redirect_uri": redirect_uri,
+            "code_verifier": code_verifier
+        },
+
         auth=(
             client_id,
             client_secret
         ),
-        timeout=30,
+
+        headers={
+            "Content-Type":
+            "application/x-www-form-urlencoded"
+        },
+
+        timeout=30
     )
 
-    print("CANVA_STATUS:", response.status_code)
-    print("CANVA_RESPONSE:", response.text)
 
-    if response.status_code != 200:
-        raise Exception(
-            "CANVA TOKEN ERROR: "
-            + response.text
-        )
+    print(
+        "CANVA_STATUS:",
+        response.status_code
+    )
+
+    print(
+        "CANVA_RESPONSE:",
+        response.text
+    )
+
+
+    response.raise_for_status()
 
     return response.json()
