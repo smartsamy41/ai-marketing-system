@@ -39,6 +39,12 @@ from engine.canva.canva_oauth import (
     exchange_canva_code
 )
 
+from engine.canva.canva_pkce_store import (
+    save_pkce_state,
+    get_pkce_state,
+    delete_pkce_state
+)
+
 
 
 
@@ -2423,6 +2429,12 @@ def canva_login():
         "code_verifier": code_verifier
     }
 
+    save_pkce_state(
+        state,
+        redirect_uri,
+        code_verifier
+    )
+
     return {
         "status": "CANVA_OAUTH_START",
         "authorization_url": authorization_url,
@@ -2449,7 +2461,10 @@ def canva_callback(
             detail="Missing Canva OAuth state"
         )
 
-    session = CANVA_PKCE_STORE.get(state)
+    session = get_pkce_state(state)
+
+    if not session:
+        session = CANVA_PKCE_STORE.get(state)
 
     if not session:
         raise HTTPException(
