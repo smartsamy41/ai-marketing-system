@@ -1,0 +1,4 @@
+subscriber_id,email,status,doi_token_hash,registered_at,confirmed_at,unsubscribed_at,source,consent_given,consent_text_version,privacy_policy_version,ip_hash,user_agent_hash,updated_at
+2c98b803-e0c5-4c17-8353-df839bf961cf,testfreund@example.com,CONFIRMED,d1f28f513ee71a756f4fd0601ce9b1c69018ef8f50d7c1a3cee1697e82a16e2d,2026-07-30T16:14:42.847394+00:00,2026-07-30T16:16:19.068139+00:00,,website,TRUE,v1,v1,,,2026-07-30T16:16:19.068139+00:00
+0f1018b9-4e6f-4d19-b00b-b1bd4b3f639c,test2@example.com,PENDING,d1a457fd8670cdb415caf18abf2c2070e196e83af5ca04219452fe28154da756,2026-07-26T19:03:59.607054+00:00,,,website,TRUE,v1,v1,,,2026-07-26T19:03:59.607054+00:00
+069e3926-a713-41b4-a318-97c5b61aae3c,samyjendoubi@gmail.com,CONFIRMED,6adb737a6ae91e79e03dc4600de0a64fc624c7420cf1e93d4339f624cceca469,2026-07-30T16:03:27.704960+00:00,2026-07-30T16:03:32.707496+00:00,,test,TRUE,v1,v1,,,2026-07-30T16:03:32.707496+00:00

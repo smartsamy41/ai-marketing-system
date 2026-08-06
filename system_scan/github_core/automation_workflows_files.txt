@@ -1,0 +1,7 @@
+automation_workflows/README.md
+automation_workflows/scheduler/backup_scheduler.json
+automation_workflows/scheduler/content_scheduler.json
+automation_workflows/scheduler/publishing_scheduler.json
+automation_workflows/workflows/content_pipeline.json
+automation_workflows/workflows/publishing_pipeline.json
+automation_workflows/workflows/seo_pipeline.json

@@ -1,0 +1,4 @@
+campaign_id,partner,product_id,category,audience_segment,template_type,approval_status,created_at,updated_at
+dafa848d-6c6b-4f2c-b3df-836dc75f26c0,Check24,CHK24_001,Strom,651adc32-731a-4891-bfc1-d296a4b0e5f8,partner_template,DRAFT,2026-07-30T16:40:51.882336+00:00,2026-07-30T16:40:51.882336+00:00
+978a07b8-6ebf-4613-ac57-09448648f806,Check24,CHK24_001,Strom,651adc32-731a-4891-bfc1-d296a4b0e5f8,partner_template,DRAFT,2026-07-30T16:52:52.339378+00:00,2026-07-30T16:52:52.339378+00:00
+8cdee4e8-5afe-4e5a-a27b-cd7a81b20869,Check24,CHK24_001,Strom,651adc32-731a-4891-bfc1-d296a4b0e5f8,partner_template,DRAFT,2026-07-30T16:53:25.668906+00:00,2026-07-30T16:53:25.668906+00:00

@@ -1,0 +1,3 @@
+knowledge/entities/products.json
+knowledge/facts/product_facts.json
+knowledge/sources/primary_sources.json

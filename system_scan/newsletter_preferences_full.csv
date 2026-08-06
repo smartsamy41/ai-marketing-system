@@ -1,0 +1,2 @@
+preference_id,subscriber_id,product_id,partner,category,interest_status,created_at,updated_at,source
+pref-test-001,2c98b803-e0c5-4c17-8353-df839bf961cf,CHK24_001,Check24,Strom,ACTIVE,2026-07-30T00:00:00Z,2026-07-30T00:00:00Z,website

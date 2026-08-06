@@ -1,0 +1,78 @@
+✔ Service ai-marketing-system in region europe-west1
+commit-sha:aa2efac02588cc23e60dc27efc18d948fe7510cc gcb-build-id:d067b82b-baef-4e29-9b5e-a6d55ff245d2 gcb-trigger-id:3e464a70-881e-4f0d-85e5-b624769b80d4 gcb-trigger-region:global managed-by:gcp-cloud-build-deploy-cloud-run
+ 
+URL:     https://ai-marketing-system-1081897051313.europe-west1.run.app
+Ingress: all
+Traffic:
+  0%   ai-marketing-system-00923-dug
+         preflight:             https://preflight---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-00924-mim
+         fix-test:              https://fix-test---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-00926-dor
+         track-test:            https://track-test---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-00952-woc
+         production-final:      https://production-final---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01131-gin
+         runtime-sa-test:       https://runtime-sa-test---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01134-gol
+         security-headers-test: https://security-headers-test---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01140-sah
+         canva-test:            https://canva-test---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01142-xiq
+         canva-final-test:      https://canva-final-test---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01147-veq
+         canva-final:           https://canva-final---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01149-bof
+         canva-oauth-final:     https://canva-oauth-final---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01150-dux
+         canva-pkce-final:      https://canva-pkce-final---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-01160-nif
+         canva-token-debug:     https://canva-token-debug---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  100% ai-marketing-system-01178-gom
+         canva-test-final:      https://canva-test-final---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+  0%   ai-marketing-system-canva-debug-real
+         canva-debug-real:      https://canva-debug-real---ai-marketing-system-dqyj2hir5a-ew.a.run.app
+ 
+Scaling: Auto (Min: 0, Max: 3)
+ 
+Last updated on 2026-08-03T07:57:31.043665Z by 1081897051313-compute@developer.gserviceaccount.com:
+  Revision ai-marketing-system-01180-mnw
+  commit-sha:aa2efac02588cc23e60dc27efc18d948fe7510cc gcb-build-id:d067b82b-baef-4e29-9b5e-a6d55ff245d2 gcb-trigger-id:3e464a70-881e-4f0d-85e5-b624769b80d4 gcb-trigger-region:global managed-by:gcp-cloud-build-deploy-cloud-run
+  Container placeholder-1
+    Image:           europe-west1-docker.pkg.dev/smartcontent2050/cloud-run-source-deploy/ai-marketing-system/ai-marketing-system:aa2efac02588cc23e60dc27efc18d948fe7510cc
+    Port:            8080
+    Memory:          512Mi
+    CPU:             1000m
+    Env vars:
+      FORCE_HTTPS    false
+    Secrets:
+      BIGQUERY_DATASET BIGQUERY_DATASET:latest
+      BIGQUERY_PROJECT_ID BIGQUERY_PROJECT_ID:latest
+      CANVA_CLIENT_ID CANVA_CLIENT_ID:latest
+      CANVA_CLIENT_SECRET CANVA_CLIENT_SECRET:latest
+      GEMINI_API_KEY GEMINI_API_KEY:latest
+      GOOGLE_APPLICATION_CREDENTIALS_JSON GOOGLE_APPLICATION_CREDENTIALS_JSON:latest
+      GOOGLE_DRIVE_FOLDER_ID GOOGLE_DRIVE_FOLDER_ID:latest
+      GOOGLE_SHEET_ID GOOGLE_SHEET_ID:latest
+      GROQ_API_KEY   GROQ_API_KEY:latest
+      OPENAI_API_KEY OPENAI_API_KEY:latest
+      PINTEREST_AD_ACCOUNT_ID PINTEREST_AD_ACCOUNT_ID:latest
+      PINTEREST_CAPI_ACCESS_TOKEN PINTEREST_CAPI_ACCESS_TOKEN:latest
+      TIKTOK_EVENTS_API_TOKEN TIKTOK_EVENTS_API_TOKEN:latest
+      TIKTOK_PIXEL_ID TIKTOK_PIXEL_ID:latest
+      YOUTUBE_CHANNEL_ID YOUTUBE_CHANNEL_ID:latest
+      YOUTUBE_CLIENT_ID YOUTUBE_CLIENT_ID:latest
+      YOUTUBE_CLIENT_SECRET YOUTUBE_CLIENT_SECRET:latest
+      YOUTUBE_REFRESH_TOKEN YOUTUBE_REFRESH_TOKEN:latest
+    Startup Probe:
+      TCP every 240s
+      Port:          8080
+      Initial delay: 0s
+      Timeout:       240s
+      Failure threshold: 1
+      Type:          Default
+  Service account:   ai-marketing-runtime@smartcontent2050.iam.gserviceaccount.com
+  Concurrency:       80
+  Scaling:
+    Max instances:   3
+  Timeout:           300s

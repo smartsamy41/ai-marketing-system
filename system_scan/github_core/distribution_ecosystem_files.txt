@@ -1,0 +1,5 @@
+distribution_ecosystem/publishing_ecosystem/medium/channel_registry.json
+distribution_ecosystem/publishing_ecosystem/pinterest/channel_registry.json
+distribution_ecosystem/publishing_ecosystem/tiktok/channel_registry.json
+distribution_ecosystem/publishing_ecosystem/youtube/channel_registry.json
+distribution_ecosystem/syndication_rules/canonical_policy.json

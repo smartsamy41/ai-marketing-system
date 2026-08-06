@@ -1,0 +1,37 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	^C
+	github_all_files.txt
+	github_files_complete.txt
+	github_folders_complete.txt
+	github_size_inventory.txt
+	github_structure_level2.txt
+	system_scan/
+
+nothing added to commit but untracked files present (use "git add" to track)
+  clean-production-core
+  efp-1.0-enterprise-foundation
+* main
+aa2efac Finalize affiliate routing rules
+6c8ac8d Finalize production knowledge content analytics and autonomous learning integration
+69f1207 Clean Canva OAuth token exchange
+28501d0 Replace Canva OAuth module clean
+4e80be9 Clean Canva OAuth token exchange
+021923e Fix Canva OAuth basic auth token exchange
+0b69557 Fix Canva production redirect uri
+6743348 Test Canva callback on debug revision
+e4c00f0 Test Canva debug callback route
+05a4106 Add Canva runtime debug
+064ea8a Fix Canva OAuth token authentication
+ccdf565 Add Firestore backed Canva PKCE state storage
+cd4eb7f Add Canva token response debug logging
+0cfe2bc Add Firestore client dependency for Canva PKCE storage
+456e46a Fix Canva OAuth PKCE state storage
+4dc8dac Complete Canva OAuth token callback flow
+ea2a55f Fix Canva OAuth PKCE route
+f547088 Add Canva Connect API OAuth integration
+be90132 Prepare final production cleanup
+b314a6a Fix landingpage canonical URLs and improve production content metadata

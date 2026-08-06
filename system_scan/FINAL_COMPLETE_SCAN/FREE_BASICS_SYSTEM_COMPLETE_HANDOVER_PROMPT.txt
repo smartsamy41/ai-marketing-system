@@ -1,0 +1,317 @@
+PROJECT:
+FREE BASICS AI MARKETING SYSTEM / FBEP
+
+OWNER:
+Samy Jendoubi
+
+DOMAIN:
+https://freebasics.online
+
+GOOGLE CLOUD:
+smartcontent2050
+
+REPOSITORY:
+~/ai-marketing-system
+
+MODE:
+SYSTEM ANALYSIS AND ARCHITECTURE COMPARISON
+
+
+==================================================
+WICHTIG
+==================================================
+
+Dieses Dokument beschreibt ein bestehendes Produktionssystem.
+
+Keine Kopie fremder Inhalte.
+
+Keine Übernahme von Website-Inhalten.
+
+Keine Parallelarchitektur.
+
+Die WebsiteKnowledgeAnalyzer-Ergebnisse dienen ausschließlich zur Analyse von:
+
+- Informationsarchitektur
+- Content-Struktur
+- Kategorien
+- Silos
+- interne Verlinkung
+- Entity-Struktur
+- SEO/GEO-Prinzipien
+- technische Muster
+
+
+==================================================
+VORHANDENE SYSTEMDATEN
+==================================================
+
+Kompletter Systemscan vorhanden:
+
+system_scan/
+
+Bereiche:
+
+1. GOOGLE SHEETS
+2. GOOGLE DRIVE
+3. GITHUB
+4. CLOUD INFRASTRUKTUR
+5. AI / GEO / KNOWLEDGE
+6. BUSINESS LOGIK
+
+
+==================================================
+GOOGLE SHEETS
+==================================================
+
+Kompletter Export vorhanden:
+
+Produkte:
+products_full.csv
+
+Landingpages:
+landingpages_full.csv
+
+Affiliate:
+affiliate_assets_full.csv
+affiliate_assets_clean_full.csv
+
+Provision:
+commissions_full.csv
+commission_mapping_full.csv
+
+Regeln:
+affiliate_rules_full.csv
+
+Landingpage-System:
+master_landingpage_sections_full.csv
+master_landingpage_fields_full.csv
+
+Content:
+blog_articles_full.csv
+
+
+Newsletter-System:
+
+newsletter_subscribers_full.csv
+newsletter_preferences_full.csv
+newsletter_campaigns_full.csv
+
+mail_rules_full.csv
+mail_events_full.csv
+
+newsletter_partner_rules_full.csv
+
+audience_segments_full.csv
+
+ai_campaign_queue_full.csv
+
+ai_campaign_learning_full.csv
+
+seasonal_events_full.csv
+
+newsletter_events_full.csv
+
+newsletter_send_rules_full.csv
+
+drive_assets_full.csv
+
+partner_newsletter_archive_full.csv
+
+newsletter_content_full.csv
+
+
+==================================================
+PARTNER
+==================================================
+
+Vorhandene Partner:
+
+Amazon PartnerNet
+
+Tracking:
+freebasics-21
+
+
+Tarifcheck
+
+Partner ID:
+165274
+
+
+Telekom
+
+Integration:
+offizieller Telekom-Profis-Shop
+
+Regel:
+Keine eigenen Telekom Conversion-Landingpages.
+Direkte Weiterleitung zum offiziellen Shop.
+
+
+Check24
+
+Affiliate-System vorhanden.
+
+
+==================================================
+SYSTEMREGELN
+==================================================
+
+Keine erfundenen:
+
+- Produkte
+- Preise
+- Angebote
+- APIs
+- Konditionen
+
+
+Datenquellen:
+
+- Partnerdaten
+- Google Sheets
+- Google Drive
+- APIs
+- Dokumente
+
+
+==================================================
+GOOGLE DRIVE
+==================================================
+
+Scans:
+
+google_drive_inventory.csv
+
+Root:
+32 Einträge
+
+
+google_drive_full_recursive.csv
+
+Rekursiv:
+1294 Einträge
+
+
+==================================================
+GITHUB
+==================================================
+
+Repository:
+
+ai-marketing-system
+
+
+Scan:
+
+14154 Dateien
+
+1682 Ordner
+
+
+Kernbereiche:
+
+engine
+
+app
+
+templates
+
+content_production_engine
+
+data_master
+
+knowledge
+
+indexing_search_engine_layer
+
+automation_workflows
+
+distribution_ecosystem
+
+production_deployment_audit
+
+
+==================================================
+AI / GEO / KNOWLEDGE
+==================================================
+
+Scan:
+
+ai_geo_knowledge_files.txt
+
+476 Dateien
+
+
+Bereiche:
+
+- AI
+- GEO
+- SEO
+- Schema
+- Entity
+- Knowledge
+- Learning
+
+
+==================================================
+CLOUD INFRASTRUKTUR
+==================================================
+
+Gescannt:
+
+Cloud Run
+
+APIs
+
+Scheduler
+
+Storage
+
+Secrets Namen
+
+Service Accounts
+
+
+==================================================
+ZIEL DER ANALYSE
+==================================================
+
+Vergleiche:
+
+WebsiteKnowledgeAnalyzer Ergebnis
+
+gegen
+
+FREE BASICS AI MARKETING SYSTEM
+
+
+Analysiere:
+
+- Informationsarchitektur
+- Content Cluster
+- Silos
+- interne Links
+- Entity Beziehungen
+- GEO Struktur
+- SEO Struktur
+- Datenmodelle
+- Automatisierung
+
+
+Prüfen:
+
+Was ist bereits vorhanden?
+
+Was fehlt?
+
+Was kann verbessert werden?
+
+Welche Struktur ist sinnvoll?
+
+
+Keine Inhalte kopieren.
+
+Keine fremden Daten übernehmen.
+
+Nur Architekturprinzipien analysieren.

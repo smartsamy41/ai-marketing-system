@@ -1,0 +1,45 @@
+product_id,product_name,commission_id,commission_product,partner,provision_typ,provision_wert,waehrung,status
+CHK24_001,,C24_28,Strom,Check24,SALE,20,EUR,ACTIVE
+CHK24_002,,C24_30,Ökostrom,Check24,SALE,25,EUR,ACTIVE
+CHK24_003,,C24_29,Gas,Check24,SALE,20,EUR,ACTIVE
+CHK24_004,,C24_36,DSL 1,Check24,SALE,40,EUR,ACTIVE
+CHK24_005,,C24_34,SIM-only,Check24,SALE,15,EUR,ACTIVE
+CHK24_006,,C24_31,Pauschalreise,Check24,%,7,%,ACTIVE
+CHK24_007,,C24_32,Hotel,Check24,%,6,%,ACTIVE
+CHK24_008,,C24_27,Reisegepäck,Check24,SALE,10,EUR,ACTIVE
+TC_001,,TC_2,Solaranlage,Tarifcheck,SALE,30,EUR,ACTIVE
+TC_002,,TC_0,Kfz-Versicherung,Tarifcheck,SALE,70,EUR,ACTIVE
+TC_003,,TC_4,Kredit,Tarifcheck,%,"1,75",%,ACTIVE
+TC_004,,TC_3,Girokonto,Tarifcheck,SALE,40,EUR,ACTIVE
+TC_005,,TC_7,Baufinanzierung,Tarifcheck,SALE,"7,5",EUR,ACTIVE
+TC_006,,TC_8,Hausratversicherung,Tarifcheck,SALE,30,EUR,ACTIVE
+TC_007,,TC_10,Wohngebäudeversicherung,Tarifcheck,SALE,75,EUR,ACTIVE
+TC_008,,TC_24,Rentenversicherung,Tarifcheck,SALE,25,EUR,ACTIVE
+TC_009,,TC_20,Private Krankenvollversicherung,Tarifcheck,SALE,"67,5",EUR,ACTIVE
+B0FQF32239,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0CFPWLGF2,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0DFYN8174,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0FPXFBL13,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0FPXDCDX2,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0FPXGJL6H,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0FPXDRR63,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+3424631078,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0FNX7HC9M,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+3423209690,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+3832167242,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+3426281759,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0DXLBZF4Q,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0CVXSK4D3,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B08P4YPB8Q,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0FMS3V43J,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+B0D1YKBX82,,AMZ_0,Amazon Fashion Eigenmarken,Amazon,%,6,%,ACTIVE
+TEL_001,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_002,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_003,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_004,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_005,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_006,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_007,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_008,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_009,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE
+TEL_010,,MZ_START,MagentaZuhause Start,Telekom,SALE,7,EUR,ACTIVE

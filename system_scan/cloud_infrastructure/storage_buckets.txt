@@ -1,0 +1,116 @@
+---
+cors_config:
+- method:
+  - GET
+  origin:
+  - https://*.cloud.google.com
+  - https://*.corp.google.com
+  - https://*.corp.google.com:*
+  - https://*.cloud.google
+  - https://*.byoid.goog
+creation_time: 2026-06-27T16:41:34+0000
+default_storage_class: STANDARD
+generation: 1782578494253614010
+labels:
+  used-by: cloudrun
+location: EUROPE-WEST1
+location_type: region
+metageneration: 1
+name: run-sources-smartcontent2050-europe-west1
+public_access_prevention: inherited
+soft_delete_policy:
+  effectiveTime: '2026-06-27T16:41:34.847000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://run-sources-smartcontent2050-europe-west1/
+uniform_bucket_level_access: true
+update_time: 2026-06-27T16:41:34+0000
+---
+cors_config:
+- method:
+  - GET
+  origin:
+  - https://*.cloud.google.com
+  - https://*.corp.google.com
+  - https://*.corp.google.com:*
+  - https://*.cloud.google
+  - https://*.byoid.goog
+creation_time: 2026-06-30T11:43:43+0000
+default_storage_class: STANDARD
+generation: 1782819823316965634
+labels:
+  used-by: cloudrun
+location: EUROPE-WEST3
+location_type: region
+metageneration: 1
+name: run-sources-smartcontent2050-europe-west3
+public_access_prevention: inherited
+satisfies_pzs: true
+soft_delete_policy:
+  effectiveTime: '2026-06-30T11:43:43.829000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://run-sources-smartcontent2050-europe-west3/
+uniform_bucket_level_access: true
+update_time: 2026-06-30T11:43:43+0000
+---
+creation_time: 2026-07-09T01:14:52+0000
+default_storage_class: STANDARD
+generation: 1783559692309594509
+location: EUROPE-WEST1
+location_type: region
+metageneration: 3
+name: smartcontent2050-ai-backups
+public_access_prevention: enforced
+soft_delete_policy:
+  effectiveTime: '2026-07-09T01:14:52.738000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://smartcontent2050-ai-backups/
+uniform_bucket_level_access: true
+update_time: 2026-08-01T19:34:11+0000
+---
+acl:
+- entity: project-owners-1081897051313
+  projectTeam:
+    projectNumber: '1081897051313'
+    team: owners
+  role: OWNER
+- entity: project-editors-1081897051313
+  projectTeam:
+    projectNumber: '1081897051313'
+    team: editors
+  role: OWNER
+- entity: project-viewers-1081897051313
+  projectTeam:
+    projectNumber: '1081897051313'
+    team: viewers
+  role: READER
+creation_time: 2026-06-27T17:08:59+0000
+default_acl:
+- entity: project-owners-1081897051313
+  projectTeam:
+    projectNumber: '1081897051313'
+    team: owners
+  role: OWNER
+- entity: project-editors-1081897051313
+  projectTeam:
+    projectNumber: '1081897051313'
+    team: editors
+  role: OWNER
+- entity: project-viewers-1081897051313
+  projectTeam:
+    projectNumber: '1081897051313'
+    team: viewers
+  role: READER
+default_storage_class: STANDARD
+generation: 1782580138696640015
+location: US
+location_type: multi-region
+metageneration: 1
+name: smartcontent2050_cloudbuild
+public_access_prevention: inherited
+rpo: DEFAULT
+soft_delete_policy:
+  effectiveTime: '2026-06-27T17:08:59.081000+00:00'
+  retentionDurationSeconds: '604800'
+storage_url: gs://smartcontent2050_cloudbuild/
+uniform_bucket_level_access: false
+update_time: 2026-06-27T17:08:59+0000

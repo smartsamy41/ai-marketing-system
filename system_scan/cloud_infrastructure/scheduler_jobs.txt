@@ -1,0 +1,5 @@
+ID: ai-marketing-agent-cycle
+LOCATION: europe-west1
+SCHEDULE (TZ): */15 * * * * (Etc/UTC)
+TARGET_TYPE: HTTP
+STATE: ENABLED

@@ -1,0 +1,4 @@
+campaign_id,opened,clicked,visited_freebasics,conversion,result
+TEST_CAMPAIGN_001,FALSE,TRUE,FALSE,FALSE,CLICKED
+TEST_CAMPAIGN_001,TRUE,FALSE,FALSE,FALSE,OPENED
+dafa848d-6c6b-4f2c-b3df-836dc75f26c0,True,True,True,False,CLICKED
