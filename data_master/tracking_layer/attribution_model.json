@@ -1,0 +1,68 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "attribution_model",
+  "version": "1.0",
+  "status": "ACTIVE",
+
+  "rules": {
+    "real_data_only": true,
+    "multi_channel_supported": true,
+    "source_tracking_required": true
+  },
+
+  "model": {
+    "name": "multi_touch",
+
+    "touchpoints": [
+      "first_touch",
+      "content_touch",
+      "affiliate_touch",
+      "conversion_touch"
+    ]
+  },
+
+  "channels": [
+    {
+      "id": "organic_search",
+      "name": "Organic Search"
+    },
+    {
+      "id": "google",
+      "name": "Google"
+    },
+    {
+      "id": "bing",
+      "name": "Bing"
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube"
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok"
+    },
+    {
+      "id": "newsletter",
+      "name": "Newsletter"
+    },
+    {
+      "id": "direct",
+      "name": "Direct"
+    }
+  ],
+
+  "tracking_chain": [
+    "traffic_source",
+    "content",
+    "landingpage",
+    "affiliate_asset",
+    "click",
+    "conversion",
+    "revenue"
+  ]
+}

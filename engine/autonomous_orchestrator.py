@@ -5,6 +5,7 @@ from engine.learning_logger import LearningLogger
 
 class AutonomousOrchestrator:
 
+
     def __init__(
         self,
         autopilot,
@@ -14,47 +15,61 @@ class AutonomousOrchestrator:
 
         self.autopilot = autopilot
         self.learning = learning_loop
+
         self.learning_logger = (
             learning_logger
             or LearningLogger()
         )
 
 
-    # =========================
+    # ========================================================
     # FULL SYSTEM CYCLE
-    # =========================
+    # ========================================================
+
     def run(self):
 
-        # 1. AI ACTION
+
+        # 1. AUTOPILOT ACTION
+
         result = self.autopilot.run()
 
 
-        # 2. LEARNING STEP
+
+        # 2. PERFORMANCE LEARNING
+
         learning = self.learning.optimize()
 
 
+
         # 3. WRITE LEARNING SIGNAL
+
         learning_log = None
 
 
         try:
 
+
             if learning.get("status") == "optimized":
+
 
                 cycle_time = datetime.utcnow().strftime(
                     "%Y%m%d_%H%M%S"
                 )
 
 
+
                 learning_log = self.learning_logger.log_learning(
+
 
                     run_id=(
                         f"AUTONOMOUS_CYCLE_{cycle_time}"
                     ),
 
+
                     cycle_id=(
                         "ROUND_1"
                     ),
+
 
                     product_id=str(
                         learning.get(
@@ -63,24 +78,56 @@ class AutonomousOrchestrator:
                         )
                     ),
 
+
                     platform="AI_AGENT",
+
 
                     learning_type=(
                         "PERFORMANCE_OPTIMIZATION"
                     ),
 
+
                     signal=(
-                        "WINNER_PRODUCT_DETECTED"
+                        "BIGQUERY_TRAFFIC_SIGNAL"
                     ),
+
 
                     recommendation=learning.get(
                         "action",
                         "NO_ACTION"
                     ),
 
+
                     confidence=1.0,
 
+
                     status="LEARNED",
+
+
+
+                    impressions=int(
+                        learning.get(
+                            "impressions",
+                            0
+                        )
+                    ),
+
+
+                    clicks=int(
+                        learning.get(
+                            "clicks",
+                            0
+                        )
+                    ),
+
+
+                    conversions=int(
+                        learning.get(
+                            "conversions",
+                            0
+                        )
+                    ),
+
 
                     earnings=float(
                         learning.get(
@@ -89,6 +136,7 @@ class AutonomousOrchestrator:
                         )
                     ),
 
+
                     money_score=float(
                         learning.get(
                             "revenue",
@@ -96,37 +144,62 @@ class AutonomousOrchestrator:
                         )
                     ),
 
-                    winner_status=True,
+
+                    winner_status=False,
+
+
+                    partner=learning.get(
+                        "partner",
+                        ""
+                    ),
+
+
+                    compliance_status=learning.get(
+                        "compliance_status",
+                        ""
+                    ),
+
 
                     note=(
-                        "Autonomous learning cycle"
+                        "Real BigQuery performance learning cycle"
                     )
+
                 )
+
 
 
         except Exception as error:
 
+
             learning_log = {
 
-                "status": "ERROR",
+                "status":
+                    "ERROR",
 
-                "error": str(error)
+                "error":
+                    str(error)
 
             }
 
 
 
-        # 4. MERGE INTELLIGENCE
+        # 4. RETURN SYSTEM RESULT
+
+
         return {
+
 
             "autopilot":
                 result,
 
+
             "learning":
                 learning,
 
+
             "learning_log":
                 learning_log,
+
 
             "status":
                 "CYCLE_COMPLETE"

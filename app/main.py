@@ -25,7 +25,7 @@ from engine.ai_core_engine import AICoreEngine
 from engine.content_pipeline_adapter import ContentPipelineAdapter
 
 from engine.revenue_engine import RevenueEngine
-from engine.ai_learning_engine import AILearningLoop
+from engine.performance_learning_adapter import PerformanceLearningAdapter
 from engine.learning_logger import LearningLogger
 
 from engine.autopilot_orchestrator import AutopilotOrchestrator
@@ -263,9 +263,9 @@ revenue = RevenueEngine()
 # LEARNING
 # ============================================================
 
-learning = AILearningLoop(
-    sheets,
-    revenue
+learning = PerformanceLearningAdapter(
+    ai
+
 )
 
 learning_logger = LearningLogger()

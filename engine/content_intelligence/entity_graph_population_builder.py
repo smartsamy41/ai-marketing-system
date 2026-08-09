@@ -4,6 +4,7 @@ from pathlib import Path
 
 class EntityGraphPopulationBuilder:
 
+
     def __init__(self):
 
         self.product_file = Path(
@@ -14,24 +15,20 @@ class EntityGraphPopulationBuilder:
             "data_master/content_intelligence/affiliate_asset_knowledge_graph.json"
         )
 
-        self.primary_asset_file = Path(
-            "data_master/content_production/primary_asset_selection/primary_asset_selection_graph.json"
-        )
-
-        self.landingpage_folder = Path(
-            "data_master/content_production/final_pages"
+        self.page_file = Path(
+            "data_master/content_production/rendered_page_architecture.json"
         )
 
         self.article_file = Path(
             "data_master/content_graph/article_intelligence_graph.json"
         )
 
-        self.cluster_file = Path(
-            "data_master/content_intelligence/semantic_cluster_graph.json"
-        )
-
         self.question_file = Path(
             "data_master/content_intelligence/question_intelligence_graph.json"
+        )
+
+        self.cluster_file = Path(
+            "data_master/content_intelligence/semantic_cluster_graph.json"
         )
 
         self.source_file = Path(
@@ -43,7 +40,7 @@ class EntityGraphPopulationBuilder:
         )
 
 
-    def load_json(self, path):
+    def load(self,path):
 
         if not path.exists():
             return {}
@@ -57,80 +54,56 @@ class EntityGraphPopulationBuilder:
 
 
 
+    def valid(self,value):
+
+        if not value:
+            return False
+
+        if str(value).lower()=="nan":
+            return False
+
+        return True
+
+
+
     def build(self):
 
-        products = self.load_json(
-            self.product_file
-        )
-
-        assets_graph = self.load_json(
-            self.asset_file
-        )
-
-        primary_assets = self.load_json(
-            self.primary_asset_file
-        )
-
-        articles = self.load_json(
-            self.article_file
-        )
-
-        clusters = self.load_json(
-            self.cluster_file
-        )
-
-        questions = self.load_json(
-            self.question_file
-        )
-
-        sources = self.load_json(
-            self.source_file
-        )
+        products=self.load(self.product_file)
+        assets=self.load(self.asset_file).get("assets",[])
+        pages=self.load(self.page_file).get("pages",[])
+        articles=self.load(self.article_file).get("articles",[])
+        questions=self.load(self.question_file).get("questions",[])
+        clusters=self.load(self.cluster_file).get("clusters",[])
 
 
-        graph = {
+        graph={
 
-            "system":
-            "FREE BASICS AI MARKETING SYSTEM",
+            "system":"FREE BASICS AI MARKETING SYSTEM",
 
-            "type":
-            "entity_graph",
+            "type":"entity_graph",
 
-            "version":
-            "3.0",
+            "version":"6.0",
 
-            "status":
-            "ACTIVE",
+            "status":"ACTIVE",
 
-            "rules":
-            {
-                "verified_data_only": True,
-                "source_required": True,
-                "no_fake_landingpages": True,
-                "official_assets_only": True,
-                "tracking_required": True,
-                "compliance_required": True
-            },
+            "nodes":{
 
-
-            "nodes":
-            {
-
-                "partners": [],
-                "products": [],
-                "categories": [],
-                "topics": [],
-                "questions": [],
-                "articles": [],
-                "landingpages": [],
-                "affiliate_assets": [],
-                "tracking_assets": [],
-                "sources": []
+                "partners":[],
+                "products":[],
+                "categories":[],
+                "topics":[],
+                "questions":[],
+                "articles":[],
+                "landingpages":[],
+                "affiliate_assets":[],
+                "tracking_assets":[],
+                "conversion_targets":[],
+                "analytics_tracking":[]
 
             },
 
 
-            "relationships": []
+            "relationships":[]
 
         }
 
@@ -141,249 +114,241 @@ class EntityGraphPopulationBuilder:
 
 
 
-        # PRODUCTS
-
-        for p in products.get(
-            "entities",
-            []
-        ):
+        for p in products.get("entities",[]):
 
             pid=p.get("product_id")
+
             partner=p.get("partner")
+
             category=p.get("category")
 
 
-            graph["nodes"]["products"].append(
-                {
-                    "id": pid,
-                    "name": p.get("name"),
-                    "partner": partner,
-                    "category": category
-                }
-            )
+            graph["nodes"]["products"].append({
+
+                "id":pid,
+                "name":p.get("name"),
+                "partner":partner,
+                "category":category
+
+            })
 
 
             if partner:
 
                 partners.add(partner)
 
-                graph["relationships"].append(
-                    {
-                        "from": partner,
-                        "relation": "provides",
-                        "to": pid
-                    }
-                )
+                graph["relationships"].append({
+
+                    "from":partner,
+                    "relation":"provides",
+                    "to":pid
+
+                })
 
 
             if category:
 
                 categories.add(category)
 
-                graph["relationships"].append(
-                    {
-                        "from": pid,
-                        "relation": "belongs_to",
-                        "to": category
-                    }
-                )
+                graph["relationships"].append({
+
+                    "from":pid,
+                    "relation":"belongs_to",
+                    "to":category
+
+                })
 
 
-
-        # PARTNERS
 
         for p in partners:
 
-            graph["nodes"]["partners"].append(
-                {
-                    "id": p,
-                    "type": "Partner"
-                }
-            )
+            graph["nodes"]["partners"].append({
 
+                "id":p,
+                "type":"Partner"
 
+            })
 
-        # CATEGORIES
 
         for c in categories:
 
-            graph["nodes"]["categories"].append(
-                {
-                    "id": c,
-                    "type": "Category"
-                }
-            )
+            graph["nodes"]["categories"].append({
+
+                "id":c,
+                "type":"Category"
+
+            })
 
 
 
-        # ARTICLES
+        for t in clusters:
 
-        for article in articles.get(
-            "articles",
-            []
-        ):
-
-            graph["nodes"]["articles"].append(
-                article
-            )
-
-
-            graph["relationships"].append(
-                {
-                    "from": article.get("product_id"),
-                    "relation": "has_content",
-                    "to": article.get("article_id")
-                }
-            )
+            graph["nodes"]["topics"].append(t)
 
 
 
-        # QUESTIONS
+        for q in questions:
 
-        for q in questions.get(
-            "questions",
-            []
-        ):
+            graph["nodes"]["questions"].append(q)
 
-            graph["nodes"]["questions"].append(
-                q
-            )
+            graph["relationships"].append({
 
-            graph["relationships"].append(
-                {
-                    "from": q.get("product_id"),
-                    "relation": "answers",
-                    "to": q.get("question_id")
-                }
-            )
+                "from":q.get("product_id"),
+                "relation":"answers",
+                "to":q.get("question_id")
+
+            })
 
 
 
-        # TOPICS
+        for a in articles:
 
-        for c in clusters.get(
-            "clusters",
-            []
-        ):
+            graph["nodes"]["articles"].append(a)
 
-            graph["nodes"]["topics"].append(
-                {
-                    "id": c.get("cluster"),
-                    "type": "SemanticCluster"
-                }
-            )
+            graph["relationships"].append({
+
+                "from":a.get("product_id"),
+                "relation":"has_content",
+                "to":a.get("article_id")
+
+            })
 
 
 
-        # LANDINGPAGES
+        for page in pages:
 
-        if self.landingpage_folder.exists():
+            pid=page.get("product_id")
 
-            for file in self.landingpage_folder.glob("*.html"):
-
-                if file.name != "affiliate_html_status.json":
-
-                    pid=file.stem
-
-                    graph["nodes"]["landingpages"].append(
-                        {
-                            "id": pid,
-                            "file": str(file),
-                            "type": "LandingPage"
-                        }
-                    )
+            lp="LP_"+pid
 
 
-                    graph["relationships"].append(
-                        {
-                            "from": pid,
-                            "relation": "represented_by",
-                            "to": pid
-                        }
-                    )
+            graph["nodes"]["landingpages"].append({
+
+                "id":lp,
+                "product_id":pid,
+                "status":"READY"
+
+            })
+
+
+            graph["relationships"].append({
+
+                "from":pid,
+                "relation":"represented_by",
+                "to":lp
+
+            })
 
 
 
-        # AFFILIATE ASSETS
-
-        for asset in assets_graph.get(
-            "assets",
-            []
-        ):
-
-            graph["nodes"]["affiliate_assets"].append(
-                asset
-            )
+        for asset in assets:
 
 
-            if asset.get("asset_id"):
+            aid=asset.get("asset_id")
 
-                graph["relationships"].append(
-                    {
-                        "from": asset.get("product_name"),
-                        "relation": "has_official_asset",
-                        "to": asset.get("asset_id")
-                    }
-                )
+            pid=asset.get("product_id")
 
 
-
-        # PRIMARY TRACKING ASSETS
-
-        for pid,item in primary_assets.get(
-            "products",
-            {}
-        ).items():
-
-            asset=item.get(
-                "primary_asset",
-                {}
-            )
+            graph["nodes"]["affiliate_assets"].append(asset)
 
 
-            if asset:
+            if pid:
 
-                graph["nodes"]["tracking_assets"].append(
-                    {
-                        "id": asset.get("asset_id"),
-                        "source": asset.get("source")
-                    }
-                )
+                graph["relationships"].append({
 
+                    "from":pid,
+                    "relation":"has_asset",
+                    "to":aid
 
-                graph["relationships"].append(
-                    {
-                        "from": pid,
-                        "relation": "uses_primary_asset",
-                        "to": asset.get("asset_id")
-                    }
-                )
+                })
 
 
 
-        # SOURCES
+            tracking_id="TRACK_"+aid
 
-        for s in sources.get(
-            "connections",
-            {}
-        ).get(
-            "product_to_source",
-            []
-        ):
 
-            graph["nodes"]["sources"].append(
-                {
-                    "id": s.get("source")
-                }
-            )
+            graph["nodes"]["tracking_assets"].append({
 
-            graph["relationships"].append(
-                {
-                    "from": s.get("product_id"),
-                    "relation": "supported_by",
-                    "to": s.get("source")
-                }
-            )
+                "id":tracking_id,
+                "asset_id":aid,
+                "tracking":asset.get("tracking")
+
+            })
+
+
+            if pid:
+
+                graph["relationships"].append({
+
+                    "from":pid,
+                    "relation":"measured_by",
+                    "to":tracking_id
+
+                })
+
+
+
+            targets=[
+
+                asset.get("direct_link"),
+                asset.get("calculator"),
+                asset.get("short_calculator")
+
+            ]
+
+
+            for target in targets:
+
+                if self.valid(target):
+
+                    cid="CONVERSION_"+aid
+
+
+                    graph["nodes"]["conversion_targets"].append({
+
+                        "id":cid,
+                        "asset_id":aid,
+                        "url":target
+
+                    })
+
+
+                    graph["relationships"].append({
+
+                        "from":aid,
+                        "relation":"converts_to",
+                        "to":cid
+
+                    })
+
+                    break
+
+
+
+        # GLOBAL TRACKING SYSTEM
+
+        tracking_systems=[
+
+            "Google Analytics",
+            "Google Tag Manager",
+            "Google Ads Conversion",
+            "Bing UET",
+            "Pinterest Conversion Tag",
+            "TikTok Pixel",
+            "YouTube Analytics"
+
+        ]
+
+
+        for t in tracking_systems:
+
+            graph["nodes"]["analytics_tracking"].append({
+
+                "id":t,
+                "type":"AnalyticsSystem",
+                "status":"REGISTERED"
+
+            })
 
 
 
@@ -408,15 +373,12 @@ class EntityGraphPopulationBuilder:
 
 
 
-        print("ENTITY GRAPH V3 CREATED")
+        print("ENTITY GRAPH V6 CREATED")
+
 
         for k,v in graph["nodes"].items():
 
-            print(
-                k,
-                ":",
-                len(v)
-            )
+            print(k,":",len(v))
 
 
         print(
@@ -426,6 +388,6 @@ class EntityGraphPopulationBuilder:
 
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
 
     EntityGraphPopulationBuilder().build()

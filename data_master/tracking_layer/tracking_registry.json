@@ -1,0 +1,178 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "tracking_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+
+  "principles": {
+    "real_tracking_only": true,
+    "no_fake_events": true,
+    "source_required": true,
+    "consent_required": true,
+    "partner_validation_required": true
+  },
+
+  "tracking_entities": {
+
+    "product": {
+      "required": true,
+      "fields": [
+        "product_id",
+        "product_name",
+        "category",
+        "partner"
+      ]
+    },
+
+    "content": {
+      "required": true,
+      "fields": [
+        "article_id",
+        "landingpage_id",
+        "content_cluster",
+        "source"
+      ]
+    },
+
+    "affiliate_asset": {
+      "required": true,
+      "fields": [
+        "asset_id",
+        "asset_type",
+        "tracking_parameter"
+      ]
+    },
+
+    "visitor": {
+      "required": true,
+      "fields": [
+        "session_id",
+        "device",
+        "country",
+        "language"
+      ]
+    }
+  },
+
+
+  "events": [
+
+    {
+      "event_name": "page_view",
+      "description": "Besuch einer Seite",
+      "required_fields": [
+        "page_url",
+        "landingpage_id",
+        "timestamp"
+      ]
+    },
+
+
+    {
+      "event_name": "affiliate_click",
+      "description": "Klick auf Affiliate Asset",
+      "required_fields": [
+        "product_id",
+        "partner",
+        "asset_id",
+        "source",
+        "timestamp"
+      ]
+    },
+
+
+    {
+      "event_name": "conversion",
+      "description": "Bestätigte Partneraktion",
+      "required_fields": [
+        "conversion_id",
+        "product_id",
+        "partner",
+        "value",
+        "currency",
+        "timestamp"
+      ]
+    },
+
+
+    {
+      "event_name": "newsletter_click",
+      "description": "Klick aus Partner Newsletter",
+      "required_fields": [
+        "newsletter_id",
+        "partner",
+        "product_id",
+        "timestamp"
+      ]
+    }
+
+  ],
+
+
+  "platforms": {
+
+    "google_analytics": {
+      "status": "planned",
+      "purpose": "web_analytics"
+    },
+
+    "google_tag_manager": {
+      "status": "planned",
+      "purpose": "tag_management"
+    },
+
+    "google_search_console": {
+      "status": "planned",
+      "purpose": "search_visibility"
+    },
+
+    "bing_webmaster": {
+      "status": "planned",
+      "purpose": "search_visibility"
+    },
+
+    "pinterest_conversion": {
+      "status": "planned",
+      "purpose": "social_conversion"
+    },
+
+    "tiktok_pixel": {
+      "status": "planned",
+      "purpose": "social_conversion"
+    },
+
+    "youtube_analytics": {
+      "status": "planned",
+      "purpose": "video_tracking"
+    }
+
+  },
+
+
+  "attribution": {
+
+    "model": "multi_touch",
+
+    "channels": [
+      "organic_search",
+      "google",
+      "bing",
+      "pinterest",
+      "youtube",
+      "tiktok",
+      "newsletter",
+      "direct"
+    ],
+
+    "tracking_chain": [
+      "source",
+      "content",
+      "landingpage",
+      "asset",
+      "click",
+      "conversion",
+      "revenue"
+    ]
+  }
+
+}

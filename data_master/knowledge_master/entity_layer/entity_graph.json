@@ -1,16 +1,8 @@
 {
   "system": "FREE BASICS AI MARKETING SYSTEM",
   "type": "entity_graph",
-  "version": "3.0",
+  "version": "6.0",
   "status": "ACTIVE",
-  "rules": {
-    "verified_data_only": true,
-    "source_required": true,
-    "no_fake_landingpages": true,
-    "official_assets_only": true,
-    "tracking_required": true,
-    "compliance_required": true
-  },
   "nodes": {
     "partners": [
       {
@@ -18,11 +10,11 @@
         "type": "Partner"
       },
       {
-        "id": "telekom",
+        "id": "tarifcheck",
         "type": "Partner"
       },
       {
-        "id": "tarifcheck",
+        "id": "telekom",
         "type": "Partner"
       },
       {
@@ -298,43 +290,7 @@
     ],
     "categories": [
       {
-        "id": "Bücher - Psychologie & Persönlichkeitsentwicklung",
-        "type": "Category"
-      },
-      {
-        "id": "Körperpflege & Elektrorasierer",
-        "type": "Category"
-      },
-      {
-        "id": "Kredit",
-        "type": "Category"
-      },
-      {
-        "id": "Bücher - Liebesromane / New Adult",
-        "type": "Category"
-      },
-      {
-        "id": "Nahrungsergänzung - Magnesium",
-        "type": "Category"
-      },
-      {
-        "id": "Gas",
-        "type": "Category"
-      },
-      {
-        "id": "Oekostrom",
-        "type": "Category"
-      },
-      {
-        "id": "Vorsorge",
-        "type": "Category"
-      },
-      {
-        "id": "Bluetooth-Kopfhörer",
-        "type": "Category"
-      },
-      {
-        "id": "Reisen",
+        "id": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
         "type": "Category"
       },
       {
@@ -346,35 +302,11 @@
         "type": "Category"
       },
       {
-        "id": "Strom",
+        "id": "Nahrungsergänzung - Magnesium",
         "type": "Category"
       },
       {
-        "id": "Finanzen",
-        "type": "Category"
-      },
-      {
-        "id": "Rasierklingen & Zubehör",
-        "type": "Category"
-      },
-      {
-        "id": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
-        "type": "Category"
-      },
-      {
-        "id": "Bücher - Roman & Gegenwartsliteratur",
-        "type": "Category"
-      },
-      {
-        "id": "telekom",
-        "type": "Category"
-      },
-      {
-        "id": "Girokonto",
-        "type": "Category"
-      },
-      {
-        "id": "DSL",
+        "id": "Reisen",
         "type": "Category"
       },
       {
@@ -382,11 +314,27 @@
         "type": "Category"
       },
       {
+        "id": "Körperpflege & Elektrorasierer",
+        "type": "Category"
+      },
+      {
+        "id": "telekom",
+        "type": "Category"
+      },
+      {
+        "id": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+        "type": "Category"
+      },
+      {
         "id": "Kosmetik - Wimperntusche",
         "type": "Category"
       },
       {
-        "id": "Baufinanzierung",
+        "id": "Bücher - Roman & Gegenwartsliteratur",
+        "type": "Category"
+      },
+      {
+        "id": "Mobilfunk",
         "type": "Category"
       },
       {
@@ -394,42 +342,234 @@
         "type": "Category"
       },
       {
+        "id": "Baufinanzierung",
+        "type": "Category"
+      },
+      {
+        "id": "Oekostrom",
+        "type": "Category"
+      },
+      {
+        "id": "Gas",
+        "type": "Category"
+      },
+      {
+        "id": "Bluetooth-Kopfhörer",
+        "type": "Category"
+      },
+      {
+        "id": "Strom",
+        "type": "Category"
+      },
+      {
+        "id": "Kredit",
+        "type": "Category"
+      },
+      {
+        "id": "Girokonto",
+        "type": "Category"
+      },
+      {
+        "id": "Rasierklingen & Zubehör",
+        "type": "Category"
+      },
+      {
         "id": "Solaranlage",
         "type": "Category"
       },
       {
-        "id": "Mobilfunk",
+        "id": "Bücher - Liebesromane / New Adult",
+        "type": "Category"
+      },
+      {
+        "id": "Finanzen",
+        "type": "Category"
+      },
+      {
+        "id": "DSL",
+        "type": "Category"
+      },
+      {
+        "id": "Vorsorge",
         "type": "Category"
       }
     ],
     "topics": [
       {
-        "id": "internet_mobilfunk",
-        "type": "SemanticCluster"
+        "cluster": "internet_mobilfunk",
+        "categories": [
+          "dsl",
+          "mobilfunk"
+        ],
+        "products": [
+          "CHK24_004",
+          "CHK24_005"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005"
+        ]
       },
       {
-        "id": "energie",
-        "type": "SemanticCluster"
+        "cluster": "energie",
+        "categories": [
+          "strom",
+          "oekostrom",
+          "gas",
+          "solaranlage"
+        ],
+        "products": [
+          "CHK24_001",
+          "CHK24_002",
+          "CHK24_003",
+          "TC_001"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001"
+        ]
       },
       {
-        "id": "reisen",
-        "type": "SemanticCluster"
+        "cluster": "reisen",
+        "categories": [
+          "reisen"
+        ],
+        "products": [
+          "CHK24_006",
+          "CHK24_007"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007"
+        ]
       },
       {
-        "id": "finanzen",
-        "type": "SemanticCluster"
+        "cluster": "finanzen",
+        "categories": [
+          "finanzen",
+          "kredit",
+          "girokonto",
+          "baufinanzierung"
+        ],
+        "products": [
+          "CHK24_008",
+          "TC_003",
+          "TC_004",
+          "TC_005"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005"
+        ]
       },
       {
-        "id": "versicherung",
-        "type": "SemanticCluster"
+        "cluster": "versicherung",
+        "categories": [
+          "kfz",
+          "hausrat",
+          "haftpflicht",
+          "rente",
+          "pkv"
+        ],
+        "products": [
+          "TC_002",
+          "TC_006",
+          "TC_007",
+          "TC_008",
+          "TC_009"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009"
+        ]
       },
       {
-        "id": "amazon_shopping",
-        "type": "SemanticCluster"
+        "cluster": "amazon_shopping",
+        "categories": [
+          "bluetooth-kopfhörer",
+          "e-reader",
+          "körperpflege",
+          "bauspielzeugsets",
+          "bücher",
+          "rasierklingen",
+          "kosmetik",
+          "magnesium"
+        ],
+        "products": [
+          "B0FQF32239",
+          "B0CFPWLGF2",
+          "B0DFYN8174",
+          "B0FPXFBL13",
+          "B0FPXDCDX2",
+          "B0FPXGJL6H",
+          "B0FPXDRR63",
+          "3424631078",
+          "B0FNX7HC9M",
+          "3423209690",
+          "3832167242",
+          "3426281759",
+          "B0DXLBZF4Q",
+          "B0CVXSK4D3",
+          "B08P4YPB8Q",
+          "B0FMS3V43J",
+          "B0D1YKBX82"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82"
+        ]
       },
       {
-        "id": "telekom",
-        "type": "SemanticCluster"
+        "cluster": "telekom",
+        "categories": [
+          "telekom"
+        ],
+        "products": [
+          "TEL_001",
+          "TEL_002",
+          "TEL_003",
+          "TEL_004",
+          "TEL_005",
+          "TEL_006",
+          "TEL_007",
+          "TEL_008",
+          "TEL_009",
+          "TEL_010"
+        ],
+        "landingpages": [
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+          "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010"
+        ]
       }
     ],
     "questions": [
@@ -1714,224 +1854,224 @@
     ],
     "landingpages": [
       {
-        "id": "3423209690",
-        "file": "data_master/content_production/final_pages/3423209690.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_004",
+        "product_id": "CHK24_004",
+        "status": "READY"
       },
       {
-        "id": "B0FPXGJL6H",
-        "file": "data_master/content_production/final_pages/B0FPXGJL6H.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_005",
+        "product_id": "CHK24_005",
+        "status": "READY"
       },
       {
-        "id": "CHK24_008",
-        "file": "data_master/content_production/final_pages/CHK24_008.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_002",
+        "product_id": "CHK24_002",
+        "status": "READY"
       },
       {
-        "id": "TEL_001",
-        "file": "data_master/content_production/final_pages/TEL_001.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_001",
+        "product_id": "CHK24_001",
+        "status": "READY"
       },
       {
-        "id": "TC_003",
-        "file": "data_master/content_production/final_pages/TC_003.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_003",
+        "product_id": "CHK24_003",
+        "status": "READY"
       },
       {
-        "id": "TEL_002",
-        "file": "data_master/content_production/final_pages/TEL_002.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_006",
+        "product_id": "CHK24_006",
+        "status": "READY"
       },
       {
-        "id": "B0FPXDRR63",
-        "file": "data_master/content_production/final_pages/B0FPXDRR63.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_007",
+        "product_id": "CHK24_007",
+        "status": "READY"
       },
       {
-        "id": "3832167242",
-        "file": "data_master/content_production/final_pages/3832167242.html",
-        "type": "LandingPage"
+        "id": "LP_CHK24_008",
+        "product_id": "CHK24_008",
+        "status": "READY"
       },
       {
-        "id": "B08P4YPB8Q",
-        "file": "data_master/content_production/final_pages/B08P4YPB8Q.html",
-        "type": "LandingPage"
+        "id": "LP_TC_001",
+        "product_id": "TC_001",
+        "status": "READY"
       },
       {
-        "id": "TC_007",
-        "file": "data_master/content_production/final_pages/TC_007.html",
-        "type": "LandingPage"
+        "id": "LP_TC_002",
+        "product_id": "TC_002",
+        "status": "READY"
       },
       {
-        "id": "TEL_007",
-        "file": "data_master/content_production/final_pages/TEL_007.html",
-        "type": "LandingPage"
+        "id": "LP_TC_003",
+        "product_id": "TC_003",
+        "status": "READY"
       },
       {
-        "id": "B0FMS3V43J",
-        "file": "data_master/content_production/final_pages/B0FMS3V43J.html",
-        "type": "LandingPage"
+        "id": "LP_TC_004",
+        "product_id": "TC_004",
+        "status": "READY"
       },
       {
-        "id": "TEL_006",
-        "file": "data_master/content_production/final_pages/TEL_006.html",
-        "type": "LandingPage"
+        "id": "LP_TC_005",
+        "product_id": "TC_005",
+        "status": "READY"
       },
       {
-        "id": "TC_006",
-        "file": "data_master/content_production/final_pages/TC_006.html",
-        "type": "LandingPage"
+        "id": "LP_TC_006",
+        "product_id": "TC_006",
+        "status": "READY"
       },
       {
-        "id": "CHK24_004",
-        "file": "data_master/content_production/final_pages/CHK24_004.html",
-        "type": "LandingPage"
+        "id": "LP_TC_007",
+        "product_id": "TC_007",
+        "status": "READY"
       },
       {
-        "id": "TEL_004",
-        "file": "data_master/content_production/final_pages/TEL_004.html",
-        "type": "LandingPage"
+        "id": "LP_TC_008",
+        "product_id": "TC_008",
+        "status": "READY"
       },
       {
-        "id": "TC_005",
-        "file": "data_master/content_production/final_pages/TC_005.html",
-        "type": "LandingPage"
+        "id": "LP_TC_009",
+        "product_id": "TC_009",
+        "status": "READY"
       },
       {
-        "id": "B0FPXFBL13",
-        "file": "data_master/content_production/final_pages/B0FPXFBL13.html",
-        "type": "LandingPage"
+        "id": "LP_B0FQF32239",
+        "product_id": "B0FQF32239",
+        "status": "READY"
       },
       {
-        "id": "B0CVXSK4D3",
-        "file": "data_master/content_production/final_pages/B0CVXSK4D3.html",
-        "type": "LandingPage"
+        "id": "LP_B0CFPWLGF2",
+        "product_id": "B0CFPWLGF2",
+        "status": "READY"
       },
       {
-        "id": "CHK24_001",
-        "file": "data_master/content_production/final_pages/CHK24_001.html",
-        "type": "LandingPage"
+        "id": "LP_B0DFYN8174",
+        "product_id": "B0DFYN8174",
+        "status": "READY"
       },
       {
-        "id": "B0FPXDCDX2",
-        "file": "data_master/content_production/final_pages/B0FPXDCDX2.html",
-        "type": "LandingPage"
+        "id": "LP_B0FPXFBL13",
+        "product_id": "B0FPXFBL13",
+        "status": "READY"
       },
       {
-        "id": "B0FNX7HC9M",
-        "file": "data_master/content_production/final_pages/B0FNX7HC9M.html",
-        "type": "LandingPage"
+        "id": "LP_B0FPXDCDX2",
+        "product_id": "B0FPXDCDX2",
+        "status": "READY"
       },
       {
-        "id": "3424631078",
-        "file": "data_master/content_production/final_pages/3424631078.html",
-        "type": "LandingPage"
+        "id": "LP_B0FPXGJL6H",
+        "product_id": "B0FPXGJL6H",
+        "status": "READY"
       },
       {
-        "id": "B0DFYN8174",
-        "file": "data_master/content_production/final_pages/B0DFYN8174.html",
-        "type": "LandingPage"
+        "id": "LP_B0FPXDRR63",
+        "product_id": "B0FPXDRR63",
+        "status": "READY"
       },
       {
-        "id": "CHK24_007",
-        "file": "data_master/content_production/final_pages/CHK24_007.html",
-        "type": "LandingPage"
+        "id": "LP_3424631078",
+        "product_id": "3424631078",
+        "status": "READY"
       },
       {
-        "id": "TC_001",
-        "file": "data_master/content_production/final_pages/TC_001.html",
-        "type": "LandingPage"
+        "id": "LP_B0FNX7HC9M",
+        "product_id": "B0FNX7HC9M",
+        "status": "READY"
       },
       {
-        "id": "CHK24_003",
-        "file": "data_master/content_production/final_pages/CHK24_003.html",
-        "type": "LandingPage"
+        "id": "LP_3423209690",
+        "product_id": "3423209690",
+        "status": "READY"
       },
       {
-        "id": "TC_008",
-        "file": "data_master/content_production/final_pages/TC_008.html",
-        "type": "LandingPage"
+        "id": "LP_3832167242",
+        "product_id": "3832167242",
+        "status": "READY"
       },
       {
-        "id": "CHK24_002",
-        "file": "data_master/content_production/final_pages/CHK24_002.html",
-        "type": "LandingPage"
+        "id": "LP_3426281759",
+        "product_id": "3426281759",
+        "status": "READY"
       },
       {
-        "id": "TEL_005",
-        "file": "data_master/content_production/final_pages/TEL_005.html",
-        "type": "LandingPage"
+        "id": "LP_B0DXLBZF4Q",
+        "product_id": "B0DXLBZF4Q",
+        "status": "READY"
       },
       {
-        "id": "B0FQF32239",
-        "file": "data_master/content_production/final_pages/B0FQF32239.html",
-        "type": "LandingPage"
+        "id": "LP_B0CVXSK4D3",
+        "product_id": "B0CVXSK4D3",
+        "status": "READY"
       },
       {
-        "id": "CHK24_006",
-        "file": "data_master/content_production/final_pages/CHK24_006.html",
-        "type": "LandingPage"
+        "id": "LP_B08P4YPB8Q",
+        "product_id": "B08P4YPB8Q",
+        "status": "READY"
       },
       {
-        "id": "TEL_008",
-        "file": "data_master/content_production/final_pages/TEL_008.html",
-        "type": "LandingPage"
+        "id": "LP_B0FMS3V43J",
+        "product_id": "B0FMS3V43J",
+        "status": "READY"
       },
       {
-        "id": "TEL_010",
-        "file": "data_master/content_production/final_pages/TEL_010.html",
-        "type": "LandingPage"
+        "id": "LP_B0D1YKBX82",
+        "product_id": "B0D1YKBX82",
+        "status": "READY"
       },
       {
-        "id": "TC_002",
-        "file": "data_master/content_production/final_pages/TC_002.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_001",
+        "product_id": "TEL_001",
+        "status": "READY"
       },
       {
-        "id": "3426281759",
-        "file": "data_master/content_production/final_pages/3426281759.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_002",
+        "product_id": "TEL_002",
+        "status": "READY"
       },
       {
-        "id": "B0DXLBZF4Q",
-        "file": "data_master/content_production/final_pages/B0DXLBZF4Q.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_003",
+        "product_id": "TEL_003",
+        "status": "READY"
       },
       {
-        "id": "CHK24_005",
-        "file": "data_master/content_production/final_pages/CHK24_005.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_004",
+        "product_id": "TEL_004",
+        "status": "READY"
       },
       {
-        "id": "TC_004",
-        "file": "data_master/content_production/final_pages/TC_004.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_005",
+        "product_id": "TEL_005",
+        "status": "READY"
       },
       {
-        "id": "TC_009",
-        "file": "data_master/content_production/final_pages/TC_009.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_006",
+        "product_id": "TEL_006",
+        "status": "READY"
       },
       {
-        "id": "TEL_009",
-        "file": "data_master/content_production/final_pages/TEL_009.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_007",
+        "product_id": "TEL_007",
+        "status": "READY"
       },
       {
-        "id": "B0CFPWLGF2",
-        "file": "data_master/content_production/final_pages/B0CFPWLGF2.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_008",
+        "product_id": "TEL_008",
+        "status": "READY"
       },
       {
-        "id": "TEL_003",
-        "file": "data_master/content_production/final_pages/TEL_003.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_009",
+        "product_id": "TEL_009",
+        "status": "READY"
       },
       {
-        "id": "B0D1YKBX82",
-        "file": "data_master/content_production/final_pages/B0D1YKBX82.html",
-        "type": "LandingPage"
+        "id": "LP_TEL_010",
+        "product_id": "TEL_010",
+        "status": "READY"
       }
     ],
     "affiliate_assets": [
@@ -7956,314 +8096,2238 @@
     ],
     "tracking_assets": [
       {
-        "id": "CHK24_004_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_005_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_002_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_001_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_003_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_006_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_007_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "CHK24_008_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_001_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_002_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_003_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_004_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_005_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_006_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_007_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_008_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TC_009_CALCULATOR",
-        "source": "Vergleichsrechner/Formular"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FQF32239",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0CFPWLGF2",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0DFYN8174",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FPXFBL13",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FPXDCDX2",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FPXGJL6H",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FPXDRR63",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "3424631078",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FNX7HC9M",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "3423209690",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "3832167242",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "3426281759",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0DXLBZF4Q",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0CVXSK4D3",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B08P4YPB8Q",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0FMS3V43J",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "B0D1YKBX82",
-        "source": "amazon_product"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_001_DIRECT",
+        "asset_id": "TC_001_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_001_CALCULATOR",
+        "asset_id": "TC_001_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_001_SHORT",
+        "asset_id": "TC_001_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_001_BANNER_300",
+        "asset_id": "TC_001_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_001_BANNER_728",
+        "asset_id": "TC_001_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_002_DIRECT",
+        "asset_id": "TC_002_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_002_CALCULATOR",
+        "asset_id": "TC_002_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_002_SHORT",
+        "asset_id": "TC_002_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
       },
       {
-        "id": "TEL_SHOP_001",
-        "source": "shop"
+        "id": "TRACK_TC_002_BANNER_300",
+        "asset_id": "TC_002_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_728",
+        "asset_id": "TC_002_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_DIRECT",
+        "asset_id": "TC_002_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_CALCULATOR",
+        "asset_id": "TC_002_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_SHORT",
+        "asset_id": "TC_002_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_300",
+        "asset_id": "TC_002_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_728",
+        "asset_id": "TC_002_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_DIRECT",
+        "asset_id": "TC_002_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_CALCULATOR",
+        "asset_id": "TC_002_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_SHORT",
+        "asset_id": "TC_002_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_300",
+        "asset_id": "TC_002_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_728",
+        "asset_id": "TC_002_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_DIRECT",
+        "asset_id": "TC_002_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_CALCULATOR",
+        "asset_id": "TC_002_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_SHORT",
+        "asset_id": "TC_002_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_300",
+        "asset_id": "TC_002_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_728",
+        "asset_id": "TC_002_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_DIRECT",
+        "asset_id": "TC_002_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_CALCULATOR",
+        "asset_id": "TC_002_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_SHORT",
+        "asset_id": "TC_002_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_300",
+        "asset_id": "TC_002_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_728",
+        "asset_id": "TC_002_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_DIRECT",
+        "asset_id": "TC_002_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_CALCULATOR",
+        "asset_id": "TC_002_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_SHORT",
+        "asset_id": "TC_002_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_300",
+        "asset_id": "TC_002_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_002_BANNER_728",
+        "asset_id": "TC_002_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_DIRECT",
+        "asset_id": "TC_003_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_CALCULATOR",
+        "asset_id": "TC_003_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_SHORT",
+        "asset_id": "TC_003_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_300",
+        "asset_id": "TC_003_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_728",
+        "asset_id": "TC_003_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_DIRECT",
+        "asset_id": "TC_003_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_CALCULATOR",
+        "asset_id": "TC_003_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_SHORT",
+        "asset_id": "TC_003_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_300",
+        "asset_id": "TC_003_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_728",
+        "asset_id": "TC_003_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_DIRECT",
+        "asset_id": "TC_003_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_CALCULATOR",
+        "asset_id": "TC_003_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_SHORT",
+        "asset_id": "TC_003_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_300",
+        "asset_id": "TC_003_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_728",
+        "asset_id": "TC_003_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_DIRECT",
+        "asset_id": "TC_003_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_CALCULATOR",
+        "asset_id": "TC_003_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_SHORT",
+        "asset_id": "TC_003_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_300",
+        "asset_id": "TC_003_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_728",
+        "asset_id": "TC_003_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_DIRECT",
+        "asset_id": "TC_003_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_CALCULATOR",
+        "asset_id": "TC_003_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_SHORT",
+        "asset_id": "TC_003_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_300",
+        "asset_id": "TC_003_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_728",
+        "asset_id": "TC_003_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_DIRECT",
+        "asset_id": "TC_003_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_CALCULATOR",
+        "asset_id": "TC_003_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_SHORT",
+        "asset_id": "TC_003_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_300",
+        "asset_id": "TC_003_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_003_BANNER_728",
+        "asset_id": "TC_003_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_DIRECT",
+        "asset_id": "TC_004_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_CALCULATOR",
+        "asset_id": "TC_004_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_SHORT",
+        "asset_id": "TC_004_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_300",
+        "asset_id": "TC_004_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_728",
+        "asset_id": "TC_004_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_DIRECT",
+        "asset_id": "TC_004_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_CALCULATOR",
+        "asset_id": "TC_004_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_SHORT",
+        "asset_id": "TC_004_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_300",
+        "asset_id": "TC_004_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_728",
+        "asset_id": "TC_004_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_DIRECT",
+        "asset_id": "TC_004_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_CALCULATOR",
+        "asset_id": "TC_004_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_SHORT",
+        "asset_id": "TC_004_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_300",
+        "asset_id": "TC_004_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_728",
+        "asset_id": "TC_004_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_DIRECT",
+        "asset_id": "TC_004_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_CALCULATOR",
+        "asset_id": "TC_004_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_SHORT",
+        "asset_id": "TC_004_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_300",
+        "asset_id": "TC_004_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_728",
+        "asset_id": "TC_004_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_DIRECT",
+        "asset_id": "TC_004_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_CALCULATOR",
+        "asset_id": "TC_004_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_SHORT",
+        "asset_id": "TC_004_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_300",
+        "asset_id": "TC_004_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_004_BANNER_728",
+        "asset_id": "TC_004_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_DIRECT",
+        "asset_id": "TC_005_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_CALCULATOR",
+        "asset_id": "TC_005_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_SHORT",
+        "asset_id": "TC_005_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_300",
+        "asset_id": "TC_005_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_728",
+        "asset_id": "TC_005_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_DIRECT",
+        "asset_id": "TC_005_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_CALCULATOR",
+        "asset_id": "TC_005_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_SHORT",
+        "asset_id": "TC_005_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_300",
+        "asset_id": "TC_005_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_728",
+        "asset_id": "TC_005_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_DIRECT",
+        "asset_id": "TC_005_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_CALCULATOR",
+        "asset_id": "TC_005_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_SHORT",
+        "asset_id": "TC_005_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_300",
+        "asset_id": "TC_005_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_728",
+        "asset_id": "TC_005_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_DIRECT",
+        "asset_id": "TC_005_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_CALCULATOR",
+        "asset_id": "TC_005_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_SHORT",
+        "asset_id": "TC_005_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_300",
+        "asset_id": "TC_005_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_728",
+        "asset_id": "TC_005_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_DIRECT",
+        "asset_id": "TC_005_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_CALCULATOR",
+        "asset_id": "TC_005_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_SHORT",
+        "asset_id": "TC_005_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_300",
+        "asset_id": "TC_005_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_005_BANNER_728",
+        "asset_id": "TC_005_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_DIRECT",
+        "asset_id": "TC_006_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_CALCULATOR",
+        "asset_id": "TC_006_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_SHORT",
+        "asset_id": "TC_006_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_300",
+        "asset_id": "TC_006_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_728",
+        "asset_id": "TC_006_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_DIRECT",
+        "asset_id": "TC_006_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_CALCULATOR",
+        "asset_id": "TC_006_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_SHORT",
+        "asset_id": "TC_006_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_300",
+        "asset_id": "TC_006_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_728",
+        "asset_id": "TC_006_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_DIRECT",
+        "asset_id": "TC_006_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_CALCULATOR",
+        "asset_id": "TC_006_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_SHORT",
+        "asset_id": "TC_006_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_300",
+        "asset_id": "TC_006_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_728",
+        "asset_id": "TC_006_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_DIRECT",
+        "asset_id": "TC_006_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_CALCULATOR",
+        "asset_id": "TC_006_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_SHORT",
+        "asset_id": "TC_006_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_300",
+        "asset_id": "TC_006_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_728",
+        "asset_id": "TC_006_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_DIRECT",
+        "asset_id": "TC_006_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_CALCULATOR",
+        "asset_id": "TC_006_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_SHORT",
+        "asset_id": "TC_006_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_300",
+        "asset_id": "TC_006_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_006_BANNER_728",
+        "asset_id": "TC_006_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_DIRECT",
+        "asset_id": "TC_007_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_CALCULATOR",
+        "asset_id": "TC_007_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_SHORT",
+        "asset_id": "TC_007_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_300",
+        "asset_id": "TC_007_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_728",
+        "asset_id": "TC_007_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_DIRECT",
+        "asset_id": "TC_007_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_CALCULATOR",
+        "asset_id": "TC_007_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_SHORT",
+        "asset_id": "TC_007_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_300",
+        "asset_id": "TC_007_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_728",
+        "asset_id": "TC_007_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_DIRECT",
+        "asset_id": "TC_007_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_CALCULATOR",
+        "asset_id": "TC_007_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_SHORT",
+        "asset_id": "TC_007_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_300",
+        "asset_id": "TC_007_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_728",
+        "asset_id": "TC_007_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_DIRECT",
+        "asset_id": "TC_007_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_CALCULATOR",
+        "asset_id": "TC_007_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_SHORT",
+        "asset_id": "TC_007_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_300",
+        "asset_id": "TC_007_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_728",
+        "asset_id": "TC_007_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_DIRECT",
+        "asset_id": "TC_007_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_CALCULATOR",
+        "asset_id": "TC_007_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_SHORT",
+        "asset_id": "TC_007_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_300",
+        "asset_id": "TC_007_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_007_BANNER_728",
+        "asset_id": "TC_007_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_DIRECT",
+        "asset_id": "TC_008_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_CALCULATOR",
+        "asset_id": "TC_008_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_SHORT",
+        "asset_id": "TC_008_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_300",
+        "asset_id": "TC_008_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_728",
+        "asset_id": "TC_008_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_DIRECT",
+        "asset_id": "TC_008_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_CALCULATOR",
+        "asset_id": "TC_008_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_SHORT",
+        "asset_id": "TC_008_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_300",
+        "asset_id": "TC_008_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_728",
+        "asset_id": "TC_008_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_DIRECT",
+        "asset_id": "TC_008_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_CALCULATOR",
+        "asset_id": "TC_008_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_SHORT",
+        "asset_id": "TC_008_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_300",
+        "asset_id": "TC_008_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_728",
+        "asset_id": "TC_008_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_DIRECT",
+        "asset_id": "TC_008_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_CALCULATOR",
+        "asset_id": "TC_008_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_SHORT",
+        "asset_id": "TC_008_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_300",
+        "asset_id": "TC_008_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_728",
+        "asset_id": "TC_008_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_DIRECT",
+        "asset_id": "TC_008_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_CALCULATOR",
+        "asset_id": "TC_008_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_SHORT",
+        "asset_id": "TC_008_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_300",
+        "asset_id": "TC_008_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_008_BANNER_728",
+        "asset_id": "TC_008_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_DIRECT",
+        "asset_id": "TC_009_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_CALCULATOR",
+        "asset_id": "TC_009_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_SHORT",
+        "asset_id": "TC_009_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_300",
+        "asset_id": "TC_009_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_728",
+        "asset_id": "TC_009_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_DIRECT",
+        "asset_id": "TC_009_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_CALCULATOR",
+        "asset_id": "TC_009_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_SHORT",
+        "asset_id": "TC_009_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_300",
+        "asset_id": "TC_009_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_728",
+        "asset_id": "TC_009_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_DIRECT",
+        "asset_id": "TC_009_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_CALCULATOR",
+        "asset_id": "TC_009_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_SHORT",
+        "asset_id": "TC_009_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_300",
+        "asset_id": "TC_009_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_728",
+        "asset_id": "TC_009_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_DIRECT",
+        "asset_id": "TC_009_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_CALCULATOR",
+        "asset_id": "TC_009_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_SHORT",
+        "asset_id": "TC_009_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_300",
+        "asset_id": "TC_009_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_728",
+        "asset_id": "TC_009_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_DIRECT",
+        "asset_id": "TC_009_DIRECT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_CALCULATOR",
+        "asset_id": "TC_009_CALCULATOR",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_SHORT",
+        "asset_id": "TC_009_SHORT",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_300",
+        "asset_id": "TC_009_BANNER_300",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_TC_009_BANNER_728",
+        "asset_id": "TC_009_BANNER_728",
+        "tracking": "Tracking-ID am Ende von Werbelinks/Codes ergänzen mit &tracking=TRACKING_ID. Für Rechner, Banner und Deeplinks nutzbar."
+      },
+      {
+        "id": "TRACK_CHK24_002_DIRECT",
+        "asset_id": "CHK24_002_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_002_CALCULATOR",
+        "asset_id": "CHK24_002_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_002_SHORT",
+        "asset_id": "CHK24_002_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_002_BANNER_300",
+        "asset_id": "CHK24_002_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_002_BANNER_728",
+        "asset_id": "CHK24_002_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_003_DIRECT",
+        "asset_id": "CHK24_003_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_003_CALCULATOR",
+        "asset_id": "CHK24_003_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_003_SHORT",
+        "asset_id": "CHK24_003_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_003_BANNER_300",
+        "asset_id": "CHK24_003_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_003_BANNER_728",
+        "asset_id": "CHK24_003_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_004_DIRECT",
+        "asset_id": "CHK24_004_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_004_CALCULATOR",
+        "asset_id": "CHK24_004_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_004_SHORT",
+        "asset_id": "CHK24_004_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_004_BANNER_300",
+        "asset_id": "CHK24_004_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_004_BANNER_728",
+        "asset_id": "CHK24_004_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_005_DIRECT",
+        "asset_id": "CHK24_005_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_005_CALCULATOR",
+        "asset_id": "CHK24_005_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_005_SHORT",
+        "asset_id": "CHK24_005_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_005_BANNER_300",
+        "asset_id": "CHK24_005_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_005_BANNER_728",
+        "asset_id": "CHK24_005_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_006_DIRECT",
+        "asset_id": "CHK24_006_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_006_CALCULATOR",
+        "asset_id": "CHK24_006_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_006_SHORT",
+        "asset_id": "CHK24_006_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_006_BANNER_300",
+        "asset_id": "CHK24_006_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_006_BANNER_728",
+        "asset_id": "CHK24_006_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_007_DIRECT",
+        "asset_id": "CHK24_007_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_007_CALCULATOR",
+        "asset_id": "CHK24_007_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_007_SHORT",
+        "asset_id": "CHK24_007_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_007_BANNER_300",
+        "asset_id": "CHK24_007_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_007_BANNER_728",
+        "asset_id": "CHK24_007_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_008_DIRECT",
+        "asset_id": "CHK24_008_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_008_CALCULATOR",
+        "asset_id": "CHK24_008_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_008_SHORT",
+        "asset_id": "CHK24_008_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_008_BANNER_300",
+        "asset_id": "CHK24_008_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_008_BANNER_728",
+        "asset_id": "CHK24_008_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_001_DIRECT",
+        "asset_id": "CHK24_001_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_001_CALCULATOR",
+        "asset_id": "CHK24_001_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_001_SHORT",
+        "asset_id": "CHK24_001_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_001_BANNER_300",
+        "asset_id": "CHK24_001_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_CHK24_001_BANNER_728",
+        "asset_id": "CHK24_001_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_SHOP_001_DIRECT",
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "tracking": "Direkte Shopstrategie mit Partner-ID 100228979"
+      },
+      {
+        "id": "TRACK_TEL_SHOP_001_CALCULATOR",
+        "asset_id": "TEL_SHOP_001_CALCULATOR",
+        "tracking": "Direkte Shopstrategie mit Partner-ID 100228979"
+      },
+      {
+        "id": "TRACK_TEL_SHOP_001_SHORT",
+        "asset_id": "TEL_SHOP_001_SHORT",
+        "tracking": "Direkte Shopstrategie mit Partner-ID 100228979"
+      },
+      {
+        "id": "TRACK_TEL_SHOP_001_BANNER_300",
+        "asset_id": "TEL_SHOP_001_BANNER_300",
+        "tracking": "Direkte Shopstrategie mit Partner-ID 100228979"
+      },
+      {
+        "id": "TRACK_TEL_SHOP_001_BANNER_728",
+        "asset_id": "TEL_SHOP_001_BANNER_728",
+        "tracking": "Direkte Shopstrategie mit Partner-ID 100228979"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_200_DIRECT",
+        "asset_id": "TEL_LOGO_200_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_200_CALCULATOR",
+        "asset_id": "TEL_LOGO_200_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_200_SHORT",
+        "asset_id": "TEL_LOGO_200_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_200_BANNER_300",
+        "asset_id": "TEL_LOGO_200_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_200_BANNER_728",
+        "asset_id": "TEL_LOGO_200_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_300_DIRECT",
+        "asset_id": "TEL_LOGO_300_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_300_CALCULATOR",
+        "asset_id": "TEL_LOGO_300_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_300_SHORT",
+        "asset_id": "TEL_LOGO_300_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_300_BANNER_300",
+        "asset_id": "TEL_LOGO_300_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_300_BANNER_728",
+        "asset_id": "TEL_LOGO_300_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_600_DIRECT",
+        "asset_id": "TEL_LOGO_600_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_600_CALCULATOR",
+        "asset_id": "TEL_LOGO_600_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_600_SHORT",
+        "asset_id": "TEL_LOGO_600_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_600_BANNER_300",
+        "asset_id": "TEL_LOGO_600_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_600_BANNER_728",
+        "asset_id": "TEL_LOGO_600_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_940_DIRECT",
+        "asset_id": "TEL_LOGO_940_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_940_CALCULATOR",
+        "asset_id": "TEL_LOGO_940_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_940_SHORT",
+        "asset_id": "TEL_LOGO_940_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_940_BANNER_300",
+        "asset_id": "TEL_LOGO_940_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_LOGO_940_BANNER_728",
+        "asset_id": "TEL_LOGO_940_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_001_DIRECT",
+        "asset_id": "TEL_IMG_001_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_001_CALCULATOR",
+        "asset_id": "TEL_IMG_001_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_001_SHORT",
+        "asset_id": "TEL_IMG_001_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_001_BANNER_300",
+        "asset_id": "TEL_IMG_001_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_001_BANNER_728",
+        "asset_id": "TEL_IMG_001_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_002_DIRECT",
+        "asset_id": "TEL_IMG_002_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_002_CALCULATOR",
+        "asset_id": "TEL_IMG_002_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_002_SHORT",
+        "asset_id": "TEL_IMG_002_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_002_BANNER_300",
+        "asset_id": "TEL_IMG_002_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_002_BANNER_728",
+        "asset_id": "TEL_IMG_002_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_003_DIRECT",
+        "asset_id": "TEL_IMG_003_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_003_CALCULATOR",
+        "asset_id": "TEL_IMG_003_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_003_SHORT",
+        "asset_id": "TEL_IMG_003_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_003_BANNER_300",
+        "asset_id": "TEL_IMG_003_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_003_BANNER_728",
+        "asset_id": "TEL_IMG_003_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_004_DIRECT",
+        "asset_id": "TEL_IMG_004_DIRECT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_004_CALCULATOR",
+        "asset_id": "TEL_IMG_004_CALCULATOR",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_004_SHORT",
+        "asset_id": "TEL_IMG_004_SHORT",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_004_BANNER_300",
+        "asset_id": "TEL_IMG_004_BANNER_300",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_TEL_IMG_004_BANNER_728",
+        "asset_id": "TEL_IMG_004_BANNER_728",
+        "tracking": "nan"
+      },
+      {
+        "id": "TRACK_telekom_click_GENERAL",
+        "asset_id": "telekom_click_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_domain_init_GENERAL",
+        "asset_id": "domain_init_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_system_event_GENERAL",
+        "asset_id": "system_event_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_commission_import_GENERAL",
+        "asset_id": "commission_import_GENERAL",
+        "tracking": null
+      },
+      {
+        "id": "TRACK_learning_sync_GENERAL",
+        "asset_id": "learning_sync_GENERAL",
+        "tracking": null
       }
     ],
-    "sources": [
+    "conversion_targets": [
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_002_DIRECT",
+        "asset_id": "CHK24_002_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=oekostrom&cat=5"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_002_CALCULATOR",
+        "asset_id": "CHK24_002_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=oekostrom&cat=5"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_002_SHORT",
+        "asset_id": "CHK24_002_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=oekostrom&cat=5"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_002_BANNER_300",
+        "asset_id": "CHK24_002_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=oekostrom&cat=5"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_002_BANNER_728",
+        "asset_id": "CHK24_002_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=oekostrom&cat=5"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_003_DIRECT",
+        "asset_id": "CHK24_003_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=gasanbieter-wechseln&cat=3"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_003_CALCULATOR",
+        "asset_id": "CHK24_003_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=gasanbieter-wechseln&cat=3"
       },
       {
-        "id": "check24"
+        "id": "CONVERSION_CHK24_003_SHORT",
+        "asset_id": "CHK24_003_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=gasanbieter-wechseln&cat=3"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_003_BANNER_300",
+        "asset_id": "CHK24_003_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=gasanbieter-wechseln&cat=3"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_003_BANNER_728",
+        "asset_id": "CHK24_003_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=gasanbieter-wechseln&cat=3"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_004_DIRECT",
+        "asset_id": "CHK24_004_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=dsl-anbieterwechsel&cat=4"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_004_CALCULATOR",
+        "asset_id": "CHK24_004_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=dsl-anbieterwechsel&cat=4"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_004_SHORT",
+        "asset_id": "CHK24_004_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=dsl-anbieterwechsel&cat=4"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_004_BANNER_300",
+        "asset_id": "CHK24_004_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=dsl-anbieterwechsel&cat=4"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_004_BANNER_728",
+        "asset_id": "CHK24_004_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=dsl-anbieterwechsel&cat=4"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_005_DIRECT",
+        "asset_id": "CHK24_005_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=handytarife&cat=7"
       },
       {
-        "id": "tarifcheck"
+        "id": "CONVERSION_CHK24_005_CALCULATOR",
+        "asset_id": "CHK24_005_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=handytarife&cat=7"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_005_SHORT",
+        "asset_id": "CHK24_005_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=handytarife&cat=7"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_005_BANNER_300",
+        "asset_id": "CHK24_005_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=handytarife&cat=7"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_005_BANNER_728",
+        "asset_id": "CHK24_005_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=handytarife&cat=7"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_006_DIRECT",
+        "asset_id": "CHK24_006_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=pauschalreisen-vergleich&cat=9"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_006_CALCULATOR",
+        "asset_id": "CHK24_006_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=pauschalreisen-vergleich&cat=9"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_006_SHORT",
+        "asset_id": "CHK24_006_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=pauschalreisen-vergleich&cat=9"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_006_BANNER_300",
+        "asset_id": "CHK24_006_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=pauschalreisen-vergleich&cat=9"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_006_BANNER_728",
+        "asset_id": "CHK24_006_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=pauschalreisen-vergleich&cat=9"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_007_DIRECT",
+        "asset_id": "CHK24_007_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=mietwagen-preisvergleich&cat=10"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_007_CALCULATOR",
+        "asset_id": "CHK24_007_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=mietwagen-preisvergleich&cat=10"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_007_SHORT",
+        "asset_id": "CHK24_007_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=mietwagen-preisvergleich&cat=10"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_007_BANNER_300",
+        "asset_id": "CHK24_007_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=mietwagen-preisvergleich&cat=10"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_007_BANNER_728",
+        "asset_id": "CHK24_007_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=mietwagen-preisvergleich&cat=10"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_008_DIRECT",
+        "asset_id": "CHK24_008_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=c24bank&cat=14"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_008_CALCULATOR",
+        "asset_id": "CHK24_008_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=c24bank&cat=14"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_008_SHORT",
+        "asset_id": "CHK24_008_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=c24bank&cat=14"
       },
       {
-        "id": "amazon"
+        "id": "CONVERSION_CHK24_008_BANNER_300",
+        "asset_id": "CHK24_008_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=c24bank&cat=14"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_CHK24_008_BANNER_728",
+        "asset_id": "CHK24_008_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=c24bank&cat=14"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_CHK24_001_DIRECT",
+        "asset_id": "CHK24_001_DIRECT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=stromanbieter-wechseln&cat=1"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_CHK24_001_CALCULATOR",
+        "asset_id": "CHK24_001_CALCULATOR",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=stromanbieter-wechseln&cat=1"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_CHK24_001_SHORT",
+        "asset_id": "CHK24_001_SHORT",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=stromanbieter-wechseln&cat=1"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_CHK24_001_BANNER_300",
+        "asset_id": "CHK24_001_BANNER_300",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=stromanbieter-wechseln&cat=1"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_CHK24_001_BANNER_728",
+        "asset_id": "CHK24_001_BANNER_728",
+        "url": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep=stromanbieter-wechseln&cat=1"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_TEL_SHOP_001_DIRECT",
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_TEL_SHOP_001_CALCULATOR",
+        "asset_id": "TEL_SHOP_001_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_TEL_SHOP_001_SHORT",
+        "asset_id": "TEL_SHOP_001_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
       },
       {
-        "id": "telekom"
+        "id": "CONVERSION_TEL_SHOP_001_BANNER_300",
+        "asset_id": "TEL_SHOP_001_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_SHOP_001_BANNER_728",
+        "asset_id": "TEL_SHOP_001_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_200_DIRECT",
+        "asset_id": "TEL_LOGO_200_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_200_CALCULATOR",
+        "asset_id": "TEL_LOGO_200_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_200_SHORT",
+        "asset_id": "TEL_LOGO_200_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_200_BANNER_300",
+        "asset_id": "TEL_LOGO_200_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_200_BANNER_728",
+        "asset_id": "TEL_LOGO_200_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_300_DIRECT",
+        "asset_id": "TEL_LOGO_300_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_300_CALCULATOR",
+        "asset_id": "TEL_LOGO_300_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_300_SHORT",
+        "asset_id": "TEL_LOGO_300_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_300_BANNER_300",
+        "asset_id": "TEL_LOGO_300_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_300_BANNER_728",
+        "asset_id": "TEL_LOGO_300_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_600_DIRECT",
+        "asset_id": "TEL_LOGO_600_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_600_CALCULATOR",
+        "asset_id": "TEL_LOGO_600_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_600_SHORT",
+        "asset_id": "TEL_LOGO_600_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_600_BANNER_300",
+        "asset_id": "TEL_LOGO_600_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_600_BANNER_728",
+        "asset_id": "TEL_LOGO_600_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_940_DIRECT",
+        "asset_id": "TEL_LOGO_940_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_940_CALCULATOR",
+        "asset_id": "TEL_LOGO_940_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_940_SHORT",
+        "asset_id": "TEL_LOGO_940_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_940_BANNER_300",
+        "asset_id": "TEL_LOGO_940_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_LOGO_940_BANNER_728",
+        "asset_id": "TEL_LOGO_940_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_001_DIRECT",
+        "asset_id": "TEL_IMG_001_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_001_CALCULATOR",
+        "asset_id": "TEL_IMG_001_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_001_SHORT",
+        "asset_id": "TEL_IMG_001_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_001_BANNER_300",
+        "asset_id": "TEL_IMG_001_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_001_BANNER_728",
+        "asset_id": "TEL_IMG_001_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_002_DIRECT",
+        "asset_id": "TEL_IMG_002_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_002_CALCULATOR",
+        "asset_id": "TEL_IMG_002_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_002_SHORT",
+        "asset_id": "TEL_IMG_002_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_002_BANNER_300",
+        "asset_id": "TEL_IMG_002_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_002_BANNER_728",
+        "asset_id": "TEL_IMG_002_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_003_DIRECT",
+        "asset_id": "TEL_IMG_003_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_003_CALCULATOR",
+        "asset_id": "TEL_IMG_003_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_003_SHORT",
+        "asset_id": "TEL_IMG_003_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_003_BANNER_300",
+        "asset_id": "TEL_IMG_003_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_003_BANNER_728",
+        "asset_id": "TEL_IMG_003_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_004_DIRECT",
+        "asset_id": "TEL_IMG_004_DIRECT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_004_CALCULATOR",
+        "asset_id": "TEL_IMG_004_CALCULATOR",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_004_SHORT",
+        "asset_id": "TEL_IMG_004_SHORT",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_004_BANNER_300",
+        "asset_id": "TEL_IMG_004_BANNER_300",
+        "url": "https://free-basics.telekom-profis.de"
+      },
+      {
+        "id": "CONVERSION_TEL_IMG_004_BANNER_728",
+        "asset_id": "TEL_IMG_004_BANNER_728",
+        "url": "https://free-basics.telekom-profis.de"
+      }
+    ],
+    "analytics_tracking": [
+      {
+        "id": "Google Analytics",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
+      },
+      {
+        "id": "Google Tag Manager",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
+      },
+      {
+        "id": "Google Ads Conversion",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
+      },
+      {
+        "id": "Bing UET",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
+      },
+      {
+        "id": "Pinterest Conversion Tag",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
+      },
+      {
+        "id": "TikTok Pixel",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
+      },
+      {
+        "id": "YouTube Analytics",
+        "type": "AnalyticsSystem",
+        "status": "REGISTERED"
       }
     ]
   },
@@ -8707,226 +10771,6 @@
       "from": "TEL_010",
       "relation": "belongs_to",
       "to": "telekom"
-    },
-    {
-      "from": "CHK24_004",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_004"
-    },
-    {
-      "from": "CHK24_005",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_005"
-    },
-    {
-      "from": "CHK24_002",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_002"
-    },
-    {
-      "from": "CHK24_001",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_001"
-    },
-    {
-      "from": "CHK24_003",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_003"
-    },
-    {
-      "from": "CHK24_006",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_006"
-    },
-    {
-      "from": "CHK24_007",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_007"
-    },
-    {
-      "from": "CHK24_008",
-      "relation": "has_content",
-      "to": "ARTICLE_CHK24_008"
-    },
-    {
-      "from": "TC_001",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_001"
-    },
-    {
-      "from": "TC_002",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_002"
-    },
-    {
-      "from": "TC_003",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_003"
-    },
-    {
-      "from": "TC_004",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_004"
-    },
-    {
-      "from": "TC_005",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_005"
-    },
-    {
-      "from": "TC_006",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_006"
-    },
-    {
-      "from": "TC_007",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_007"
-    },
-    {
-      "from": "TC_008",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_008"
-    },
-    {
-      "from": "TC_009",
-      "relation": "has_content",
-      "to": "ARTICLE_TC_009"
-    },
-    {
-      "from": "B0FQF32239",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FQF32239"
-    },
-    {
-      "from": "B0CFPWLGF2",
-      "relation": "has_content",
-      "to": "ARTICLE_B0CFPWLGF2"
-    },
-    {
-      "from": "B0DFYN8174",
-      "relation": "has_content",
-      "to": "ARTICLE_B0DFYN8174"
-    },
-    {
-      "from": "B0FPXFBL13",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FPXFBL13"
-    },
-    {
-      "from": "B0FPXDCDX2",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FPXDCDX2"
-    },
-    {
-      "from": "B0FPXGJL6H",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FPXGJL6H"
-    },
-    {
-      "from": "B0FPXDRR63",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FPXDRR63"
-    },
-    {
-      "from": "3424631078",
-      "relation": "has_content",
-      "to": "ARTICLE_3424631078"
-    },
-    {
-      "from": "B0FNX7HC9M",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FNX7HC9M"
-    },
-    {
-      "from": "3423209690",
-      "relation": "has_content",
-      "to": "ARTICLE_3423209690"
-    },
-    {
-      "from": "3832167242",
-      "relation": "has_content",
-      "to": "ARTICLE_3832167242"
-    },
-    {
-      "from": "3426281759",
-      "relation": "has_content",
-      "to": "ARTICLE_3426281759"
-    },
-    {
-      "from": "B0DXLBZF4Q",
-      "relation": "has_content",
-      "to": "ARTICLE_B0DXLBZF4Q"
-    },
-    {
-      "from": "B0CVXSK4D3",
-      "relation": "has_content",
-      "to": "ARTICLE_B0CVXSK4D3"
-    },
-    {
-      "from": "B08P4YPB8Q",
-      "relation": "has_content",
-      "to": "ARTICLE_B08P4YPB8Q"
-    },
-    {
-      "from": "B0FMS3V43J",
-      "relation": "has_content",
-      "to": "ARTICLE_B0FMS3V43J"
-    },
-    {
-      "from": "B0D1YKBX82",
-      "relation": "has_content",
-      "to": "ARTICLE_B0D1YKBX82"
-    },
-    {
-      "from": "TEL_001",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_001"
-    },
-    {
-      "from": "TEL_002",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_002"
-    },
-    {
-      "from": "TEL_003",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_003"
-    },
-    {
-      "from": "TEL_004",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_004"
-    },
-    {
-      "from": "TEL_005",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_005"
-    },
-    {
-      "from": "TEL_006",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_006"
-    },
-    {
-      "from": "TEL_007",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_007"
-    },
-    {
-      "from": "TEL_008",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_008"
-    },
-    {
-      "from": "TEL_009",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_009"
-    },
-    {
-      "from": "TEL_010",
-      "relation": "has_content",
-      "to": "ARTICLE_TEL_010"
     },
     {
       "from": "CHK24_004",
@@ -9589,2434 +11433,869 @@
       "to": "Q_TEL_010_003"
     },
     {
-      "from": "3423209690",
-      "relation": "represented_by",
-      "to": "3423209690"
+      "from": "CHK24_004",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_004"
     },
     {
-      "from": "B0FPXGJL6H",
-      "relation": "represented_by",
-      "to": "B0FPXGJL6H"
+      "from": "CHK24_005",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_005"
+    },
+    {
+      "from": "CHK24_002",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_002"
+    },
+    {
+      "from": "CHK24_001",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_001"
+    },
+    {
+      "from": "CHK24_003",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_003"
+    },
+    {
+      "from": "CHK24_006",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_006"
+    },
+    {
+      "from": "CHK24_007",
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_007"
     },
     {
       "from": "CHK24_008",
-      "relation": "represented_by",
-      "to": "CHK24_008"
+      "relation": "has_content",
+      "to": "ARTICLE_CHK24_008"
     },
     {
-      "from": "TEL_001",
-      "relation": "represented_by",
-      "to": "TEL_001"
+      "from": "TC_001",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_001"
+    },
+    {
+      "from": "TC_002",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_002"
     },
     {
       "from": "TC_003",
-      "relation": "represented_by",
-      "to": "TC_003"
+      "relation": "has_content",
+      "to": "ARTICLE_TC_003"
     },
     {
-      "from": "TEL_002",
-      "relation": "represented_by",
-      "to": "TEL_002"
+      "from": "TC_004",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_004"
     },
     {
-      "from": "B0FPXDRR63",
-      "relation": "represented_by",
-      "to": "B0FPXDRR63"
-    },
-    {
-      "from": "3832167242",
-      "relation": "represented_by",
-      "to": "3832167242"
-    },
-    {
-      "from": "B08P4YPB8Q",
-      "relation": "represented_by",
-      "to": "B08P4YPB8Q"
-    },
-    {
-      "from": "TC_007",
-      "relation": "represented_by",
-      "to": "TC_007"
-    },
-    {
-      "from": "TEL_007",
-      "relation": "represented_by",
-      "to": "TEL_007"
-    },
-    {
-      "from": "B0FMS3V43J",
-      "relation": "represented_by",
-      "to": "B0FMS3V43J"
-    },
-    {
-      "from": "TEL_006",
-      "relation": "represented_by",
-      "to": "TEL_006"
+      "from": "TC_005",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_005"
     },
     {
       "from": "TC_006",
-      "relation": "represented_by",
-      "to": "TC_006"
+      "relation": "has_content",
+      "to": "ARTICLE_TC_006"
+    },
+    {
+      "from": "TC_007",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_007"
+    },
+    {
+      "from": "TC_008",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_008"
+    },
+    {
+      "from": "TC_009",
+      "relation": "has_content",
+      "to": "ARTICLE_TC_009"
+    },
+    {
+      "from": "B0FQF32239",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FQF32239"
+    },
+    {
+      "from": "B0CFPWLGF2",
+      "relation": "has_content",
+      "to": "ARTICLE_B0CFPWLGF2"
+    },
+    {
+      "from": "B0DFYN8174",
+      "relation": "has_content",
+      "to": "ARTICLE_B0DFYN8174"
+    },
+    {
+      "from": "B0FPXFBL13",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FPXFBL13"
+    },
+    {
+      "from": "B0FPXDCDX2",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FPXDCDX2"
+    },
+    {
+      "from": "B0FPXGJL6H",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FPXGJL6H"
+    },
+    {
+      "from": "B0FPXDRR63",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FPXDRR63"
+    },
+    {
+      "from": "3424631078",
+      "relation": "has_content",
+      "to": "ARTICLE_3424631078"
+    },
+    {
+      "from": "B0FNX7HC9M",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FNX7HC9M"
+    },
+    {
+      "from": "3423209690",
+      "relation": "has_content",
+      "to": "ARTICLE_3423209690"
+    },
+    {
+      "from": "3832167242",
+      "relation": "has_content",
+      "to": "ARTICLE_3832167242"
+    },
+    {
+      "from": "3426281759",
+      "relation": "has_content",
+      "to": "ARTICLE_3426281759"
+    },
+    {
+      "from": "B0DXLBZF4Q",
+      "relation": "has_content",
+      "to": "ARTICLE_B0DXLBZF4Q"
+    },
+    {
+      "from": "B0CVXSK4D3",
+      "relation": "has_content",
+      "to": "ARTICLE_B0CVXSK4D3"
+    },
+    {
+      "from": "B08P4YPB8Q",
+      "relation": "has_content",
+      "to": "ARTICLE_B08P4YPB8Q"
+    },
+    {
+      "from": "B0FMS3V43J",
+      "relation": "has_content",
+      "to": "ARTICLE_B0FMS3V43J"
+    },
+    {
+      "from": "B0D1YKBX82",
+      "relation": "has_content",
+      "to": "ARTICLE_B0D1YKBX82"
+    },
+    {
+      "from": "TEL_001",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_001"
+    },
+    {
+      "from": "TEL_002",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_002"
+    },
+    {
+      "from": "TEL_003",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_003"
+    },
+    {
+      "from": "TEL_004",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_004"
+    },
+    {
+      "from": "TEL_005",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_005"
+    },
+    {
+      "from": "TEL_006",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_006"
+    },
+    {
+      "from": "TEL_007",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_007"
+    },
+    {
+      "from": "TEL_008",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_008"
+    },
+    {
+      "from": "TEL_009",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_009"
+    },
+    {
+      "from": "TEL_010",
+      "relation": "has_content",
+      "to": "ARTICLE_TEL_010"
     },
     {
       "from": "CHK24_004",
       "relation": "represented_by",
-      "to": "CHK24_004"
-    },
-    {
-      "from": "TEL_004",
-      "relation": "represented_by",
-      "to": "TEL_004"
-    },
-    {
-      "from": "TC_005",
-      "relation": "represented_by",
-      "to": "TC_005"
-    },
-    {
-      "from": "B0FPXFBL13",
-      "relation": "represented_by",
-      "to": "B0FPXFBL13"
-    },
-    {
-      "from": "B0CVXSK4D3",
-      "relation": "represented_by",
-      "to": "B0CVXSK4D3"
-    },
-    {
-      "from": "CHK24_001",
-      "relation": "represented_by",
-      "to": "CHK24_001"
-    },
-    {
-      "from": "B0FPXDCDX2",
-      "relation": "represented_by",
-      "to": "B0FPXDCDX2"
-    },
-    {
-      "from": "B0FNX7HC9M",
-      "relation": "represented_by",
-      "to": "B0FNX7HC9M"
-    },
-    {
-      "from": "3424631078",
-      "relation": "represented_by",
-      "to": "3424631078"
-    },
-    {
-      "from": "B0DFYN8174",
-      "relation": "represented_by",
-      "to": "B0DFYN8174"
-    },
-    {
-      "from": "CHK24_007",
-      "relation": "represented_by",
-      "to": "CHK24_007"
-    },
-    {
-      "from": "TC_001",
-      "relation": "represented_by",
-      "to": "TC_001"
-    },
-    {
-      "from": "CHK24_003",
-      "relation": "represented_by",
-      "to": "CHK24_003"
-    },
-    {
-      "from": "TC_008",
-      "relation": "represented_by",
-      "to": "TC_008"
-    },
-    {
-      "from": "CHK24_002",
-      "relation": "represented_by",
-      "to": "CHK24_002"
-    },
-    {
-      "from": "TEL_005",
-      "relation": "represented_by",
-      "to": "TEL_005"
-    },
-    {
-      "from": "B0FQF32239",
-      "relation": "represented_by",
-      "to": "B0FQF32239"
-    },
-    {
-      "from": "CHK24_006",
-      "relation": "represented_by",
-      "to": "CHK24_006"
-    },
-    {
-      "from": "TEL_008",
-      "relation": "represented_by",
-      "to": "TEL_008"
-    },
-    {
-      "from": "TEL_010",
-      "relation": "represented_by",
-      "to": "TEL_010"
-    },
-    {
-      "from": "TC_002",
-      "relation": "represented_by",
-      "to": "TC_002"
-    },
-    {
-      "from": "3426281759",
-      "relation": "represented_by",
-      "to": "3426281759"
-    },
-    {
-      "from": "B0DXLBZF4Q",
-      "relation": "represented_by",
-      "to": "B0DXLBZF4Q"
+      "to": "LP_CHK24_004"
     },
     {
       "from": "CHK24_005",
       "relation": "represented_by",
-      "to": "CHK24_005"
-    },
-    {
-      "from": "TC_004",
-      "relation": "represented_by",
-      "to": "TC_004"
-    },
-    {
-      "from": "TC_009",
-      "relation": "represented_by",
-      "to": "TC_009"
-    },
-    {
-      "from": "TEL_009",
-      "relation": "represented_by",
-      "to": "TEL_009"
-    },
-    {
-      "from": "B0CFPWLGF2",
-      "relation": "represented_by",
-      "to": "B0CFPWLGF2"
-    },
-    {
-      "from": "TEL_003",
-      "relation": "represented_by",
-      "to": "TEL_003"
-    },
-    {
-      "from": "B0D1YKBX82",
-      "relation": "represented_by",
-      "to": "B0D1YKBX82"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_DIRECT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_CALCULATOR"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_SHORT"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_300"
-    },
-    {
-      "from": "Solaranlage",
-      "relation": "has_official_asset",
-      "to": "TC_001_BANNER_728"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_DIRECT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_CALCULATOR"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_SHORT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_300"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_728"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_DIRECT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_CALCULATOR"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_SHORT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_300"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_728"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_DIRECT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_CALCULATOR"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_SHORT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_300"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_728"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_DIRECT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_CALCULATOR"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_SHORT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_300"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_728"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_DIRECT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_CALCULATOR"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_SHORT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_300"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_728"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_DIRECT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_CALCULATOR"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_SHORT"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_300"
-    },
-    {
-      "from": "Kfz-Versicherung",
-      "relation": "has_official_asset",
-      "to": "TC_002_BANNER_728"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_DIRECT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_CALCULATOR"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_SHORT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_300"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_728"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_DIRECT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_CALCULATOR"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_SHORT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_300"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_728"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_DIRECT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_CALCULATOR"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_SHORT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_300"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_728"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_DIRECT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_CALCULATOR"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_SHORT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_300"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_728"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_DIRECT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_CALCULATOR"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_SHORT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_300"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_728"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_DIRECT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_CALCULATOR"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_SHORT"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_300"
-    },
-    {
-      "from": "Kredit",
-      "relation": "has_official_asset",
-      "to": "TC_003_BANNER_728"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_DIRECT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_CALCULATOR"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_SHORT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_300"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_728"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_DIRECT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_CALCULATOR"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_SHORT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_300"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_728"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_DIRECT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_CALCULATOR"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_SHORT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_300"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_728"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_DIRECT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_CALCULATOR"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_SHORT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_300"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_728"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_DIRECT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_CALCULATOR"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_SHORT"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_300"
-    },
-    {
-      "from": "Girokonto",
-      "relation": "has_official_asset",
-      "to": "TC_004_BANNER_728"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_DIRECT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_CALCULATOR"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_SHORT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_300"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_728"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_DIRECT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_CALCULATOR"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_SHORT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_300"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_728"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_DIRECT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_CALCULATOR"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_SHORT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_300"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_728"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_DIRECT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_CALCULATOR"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_SHORT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_300"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_728"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_DIRECT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_CALCULATOR"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_SHORT"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_300"
-    },
-    {
-      "from": "Baufinanzierung",
-      "relation": "has_official_asset",
-      "to": "TC_005_BANNER_728"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_DIRECT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_CALCULATOR"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_SHORT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_300"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_728"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_DIRECT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_CALCULATOR"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_SHORT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_300"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_728"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_DIRECT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_CALCULATOR"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_SHORT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_300"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_728"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_DIRECT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_CALCULATOR"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_SHORT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_300"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_728"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_DIRECT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_CALCULATOR"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_SHORT"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_300"
-    },
-    {
-      "from": "Hausratversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_006_BANNER_728"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_DIRECT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_CALCULATOR"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_SHORT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_300"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_728"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_DIRECT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_CALCULATOR"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_SHORT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_300"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_728"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_DIRECT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_CALCULATOR"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_SHORT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_300"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_728"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_DIRECT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_CALCULATOR"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_SHORT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_300"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_728"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_DIRECT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_CALCULATOR"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_SHORT"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_300"
-    },
-    {
-      "from": "Haftpflichtversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_007_BANNER_728"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_DIRECT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_CALCULATOR"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_SHORT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_300"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_728"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_DIRECT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_CALCULATOR"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_SHORT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_300"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_728"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_DIRECT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_CALCULATOR"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_SHORT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_300"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_728"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_DIRECT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_CALCULATOR"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_SHORT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_300"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_728"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_DIRECT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_CALCULATOR"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_SHORT"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_300"
-    },
-    {
-      "from": "Rentenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_008_BANNER_728"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_DIRECT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_CALCULATOR"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_SHORT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_300"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_728"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_DIRECT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_CALCULATOR"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_SHORT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_300"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_728"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_DIRECT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_CALCULATOR"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_SHORT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_300"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_728"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_DIRECT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_CALCULATOR"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_SHORT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_300"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_728"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_DIRECT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_CALCULATOR"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_SHORT"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_300"
-    },
-    {
-      "from": "Private Krankenversicherung",
-      "relation": "has_official_asset",
-      "to": "TC_009_BANNER_728"
-    },
-    {
-      "from": "Ökostrom",
-      "relation": "has_official_asset",
-      "to": "CHK24_002_DIRECT"
-    },
-    {
-      "from": "Ökostrom",
-      "relation": "has_official_asset",
-      "to": "CHK24_002_CALCULATOR"
-    },
-    {
-      "from": "Ökostrom",
-      "relation": "has_official_asset",
-      "to": "CHK24_002_SHORT"
-    },
-    {
-      "from": "Ökostrom",
-      "relation": "has_official_asset",
-      "to": "CHK24_002_BANNER_300"
-    },
-    {
-      "from": "Ökostrom",
-      "relation": "has_official_asset",
-      "to": "CHK24_002_BANNER_728"
-    },
-    {
-      "from": "Gas",
-      "relation": "has_official_asset",
-      "to": "CHK24_003_DIRECT"
-    },
-    {
-      "from": "Gas",
-      "relation": "has_official_asset",
-      "to": "CHK24_003_CALCULATOR"
-    },
-    {
-      "from": "Gas",
-      "relation": "has_official_asset",
-      "to": "CHK24_003_SHORT"
-    },
-    {
-      "from": "Gas",
-      "relation": "has_official_asset",
-      "to": "CHK24_003_BANNER_300"
-    },
-    {
-      "from": "Gas",
-      "relation": "has_official_asset",
-      "to": "CHK24_003_BANNER_728"
-    },
-    {
-      "from": "DSL",
-      "relation": "has_official_asset",
-      "to": "CHK24_004_DIRECT"
-    },
-    {
-      "from": "DSL",
-      "relation": "has_official_asset",
-      "to": "CHK24_004_CALCULATOR"
-    },
-    {
-      "from": "DSL",
-      "relation": "has_official_asset",
-      "to": "CHK24_004_SHORT"
-    },
-    {
-      "from": "DSL",
-      "relation": "has_official_asset",
-      "to": "CHK24_004_BANNER_300"
-    },
-    {
-      "from": "DSL",
-      "relation": "has_official_asset",
-      "to": "CHK24_004_BANNER_728"
-    },
-    {
-      "from": "Mobilfunk",
-      "relation": "has_official_asset",
-      "to": "CHK24_005_DIRECT"
-    },
-    {
-      "from": "Mobilfunk",
-      "relation": "has_official_asset",
-      "to": "CHK24_005_CALCULATOR"
-    },
-    {
-      "from": "Mobilfunk",
-      "relation": "has_official_asset",
-      "to": "CHK24_005_SHORT"
-    },
-    {
-      "from": "Mobilfunk",
-      "relation": "has_official_asset",
-      "to": "CHK24_005_BANNER_300"
-    },
-    {
-      "from": "Mobilfunk",
-      "relation": "has_official_asset",
-      "to": "CHK24_005_BANNER_728"
-    },
-    {
-      "from": "Pauschalreise",
-      "relation": "has_official_asset",
-      "to": "CHK24_006_DIRECT"
-    },
-    {
-      "from": "Pauschalreise",
-      "relation": "has_official_asset",
-      "to": "CHK24_006_CALCULATOR"
-    },
-    {
-      "from": "Pauschalreise",
-      "relation": "has_official_asset",
-      "to": "CHK24_006_SHORT"
-    },
-    {
-      "from": "Pauschalreise",
-      "relation": "has_official_asset",
-      "to": "CHK24_006_BANNER_300"
-    },
-    {
-      "from": "Pauschalreise",
-      "relation": "has_official_asset",
-      "to": "CHK24_006_BANNER_728"
-    },
-    {
-      "from": "Mietwagen",
-      "relation": "has_official_asset",
-      "to": "CHK24_007_DIRECT"
-    },
-    {
-      "from": "Mietwagen",
-      "relation": "has_official_asset",
-      "to": "CHK24_007_CALCULATOR"
-    },
-    {
-      "from": "Mietwagen",
-      "relation": "has_official_asset",
-      "to": "CHK24_007_SHORT"
-    },
-    {
-      "from": "Mietwagen",
-      "relation": "has_official_asset",
-      "to": "CHK24_007_BANNER_300"
-    },
-    {
-      "from": "Mietwagen",
-      "relation": "has_official_asset",
-      "to": "CHK24_007_BANNER_728"
-    },
-    {
-      "from": "C24 Bank",
-      "relation": "has_official_asset",
-      "to": "CHK24_008_DIRECT"
-    },
-    {
-      "from": "C24 Bank",
-      "relation": "has_official_asset",
-      "to": "CHK24_008_CALCULATOR"
-    },
-    {
-      "from": "C24 Bank",
-      "relation": "has_official_asset",
-      "to": "CHK24_008_SHORT"
-    },
-    {
-      "from": "C24 Bank",
-      "relation": "has_official_asset",
-      "to": "CHK24_008_BANNER_300"
-    },
-    {
-      "from": "C24 Bank",
-      "relation": "has_official_asset",
-      "to": "CHK24_008_BANNER_728"
-    },
-    {
-      "from": "Strom",
-      "relation": "has_official_asset",
-      "to": "CHK24_001_DIRECT"
-    },
-    {
-      "from": "Strom",
-      "relation": "has_official_asset",
-      "to": "CHK24_001_CALCULATOR"
-    },
-    {
-      "from": "Strom",
-      "relation": "has_official_asset",
-      "to": "CHK24_001_SHORT"
-    },
-    {
-      "from": "Strom",
-      "relation": "has_official_asset",
-      "to": "CHK24_001_BANNER_300"
-    },
-    {
-      "from": "Strom",
-      "relation": "has_official_asset",
-      "to": "CHK24_001_BANNER_728"
-    },
-    {
-      "from": "Telekom Profis Shop",
-      "relation": "has_official_asset",
-      "to": "TEL_SHOP_001_DIRECT"
-    },
-    {
-      "from": "Telekom Profis Shop",
-      "relation": "has_official_asset",
-      "to": "TEL_SHOP_001_CALCULATOR"
-    },
-    {
-      "from": "Telekom Profis Shop",
-      "relation": "has_official_asset",
-      "to": "TEL_SHOP_001_SHORT"
-    },
-    {
-      "from": "Telekom Profis Shop",
-      "relation": "has_official_asset",
-      "to": "TEL_SHOP_001_BANNER_300"
-    },
-    {
-      "from": "Telekom Profis Shop",
-      "relation": "has_official_asset",
-      "to": "TEL_SHOP_001_BANNER_728"
-    },
-    {
-      "from": "Telekom Logo 200x43",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_200_DIRECT"
-    },
-    {
-      "from": "Telekom Logo 200x43",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_200_CALCULATOR"
-    },
-    {
-      "from": "Telekom Logo 200x43",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_200_SHORT"
-    },
-    {
-      "from": "Telekom Logo 200x43",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_200_BANNER_300"
-    },
-    {
-      "from": "Telekom Logo 200x43",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_200_BANNER_728"
-    },
-    {
-      "from": "Telekom Logo 300x65",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_300_DIRECT"
-    },
-    {
-      "from": "Telekom Logo 300x65",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_300_CALCULATOR"
-    },
-    {
-      "from": "Telekom Logo 300x65",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_300_SHORT"
-    },
-    {
-      "from": "Telekom Logo 300x65",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_300_BANNER_300"
-    },
-    {
-      "from": "Telekom Logo 300x65",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_300_BANNER_728"
-    },
-    {
-      "from": "Telekom Logo 600x126",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_600_DIRECT"
-    },
-    {
-      "from": "Telekom Logo 600x126",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_600_CALCULATOR"
-    },
-    {
-      "from": "Telekom Logo 600x126",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_600_SHORT"
-    },
-    {
-      "from": "Telekom Logo 600x126",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_600_BANNER_300"
-    },
-    {
-      "from": "Telekom Logo 600x126",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_600_BANNER_728"
-    },
-    {
-      "from": "Telekom Logo 940x203",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_940_DIRECT"
-    },
-    {
-      "from": "Telekom Logo 940x203",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_940_CALCULATOR"
-    },
-    {
-      "from": "Telekom Logo 940x203",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_940_SHORT"
-    },
-    {
-      "from": "Telekom Logo 940x203",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_940_BANNER_300"
-    },
-    {
-      "from": "Telekom Logo 940x203",
-      "relation": "has_official_asset",
-      "to": "TEL_LOGO_940_BANNER_728"
-    },
-    {
-      "from": "Glasfaser Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_001_DIRECT"
-    },
-    {
-      "from": "Glasfaser Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_001_CALCULATOR"
-    },
-    {
-      "from": "Glasfaser Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_001_SHORT"
-    },
-    {
-      "from": "Glasfaser Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_001_BANNER_300"
-    },
-    {
-      "from": "Glasfaser Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_001_BANNER_728"
-    },
-    {
-      "from": "Zuhause Sofort Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_002_DIRECT"
-    },
-    {
-      "from": "Zuhause Sofort Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_002_CALCULATOR"
-    },
-    {
-      "from": "Zuhause Sofort Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_002_SHORT"
-    },
-    {
-      "from": "Zuhause Sofort Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_002_BANNER_300"
-    },
-    {
-      "from": "Zuhause Sofort Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_002_BANNER_728"
-    },
-    {
-      "from": "MagentaMobil Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_003_DIRECT"
-    },
-    {
-      "from": "MagentaMobil Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_003_CALCULATOR"
-    },
-    {
-      "from": "MagentaMobil Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_003_SHORT"
-    },
-    {
-      "from": "MagentaMobil Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_003_BANNER_300"
-    },
-    {
-      "from": "MagentaMobil Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_003_BANNER_728"
-    },
-    {
-      "from": "Telekom Aktion Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_004_DIRECT"
-    },
-    {
-      "from": "Telekom Aktion Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_004_CALCULATOR"
-    },
-    {
-      "from": "Telekom Aktion Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_004_SHORT"
-    },
-    {
-      "from": "Telekom Aktion Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_004_BANNER_300"
-    },
-    {
-      "from": "Telekom Aktion Bild",
-      "relation": "has_official_asset",
-      "to": "TEL_IMG_004_BANNER_728"
-    },
-    {
-      "from": "https://free-basics.telekom-profis.de",
-      "relation": "has_official_asset",
-      "to": "telekom_click_GENERAL"
-    },
-    {
-      "from": "https://freebasics.online",
-      "relation": "has_official_asset",
-      "to": "domain_init_GENERAL"
-    },
-    {
-      "from": "telekom|amazon|check24|tarifcheck",
-      "relation": "has_official_asset",
-      "to": "system_event_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "",
-      "relation": "has_official_asset",
-      "to": "commission_import_GENERAL"
-    },
-    {
-      "from": "system",
-      "relation": "has_official_asset",
-      "to": "learning_sync_GENERAL"
-    },
-    {
-      "from": "CHK24_004",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_004_CALCULATOR"
-    },
-    {
-      "from": "CHK24_005",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_005_CALCULATOR"
+      "to": "LP_CHK24_005"
     },
     {
       "from": "CHK24_002",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_002_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_CHK24_002"
     },
     {
       "from": "CHK24_001",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_001_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_CHK24_001"
     },
     {
       "from": "CHK24_003",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_003_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_CHK24_003"
     },
     {
       "from": "CHK24_006",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_006_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_CHK24_006"
     },
     {
       "from": "CHK24_007",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_007_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_CHK24_007"
     },
     {
       "from": "CHK24_008",
-      "relation": "uses_primary_asset",
-      "to": "CHK24_008_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_CHK24_008"
     },
     {
       "from": "TC_001",
-      "relation": "uses_primary_asset",
-      "to": "TC_001_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_001"
     },
     {
       "from": "TC_002",
-      "relation": "uses_primary_asset",
-      "to": "TC_002_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_002"
     },
     {
       "from": "TC_003",
-      "relation": "uses_primary_asset",
-      "to": "TC_003_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_003"
     },
     {
       "from": "TC_004",
-      "relation": "uses_primary_asset",
-      "to": "TC_004_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_004"
     },
     {
       "from": "TC_005",
-      "relation": "uses_primary_asset",
-      "to": "TC_005_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_005"
     },
     {
       "from": "TC_006",
-      "relation": "uses_primary_asset",
-      "to": "TC_006_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_006"
     },
     {
       "from": "TC_007",
-      "relation": "uses_primary_asset",
-      "to": "TC_007_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_007"
     },
     {
       "from": "TC_008",
-      "relation": "uses_primary_asset",
-      "to": "TC_008_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_008"
     },
     {
       "from": "TC_009",
-      "relation": "uses_primary_asset",
-      "to": "TC_009_CALCULATOR"
+      "relation": "represented_by",
+      "to": "LP_TC_009"
     },
     {
       "from": "B0FQF32239",
-      "relation": "uses_primary_asset",
-      "to": "B0FQF32239"
+      "relation": "represented_by",
+      "to": "LP_B0FQF32239"
     },
     {
       "from": "B0CFPWLGF2",
-      "relation": "uses_primary_asset",
-      "to": "B0CFPWLGF2"
+      "relation": "represented_by",
+      "to": "LP_B0CFPWLGF2"
     },
     {
       "from": "B0DFYN8174",
-      "relation": "uses_primary_asset",
-      "to": "B0DFYN8174"
+      "relation": "represented_by",
+      "to": "LP_B0DFYN8174"
     },
     {
       "from": "B0FPXFBL13",
-      "relation": "uses_primary_asset",
-      "to": "B0FPXFBL13"
+      "relation": "represented_by",
+      "to": "LP_B0FPXFBL13"
     },
     {
       "from": "B0FPXDCDX2",
-      "relation": "uses_primary_asset",
-      "to": "B0FPXDCDX2"
+      "relation": "represented_by",
+      "to": "LP_B0FPXDCDX2"
     },
     {
       "from": "B0FPXGJL6H",
-      "relation": "uses_primary_asset",
-      "to": "B0FPXGJL6H"
+      "relation": "represented_by",
+      "to": "LP_B0FPXGJL6H"
     },
     {
       "from": "B0FPXDRR63",
-      "relation": "uses_primary_asset",
-      "to": "B0FPXDRR63"
+      "relation": "represented_by",
+      "to": "LP_B0FPXDRR63"
     },
     {
       "from": "3424631078",
-      "relation": "uses_primary_asset",
-      "to": "3424631078"
+      "relation": "represented_by",
+      "to": "LP_3424631078"
     },
     {
       "from": "B0FNX7HC9M",
-      "relation": "uses_primary_asset",
-      "to": "B0FNX7HC9M"
+      "relation": "represented_by",
+      "to": "LP_B0FNX7HC9M"
     },
     {
       "from": "3423209690",
-      "relation": "uses_primary_asset",
-      "to": "3423209690"
+      "relation": "represented_by",
+      "to": "LP_3423209690"
     },
     {
       "from": "3832167242",
-      "relation": "uses_primary_asset",
-      "to": "3832167242"
+      "relation": "represented_by",
+      "to": "LP_3832167242"
     },
     {
       "from": "3426281759",
-      "relation": "uses_primary_asset",
-      "to": "3426281759"
+      "relation": "represented_by",
+      "to": "LP_3426281759"
     },
     {
       "from": "B0DXLBZF4Q",
-      "relation": "uses_primary_asset",
-      "to": "B0DXLBZF4Q"
+      "relation": "represented_by",
+      "to": "LP_B0DXLBZF4Q"
     },
     {
       "from": "B0CVXSK4D3",
-      "relation": "uses_primary_asset",
-      "to": "B0CVXSK4D3"
+      "relation": "represented_by",
+      "to": "LP_B0CVXSK4D3"
     },
     {
       "from": "B08P4YPB8Q",
-      "relation": "uses_primary_asset",
-      "to": "B08P4YPB8Q"
+      "relation": "represented_by",
+      "to": "LP_B08P4YPB8Q"
     },
     {
       "from": "B0FMS3V43J",
-      "relation": "uses_primary_asset",
-      "to": "B0FMS3V43J"
+      "relation": "represented_by",
+      "to": "LP_B0FMS3V43J"
     },
     {
       "from": "B0D1YKBX82",
-      "relation": "uses_primary_asset",
-      "to": "B0D1YKBX82"
+      "relation": "represented_by",
+      "to": "LP_B0D1YKBX82"
     },
     {
       "from": "TEL_001",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_001"
     },
     {
       "from": "TEL_002",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_002"
     },
     {
       "from": "TEL_003",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_003"
     },
     {
       "from": "TEL_004",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_004"
     },
     {
       "from": "TEL_005",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_005"
     },
     {
       "from": "TEL_006",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_006"
     },
     {
       "from": "TEL_007",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_007"
     },
     {
       "from": "TEL_008",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_008"
     },
     {
       "from": "TEL_009",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_009"
     },
     {
       "from": "TEL_010",
-      "relation": "uses_primary_asset",
-      "to": "TEL_SHOP_001"
+      "relation": "represented_by",
+      "to": "LP_TEL_010"
     },
     {
-      "from": "CHK24_004",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_002_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_002_DIRECT"
     },
     {
-      "from": "CHK24_005",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_002_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_002_CALCULATOR"
     },
     {
-      "from": "CHK24_002",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_002_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_002_SHORT"
     },
     {
-      "from": "CHK24_001",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_002_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_002_BANNER_300"
     },
     {
-      "from": "CHK24_003",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_002_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_002_BANNER_728"
     },
     {
-      "from": "CHK24_006",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_003_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_003_DIRECT"
     },
     {
-      "from": "CHK24_007",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_003_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_003_CALCULATOR"
     },
     {
-      "from": "CHK24_008",
-      "relation": "supported_by",
-      "to": "check24"
+      "from": "CHK24_003_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_003_SHORT"
     },
     {
-      "from": "TC_001",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_003_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_003_BANNER_300"
     },
     {
-      "from": "TC_002",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_003_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_003_BANNER_728"
     },
     {
-      "from": "TC_003",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_004_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_004_DIRECT"
     },
     {
-      "from": "TC_004",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_004_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_004_CALCULATOR"
     },
     {
-      "from": "TC_005",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_004_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_004_SHORT"
     },
     {
-      "from": "TC_006",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_004_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_004_BANNER_300"
     },
     {
-      "from": "TC_007",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_004_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_004_BANNER_728"
     },
     {
-      "from": "TC_008",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_005_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_005_DIRECT"
     },
     {
-      "from": "TC_009",
-      "relation": "supported_by",
-      "to": "tarifcheck"
+      "from": "CHK24_005_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_005_CALCULATOR"
     },
     {
-      "from": "B0FQF32239",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_005_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_005_SHORT"
     },
     {
-      "from": "B0CFPWLGF2",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_005_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_005_BANNER_300"
     },
     {
-      "from": "B0DFYN8174",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_005_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_005_BANNER_728"
     },
     {
-      "from": "B0FPXFBL13",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_006_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_006_DIRECT"
     },
     {
-      "from": "B0FPXDCDX2",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_006_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_006_CALCULATOR"
     },
     {
-      "from": "B0FPXGJL6H",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_006_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_006_SHORT"
     },
     {
-      "from": "B0FPXDRR63",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_006_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_006_BANNER_300"
     },
     {
-      "from": "3424631078",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_006_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_006_BANNER_728"
     },
     {
-      "from": "B0FNX7HC9M",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_007_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_007_DIRECT"
     },
     {
-      "from": "3423209690",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_007_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_007_CALCULATOR"
     },
     {
-      "from": "3832167242",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_007_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_007_SHORT"
     },
     {
-      "from": "3426281759",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_007_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_007_BANNER_300"
     },
     {
-      "from": "B0DXLBZF4Q",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_007_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_007_BANNER_728"
     },
     {
-      "from": "B0CVXSK4D3",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_008_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_008_DIRECT"
     },
     {
-      "from": "B08P4YPB8Q",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_008_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_008_CALCULATOR"
     },
     {
-      "from": "B0FMS3V43J",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_008_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_008_SHORT"
     },
     {
-      "from": "B0D1YKBX82",
-      "relation": "supported_by",
-      "to": "amazon"
+      "from": "CHK24_008_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_008_BANNER_300"
     },
     {
-      "from": "TEL_001",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "CHK24_008_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_008_BANNER_728"
     },
     {
-      "from": "TEL_002",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "CHK24_001_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_001_DIRECT"
     },
     {
-      "from": "TEL_003",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "CHK24_001_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_001_CALCULATOR"
     },
     {
-      "from": "TEL_004",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "CHK24_001_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_001_SHORT"
     },
     {
-      "from": "TEL_005",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "CHK24_001_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_001_BANNER_300"
     },
     {
-      "from": "TEL_006",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "CHK24_001_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_CHK24_001_BANNER_728"
     },
     {
-      "from": "TEL_007",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "TEL_SHOP_001_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_SHOP_001_DIRECT"
     },
     {
-      "from": "TEL_008",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "TEL_SHOP_001_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_SHOP_001_CALCULATOR"
     },
     {
-      "from": "TEL_009",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "TEL_SHOP_001_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_SHOP_001_SHORT"
     },
     {
-      "from": "TEL_010",
-      "relation": "supported_by",
-      "to": "telekom"
+      "from": "TEL_SHOP_001_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_SHOP_001_BANNER_300"
+    },
+    {
+      "from": "TEL_SHOP_001_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_SHOP_001_BANNER_728"
+    },
+    {
+      "from": "TEL_LOGO_200_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_200_DIRECT"
+    },
+    {
+      "from": "TEL_LOGO_200_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_200_CALCULATOR"
+    },
+    {
+      "from": "TEL_LOGO_200_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_200_SHORT"
+    },
+    {
+      "from": "TEL_LOGO_200_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_200_BANNER_300"
+    },
+    {
+      "from": "TEL_LOGO_200_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_200_BANNER_728"
+    },
+    {
+      "from": "TEL_LOGO_300_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_300_DIRECT"
+    },
+    {
+      "from": "TEL_LOGO_300_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_300_CALCULATOR"
+    },
+    {
+      "from": "TEL_LOGO_300_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_300_SHORT"
+    },
+    {
+      "from": "TEL_LOGO_300_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_300_BANNER_300"
+    },
+    {
+      "from": "TEL_LOGO_300_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_300_BANNER_728"
+    },
+    {
+      "from": "TEL_LOGO_600_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_600_DIRECT"
+    },
+    {
+      "from": "TEL_LOGO_600_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_600_CALCULATOR"
+    },
+    {
+      "from": "TEL_LOGO_600_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_600_SHORT"
+    },
+    {
+      "from": "TEL_LOGO_600_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_600_BANNER_300"
+    },
+    {
+      "from": "TEL_LOGO_600_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_600_BANNER_728"
+    },
+    {
+      "from": "TEL_LOGO_940_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_940_DIRECT"
+    },
+    {
+      "from": "TEL_LOGO_940_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_940_CALCULATOR"
+    },
+    {
+      "from": "TEL_LOGO_940_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_940_SHORT"
+    },
+    {
+      "from": "TEL_LOGO_940_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_940_BANNER_300"
+    },
+    {
+      "from": "TEL_LOGO_940_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_LOGO_940_BANNER_728"
+    },
+    {
+      "from": "TEL_IMG_001_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_001_DIRECT"
+    },
+    {
+      "from": "TEL_IMG_001_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_001_CALCULATOR"
+    },
+    {
+      "from": "TEL_IMG_001_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_001_SHORT"
+    },
+    {
+      "from": "TEL_IMG_001_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_001_BANNER_300"
+    },
+    {
+      "from": "TEL_IMG_001_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_001_BANNER_728"
+    },
+    {
+      "from": "TEL_IMG_002_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_002_DIRECT"
+    },
+    {
+      "from": "TEL_IMG_002_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_002_CALCULATOR"
+    },
+    {
+      "from": "TEL_IMG_002_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_002_SHORT"
+    },
+    {
+      "from": "TEL_IMG_002_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_002_BANNER_300"
+    },
+    {
+      "from": "TEL_IMG_002_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_002_BANNER_728"
+    },
+    {
+      "from": "TEL_IMG_003_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_003_DIRECT"
+    },
+    {
+      "from": "TEL_IMG_003_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_003_CALCULATOR"
+    },
+    {
+      "from": "TEL_IMG_003_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_003_SHORT"
+    },
+    {
+      "from": "TEL_IMG_003_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_003_BANNER_300"
+    },
+    {
+      "from": "TEL_IMG_003_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_003_BANNER_728"
+    },
+    {
+      "from": "TEL_IMG_004_DIRECT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_004_DIRECT"
+    },
+    {
+      "from": "TEL_IMG_004_CALCULATOR",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_004_CALCULATOR"
+    },
+    {
+      "from": "TEL_IMG_004_SHORT",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_004_SHORT"
+    },
+    {
+      "from": "TEL_IMG_004_BANNER_300",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_004_BANNER_300"
+    },
+    {
+      "from": "TEL_IMG_004_BANNER_728",
+      "relation": "converts_to",
+      "to": "CONVERSION_TEL_IMG_004_BANNER_728"
     }
   ]
 }

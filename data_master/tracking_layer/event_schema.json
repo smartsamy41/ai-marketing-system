@@ -1,0 +1,108 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "event_schema",
+  "version": "1.0",
+  "status": "ACTIVE",
+
+  "rules": {
+    "real_events_only": true,
+    "timestamp_required": true,
+    "source_required": true
+  },
+
+  "event_fields": {
+
+    "event_id": {
+      "type": "string",
+      "required": true
+    },
+
+    "event_name": {
+      "type": "string",
+      "required": true
+    },
+
+    "timestamp": {
+      "type": "datetime",
+      "required": true
+    },
+
+    "source": {
+      "type": "string",
+      "required": true
+    },
+
+    "channel": {
+      "type": "string",
+      "required": true
+    },
+
+    "product_id": {
+      "type": "string",
+      "required": false
+    },
+
+    "partner": {
+      "type": "string",
+      "required": false
+    },
+
+    "landingpage_id": {
+      "type": "string",
+      "required": false
+    },
+
+    "asset_id": {
+      "type": "string",
+      "required": false
+    },
+
+    "session_id": {
+      "type": "string",
+      "required": false
+    },
+
+    "conversion_id": {
+      "type": "string",
+      "required": false
+    },
+
+    "value": {
+      "type": "number",
+      "required": false
+    },
+
+    "currency": {
+      "type": "string",
+      "required": false
+    }
+
+  },
+
+
+  "event_types": [
+
+    "page_view",
+    "affiliate_click",
+    "outbound_click",
+    "conversion",
+    "commission",
+    "revenue",
+    "newsletter_click"
+
+  ],
+
+
+  "flow": [
+
+    "traffic_source",
+    "page_view",
+    "interaction",
+    "affiliate_click",
+    "partner_action",
+    "conversion",
+    "revenue"
+
+  ]
+
+}
