@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "congstar Homespot | Free Basics",
+    "og:description": "Informationen zu congstar Homespot aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_008",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "congstar Homespot | Free Basics",
+    "twitter:description": "Informationen zu congstar Homespot.",
+    "twitter:url": "https://freebasics.online/TEL_008"
+  },
+  "entity": {
+    "product_id": "TEL_008",
+    "article_id": "ARTICLE_TEL_008",
+    "name": "congstar Homespot",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

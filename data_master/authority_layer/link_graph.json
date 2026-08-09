@@ -1,0 +1,50 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "link_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "entity_connection_required": true,
+    "source_connection_required": true,
+    "avoid_orphan_content": true,
+    "controlled_internal_links": true
+  },
+  "nodes": {
+    "products": [],
+    "categories": [],
+    "topics": [],
+    "articles": [],
+    "landingpages": [],
+    "faq": [],
+    "locations": [],
+    "partners": [],
+    "sources": []
+  },
+  "relationships": [
+    {
+      "from": "product",
+      "relation": "belongs_to",
+      "to": "category"
+    },
+    {
+      "from": "article",
+      "relation": "supports",
+      "to": "product"
+    },
+    {
+      "from": "landingpage",
+      "relation": "converts",
+      "to": "product"
+    },
+    {
+      "from": "faq",
+      "relation": "answers",
+      "to": "question"
+    },
+    {
+      "from": "location",
+      "relation": "relevant_for",
+      "to": "product"
+    }
+  ]
+}

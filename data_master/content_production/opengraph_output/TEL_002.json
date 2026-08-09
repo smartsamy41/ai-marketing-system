@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Glasfaser | Free Basics",
+    "og:description": "Informationen zu Glasfaser aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_002",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Glasfaser | Free Basics",
+    "twitter:description": "Informationen zu Glasfaser.",
+    "twitter:url": "https://freebasics.online/TEL_002"
+  },
+  "entity": {
+    "product_id": "TEL_002",
+    "article_id": "ARTICLE_TEL_002",
+    "name": "Glasfaser",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

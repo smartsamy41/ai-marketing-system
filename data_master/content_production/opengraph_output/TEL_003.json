@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "MagentaZuhause | Free Basics",
+    "og:description": "Informationen zu MagentaZuhause aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_003",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "MagentaZuhause | Free Basics",
+    "twitter:description": "Informationen zu MagentaZuhause.",
+    "twitter:url": "https://freebasics.online/TEL_003"
+  },
+  "entity": {
+    "product_id": "TEL_003",
+    "article_id": "ARTICLE_TEL_003",
+    "name": "MagentaZuhause",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

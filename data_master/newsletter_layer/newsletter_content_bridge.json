@@ -1,0 +1,27 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "newsletter_content_bridge",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "newsletter_validation_required": true,
+    "content_graph_connection_required": true,
+    "knowledge_source_required": true,
+    "compliance_before_generation": true
+  },
+  "connections": {
+    "newsletter_to_partner": [],
+    "newsletter_to_product": [],
+    "newsletter_to_entity": [],
+    "newsletter_to_topic": [],
+    "newsletter_to_content": [],
+    "newsletter_to_calendar": []
+  },
+  "generation_targets": {
+    "article": true,
+    "landingpage": true,
+    "faq": true,
+    "geo_content": true,
+    "newsletter_summary": true
+  }
+}

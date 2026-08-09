@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Strom | Free Basics",
+    "og:description": "Informationen zu Strom aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/CHK24_001",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Strom | Free Basics",
+    "twitter:description": "Informationen zu Strom.",
+    "twitter:url": "https://freebasics.online/CHK24_001"
+  },
+  "entity": {
+    "product_id": "CHK24_001",
+    "article_id": "ARTICLE_CHK24_001",
+    "name": "Strom",
+    "category": "Strom",
+    "partner": "check24"
+  }
+}

@@ -1,0 +1,947 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_production_intelligence_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "entity_connected": true,
+    "source_based": true,
+    "compliance_required": true,
+    "semantic_html": true,
+    "ai_ready": true
+  },
+  "html_architecture": {
+    "head": [
+      "title",
+      "meta_description",
+      "canonical",
+      "open_graph",
+      "twitter_card",
+      "json_ld",
+      "schema_org"
+    ],
+    "body": [
+      "entity_intro",
+      "facts",
+      "content",
+      "questions",
+      "faq",
+      "affiliate_area",
+      "sources",
+      "internal_links"
+    ],
+    "footer": [
+      "category_navigation",
+      "partner_navigation",
+      "about_freebasics",
+      "affiliate_notice",
+      "privacy",
+      "imprint",
+      "sitemap"
+    ]
+  },
+  "connections": {
+    "entity_to_content": [
+      {
+        "entity": "CHK24_004",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_005",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_002",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_001",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_003",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_006",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_007",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "CHK24_008",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_001",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_002",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_003",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_004",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_005",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_006",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_007",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_008",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TC_009",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FQF32239",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0CFPWLGF2",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0DFYN8174",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FPXFBL13",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FPXDCDX2",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FPXGJL6H",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FPXDRR63",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "3424631078",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FNX7HC9M",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "3423209690",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "3832167242",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "3426281759",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0DXLBZF4Q",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0CVXSK4D3",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B08P4YPB8Q",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0FMS3V43J",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "B0D1YKBX82",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_001",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_002",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_003",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_004",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_005",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_006",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_007",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_008",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_009",
+        "content_type": "product_knowledge_node"
+      },
+      {
+        "entity": "TEL_010",
+        "content_type": "product_knowledge_node"
+      }
+    ],
+    "product_to_question": [
+      {
+        "question_id": "Q_CHK24_004_001",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_002",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_003",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_005_001",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_002",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_003",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_002_001",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_002",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_003",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_001_001",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_002",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_003",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_003_001",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_002",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_003",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_006_001",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_002",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_003",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_007_001",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_002",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_003",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_008_001",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_002",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_003",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_TC_001_001",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_002",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_003",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_002_001",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_002",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_003",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_003_001",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_002",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_003",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_004_001",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_002",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_003",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_005_001",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_002",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_003",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_006_001",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_002",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_003",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_007_001",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_002",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_003",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_008_001",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_002",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_003",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_009_001",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_002",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_003",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_B0FQF32239_001",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_002",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_003",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_001",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_002",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_003",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_001",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_002",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_003",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_001",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_002",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_003",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_001",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_002",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_003",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_001",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_002",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_003",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_001",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_002",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_003",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_3424631078_001",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_002",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_003",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_001",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_002",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_003",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_3423209690_001",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_002",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_003",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3832167242_001",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_002",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_003",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3426281759_001",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_002",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_003",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_001",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_002",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_003",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_001",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_002",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_003",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_001",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_002",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_003",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_001",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_002",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_003",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_001",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_002",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_003",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_TEL_001_001",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_002",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_003",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_002_001",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_002",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_003",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_003_001",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_002",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_003",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_004_001",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_002",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_003",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_005_001",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_002",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_003",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_006_001",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_002",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_003",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_007_001",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_002",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_003",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_008_001",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_002",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_003",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_009_001",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_002",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_003",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_010_001",
+        "product_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_002",
+        "product_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_003",
+        "product_id": "TEL_010"
+      }
+    ],
+    "product_to_article": [
+      "product_to_partner",
+      "product_to_category",
+      "product_to_topic",
+      "product_to_article",
+      "product_to_landingpage",
+      "product_to_faq",
+      "product_to_location",
+      "article_to_question",
+      "article_to_source",
+      "article_to_entity",
+      "landingpage_to_article",
+      "newsletter_to_product",
+      "newsletter_to_content"
+    ],
+    "article_to_source": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "source": "telekom"
+      }
+    ],
+    "product_to_navigation": []
+  }
+}

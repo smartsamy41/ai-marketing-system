@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Girokonto | Free Basics",
+    "og:description": "Informationen zu Girokonto aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_004",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Girokonto | Free Basics",
+    "twitter:description": "Informationen zu Girokonto.",
+    "twitter:url": "https://freebasics.online/TC_004"
+  },
+  "entity": {
+    "product_id": "TC_004",
+    "article_id": "ARTICLE_TC_004",
+    "name": "Girokonto",
+    "category": "Girokonto",
+    "partner": "tarifcheck"
+  }
+}

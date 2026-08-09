@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "TV + Internet + Festnetz | Free Basics",
+    "og:description": "Informationen zu TV + Internet + Festnetz aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_009",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "TV + Internet + Festnetz | Free Basics",
+    "twitter:description": "Informationen zu TV + Internet + Festnetz.",
+    "twitter:url": "https://freebasics.online/TEL_009"
+  },
+  "entity": {
+    "product_id": "TEL_009",
+    "article_id": "ARTICLE_TEL_009",
+    "name": "TV + Internet + Festnetz",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

@@ -1,0 +1,2785 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "asset_selection_intelligence",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "selection_rules": {
+    "mobile": {
+      "preferred_assets": [
+        "banner_300x250",
+        "kurzrechner",
+        "vergleichsrechner"
+      ],
+      "avoid": [
+        "banner_728x90"
+      ]
+    },
+    "desktop": {
+      "preferred_assets": [
+        "banner_728x90",
+        "banner_300x250",
+        "vergleichsrechner"
+      ]
+    },
+    "tablet": {
+      "preferred_assets": [
+        "banner_300x250",
+        "vergleichsrechner"
+      ]
+    }
+  },
+  "page_rules": {
+    "article": [
+      "vergleichsrechner",
+      "banner_300x250",
+      "related_asset"
+    ],
+    "landingpage": [
+      "primary_conversion_asset",
+      "banner",
+      "calculator"
+    ],
+    "footer": [
+      "disclosure",
+      "partner_information"
+    ]
+  },
+  "assets": [
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_001",
+      "product": "Solaranlage",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_003",
+      "product": "Kredit",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_003",
+      "product": "Kredit",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_003",
+      "product": "Kredit",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_003",
+      "product": "Kredit",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_003",
+      "product": "Kredit",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_003",
+      "product": "Kredit",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_004",
+      "product": "Girokonto",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_004",
+      "product": "Girokonto",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_004",
+      "product": "Girokonto",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_004",
+      "product": "Girokonto",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_004",
+      "product": "Girokonto",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_005",
+      "product": "Baufinanzierung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_005",
+      "product": "Baufinanzierung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_005",
+      "product": "Baufinanzierung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_005",
+      "product": "Baufinanzierung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_005",
+      "product": "Baufinanzierung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_006",
+      "product": "Hausratversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_006",
+      "product": "Hausratversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_006",
+      "product": "Hausratversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_006",
+      "product": "Hausratversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_006",
+      "product": "Hausratversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_007",
+      "product": "Haftpflichtversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_007",
+      "product": "Haftpflichtversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_007",
+      "product": "Haftpflichtversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_007",
+      "product": "Haftpflichtversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_007",
+      "product": "Haftpflichtversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_008",
+      "product": "Rentenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_008",
+      "product": "Rentenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_008",
+      "product": "Rentenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_008",
+      "product": "Rentenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_008",
+      "product": "Rentenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_009",
+      "product": "Private Krankenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_009",
+      "product": "Private Krankenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_009",
+      "product": "Private Krankenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_009",
+      "product": "Private Krankenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TC_009",
+      "product": "Private Krankenversicherung",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_002",
+      "product": "Ökostrom",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_003",
+      "product": "Gas",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_004",
+      "product": "DSL",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_005",
+      "product": "Mobilfunk",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_006",
+      "product": "Pauschalreise",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_007",
+      "product": "Mietwagen",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_008",
+      "product": "C24 Bank",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "CHK24_001",
+      "product": "Strom",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_SHOP_001",
+      "product": "Telekom Profis Shop",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_LOGO_200",
+      "product": "Telekom Logo 200x43",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_LOGO_300",
+      "product": "Telekom Logo 300x65",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_LOGO_600",
+      "product": "Telekom Logo 600x126",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_LOGO_940",
+      "product": "Telekom Logo 940x203",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_IMG_001",
+      "product": "Glasfaser Bild",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_IMG_002",
+      "product": "Zuhause Sofort Bild",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_IMG_003",
+      "product": "MagentaMobil Bild",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "TEL_IMG_004",
+      "product": "Telekom Aktion Bild",
+      "available": [
+        "banner_300x250",
+        "banner_728x90",
+        "vergleichsrechner",
+        "kurzrechner",
+        "direktlink"
+      ]
+    },
+    {
+      "asset_id": "telekom_click",
+      "product": "https://free-basics.telekom-profis.de",
+      "available": []
+    },
+    {
+      "asset_id": "domain_init",
+      "product": "https://freebasics.online",
+      "available": []
+    },
+    {
+      "asset_id": "system_event",
+      "product": "telekom|amazon|check24|tarifcheck",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "commission_import",
+      "product": "",
+      "available": []
+    },
+    {
+      "asset_id": "learning_sync",
+      "product": "system",
+      "available": []
+    }
+  ],
+  "connections": {
+    "product_to_asset_choice": [
+      {
+        "product_id": "CHK24_004",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_005",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_002",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_001",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_003",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_006",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_007",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "CHK24_008",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_004",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_005",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_006",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_007",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_008",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TC_009",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "3424631078",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "3423209690",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "3832167242",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "3426281759",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_001",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_002",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_003",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_004",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_005",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_006",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_007",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_008",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_009",
+        "selection": "AUTO"
+      },
+      {
+        "product_id": "TEL_010",
+        "selection": "AUTO"
+      }
+    ],
+    "asset_to_device": [
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_005",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_006",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_007",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_008",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TC_009",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_005",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_005",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_005",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_006",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_006",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_006",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_007",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_007",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_007",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_008",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_008",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_008",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "CHK24_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "CHK24_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "CHK24_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_SHOP_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_SHOP_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_SHOP_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_LOGO_200",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_LOGO_200",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_LOGO_200",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_LOGO_300",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_LOGO_300",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_LOGO_300",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_LOGO_600",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_LOGO_600",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_LOGO_600",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_LOGO_940",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_LOGO_940",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_LOGO_940",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_IMG_001",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_IMG_001",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_IMG_001",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_IMG_002",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_IMG_002",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_IMG_002",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_IMG_003",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_IMG_003",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_IMG_003",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "TEL_IMG_004",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "TEL_IMG_004",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "TEL_IMG_004",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "telekom_click",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "telekom_click",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "telekom_click",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "domain_init",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "domain_init",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "domain_init",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "system_event",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "system_event",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "system_event",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "commission_import",
+        "device": "tablet"
+      },
+      {
+        "asset_id": "learning_sync",
+        "device": "mobile"
+      },
+      {
+        "asset_id": "learning_sync",
+        "device": "desktop"
+      },
+      {
+        "asset_id": "learning_sync",
+        "device": "tablet"
+      }
+    ],
+    "asset_to_position": [
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_005",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_005",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_005",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_005",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_005",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_006",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_006",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_006",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_006",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_006",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_007",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_007",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_007",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_007",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_007",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_008",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_008",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_008",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_008",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_008",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_009",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_009",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_009",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_009",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TC_009",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_005",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_006",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_007",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_008",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "CHK24_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_SHOP_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_LOGO_200",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_LOGO_300",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_LOGO_600",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_LOGO_940",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_IMG_001",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_IMG_002",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_IMG_003",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "TEL_IMG_004",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "telekom_click",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "domain_init",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "system_event",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "commission_import",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      },
+      {
+        "asset_id": "learning_sync",
+        "positions": [
+          "content",
+          "sidebar",
+          "footer"
+        ]
+      }
+    ]
+  }
+}

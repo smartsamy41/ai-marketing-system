@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "DSL | Free Basics",
+    "og:description": "Informationen zu DSL aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/CHK24_004",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "DSL | Free Basics",
+    "twitter:description": "Informationen zu DSL.",
+    "twitter:url": "https://freebasics.online/CHK24_004"
+  },
+  "entity": {
+    "product_id": "CHK24_004",
+    "article_id": "ARTICLE_CHK24_004",
+    "name": "DSL",
+    "category": "DSL",
+    "partner": "check24"
+  }
+}

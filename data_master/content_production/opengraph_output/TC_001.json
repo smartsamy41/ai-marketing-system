@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Solaranlage | Free Basics",
+    "og:description": "Informationen zu Solaranlage aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_001",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Solaranlage | Free Basics",
+    "twitter:description": "Informationen zu Solaranlage.",
+    "twitter:url": "https://freebasics.online/TC_001"
+  },
+  "entity": {
+    "product_id": "TC_001",
+    "article_id": "ARTICLE_TC_001",
+    "name": "Solaranlage",
+    "category": "Solaranlage",
+    "partner": "tarifcheck"
+  }
+}

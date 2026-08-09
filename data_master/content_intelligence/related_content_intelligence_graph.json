@@ -1,0 +1,3352 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "related_content_intelligence_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "generated_from_entities": true,
+    "no_old_content_copy": true,
+    "semantic_relationships_only": true,
+    "source_based": true
+  },
+  "connections": {
+    "article_to_related_article": [
+      {
+        "from_article": "ARTICLE_CHK24_004",
+        "to_article": "ARTICLE_CHK24_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_005",
+        "to_article": "ARTICLE_CHK24_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_002",
+        "to_article": "ARTICLE_CHK24_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_002",
+        "to_article": "ARTICLE_CHK24_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_002",
+        "to_article": "ARTICLE_TC_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_001",
+        "to_article": "ARTICLE_CHK24_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_001",
+        "to_article": "ARTICLE_CHK24_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_001",
+        "to_article": "ARTICLE_TC_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_003",
+        "to_article": "ARTICLE_CHK24_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_003",
+        "to_article": "ARTICLE_CHK24_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_003",
+        "to_article": "ARTICLE_TC_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_006",
+        "to_article": "ARTICLE_CHK24_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_007",
+        "to_article": "ARTICLE_CHK24_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_008",
+        "to_article": "ARTICLE_TC_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_008",
+        "to_article": "ARTICLE_TC_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_CHK24_008",
+        "to_article": "ARTICLE_TC_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_001",
+        "to_article": "ARTICLE_CHK24_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_001",
+        "to_article": "ARTICLE_CHK24_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_001",
+        "to_article": "ARTICLE_CHK24_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_002",
+        "to_article": "ARTICLE_TC_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_002",
+        "to_article": "ARTICLE_TC_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_002",
+        "to_article": "ARTICLE_TC_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_002",
+        "to_article": "ARTICLE_TC_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_003",
+        "to_article": "ARTICLE_CHK24_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_003",
+        "to_article": "ARTICLE_TC_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_003",
+        "to_article": "ARTICLE_TC_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_004",
+        "to_article": "ARTICLE_CHK24_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_004",
+        "to_article": "ARTICLE_TC_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_004",
+        "to_article": "ARTICLE_TC_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_005",
+        "to_article": "ARTICLE_CHK24_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_005",
+        "to_article": "ARTICLE_TC_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_005",
+        "to_article": "ARTICLE_TC_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_006",
+        "to_article": "ARTICLE_TC_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_006",
+        "to_article": "ARTICLE_TC_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_006",
+        "to_article": "ARTICLE_TC_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_006",
+        "to_article": "ARTICLE_TC_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_007",
+        "to_article": "ARTICLE_TC_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_007",
+        "to_article": "ARTICLE_TC_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_007",
+        "to_article": "ARTICLE_TC_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_007",
+        "to_article": "ARTICLE_TC_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_008",
+        "to_article": "ARTICLE_TC_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_008",
+        "to_article": "ARTICLE_TC_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_008",
+        "to_article": "ARTICLE_TC_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_008",
+        "to_article": "ARTICLE_TC_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_009",
+        "to_article": "ARTICLE_TC_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_009",
+        "to_article": "ARTICLE_TC_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_009",
+        "to_article": "ARTICLE_TC_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TC_009",
+        "to_article": "ARTICLE_TC_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FQF32239",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CFPWLGF2",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DFYN8174",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXFBL13",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDCDX2",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXGJL6H",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FPXDRR63",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3424631078",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FNX7HC9M",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3423209690",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3832167242",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_3426281759",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0DXLBZF4Q",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0CVXSK4D3",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B08P4YPB8Q",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0FMS3V43J",
+        "to_article": "ARTICLE_B0D1YKBX82",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FQF32239",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0CFPWLGF2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0DFYN8174",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FPXFBL13",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FPXDCDX2",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FPXGJL6H",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FPXDRR63",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_3424631078",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FNX7HC9M",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_3423209690",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_3832167242",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_3426281759",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0DXLBZF4Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0CVXSK4D3",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B08P4YPB8Q",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_B0D1YKBX82",
+        "to_article": "ARTICLE_B0FMS3V43J",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_001",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_002",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_003",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_004",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_005",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_006",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_007",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_008",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_009",
+        "to_article": "ARTICLE_TEL_010",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_001",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_002",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_003",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_004",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_005",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_006",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_007",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_008",
+        "score": 2
+      },
+      {
+        "from_article": "ARTICLE_TEL_010",
+        "to_article": "ARTICLE_TEL_009",
+        "score": 2
+      }
+    ],
+    "article_to_related_question": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "question_id": "Q_CHK24_004_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "question_id": "Q_CHK24_004_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "question_id": "Q_CHK24_004_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "question_id": "Q_CHK24_005_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "question_id": "Q_CHK24_005_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "question_id": "Q_CHK24_005_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "question_id": "Q_CHK24_002_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "question_id": "Q_CHK24_002_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "question_id": "Q_CHK24_002_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "question_id": "Q_CHK24_001_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "question_id": "Q_CHK24_001_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "question_id": "Q_CHK24_001_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "question_id": "Q_CHK24_003_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "question_id": "Q_CHK24_003_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "question_id": "Q_CHK24_003_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "question_id": "Q_CHK24_006_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "question_id": "Q_CHK24_006_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "question_id": "Q_CHK24_006_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "question_id": "Q_CHK24_007_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "question_id": "Q_CHK24_007_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "question_id": "Q_CHK24_007_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "question_id": "Q_CHK24_008_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "question_id": "Q_CHK24_008_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "question_id": "Q_CHK24_008_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "question_id": "Q_TC_001_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "question_id": "Q_TC_001_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "question_id": "Q_TC_001_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "question_id": "Q_TC_002_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "question_id": "Q_TC_002_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "question_id": "Q_TC_002_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "question_id": "Q_TC_003_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "question_id": "Q_TC_003_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "question_id": "Q_TC_003_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "question_id": "Q_TC_004_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "question_id": "Q_TC_004_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "question_id": "Q_TC_004_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "question_id": "Q_TC_005_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "question_id": "Q_TC_005_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "question_id": "Q_TC_005_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "question_id": "Q_TC_006_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "question_id": "Q_TC_006_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "question_id": "Q_TC_006_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "question_id": "Q_TC_007_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "question_id": "Q_TC_007_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "question_id": "Q_TC_007_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "question_id": "Q_TC_008_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "question_id": "Q_TC_008_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "question_id": "Q_TC_008_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "question_id": "Q_TC_009_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "question_id": "Q_TC_009_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "question_id": "Q_TC_009_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "question_id": "Q_B0FQF32239_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "question_id": "Q_B0FQF32239_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "question_id": "Q_B0FQF32239_003"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_001"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_002"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_003"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_001"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_002"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_003"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "question_id": "Q_3424631078_001"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "question_id": "Q_3424631078_002"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "question_id": "Q_3424631078_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_003"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "question_id": "Q_3423209690_001"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "question_id": "Q_3423209690_002"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "question_id": "Q_3423209690_003"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "question_id": "Q_3832167242_001"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "question_id": "Q_3832167242_002"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "question_id": "Q_3832167242_003"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "question_id": "Q_3426281759_001"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "question_id": "Q_3426281759_002"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "question_id": "Q_3426281759_003"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_001"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_002"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_003"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_001"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_002"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_003"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_001"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_002"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_003"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_001"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_002"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_003"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_001"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_002"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "question_id": "Q_TEL_001_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "question_id": "Q_TEL_001_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "question_id": "Q_TEL_001_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "question_id": "Q_TEL_002_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "question_id": "Q_TEL_002_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "question_id": "Q_TEL_002_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "question_id": "Q_TEL_003_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "question_id": "Q_TEL_003_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "question_id": "Q_TEL_003_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "question_id": "Q_TEL_004_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "question_id": "Q_TEL_004_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "question_id": "Q_TEL_004_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "question_id": "Q_TEL_005_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "question_id": "Q_TEL_005_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "question_id": "Q_TEL_005_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "question_id": "Q_TEL_006_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "question_id": "Q_TEL_006_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "question_id": "Q_TEL_006_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "question_id": "Q_TEL_007_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "question_id": "Q_TEL_007_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "question_id": "Q_TEL_007_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "question_id": "Q_TEL_008_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "question_id": "Q_TEL_008_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "question_id": "Q_TEL_008_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "question_id": "Q_TEL_009_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "question_id": "Q_TEL_009_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "question_id": "Q_TEL_009_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "question_id": "Q_TEL_010_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "question_id": "Q_TEL_010_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "question_id": "Q_TEL_010_003"
+      }
+    ],
+    "article_to_related_product": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "product_id": "CHK24_004"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "product_id": "CHK24_005"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "product_id": "CHK24_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "product_id": "CHK24_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "product_id": "CHK24_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "product_id": "CHK24_006"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "product_id": "CHK24_007"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "product_id": "CHK24_008"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "product_id": "TC_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "product_id": "TC_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "product_id": "TC_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "product_id": "TC_004"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "product_id": "TC_005"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "product_id": "TC_006"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "product_id": "TC_007"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "product_id": "TC_008"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "product_id": "TC_009"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "product_id": "3424631078"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "product_id": "3423209690"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "product_id": "3832167242"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "product_id": "3426281759"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "product_id": "TEL_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "product_id": "TEL_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "product_id": "TEL_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "product_id": "TEL_004"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "product_id": "TEL_005"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "product_id": "TEL_006"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "product_id": "TEL_007"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "product_id": "TEL_008"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "product_id": "TEL_009"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "product_id": "TEL_010"
+      }
+    ],
+    "article_to_related_topic": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "topic": "energie"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "topic": "energie"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "topic": "energie"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "topic": "reisen"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "topic": "reisen"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "topic": "finanzen"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "topic": "energie"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "topic": "versicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "topic": "finanzen"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "topic": "finanzen"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "topic": "finanzen"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "topic": "versicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "topic": "versicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "topic": "versicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "topic": "versicherung"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "topic": "amazon_shopping"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "topic": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "topic": "telekom"
+      }
+    ],
+    "article_to_related_landingpage": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "product_id": "CHK24_004",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "product_id": "CHK24_005",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "product_id": "CHK24_002",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "product_id": "CHK24_001",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "product_id": "CHK24_003",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "product_id": "CHK24_006",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "product_id": "CHK24_007",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "product_id": "CHK24_008",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "product_id": "TC_001",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "product_id": "TC_002",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "product_id": "TC_003",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "product_id": "TC_004",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "product_id": "TC_005",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "product_id": "TC_006",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "product_id": "TC_007",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "product_id": "TC_008",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "product_id": "TC_009",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "product_id": "B0FQF32239",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "product_id": "B0CFPWLGF2",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "product_id": "B0DFYN8174",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "product_id": "B0FPXFBL13",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "product_id": "B0FPXDCDX2",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "product_id": "B0FPXGJL6H",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "product_id": "B0FPXDRR63",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "product_id": "3424631078",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "product_id": "B0FNX7HC9M",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "product_id": "3423209690",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "product_id": "3832167242",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "product_id": "3426281759",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "product_id": "B0DXLBZF4Q",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "product_id": "B0CVXSK4D3",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "product_id": "B08P4YPB8Q",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "product_id": "B0FMS3V43J",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "product_id": "B0D1YKBX82",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "product_id": "TEL_001",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "product_id": "TEL_002",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "product_id": "TEL_003",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "product_id": "TEL_004",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "product_id": "TEL_005",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "product_id": "TEL_006",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "product_id": "TEL_007",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "product_id": "TEL_008",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "product_id": "TEL_009",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "product_id": "TEL_010",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010"
+      }
+    ],
+    "product_to_related_content": [
+      {
+        "product_id": "CHK24_004",
+        "footer": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "footer": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "footer": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "footer": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "footer": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "footer": "telekom"
+      }
+    ]
+  }
+}

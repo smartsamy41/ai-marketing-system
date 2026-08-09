@@ -1,0 +1,183 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "topic_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "verified_topics_only": true,
+    "no_fabricated_topics": true
+  },
+  "topics": [
+    {
+      "topic": "internet_mobilfunk",
+      "product_id": "CHK24_004",
+      "source": "category_map"
+    },
+    {
+      "topic": "internet_mobilfunk",
+      "product_id": "CHK24_005",
+      "source": "category_map"
+    },
+    {
+      "topic": "energie",
+      "product_id": "CHK24_002",
+      "source": "category_map"
+    },
+    {
+      "topic": "energie",
+      "product_id": "CHK24_001",
+      "source": "category_map"
+    },
+    {
+      "topic": "energie",
+      "product_id": "CHK24_003",
+      "source": "category_map"
+    },
+    {
+      "topic": "reisen",
+      "product_id": "CHK24_006",
+      "source": "category_map"
+    },
+    {
+      "topic": "reisen",
+      "product_id": "CHK24_007",
+      "source": "category_map"
+    },
+    {
+      "topic": "finanzen",
+      "product_id": "CHK24_008",
+      "source": "category_map"
+    },
+    {
+      "topic": "energie",
+      "product_id": "TC_001",
+      "source": "category_map"
+    },
+    {
+      "topic": "versicherung",
+      "product_id": "TC_002",
+      "source": "category_map"
+    },
+    {
+      "topic": "finanzen",
+      "product_id": "TC_003",
+      "source": "category_map"
+    },
+    {
+      "topic": "finanzen",
+      "product_id": "TC_004",
+      "source": "category_map"
+    },
+    {
+      "topic": "finanzen",
+      "product_id": "TC_005",
+      "source": "category_map"
+    },
+    {
+      "topic": "versicherung",
+      "product_id": "TC_006",
+      "source": "category_map"
+    },
+    {
+      "topic": "versicherung",
+      "product_id": "TC_007",
+      "source": "category_map"
+    },
+    {
+      "topic": "versicherung",
+      "product_id": "TC_008",
+      "source": "category_map"
+    },
+    {
+      "topic": "versicherung",
+      "product_id": "TC_009",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FQF32239",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0CFPWLGF2",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0DFYN8174",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FPXFBL13",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FPXDCDX2",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FPXGJL6H",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FPXDRR63",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "3424631078",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FNX7HC9M",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "3423209690",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "3832167242",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "3426281759",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0DXLBZF4Q",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0CVXSK4D3",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B08P4YPB8Q",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0FMS3V43J",
+      "source": "category_map"
+    },
+    {
+      "topic": "amazon_shopping",
+      "product_id": "B0D1YKBX82",
+      "source": "category_map"
+    }
+  ]
+}

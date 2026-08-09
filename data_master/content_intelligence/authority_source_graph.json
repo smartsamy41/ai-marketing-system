@@ -1,0 +1,730 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "authority_source_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "verified_sources_only": true,
+    "source_required_for_claims": true,
+    "no_fabricated_sources": true,
+    "entity_source_relationship_required": true
+  },
+  "connections": {
+    "product_to_source": [
+      {
+        "product_id": "CHK24_004",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_005",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_002",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_001",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_003",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_006",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_007",
+        "source": "check24"
+      },
+      {
+        "product_id": "CHK24_008",
+        "source": "check24"
+      },
+      {
+        "product_id": "TC_001",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_002",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_003",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_004",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_005",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_006",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_007",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_008",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "TC_009",
+        "source": "tarifcheck"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "source": "amazon"
+      },
+      {
+        "product_id": "3424631078",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "source": "amazon"
+      },
+      {
+        "product_id": "3423209690",
+        "source": "amazon"
+      },
+      {
+        "product_id": "3832167242",
+        "source": "amazon"
+      },
+      {
+        "product_id": "3426281759",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "source": "amazon"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "source": "amazon"
+      },
+      {
+        "product_id": "TEL_001",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "source": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "source": "telekom"
+      }
+    ],
+    "entity_to_source": [
+      {
+        "entity": "DSL",
+        "source": "check24"
+      },
+      {
+        "entity": "Mobilfunk",
+        "source": "check24"
+      },
+      {
+        "entity": "Oekostrom",
+        "source": "check24"
+      },
+      {
+        "entity": "Strom",
+        "source": "check24"
+      },
+      {
+        "entity": "Gas",
+        "source": "check24"
+      },
+      {
+        "entity": "Pauschalreise",
+        "source": "check24"
+      },
+      {
+        "entity": "Mietwagen",
+        "source": "check24"
+      },
+      {
+        "entity": "C24 Bank",
+        "source": "check24"
+      },
+      {
+        "entity": "Solaranlage",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Kfz-Versicherung",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Kredit",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Girokonto",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Baufinanzierung",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Hausratversicherung",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Haftpflichtversicherung",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Rentenversicherung",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Private Krankenversicherung",
+        "source": "tarifcheck"
+      },
+      {
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "source": "amazon"
+      },
+      {
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "source": "amazon"
+      },
+      {
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "source": "amazon"
+      },
+      {
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "source": "amazon"
+      },
+      {
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "source": "amazon"
+      },
+      {
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "source": "amazon"
+      },
+      {
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "source": "amazon"
+      },
+      {
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "source": "amazon"
+      },
+      {
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "source": "amazon"
+      },
+      {
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "source": "amazon"
+      },
+      {
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023",
+        "source": "amazon"
+      },
+      {
+        "entity": "Der Nachbar Psychothriller",
+        "source": "amazon"
+      },
+      {
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "source": "amazon"
+      },
+      {
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "source": "amazon"
+      },
+      {
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "source": "amazon"
+      },
+      {
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "source": "amazon"
+      },
+      {
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "source": "amazon"
+      },
+      {
+        "entity": "MagentaTV",
+        "source": "telekom"
+      },
+      {
+        "entity": "Glasfaser",
+        "source": "telekom"
+      },
+      {
+        "entity": "MagentaZuhause",
+        "source": "telekom"
+      },
+      {
+        "entity": "MagentaMobil",
+        "source": "telekom"
+      },
+      {
+        "entity": "MagentaMobil Young",
+        "source": "telekom"
+      },
+      {
+        "entity": "MagentaMobil Prepaid",
+        "source": "telekom"
+      },
+      {
+        "entity": "congstar Allnet",
+        "source": "telekom"
+      },
+      {
+        "entity": "congstar Homespot",
+        "source": "telekom"
+      },
+      {
+        "entity": "TV + Internet + Festnetz",
+        "source": "telekom"
+      },
+      {
+        "entity": "Datentarife",
+        "source": "telekom"
+      }
+    ],
+    "article_to_source": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "source": "telekom"
+      }
+    ],
+    "partner_to_source": [
+      {
+        "partner": "check24",
+        "product_id": "CHK24_004"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_005"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_002"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_001"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_003"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_006"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_007"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_008"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_001"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_002"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_003"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_004"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_005"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_006"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_007"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_008"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_009"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3424631078"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3423209690"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3832167242"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3426281759"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_001"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_002"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_003"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_004"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_005"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_006"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_007"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_008"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_009"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_010"
+      }
+    ]
+  },
+  "validation": {
+    "products_checked": 44,
+    "sources_found": 11
+  }
+}

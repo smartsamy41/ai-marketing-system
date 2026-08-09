@@ -1,0 +1,43 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "event_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "real_events_only": true,
+    "partner_validation_required": true,
+    "no_fake_campaigns": true,
+    "calendar_planning_required": true
+  },
+  "event_structure": {
+    "event_id": "",
+    "event_name": "",
+    "event_type": "",
+    "partner": "",
+    "category": "",
+    "start_date": "",
+    "end_date": "",
+    "prepare_days_before": "",
+    "priority": "",
+    "source": "",
+    "content_allowed": true,
+    "status": ""
+  },
+  "events": [
+    {
+      "event_id": "EV_AMZ_BLACK_FRIDAY_2026",
+      "event_name": "Black Friday",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-11-27",
+      "end_date": "2026-11-30",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    }
+  ]
+}

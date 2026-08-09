@@ -1,0 +1,452 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "production_validation_intelligence",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "validation_rules": {
+    "content": {
+      "entity_required": true,
+      "source_required": true,
+      "question_layer_required": true
+    },
+    "seo": {
+      "schema_required": true,
+      "canonical_required": true,
+      "open_graph_required": true,
+      "llms_ready": true
+    },
+    "affiliate": {
+      "advertising_label_required": true,
+      "tracking_required": true,
+      "asset_required": true,
+      "partner_policy_required": true
+    },
+    "technical": {
+      "semantic_html": true,
+      "responsive": true,
+      "mobile_first": true,
+      "accessibility": true
+    },
+    "security": {
+      "no_old_page_reuse": true,
+      "no_fake_assets": true,
+      "source_based_only": true
+    }
+  },
+  "checks": [
+    "ENTITY_CHECK",
+    "CONTENT_CHECK",
+    "ASSET_CHECK",
+    "TRACKING_CHECK",
+    "COMPLIANCE_CHECK",
+    "SEO_CHECK",
+    "SCHEMA_CHECK",
+    "ACCESSIBILITY_CHECK"
+  ],
+  "connections": {
+    "validation_to_template": [
+      {
+        "partner": "check24",
+        "template": "affiliate_comparison",
+        "validated": true
+      },
+      {
+        "partner": "tarifcheck",
+        "template": "affiliate_comparison",
+        "validated": true
+      },
+      {
+        "partner": "amazon",
+        "template": "product_guide",
+        "validated": true
+      },
+      {
+        "partner": "telekom",
+        "template": "knowledge_article",
+        "validated": true
+      }
+    ],
+    "validation_to_asset": [
+      {
+        "product_id": "CHK24_004",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_005",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_002",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_001",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_003",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_006",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_007",
+        "asset_check": true
+      },
+      {
+        "product_id": "CHK24_008",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_001",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_002",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_003",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_004",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_005",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_006",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_007",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_008",
+        "asset_check": true
+      },
+      {
+        "product_id": "TC_009",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FQF32239",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "asset_check": true
+      },
+      {
+        "product_id": "3424631078",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "asset_check": true
+      },
+      {
+        "product_id": "3423209690",
+        "asset_check": true
+      },
+      {
+        "product_id": "3832167242",
+        "asset_check": true
+      },
+      {
+        "product_id": "3426281759",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "asset_check": true
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "asset_check": true
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_001",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_002",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_003",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_004",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_005",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_006",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_007",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_008",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_009",
+        "asset_check": true
+      },
+      {
+        "product_id": "TEL_010",
+        "asset_check": true
+      }
+    ],
+    "validation_to_seo": [
+      {
+        "entity": "DSL",
+        "seo_check": true
+      },
+      {
+        "entity": "Mobilfunk",
+        "seo_check": true
+      },
+      {
+        "entity": "Oekostrom",
+        "seo_check": true
+      },
+      {
+        "entity": "Strom",
+        "seo_check": true
+      },
+      {
+        "entity": "Gas",
+        "seo_check": true
+      },
+      {
+        "entity": "Pauschalreise",
+        "seo_check": true
+      },
+      {
+        "entity": "Mietwagen",
+        "seo_check": true
+      },
+      {
+        "entity": "C24 Bank",
+        "seo_check": true
+      },
+      {
+        "entity": "Solaranlage",
+        "seo_check": true
+      },
+      {
+        "entity": "Kfz-Versicherung",
+        "seo_check": true
+      },
+      {
+        "entity": "Kredit",
+        "seo_check": true
+      },
+      {
+        "entity": "Girokonto",
+        "seo_check": true
+      },
+      {
+        "entity": "Baufinanzierung",
+        "seo_check": true
+      },
+      {
+        "entity": "Hausratversicherung",
+        "seo_check": true
+      },
+      {
+        "entity": "Haftpflichtversicherung",
+        "seo_check": true
+      },
+      {
+        "entity": "Rentenversicherung",
+        "seo_check": true
+      },
+      {
+        "entity": "Private Krankenversicherung",
+        "seo_check": true
+      },
+      {
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "seo_check": true
+      },
+      {
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "seo_check": true
+      },
+      {
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "seo_check": true
+      },
+      {
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "seo_check": true
+      },
+      {
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "seo_check": true
+      },
+      {
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "seo_check": true
+      },
+      {
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "seo_check": true
+      },
+      {
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "seo_check": true
+      },
+      {
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "seo_check": true
+      },
+      {
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "seo_check": true
+      },
+      {
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023",
+        "seo_check": true
+      },
+      {
+        "entity": "Der Nachbar Psychothriller",
+        "seo_check": true
+      },
+      {
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "seo_check": true
+      },
+      {
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "seo_check": true
+      },
+      {
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "seo_check": true
+      },
+      {
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "seo_check": true
+      },
+      {
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "seo_check": true
+      },
+      {
+        "entity": "MagentaTV",
+        "seo_check": true
+      },
+      {
+        "entity": "Glasfaser",
+        "seo_check": true
+      },
+      {
+        "entity": "MagentaZuhause",
+        "seo_check": true
+      },
+      {
+        "entity": "MagentaMobil",
+        "seo_check": true
+      },
+      {
+        "entity": "MagentaMobil Young",
+        "seo_check": true
+      },
+      {
+        "entity": "MagentaMobil Prepaid",
+        "seo_check": true
+      },
+      {
+        "entity": "congstar Allnet",
+        "seo_check": true
+      },
+      {
+        "entity": "congstar Homespot",
+        "seo_check": true
+      },
+      {
+        "entity": "TV + Internet + Festnetz",
+        "seo_check": true
+      },
+      {
+        "entity": "Datentarife",
+        "seo_check": true
+      }
+    ],
+    "validation_to_component": [
+      {
+        "component": "header",
+        "checked": true
+      },
+      {
+        "component": "direct_answer",
+        "checked": true
+      },
+      {
+        "component": "content",
+        "checked": true
+      },
+      {
+        "component": "affiliate_block",
+        "checked": true
+      },
+      {
+        "component": "related_content",
+        "checked": true
+      },
+      {
+        "component": "footer",
+        "checked": true
+      }
+    ]
+  }
+}

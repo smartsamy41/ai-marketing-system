@@ -1,0 +1,18 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "question_intent_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "verified_questions_only": true,
+    "no_fabricated_search_data": true
+  },
+  "intents": {
+    "informational": [],
+    "commercial": [],
+    "transactional": [],
+    "navigational": []
+  },
+  "questions": []
+}

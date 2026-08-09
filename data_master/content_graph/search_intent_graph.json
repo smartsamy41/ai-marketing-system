@@ -1,0 +1,18 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "search_intent_graph",
+  "status": "ACTIVE",
+  "intent_types": {
+    "informational": [],
+    "commercial": [],
+    "transactional": [],
+    "navigational": []
+  },
+  "mapping": {
+    "question_to_topic": [],
+    "topic_to_product": [],
+    "topic_to_article": [],
+    "intent_to_landingpage": [],
+    "intent_to_geo": []
+  }
+}

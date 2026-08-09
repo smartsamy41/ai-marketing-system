@@ -1,14 +1,43 @@
 from email.header import decode_header
 
+from engine.newsletter_source_registry import NewsletterSourceRegistry
+
 
 class NewsletterMailRouter:
+
+
+    def __init__(self):
+
+        self.registry = NewsletterSourceRegistry()
+
+
+        self.routes = {
+
+            "Amazon":
+                "Amazon_Partner",
+
+            "Check24":
+                "Free Basics/Partner/Check24",
+
+            "Tarifcheck":
+                "Free Basics/Partner/Tarifcheck",
+
+            "Telekom Profis":
+                "Free Basics/Partner/Telekom"
+
+        }
+
+
 
     def decode(self, value):
 
         if not value:
+
             return ""
 
+
         result = ""
+
 
         for part, encoding in decode_header(value):
 
@@ -20,75 +49,72 @@ class NewsletterMailRouter:
                 )
 
             else:
+
                 result += part
+
 
         return result
 
 
-    def __init__(self):
-
-        self.rules = {
-
-            "Amazon_Partner": [
-                "ads.amazon.com",
-                "associates@amazon.de",
-                "amazon associates",
-                "amazon partnernet",
-                "partnernet.amazon"
-            ],
-
-
-            "Free Basics/Partner/Check24": [
-                "check24-partnerprogramm",
-                "check24.net",
-                "check24"
-            ],
-
-
-            "Free Basics/Partner/Tarifcheck": [
-                "tarifcheck-partnerprogramm",
-                "tarifcheck.de",
-                "tarifcheck"
-            ],
-
-
-            "Free Basics/Partner/Telekom": [
-                "telekom-profis.de",
-                "telekom profis"
-            ]
-
-        }
-
 
     def route(self, mail):
 
-        sender = self.decode(
-            mail.get("sender", "")
-        ).lower()
 
-        subject = self.decode(
-            mail.get("subject", "")
-        ).lower()
+        validation = self.registry.validate(
+            mail
+        )
 
 
-        text = sender + " " + subject
+        if validation["status"] != "VERIFIED":
+
+            return {
+
+                "status":
+                    "IGNORE",
+
+                "folder":
+                    "",
+
+                "keyword":
+                    ""
+
+            }
 
 
-        for folder, keywords in self.rules.items():
+        partner = validation["partner"]
 
-            for keyword in keywords:
 
-                if keyword in text:
+        folder = self.routes.get(
+            partner,
+            ""
+        )
 
-                    return {
-                        "status": "MOVE",
-                        "folder": folder,
-                        "keyword": keyword
-                    }
+
+        if not folder:
+
+            return {
+
+                "status":
+                    "IGNORE",
+
+                "folder":
+                    "",
+
+                "keyword":
+                    ""
+
+            }
 
 
         return {
-            "status": "IGNORE",
-            "folder": "",
-            "keyword": ""
+
+            "status":
+                "MOVE",
+
+            "folder":
+                folder,
+
+            "keyword":
+                validation["source"]
+
         }

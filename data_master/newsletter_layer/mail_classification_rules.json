@@ -1,0 +1,71 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "mail_classification_rules",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "sender_validation_required": true,
+    "partner_match_required": true,
+    "unknown_sender_blocked": true,
+    "source_before_content": true
+  },
+  "partner_detection": {
+    "Amazon": {
+      "provider": "Yahoo Mail",
+      "signals": [
+        "amazon",
+        "partnernet",
+        "produkt",
+        "aktion"
+      ],
+      "content_type": [
+        "product_article",
+        "faq"
+      ]
+    },
+    "Telekom": {
+      "provider": "Gmail",
+      "signals": [
+        "telekom",
+        "glasfaser",
+        "mobilfunk",
+        "internet"
+      ],
+      "content_type": [
+        "article",
+        "landingpage",
+        "geo_content"
+      ]
+    },
+    "Check24": {
+      "provider": "Gmail",
+      "signals": [
+        "check24",
+        "tarif",
+        "vergleich"
+      ],
+      "content_type": [
+        "article",
+        "landingpage",
+        "faq"
+      ]
+    },
+    "Tarifcheck": {
+      "provider": "Gmail",
+      "signals": [
+        "tarifcheck",
+        "versicherung",
+        "finanzen"
+      ],
+      "content_type": [
+        "article",
+        "landingpage",
+        "faq"
+      ]
+    }
+  },
+  "fallback": {
+    "unknown_partner": "manual_review",
+    "unknown_product": "blocked"
+  }
+}

@@ -7,6 +7,7 @@ from engine.newsletter_mail_router import NewsletterMailRouter
 
 class YahooMailMover:
 
+
     def __init__(self):
 
         s = SecretManager()
@@ -20,6 +21,7 @@ class YahooMailMover:
         )
 
         self.router = NewsletterMailRouter()
+
 
 
     def connect(self):
@@ -37,7 +39,12 @@ class YahooMailMover:
         return mail
 
 
-    def move(self, folder="Inbox", limit=20):
+
+    def move(
+        self,
+        folder="Inbox",
+        limit=20
+    ):
 
         mail = self.connect()
 
@@ -59,25 +66,30 @@ class YahooMailMover:
             return []
 
 
+
         ids = data[0].split()
 
         moved = []
 
 
-        for mail_id in ids[-limit:]:
+
+        for mail_id in reversed(ids[-limit:]):
 
 
             status, msg_data = mail.fetch(
                 mail_id,
-                "(RFC822.HEADER)"
+                "(RFC822)"
             )
 
 
             if status != "OK":
+
                 continue
 
 
+
             raw = msg_data[0][1]
+
 
             msg = message_from_bytes(
                 raw
@@ -89,10 +101,12 @@ class YahooMailMover:
                 ""
             )
 
+
             subject = msg.get(
                 "Subject",
                 ""
             )
+
 
 
             result = self.router.route(
@@ -103,7 +117,9 @@ class YahooMailMover:
             )
 
 
+
             if result["status"] == "MOVE":
+
 
                 target = result["folder"]
 
@@ -128,6 +144,7 @@ class YahooMailMover:
                         "folder": target
                     }
                 )
+
 
 
         mail.expunge()

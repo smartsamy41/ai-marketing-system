@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Datentarife | Free Basics",
+    "og:description": "Informationen zu Datentarife aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_010",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Datentarife | Free Basics",
+    "twitter:description": "Informationen zu Datentarife.",
+    "twitter:url": "https://freebasics.online/TEL_010"
+  },
+  "entity": {
+    "product_id": "TEL_010",
+    "article_id": "ARTICLE_TEL_010",
+    "name": "Datentarife",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

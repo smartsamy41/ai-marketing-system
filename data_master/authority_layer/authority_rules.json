@@ -1,0 +1,37 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "authority_rules",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "hub_pages": {
+      "required": true,
+      "purpose": "central_topic_authority"
+    },
+    "supporting_content": {
+      "article_required": true,
+      "faq_connection_required": true,
+      "entity_connection_required": true
+    },
+    "link_priority": [
+      "same_entity",
+      "same_topic",
+      "same_category",
+      "related_content",
+      "external_sources"
+    ],
+    "quality_control": {
+      "avoid_orphan_pages": true,
+      "avoid_duplicate_pages": true,
+      "avoid_artificial_linking": true
+    }
+  },
+  "authority_flow": [
+    "source",
+    "entity",
+    "hub",
+    "supporting_content",
+    "conversion_page",
+    "user_signal"
+  ]
+}

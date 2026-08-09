@@ -1,0 +1,821 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "production_page_architecture",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "page_structure": {
+    "head": [
+      "title",
+      "meta_description",
+      "canonical",
+      "open_graph",
+      "json_ld"
+    ],
+    "header": [
+      "entity",
+      "topic",
+      "direct_answer"
+    ],
+    "main": [
+      "introduction",
+      "facts",
+      "article_content",
+      "questions",
+      "faq",
+      "sources"
+    ],
+    "affiliate_area": [
+      "advertising_label",
+      "selected_asset",
+      "tracking",
+      "partner_notice"
+    ],
+    "related": [
+      "related_articles",
+      "related_questions",
+      "related_products"
+    ],
+    "footer": [
+      "imprint",
+      "privacy",
+      "cookie",
+      "affiliate_disclosure",
+      "partner_information"
+    ]
+  },
+  "technical_requirements": {
+    "semantic_html": true,
+    "responsive": true,
+    "mobile_first": true,
+    "browser_compatible": true,
+    "accessibility_ready": true,
+    "schema_ready": true,
+    "ai_ready": true
+  },
+  "connections": {
+    "page_to_content": [
+      {
+        "product_id": "CHK24_004",
+        "article_id": "ARTICLE_CHK24_004",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_005",
+        "article_id": "ARTICLE_CHK24_005",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_002",
+        "article_id": "ARTICLE_CHK24_002",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_001",
+        "article_id": "ARTICLE_CHK24_001",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_003",
+        "article_id": "ARTICLE_CHK24_003",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_006",
+        "article_id": "ARTICLE_CHK24_006",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_007",
+        "article_id": "ARTICLE_CHK24_007",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "CHK24_008",
+        "article_id": "ARTICLE_CHK24_008",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_001",
+        "article_id": "ARTICLE_TC_001",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_002",
+        "article_id": "ARTICLE_TC_002",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_003",
+        "article_id": "ARTICLE_TC_003",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_004",
+        "article_id": "ARTICLE_TC_004",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_005",
+        "article_id": "ARTICLE_TC_005",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_006",
+        "article_id": "ARTICLE_TC_006",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_007",
+        "article_id": "ARTICLE_TC_007",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_008",
+        "article_id": "ARTICLE_TC_008",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TC_009",
+        "article_id": "ARTICLE_TC_009",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "article_id": "ARTICLE_B0FQF32239",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "article_id": "ARTICLE_B0DFYN8174",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "3424631078",
+        "article_id": "ARTICLE_3424631078",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "3423209690",
+        "article_id": "ARTICLE_3423209690",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "3832167242",
+        "article_id": "ARTICLE_3832167242",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "3426281759",
+        "article_id": "ARTICLE_3426281759",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_001",
+        "article_id": "ARTICLE_TEL_001",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_002",
+        "article_id": "ARTICLE_TEL_002",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_003",
+        "article_id": "ARTICLE_TEL_003",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_004",
+        "article_id": "ARTICLE_TEL_004",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_005",
+        "article_id": "ARTICLE_TEL_005",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_006",
+        "article_id": "ARTICLE_TEL_006",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_007",
+        "article_id": "ARTICLE_TEL_007",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_008",
+        "article_id": "ARTICLE_TEL_008",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_009",
+        "article_id": "ARTICLE_TEL_009",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      },
+      {
+        "product_id": "TEL_010",
+        "article_id": "ARTICLE_TEL_010",
+        "page_type": "CONTENT_EXPERIENCE_PAGE"
+      }
+    ],
+    "page_to_seo": [
+      {
+        "entity": "DSL",
+        "schema_ready": true
+      },
+      {
+        "entity": "Mobilfunk",
+        "schema_ready": true
+      },
+      {
+        "entity": "Oekostrom",
+        "schema_ready": true
+      },
+      {
+        "entity": "Strom",
+        "schema_ready": true
+      },
+      {
+        "entity": "Gas",
+        "schema_ready": true
+      },
+      {
+        "entity": "Pauschalreise",
+        "schema_ready": true
+      },
+      {
+        "entity": "Mietwagen",
+        "schema_ready": true
+      },
+      {
+        "entity": "C24 Bank",
+        "schema_ready": true
+      },
+      {
+        "entity": "Solaranlage",
+        "schema_ready": true
+      },
+      {
+        "entity": "Kfz-Versicherung",
+        "schema_ready": true
+      },
+      {
+        "entity": "Kredit",
+        "schema_ready": true
+      },
+      {
+        "entity": "Girokonto",
+        "schema_ready": true
+      },
+      {
+        "entity": "Baufinanzierung",
+        "schema_ready": true
+      },
+      {
+        "entity": "Hausratversicherung",
+        "schema_ready": true
+      },
+      {
+        "entity": "Haftpflichtversicherung",
+        "schema_ready": true
+      },
+      {
+        "entity": "Rentenversicherung",
+        "schema_ready": true
+      },
+      {
+        "entity": "Private Krankenversicherung",
+        "schema_ready": true
+      },
+      {
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "schema_ready": true
+      },
+      {
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "schema_ready": true
+      },
+      {
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "schema_ready": true
+      },
+      {
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "schema_ready": true
+      },
+      {
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "schema_ready": true
+      },
+      {
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "schema_ready": true
+      },
+      {
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "schema_ready": true
+      },
+      {
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "schema_ready": true
+      },
+      {
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "schema_ready": true
+      },
+      {
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "schema_ready": true
+      },
+      {
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023",
+        "schema_ready": true
+      },
+      {
+        "entity": "Der Nachbar Psychothriller",
+        "schema_ready": true
+      },
+      {
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "schema_ready": true
+      },
+      {
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "schema_ready": true
+      },
+      {
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "schema_ready": true
+      },
+      {
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "schema_ready": true
+      },
+      {
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "schema_ready": true
+      },
+      {
+        "entity": "MagentaTV",
+        "schema_ready": true
+      },
+      {
+        "entity": "Glasfaser",
+        "schema_ready": true
+      },
+      {
+        "entity": "MagentaZuhause",
+        "schema_ready": true
+      },
+      {
+        "entity": "MagentaMobil",
+        "schema_ready": true
+      },
+      {
+        "entity": "MagentaMobil Young",
+        "schema_ready": true
+      },
+      {
+        "entity": "MagentaMobil Prepaid",
+        "schema_ready": true
+      },
+      {
+        "entity": "congstar Allnet",
+        "schema_ready": true
+      },
+      {
+        "entity": "congstar Homespot",
+        "schema_ready": true
+      },
+      {
+        "entity": "TV + Internet + Festnetz",
+        "schema_ready": true
+      },
+      {
+        "entity": "Datentarife",
+        "schema_ready": true
+      }
+    ],
+    "page_to_asset": [
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_005",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_005",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_005",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_005",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_005",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_006",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_006",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_006",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_006",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_006",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_007",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_007",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_007",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_007",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_007",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_008",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_008",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_008",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_008",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_008",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_009",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_009",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_009",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_009",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TC_009",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_005",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_006",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_007",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_008",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "CHK24_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_SHOP_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_LOGO_200",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_LOGO_300",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_LOGO_600",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_LOGO_940",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_IMG_001",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_IMG_002",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_IMG_003",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "TEL_IMG_004",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "telekom_click",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "domain_init",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "system_event",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "commission_import",
+        "selection": "AUTO"
+      },
+      {
+        "asset_id": "learning_sync",
+        "selection": "AUTO"
+      }
+    ],
+    "page_to_partner_policy": [
+      {
+        "partner": "check24",
+        "policy": "CONNECTED"
+      },
+      {
+        "partner": "tarifcheck",
+        "policy": "CONNECTED"
+      },
+      {
+        "partner": "amazon",
+        "policy": "CONNECTED"
+      },
+      {
+        "partner": "telekom",
+        "policy": "CONNECTED"
+      }
+    ]
+  }
+}

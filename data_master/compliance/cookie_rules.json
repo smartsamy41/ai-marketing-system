@@ -1,0 +1,20 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "source": "app/templates/base_components.py",
+  "type": "cookie_rules",
+  "status": "ACTIVE",
+  "rules": [
+    {
+      "rule": "Nur technisch notwendige Speicherung aktiv",
+      "status": "ACTIVE"
+    },
+    {
+      "rule": "Keine automatischen Marketing- oder Drittanbieter-Cookies aktivieren",
+      "status": "ACTIVE"
+    },
+    {
+      "rule": "Datenschutzerklärung verlinken",
+      "status": "ACTIVE"
+    }
+  ]
+}

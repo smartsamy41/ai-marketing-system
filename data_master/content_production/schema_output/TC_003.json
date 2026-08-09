@@ -1,0 +1,54 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Free Basics"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Free Basics",
+    "url": "https://freebasics.online"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "identifier": "TC_003",
+    "name": "Kredit",
+    "category": "Kredit",
+    "brand": {
+      "@type": "Organization",
+      "name": "Free Basics"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "identifier": "ARTICLE_TC_003",
+    "about": {
+      "@type": "Product",
+      "identifier": "TC_003"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Free Basics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kredit"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  }
+]

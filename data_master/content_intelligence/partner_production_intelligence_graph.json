@@ -1,0 +1,1190 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "partner_production_intelligence_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "master_data_only": true,
+    "no_old_content_copy": true,
+    "official_partner_data_only": true,
+    "telekom_shop_rule": true
+  },
+  "nodes": {
+    "partners": [
+      {
+        "name": "amazon"
+      },
+      {
+        "name": "check24"
+      },
+      {
+        "name": "tarifcheck"
+      },
+      {
+        "name": "telekom"
+      }
+    ],
+    "products": [
+      {
+        "product_id": "CHK24_004",
+        "name": "DSL",
+        "partner": "check24",
+        "category": "DSL"
+      },
+      {
+        "product_id": "CHK24_005",
+        "name": "Mobilfunk",
+        "partner": "check24",
+        "category": "Mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "name": "Oekostrom",
+        "partner": "check24",
+        "category": "Oekostrom"
+      },
+      {
+        "product_id": "CHK24_001",
+        "name": "Strom",
+        "partner": "check24",
+        "category": "Strom"
+      },
+      {
+        "product_id": "CHK24_003",
+        "name": "Gas",
+        "partner": "check24",
+        "category": "Gas"
+      },
+      {
+        "product_id": "CHK24_006",
+        "name": "Pauschalreise",
+        "partner": "check24",
+        "category": "Reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "name": "Mietwagen",
+        "partner": "check24",
+        "category": "Reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "name": "C24 Bank",
+        "partner": "check24",
+        "category": "Finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "name": "Solaranlage",
+        "partner": "tarifcheck",
+        "category": "Solaranlage"
+      },
+      {
+        "product_id": "TC_002",
+        "name": "Kfz-Versicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "name": "Kredit",
+        "partner": "tarifcheck",
+        "category": "Kredit"
+      },
+      {
+        "product_id": "TC_004",
+        "name": "Girokonto",
+        "partner": "tarifcheck",
+        "category": "Girokonto"
+      },
+      {
+        "product_id": "TC_005",
+        "name": "Baufinanzierung",
+        "partner": "tarifcheck",
+        "category": "Baufinanzierung"
+      },
+      {
+        "product_id": "TC_006",
+        "name": "Hausratversicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "name": "Haftpflichtversicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "name": "Rentenversicherung",
+        "partner": "tarifcheck",
+        "category": "Vorsorge"
+      },
+      {
+        "product_id": "TC_009",
+        "name": "Private Krankenversicherung",
+        "partner": "tarifcheck",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "partner": "amazon",
+        "category": "Bluetooth-Kopfhörer"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "partner": "amazon",
+        "category": "E-Reader"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "partner": "amazon",
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "partner": "amazon",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "3424631078",
+        "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "partner": "amazon",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "partner": "amazon",
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "product_id": "3423209690",
+        "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "partner": "amazon",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+      },
+      {
+        "product_id": "3832167242",
+        "name": "22 Bahnen Roman Lieblingsbuch 2023",
+        "partner": "amazon",
+        "category": "Bücher - Roman & Gegenwartsliteratur"
+      },
+      {
+        "product_id": "3426281759",
+        "name": "Der Nachbar Psychothriller",
+        "partner": "amazon",
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "partner": "amazon",
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "partner": "amazon",
+        "category": "Rasierklingen & Zubehör"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "partner": "amazon",
+        "category": "Kosmetik - Wimperntusche"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "partner": "amazon",
+        "category": "Nahrungsergänzung - Magnesium"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "partner": "amazon",
+        "category": "Bücher - Liebesromane / New Adult"
+      },
+      {
+        "product_id": "TEL_001",
+        "name": "MagentaTV",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "name": "Glasfaser",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "name": "MagentaZuhause",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "name": "MagentaMobil",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "name": "MagentaMobil Young",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "name": "MagentaMobil Prepaid",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "name": "congstar Allnet",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "name": "congstar Homespot",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "name": "TV + Internet + Festnetz",
+        "partner": "telekom",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "name": "Datentarife",
+        "partner": "telekom",
+        "category": "telekom"
+      }
+    ],
+    "content": [],
+    "navigation": [],
+    "assets": [],
+    "tracking": []
+  },
+  "connections": {
+    "partner_to_product": [
+      {
+        "partner": "check24",
+        "product_id": "CHK24_004"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_005"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_002"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_001"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_003"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_006"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_007"
+      },
+      {
+        "partner": "check24",
+        "product_id": "CHK24_008"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_001"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_002"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_003"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_004"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_005"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_006"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_007"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_008"
+      },
+      {
+        "partner": "tarifcheck",
+        "product_id": "TC_009"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3424631078"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3423209690"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3832167242"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "3426281759"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "partner": "amazon",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_001"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_002"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_003"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_004"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_005"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_006"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_007"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_008"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_009"
+      },
+      {
+        "partner": "telekom",
+        "product_id": "TEL_010"
+      }
+    ],
+    "product_to_content": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "product_id": "CHK24_004"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "product_id": "CHK24_005"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "product_id": "CHK24_002"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "product_id": "CHK24_001"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "product_id": "CHK24_003"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "product_id": "CHK24_006"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "product_id": "CHK24_007"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "product_id": "CHK24_008"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "product_id": "TC_001"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "product_id": "TC_002"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "product_id": "TC_003"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "product_id": "TC_004"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "product_id": "TC_005"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "product_id": "TC_006"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "product_id": "TC_007"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "product_id": "TC_008"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "product_id": "TC_009"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "product_id": "3424631078"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "product_id": "3423209690"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "product_id": "3832167242"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "product_id": "3426281759"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "product_id": "TEL_001"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "product_id": "TEL_002"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "product_id": "TEL_003"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "product_id": "TEL_004"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "product_id": "TEL_005"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "product_id": "TEL_006"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "product_id": "TEL_007"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "product_id": "TEL_008"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "product_id": "TEL_009"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "product_id": "TEL_010"
+      }
+    ],
+    "product_to_navigation": [
+      {
+        "product_id": "CHK24_004",
+        "footer": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "footer": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "footer": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "footer": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "footer": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "footer": "telekom"
+      }
+    ],
+    "product_to_asset": [
+      {
+        "product_id": "CHK24_004",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_005",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_002",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_001",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_003",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_006",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_007",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "CHK24_008",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_001",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_002",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_003",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_004",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_005",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_006",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_007",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_008",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TC_009",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "3424631078",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "3423209690",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "3832167242",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "3426281759",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_001",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_002",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_003",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_004",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_005",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_006",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_007",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_008",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_009",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      },
+      {
+        "product_id": "TEL_010",
+        "asset_status": "MAPPING_FROM_AFFILIATE_ASSETS"
+      }
+    ],
+    "product_to_tracking": [
+      {
+        "product_id": "CHK24_004",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_005",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_002",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_001",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_003",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_006",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_007",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "CHK24_008",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_001",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_002",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_003",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_004",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_005",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_006",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_007",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_008",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TC_009",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "3424631078",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "3423209690",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "3832167242",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "3426281759",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_001",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_002",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_003",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_004",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_005",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_006",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_007",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_008",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_009",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      },
+      {
+        "product_id": "TEL_010",
+        "tracking_status": "MAPPING_FROM_TRACKING_SOURCE"
+      }
+    ]
+  }
+}

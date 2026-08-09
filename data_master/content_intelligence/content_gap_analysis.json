@@ -1,0 +1,70 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_gap_analysis",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "no_fake_content": true,
+    "source_based": true,
+    "missing_content_detection_only": true
+  },
+  "clusters": [
+    {
+      "cluster": "internet_mobilfunk",
+      "products": 2,
+      "questions": 2,
+      "articles": 2,
+      "missing_questions": [],
+      "missing_articles": []
+    },
+    {
+      "cluster": "energie",
+      "products": 4,
+      "questions": 4,
+      "articles": 4,
+      "missing_questions": [],
+      "missing_articles": []
+    },
+    {
+      "cluster": "reisen",
+      "products": 2,
+      "questions": 2,
+      "articles": 2,
+      "missing_questions": [],
+      "missing_articles": []
+    },
+    {
+      "cluster": "finanzen",
+      "products": 4,
+      "questions": 4,
+      "articles": 4,
+      "missing_questions": [],
+      "missing_articles": []
+    },
+    {
+      "cluster": "versicherung",
+      "products": 5,
+      "questions": 5,
+      "articles": 5,
+      "missing_questions": [],
+      "missing_articles": []
+    },
+    {
+      "cluster": "amazon_shopping",
+      "products": 17,
+      "questions": 17,
+      "articles": 17,
+      "missing_questions": [],
+      "missing_articles": []
+    },
+    {
+      "cluster": "telekom",
+      "products": 10,
+      "questions": 10,
+      "articles": 10,
+      "missing_questions": [],
+      "missing_articles": []
+    }
+  ],
+  "gaps": []
+}

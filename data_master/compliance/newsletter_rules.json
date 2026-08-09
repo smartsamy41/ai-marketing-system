@@ -1,0 +1,61 @@
+{
+  "source": "system_scan/newsletter_partner_rules_full.csv",
+  "rule_count": 5,
+  "rules": [
+    {
+      "partner": "Check24",
+      "partner_id": "",
+      "mode": "LEAD_COLLECTION_ONLY",
+      "doi_required": "TRUE",
+      "approval_required": "TRUE",
+      "affiliate_disclosure_required": "TRUE",
+      "template_source": "CHECK24_RULES",
+      "status": "ACTIVE",
+      "created_at": "2026-07-25T18:26:07.574685"
+    },
+    {
+      "partner": "Tarifcheck",
+      "partner_id": "165274",
+      "mode": "LEAD_COLLECTION_ONLY",
+      "doi_required": "TRUE",
+      "approval_required": "TRUE",
+      "affiliate_disclosure_required": "TRUE",
+      "template_source": "TARIFCHECK_RULES",
+      "status": "ACTIVE",
+      "created_at": "2026-07-25T18:26:07.574685"
+    },
+    {
+      "partner": "Amazon",
+      "partner_id": "",
+      "mode": "PRODUCT_RECOMMENDATION",
+      "doi_required": "TRUE",
+      "approval_required": "FALSE",
+      "affiliate_disclosure_required": "TRUE",
+      "template_source": "AMAZON_RULES",
+      "status": "ACTIVE",
+      "created_at": "2026-07-25T18:26:07.574685"
+    },
+    {
+      "partner": "Telekom",
+      "partner_id": "100228979",
+      "mode": "PRODUCT_INFORMATION",
+      "doi_required": "TRUE",
+      "approval_required": "FALSE",
+      "affiliate_disclosure_required": "TRUE",
+      "template_source": "TELEKOM_RULES",
+      "status": "ACTIVE",
+      "created_at": "2026-07-25T18:26:07.574685"
+    },
+    {
+      "partner": "Congstar",
+      "partner_id": "",
+      "mode": "PRODUCT_INFORMATION",
+      "doi_required": "TRUE",
+      "approval_required": "FALSE",
+      "affiliate_disclosure_required": "TRUE",
+      "template_source": "CONGSTAR_RULES",
+      "status": "ACTIVE",
+      "created_at": "2026-07-25T18:26:07.574685"
+    }
+  ]
+}

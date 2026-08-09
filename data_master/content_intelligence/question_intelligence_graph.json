@@ -1,0 +1,3060 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "question_intelligence_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_based": true,
+    "entity_required": true,
+    "article_connection_required": true,
+    "no_fake_questions": true
+  },
+  "questions": [
+    {
+      "question_id": "Q_CHK24_004_001",
+      "question": "Was ist DSL?",
+      "intent": "informational",
+      "product_id": "CHK24_004",
+      "category": "DSL"
+    },
+    {
+      "question_id": "Q_CHK24_004_002",
+      "question": "Welche Informationen gibt es zu DSL?",
+      "intent": "informational",
+      "product_id": "CHK24_004",
+      "category": "DSL"
+    },
+    {
+      "question_id": "Q_CHK24_004_003",
+      "question": "Wie kann ich DSL prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_004",
+      "category": "DSL"
+    },
+    {
+      "question_id": "Q_CHK24_005_001",
+      "question": "Was ist Mobilfunk?",
+      "intent": "informational",
+      "product_id": "CHK24_005",
+      "category": "Mobilfunk"
+    },
+    {
+      "question_id": "Q_CHK24_005_002",
+      "question": "Welche Informationen gibt es zu Mobilfunk?",
+      "intent": "informational",
+      "product_id": "CHK24_005",
+      "category": "Mobilfunk"
+    },
+    {
+      "question_id": "Q_CHK24_005_003",
+      "question": "Wie kann ich Mobilfunk prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_005",
+      "category": "Mobilfunk"
+    },
+    {
+      "question_id": "Q_CHK24_002_001",
+      "question": "Was ist Oekostrom?",
+      "intent": "informational",
+      "product_id": "CHK24_002",
+      "category": "Oekostrom"
+    },
+    {
+      "question_id": "Q_CHK24_002_002",
+      "question": "Welche Informationen gibt es zu Oekostrom?",
+      "intent": "informational",
+      "product_id": "CHK24_002",
+      "category": "Oekostrom"
+    },
+    {
+      "question_id": "Q_CHK24_002_003",
+      "question": "Wie kann ich Oekostrom prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_002",
+      "category": "Oekostrom"
+    },
+    {
+      "question_id": "Q_CHK24_001_001",
+      "question": "Was ist Strom?",
+      "intent": "informational",
+      "product_id": "CHK24_001",
+      "category": "Strom"
+    },
+    {
+      "question_id": "Q_CHK24_001_002",
+      "question": "Welche Informationen gibt es zu Strom?",
+      "intent": "informational",
+      "product_id": "CHK24_001",
+      "category": "Strom"
+    },
+    {
+      "question_id": "Q_CHK24_001_003",
+      "question": "Wie kann ich Strom prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_001",
+      "category": "Strom"
+    },
+    {
+      "question_id": "Q_CHK24_003_001",
+      "question": "Was ist Gas?",
+      "intent": "informational",
+      "product_id": "CHK24_003",
+      "category": "Gas"
+    },
+    {
+      "question_id": "Q_CHK24_003_002",
+      "question": "Welche Informationen gibt es zu Gas?",
+      "intent": "informational",
+      "product_id": "CHK24_003",
+      "category": "Gas"
+    },
+    {
+      "question_id": "Q_CHK24_003_003",
+      "question": "Wie kann ich Gas prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_003",
+      "category": "Gas"
+    },
+    {
+      "question_id": "Q_CHK24_006_001",
+      "question": "Was ist Pauschalreise?",
+      "intent": "informational",
+      "product_id": "CHK24_006",
+      "category": "Reisen"
+    },
+    {
+      "question_id": "Q_CHK24_006_002",
+      "question": "Welche Informationen gibt es zu Pauschalreise?",
+      "intent": "informational",
+      "product_id": "CHK24_006",
+      "category": "Reisen"
+    },
+    {
+      "question_id": "Q_CHK24_006_003",
+      "question": "Wie kann ich Pauschalreise prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_006",
+      "category": "Reisen"
+    },
+    {
+      "question_id": "Q_CHK24_007_001",
+      "question": "Was ist Mietwagen?",
+      "intent": "informational",
+      "product_id": "CHK24_007",
+      "category": "Reisen"
+    },
+    {
+      "question_id": "Q_CHK24_007_002",
+      "question": "Welche Informationen gibt es zu Mietwagen?",
+      "intent": "informational",
+      "product_id": "CHK24_007",
+      "category": "Reisen"
+    },
+    {
+      "question_id": "Q_CHK24_007_003",
+      "question": "Wie kann ich Mietwagen prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_007",
+      "category": "Reisen"
+    },
+    {
+      "question_id": "Q_CHK24_008_001",
+      "question": "Was ist C24 Bank?",
+      "intent": "informational",
+      "product_id": "CHK24_008",
+      "category": "Finanzen"
+    },
+    {
+      "question_id": "Q_CHK24_008_002",
+      "question": "Welche Informationen gibt es zu C24 Bank?",
+      "intent": "informational",
+      "product_id": "CHK24_008",
+      "category": "Finanzen"
+    },
+    {
+      "question_id": "Q_CHK24_008_003",
+      "question": "Wie kann ich C24 Bank prüfen?",
+      "intent": "commercial",
+      "product_id": "CHK24_008",
+      "category": "Finanzen"
+    },
+    {
+      "question_id": "Q_TC_001_001",
+      "question": "Was ist Solaranlage?",
+      "intent": "informational",
+      "product_id": "TC_001",
+      "category": "Solaranlage"
+    },
+    {
+      "question_id": "Q_TC_001_002",
+      "question": "Welche Informationen gibt es zu Solaranlage?",
+      "intent": "informational",
+      "product_id": "TC_001",
+      "category": "Solaranlage"
+    },
+    {
+      "question_id": "Q_TC_001_003",
+      "question": "Wie kann ich Solaranlage prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_001",
+      "category": "Solaranlage"
+    },
+    {
+      "question_id": "Q_TC_002_001",
+      "question": "Was ist Kfz-Versicherung?",
+      "intent": "informational",
+      "product_id": "TC_002",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_002_002",
+      "question": "Welche Informationen gibt es zu Kfz-Versicherung?",
+      "intent": "informational",
+      "product_id": "TC_002",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_002_003",
+      "question": "Wie kann ich Kfz-Versicherung prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_002",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_003_001",
+      "question": "Was ist Kredit?",
+      "intent": "informational",
+      "product_id": "TC_003",
+      "category": "Kredit"
+    },
+    {
+      "question_id": "Q_TC_003_002",
+      "question": "Welche Informationen gibt es zu Kredit?",
+      "intent": "informational",
+      "product_id": "TC_003",
+      "category": "Kredit"
+    },
+    {
+      "question_id": "Q_TC_003_003",
+      "question": "Wie kann ich Kredit prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_003",
+      "category": "Kredit"
+    },
+    {
+      "question_id": "Q_TC_004_001",
+      "question": "Was ist Girokonto?",
+      "intent": "informational",
+      "product_id": "TC_004",
+      "category": "Girokonto"
+    },
+    {
+      "question_id": "Q_TC_004_002",
+      "question": "Welche Informationen gibt es zu Girokonto?",
+      "intent": "informational",
+      "product_id": "TC_004",
+      "category": "Girokonto"
+    },
+    {
+      "question_id": "Q_TC_004_003",
+      "question": "Wie kann ich Girokonto prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_004",
+      "category": "Girokonto"
+    },
+    {
+      "question_id": "Q_TC_005_001",
+      "question": "Was ist Baufinanzierung?",
+      "intent": "informational",
+      "product_id": "TC_005",
+      "category": "Baufinanzierung"
+    },
+    {
+      "question_id": "Q_TC_005_002",
+      "question": "Welche Informationen gibt es zu Baufinanzierung?",
+      "intent": "informational",
+      "product_id": "TC_005",
+      "category": "Baufinanzierung"
+    },
+    {
+      "question_id": "Q_TC_005_003",
+      "question": "Wie kann ich Baufinanzierung prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_005",
+      "category": "Baufinanzierung"
+    },
+    {
+      "question_id": "Q_TC_006_001",
+      "question": "Was ist Hausratversicherung?",
+      "intent": "informational",
+      "product_id": "TC_006",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_006_002",
+      "question": "Welche Informationen gibt es zu Hausratversicherung?",
+      "intent": "informational",
+      "product_id": "TC_006",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_006_003",
+      "question": "Wie kann ich Hausratversicherung prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_006",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_007_001",
+      "question": "Was ist Haftpflichtversicherung?",
+      "intent": "informational",
+      "product_id": "TC_007",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_007_002",
+      "question": "Welche Informationen gibt es zu Haftpflichtversicherung?",
+      "intent": "informational",
+      "product_id": "TC_007",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_007_003",
+      "question": "Wie kann ich Haftpflichtversicherung prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_007",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_008_001",
+      "question": "Was ist Rentenversicherung?",
+      "intent": "informational",
+      "product_id": "TC_008",
+      "category": "Vorsorge"
+    },
+    {
+      "question_id": "Q_TC_008_002",
+      "question": "Welche Informationen gibt es zu Rentenversicherung?",
+      "intent": "informational",
+      "product_id": "TC_008",
+      "category": "Vorsorge"
+    },
+    {
+      "question_id": "Q_TC_008_003",
+      "question": "Wie kann ich Rentenversicherung prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_008",
+      "category": "Vorsorge"
+    },
+    {
+      "question_id": "Q_TC_009_001",
+      "question": "Was ist Private Krankenversicherung?",
+      "intent": "informational",
+      "product_id": "TC_009",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_009_002",
+      "question": "Welche Informationen gibt es zu Private Krankenversicherung?",
+      "intent": "informational",
+      "product_id": "TC_009",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_TC_009_003",
+      "question": "Wie kann ich Private Krankenversicherung prüfen?",
+      "intent": "commercial",
+      "product_id": "TC_009",
+      "category": "Versicherung"
+    },
+    {
+      "question_id": "Q_B0FQF32239_001",
+      "question": "Was ist Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer?",
+      "intent": "informational",
+      "product_id": "B0FQF32239",
+      "category": "Bluetooth-Kopfhörer"
+    },
+    {
+      "question_id": "Q_B0FQF32239_002",
+      "question": "Welche Informationen gibt es zu Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer?",
+      "intent": "informational",
+      "product_id": "B0FQF32239",
+      "category": "Bluetooth-Kopfhörer"
+    },
+    {
+      "question_id": "Q_B0FQF32239_003",
+      "question": "Wie kann ich Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FQF32239",
+      "category": "Bluetooth-Kopfhörer"
+    },
+    {
+      "question_id": "Q_B0CFPWLGF2_001",
+      "question": "Was ist Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz?",
+      "intent": "informational",
+      "product_id": "B0CFPWLGF2",
+      "category": "E-Reader"
+    },
+    {
+      "question_id": "Q_B0CFPWLGF2_002",
+      "question": "Welche Informationen gibt es zu Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz?",
+      "intent": "informational",
+      "product_id": "B0CFPWLGF2",
+      "category": "E-Reader"
+    },
+    {
+      "question_id": "Q_B0CFPWLGF2_003",
+      "question": "Wie kann ich Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz prüfen?",
+      "intent": "commercial",
+      "product_id": "B0CFPWLGF2",
+      "category": "E-Reader"
+    },
+    {
+      "question_id": "Q_B0DFYN8174_001",
+      "question": "Was ist Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30?",
+      "intent": "informational",
+      "product_id": "B0DFYN8174",
+      "category": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "question_id": "Q_B0DFYN8174_002",
+      "question": "Welche Informationen gibt es zu Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30?",
+      "intent": "informational",
+      "product_id": "B0DFYN8174",
+      "category": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "question_id": "Q_B0DFYN8174_003",
+      "question": "Wie kann ich Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30 prüfen?",
+      "intent": "commercial",
+      "product_id": "B0DFYN8174",
+      "category": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "question_id": "Q_B0FPXFBL13_001",
+      "question": "Was ist LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+      "intent": "informational",
+      "product_id": "B0FPXFBL13",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXFBL13_002",
+      "question": "Welche Informationen gibt es zu LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+      "intent": "informational",
+      "product_id": "B0FPXFBL13",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXFBL13_003",
+      "question": "Wie kann ich LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FPXFBL13",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXDCDX2_001",
+      "question": "Was ist LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+      "intent": "informational",
+      "product_id": "B0FPXDCDX2",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXDCDX2_002",
+      "question": "Welche Informationen gibt es zu LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+      "intent": "informational",
+      "product_id": "B0FPXDCDX2",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXDCDX2_003",
+      "question": "Wie kann ich LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FPXDCDX2",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXGJL6H_001",
+      "question": "Was ist LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+      "intent": "informational",
+      "product_id": "B0FPXGJL6H",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXGJL6H_002",
+      "question": "Welche Informationen gibt es zu LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+      "intent": "informational",
+      "product_id": "B0FPXGJL6H",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXGJL6H_003",
+      "question": "Wie kann ich LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FPXGJL6H",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXDRR63_001",
+      "question": "Was ist LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020?",
+      "intent": "informational",
+      "product_id": "B0FPXDRR63",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXDRR63_002",
+      "question": "Welche Informationen gibt es zu LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020?",
+      "intent": "informational",
+      "product_id": "B0FPXDRR63",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_B0FPXDRR63_003",
+      "question": "Wie kann ich LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020 prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FPXDRR63",
+      "category": "Bauspielzeugsets"
+    },
+    {
+      "question_id": "Q_3424631078_001",
+      "question": "Was ist Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme?",
+      "intent": "informational",
+      "product_id": "3424631078",
+      "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+    },
+    {
+      "question_id": "Q_3424631078_002",
+      "question": "Welche Informationen gibt es zu Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme?",
+      "intent": "informational",
+      "product_id": "3424631078",
+      "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+    },
+    {
+      "question_id": "Q_3424631078_003",
+      "question": "Wie kann ich Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme prüfen?",
+      "intent": "commercial",
+      "product_id": "3424631078",
+      "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+    },
+    {
+      "question_id": "Q_B0FNX7HC9M_001",
+      "question": "Was ist Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set?",
+      "intent": "informational",
+      "product_id": "B0FNX7HC9M",
+      "category": "Bücher - Psychothriller"
+    },
+    {
+      "question_id": "Q_B0FNX7HC9M_002",
+      "question": "Welche Informationen gibt es zu Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set?",
+      "intent": "informational",
+      "product_id": "B0FNX7HC9M",
+      "category": "Bücher - Psychothriller"
+    },
+    {
+      "question_id": "Q_B0FNX7HC9M_003",
+      "question": "Wie kann ich Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FNX7HC9M",
+      "category": "Bücher - Psychothriller"
+    },
+    {
+      "question_id": "Q_3423209690_001",
+      "question": "Was ist Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens?",
+      "intent": "informational",
+      "product_id": "3423209690",
+      "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+    },
+    {
+      "question_id": "Q_3423209690_002",
+      "question": "Welche Informationen gibt es zu Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens?",
+      "intent": "informational",
+      "product_id": "3423209690",
+      "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+    },
+    {
+      "question_id": "Q_3423209690_003",
+      "question": "Wie kann ich Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens prüfen?",
+      "intent": "commercial",
+      "product_id": "3423209690",
+      "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+    },
+    {
+      "question_id": "Q_3832167242_001",
+      "question": "Was ist 22 Bahnen Roman Lieblingsbuch 2023?",
+      "intent": "informational",
+      "product_id": "3832167242",
+      "category": "Bücher - Roman & Gegenwartsliteratur"
+    },
+    {
+      "question_id": "Q_3832167242_002",
+      "question": "Welche Informationen gibt es zu 22 Bahnen Roman Lieblingsbuch 2023?",
+      "intent": "informational",
+      "product_id": "3832167242",
+      "category": "Bücher - Roman & Gegenwartsliteratur"
+    },
+    {
+      "question_id": "Q_3832167242_003",
+      "question": "Wie kann ich 22 Bahnen Roman Lieblingsbuch 2023 prüfen?",
+      "intent": "commercial",
+      "product_id": "3832167242",
+      "category": "Bücher - Roman & Gegenwartsliteratur"
+    },
+    {
+      "question_id": "Q_3426281759_001",
+      "question": "Was ist Der Nachbar Psychothriller?",
+      "intent": "informational",
+      "product_id": "3426281759",
+      "category": "Bücher - Psychothriller"
+    },
+    {
+      "question_id": "Q_3426281759_002",
+      "question": "Welche Informationen gibt es zu Der Nachbar Psychothriller?",
+      "intent": "informational",
+      "product_id": "3426281759",
+      "category": "Bücher - Psychothriller"
+    },
+    {
+      "question_id": "Q_3426281759_003",
+      "question": "Wie kann ich Der Nachbar Psychothriller prüfen?",
+      "intent": "commercial",
+      "product_id": "3426281759",
+      "category": "Bücher - Psychothriller"
+    },
+    {
+      "question_id": "Q_B0DXLBZF4Q_001",
+      "question": "Was ist PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31?",
+      "intent": "informational",
+      "product_id": "B0DXLBZF4Q",
+      "category": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "question_id": "Q_B0DXLBZF4Q_002",
+      "question": "Welche Informationen gibt es zu PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31?",
+      "intent": "informational",
+      "product_id": "B0DXLBZF4Q",
+      "category": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "question_id": "Q_B0DXLBZF4Q_003",
+      "question": "Wie kann ich PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31 prüfen?",
+      "intent": "commercial",
+      "product_id": "B0DXLBZF4Q",
+      "category": "Körperpflege & Elektrorasierer"
+    },
+    {
+      "question_id": "Q_B0CVXSK4D3_001",
+      "question": "Was ist Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50?",
+      "intent": "informational",
+      "product_id": "B0CVXSK4D3",
+      "category": "Rasierklingen & Zubehör"
+    },
+    {
+      "question_id": "Q_B0CVXSK4D3_002",
+      "question": "Welche Informationen gibt es zu Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50?",
+      "intent": "informational",
+      "product_id": "B0CVXSK4D3",
+      "category": "Rasierklingen & Zubehör"
+    },
+    {
+      "question_id": "Q_B0CVXSK4D3_003",
+      "question": "Wie kann ich Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50 prüfen?",
+      "intent": "commercial",
+      "product_id": "B0CVXSK4D3",
+      "category": "Rasierklingen & Zubehör"
+    },
+    {
+      "question_id": "Q_B08P4YPB8Q_001",
+      "question": "Was ist Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml?",
+      "intent": "informational",
+      "product_id": "B08P4YPB8Q",
+      "category": "Kosmetik - Wimperntusche"
+    },
+    {
+      "question_id": "Q_B08P4YPB8Q_002",
+      "question": "Welche Informationen gibt es zu Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml?",
+      "intent": "informational",
+      "product_id": "B08P4YPB8Q",
+      "category": "Kosmetik - Wimperntusche"
+    },
+    {
+      "question_id": "Q_B08P4YPB8Q_003",
+      "question": "Wie kann ich Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml prüfen?",
+      "intent": "commercial",
+      "product_id": "B08P4YPB8Q",
+      "category": "Kosmetik - Wimperntusche"
+    },
+    {
+      "question_id": "Q_B0FMS3V43J_001",
+      "question": "Was ist SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen?",
+      "intent": "informational",
+      "product_id": "B0FMS3V43J",
+      "category": "Nahrungsergänzung - Magnesium"
+    },
+    {
+      "question_id": "Q_B0FMS3V43J_002",
+      "question": "Welche Informationen gibt es zu SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen?",
+      "intent": "informational",
+      "product_id": "B0FMS3V43J",
+      "category": "Nahrungsergänzung - Magnesium"
+    },
+    {
+      "question_id": "Q_B0FMS3V43J_003",
+      "question": "Wie kann ich SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen prüfen?",
+      "intent": "commercial",
+      "product_id": "B0FMS3V43J",
+      "category": "Nahrungsergänzung - Magnesium"
+    },
+    {
+      "question_id": "Q_B0D1YKBX82_001",
+      "question": "Was ist Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset?",
+      "intent": "informational",
+      "product_id": "B0D1YKBX82",
+      "category": "Bücher - Liebesromane / New Adult"
+    },
+    {
+      "question_id": "Q_B0D1YKBX82_002",
+      "question": "Welche Informationen gibt es zu Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset?",
+      "intent": "informational",
+      "product_id": "B0D1YKBX82",
+      "category": "Bücher - Liebesromane / New Adult"
+    },
+    {
+      "question_id": "Q_B0D1YKBX82_003",
+      "question": "Wie kann ich Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset prüfen?",
+      "intent": "commercial",
+      "product_id": "B0D1YKBX82",
+      "category": "Bücher - Liebesromane / New Adult"
+    },
+    {
+      "question_id": "Q_TEL_001_001",
+      "question": "Was ist MagentaTV?",
+      "intent": "informational",
+      "product_id": "TEL_001",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_001_002",
+      "question": "Welche Informationen gibt es zu MagentaTV?",
+      "intent": "informational",
+      "product_id": "TEL_001",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_001_003",
+      "question": "Wie kann ich MagentaTV prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_001",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_002_001",
+      "question": "Was ist Glasfaser?",
+      "intent": "informational",
+      "product_id": "TEL_002",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_002_002",
+      "question": "Welche Informationen gibt es zu Glasfaser?",
+      "intent": "informational",
+      "product_id": "TEL_002",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_002_003",
+      "question": "Wie kann ich Glasfaser prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_002",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_003_001",
+      "question": "Was ist MagentaZuhause?",
+      "intent": "informational",
+      "product_id": "TEL_003",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_003_002",
+      "question": "Welche Informationen gibt es zu MagentaZuhause?",
+      "intent": "informational",
+      "product_id": "TEL_003",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_003_003",
+      "question": "Wie kann ich MagentaZuhause prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_003",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_004_001",
+      "question": "Was ist MagentaMobil?",
+      "intent": "informational",
+      "product_id": "TEL_004",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_004_002",
+      "question": "Welche Informationen gibt es zu MagentaMobil?",
+      "intent": "informational",
+      "product_id": "TEL_004",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_004_003",
+      "question": "Wie kann ich MagentaMobil prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_004",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_005_001",
+      "question": "Was ist MagentaMobil Young?",
+      "intent": "informational",
+      "product_id": "TEL_005",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_005_002",
+      "question": "Welche Informationen gibt es zu MagentaMobil Young?",
+      "intent": "informational",
+      "product_id": "TEL_005",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_005_003",
+      "question": "Wie kann ich MagentaMobil Young prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_005",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_006_001",
+      "question": "Was ist MagentaMobil Prepaid?",
+      "intent": "informational",
+      "product_id": "TEL_006",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_006_002",
+      "question": "Welche Informationen gibt es zu MagentaMobil Prepaid?",
+      "intent": "informational",
+      "product_id": "TEL_006",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_006_003",
+      "question": "Wie kann ich MagentaMobil Prepaid prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_006",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_007_001",
+      "question": "Was ist congstar Allnet?",
+      "intent": "informational",
+      "product_id": "TEL_007",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_007_002",
+      "question": "Welche Informationen gibt es zu congstar Allnet?",
+      "intent": "informational",
+      "product_id": "TEL_007",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_007_003",
+      "question": "Wie kann ich congstar Allnet prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_007",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_008_001",
+      "question": "Was ist congstar Homespot?",
+      "intent": "informational",
+      "product_id": "TEL_008",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_008_002",
+      "question": "Welche Informationen gibt es zu congstar Homespot?",
+      "intent": "informational",
+      "product_id": "TEL_008",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_008_003",
+      "question": "Wie kann ich congstar Homespot prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_008",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_009_001",
+      "question": "Was ist TV + Internet + Festnetz?",
+      "intent": "informational",
+      "product_id": "TEL_009",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_009_002",
+      "question": "Welche Informationen gibt es zu TV + Internet + Festnetz?",
+      "intent": "informational",
+      "product_id": "TEL_009",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_009_003",
+      "question": "Wie kann ich TV + Internet + Festnetz prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_009",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_010_001",
+      "question": "Was ist Datentarife?",
+      "intent": "informational",
+      "product_id": "TEL_010",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_010_002",
+      "question": "Welche Informationen gibt es zu Datentarife?",
+      "intent": "informational",
+      "product_id": "TEL_010",
+      "category": "telekom"
+    },
+    {
+      "question_id": "Q_TEL_010_003",
+      "question": "Wie kann ich Datentarife prüfen?",
+      "intent": "commercial",
+      "product_id": "TEL_010",
+      "category": "telekom"
+    }
+  ],
+  "connections": {
+    "question_to_entity": [
+      {
+        "question_id": "Q_CHK24_004_001",
+        "entity_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_002",
+        "entity_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_003",
+        "entity_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_005_001",
+        "entity_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_002",
+        "entity_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_003",
+        "entity_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_002_001",
+        "entity_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_002",
+        "entity_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_003",
+        "entity_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_001_001",
+        "entity_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_002",
+        "entity_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_003",
+        "entity_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_003_001",
+        "entity_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_002",
+        "entity_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_003",
+        "entity_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_006_001",
+        "entity_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_002",
+        "entity_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_003",
+        "entity_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_007_001",
+        "entity_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_002",
+        "entity_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_003",
+        "entity_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_008_001",
+        "entity_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_002",
+        "entity_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_003",
+        "entity_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_TC_001_001",
+        "entity_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_002",
+        "entity_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_003",
+        "entity_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_002_001",
+        "entity_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_002",
+        "entity_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_003",
+        "entity_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_003_001",
+        "entity_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_002",
+        "entity_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_003",
+        "entity_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_004_001",
+        "entity_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_002",
+        "entity_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_003",
+        "entity_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_005_001",
+        "entity_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_002",
+        "entity_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_003",
+        "entity_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_006_001",
+        "entity_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_002",
+        "entity_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_003",
+        "entity_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_007_001",
+        "entity_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_002",
+        "entity_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_003",
+        "entity_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_008_001",
+        "entity_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_002",
+        "entity_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_003",
+        "entity_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_009_001",
+        "entity_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_002",
+        "entity_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_003",
+        "entity_id": "TC_009"
+      },
+      {
+        "question_id": "Q_B0FQF32239_001",
+        "entity_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_002",
+        "entity_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_003",
+        "entity_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_001",
+        "entity_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_002",
+        "entity_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_003",
+        "entity_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_001",
+        "entity_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_002",
+        "entity_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_003",
+        "entity_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_001",
+        "entity_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_002",
+        "entity_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_003",
+        "entity_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_001",
+        "entity_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_002",
+        "entity_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_003",
+        "entity_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_001",
+        "entity_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_002",
+        "entity_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_003",
+        "entity_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_001",
+        "entity_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_002",
+        "entity_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_003",
+        "entity_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_3424631078_001",
+        "entity_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_002",
+        "entity_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_003",
+        "entity_id": "3424631078"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_001",
+        "entity_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_002",
+        "entity_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_003",
+        "entity_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_3423209690_001",
+        "entity_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_002",
+        "entity_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_003",
+        "entity_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3832167242_001",
+        "entity_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_002",
+        "entity_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_003",
+        "entity_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3426281759_001",
+        "entity_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_002",
+        "entity_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_003",
+        "entity_id": "3426281759"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_001",
+        "entity_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_002",
+        "entity_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_003",
+        "entity_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_001",
+        "entity_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_002",
+        "entity_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_003",
+        "entity_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_001",
+        "entity_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_002",
+        "entity_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_003",
+        "entity_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_001",
+        "entity_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_002",
+        "entity_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_003",
+        "entity_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_001",
+        "entity_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_002",
+        "entity_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_003",
+        "entity_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_TEL_001_001",
+        "entity_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_002",
+        "entity_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_003",
+        "entity_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_002_001",
+        "entity_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_002",
+        "entity_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_003",
+        "entity_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_003_001",
+        "entity_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_002",
+        "entity_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_003",
+        "entity_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_004_001",
+        "entity_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_002",
+        "entity_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_003",
+        "entity_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_005_001",
+        "entity_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_002",
+        "entity_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_003",
+        "entity_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_006_001",
+        "entity_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_002",
+        "entity_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_003",
+        "entity_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_007_001",
+        "entity_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_002",
+        "entity_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_003",
+        "entity_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_008_001",
+        "entity_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_002",
+        "entity_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_003",
+        "entity_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_009_001",
+        "entity_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_002",
+        "entity_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_003",
+        "entity_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_010_001",
+        "entity_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_002",
+        "entity_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_003",
+        "entity_id": "TEL_010"
+      }
+    ],
+    "question_to_article": [
+      {
+        "question_id": "Q_CHK24_004_001",
+        "article_id": "ARTICLE_CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_002",
+        "article_id": "ARTICLE_CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_003",
+        "article_id": "ARTICLE_CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_005_001",
+        "article_id": "ARTICLE_CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_002",
+        "article_id": "ARTICLE_CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_003",
+        "article_id": "ARTICLE_CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_002_001",
+        "article_id": "ARTICLE_CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_002",
+        "article_id": "ARTICLE_CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_003",
+        "article_id": "ARTICLE_CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_001_001",
+        "article_id": "ARTICLE_CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_002",
+        "article_id": "ARTICLE_CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_003",
+        "article_id": "ARTICLE_CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_003_001",
+        "article_id": "ARTICLE_CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_002",
+        "article_id": "ARTICLE_CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_003",
+        "article_id": "ARTICLE_CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_006_001",
+        "article_id": "ARTICLE_CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_002",
+        "article_id": "ARTICLE_CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_003",
+        "article_id": "ARTICLE_CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_007_001",
+        "article_id": "ARTICLE_CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_002",
+        "article_id": "ARTICLE_CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_003",
+        "article_id": "ARTICLE_CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_008_001",
+        "article_id": "ARTICLE_CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_002",
+        "article_id": "ARTICLE_CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_003",
+        "article_id": "ARTICLE_CHK24_008"
+      },
+      {
+        "question_id": "Q_TC_001_001",
+        "article_id": "ARTICLE_TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_002",
+        "article_id": "ARTICLE_TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_003",
+        "article_id": "ARTICLE_TC_001"
+      },
+      {
+        "question_id": "Q_TC_002_001",
+        "article_id": "ARTICLE_TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_002",
+        "article_id": "ARTICLE_TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_003",
+        "article_id": "ARTICLE_TC_002"
+      },
+      {
+        "question_id": "Q_TC_003_001",
+        "article_id": "ARTICLE_TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_002",
+        "article_id": "ARTICLE_TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_003",
+        "article_id": "ARTICLE_TC_003"
+      },
+      {
+        "question_id": "Q_TC_004_001",
+        "article_id": "ARTICLE_TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_002",
+        "article_id": "ARTICLE_TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_003",
+        "article_id": "ARTICLE_TC_004"
+      },
+      {
+        "question_id": "Q_TC_005_001",
+        "article_id": "ARTICLE_TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_002",
+        "article_id": "ARTICLE_TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_003",
+        "article_id": "ARTICLE_TC_005"
+      },
+      {
+        "question_id": "Q_TC_006_001",
+        "article_id": "ARTICLE_TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_002",
+        "article_id": "ARTICLE_TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_003",
+        "article_id": "ARTICLE_TC_006"
+      },
+      {
+        "question_id": "Q_TC_007_001",
+        "article_id": "ARTICLE_TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_002",
+        "article_id": "ARTICLE_TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_003",
+        "article_id": "ARTICLE_TC_007"
+      },
+      {
+        "question_id": "Q_TC_008_001",
+        "article_id": "ARTICLE_TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_002",
+        "article_id": "ARTICLE_TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_003",
+        "article_id": "ARTICLE_TC_008"
+      },
+      {
+        "question_id": "Q_TC_009_001",
+        "article_id": "ARTICLE_TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_002",
+        "article_id": "ARTICLE_TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_003",
+        "article_id": "ARTICLE_TC_009"
+      },
+      {
+        "question_id": "Q_B0FQF32239_001",
+        "article_id": "ARTICLE_B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_002",
+        "article_id": "ARTICLE_B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_003",
+        "article_id": "ARTICLE_B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_001",
+        "article_id": "ARTICLE_B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_002",
+        "article_id": "ARTICLE_B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_003",
+        "article_id": "ARTICLE_B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_001",
+        "article_id": "ARTICLE_B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_002",
+        "article_id": "ARTICLE_B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_003",
+        "article_id": "ARTICLE_B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_001",
+        "article_id": "ARTICLE_B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_002",
+        "article_id": "ARTICLE_B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_003",
+        "article_id": "ARTICLE_B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_001",
+        "article_id": "ARTICLE_B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_002",
+        "article_id": "ARTICLE_B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_003",
+        "article_id": "ARTICLE_B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_001",
+        "article_id": "ARTICLE_B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_002",
+        "article_id": "ARTICLE_B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_003",
+        "article_id": "ARTICLE_B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_001",
+        "article_id": "ARTICLE_B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_002",
+        "article_id": "ARTICLE_B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_003",
+        "article_id": "ARTICLE_B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_3424631078_001",
+        "article_id": "ARTICLE_3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_002",
+        "article_id": "ARTICLE_3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_003",
+        "article_id": "ARTICLE_3424631078"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_001",
+        "article_id": "ARTICLE_B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_002",
+        "article_id": "ARTICLE_B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_003",
+        "article_id": "ARTICLE_B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_3423209690_001",
+        "article_id": "ARTICLE_3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_002",
+        "article_id": "ARTICLE_3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_003",
+        "article_id": "ARTICLE_3423209690"
+      },
+      {
+        "question_id": "Q_3832167242_001",
+        "article_id": "ARTICLE_3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_002",
+        "article_id": "ARTICLE_3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_003",
+        "article_id": "ARTICLE_3832167242"
+      },
+      {
+        "question_id": "Q_3426281759_001",
+        "article_id": "ARTICLE_3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_002",
+        "article_id": "ARTICLE_3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_003",
+        "article_id": "ARTICLE_3426281759"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_001",
+        "article_id": "ARTICLE_B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_002",
+        "article_id": "ARTICLE_B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_003",
+        "article_id": "ARTICLE_B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_001",
+        "article_id": "ARTICLE_B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_002",
+        "article_id": "ARTICLE_B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_003",
+        "article_id": "ARTICLE_B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_001",
+        "article_id": "ARTICLE_B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_002",
+        "article_id": "ARTICLE_B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_003",
+        "article_id": "ARTICLE_B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_001",
+        "article_id": "ARTICLE_B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_002",
+        "article_id": "ARTICLE_B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_003",
+        "article_id": "ARTICLE_B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_001",
+        "article_id": "ARTICLE_B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_002",
+        "article_id": "ARTICLE_B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_003",
+        "article_id": "ARTICLE_B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_TEL_001_001",
+        "article_id": "ARTICLE_TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_002",
+        "article_id": "ARTICLE_TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_003",
+        "article_id": "ARTICLE_TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_002_001",
+        "article_id": "ARTICLE_TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_002",
+        "article_id": "ARTICLE_TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_003",
+        "article_id": "ARTICLE_TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_003_001",
+        "article_id": "ARTICLE_TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_002",
+        "article_id": "ARTICLE_TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_003",
+        "article_id": "ARTICLE_TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_004_001",
+        "article_id": "ARTICLE_TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_002",
+        "article_id": "ARTICLE_TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_003",
+        "article_id": "ARTICLE_TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_005_001",
+        "article_id": "ARTICLE_TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_002",
+        "article_id": "ARTICLE_TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_003",
+        "article_id": "ARTICLE_TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_006_001",
+        "article_id": "ARTICLE_TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_002",
+        "article_id": "ARTICLE_TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_003",
+        "article_id": "ARTICLE_TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_007_001",
+        "article_id": "ARTICLE_TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_002",
+        "article_id": "ARTICLE_TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_003",
+        "article_id": "ARTICLE_TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_008_001",
+        "article_id": "ARTICLE_TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_002",
+        "article_id": "ARTICLE_TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_003",
+        "article_id": "ARTICLE_TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_009_001",
+        "article_id": "ARTICLE_TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_002",
+        "article_id": "ARTICLE_TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_003",
+        "article_id": "ARTICLE_TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_010_001",
+        "article_id": "ARTICLE_TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_002",
+        "article_id": "ARTICLE_TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_003",
+        "article_id": "ARTICLE_TEL_010"
+      }
+    ],
+    "question_to_topic": [
+      {
+        "question_id": "Q_CHK24_004_001",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "question_id": "Q_CHK24_004_002",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "question_id": "Q_CHK24_004_003",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "question_id": "Q_CHK24_005_001",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "question_id": "Q_CHK24_005_002",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "question_id": "Q_CHK24_005_003",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "question_id": "Q_CHK24_001_001",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_001_002",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_001_003",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_002_001",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_002_002",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_002_003",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_003_001",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_003_002",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_003_003",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_TC_001_001",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_TC_001_002",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_TC_001_003",
+        "topic": "energie"
+      },
+      {
+        "question_id": "Q_CHK24_006_001",
+        "topic": "reisen"
+      },
+      {
+        "question_id": "Q_CHK24_006_002",
+        "topic": "reisen"
+      },
+      {
+        "question_id": "Q_CHK24_006_003",
+        "topic": "reisen"
+      },
+      {
+        "question_id": "Q_CHK24_007_001",
+        "topic": "reisen"
+      },
+      {
+        "question_id": "Q_CHK24_007_002",
+        "topic": "reisen"
+      },
+      {
+        "question_id": "Q_CHK24_007_003",
+        "topic": "reisen"
+      },
+      {
+        "question_id": "Q_CHK24_008_001",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_CHK24_008_002",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_CHK24_008_003",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_003_001",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_003_002",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_003_003",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_004_001",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_004_002",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_004_003",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_005_001",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_005_002",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_005_003",
+        "topic": "finanzen"
+      },
+      {
+        "question_id": "Q_TC_002_001",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_002_002",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_002_003",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_006_001",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_006_002",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_006_003",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_007_001",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_007_002",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_007_003",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_008_001",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_008_002",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_008_003",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_009_001",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_009_002",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_TC_009_003",
+        "topic": "versicherung"
+      },
+      {
+        "question_id": "Q_B0FQF32239_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FQF32239_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FQF32239_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3424631078_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3424631078_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3424631078_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3423209690_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3423209690_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3423209690_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3832167242_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3832167242_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3832167242_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3426281759_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3426281759_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_3426281759_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_001",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_002",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_003",
+        "topic": "amazon_shopping"
+      },
+      {
+        "question_id": "Q_TEL_001_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_001_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_001_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_002_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_002_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_002_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_003_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_003_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_003_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_004_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_004_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_004_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_005_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_005_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_005_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_006_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_006_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_006_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_007_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_007_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_007_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_008_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_008_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_008_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_009_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_009_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_009_003",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_010_001",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_010_002",
+        "topic": "telekom"
+      },
+      {
+        "question_id": "Q_TEL_010_003",
+        "topic": "telekom"
+      }
+    ],
+    "question_to_product": [
+      {
+        "question_id": "Q_CHK24_004_001",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_002",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_003",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_005_001",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_002",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_003",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_002_001",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_002",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_003",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_001_001",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_002",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_003",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_003_001",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_002",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_003",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_006_001",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_002",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_003",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_007_001",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_002",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_003",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_008_001",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_002",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_003",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_TC_001_001",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_002",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_003",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_002_001",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_002",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_003",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_003_001",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_002",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_003",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_004_001",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_002",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_003",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_005_001",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_002",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_003",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_006_001",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_002",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_003",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_007_001",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_002",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_003",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_008_001",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_002",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_003",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_009_001",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_002",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_003",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_B0FQF32239_001",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_002",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_003",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_001",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_002",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_003",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_001",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_002",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_003",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_001",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_002",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_003",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_001",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_002",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_003",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_001",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_002",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_003",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_001",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_002",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_003",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_3424631078_001",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_002",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_003",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_001",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_002",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_003",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_3423209690_001",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_002",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_003",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3832167242_001",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_002",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_003",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3426281759_001",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_002",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_003",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_001",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_002",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_003",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_001",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_002",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_003",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_001",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_002",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_003",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_001",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_002",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_003",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_001",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_002",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_003",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_TEL_001_001",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_002",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_003",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_002_001",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_002",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_003",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_003_001",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_002",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_003",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_004_001",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_002",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_003",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_005_001",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_002",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_003",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_006_001",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_002",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_003",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_007_001",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_002",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_003",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_008_001",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_002",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_003",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_009_001",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_002",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_003",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_010_001",
+        "product_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_002",
+        "product_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_003",
+        "product_id": "TEL_010"
+      }
+    ]
+  }
+}

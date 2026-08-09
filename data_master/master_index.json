@@ -1,0 +1,24 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "master_data_index",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "layers": {
+    "catalog": "data_master/catalog",
+    "compliance": "data_master/compliance",
+    "content_models": "data_master/content_models",
+    "content_intelligence": "data_master/content_intelligence",
+    "knowledge": "data_master/knowledge_master",
+    "entities": "data_master/knowledge_master/entity_layer",
+    "geo": "data_master/geo_layer",
+    "sources": "data_master/source_layer",
+    "authority": "data_master/authority_layer",
+    "linking": "data_master/linking",
+    "reference_models": "data_master/website_intelligence"
+  },
+  "rules": {
+    "single_source_of_truth": true,
+    "audit_before_changes": true,
+    "no_fabricated_data": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Private Krankenversicherung | Free Basics",
+    "og:description": "Informationen zu Private Krankenversicherung aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_009",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Private Krankenversicherung | Free Basics",
+    "twitter:description": "Informationen zu Private Krankenversicherung.",
+    "twitter:url": "https://freebasics.online/TC_009"
+  },
+  "entity": {
+    "product_id": "TC_009",
+    "article_id": "ARTICLE_TC_009",
+    "name": "Private Krankenversicherung",
+    "category": "Versicherung",
+    "partner": "tarifcheck"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "congstar Allnet | Free Basics",
+    "og:description": "Informationen zu congstar Allnet aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_007",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "congstar Allnet | Free Basics",
+    "twitter:description": "Informationen zu congstar Allnet.",
+    "twitter:url": "https://freebasics.online/TEL_007"
+  },
+  "entity": {
+    "product_id": "TEL_007",
+    "article_id": "ARTICLE_TEL_007",
+    "name": "congstar Allnet",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

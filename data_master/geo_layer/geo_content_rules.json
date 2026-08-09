@@ -1,0 +1,54 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "geo_content_rules",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "location_requirements": {
+      "real_location_required": true,
+      "source_required": true,
+      "wikidata_check_required": true
+    },
+    "page_creation": {
+      "allow_without_data": false,
+      "allow_empty_geo_pages": false,
+      "duplicate_location_pages": false
+    },
+    "content_matching": {
+      "product_match_required": true,
+      "category_match_required": true,
+      "search_intent_required": true
+    },
+    "partner_rules": {
+      "amazon": {
+        "geo_pages": false,
+        "reason": "Product recommendation without local dependency"
+      },
+      "check24": {
+        "geo_pages": true,
+        "requires_real_market_data": true
+      },
+      "tarifcheck": {
+        "geo_pages": true,
+        "requires_real_location_relevance": true
+      },
+      "telekom": {
+        "geo_pages": true,
+        "content_allowed": true,
+        "conversion_target": "official_shop"
+      }
+    },
+    "newsletter_connection": {
+      "geo_signal_allowed": true,
+      "source_required": true,
+      "no_fake_local_offers": true
+    }
+  },
+  "validation_pipeline": [
+    "location_validation",
+    "entity_validation",
+    "product_matching",
+    "content_generation",
+    "final_compliance_check"
+  ]
+}

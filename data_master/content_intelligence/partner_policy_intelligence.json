@@ -1,0 +1,55 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "partner_policy_intelligence",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "partners": {
+    "check24": {
+      "content_layer": true,
+      "article_generation": true,
+      "landingpage": true,
+      "affiliate_conversion": true,
+      "assets": true,
+      "tracking": true
+    },
+    "tarifcheck": {
+      "content_layer": true,
+      "article_generation": true,
+      "landingpage": true,
+      "affiliate_conversion": true,
+      "calculator_widgets": true,
+      "tracking": true,
+      "compliance_required": true
+    },
+    "amazon": {
+      "content_layer": true,
+      "article_generation": true,
+      "product_content": true,
+      "original_images_only": true,
+      "affiliate_link": true,
+      "tracking": true
+    },
+    "telekom": {
+      "content_layer": true,
+      "entity_layer": true,
+      "article_generation": true,
+      "newsletter_content": true,
+      "faq_generation": true,
+      "internal_linking": true,
+      "schema_generation": true,
+      "official_assets_only": true,
+      "conversion_landingpage": false,
+      "external_shop_redirect": true
+    }
+  },
+  "renderer_rules": {
+    "affiliate_partners": [
+      "check24",
+      "tarifcheck",
+      "amazon"
+    ],
+    "shop_redirect_partners": [
+      "telekom"
+    ]
+  }
+}

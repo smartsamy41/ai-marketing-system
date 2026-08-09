@@ -1,0 +1,244 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "topic_cluster_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "entity_required": true,
+    "no_fake_topics": true,
+    "product_connection_required": true
+  },
+  "clusters": [
+
+    {
+      "cluster": "internet_mobilfunk",
+      "product_id": "CHK24_004",
+      "category": "dsl"
+    },
+    {
+      "cluster": "internet_mobilfunk",
+      "product_id": "CHK24_005",
+      "category": "mobilfunk"
+    },
+
+    {
+      "cluster": "energie",
+      "product_id": "CHK24_001",
+      "category": "strom"
+    },
+    {
+      "cluster": "energie",
+      "product_id": "CHK24_002",
+      "category": "oekostrom"
+    },
+    {
+      "cluster": "energie",
+      "product_id": "CHK24_003",
+      "category": "gas"
+    },
+    {
+      "cluster": "energie",
+      "product_id": "TC_001",
+      "category": "solaranlage"
+    },
+
+    {
+      "cluster": "reisen",
+      "product_id": "CHK24_006",
+      "category": "reisen"
+    },
+    {
+      "cluster": "reisen",
+      "product_id": "CHK24_007",
+      "category": "reisen"
+    },
+
+    {
+      "cluster": "finanzen",
+      "product_id": "CHK24_008",
+      "category": "finanzen"
+    },
+    {
+      "cluster": "finanzen",
+      "product_id": "TC_003",
+      "category": "kredit"
+    },
+    {
+      "cluster": "finanzen",
+      "product_id": "TC_004",
+      "category": "girokonto"
+    },
+    {
+      "cluster": "finanzen",
+      "product_id": "TC_005",
+      "category": "baufinanzierung"
+    },
+
+    {
+      "cluster": "versicherung",
+      "product_id": "TC_002",
+      "category": "kfz"
+    },
+    {
+      "cluster": "versicherung",
+      "product_id": "TC_006",
+      "category": "hausrat"
+    },
+    {
+      "cluster": "versicherung",
+      "product_id": "TC_007",
+      "category": "haftpflicht"
+    },
+    {
+      "cluster": "versicherung",
+      "product_id": "TC_008",
+      "category": "rente"
+    },
+    {
+      "cluster": "versicherung",
+      "product_id": "TC_009",
+      "category": "pkv"
+    },
+
+
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FQF32239",
+      "category": "bluetooth-kopfhörer"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0CFPWLGF2",
+      "category": "e-reader"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0DFYN8174",
+      "category": "körperpflege"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FPXFBL13",
+      "category": "bauspielzeugsets"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FPXDCDX2",
+      "category": "bauspielzeugsets"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FPXGJL6H",
+      "category": "bauspielzeugsets"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FPXDRR63",
+      "category": "bauspielzeugsets"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "3424631078",
+      "category": "bücher"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FNX7HC9M",
+      "category": "bücher"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "3423209690",
+      "category": "bücher"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "3832167242",
+      "category": "bücher"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "3426281759",
+      "category": "bücher"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0DXLBZF4Q",
+      "category": "körperpflege"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0CVXSK4D3",
+      "category": "rasierklingen"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B08P4YPB8Q",
+      "category": "kosmetik"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0FMS3V43J",
+      "category": "magnesium"
+    },
+    {
+      "cluster": "amazon_shopping",
+      "product_id": "B0D1YKBX82",
+      "category": "bücher"
+    },
+
+
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_001",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_002",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_003",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_004",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_005",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_006",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_007",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_008",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_009",
+      "category": "telekom"
+    },
+    {
+      "cluster": "telekom",
+      "product_id": "TEL_010",
+      "category": "telekom"
+    }
+
+  ]
+}

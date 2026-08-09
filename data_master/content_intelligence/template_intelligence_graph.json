@@ -1,0 +1,189 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "template_intelligence",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "templates": {
+    "affiliate_comparison": {
+      "partners": [
+        "check24",
+        "tarifcheck"
+      ],
+      "sections": [
+        "entity",
+        "direct_answer",
+        "facts",
+        "comparison_area",
+        "affiliate_asset",
+        "faq",
+        "sources",
+        "footer"
+      ],
+      "conversion": "affiliate"
+    },
+    "product_guide": {
+      "partners": [
+        "amazon"
+      ],
+      "sections": [
+        "entity",
+        "product_information",
+        "original_image",
+        "facts",
+        "faq",
+        "related_products",
+        "affiliate_link"
+      ],
+      "conversion": "affiliate_product"
+    },
+    "knowledge_article": {
+      "partners": [
+        "telekom"
+      ],
+      "sections": [
+        "entity",
+        "topic",
+        "article",
+        "questions",
+        "faq",
+        "sources",
+        "related_content"
+      ],
+      "conversion": "official_shop_redirect"
+    }
+  },
+  "rules": {
+    "no_old_landingpage_reuse": true,
+    "source_based_content_only": true,
+    "partner_policy_required": true,
+    "asset_selection_required": true
+  },
+  "connections": {
+    "partner_to_template": [
+      {
+        "partner": "check24",
+        "template": "affiliate_comparison"
+      },
+      {
+        "partner": "tarifcheck",
+        "template": "affiliate_comparison"
+      },
+      {
+        "partner": "amazon",
+        "template": "product_guide"
+      },
+      {
+        "partner": "telekom",
+        "template": "knowledge_article"
+      }
+    ],
+    "template_to_component": [
+      {
+        "template": "affiliate_comparison",
+        "component": "entity"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "direct_answer"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "facts"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "comparison_area"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "affiliate_asset"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "faq"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "sources"
+      },
+      {
+        "template": "affiliate_comparison",
+        "component": "footer"
+      },
+      {
+        "template": "product_guide",
+        "component": "entity"
+      },
+      {
+        "template": "product_guide",
+        "component": "product_information"
+      },
+      {
+        "template": "product_guide",
+        "component": "original_image"
+      },
+      {
+        "template": "product_guide",
+        "component": "facts"
+      },
+      {
+        "template": "product_guide",
+        "component": "faq"
+      },
+      {
+        "template": "product_guide",
+        "component": "related_products"
+      },
+      {
+        "template": "product_guide",
+        "component": "affiliate_link"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "entity"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "topic"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "article"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "questions"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "faq"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "sources"
+      },
+      {
+        "template": "knowledge_article",
+        "component": "related_content"
+      }
+    ],
+    "template_to_conversion": [
+      {
+        "template": "affiliate_comparison",
+        "conversion": "affiliate"
+      },
+      {
+        "template": "affiliate_comparison",
+        "conversion": "affiliate"
+      },
+      {
+        "template": "product_guide",
+        "conversion": "affiliate_product"
+      },
+      {
+        "template": "knowledge_article",
+        "conversion": "official_shop_redirect"
+      }
+    ]
+  }
+}

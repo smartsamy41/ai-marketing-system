@@ -1,0 +1,29 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "newsletter_calendar_schema",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "date_required": true,
+    "partner_required": true,
+    "product_required": true,
+    "content_status_required": true
+  },
+  "calendar_entry": {
+    "newsletter_id": "",
+    "partner": "",
+    "product_id": "",
+    "campaign_type": "",
+    "priority": "",
+    "received_at": "",
+    "planned_publish_date": "",
+    "content_type": "",
+    "status": ""
+  },
+  "planning_rules": {
+    "seasonal_campaign": "early_preparation",
+    "product_news": "normal_schedule",
+    "urgent_partner_update": "fast_processing",
+    "unknown_campaign": "manual_review"
+  }
+}

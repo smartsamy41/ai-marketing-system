@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Kredit | Free Basics",
+    "og:description": "Informationen zu Kredit aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_003",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Kredit | Free Basics",
+    "twitter:description": "Informationen zu Kredit.",
+    "twitter:url": "https://freebasics.online/TC_003"
+  },
+  "entity": {
+    "product_id": "TC_003",
+    "article_id": "ARTICLE_TC_003",
+    "name": "Kredit",
+    "category": "Kredit",
+    "partner": "tarifcheck"
+  }
+}

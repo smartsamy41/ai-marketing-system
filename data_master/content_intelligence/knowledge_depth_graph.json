@@ -1,0 +1,2499 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "knowledge_depth_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "verified_relationships_only": true,
+    "source_based": true,
+    "no_fake_connections": true
+  },
+  "depth": {
+    "entities": [
+      "products",
+      "partners",
+      "categories",
+      "locations",
+      "articles",
+      "landingpages",
+      "newsletters",
+      "sources"
+    ],
+    "products": [
+      {
+        "product_id": "CHK24_004",
+        "entity": "DSL",
+        "category": "DSL",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_005",
+        "entity": "Mobilfunk",
+        "category": "Mobilfunk",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_002",
+        "entity": "Oekostrom",
+        "category": "Oekostrom",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_001",
+        "entity": "Strom",
+        "category": "Strom",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_003",
+        "entity": "Gas",
+        "category": "Gas",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_006",
+        "entity": "Pauschalreise",
+        "category": "Reisen",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_007",
+        "entity": "Mietwagen",
+        "category": "Reisen",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_008",
+        "entity": "C24 Bank",
+        "category": "Finanzen",
+        "partner": "check24"
+      },
+      {
+        "product_id": "TC_001",
+        "entity": "Solaranlage",
+        "category": "Solaranlage",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_002",
+        "entity": "Kfz-Versicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_003",
+        "entity": "Kredit",
+        "category": "Kredit",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_004",
+        "entity": "Girokonto",
+        "category": "Girokonto",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_005",
+        "entity": "Baufinanzierung",
+        "category": "Baufinanzierung",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_006",
+        "entity": "Hausratversicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_007",
+        "entity": "Haftpflichtversicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_008",
+        "entity": "Rentenversicherung",
+        "category": "Vorsorge",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_009",
+        "entity": "Private Krankenversicherung",
+        "category": "Versicherung",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "category": "Bluetooth-Kopfhörer",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "category": "E-Reader",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "category": "Körperpflege & Elektrorasierer",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "category": "Bauspielzeugsets",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3424631078",
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "category": "Bücher - Psychothriller",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3423209690",
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3832167242",
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023",
+        "category": "Bücher - Roman & Gegenwartsliteratur",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3426281759",
+        "entity": "Der Nachbar Psychothriller",
+        "category": "Bücher - Psychothriller",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "category": "Körperpflege & Elektrorasierer",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "category": "Rasierklingen & Zubehör",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "category": "Kosmetik - Wimperntusche",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "category": "Nahrungsergänzung - Magnesium",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "category": "Bücher - Liebesromane / New Adult",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "TEL_001",
+        "entity": "MagentaTV",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "entity": "Glasfaser",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "entity": "MagentaZuhause",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "entity": "MagentaMobil",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "entity": "MagentaMobil Young",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "entity": "MagentaMobil Prepaid",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "entity": "congstar Allnet",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "entity": "congstar Homespot",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "entity": "TV + Internet + Festnetz",
+        "category": "telekom",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "entity": "Datentarife",
+        "category": "telekom",
+        "partner": "telekom"
+      }
+    ],
+    "topics": [
+      {
+        "topic": "internet_mobilfunk",
+        "products": [
+          "CHK24_004",
+          "CHK24_005"
+        ]
+      },
+      {
+        "topic": "energie",
+        "products": [
+          "CHK24_001",
+          "CHK24_002",
+          "CHK24_003",
+          "TC_001"
+        ]
+      },
+      {
+        "topic": "reisen",
+        "products": [
+          "CHK24_006",
+          "CHK24_007"
+        ]
+      },
+      {
+        "topic": "finanzen",
+        "products": [
+          "CHK24_008",
+          "TC_003",
+          "TC_004",
+          "TC_005"
+        ]
+      },
+      {
+        "topic": "versicherung",
+        "products": [
+          "TC_002",
+          "TC_006",
+          "TC_007",
+          "TC_008",
+          "TC_009"
+        ]
+      },
+      {
+        "topic": "amazon_shopping",
+        "products": [
+          "B0FQF32239",
+          "B0CFPWLGF2",
+          "B0DFYN8174",
+          "B0FPXFBL13",
+          "B0FPXDCDX2",
+          "B0FPXGJL6H",
+          "B0FPXDRR63",
+          "3424631078",
+          "B0FNX7HC9M",
+          "3423209690",
+          "3832167242",
+          "3426281759",
+          "B0DXLBZF4Q",
+          "B0CVXSK4D3",
+          "B08P4YPB8Q",
+          "B0FMS3V43J",
+          "B0D1YKBX82"
+        ]
+      },
+      {
+        "topic": "telekom",
+        "products": [
+          "TEL_001",
+          "TEL_002",
+          "TEL_003",
+          "TEL_004",
+          "TEL_005",
+          "TEL_006",
+          "TEL_007",
+          "TEL_008",
+          "TEL_009",
+          "TEL_010"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "question_id": "Q_CHK24_004_001",
+        "question": "Was ist DSL?",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_002",
+        "question": "Welche Informationen gibt es zu DSL?",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_004_003",
+        "question": "Wie kann ich DSL prüfen?",
+        "product_id": "CHK24_004"
+      },
+      {
+        "question_id": "Q_CHK24_005_001",
+        "question": "Was ist Mobilfunk?",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_002",
+        "question": "Welche Informationen gibt es zu Mobilfunk?",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_005_003",
+        "question": "Wie kann ich Mobilfunk prüfen?",
+        "product_id": "CHK24_005"
+      },
+      {
+        "question_id": "Q_CHK24_002_001",
+        "question": "Was ist Oekostrom?",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_002",
+        "question": "Welche Informationen gibt es zu Oekostrom?",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_002_003",
+        "question": "Wie kann ich Oekostrom prüfen?",
+        "product_id": "CHK24_002"
+      },
+      {
+        "question_id": "Q_CHK24_001_001",
+        "question": "Was ist Strom?",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_002",
+        "question": "Welche Informationen gibt es zu Strom?",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_001_003",
+        "question": "Wie kann ich Strom prüfen?",
+        "product_id": "CHK24_001"
+      },
+      {
+        "question_id": "Q_CHK24_003_001",
+        "question": "Was ist Gas?",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_002",
+        "question": "Welche Informationen gibt es zu Gas?",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_003_003",
+        "question": "Wie kann ich Gas prüfen?",
+        "product_id": "CHK24_003"
+      },
+      {
+        "question_id": "Q_CHK24_006_001",
+        "question": "Was ist Pauschalreise?",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_002",
+        "question": "Welche Informationen gibt es zu Pauschalreise?",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_006_003",
+        "question": "Wie kann ich Pauschalreise prüfen?",
+        "product_id": "CHK24_006"
+      },
+      {
+        "question_id": "Q_CHK24_007_001",
+        "question": "Was ist Mietwagen?",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_002",
+        "question": "Welche Informationen gibt es zu Mietwagen?",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_007_003",
+        "question": "Wie kann ich Mietwagen prüfen?",
+        "product_id": "CHK24_007"
+      },
+      {
+        "question_id": "Q_CHK24_008_001",
+        "question": "Was ist C24 Bank?",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_002",
+        "question": "Welche Informationen gibt es zu C24 Bank?",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_CHK24_008_003",
+        "question": "Wie kann ich C24 Bank prüfen?",
+        "product_id": "CHK24_008"
+      },
+      {
+        "question_id": "Q_TC_001_001",
+        "question": "Was ist Solaranlage?",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_002",
+        "question": "Welche Informationen gibt es zu Solaranlage?",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_001_003",
+        "question": "Wie kann ich Solaranlage prüfen?",
+        "product_id": "TC_001"
+      },
+      {
+        "question_id": "Q_TC_002_001",
+        "question": "Was ist Kfz-Versicherung?",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_002",
+        "question": "Welche Informationen gibt es zu Kfz-Versicherung?",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_002_003",
+        "question": "Wie kann ich Kfz-Versicherung prüfen?",
+        "product_id": "TC_002"
+      },
+      {
+        "question_id": "Q_TC_003_001",
+        "question": "Was ist Kredit?",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_002",
+        "question": "Welche Informationen gibt es zu Kredit?",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_003_003",
+        "question": "Wie kann ich Kredit prüfen?",
+        "product_id": "TC_003"
+      },
+      {
+        "question_id": "Q_TC_004_001",
+        "question": "Was ist Girokonto?",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_002",
+        "question": "Welche Informationen gibt es zu Girokonto?",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_004_003",
+        "question": "Wie kann ich Girokonto prüfen?",
+        "product_id": "TC_004"
+      },
+      {
+        "question_id": "Q_TC_005_001",
+        "question": "Was ist Baufinanzierung?",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_002",
+        "question": "Welche Informationen gibt es zu Baufinanzierung?",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_005_003",
+        "question": "Wie kann ich Baufinanzierung prüfen?",
+        "product_id": "TC_005"
+      },
+      {
+        "question_id": "Q_TC_006_001",
+        "question": "Was ist Hausratversicherung?",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_002",
+        "question": "Welche Informationen gibt es zu Hausratversicherung?",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_006_003",
+        "question": "Wie kann ich Hausratversicherung prüfen?",
+        "product_id": "TC_006"
+      },
+      {
+        "question_id": "Q_TC_007_001",
+        "question": "Was ist Haftpflichtversicherung?",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_002",
+        "question": "Welche Informationen gibt es zu Haftpflichtversicherung?",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_007_003",
+        "question": "Wie kann ich Haftpflichtversicherung prüfen?",
+        "product_id": "TC_007"
+      },
+      {
+        "question_id": "Q_TC_008_001",
+        "question": "Was ist Rentenversicherung?",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_002",
+        "question": "Welche Informationen gibt es zu Rentenversicherung?",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_008_003",
+        "question": "Wie kann ich Rentenversicherung prüfen?",
+        "product_id": "TC_008"
+      },
+      {
+        "question_id": "Q_TC_009_001",
+        "question": "Was ist Private Krankenversicherung?",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_002",
+        "question": "Welche Informationen gibt es zu Private Krankenversicherung?",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_TC_009_003",
+        "question": "Wie kann ich Private Krankenversicherung prüfen?",
+        "product_id": "TC_009"
+      },
+      {
+        "question_id": "Q_B0FQF32239_001",
+        "question": "Was ist Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer?",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_002",
+        "question": "Welche Informationen gibt es zu Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer?",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0FQF32239_003",
+        "question": "Wie kann ich Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer prüfen?",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_001",
+        "question": "Was ist Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz?",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_002",
+        "question": "Welche Informationen gibt es zu Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz?",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0CFPWLGF2_003",
+        "question": "Wie kann ich Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz prüfen?",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_001",
+        "question": "Was ist Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30?",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_002",
+        "question": "Welche Informationen gibt es zu Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30?",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0DFYN8174_003",
+        "question": "Wie kann ich Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30 prüfen?",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_001",
+        "question": "Was ist LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_002",
+        "question": "Welche Informationen gibt es zu LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXFBL13_003",
+        "question": "Wie kann ich LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur prüfen?",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_001",
+        "question": "Was ist LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_002",
+        "question": "Welche Informationen gibt es zu LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXDCDX2_003",
+        "question": "Wie kann ich LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur prüfen?",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_001",
+        "question": "Was ist LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_002",
+        "question": "Welche Informationen gibt es zu LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur?",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXGJL6H_003",
+        "question": "Wie kann ich LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur prüfen?",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_001",
+        "question": "Was ist LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020?",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_002",
+        "question": "Welche Informationen gibt es zu LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020?",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_B0FPXDRR63_003",
+        "question": "Wie kann ich LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020 prüfen?",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "question_id": "Q_3424631078_001",
+        "question": "Was ist Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme?",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_002",
+        "question": "Welche Informationen gibt es zu Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme?",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_3424631078_003",
+        "question": "Wie kann ich Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme prüfen?",
+        "product_id": "3424631078"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_001",
+        "question": "Was ist Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set?",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_002",
+        "question": "Welche Informationen gibt es zu Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set?",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_B0FNX7HC9M_003",
+        "question": "Wie kann ich Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set prüfen?",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "question_id": "Q_3423209690_001",
+        "question": "Was ist Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens?",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_002",
+        "question": "Welche Informationen gibt es zu Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens?",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3423209690_003",
+        "question": "Wie kann ich Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens prüfen?",
+        "product_id": "3423209690"
+      },
+      {
+        "question_id": "Q_3832167242_001",
+        "question": "Was ist 22 Bahnen Roman Lieblingsbuch 2023?",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_002",
+        "question": "Welche Informationen gibt es zu 22 Bahnen Roman Lieblingsbuch 2023?",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3832167242_003",
+        "question": "Wie kann ich 22 Bahnen Roman Lieblingsbuch 2023 prüfen?",
+        "product_id": "3832167242"
+      },
+      {
+        "question_id": "Q_3426281759_001",
+        "question": "Was ist Der Nachbar Psychothriller?",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_002",
+        "question": "Welche Informationen gibt es zu Der Nachbar Psychothriller?",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_3426281759_003",
+        "question": "Wie kann ich Der Nachbar Psychothriller prüfen?",
+        "product_id": "3426281759"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_001",
+        "question": "Was ist PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31?",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_002",
+        "question": "Welche Informationen gibt es zu PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31?",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0DXLBZF4Q_003",
+        "question": "Wie kann ich PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31 prüfen?",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_001",
+        "question": "Was ist Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50?",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_002",
+        "question": "Welche Informationen gibt es zu Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50?",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B0CVXSK4D3_003",
+        "question": "Wie kann ich Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50 prüfen?",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_001",
+        "question": "Was ist Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml?",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_002",
+        "question": "Welche Informationen gibt es zu Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml?",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B08P4YPB8Q_003",
+        "question": "Wie kann ich Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml prüfen?",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_001",
+        "question": "Was ist SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen?",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_002",
+        "question": "Welche Informationen gibt es zu SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen?",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0FMS3V43J_003",
+        "question": "Wie kann ich SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen prüfen?",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_001",
+        "question": "Was ist Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset?",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_002",
+        "question": "Welche Informationen gibt es zu Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset?",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_B0D1YKBX82_003",
+        "question": "Wie kann ich Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset prüfen?",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "question_id": "Q_TEL_001_001",
+        "question": "Was ist MagentaTV?",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_002",
+        "question": "Welche Informationen gibt es zu MagentaTV?",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_001_003",
+        "question": "Wie kann ich MagentaTV prüfen?",
+        "product_id": "TEL_001"
+      },
+      {
+        "question_id": "Q_TEL_002_001",
+        "question": "Was ist Glasfaser?",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_002",
+        "question": "Welche Informationen gibt es zu Glasfaser?",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_002_003",
+        "question": "Wie kann ich Glasfaser prüfen?",
+        "product_id": "TEL_002"
+      },
+      {
+        "question_id": "Q_TEL_003_001",
+        "question": "Was ist MagentaZuhause?",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_002",
+        "question": "Welche Informationen gibt es zu MagentaZuhause?",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_003_003",
+        "question": "Wie kann ich MagentaZuhause prüfen?",
+        "product_id": "TEL_003"
+      },
+      {
+        "question_id": "Q_TEL_004_001",
+        "question": "Was ist MagentaMobil?",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_002",
+        "question": "Welche Informationen gibt es zu MagentaMobil?",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_004_003",
+        "question": "Wie kann ich MagentaMobil prüfen?",
+        "product_id": "TEL_004"
+      },
+      {
+        "question_id": "Q_TEL_005_001",
+        "question": "Was ist MagentaMobil Young?",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_002",
+        "question": "Welche Informationen gibt es zu MagentaMobil Young?",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_005_003",
+        "question": "Wie kann ich MagentaMobil Young prüfen?",
+        "product_id": "TEL_005"
+      },
+      {
+        "question_id": "Q_TEL_006_001",
+        "question": "Was ist MagentaMobil Prepaid?",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_002",
+        "question": "Welche Informationen gibt es zu MagentaMobil Prepaid?",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_006_003",
+        "question": "Wie kann ich MagentaMobil Prepaid prüfen?",
+        "product_id": "TEL_006"
+      },
+      {
+        "question_id": "Q_TEL_007_001",
+        "question": "Was ist congstar Allnet?",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_002",
+        "question": "Welche Informationen gibt es zu congstar Allnet?",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_007_003",
+        "question": "Wie kann ich congstar Allnet prüfen?",
+        "product_id": "TEL_007"
+      },
+      {
+        "question_id": "Q_TEL_008_001",
+        "question": "Was ist congstar Homespot?",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_002",
+        "question": "Welche Informationen gibt es zu congstar Homespot?",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_008_003",
+        "question": "Wie kann ich congstar Homespot prüfen?",
+        "product_id": "TEL_008"
+      },
+      {
+        "question_id": "Q_TEL_009_001",
+        "question": "Was ist TV + Internet + Festnetz?",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_002",
+        "question": "Welche Informationen gibt es zu TV + Internet + Festnetz?",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_009_003",
+        "question": "Wie kann ich TV + Internet + Festnetz prüfen?",
+        "product_id": "TEL_009"
+      },
+      {
+        "question_id": "Q_TEL_010_001",
+        "question": "Was ist Datentarife?",
+        "product_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_002",
+        "question": "Welche Informationen gibt es zu Datentarife?",
+        "product_id": "TEL_010"
+      },
+      {
+        "question_id": "Q_TEL_010_003",
+        "question": "Wie kann ich Datentarife prüfen?",
+        "product_id": "TEL_010"
+      }
+    ],
+    "articles": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "product_id": "CHK24_004",
+        "entity": "DSL"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "product_id": "CHK24_005",
+        "entity": "Mobilfunk"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "product_id": "CHK24_002",
+        "entity": "Oekostrom"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "product_id": "CHK24_001",
+        "entity": "Strom"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "product_id": "CHK24_003",
+        "entity": "Gas"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "product_id": "CHK24_006",
+        "entity": "Pauschalreise"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "product_id": "CHK24_007",
+        "entity": "Mietwagen"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "product_id": "CHK24_008",
+        "entity": "C24 Bank"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "product_id": "TC_001",
+        "entity": "Solaranlage"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "product_id": "TC_002",
+        "entity": "Kfz-Versicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "product_id": "TC_003",
+        "entity": "Kredit"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "product_id": "TC_004",
+        "entity": "Girokonto"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "product_id": "TC_005",
+        "entity": "Baufinanzierung"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "product_id": "TC_006",
+        "entity": "Hausratversicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "product_id": "TC_007",
+        "entity": "Haftpflichtversicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "product_id": "TC_008",
+        "entity": "Rentenversicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "product_id": "TC_009",
+        "entity": "Private Krankenversicherung"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "product_id": "B0FQF32239",
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "product_id": "B0CFPWLGF2",
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "product_id": "B0DFYN8174",
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "product_id": "B0FPXFBL13",
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "product_id": "B0FPXDCDX2",
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "product_id": "B0FPXGJL6H",
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "product_id": "B0FPXDRR63",
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "product_id": "3424631078",
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "product_id": "B0FNX7HC9M",
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "product_id": "3423209690",
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "product_id": "3832167242",
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "product_id": "3426281759",
+        "entity": "Der Nachbar Psychothriller"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "product_id": "B0DXLBZF4Q",
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "product_id": "B0CVXSK4D3",
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "product_id": "B08P4YPB8Q",
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "product_id": "B0FMS3V43J",
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "product_id": "B0D1YKBX82",
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "product_id": "TEL_001",
+        "entity": "MagentaTV"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "product_id": "TEL_002",
+        "entity": "Glasfaser"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "product_id": "TEL_003",
+        "entity": "MagentaZuhause"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "product_id": "TEL_004",
+        "entity": "MagentaMobil"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "product_id": "TEL_005",
+        "entity": "MagentaMobil Young"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "product_id": "TEL_006",
+        "entity": "MagentaMobil Prepaid"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "product_id": "TEL_007",
+        "entity": "congstar Allnet"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "product_id": "TEL_008",
+        "entity": "congstar Homespot"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "product_id": "TEL_009",
+        "entity": "TV + Internet + Festnetz"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "product_id": "TEL_010",
+        "entity": "Datentarife"
+      }
+    ],
+    "sources": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "source": "telekom"
+      }
+    ]
+  },
+  "relationships": {
+    "entity_to_product": [],
+    "product_to_topic": [
+      {
+        "product_id": "CHK24_004",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_001",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_002",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "topic": "energie"
+      },
+      {
+        "product_id": "TC_001",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_003",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_002",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_006",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "topic": "telekom"
+      }
+    ],
+    "product_to_question": [
+      {
+        "product_id": "CHK24_004",
+        "question_id": "Q_CHK24_004_001"
+      },
+      {
+        "product_id": "CHK24_004",
+        "question_id": "Q_CHK24_004_002"
+      },
+      {
+        "product_id": "CHK24_004",
+        "question_id": "Q_CHK24_004_003"
+      },
+      {
+        "product_id": "CHK24_005",
+        "question_id": "Q_CHK24_005_001"
+      },
+      {
+        "product_id": "CHK24_005",
+        "question_id": "Q_CHK24_005_002"
+      },
+      {
+        "product_id": "CHK24_005",
+        "question_id": "Q_CHK24_005_003"
+      },
+      {
+        "product_id": "CHK24_002",
+        "question_id": "Q_CHK24_002_001"
+      },
+      {
+        "product_id": "CHK24_002",
+        "question_id": "Q_CHK24_002_002"
+      },
+      {
+        "product_id": "CHK24_002",
+        "question_id": "Q_CHK24_002_003"
+      },
+      {
+        "product_id": "CHK24_001",
+        "question_id": "Q_CHK24_001_001"
+      },
+      {
+        "product_id": "CHK24_001",
+        "question_id": "Q_CHK24_001_002"
+      },
+      {
+        "product_id": "CHK24_001",
+        "question_id": "Q_CHK24_001_003"
+      },
+      {
+        "product_id": "CHK24_003",
+        "question_id": "Q_CHK24_003_001"
+      },
+      {
+        "product_id": "CHK24_003",
+        "question_id": "Q_CHK24_003_002"
+      },
+      {
+        "product_id": "CHK24_003",
+        "question_id": "Q_CHK24_003_003"
+      },
+      {
+        "product_id": "CHK24_006",
+        "question_id": "Q_CHK24_006_001"
+      },
+      {
+        "product_id": "CHK24_006",
+        "question_id": "Q_CHK24_006_002"
+      },
+      {
+        "product_id": "CHK24_006",
+        "question_id": "Q_CHK24_006_003"
+      },
+      {
+        "product_id": "CHK24_007",
+        "question_id": "Q_CHK24_007_001"
+      },
+      {
+        "product_id": "CHK24_007",
+        "question_id": "Q_CHK24_007_002"
+      },
+      {
+        "product_id": "CHK24_007",
+        "question_id": "Q_CHK24_007_003"
+      },
+      {
+        "product_id": "CHK24_008",
+        "question_id": "Q_CHK24_008_001"
+      },
+      {
+        "product_id": "CHK24_008",
+        "question_id": "Q_CHK24_008_002"
+      },
+      {
+        "product_id": "CHK24_008",
+        "question_id": "Q_CHK24_008_003"
+      },
+      {
+        "product_id": "TC_001",
+        "question_id": "Q_TC_001_001"
+      },
+      {
+        "product_id": "TC_001",
+        "question_id": "Q_TC_001_002"
+      },
+      {
+        "product_id": "TC_001",
+        "question_id": "Q_TC_001_003"
+      },
+      {
+        "product_id": "TC_002",
+        "question_id": "Q_TC_002_001"
+      },
+      {
+        "product_id": "TC_002",
+        "question_id": "Q_TC_002_002"
+      },
+      {
+        "product_id": "TC_002",
+        "question_id": "Q_TC_002_003"
+      },
+      {
+        "product_id": "TC_003",
+        "question_id": "Q_TC_003_001"
+      },
+      {
+        "product_id": "TC_003",
+        "question_id": "Q_TC_003_002"
+      },
+      {
+        "product_id": "TC_003",
+        "question_id": "Q_TC_003_003"
+      },
+      {
+        "product_id": "TC_004",
+        "question_id": "Q_TC_004_001"
+      },
+      {
+        "product_id": "TC_004",
+        "question_id": "Q_TC_004_002"
+      },
+      {
+        "product_id": "TC_004",
+        "question_id": "Q_TC_004_003"
+      },
+      {
+        "product_id": "TC_005",
+        "question_id": "Q_TC_005_001"
+      },
+      {
+        "product_id": "TC_005",
+        "question_id": "Q_TC_005_002"
+      },
+      {
+        "product_id": "TC_005",
+        "question_id": "Q_TC_005_003"
+      },
+      {
+        "product_id": "TC_006",
+        "question_id": "Q_TC_006_001"
+      },
+      {
+        "product_id": "TC_006",
+        "question_id": "Q_TC_006_002"
+      },
+      {
+        "product_id": "TC_006",
+        "question_id": "Q_TC_006_003"
+      },
+      {
+        "product_id": "TC_007",
+        "question_id": "Q_TC_007_001"
+      },
+      {
+        "product_id": "TC_007",
+        "question_id": "Q_TC_007_002"
+      },
+      {
+        "product_id": "TC_007",
+        "question_id": "Q_TC_007_003"
+      },
+      {
+        "product_id": "TC_008",
+        "question_id": "Q_TC_008_001"
+      },
+      {
+        "product_id": "TC_008",
+        "question_id": "Q_TC_008_002"
+      },
+      {
+        "product_id": "TC_008",
+        "question_id": "Q_TC_008_003"
+      },
+      {
+        "product_id": "TC_009",
+        "question_id": "Q_TC_009_001"
+      },
+      {
+        "product_id": "TC_009",
+        "question_id": "Q_TC_009_002"
+      },
+      {
+        "product_id": "TC_009",
+        "question_id": "Q_TC_009_003"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "question_id": "Q_B0FQF32239_001"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "question_id": "Q_B0FQF32239_002"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "question_id": "Q_B0FQF32239_003"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_001"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_002"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_003"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_001"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_002"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_003"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_001"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_002"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_003"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_001"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_002"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_003"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_001"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_002"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_003"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_001"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_002"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_003"
+      },
+      {
+        "product_id": "3424631078",
+        "question_id": "Q_3424631078_001"
+      },
+      {
+        "product_id": "3424631078",
+        "question_id": "Q_3424631078_002"
+      },
+      {
+        "product_id": "3424631078",
+        "question_id": "Q_3424631078_003"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_001"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_002"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_003"
+      },
+      {
+        "product_id": "3423209690",
+        "question_id": "Q_3423209690_001"
+      },
+      {
+        "product_id": "3423209690",
+        "question_id": "Q_3423209690_002"
+      },
+      {
+        "product_id": "3423209690",
+        "question_id": "Q_3423209690_003"
+      },
+      {
+        "product_id": "3832167242",
+        "question_id": "Q_3832167242_001"
+      },
+      {
+        "product_id": "3832167242",
+        "question_id": "Q_3832167242_002"
+      },
+      {
+        "product_id": "3832167242",
+        "question_id": "Q_3832167242_003"
+      },
+      {
+        "product_id": "3426281759",
+        "question_id": "Q_3426281759_001"
+      },
+      {
+        "product_id": "3426281759",
+        "question_id": "Q_3426281759_002"
+      },
+      {
+        "product_id": "3426281759",
+        "question_id": "Q_3426281759_003"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_001"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_002"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_003"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_001"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_002"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_003"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_001"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_002"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_003"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_001"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_002"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_003"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_001"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_002"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_003"
+      },
+      {
+        "product_id": "TEL_001",
+        "question_id": "Q_TEL_001_001"
+      },
+      {
+        "product_id": "TEL_001",
+        "question_id": "Q_TEL_001_002"
+      },
+      {
+        "product_id": "TEL_001",
+        "question_id": "Q_TEL_001_003"
+      },
+      {
+        "product_id": "TEL_002",
+        "question_id": "Q_TEL_002_001"
+      },
+      {
+        "product_id": "TEL_002",
+        "question_id": "Q_TEL_002_002"
+      },
+      {
+        "product_id": "TEL_002",
+        "question_id": "Q_TEL_002_003"
+      },
+      {
+        "product_id": "TEL_003",
+        "question_id": "Q_TEL_003_001"
+      },
+      {
+        "product_id": "TEL_003",
+        "question_id": "Q_TEL_003_002"
+      },
+      {
+        "product_id": "TEL_003",
+        "question_id": "Q_TEL_003_003"
+      },
+      {
+        "product_id": "TEL_004",
+        "question_id": "Q_TEL_004_001"
+      },
+      {
+        "product_id": "TEL_004",
+        "question_id": "Q_TEL_004_002"
+      },
+      {
+        "product_id": "TEL_004",
+        "question_id": "Q_TEL_004_003"
+      },
+      {
+        "product_id": "TEL_005",
+        "question_id": "Q_TEL_005_001"
+      },
+      {
+        "product_id": "TEL_005",
+        "question_id": "Q_TEL_005_002"
+      },
+      {
+        "product_id": "TEL_005",
+        "question_id": "Q_TEL_005_003"
+      },
+      {
+        "product_id": "TEL_006",
+        "question_id": "Q_TEL_006_001"
+      },
+      {
+        "product_id": "TEL_006",
+        "question_id": "Q_TEL_006_002"
+      },
+      {
+        "product_id": "TEL_006",
+        "question_id": "Q_TEL_006_003"
+      },
+      {
+        "product_id": "TEL_007",
+        "question_id": "Q_TEL_007_001"
+      },
+      {
+        "product_id": "TEL_007",
+        "question_id": "Q_TEL_007_002"
+      },
+      {
+        "product_id": "TEL_007",
+        "question_id": "Q_TEL_007_003"
+      },
+      {
+        "product_id": "TEL_008",
+        "question_id": "Q_TEL_008_001"
+      },
+      {
+        "product_id": "TEL_008",
+        "question_id": "Q_TEL_008_002"
+      },
+      {
+        "product_id": "TEL_008",
+        "question_id": "Q_TEL_008_003"
+      },
+      {
+        "product_id": "TEL_009",
+        "question_id": "Q_TEL_009_001"
+      },
+      {
+        "product_id": "TEL_009",
+        "question_id": "Q_TEL_009_002"
+      },
+      {
+        "product_id": "TEL_009",
+        "question_id": "Q_TEL_009_003"
+      },
+      {
+        "product_id": "TEL_010",
+        "question_id": "Q_TEL_010_001"
+      },
+      {
+        "product_id": "TEL_010",
+        "question_id": "Q_TEL_010_002"
+      },
+      {
+        "product_id": "TEL_010",
+        "question_id": "Q_TEL_010_003"
+      }
+    ],
+    "product_to_article": [
+      {
+        "product_id": "CHK24_004",
+        "article_id": "ARTICLE_CHK24_004"
+      },
+      {
+        "product_id": "CHK24_005",
+        "article_id": "ARTICLE_CHK24_005"
+      },
+      {
+        "product_id": "CHK24_002",
+        "article_id": "ARTICLE_CHK24_002"
+      },
+      {
+        "product_id": "CHK24_001",
+        "article_id": "ARTICLE_CHK24_001"
+      },
+      {
+        "product_id": "CHK24_003",
+        "article_id": "ARTICLE_CHK24_003"
+      },
+      {
+        "product_id": "CHK24_006",
+        "article_id": "ARTICLE_CHK24_006"
+      },
+      {
+        "product_id": "CHK24_007",
+        "article_id": "ARTICLE_CHK24_007"
+      },
+      {
+        "product_id": "CHK24_008",
+        "article_id": "ARTICLE_CHK24_008"
+      },
+      {
+        "product_id": "TC_001",
+        "article_id": "ARTICLE_TC_001"
+      },
+      {
+        "product_id": "TC_002",
+        "article_id": "ARTICLE_TC_002"
+      },
+      {
+        "product_id": "TC_003",
+        "article_id": "ARTICLE_TC_003"
+      },
+      {
+        "product_id": "TC_004",
+        "article_id": "ARTICLE_TC_004"
+      },
+      {
+        "product_id": "TC_005",
+        "article_id": "ARTICLE_TC_005"
+      },
+      {
+        "product_id": "TC_006",
+        "article_id": "ARTICLE_TC_006"
+      },
+      {
+        "product_id": "TC_007",
+        "article_id": "ARTICLE_TC_007"
+      },
+      {
+        "product_id": "TC_008",
+        "article_id": "ARTICLE_TC_008"
+      },
+      {
+        "product_id": "TC_009",
+        "article_id": "ARTICLE_TC_009"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "article_id": "ARTICLE_B0FQF32239"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "article_id": "ARTICLE_B0CFPWLGF2"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "article_id": "ARTICLE_B0DFYN8174"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "article_id": "ARTICLE_B0FPXFBL13"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "article_id": "ARTICLE_B0FPXDCDX2"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "article_id": "ARTICLE_B0FPXGJL6H"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "article_id": "ARTICLE_B0FPXDRR63"
+      },
+      {
+        "product_id": "3424631078",
+        "article_id": "ARTICLE_3424631078"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "article_id": "ARTICLE_B0FNX7HC9M"
+      },
+      {
+        "product_id": "3423209690",
+        "article_id": "ARTICLE_3423209690"
+      },
+      {
+        "product_id": "3832167242",
+        "article_id": "ARTICLE_3832167242"
+      },
+      {
+        "product_id": "3426281759",
+        "article_id": "ARTICLE_3426281759"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "article_id": "ARTICLE_B0DXLBZF4Q"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "article_id": "ARTICLE_B0CVXSK4D3"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "article_id": "ARTICLE_B08P4YPB8Q"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "article_id": "ARTICLE_B0FMS3V43J"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "article_id": "ARTICLE_B0D1YKBX82"
+      },
+      {
+        "product_id": "TEL_001",
+        "article_id": "ARTICLE_TEL_001"
+      },
+      {
+        "product_id": "TEL_002",
+        "article_id": "ARTICLE_TEL_002"
+      },
+      {
+        "product_id": "TEL_003",
+        "article_id": "ARTICLE_TEL_003"
+      },
+      {
+        "product_id": "TEL_004",
+        "article_id": "ARTICLE_TEL_004"
+      },
+      {
+        "product_id": "TEL_005",
+        "article_id": "ARTICLE_TEL_005"
+      },
+      {
+        "product_id": "TEL_006",
+        "article_id": "ARTICLE_TEL_006"
+      },
+      {
+        "product_id": "TEL_007",
+        "article_id": "ARTICLE_TEL_007"
+      },
+      {
+        "product_id": "TEL_008",
+        "article_id": "ARTICLE_TEL_008"
+      },
+      {
+        "product_id": "TEL_009",
+        "article_id": "ARTICLE_TEL_009"
+      },
+      {
+        "product_id": "TEL_010",
+        "article_id": "ARTICLE_TEL_010"
+      }
+    ],
+    "article_to_source": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "source": "check24"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "source": "tarifcheck"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "source": "amazon"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "source": "telekom"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "source": "telekom"
+      }
+    ]
+  }
+}

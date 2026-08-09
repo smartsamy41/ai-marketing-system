@@ -1,0 +1,100 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "question_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "intent_required": true,
+    "no_fake_search_questions": true,
+    "entity_connection_required": true
+  },
+  "intents": {
+    "informational": [],
+    "commercial": [],
+    "transactional": [],
+    "navigational": []
+  },
+  "topic_connections": [
+    {
+      "topic": "internet_mobilfunk",
+      "entities": [
+        "CHK24_004",
+        "CHK24_005"
+      ]
+    },
+    {
+      "topic": "energie",
+      "entities": [
+        "CHK24_001",
+        "CHK24_002",
+        "CHK24_003",
+        "TC_001"
+      ]
+    },
+    {
+      "topic": "reisen",
+      "entities": [
+        "CHK24_006",
+        "CHK24_007"
+      ]
+    },
+    {
+      "topic": "finanzen",
+      "entities": [
+        "CHK24_008",
+        "TC_003",
+        "TC_004",
+        "TC_005"
+      ]
+    },
+    {
+      "topic": "versicherung",
+      "entities": [
+        "TC_002",
+        "TC_006",
+        "TC_007",
+        "TC_008",
+        "TC_009"
+      ]
+    },
+    {
+      "topic": "amazon_shopping",
+      "entities": [
+        "B0FQF32239",
+        "B0CFPWLGF2",
+        "B0DFYN8174",
+        "B0FPXFBL13",
+        "B0FPXDCDX2",
+        "B0FPXGJL6H",
+        "B0FPXDRR63",
+        "3424631078",
+        "B0FNX7HC9M",
+        "3423209690",
+        "3832167242",
+        "3426281759",
+        "B0DXLBZF4Q",
+        "B0CVXSK4D3",
+        "B08P4YPB8Q",
+        "B0FMS3V43J",
+        "B0D1YKBX82"
+      ]
+    },
+    {
+      "topic": "telekom",
+      "entities": [
+        "TEL_001",
+        "TEL_002",
+        "TEL_003",
+        "TEL_004",
+        "TEL_005",
+        "TEL_006",
+        "TEL_007",
+        "TEL_008",
+        "TEL_009",
+        "TEL_010"
+      ]
+    }
+  ],
+  "questions": []
+}

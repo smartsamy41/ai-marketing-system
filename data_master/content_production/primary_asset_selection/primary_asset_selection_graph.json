@@ -1,0 +1,452 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "version": "PRIMARY_ASSET_SELECTION_V5",
+  "created": "2026-08-09T04:11:53.847947+00:00",
+  "products": {
+    "CHK24_004": {
+      "product_id": "CHK24_004",
+      "product_name": "DSL",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_004_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_005": {
+      "product_id": "CHK24_005",
+      "product_name": "Mobilfunk",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_005_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_002": {
+      "product_id": "CHK24_002",
+      "product_name": "Oekostrom",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_002_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_001": {
+      "product_id": "CHK24_001",
+      "product_name": "Strom",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_001_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_003": {
+      "product_id": "CHK24_003",
+      "product_name": "Gas",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_003_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_006": {
+      "product_id": "CHK24_006",
+      "product_name": "Pauschalreise",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_006_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_007": {
+      "product_id": "CHK24_007",
+      "product_name": "Mietwagen",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_007_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "CHK24_008": {
+      "product_id": "CHK24_008",
+      "product_name": "C24 Bank",
+      "partner": "check24",
+      "primary_asset": {
+        "asset_id": "CHK24_008_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 5
+    },
+    "TC_001": {
+      "product_id": "TC_001",
+      "product_name": "Solaranlage",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_001_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 40
+    },
+    "TC_002": {
+      "product_id": "TC_002",
+      "product_name": "Kfz-Versicherung",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_002_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 30
+    },
+    "TC_003": {
+      "product_id": "TC_003",
+      "product_name": "Kredit",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_003_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 30
+    },
+    "TC_004": {
+      "product_id": "TC_004",
+      "product_name": "Girokonto",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_004_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 25
+    },
+    "TC_005": {
+      "product_id": "TC_005",
+      "product_name": "Baufinanzierung",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_005_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 25
+    },
+    "TC_006": {
+      "product_id": "TC_006",
+      "product_name": "Hausratversicherung",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_006_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 25
+    },
+    "TC_007": {
+      "product_id": "TC_007",
+      "product_name": "Haftpflichtversicherung",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_007_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 25
+    },
+    "TC_008": {
+      "product_id": "TC_008",
+      "product_name": "Rentenversicherung",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_008_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 25
+    },
+    "TC_009": {
+      "product_id": "TC_009",
+      "product_name": "Private Krankenversicherung",
+      "partner": "tarifcheck",
+      "primary_asset": {
+        "asset_id": "TC_009_CALCULATOR",
+        "source": "Vergleichsrechner/Formular"
+      },
+      "available_assets": 25
+    },
+    "B0FQF32239": {
+      "product_id": "B0FQF32239",
+      "product_name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FQF32239",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0CFPWLGF2": {
+      "product_id": "B0CFPWLGF2",
+      "product_name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0CFPWLGF2",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0DFYN8174": {
+      "product_id": "B0DFYN8174",
+      "product_name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0DFYN8174",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0FPXFBL13": {
+      "product_id": "B0FPXFBL13",
+      "product_name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FPXFBL13",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0FPXDCDX2": {
+      "product_id": "B0FPXDCDX2",
+      "product_name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FPXDCDX2",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0FPXGJL6H": {
+      "product_id": "B0FPXGJL6H",
+      "product_name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FPXGJL6H",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0FPXDRR63": {
+      "product_id": "B0FPXDRR63",
+      "product_name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FPXDRR63",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "3424631078": {
+      "product_id": "3424631078",
+      "product_name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "3424631078",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0FNX7HC9M": {
+      "product_id": "B0FNX7HC9M",
+      "product_name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FNX7HC9M",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "3423209690": {
+      "product_id": "3423209690",
+      "product_name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "3423209690",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "3832167242": {
+      "product_id": "3832167242",
+      "product_name": "22 Bahnen Roman Lieblingsbuch 2023",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "3832167242",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "3426281759": {
+      "product_id": "3426281759",
+      "product_name": "Der Nachbar Psychothriller",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "3426281759",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0DXLBZF4Q": {
+      "product_id": "B0DXLBZF4Q",
+      "product_name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0DXLBZF4Q",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0CVXSK4D3": {
+      "product_id": "B0CVXSK4D3",
+      "product_name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0CVXSK4D3",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B08P4YPB8Q": {
+      "product_id": "B08P4YPB8Q",
+      "product_name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B08P4YPB8Q",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0FMS3V43J": {
+      "product_id": "B0FMS3V43J",
+      "product_name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0FMS3V43J",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "B0D1YKBX82": {
+      "product_id": "B0D1YKBX82",
+      "product_name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+      "partner": "amazon",
+      "primary_asset": {
+        "asset_id": "B0D1YKBX82",
+        "source": "amazon_product"
+      },
+      "available_assets": 0
+    },
+    "TEL_001": {
+      "product_id": "TEL_001",
+      "product_name": "MagentaTV",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_002": {
+      "product_id": "TEL_002",
+      "product_name": "Glasfaser",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_003": {
+      "product_id": "TEL_003",
+      "product_name": "MagentaZuhause",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_004": {
+      "product_id": "TEL_004",
+      "product_name": "MagentaMobil",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_005": {
+      "product_id": "TEL_005",
+      "product_name": "MagentaMobil Young",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_006": {
+      "product_id": "TEL_006",
+      "product_name": "MagentaMobil Prepaid",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_007": {
+      "product_id": "TEL_007",
+      "product_name": "congstar Allnet",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_008": {
+      "product_id": "TEL_008",
+      "product_name": "congstar Homespot",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_009": {
+      "product_id": "TEL_009",
+      "product_name": "TV + Internet + Festnetz",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    },
+    "TEL_010": {
+      "product_id": "TEL_010",
+      "product_name": "Datentarife",
+      "partner": "telekom",
+      "primary_asset": {
+        "asset_id": "TEL_SHOP_001",
+        "source": "shop"
+      },
+      "available_assets": 0
+    }
+  },
+  "statistics": {
+    "products_available": 44,
+    "assets_available": 354,
+    "primary_assets_selected": 44
+  }
+}

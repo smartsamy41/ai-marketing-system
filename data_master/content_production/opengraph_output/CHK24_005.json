@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Mobilfunk | Free Basics",
+    "og:description": "Informationen zu Mobilfunk aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/CHK24_005",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Mobilfunk | Free Basics",
+    "twitter:description": "Informationen zu Mobilfunk.",
+    "twitter:url": "https://freebasics.online/CHK24_005"
+  },
+  "entity": {
+    "product_id": "CHK24_005",
+    "article_id": "ARTICLE_CHK24_005",
+    "name": "Mobilfunk",
+    "category": "Mobilfunk",
+    "partner": "check24"
+  }
+}

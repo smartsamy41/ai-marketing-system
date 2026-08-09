@@ -1,0 +1,538 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "final_production_audit",
+  "created": "2026-08-07T09:08:54.121205+00:00",
+  "pages_checked": 44,
+  "passed": 44,
+  "review": 0,
+  "pages": [
+    {
+      "product_id": "3423209690",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FPXGJL6H",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_008",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_001",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_003",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_002",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FPXDRR63",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "3832167242",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B08P4YPB8Q",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_007",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_007",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FMS3V43J",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_006",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_006",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_004",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_004",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_005",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FPXFBL13",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0CVXSK4D3",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_001",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FPXDCDX2",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FNX7HC9M",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "3424631078",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0DFYN8174",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_007",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_001",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_003",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_008",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_002",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_005",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0FQF32239",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_006",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_008",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_010",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_002",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "3426281759",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0DXLBZF4Q",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "CHK24_005",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_004",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TC_009",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_009",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0CFPWLGF2",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "TEL_003",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    },
+    {
+      "product_id": "B0D1YKBX82",
+      "html_exists": true,
+      "checks": {
+        "html": true,
+        "affiliate_area": true,
+        "advertising_label": true,
+        "footer": true,
+        "semantic_structure": true
+      },
+      "status": "PASS"
+    }
+  ]
+}

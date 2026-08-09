@@ -1,0 +1,54 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Free Basics"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Free Basics",
+    "url": "https://freebasics.online"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "identifier": "TEL_009",
+    "name": "TV + Internet + Festnetz",
+    "category": "telekom",
+    "brand": {
+      "@type": "Organization",
+      "name": "Free Basics"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "identifier": "ARTICLE_TEL_009",
+    "about": {
+      "@type": "Product",
+      "identifier": "TEL_009"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Free Basics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "TV + Internet + Festnetz"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  }
+]

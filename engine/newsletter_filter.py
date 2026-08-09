@@ -1,70 +1,69 @@
+from engine.newsletter_source_registry import NewsletterSourceRegistry
+
+
 class NewsletterFilter:
+
 
     def __init__(self):
 
-        self.partner_rules = {
+        self.source_registry = NewsletterSourceRegistry()
 
-            "Amazon": {
-                "keywords": [
-                    "associates@amazon.de",
-                    "amazon partnernet",
-                    "partnernet",
-                    "werbemittel",
-                    "kampagne",
-                    "aktion",
-                    "ressourcen"
-                ],
-                "category": "AMAZON_AFFILIATE"
-            },
 
-            "Tarifcheck": {
-                "keywords": [
-                    "tarifcheck",
-                    "partnerprogramm"
-                ],
-                "category": "TARIFCHECK_PARTNER"
-            },
+        self.categories = {
 
-            "Check24": {
-                "keywords": [
-                    "check24"
-                ],
-                "category": "CHECK24_PARTNER"
-            },
+            "Amazon":
+                "AMAZON_AFFILIATE",
 
-            "Telekom": {
-                "keywords": [
-                    "telekom",
-                    "telekom-profis"
-                ],
-                "category": "TELEKOM_PARTNER"
-            }
+            "Check24":
+                "CHECK24_PARTNER",
+
+            "Tarifcheck":
+                "TARIFCHECK_PARTNER",
+
+            "Telekom Profis":
+                "TELEKOM_PARTNER"
+
         }
 
 
         self.ignore_rules = [
+
             "account-update@amazon.de",
             "sell.amazon.com",
             "business.amazon.de",
             "develop.amazon.com",
             "security",
             "passwort"
+
         ]
 
 
-    def analyze(self, mail):
+
+    def analyze(
+        self,
+        mail
+    ):
 
         sender = mail.get(
             "sender",
             ""
         ).lower()
 
+
         subject = mail.get(
             "subject",
             ""
         ).lower()
 
-        text = sender + " " + subject
+
+        text = (
+            sender
+            +
+            " "
+            +
+            subject
+        )
+
 
 
         for rule in self.ignore_rules:
@@ -72,30 +71,70 @@ class NewsletterFilter:
             if rule in text:
 
                 return {
-                    "status": "IGNORE",
-                    "partner": "",
-                    "category": "IGNORE",
-                    "keyword": rule
+
+                    "status":
+                        "IGNORE",
+
+                    "partner":
+                        "",
+
+                    "category":
+                        "IGNORE",
+
+                    "keyword":
+                        rule
+
                 }
 
 
-        for partner, data in self.partner_rules.items():
 
-            for keyword in data["keywords"]:
+        source_result = self.source_registry.validate(
+            mail
+        )
 
-                if keyword in text:
 
-                    return {
-                        "status": "KEEP",
-                        "partner": partner,
-                        "category": data["category"],
-                        "keyword": keyword
-                    }
+        if source_result["status"] == "VERIFIED":
+
+
+            partner = source_result["partner"]
+
+
+            return {
+
+                "status":
+                    "KEEP",
+
+                "partner":
+                    partner,
+
+                "category":
+                    self.categories.get(
+                        partner,
+                        "PARTNER"
+                    ),
+
+                "keyword":
+                    source_result["source"],
+
+                "source":
+                    source_result["source"]
+
+            }
+
 
 
         return {
-            "status": "IGNORE",
-            "partner": "",
-            "category": "UNKNOWN",
-            "keyword": ""
+
+            "status":
+                "IGNORE",
+
+            "partner":
+                "",
+
+            "category":
+                "UNKNOWN",
+
+            "keyword":
+                ""
+
         }

@@ -1,0 +1,54 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Free Basics"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Free Basics",
+    "url": "https://freebasics.online"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "identifier": "B0DXLBZF4Q",
+    "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+    "category": "Körperpflege & Elektrorasierer",
+    "brand": {
+      "@type": "Organization",
+      "name": "Free Basics"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "identifier": "ARTICLE_B0DXLBZF4Q",
+    "about": {
+      "@type": "Product",
+      "identifier": "B0DXLBZF4Q"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Free Basics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  }
+]

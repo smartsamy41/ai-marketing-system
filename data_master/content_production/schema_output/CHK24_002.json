@@ -1,0 +1,54 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Free Basics"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Free Basics",
+    "url": "https://freebasics.online"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "identifier": "CHK24_002",
+    "name": "Oekostrom",
+    "category": "Oekostrom",
+    "brand": {
+      "@type": "Organization",
+      "name": "Free Basics"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "identifier": "ARTICLE_CHK24_002",
+    "about": {
+      "@type": "Product",
+      "identifier": "CHK24_002"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Free Basics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Oekostrom"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  }
+]

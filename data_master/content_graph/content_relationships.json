@@ -1,0 +1,936 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_relationship_graph",
+  "version": "2.0",
+  "status": "ACTIVE",
+  "generated_at": "2026-08-07T05:19:25.011995+00:00",
+  "rules": {
+    "validated_relationships_only": true,
+    "source_based_connections": true,
+    "no_random_links": true
+  },
+  "relationships": {
+    "product_to_partner": [
+      {
+        "product_id": "CHK24_004",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_005",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_002",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_001",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_003",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_006",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_007",
+        "partner": "check24"
+      },
+      {
+        "product_id": "CHK24_008",
+        "partner": "check24"
+      },
+      {
+        "product_id": "TC_001",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_002",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_003",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_004",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_005",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_006",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_007",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_008",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "TC_009",
+        "partner": "tarifcheck"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3424631078",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3423209690",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3832167242",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "3426281759",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "partner": "amazon"
+      },
+      {
+        "product_id": "TEL_001",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "partner": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "partner": "telekom"
+      }
+    ],
+    "product_to_category": [
+      {
+        "product_id": "CHK24_004",
+        "category": "DSL"
+      },
+      {
+        "product_id": "CHK24_005",
+        "category": "Mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "category": "Oekostrom"
+      },
+      {
+        "product_id": "CHK24_001",
+        "category": "Strom"
+      },
+      {
+        "product_id": "CHK24_003",
+        "category": "Gas"
+      },
+      {
+        "product_id": "CHK24_006",
+        "category": "Reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "category": "Reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "category": "Finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "category": "Solaranlage"
+      },
+      {
+        "product_id": "TC_002",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "category": "Kredit"
+      },
+      {
+        "product_id": "TC_004",
+        "category": "Girokonto"
+      },
+      {
+        "product_id": "TC_005",
+        "category": "Baufinanzierung"
+      },
+      {
+        "product_id": "TC_006",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "category": "Vorsorge"
+      },
+      {
+        "product_id": "TC_009",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "category": "Bluetooth-Kopfhörer"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "category": "E-Reader"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "3424631078",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "product_id": "3423209690",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+      },
+      {
+        "product_id": "3832167242",
+        "category": "Bücher - Roman & Gegenwartsliteratur"
+      },
+      {
+        "product_id": "3426281759",
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "category": "Rasierklingen & Zubehör"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "category": "Kosmetik - Wimperntusche"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "category": "Nahrungsergänzung - Magnesium"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "category": "Bücher - Liebesromane / New Adult"
+      },
+      {
+        "product_id": "TEL_001",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "category": "telekom"
+      }
+    ],
+    "product_to_topic": [
+      {
+        "product_id": "CHK24_004",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "topic": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "CHK24_001",
+        "silo": "energie"
+      },
+      {
+        "product_id": "CHK24_002",
+        "silo": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "silo": "energie"
+      },
+      {
+        "product_id": "TC_001",
+        "silo": "energie"
+      },
+      {
+        "product_id": "CHK24_004",
+        "silo": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "silo": "internet_mobilfunk"
+      },
+      {
+        "product_id": "TC_002",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_006",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "CHK24_006",
+        "silo": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "silo": "reisen"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "silo": "amazon_shopping"
+      }
+    ],
+    "product_to_article": [
+      {
+        "product_id": "CHK24_001",
+        "article": "/blog/strom-ratgeber"
+      },
+      {
+        "product_id": "CHK24_002",
+        "article": "/blog/oekostrom-ratgeber"
+      },
+      {
+        "product_id": "CHK24_003",
+        "article": "/blog/gas-ratgeber"
+      },
+      {
+        "product_id": "TC_001",
+        "article": "/blog/solaranlage-ratgeber"
+      },
+      {
+        "product_id": "CHK24_004",
+        "article": "/blog/dsl-ratgeber"
+      },
+      {
+        "product_id": "CHK24_005",
+        "article": "/blog/mobilfunk-ratgeber"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "article": "/shopping/bluetooth-kopfhoerer"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "article": "/shopping/e-reader"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "article": "/shopping/rasierklingen"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "article": "/shopping/kosmetik"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "article": "/shopping/magnesium"
+      },
+      {
+        "product_id": "3424631078",
+        "article": "/shopping/buecher-psychologie"
+      },
+      {
+        "product_id": "3423209690",
+        "article": "/shopping/persoenlichkeitsentwicklung"
+      },
+      {
+        "product_id": "3832167242",
+        "article": "/shopping/romane"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "article": "/shopping/new-adult"
+      },
+      {
+        "product_id": "amazon_products",
+        "article": "/shopping"
+      }
+    ],
+    "product_to_landingpage": [
+      {
+        "product_id": "CHK24_004",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004"
+      },
+      {
+        "product_id": "CHK24_005",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005"
+      },
+      {
+        "product_id": "CHK24_002",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002"
+      },
+      {
+        "product_id": "CHK24_001",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001"
+      },
+      {
+        "product_id": "CHK24_003",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003"
+      },
+      {
+        "product_id": "CHK24_006",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006"
+      },
+      {
+        "product_id": "CHK24_007",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007"
+      },
+      {
+        "product_id": "CHK24_008",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008"
+      },
+      {
+        "product_id": "TC_001",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001"
+      },
+      {
+        "product_id": "TC_002",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002"
+      },
+      {
+        "product_id": "TC_003",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003"
+      },
+      {
+        "product_id": "TC_004",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004"
+      },
+      {
+        "product_id": "TC_005",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005"
+      },
+      {
+        "product_id": "TC_006",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006"
+      },
+      {
+        "product_id": "TC_007",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007"
+      },
+      {
+        "product_id": "TC_008",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008"
+      },
+      {
+        "product_id": "TC_009",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63"
+      },
+      {
+        "product_id": "3424631078",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M"
+      },
+      {
+        "product_id": "3423209690",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690"
+      },
+      {
+        "product_id": "3832167242",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242"
+      },
+      {
+        "product_id": "3426281759",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82"
+      },
+      {
+        "product_id": "TEL_001",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001"
+      },
+      {
+        "product_id": "TEL_002",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002"
+      },
+      {
+        "product_id": "TEL_003",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003"
+      },
+      {
+        "product_id": "TEL_004",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004"
+      },
+      {
+        "product_id": "TEL_005",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005"
+      },
+      {
+        "product_id": "TEL_006",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006"
+      },
+      {
+        "product_id": "TEL_007",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007"
+      },
+      {
+        "product_id": "TEL_008",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008"
+      },
+      {
+        "product_id": "TEL_009",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009"
+      },
+      {
+        "product_id": "TEL_010",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010"
+      }
+    ],
+    "product_to_faq": [],
+    "product_to_location": [],
+    "article_to_question": [],
+    "article_to_source": [],
+    "article_to_entity": [],
+    "landingpage_to_article": [],
+    "newsletter_to_product": [],
+    "newsletter_to_content": []
+  }
+}

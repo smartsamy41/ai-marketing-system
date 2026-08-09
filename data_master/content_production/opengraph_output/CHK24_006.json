@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Pauschalreise | Free Basics",
+    "og:description": "Informationen zu Pauschalreise aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/CHK24_006",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Pauschalreise | Free Basics",
+    "twitter:description": "Informationen zu Pauschalreise.",
+    "twitter:url": "https://freebasics.online/CHK24_006"
+  },
+  "entity": {
+    "product_id": "CHK24_006",
+    "article_id": "ARTICLE_CHK24_006",
+    "name": "Pauschalreise",
+    "category": "Reisen",
+    "partner": "check24"
+  }
+}

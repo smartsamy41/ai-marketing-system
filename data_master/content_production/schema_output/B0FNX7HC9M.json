@@ -1,0 +1,54 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Free Basics"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Free Basics",
+    "url": "https://freebasics.online"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "identifier": "B0FNX7HC9M",
+    "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+    "category": "Bücher - Psychothriller",
+    "brand": {
+      "@type": "Organization",
+      "name": "Free Basics"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "identifier": "ARTICLE_B0FNX7HC9M",
+    "about": {
+      "@type": "Product",
+      "identifier": "B0FNX7HC9M"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Free Basics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": []
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "primary_sources",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "official_source_priority": true,
+    "no_fabricated_information": true
+  },
+  "sources": [
+    {
+      "name": "Partner Daten",
+      "type": "affiliate_source",
+      "status": "ACTIVE",
+      "items": [
+        "Amazon PartnerNet",
+        "Check24 Partnerprogramm",
+        "Tarifcheck Partnerprogramm",
+        "Telekom Profis"
+      ]
+    },
+    {
+      "name": "Knowledge Sources",
+      "type": "knowledge_source",
+      "status": "ACTIVE",
+      "items": [
+        "Wikidata",
+        "MediaWiki",
+        "Schema.org",
+        "offizielle Dokumente"
+      ]
+    },
+    {
+      "name": "Internal Sources",
+      "type": "system_source",
+      "status": "ACTIVE",
+      "items": [
+        "Google Sheets",
+        "Google Drive",
+        "BigQuery",
+        "GitHub Repository"
+      ]
+    }
+  ]
+}

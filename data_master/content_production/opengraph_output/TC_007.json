@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Haftpflichtversicherung | Free Basics",
+    "og:description": "Informationen zu Haftpflichtversicherung aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_007",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Haftpflichtversicherung | Free Basics",
+    "twitter:description": "Informationen zu Haftpflichtversicherung.",
+    "twitter:url": "https://freebasics.online/TC_007"
+  },
+  "entity": {
+    "product_id": "TC_007",
+    "article_id": "ARTICLE_TC_007",
+    "name": "Haftpflichtversicherung",
+    "category": "Versicherung",
+    "partner": "tarifcheck"
+  }
+}

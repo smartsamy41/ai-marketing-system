@@ -1,0 +1,47 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_cluster_rules",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "content_creation": {
+      "source_required": true,
+      "entity_required": true,
+      "topic_required": true,
+      "avoid_duplicate_content": true,
+      "avoid_thin_content": true
+    },
+    "article_rules": {
+      "requires_question_or_topic": true,
+      "requires_sources": true,
+      "requires_internal_links": true,
+      "requires_update_date": true
+    },
+    "landingpage_rules": {
+      "requires_product": true,
+      "requires_partner_validation": true,
+      "requires_affiliate_compliance": true,
+      "requires_faq": true
+    },
+    "geo_rules": {
+      "real_location_only": true,
+      "location_data_required": true,
+      "product_location_match_required": true
+    },
+    "newsletter_rules": {
+      "source_based_only": true,
+      "no_fake_offers": true,
+      "content_signal_allowed": true
+    }
+  },
+  "generation_pipeline": [
+    "source_check",
+    "entity_check",
+    "topic_check",
+    "intent_check",
+    "content_generation",
+    "internal_link_generation",
+    "compliance_check",
+    "publish_ready"
+  ]
+}

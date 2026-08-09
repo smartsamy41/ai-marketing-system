@@ -1,0 +1,24 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "source": "app/templates/base_components.py",
+  "type": "footer_rules",
+  "status": "ACTIVE",
+  "required_sections": [
+    {
+      "section": "Free Basics",
+      "rule": "Beschreibung als Wissensplattform mit transparenten Partnerbereichen"
+    },
+    {
+      "section": "Transparenz",
+      "rule": "Affiliate-Hinweis und Methodik erreichbar machen"
+    },
+    {
+      "section": "Rechtliches",
+      "rule": "Rechtliche Seiten verlinken"
+    }
+  ],
+  "affiliate_requirement": {
+    "rule": "Affiliate-Bereiche transparent als Werbung oder Anzeige kennzeichnen",
+    "status": "ACTIVE"
+  }
+}

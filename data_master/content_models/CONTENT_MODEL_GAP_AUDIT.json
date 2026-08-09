@@ -1,0 +1,43 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_model_gap_audit",
+  "reference_model": "CHEFKOCH website intelligence scans",
+  "status": "ANALYSIS_PHASE",
+  "landingpage_model": {
+    "existing": [
+      "identity",
+      "hero",
+      "content",
+      "trust",
+      "affiliate",
+      "seo",
+      "faq"
+    ],
+    "missing_or_to_review": [
+      "silo_structure",
+      "topic_cluster",
+      "entity_relationships",
+      "geo_complete_layer",
+      "content_lifecycle",
+      "ai_retrieval_layer"
+    ]
+  },
+  "article_model": {
+    "existing": [
+      "header",
+      "summary",
+      "content_sections",
+      "sources",
+      "methodology",
+      "seo"
+    ],
+    "missing_or_to_review": [
+      "topic_cluster",
+      "entity_relationships",
+      "content_lifecycle",
+      "freshness_control",
+      "ai_question_answer_layer"
+    ]
+  },
+  "next_step": "Create controlled V2 schemas after audit review"
+}

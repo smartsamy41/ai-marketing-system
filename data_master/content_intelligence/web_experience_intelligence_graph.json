@@ -1,0 +1,72 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "web_experience_intelligence_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "principles": {
+    "mobile_first": true,
+    "responsive": true,
+    "browser_compatible": true,
+    "accessibility_ready": true,
+    "legal_ready": true,
+    "semantic_html": true,
+    "ai_ready": true
+  },
+  "devices": {
+    "desktop": true,
+    "tablet": true,
+    "mobile": true,
+    "smartwatch": true
+  },
+  "browsers": [
+    "Chrome",
+    "Edge",
+    "Firefox",
+    "Safari",
+    "Mobile Safari",
+    "Android Browser"
+  ],
+  "html_structure": {
+    "header": [
+      "logo",
+      "navigation",
+      "breadcrumb"
+    ],
+    "main": [
+      "entity_intro",
+      "facts",
+      "content",
+      "questions",
+      "faq",
+      "sources",
+      "affiliate_area"
+    ],
+    "footer": [
+      "category_navigation",
+      "partner_navigation",
+      "legal_links",
+      "affiliate_notice",
+      "social_entities"
+    ]
+  },
+  "accessibility": {
+    "alt_text_required": true,
+    "aria_support": true,
+    "keyboard_navigation": true,
+    "screen_reader": true
+  },
+  "legal": {
+    "affiliate_disclosure": true,
+    "advertising_label": true,
+    "privacy_required": true,
+    "imprint_required": true
+  },
+  "seo_ai_layer": {
+    "schema_org": true,
+    "json_ld": true,
+    "open_graph": true,
+    "canonical": true,
+    "llms_txt": true,
+    "entity_connection": true
+  }
+}

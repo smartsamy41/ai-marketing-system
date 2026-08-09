@@ -1,0 +1,45 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "source_validation_rules",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": [
+    {
+      "rule": "Quelle erforderlich",
+      "field": "source",
+      "required": true
+    },
+    {
+      "rule": "Nur bestätigte Partnerdaten verwenden",
+      "field": "partner_data",
+      "required": true
+    },
+    {
+      "rule": "Keine erfundenen Produkte erzeugen",
+      "field": "product",
+      "blocked": true
+    },
+    {
+      "rule": "Keine erfundenen Preise oder Aktionen",
+      "field": "commercial_data",
+      "blocked": true
+    },
+    {
+      "rule": "Offizielle Assets bevorzugen",
+      "field": "assets",
+      "priority": "official_only"
+    },
+    {
+      "rule": "GEO Seiten benötigen echte Standortdaten",
+      "field": "geo",
+      "required": true
+    }
+  ],
+  "validation_pipeline": [
+    "source_check",
+    "fact_check",
+    "partner_rule_check",
+    "content_generation",
+    "final_validation"
+  ]
+}

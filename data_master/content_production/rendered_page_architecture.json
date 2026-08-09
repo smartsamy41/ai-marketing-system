@@ -1,0 +1,1031 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "html_production_renderer",
+  "version": "1.0",
+  "created": "2026-08-07T08:53:07.890365",
+  "status": "ACTIVE",
+  "renderer_rules": {
+    "semantic_html": true,
+    "responsive": true,
+    "mobile_first": true,
+    "accessibility": true,
+    "schema_ready": true,
+    "ai_ready": true,
+    "validation_required": true
+  },
+  "page_count": 44,
+  "pages": [
+    {
+      "product_id": "CHK24_004",
+      "article_id": "ARTICLE_CHK24_004",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_005",
+      "article_id": "ARTICLE_CHK24_005",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_002",
+      "article_id": "ARTICLE_CHK24_002",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_001",
+      "article_id": "ARTICLE_CHK24_001",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_003",
+      "article_id": "ARTICLE_CHK24_003",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_006",
+      "article_id": "ARTICLE_CHK24_006",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_007",
+      "article_id": "ARTICLE_CHK24_007",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "CHK24_008",
+      "article_id": "ARTICLE_CHK24_008",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_001",
+      "article_id": "ARTICLE_TC_001",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_002",
+      "article_id": "ARTICLE_TC_002",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_003",
+      "article_id": "ARTICLE_TC_003",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_004",
+      "article_id": "ARTICLE_TC_004",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_005",
+      "article_id": "ARTICLE_TC_005",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_006",
+      "article_id": "ARTICLE_TC_006",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_007",
+      "article_id": "ARTICLE_TC_007",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_008",
+      "article_id": "ARTICLE_TC_008",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TC_009",
+      "article_id": "ARTICLE_TC_009",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FQF32239",
+      "article_id": "ARTICLE_B0FQF32239",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0CFPWLGF2",
+      "article_id": "ARTICLE_B0CFPWLGF2",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0DFYN8174",
+      "article_id": "ARTICLE_B0DFYN8174",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FPXFBL13",
+      "article_id": "ARTICLE_B0FPXFBL13",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FPXDCDX2",
+      "article_id": "ARTICLE_B0FPXDCDX2",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FPXGJL6H",
+      "article_id": "ARTICLE_B0FPXGJL6H",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FPXDRR63",
+      "article_id": "ARTICLE_B0FPXDRR63",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "3424631078",
+      "article_id": "ARTICLE_3424631078",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FNX7HC9M",
+      "article_id": "ARTICLE_B0FNX7HC9M",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "3423209690",
+      "article_id": "ARTICLE_3423209690",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "3832167242",
+      "article_id": "ARTICLE_3832167242",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "3426281759",
+      "article_id": "ARTICLE_3426281759",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0DXLBZF4Q",
+      "article_id": "ARTICLE_B0DXLBZF4Q",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0CVXSK4D3",
+      "article_id": "ARTICLE_B0CVXSK4D3",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B08P4YPB8Q",
+      "article_id": "ARTICLE_B08P4YPB8Q",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0FMS3V43J",
+      "article_id": "ARTICLE_B0FMS3V43J",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "B0D1YKBX82",
+      "article_id": "ARTICLE_B0D1YKBX82",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_001",
+      "article_id": "ARTICLE_TEL_001",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_002",
+      "article_id": "ARTICLE_TEL_002",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_003",
+      "article_id": "ARTICLE_TEL_003",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_004",
+      "article_id": "ARTICLE_TEL_004",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_005",
+      "article_id": "ARTICLE_TEL_005",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_006",
+      "article_id": "ARTICLE_TEL_006",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_007",
+      "article_id": "ARTICLE_TEL_007",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_008",
+      "article_id": "ARTICLE_TEL_008",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_009",
+      "article_id": "ARTICLE_TEL_009",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    },
+    {
+      "product_id": "TEL_010",
+      "article_id": "ARTICLE_TEL_010",
+      "template": "AUTO_SELECT",
+      "html_structure": {
+        "head": [
+          "title",
+          "meta_description",
+          "canonical",
+          "open_graph",
+          "json_ld"
+        ],
+        "body": [
+          "header",
+          "direct_answer",
+          "main_content",
+          "affiliate_area",
+          "related_content",
+          "footer"
+        ]
+      },
+      "status": "READY_FOR_RENDER"
+    }
+  ]
+}

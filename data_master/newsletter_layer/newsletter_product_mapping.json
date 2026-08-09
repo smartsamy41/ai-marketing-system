@@ -1,0 +1,47 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "newsletter_product_mapping",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "partner_match_required": true,
+    "product_validation_required": true,
+    "source_required": true,
+    "unknown_products_blocked": true
+  },
+  "mapping": {
+    "Amazon": {
+      "product_source": "data_master/catalog/product_master_44.json",
+      "content_types": [
+        "article",
+        "product_page",
+        "faq"
+      ]
+    },
+    "Telekom": {
+      "product_source": "data_master/catalog/product_master_44.json",
+      "content_types": [
+        "article",
+        "landingpage",
+        "faq",
+        "geo_content"
+      ]
+    },
+    "Check24": {
+      "product_source": "data_master/catalog/product_master_44.json",
+      "content_types": [
+        "article",
+        "landingpage",
+        "faq"
+      ]
+    },
+    "Tarifcheck": {
+      "product_source": "data_master/catalog/product_master_44.json",
+      "content_types": [
+        "article",
+        "landingpage",
+        "faq"
+      ]
+    }
+  }
+}

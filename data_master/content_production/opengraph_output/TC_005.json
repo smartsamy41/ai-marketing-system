@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Baufinanzierung | Free Basics",
+    "og:description": "Informationen zu Baufinanzierung aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_005",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Baufinanzierung | Free Basics",
+    "twitter:description": "Informationen zu Baufinanzierung.",
+    "twitter:url": "https://freebasics.online/TC_005"
+  },
+  "entity": {
+    "product_id": "TC_005",
+    "article_id": "ARTICLE_TC_005",
+    "name": "Baufinanzierung",
+    "category": "Baufinanzierung",
+    "partner": "tarifcheck"
+  }
+}

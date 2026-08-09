@@ -1,0 +1,123 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "product_keyword_mapping",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "exact_product_signal_required": true,
+    "generic_words_blocked": true,
+    "unknown_products_blocked": true
+  },
+  "keywords": {
+    "CHK24_001": [
+      "strom",
+      "stromtarif",
+      "energie"
+    ],
+    "CHK24_002": [
+      "ökostrom",
+      "oekostrom",
+      "grünstrom"
+    ],
+    "CHK24_003": [
+      "gas",
+      "gastarif"
+    ],
+    "CHK24_004": [
+      "dsl",
+      "dsl tarif",
+      "internetanschluss"
+    ],
+    "CHK24_005": [
+      "mobilfunk",
+      "handytarif",
+      "mobilfunkvertrag"
+    ],
+    "CHK24_006": [
+      "pauschalreise",
+      "urlaub",
+      "reiseangebot"
+    ],
+    "CHK24_007": [
+      "mietwagen",
+      "auto mieten"
+    ],
+    "CHK24_008": [
+      "c24 bank",
+      "konto",
+      "bankkonto"
+    ],
+
+    "TC_001": [
+      "solaranlage",
+      "solar",
+      "photovoltaik"
+    ],
+    "TC_002": [
+      "kfz",
+      "autoversicherung",
+      "fahrzeugversicherung"
+    ],
+    "TC_003": [
+      "kredit",
+      "darlehen"
+    ],
+    "TC_004": [
+      "girokonto",
+      "kontoeröffnung"
+    ],
+    "TC_005": [
+      "baufinanzierung",
+      "hausfinanzierung"
+    ],
+    "TC_006": [
+      "hausratversicherung",
+      "hausrat"
+    ],
+    "TC_007": [
+      "haftpflichtversicherung",
+      "haftpflicht"
+    ],
+    "TC_008": [
+      "rentenversicherung",
+      "vorsorge"
+    ],
+    "TC_009": [
+      "private krankenversicherung",
+      "pkv"
+    ],
+
+    "TEL_001": [
+      "magentatv"
+    ],
+    "TEL_002": [
+      "glasfaser"
+    ],
+    "TEL_003": [
+      "magentazuhause",
+      "festnetz"
+    ],
+    "TEL_004": [
+      "magentamobil"
+    ],
+    "TEL_005": [
+      "magenta mobil young",
+      "young tarif"
+    ],
+    "TEL_006": [
+      "prepaid"
+    ],
+    "TEL_007": [
+      "congstar allnet"
+    ],
+    "TEL_008": [
+      "homespot"
+    ],
+    "TEL_009": [
+      "tv internet festnetz"
+    ],
+    "TEL_010": [
+      "datentarife"
+    ]
+  }
+}

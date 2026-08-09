@@ -1,0 +1,47 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "entity_relationship_model",
+  "status": "ACTIVE",
+  "entities": {
+    "partners": [],
+    "products": [],
+    "categories": [],
+    "articles": [],
+    "landingpages": [],
+    "locations": [],
+    "newsletters": [],
+    "sources": []
+  },
+  "relationships": [
+    {
+      "from": "partner",
+      "to": "product",
+      "relation": "provides"
+    },
+    {
+      "from": "product",
+      "to": "category",
+      "relation": "belongs_to"
+    },
+    {
+      "from": "product",
+      "to": "article",
+      "relation": "explained_by"
+    },
+    {
+      "from": "product",
+      "to": "landingpage",
+      "relation": "represented_by"
+    },
+    {
+      "from": "location",
+      "to": "product",
+      "relation": "geo_context"
+    },
+    {
+      "from": "newsletter",
+      "to": "content",
+      "relation": "creates"
+    }
+  ]
+}

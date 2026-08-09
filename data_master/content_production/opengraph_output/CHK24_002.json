@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Oekostrom | Free Basics",
+    "og:description": "Informationen zu Oekostrom aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/CHK24_002",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Oekostrom | Free Basics",
+    "twitter:description": "Informationen zu Oekostrom.",
+    "twitter:url": "https://freebasics.online/CHK24_002"
+  },
+  "entity": {
+    "product_id": "CHK24_002",
+    "article_id": "ARTICLE_CHK24_002",
+    "name": "Oekostrom",
+    "category": "Oekostrom",
+    "partner": "check24"
+  }
+}

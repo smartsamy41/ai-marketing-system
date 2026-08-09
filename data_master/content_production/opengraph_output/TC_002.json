@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Kfz-Versicherung | Free Basics",
+    "og:description": "Informationen zu Kfz-Versicherung aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TC_002",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Kfz-Versicherung | Free Basics",
+    "twitter:description": "Informationen zu Kfz-Versicherung.",
+    "twitter:url": "https://freebasics.online/TC_002"
+  },
+  "entity": {
+    "product_id": "TC_002",
+    "article_id": "ARTICLE_TC_002",
+    "name": "Kfz-Versicherung",
+    "category": "Versicherung",
+    "partner": "tarifcheck"
+  }
+}

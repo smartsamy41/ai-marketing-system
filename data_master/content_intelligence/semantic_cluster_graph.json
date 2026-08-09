@@ -1,0 +1,1256 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "semantic_cluster_graph",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "verified_topics_only": true,
+    "product_connection_required": true,
+    "landingpage_connection_required": true,
+    "no_fake_clusters": true
+  },
+  "clusters": [
+    {
+      "cluster": "internet_mobilfunk",
+      "categories": [
+        "dsl",
+        "mobilfunk"
+      ],
+      "products": [
+        "CHK24_004",
+        "CHK24_005"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005"
+      ]
+    },
+    {
+      "cluster": "energie",
+      "categories": [
+        "strom",
+        "oekostrom",
+        "gas",
+        "solaranlage"
+      ],
+      "products": [
+        "CHK24_001",
+        "CHK24_002",
+        "CHK24_003",
+        "TC_001"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001"
+      ]
+    },
+    {
+      "cluster": "reisen",
+      "categories": [
+        "reisen"
+      ],
+      "products": [
+        "CHK24_006",
+        "CHK24_007"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007"
+      ]
+    },
+    {
+      "cluster": "finanzen",
+      "categories": [
+        "finanzen",
+        "kredit",
+        "girokonto",
+        "baufinanzierung"
+      ],
+      "products": [
+        "CHK24_008",
+        "TC_003",
+        "TC_004",
+        "TC_005"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005"
+      ]
+    },
+    {
+      "cluster": "versicherung",
+      "categories": [
+        "kfz",
+        "hausrat",
+        "haftpflicht",
+        "rente",
+        "pkv"
+      ],
+      "products": [
+        "TC_002",
+        "TC_006",
+        "TC_007",
+        "TC_008",
+        "TC_009"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009"
+      ]
+    },
+    {
+      "cluster": "amazon_shopping",
+      "categories": [
+        "bluetooth-kopfhörer",
+        "e-reader",
+        "körperpflege",
+        "bauspielzeugsets",
+        "bücher",
+        "rasierklingen",
+        "kosmetik",
+        "magnesium"
+      ],
+      "products": [
+        "B0FQF32239",
+        "B0CFPWLGF2",
+        "B0DFYN8174",
+        "B0FPXFBL13",
+        "B0FPXDCDX2",
+        "B0FPXGJL6H",
+        "B0FPXDRR63",
+        "3424631078",
+        "B0FNX7HC9M",
+        "3423209690",
+        "3832167242",
+        "3426281759",
+        "B0DXLBZF4Q",
+        "B0CVXSK4D3",
+        "B08P4YPB8Q",
+        "B0FMS3V43J",
+        "B0D1YKBX82"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82"
+      ]
+    },
+    {
+      "cluster": "telekom",
+      "categories": [
+        "telekom"
+      ],
+      "products": [
+        "TEL_001",
+        "TEL_002",
+        "TEL_003",
+        "TEL_004",
+        "TEL_005",
+        "TEL_006",
+        "TEL_007",
+        "TEL_008",
+        "TEL_009",
+        "TEL_010"
+      ],
+      "landingpages": [
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+        "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010"
+      ]
+    }
+  ],
+  "connections": {
+    "topic_to_product": [
+      {
+        "topic": "internet_mobilfunk",
+        "product_id": "CHK24_004"
+      },
+      {
+        "topic": "internet_mobilfunk",
+        "product_id": "CHK24_005"
+      },
+      {
+        "topic": "energie",
+        "product_id": "CHK24_001"
+      },
+      {
+        "topic": "energie",
+        "product_id": "CHK24_002"
+      },
+      {
+        "topic": "energie",
+        "product_id": "CHK24_003"
+      },
+      {
+        "topic": "energie",
+        "product_id": "TC_001"
+      },
+      {
+        "topic": "reisen",
+        "product_id": "CHK24_006"
+      },
+      {
+        "topic": "reisen",
+        "product_id": "CHK24_007"
+      },
+      {
+        "topic": "finanzen",
+        "product_id": "CHK24_008"
+      },
+      {
+        "topic": "finanzen",
+        "product_id": "TC_003"
+      },
+      {
+        "topic": "finanzen",
+        "product_id": "TC_004"
+      },
+      {
+        "topic": "finanzen",
+        "product_id": "TC_005"
+      },
+      {
+        "topic": "versicherung",
+        "product_id": "TC_002"
+      },
+      {
+        "topic": "versicherung",
+        "product_id": "TC_006"
+      },
+      {
+        "topic": "versicherung",
+        "product_id": "TC_007"
+      },
+      {
+        "topic": "versicherung",
+        "product_id": "TC_008"
+      },
+      {
+        "topic": "versicherung",
+        "product_id": "TC_009"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FQF32239"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0CFPWLGF2"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0DFYN8174"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FPXFBL13"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FPXDCDX2"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FPXGJL6H"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FPXDRR63"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "3424631078"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FNX7HC9M"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "3423209690"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "3832167242"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "3426281759"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0DXLBZF4Q"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0CVXSK4D3"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B08P4YPB8Q"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0FMS3V43J"
+      },
+      {
+        "topic": "amazon_shopping",
+        "product_id": "B0D1YKBX82"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_001"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_002"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_003"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_004"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_005"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_006"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_007"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_008"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_009"
+      },
+      {
+        "topic": "telekom",
+        "product_id": "TEL_010"
+      }
+    ],
+    "cluster_to_question": [
+      {
+        "cluster": "internet_mobilfunk",
+        "question_id": "Q_CHK24_004_001"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "question_id": "Q_CHK24_004_002"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "question_id": "Q_CHK24_004_003"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "question_id": "Q_CHK24_005_001"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "question_id": "Q_CHK24_005_002"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "question_id": "Q_CHK24_005_003"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_002_001"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_002_002"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_002_003"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_001_001"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_001_002"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_001_003"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_003_001"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_003_002"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_CHK24_003_003"
+      },
+      {
+        "cluster": "reisen",
+        "question_id": "Q_CHK24_006_001"
+      },
+      {
+        "cluster": "reisen",
+        "question_id": "Q_CHK24_006_002"
+      },
+      {
+        "cluster": "reisen",
+        "question_id": "Q_CHK24_006_003"
+      },
+      {
+        "cluster": "reisen",
+        "question_id": "Q_CHK24_007_001"
+      },
+      {
+        "cluster": "reisen",
+        "question_id": "Q_CHK24_007_002"
+      },
+      {
+        "cluster": "reisen",
+        "question_id": "Q_CHK24_007_003"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_CHK24_008_001"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_CHK24_008_002"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_CHK24_008_003"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_TC_001_001"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_TC_001_002"
+      },
+      {
+        "cluster": "energie",
+        "question_id": "Q_TC_001_003"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_002_001"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_002_002"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_002_003"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_003_001"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_003_002"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_003_003"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_004_001"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_004_002"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_004_003"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_005_001"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_005_002"
+      },
+      {
+        "cluster": "finanzen",
+        "question_id": "Q_TC_005_003"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_006_001"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_006_002"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_006_003"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_007_001"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_007_002"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_007_003"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_008_001"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_008_002"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_008_003"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_009_001"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_009_002"
+      },
+      {
+        "cluster": "versicherung",
+        "question_id": "Q_TC_009_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FQF32239_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FQF32239_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FQF32239_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0CFPWLGF2_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0CFPWLGF2_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0CFPWLGF2_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0DFYN8174_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0DFYN8174_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0DFYN8174_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXFBL13_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXFBL13_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXFBL13_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXDCDX2_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXDCDX2_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXDCDX2_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXGJL6H_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXGJL6H_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXGJL6H_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXDRR63_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXDRR63_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FPXDRR63_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3424631078_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3424631078_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3424631078_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FNX7HC9M_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FNX7HC9M_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FNX7HC9M_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3423209690_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3423209690_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3423209690_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3832167242_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3832167242_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3832167242_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3426281759_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3426281759_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_3426281759_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0DXLBZF4Q_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0DXLBZF4Q_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0DXLBZF4Q_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0CVXSK4D3_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0CVXSK4D3_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0CVXSK4D3_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B08P4YPB8Q_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B08P4YPB8Q_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B08P4YPB8Q_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FMS3V43J_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FMS3V43J_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0FMS3V43J_003"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0D1YKBX82_001"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0D1YKBX82_002"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "question_id": "Q_B0D1YKBX82_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_001_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_001_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_001_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_002_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_002_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_002_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_003_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_003_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_003_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_004_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_004_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_004_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_005_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_005_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_005_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_006_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_006_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_006_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_007_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_007_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_007_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_008_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_008_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_008_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_009_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_009_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_009_003"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_010_001"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_010_002"
+      },
+      {
+        "cluster": "telekom",
+        "question_id": "Q_TEL_010_003"
+      }
+    ],
+    "cluster_to_article": [
+      {
+        "cluster": "internet_mobilfunk",
+        "article_id": "ARTICLE_CHK24_004"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "article_id": "ARTICLE_CHK24_005"
+      },
+      {
+        "cluster": "energie",
+        "article_id": "ARTICLE_CHK24_002"
+      },
+      {
+        "cluster": "energie",
+        "article_id": "ARTICLE_CHK24_001"
+      },
+      {
+        "cluster": "energie",
+        "article_id": "ARTICLE_CHK24_003"
+      },
+      {
+        "cluster": "reisen",
+        "article_id": "ARTICLE_CHK24_006"
+      },
+      {
+        "cluster": "reisen",
+        "article_id": "ARTICLE_CHK24_007"
+      },
+      {
+        "cluster": "finanzen",
+        "article_id": "ARTICLE_CHK24_008"
+      },
+      {
+        "cluster": "energie",
+        "article_id": "ARTICLE_TC_001"
+      },
+      {
+        "cluster": "versicherung",
+        "article_id": "ARTICLE_TC_002"
+      },
+      {
+        "cluster": "finanzen",
+        "article_id": "ARTICLE_TC_003"
+      },
+      {
+        "cluster": "finanzen",
+        "article_id": "ARTICLE_TC_004"
+      },
+      {
+        "cluster": "finanzen",
+        "article_id": "ARTICLE_TC_005"
+      },
+      {
+        "cluster": "versicherung",
+        "article_id": "ARTICLE_TC_006"
+      },
+      {
+        "cluster": "versicherung",
+        "article_id": "ARTICLE_TC_007"
+      },
+      {
+        "cluster": "versicherung",
+        "article_id": "ARTICLE_TC_008"
+      },
+      {
+        "cluster": "versicherung",
+        "article_id": "ARTICLE_TC_009"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FQF32239"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0CFPWLGF2"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0DFYN8174"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FPXFBL13"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FPXDCDX2"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FPXGJL6H"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FPXDRR63"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_3424631078"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FNX7HC9M"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_3423209690"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_3832167242"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_3426281759"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0DXLBZF4Q"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0CVXSK4D3"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B08P4YPB8Q"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0FMS3V43J"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "article_id": "ARTICLE_B0D1YKBX82"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_001"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_002"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_003"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_004"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_005"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_006"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_007"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_008"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_009"
+      },
+      {
+        "cluster": "telekom",
+        "article_id": "ARTICLE_TEL_010"
+      }
+    ],
+    "cluster_to_landingpage": [
+      {
+        "cluster": "internet_mobilfunk",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004"
+      },
+      {
+        "cluster": "internet_mobilfunk",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005"
+      },
+      {
+        "cluster": "energie",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001"
+      },
+      {
+        "cluster": "energie",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002"
+      },
+      {
+        "cluster": "energie",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003"
+      },
+      {
+        "cluster": "energie",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001"
+      },
+      {
+        "cluster": "reisen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006"
+      },
+      {
+        "cluster": "reisen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007"
+      },
+      {
+        "cluster": "finanzen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008"
+      },
+      {
+        "cluster": "finanzen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003"
+      },
+      {
+        "cluster": "finanzen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004"
+      },
+      {
+        "cluster": "finanzen",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005"
+      },
+      {
+        "cluster": "versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002"
+      },
+      {
+        "cluster": "versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006"
+      },
+      {
+        "cluster": "versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007"
+      },
+      {
+        "cluster": "versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008"
+      },
+      {
+        "cluster": "versicherung",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J"
+      },
+      {
+        "cluster": "amazon_shopping",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009"
+      },
+      {
+        "cluster": "telekom",
+        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010"
+      }
+    ]
+  }
+}

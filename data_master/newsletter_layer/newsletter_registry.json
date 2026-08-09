@@ -1,0 +1,38 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "newsletter_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "partner_validation_required": true,
+    "no_unknown_sources": true,
+    "manual_approval_for_new_partner": true
+  },
+  "sources": [
+    {
+      "partner": "Amazon",
+      "channel": "Yahoo Mail",
+      "purpose": "product_news_and_campaigns",
+      "status": "ACTIVE"
+    },
+    {
+      "partner": "Telekom",
+      "channel": "Gmail",
+      "purpose": "product_information_and_content",
+      "status": "ACTIVE"
+    },
+    {
+      "partner": "Check24",
+      "channel": "Gmail",
+      "purpose": "partner_information",
+      "status": "ACTIVE"
+    },
+    {
+      "partner": "Tarifcheck",
+      "channel": "Gmail",
+      "purpose": "partner_information",
+      "status": "ACTIVE"
+    }
+  ]
+}

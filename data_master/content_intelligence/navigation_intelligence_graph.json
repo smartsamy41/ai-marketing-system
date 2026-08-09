@@ -1,0 +1,1127 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "navigation_intelligence_graph",
+  "version": "3.0",
+  "status": "ACTIVE",
+  "rules": {
+    "master_entity_source": true,
+    "semantic_navigation": true,
+    "footer_connected": true,
+    "no_random_links": true
+  },
+  "navigation": {
+    "root": [
+      {
+        "name": "Free Basics",
+        "url": "/"
+      }
+    ],
+    "silos": [
+      {
+        "id": "amazon_shopping",
+        "type": "semantic_silo"
+      },
+      {
+        "id": "energie",
+        "type": "semantic_silo"
+      },
+      {
+        "id": "finanzen",
+        "type": "semantic_silo"
+      },
+      {
+        "id": "internet_mobilfunk",
+        "type": "semantic_silo"
+      },
+      {
+        "id": "reisen",
+        "type": "semantic_silo"
+      },
+      {
+        "id": "telekom",
+        "type": "semantic_silo"
+      },
+      {
+        "id": "versicherung",
+        "type": "semantic_silo"
+      }
+    ],
+    "hubs": [
+      {
+        "silo": "amazon_shopping",
+        "url": "/amazon_shopping"
+      },
+      {
+        "silo": "energie",
+        "url": "/energie"
+      },
+      {
+        "silo": "finanzen",
+        "url": "/finanzen"
+      },
+      {
+        "silo": "internet_mobilfunk",
+        "url": "/internet_mobilfunk"
+      },
+      {
+        "silo": "reisen",
+        "url": "/reisen"
+      },
+      {
+        "silo": "telekom",
+        "url": "/telekom"
+      },
+      {
+        "silo": "versicherung",
+        "url": "/versicherung"
+      }
+    ],
+    "categories": [
+      {
+        "category": "Baufinanzierung"
+      },
+      {
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "category": "Bluetooth-Kopfhörer"
+      },
+      {
+        "category": "Bücher - Liebesromane / New Adult"
+      },
+      {
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+      },
+      {
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+      },
+      {
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "category": "Bücher - Roman & Gegenwartsliteratur"
+      },
+      {
+        "category": "DSL"
+      },
+      {
+        "category": "E-Reader"
+      },
+      {
+        "category": "Finanzen"
+      },
+      {
+        "category": "Gas"
+      },
+      {
+        "category": "Girokonto"
+      },
+      {
+        "category": "Kosmetik - Wimperntusche"
+      },
+      {
+        "category": "Kredit"
+      },
+      {
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "category": "Mobilfunk"
+      },
+      {
+        "category": "Nahrungsergänzung - Magnesium"
+      },
+      {
+        "category": "Oekostrom"
+      },
+      {
+        "category": "Rasierklingen & Zubehör"
+      },
+      {
+        "category": "Reisen"
+      },
+      {
+        "category": "Solaranlage"
+      },
+      {
+        "category": "Strom"
+      },
+      {
+        "category": "Versicherung"
+      },
+      {
+        "category": "Vorsorge"
+      },
+      {
+        "category": "telekom"
+      }
+    ],
+    "footer": [
+      {
+        "section": "amazon_shopping",
+        "type": "footer_navigation"
+      },
+      {
+        "section": "energie",
+        "type": "footer_navigation"
+      },
+      {
+        "section": "finanzen",
+        "type": "footer_navigation"
+      },
+      {
+        "section": "internet_mobilfunk",
+        "type": "footer_navigation"
+      },
+      {
+        "section": "reisen",
+        "type": "footer_navigation"
+      },
+      {
+        "section": "telekom",
+        "type": "footer_navigation"
+      },
+      {
+        "section": "versicherung",
+        "type": "footer_navigation"
+      }
+    ],
+    "related_content": [
+      {
+        "product_id": "CHK24_004",
+        "category": "DSL",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "category": "Mobilfunk",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "category": "Oekostrom",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "category": "Strom",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "category": "Gas",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "category": "Reisen",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "category": "Reisen",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "category": "Finanzen",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "category": "Solaranlage",
+        "topic": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "category": "Versicherung",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "category": "Kredit",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "category": "Girokonto",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "category": "Baufinanzierung",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "category": "Versicherung",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "category": "Versicherung",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "category": "Vorsorge",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "category": "Versicherung",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "category": "Bluetooth-Kopfhörer",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "category": "E-Reader",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "category": "Körperpflege & Elektrorasierer",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "category": "Bauspielzeugsets",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "category": "Bauspielzeugsets",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "category": "Bauspielzeugsets",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "category": "Bauspielzeugsets",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "category": "Bücher - Psychothriller",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "category": "Bücher - Roman & Gegenwartsliteratur",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "category": "Bücher - Psychothriller",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "category": "Körperpflege & Elektrorasierer",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "category": "Rasierklingen & Zubehör",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "category": "Kosmetik - Wimperntusche",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "category": "Nahrungsergänzung - Magnesium",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "category": "Bücher - Liebesromane / New Adult",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "category": "telekom",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "category": "telekom",
+        "topic": "telekom"
+      }
+    ]
+  },
+  "connections": {
+    "product_to_silo": [
+      {
+        "product_id": "CHK24_004",
+        "silo": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "silo": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "silo": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "silo": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "silo": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "silo": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "silo": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "silo": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "silo": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "silo": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "silo": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "silo": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "silo": "telekom"
+      }
+    ],
+    "product_to_footer": [
+      {
+        "product_id": "CHK24_004",
+        "footer": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "footer": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "footer": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "footer": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "footer": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "footer": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "footer": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "footer": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "footer": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "footer": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "footer": "telekom"
+      }
+    ],
+    "product_to_category": [
+      {
+        "product_id": "CHK24_004",
+        "category": "DSL"
+      },
+      {
+        "product_id": "CHK24_005",
+        "category": "Mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "category": "Oekostrom"
+      },
+      {
+        "product_id": "CHK24_001",
+        "category": "Strom"
+      },
+      {
+        "product_id": "CHK24_003",
+        "category": "Gas"
+      },
+      {
+        "product_id": "CHK24_006",
+        "category": "Reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "category": "Reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "category": "Finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "category": "Solaranlage"
+      },
+      {
+        "product_id": "TC_002",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "category": "Kredit"
+      },
+      {
+        "product_id": "TC_004",
+        "category": "Girokonto"
+      },
+      {
+        "product_id": "TC_005",
+        "category": "Baufinanzierung"
+      },
+      {
+        "product_id": "TC_006",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "category": "Vorsorge"
+      },
+      {
+        "product_id": "TC_009",
+        "category": "Versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "category": "Bluetooth-Kopfhörer"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "category": "E-Reader"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "category": "Bauspielzeugsets"
+      },
+      {
+        "product_id": "3424631078",
+        "category": "Bücher - Psychologie & Persönlichkeitsentwicklung"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "product_id": "3423209690",
+        "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe"
+      },
+      {
+        "product_id": "3832167242",
+        "category": "Bücher - Roman & Gegenwartsliteratur"
+      },
+      {
+        "product_id": "3426281759",
+        "category": "Bücher - Psychothriller"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "category": "Körperpflege & Elektrorasierer"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "category": "Rasierklingen & Zubehör"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "category": "Kosmetik - Wimperntusche"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "category": "Nahrungsergänzung - Magnesium"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "category": "Bücher - Liebesromane / New Adult"
+      },
+      {
+        "product_id": "TEL_001",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "category": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "category": "telekom"
+      }
+    ],
+    "product_to_topic": [
+      {
+        "product_id": "CHK24_004",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_005",
+        "topic": "internet_mobilfunk"
+      },
+      {
+        "product_id": "CHK24_002",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_001",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_003",
+        "topic": "energie"
+      },
+      {
+        "product_id": "CHK24_006",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_007",
+        "topic": "reisen"
+      },
+      {
+        "product_id": "CHK24_008",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_001",
+        "topic": "energie"
+      },
+      {
+        "product_id": "TC_002",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_003",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_004",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_005",
+        "topic": "finanzen"
+      },
+      {
+        "product_id": "TC_006",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_007",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_008",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "TC_009",
+        "topic": "versicherung"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3424631078",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3423209690",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3832167242",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "3426281759",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "topic": "amazon_shopping"
+      },
+      {
+        "product_id": "TEL_001",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_002",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_003",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_004",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_005",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_006",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_007",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_008",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_009",
+        "topic": "telekom"
+      },
+      {
+        "product_id": "TEL_010",
+        "topic": "telekom"
+      }
+    ],
+    "content_to_related": []
+  }
+}

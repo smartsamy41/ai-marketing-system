@@ -1,0 +1,27 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_entity_map",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "mapping": {
+    "product_to_article": [],
+    "product_to_landingpage": [],
+    "product_to_faq": [],
+    "product_to_newsletter": [],
+    "product_to_geo": [],
+    "product_to_sources": []
+  },
+  "content_rules": {
+    "source_required": true,
+    "verified_entities_only": true,
+    "no_fabricated_pages": true,
+    "geo_requires_real_location_data": true
+  },
+  "future_generation": {
+    "blog_generation": true,
+    "landingpage_generation": true,
+    "newsletter_generation": true,
+    "geo_generation": true,
+    "ai_context_generation": true
+  }
+}

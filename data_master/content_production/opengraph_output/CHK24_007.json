@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "Mietwagen | Free Basics",
+    "og:description": "Informationen zu Mietwagen aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/CHK24_007",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Mietwagen | Free Basics",
+    "twitter:description": "Informationen zu Mietwagen.",
+    "twitter:url": "https://freebasics.online/CHK24_007"
+  },
+  "entity": {
+    "product_id": "CHK24_007",
+    "article_id": "ARTICLE_CHK24_007",
+    "name": "Mietwagen",
+    "category": "Reisen",
+    "partner": "check24"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "MagentaMobil Young | Free Basics",
+    "og:description": "Informationen zu MagentaMobil Young aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_005",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "MagentaMobil Young | Free Basics",
+    "twitter:description": "Informationen zu MagentaMobil Young.",
+    "twitter:url": "https://freebasics.online/TEL_005"
+  },
+  "entity": {
+    "product_id": "TEL_005",
+    "article_id": "ARTICLE_TEL_005",
+    "name": "MagentaMobil Young",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

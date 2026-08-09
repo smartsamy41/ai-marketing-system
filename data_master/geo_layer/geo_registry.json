@@ -1,0 +1,13 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "geo_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "real_locations_only": true,
+    "source_required": true,
+    "wikidata_validation_required": true,
+    "no_fake_city_pages": true
+  },
+  "locations": []
+}

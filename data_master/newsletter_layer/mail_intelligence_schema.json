@@ -1,0 +1,32 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "mail_intelligence_schema",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "source_required": true,
+    "sender_validation_required": true,
+    "partner_detection_required": true,
+    "no_unknown_partner_processing": true
+  },
+  "mail_object": {
+    "mail_id": "",
+    "provider": "",
+    "sender": "",
+    "subject": "",
+    "received_at": "",
+    "partner": "",
+    "campaign_type": "",
+    "detected_products": [],
+    "content_signal": {
+      "keywords": [],
+      "topics": [],
+      "entities": []
+    },
+    "processing_status": ""
+  },
+  "providers": [
+    "Gmail",
+    "Yahoo Mail"
+  ]
+}

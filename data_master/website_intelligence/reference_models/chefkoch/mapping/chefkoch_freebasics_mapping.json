@@ -1,0 +1,502 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "chefkoch_freebasics_mapping",
+  "version": "1.0",
+
+  "purpose": "Translate Chefkoch reference architecture into Free Basics AI content architecture",
+
+  "status": "DRAFT",
+
+  "rules": {
+    "reference_only": true,
+    "no_copy_content": true,
+    "no_fake_relationships": true,
+    "source_validation_required": true,
+    "entity_validation_required": true,
+    "audit_before_import": true
+  },
+
+
+  "mappings": {
+
+
+    "content_type": {
+
+      "HUB_PAGE": {
+
+        "freebasics_type": "silo_hub",
+
+        "target_layer": "content_graph",
+
+        "creates": [
+          "category_hub",
+          "silo_entry"
+        ]
+
+      },
+
+
+      "TOPIC_PAGE": {
+
+        "freebasics_type": "topic_page",
+
+        "target_layer": "knowledge_master/topic_layer",
+
+        "creates": [
+          "topic_registry_entry",
+          "topic_entity_connection"
+        ]
+
+      },
+
+
+      "RECIPE_CLUSTER": {
+
+        "freebasics_type": "content_cluster",
+
+        "target_layer": "content_intelligence",
+
+        "creates": [
+          "topic_cluster_registry",
+          "cluster_relationship"
+        ]
+
+      },
+
+
+      "CONTENT_PAGE": {
+
+        "freebasics_type": "article",
+
+        "target_layer": "content_graph",
+
+        "creates": [
+          "article_node",
+          "article_topic_relation"
+        ]
+
+      }
+
+    },
+
+
+    "url_structure": {
+
+
+      "folder_level_1": {
+
+        "source": "chefkoch_folder_level_1",
+
+        "maps_to": "silo",
+
+        "target": "linking/silo_structure"
+
+      },
+
+
+      "folder_level_2": {
+
+        "source": "chefkoch_folder_level_2",
+
+        "maps_to": "category_or_topic",
+
+        "target": [
+          "category_map",
+          "topic_registry"
+        ]
+
+      },
+
+
+      "folder_level_3": {
+
+        "source": "chefkoch_folder_level_3",
+
+        "maps_to": "cluster",
+
+        "target": "topic_cluster_registry"
+
+      }
+
+    },
+
+
+    "intent_mapping": {
+
+
+      "NAVIGATION": {
+
+        "freebasics_intent": "navigational",
+
+        "target": "question_intent_registry"
+
+      },
+
+
+      "INFORMATION": {
+
+        "freebasics_intent": "informational",
+
+        "target": "question_intent_registry"
+
+      },
+
+
+      "TRANSACTIONAL_INFORMATION": {
+
+        "freebasics_intent": "commercial_transactional",
+
+        "target": "search_intent_graph"
+
+      }
+
+    },
+
+
+    "knowledge_graph": {
+
+
+      "entity": {
+
+        "target": "knowledge_master/entity_layer",
+
+        "relation": "entity_identity"
+
+      },
+
+
+      "topic": {
+
+        "target": "knowledge_master/topic_layer",
+
+        "relation": "entity_topic"
+
+      },
+
+
+      "question": {
+
+        "target": "question_intent_registry",
+
+        "relation": "question_answer"
+
+      },
+
+
+      "article": {
+
+        "target": "content_graph/content_nodes",
+
+        "relation": "topic_article"
+
+      },
+
+
+      "source": {
+
+        "target": "source_layer",
+
+        "relation": "verified_source"
+
+      },
+
+
+      "location": {
+
+        "target": "geo_layer",
+
+        "relation": "geo_context"
+
+      }
+
+    },
+
+
+    "link_graph_mapping": {
+
+
+      "hub_to_topic": {
+
+        "source_relation": "HUB_PAGE -> TOPIC_PAGE",
+
+        "target_relation": "silo_to_topic"
+
+      },
+
+
+      "topic_to_cluster": {
+
+        "source_relation": "TOPIC_PAGE -> RECIPE_CLUSTER",
+
+        "target_relation": "topic_to_cluster"
+
+      },
+
+
+      "cluster_to_article": {
+
+        "source_relation": "RECIPE_CLUSTER -> CONTENT_PAGE",
+
+        "target_relation": "cluster_to_article"
+
+      },
+
+
+      "article_to_product": {
+
+        "source_relation": "CONTENT_PAGE",
+
+        "target_relation": "article_supports_product"
+
+      }
+
+    },
+
+
+    "authority_mapping": {
+
+
+      "hub_score": {
+
+        "source": "hub_score_report.csv",
+
+        "target": "authority_layer"
+
+      },
+
+
+      "link_equity": {
+
+        "source": "link_equity_flow_graph.csv",
+
+        "target": "authority_layer/link_graph"
+
+      },
+
+
+      "trust_sources": {
+
+        "source": "trust_source_graph.csv",
+
+        "target": "source_layer"
+
+      },
+
+
+      "eeat": {
+
+        "source": "eeat_authority_graph.csv",
+
+        "target": "authority_layer"
+
+      }
+
+    },
+
+
+    "ai_readiness_mapping": {
+
+
+      "question_answer_graph": {
+
+        "source": "ai_question_answer_graph.csv",
+
+        "target": "question_intent_registry"
+
+      },
+
+
+      "ai_geo_understanding": {
+
+        "source": "ai_geo_understanding_graph.csv",
+
+        "target": "geo_layer"
+
+      },
+
+
+      "ai_geo_retrieval": {
+
+        "source": "ai_geo_retrieval_layer.csv",
+
+        "target": "geo_layer"
+
+      },
+
+
+      "citation_readiness": {
+
+        "source": "ai_citation_readiness.csv",
+
+        "target": "source_layer"
+
+      }
+
+    },
+
+
+    "content_quality_mapping": {
+
+
+      "content_quality": {
+
+        "source": "content_quality_layer.csv",
+
+        "target": "content_generation_rules"
+
+      },
+
+
+      "content_template": {
+
+        "source": "content_template_analysis.csv",
+
+        "target": "content_models"
+
+      },
+
+
+      "content_type": {
+
+        "source": "content_type_graph.csv",
+
+        "target": "content_graph"
+
+      }
+
+    },
+
+
+    "schema_mapping": {
+
+
+      "schema_types": {
+
+        "source": "schema_type_analysis.csv",
+
+        "target": "schema_graph"
+
+      },
+
+
+      "schema_properties": {
+
+        "source": "schema_property_graph.csv",
+
+        "target": "schema_graph"
+
+      },
+
+
+      "schema_quality": {
+
+        "source": "schema_completeness_report.csv",
+
+        "target": "schema_validation"
+
+      }
+
+    },
+
+
+    "seo_structure_mapping": {
+
+
+      "semantic_keywords": {
+
+        "source": "semantic_keyword_entity_graph.csv",
+
+        "target": "entity_topic_graph"
+
+      },
+
+
+      "keyword_relationships": {
+
+        "source": "keyword_entity_relationship_graph.csv",
+
+        "target": "search_intent_graph"
+
+      },
+
+
+      "semantic_weight": {
+
+        "source": "semantic_weight_graph.csv",
+
+        "target": "content_optimizer"
+
+      },
+
+
+      "internal_links": {
+
+        "source": "html_internal_links.csv",
+
+        "target": "internal_linking_optimizer"
+
+      }
+
+    }
+
+  },
+
+
+  "freebasics_integration_targets": {
+
+
+    "topic_layer": 
+    "data_master/knowledge_master/topic_layer/topic_registry.json",
+
+
+    "question_layer":
+    "data_master/knowledge_master/topic_layer/question_intent_registry.json",
+
+
+    "content_graph":
+    "data_master/content_graph/content_nodes.json",
+
+
+    "entity_graph":
+    "data_master/content_graph/entity_topic_graph.json",
+
+
+    "authority":
+    "data_master/authority_layer",
+
+
+    "sources":
+    "data_master/source_layer",
+
+
+    "geo":
+    "data_master/geo_layer"
+
+  },
+
+
+  "pipeline": [
+
+    "chefkoch_scan",
+
+    "mapping_validation",
+
+    "entity_validation",
+
+    "topic_validation",
+
+    "intent_validation",
+
+    "relationship_builder",
+
+    "content_graph_update",
+
+    "authority_update",
+
+    "audit",
+
+    "production_ready"
+
+  ]
+
+}

@@ -1,0 +1,22 @@
+{
+  "open_graph": {
+    "og:title": "MagentaTV | Free Basics",
+    "og:description": "Informationen zu MagentaTV aus dem Free Basics Produktsystem.",
+    "og:type": "article",
+    "og:url": "https://freebasics.online/TEL_001",
+    "og:site_name": "Free Basics"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "MagentaTV | Free Basics",
+    "twitter:description": "Informationen zu MagentaTV.",
+    "twitter:url": "https://freebasics.online/TEL_001"
+  },
+  "entity": {
+    "product_id": "TEL_001",
+    "article_id": "ARTICLE_TEL_001",
+    "name": "MagentaTV",
+    "category": "telekom",
+    "partner": "telekom"
+  }
+}

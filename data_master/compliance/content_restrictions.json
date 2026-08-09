@@ -1,0 +1,34 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_restrictions",
+  "status": "ACTIVE",
+  "rules": [
+    {
+      "rule": "Keine erfundenen Produkte oder Partnerangebote erzeugen",
+      "source_required": true
+    },
+    {
+      "rule": "Keine erfundenen Preise, Provisionen oder Aktionen erzeugen",
+      "source_required": true
+    },
+    {
+      "rule": "Nur bestätigte Partnerdaten verwenden",
+      "source_required": true
+    },
+    {
+      "rule": "Keine unbelegten Qualitäts- oder Garantieversprechen verwenden",
+      "source_required": true
+    },
+    {
+      "rule": "Content muss auf vorhandenen Quellen basieren",
+      "source_required": true
+    }
+  ],
+  "allowed_sources": [
+    "partner_emails",
+    "partner_documents",
+    "google_sheets",
+    "official_assets",
+    "verified_product_data"
+  ]
+}

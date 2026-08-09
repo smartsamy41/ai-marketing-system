@@ -1,0 +1,46 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "partner_sources",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "partners": [
+    {
+      "name": "Amazon",
+      "source_type": "affiliate_product_source",
+      "rules": [
+        "Nur offizielle Produktbilder verwenden",
+        "Tracking-ID verwenden",
+        "Keine erfundenen Produktdaten"
+      ]
+    },
+    {
+      "name": "Check24",
+      "source_type": "affiliate_lead_source",
+      "rules": [
+        "Offizielle Werbemittel verwenden",
+        "Tracking erhalten",
+        "Partnerregeln beachten"
+      ]
+    },
+    {
+      "name": "Tarifcheck",
+      "partner_id": "165274",
+      "source_type": "affiliate_lead_source",
+      "rules": [
+        "Offizielle Werbemittel verwenden",
+        "Tracking erhalten",
+        "Werbung oder Anzeige kennzeichnen",
+        "Tippgeber Hinweis verwenden"
+      ]
+    },
+    {
+      "name": "Telekom Profis",
+      "partner_id": "100228979",
+      "source_type": "external_shop_source",
+      "rules": [
+        "Offiziellen Shop verwenden",
+        "Keine erfundenen Angebote erstellen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1742 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_experience_intelligence",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "principles": {
+    "semantic_html": true,
+    "mobile_first": true,
+    "responsive": true,
+    "accessibility": true,
+    "ai_ready": true,
+    "schema_ready": true,
+    "entity_connected": true
+  },
+  "page_structure": {
+    "header": [
+      "entity",
+      "title",
+      "direct_answer"
+    ],
+    "main_content": [
+      "article",
+      "facts",
+      "questions",
+      "faq",
+      "sources"
+    ],
+    "conversion_area": [
+      "selected_asset",
+      "partner_notice",
+      "tracking"
+    ],
+    "related_area": [
+      "related_articles",
+      "related_questions",
+      "related_products"
+    ],
+    "footer": [
+      "partner_information",
+      "legal_information",
+      "disclosure"
+    ]
+  },
+  "connections": {
+    "article_to_question": [
+      {
+        "product_id": "CHK24_004",
+        "question_id": "Q_CHK24_004_001"
+      },
+      {
+        "product_id": "CHK24_004",
+        "question_id": "Q_CHK24_004_002"
+      },
+      {
+        "product_id": "CHK24_004",
+        "question_id": "Q_CHK24_004_003"
+      },
+      {
+        "product_id": "CHK24_005",
+        "question_id": "Q_CHK24_005_001"
+      },
+      {
+        "product_id": "CHK24_005",
+        "question_id": "Q_CHK24_005_002"
+      },
+      {
+        "product_id": "CHK24_005",
+        "question_id": "Q_CHK24_005_003"
+      },
+      {
+        "product_id": "CHK24_002",
+        "question_id": "Q_CHK24_002_001"
+      },
+      {
+        "product_id": "CHK24_002",
+        "question_id": "Q_CHK24_002_002"
+      },
+      {
+        "product_id": "CHK24_002",
+        "question_id": "Q_CHK24_002_003"
+      },
+      {
+        "product_id": "CHK24_001",
+        "question_id": "Q_CHK24_001_001"
+      },
+      {
+        "product_id": "CHK24_001",
+        "question_id": "Q_CHK24_001_002"
+      },
+      {
+        "product_id": "CHK24_001",
+        "question_id": "Q_CHK24_001_003"
+      },
+      {
+        "product_id": "CHK24_003",
+        "question_id": "Q_CHK24_003_001"
+      },
+      {
+        "product_id": "CHK24_003",
+        "question_id": "Q_CHK24_003_002"
+      },
+      {
+        "product_id": "CHK24_003",
+        "question_id": "Q_CHK24_003_003"
+      },
+      {
+        "product_id": "CHK24_006",
+        "question_id": "Q_CHK24_006_001"
+      },
+      {
+        "product_id": "CHK24_006",
+        "question_id": "Q_CHK24_006_002"
+      },
+      {
+        "product_id": "CHK24_006",
+        "question_id": "Q_CHK24_006_003"
+      },
+      {
+        "product_id": "CHK24_007",
+        "question_id": "Q_CHK24_007_001"
+      },
+      {
+        "product_id": "CHK24_007",
+        "question_id": "Q_CHK24_007_002"
+      },
+      {
+        "product_id": "CHK24_007",
+        "question_id": "Q_CHK24_007_003"
+      },
+      {
+        "product_id": "CHK24_008",
+        "question_id": "Q_CHK24_008_001"
+      },
+      {
+        "product_id": "CHK24_008",
+        "question_id": "Q_CHK24_008_002"
+      },
+      {
+        "product_id": "CHK24_008",
+        "question_id": "Q_CHK24_008_003"
+      },
+      {
+        "product_id": "TC_001",
+        "question_id": "Q_TC_001_001"
+      },
+      {
+        "product_id": "TC_001",
+        "question_id": "Q_TC_001_002"
+      },
+      {
+        "product_id": "TC_001",
+        "question_id": "Q_TC_001_003"
+      },
+      {
+        "product_id": "TC_002",
+        "question_id": "Q_TC_002_001"
+      },
+      {
+        "product_id": "TC_002",
+        "question_id": "Q_TC_002_002"
+      },
+      {
+        "product_id": "TC_002",
+        "question_id": "Q_TC_002_003"
+      },
+      {
+        "product_id": "TC_003",
+        "question_id": "Q_TC_003_001"
+      },
+      {
+        "product_id": "TC_003",
+        "question_id": "Q_TC_003_002"
+      },
+      {
+        "product_id": "TC_003",
+        "question_id": "Q_TC_003_003"
+      },
+      {
+        "product_id": "TC_004",
+        "question_id": "Q_TC_004_001"
+      },
+      {
+        "product_id": "TC_004",
+        "question_id": "Q_TC_004_002"
+      },
+      {
+        "product_id": "TC_004",
+        "question_id": "Q_TC_004_003"
+      },
+      {
+        "product_id": "TC_005",
+        "question_id": "Q_TC_005_001"
+      },
+      {
+        "product_id": "TC_005",
+        "question_id": "Q_TC_005_002"
+      },
+      {
+        "product_id": "TC_005",
+        "question_id": "Q_TC_005_003"
+      },
+      {
+        "product_id": "TC_006",
+        "question_id": "Q_TC_006_001"
+      },
+      {
+        "product_id": "TC_006",
+        "question_id": "Q_TC_006_002"
+      },
+      {
+        "product_id": "TC_006",
+        "question_id": "Q_TC_006_003"
+      },
+      {
+        "product_id": "TC_007",
+        "question_id": "Q_TC_007_001"
+      },
+      {
+        "product_id": "TC_007",
+        "question_id": "Q_TC_007_002"
+      },
+      {
+        "product_id": "TC_007",
+        "question_id": "Q_TC_007_003"
+      },
+      {
+        "product_id": "TC_008",
+        "question_id": "Q_TC_008_001"
+      },
+      {
+        "product_id": "TC_008",
+        "question_id": "Q_TC_008_002"
+      },
+      {
+        "product_id": "TC_008",
+        "question_id": "Q_TC_008_003"
+      },
+      {
+        "product_id": "TC_009",
+        "question_id": "Q_TC_009_001"
+      },
+      {
+        "product_id": "TC_009",
+        "question_id": "Q_TC_009_002"
+      },
+      {
+        "product_id": "TC_009",
+        "question_id": "Q_TC_009_003"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "question_id": "Q_B0FQF32239_001"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "question_id": "Q_B0FQF32239_002"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "question_id": "Q_B0FQF32239_003"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_001"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_002"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "question_id": "Q_B0CFPWLGF2_003"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_001"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_002"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "question_id": "Q_B0DFYN8174_003"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_001"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_002"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "question_id": "Q_B0FPXFBL13_003"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_001"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_002"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "question_id": "Q_B0FPXDCDX2_003"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_001"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_002"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "question_id": "Q_B0FPXGJL6H_003"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_001"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_002"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "question_id": "Q_B0FPXDRR63_003"
+      },
+      {
+        "product_id": "3424631078",
+        "question_id": "Q_3424631078_001"
+      },
+      {
+        "product_id": "3424631078",
+        "question_id": "Q_3424631078_002"
+      },
+      {
+        "product_id": "3424631078",
+        "question_id": "Q_3424631078_003"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_001"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_002"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "question_id": "Q_B0FNX7HC9M_003"
+      },
+      {
+        "product_id": "3423209690",
+        "question_id": "Q_3423209690_001"
+      },
+      {
+        "product_id": "3423209690",
+        "question_id": "Q_3423209690_002"
+      },
+      {
+        "product_id": "3423209690",
+        "question_id": "Q_3423209690_003"
+      },
+      {
+        "product_id": "3832167242",
+        "question_id": "Q_3832167242_001"
+      },
+      {
+        "product_id": "3832167242",
+        "question_id": "Q_3832167242_002"
+      },
+      {
+        "product_id": "3832167242",
+        "question_id": "Q_3832167242_003"
+      },
+      {
+        "product_id": "3426281759",
+        "question_id": "Q_3426281759_001"
+      },
+      {
+        "product_id": "3426281759",
+        "question_id": "Q_3426281759_002"
+      },
+      {
+        "product_id": "3426281759",
+        "question_id": "Q_3426281759_003"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_001"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_002"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "question_id": "Q_B0DXLBZF4Q_003"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_001"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_002"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "question_id": "Q_B0CVXSK4D3_003"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_001"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_002"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "question_id": "Q_B08P4YPB8Q_003"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_001"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_002"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "question_id": "Q_B0FMS3V43J_003"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_001"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_002"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "question_id": "Q_B0D1YKBX82_003"
+      },
+      {
+        "product_id": "TEL_001",
+        "question_id": "Q_TEL_001_001"
+      },
+      {
+        "product_id": "TEL_001",
+        "question_id": "Q_TEL_001_002"
+      },
+      {
+        "product_id": "TEL_001",
+        "question_id": "Q_TEL_001_003"
+      },
+      {
+        "product_id": "TEL_002",
+        "question_id": "Q_TEL_002_001"
+      },
+      {
+        "product_id": "TEL_002",
+        "question_id": "Q_TEL_002_002"
+      },
+      {
+        "product_id": "TEL_002",
+        "question_id": "Q_TEL_002_003"
+      },
+      {
+        "product_id": "TEL_003",
+        "question_id": "Q_TEL_003_001"
+      },
+      {
+        "product_id": "TEL_003",
+        "question_id": "Q_TEL_003_002"
+      },
+      {
+        "product_id": "TEL_003",
+        "question_id": "Q_TEL_003_003"
+      },
+      {
+        "product_id": "TEL_004",
+        "question_id": "Q_TEL_004_001"
+      },
+      {
+        "product_id": "TEL_004",
+        "question_id": "Q_TEL_004_002"
+      },
+      {
+        "product_id": "TEL_004",
+        "question_id": "Q_TEL_004_003"
+      },
+      {
+        "product_id": "TEL_005",
+        "question_id": "Q_TEL_005_001"
+      },
+      {
+        "product_id": "TEL_005",
+        "question_id": "Q_TEL_005_002"
+      },
+      {
+        "product_id": "TEL_005",
+        "question_id": "Q_TEL_005_003"
+      },
+      {
+        "product_id": "TEL_006",
+        "question_id": "Q_TEL_006_001"
+      },
+      {
+        "product_id": "TEL_006",
+        "question_id": "Q_TEL_006_002"
+      },
+      {
+        "product_id": "TEL_006",
+        "question_id": "Q_TEL_006_003"
+      },
+      {
+        "product_id": "TEL_007",
+        "question_id": "Q_TEL_007_001"
+      },
+      {
+        "product_id": "TEL_007",
+        "question_id": "Q_TEL_007_002"
+      },
+      {
+        "product_id": "TEL_007",
+        "question_id": "Q_TEL_007_003"
+      },
+      {
+        "product_id": "TEL_008",
+        "question_id": "Q_TEL_008_001"
+      },
+      {
+        "product_id": "TEL_008",
+        "question_id": "Q_TEL_008_002"
+      },
+      {
+        "product_id": "TEL_008",
+        "question_id": "Q_TEL_008_003"
+      },
+      {
+        "product_id": "TEL_009",
+        "question_id": "Q_TEL_009_001"
+      },
+      {
+        "product_id": "TEL_009",
+        "question_id": "Q_TEL_009_002"
+      },
+      {
+        "product_id": "TEL_009",
+        "question_id": "Q_TEL_009_003"
+      },
+      {
+        "product_id": "TEL_010",
+        "question_id": "Q_TEL_010_001"
+      },
+      {
+        "product_id": "TEL_010",
+        "question_id": "Q_TEL_010_002"
+      },
+      {
+        "product_id": "TEL_010",
+        "question_id": "Q_TEL_010_003"
+      }
+    ],
+    "article_to_asset": [
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_005",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_006",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_007",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_008",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_SHOP_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_200",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_600",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_940",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_001",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_002",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_003",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_004",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "telekom_click",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "domain_init",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "system_event",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "learning_sync",
+        "usage": "AUTO_SELECTED"
+      }
+    ],
+    "article_to_navigation": [
+      {
+        "type": "product_to_silo",
+        "count": 44
+      },
+      {
+        "type": "product_to_footer",
+        "count": 44
+      },
+      {
+        "type": "product_to_category",
+        "count": 44
+      },
+      {
+        "type": "product_to_topic",
+        "count": 44
+      },
+      {
+        "type": "content_to_related",
+        "count": 0
+      }
+    ],
+    "product_to_experience": [
+      {
+        "product_id": "CHK24_004",
+        "article_id": "ARTICLE_CHK24_004",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_005",
+        "article_id": "ARTICLE_CHK24_005",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_002",
+        "article_id": "ARTICLE_CHK24_002",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_001",
+        "article_id": "ARTICLE_CHK24_001",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_003",
+        "article_id": "ARTICLE_CHK24_003",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_006",
+        "article_id": "ARTICLE_CHK24_006",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_007",
+        "article_id": "ARTICLE_CHK24_007",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "CHK24_008",
+        "article_id": "ARTICLE_CHK24_008",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_001",
+        "article_id": "ARTICLE_TC_001",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_002",
+        "article_id": "ARTICLE_TC_002",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_003",
+        "article_id": "ARTICLE_TC_003",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_004",
+        "article_id": "ARTICLE_TC_004",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_005",
+        "article_id": "ARTICLE_TC_005",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_006",
+        "article_id": "ARTICLE_TC_006",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_007",
+        "article_id": "ARTICLE_TC_007",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_008",
+        "article_id": "ARTICLE_TC_008",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TC_009",
+        "article_id": "ARTICLE_TC_009",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FQF32239",
+        "article_id": "ARTICLE_B0FQF32239",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0CFPWLGF2",
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0DFYN8174",
+        "article_id": "ARTICLE_B0DFYN8174",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FPXFBL13",
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FPXDCDX2",
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FPXGJL6H",
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FPXDRR63",
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "3424631078",
+        "article_id": "ARTICLE_3424631078",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FNX7HC9M",
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "3423209690",
+        "article_id": "ARTICLE_3423209690",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "3832167242",
+        "article_id": "ARTICLE_3832167242",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "3426281759",
+        "article_id": "ARTICLE_3426281759",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0DXLBZF4Q",
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0CVXSK4D3",
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B08P4YPB8Q",
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0FMS3V43J",
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "B0D1YKBX82",
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_001",
+        "article_id": "ARTICLE_TEL_001",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_002",
+        "article_id": "ARTICLE_TEL_002",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_003",
+        "article_id": "ARTICLE_TEL_003",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_004",
+        "article_id": "ARTICLE_TEL_004",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_005",
+        "article_id": "ARTICLE_TEL_005",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_006",
+        "article_id": "ARTICLE_TEL_006",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_007",
+        "article_id": "ARTICLE_TEL_007",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_008",
+        "article_id": "ARTICLE_TEL_008",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_009",
+        "article_id": "ARTICLE_TEL_009",
+        "experience": "FULL_CONTENT_PAGE"
+      },
+      {
+        "product_id": "TEL_010",
+        "article_id": "ARTICLE_TEL_010",
+        "experience": "FULL_CONTENT_PAGE"
+      }
+    ],
+    "content_to_schema": [
+      {
+        "entity": "DSL",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Mobilfunk",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Oekostrom",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Strom",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Gas",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Pauschalreise",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Mietwagen",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "C24 Bank",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Solaranlage",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Kfz-Versicherung",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Kredit",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Girokonto",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Baufinanzierung",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Hausratversicherung",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Haftpflichtversicherung",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Rentenversicherung",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Private Krankenversicherung",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Der Nachbar Psychothriller",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "MagentaTV",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Glasfaser",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "MagentaZuhause",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "MagentaMobil",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "MagentaMobil Young",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "MagentaMobil Prepaid",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "congstar Allnet",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "congstar Homespot",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "TV + Internet + Festnetz",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      },
+      {
+        "entity": "Datentarife",
+        "schema": [
+          "Article",
+          "FAQPage",
+          "Organization",
+          "Product"
+        ]
+      }
+    ],
+    "content_to_entity": [
+      {
+        "article_id": "ARTICLE_CHK24_004",
+        "entity": "DSL"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_005",
+        "entity": "Mobilfunk"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_002",
+        "entity": "Oekostrom"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_001",
+        "entity": "Strom"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_003",
+        "entity": "Gas"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_006",
+        "entity": "Pauschalreise"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_007",
+        "entity": "Mietwagen"
+      },
+      {
+        "article_id": "ARTICLE_CHK24_008",
+        "entity": "C24 Bank"
+      },
+      {
+        "article_id": "ARTICLE_TC_001",
+        "entity": "Solaranlage"
+      },
+      {
+        "article_id": "ARTICLE_TC_002",
+        "entity": "Kfz-Versicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_003",
+        "entity": "Kredit"
+      },
+      {
+        "article_id": "ARTICLE_TC_004",
+        "entity": "Girokonto"
+      },
+      {
+        "article_id": "ARTICLE_TC_005",
+        "entity": "Baufinanzierung"
+      },
+      {
+        "article_id": "ARTICLE_TC_006",
+        "entity": "Hausratversicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_007",
+        "entity": "Haftpflichtversicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_008",
+        "entity": "Rentenversicherung"
+      },
+      {
+        "article_id": "ARTICLE_TC_009",
+        "entity": "Private Krankenversicherung"
+      },
+      {
+        "article_id": "ARTICLE_B0FQF32239",
+        "entity": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer"
+      },
+      {
+        "article_id": "ARTICLE_B0CFPWLGF2",
+        "entity": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz"
+      },
+      {
+        "article_id": "ARTICLE_B0DFYN8174",
+        "entity": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXFBL13",
+        "entity": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDCDX2",
+        "entity": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXGJL6H",
+        "entity": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur"
+      },
+      {
+        "article_id": "ARTICLE_B0FPXDRR63",
+        "entity": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020"
+      },
+      {
+        "article_id": "ARTICLE_3424631078",
+        "entity": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme"
+      },
+      {
+        "article_id": "ARTICLE_B0FNX7HC9M",
+        "entity": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set"
+      },
+      {
+        "article_id": "ARTICLE_3423209690",
+        "entity": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens"
+      },
+      {
+        "article_id": "ARTICLE_3832167242",
+        "entity": "22 Bahnen Roman Lieblingsbuch 2023"
+      },
+      {
+        "article_id": "ARTICLE_3426281759",
+        "entity": "Der Nachbar Psychothriller"
+      },
+      {
+        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "entity": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31"
+      },
+      {
+        "article_id": "ARTICLE_B0CVXSK4D3",
+        "entity": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50"
+      },
+      {
+        "article_id": "ARTICLE_B08P4YPB8Q",
+        "entity": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml"
+      },
+      {
+        "article_id": "ARTICLE_B0FMS3V43J",
+        "entity": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen"
+      },
+      {
+        "article_id": "ARTICLE_B0D1YKBX82",
+        "entity": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset"
+      },
+      {
+        "article_id": "ARTICLE_TEL_001",
+        "entity": "MagentaTV"
+      },
+      {
+        "article_id": "ARTICLE_TEL_002",
+        "entity": "Glasfaser"
+      },
+      {
+        "article_id": "ARTICLE_TEL_003",
+        "entity": "MagentaZuhause"
+      },
+      {
+        "article_id": "ARTICLE_TEL_004",
+        "entity": "MagentaMobil"
+      },
+      {
+        "article_id": "ARTICLE_TEL_005",
+        "entity": "MagentaMobil Young"
+      },
+      {
+        "article_id": "ARTICLE_TEL_006",
+        "entity": "MagentaMobil Prepaid"
+      },
+      {
+        "article_id": "ARTICLE_TEL_007",
+        "entity": "congstar Allnet"
+      },
+      {
+        "article_id": "ARTICLE_TEL_008",
+        "entity": "congstar Homespot"
+      },
+      {
+        "article_id": "ARTICLE_TEL_009",
+        "entity": "TV + Internet + Festnetz"
+      },
+      {
+        "article_id": "ARTICLE_TEL_010",
+        "entity": "Datentarife"
+      }
+    ]
+  }
+}

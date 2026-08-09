@@ -1,0 +1,55 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "knowledge_sources",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "sources": [
+    {
+      "name": "Wikidata",
+      "type": "knowledge_graph",
+      "usage": "entity_verification",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "MediaWiki",
+      "type": "knowledge_source",
+      "usage": "background_context",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "Schema.org",
+      "type": "structured_data",
+      "usage": "search_engine_understanding",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "OpenGraph",
+      "type": "metadata",
+      "usage": "social_and_ai_context",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "JSON-LD",
+      "type": "structured_data",
+      "usage": "entity_markup",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "llms.txt",
+      "type": "ai_access_layer",
+      "usage": "llm_information_access",
+      "status": "PLANNED"
+    },
+    {
+      "name": "MCP",
+      "type": "ai_connection_layer",
+      "usage": "future_ai_interfaces",
+      "status": "PLANNED"
+    }
+  ],
+  "rules": {
+    "source_validation_required": true,
+    "entity_matching_required": true,
+    "no_unverified_claims": true
+  }
+}

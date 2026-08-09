@@ -1,0 +1,36 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "product_entity_profile_schema",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "entity": {
+    "product_id": "",
+    "name": "",
+    "entity_type": "Product",
+    "partner": "",
+    "category": ""
+  },
+  "knowledge": {
+    "summary": "",
+    "facts": [],
+    "questions": [],
+    "topics": []
+  },
+  "relationships": {
+    "related_products": [],
+    "related_categories": [],
+    "related_locations": [],
+    "related_articles": [],
+    "related_newsletters": []
+  },
+  "sources": {
+    "primary_source": "",
+    "references": []
+  },
+  "ai_layer": {
+    "llm_context": "",
+    "schema_ready": false,
+    "wikidata_ready": false,
+    "mediawiki_ready": false
+  }
+}

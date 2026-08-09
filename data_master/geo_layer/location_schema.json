@@ -1,0 +1,42 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "location_schema",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "required_fields": [
+    "location_id",
+    "name",
+    "postal_code",
+    "state",
+    "country",
+    "source",
+    "wikidata_id"
+  ],
+  "structure": {
+    "identity": {
+      "location_id": "",
+      "name": "",
+      "postal_code": "",
+      "state": "",
+      "country": "Deutschland"
+    },
+    "entity": {
+      "wikidata_id": "",
+      "knowledge_graph": "",
+      "sameAs": []
+    },
+    "content": {
+      "related_products": [],
+      "related_categories": [],
+      "articles": [],
+      "landingpages": [],
+      "faq": []
+    },
+    "sources": [],
+    "validation": {
+      "real_location": true,
+      "source_verified": true,
+      "geo_page_allowed": false
+    }
+  }
+}

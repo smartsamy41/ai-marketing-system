@@ -1,0 +1,28 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "source": "templates/components/affiliate_disclosure.html",
+  "type": "disclosure_rules",
+  "status": "ACTIVE",
+  "required_elements": [
+    {
+      "element": "Werbung / Anzeige",
+      "required": true
+    },
+    {
+      "element": "Affiliate Hinweis",
+      "required": true
+    },
+    {
+      "element": "Tippgeber Hinweis",
+      "required": true
+    },
+    {
+      "element": "Partnername",
+      "required": true
+    },
+    {
+      "element": "Aktualisierungsdatum",
+      "required": true
+    }
+  ]
+}
