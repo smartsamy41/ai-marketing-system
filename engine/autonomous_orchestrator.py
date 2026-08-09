@@ -49,7 +49,14 @@ class AutonomousOrchestrator:
         try:
 
 
-            if learning.get("status") == "optimized":
+            if (
+    learning.get("status") == "optimized"
+    and (
+        learning.get("clicks",0) > 0
+        or learning.get("conversions",0) > 0
+        or learning.get("revenue",0) > 0
+    )
+):
 
 
                 cycle_time = datetime.utcnow().strftime(
