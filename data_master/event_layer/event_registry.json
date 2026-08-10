@@ -3,6 +3,7 @@
   "type": "event_registry",
   "version": "1.0",
   "status": "ACTIVE",
+
   "rules": {
     "source_required": true,
     "real_events_only": true,
@@ -10,6 +11,7 @@
     "no_fake_campaigns": true,
     "calendar_planning_required": true
   },
+
   "event_structure": {
     "event_id": "",
     "event_name": "",
@@ -18,13 +20,120 @@
     "category": "",
     "start_date": "",
     "end_date": "",
-    "prepare_days_before": "",
+    "prepare_days_before": 14,
     "priority": "",
     "source": "",
     "content_allowed": true,
     "status": ""
   },
+
   "events": [
+
+    {
+      "event_id": "EV_AMZ_NEUJAHR_2026",
+      "event_name": "Neujahrs-Angebote",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-01-02",
+      "end_date": "2026-01-31",
+      "prepare_days_before": 14,
+      "priority": "MEDIUM",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_SPRING_2026",
+      "event_name": "Spring Sale",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-03-20",
+      "end_date": "2026-03-25",
+      "prepare_days_before": 14,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_OSTERN_2026",
+      "event_name": "Oster-Angebote",
+      "event_type": "seasonal_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-03-27",
+      "end_date": "2026-04-06",
+      "prepare_days_before": 14,
+      "priority": "MEDIUM",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_PRIME_DAY_2026",
+      "event_name": "Prime Day",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-26",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_BACK_TO_SCHOOL_2026",
+      "event_name": "Back to School",
+      "event_type": "seasonal_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-08-01",
+      "end_date": "2026-09-05",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_PRIME_BIG_DEAL_2026",
+      "event_name": "Prime Big Deal Days",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-08",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_BLACK_WEEK_2026",
+      "event_name": "Black Week",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-11-20",
+      "end_date": "2026-11-26",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
     {
       "event_id": "EV_AMZ_BLACK_FRIDAY_2026",
       "event_name": "Black Friday",
@@ -32,12 +141,88 @@
       "partner": "Amazon",
       "category": "E-Commerce",
       "start_date": "2026-11-27",
+      "end_date": "2026-11-27",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_CYBER_MONDAY_2026",
+      "event_name": "Cyber Monday",
+      "event_type": "shopping_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-11-30",
       "end_date": "2026-11-30",
       "prepare_days_before": 21,
       "priority": "HIGH",
       "source": "Amazon Partner Newsletter",
       "content_allowed": true,
       "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_AMZ_WEIHNACHTEN_2026",
+      "event_name": "Weihnachtsangebote",
+      "event_type": "seasonal_event",
+      "partner": "Amazon",
+      "category": "E-Commerce",
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-24",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Amazon Partner Newsletter",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_CHECK24_STROM_WECHSEL_2026",
+      "event_name": "Energie Wechsel Saison",
+      "event_type": "partner_campaign",
+      "partner": "CHECK24",
+      "category": "Energie",
+      "start_date": "2026-01-01",
+      "end_date": "2026-03-31",
+      "prepare_days_before": 14,
+      "priority": "HIGH",
+      "source": "Partner Informationen",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_TARIFCHECK_KFZ_2026",
+      "event_name": "KFZ Wechsel Saison",
+      "event_type": "partner_campaign",
+      "partner": "Tarifcheck",
+      "category": "Versicherung",
+      "start_date": "2026-10-01",
+      "end_date": "2026-11-30",
+      "prepare_days_before": 21,
+      "priority": "HIGH",
+      "source": "Partner Informationen",
+      "content_allowed": true,
+      "status": "ACTIVE"
+    },
+
+    {
+      "event_id": "EV_TELEKOM_NEUJAHR_2026",
+      "event_name": "Telekom Neujahrs Aktionen",
+      "event_type": "partner_campaign",
+      "partner": "Telekom",
+      "category": "Telekommunikation",
+      "start_date": "2026-01-02",
+      "end_date": "2026-01-31",
+      "prepare_days_before": 14,
+      "priority": "MEDIUM",
+      "source": "Partner Informationen",
+      "content_allowed": true,
+      "status": "ACTIVE"
     }
+
   ]
 }
