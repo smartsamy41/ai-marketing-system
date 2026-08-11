@@ -888,6 +888,37 @@ def home():
     )
 
 
+
+@app.get("/datasets/{filename}")
+def datasets(filename: str):
+
+    allowed_files = {
+        "knowledge-graph.json",
+        "verified-products.json",
+        "verified-products.jsonld"
+    }
+
+    if filename not in allowed_files:
+        raise HTTPException(
+            status_code=404,
+            detail="Dataset not found"
+        )
+
+    dataset_file = Path(
+        "public_web_assets/datasets"
+    ) / filename
+
+    if not dataset_file.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="Dataset file missing"
+        )
+
+    return FileResponse(
+        path=dataset_file
+    )
+
+
 @app.get(
     "/robots.txt",
     response_class=Response
