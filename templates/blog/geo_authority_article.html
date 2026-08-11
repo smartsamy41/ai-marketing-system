@@ -5,45 +5,27 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>{{title}}</title>
 
-<meta name="description"
-content="{{description}}">
+<meta name="description" content="{{description}}">
 
-<link rel="canonical"
-href="{{canonical_url}}">
+<link rel="canonical" href="{{canonical_url}}">
 
 
-<meta property="og:type"
-content="article">
-
-<meta property="og:site_name"
-content="Free Basics">
-
-<meta property="og:title"
-content="{{title}}">
-
-<meta property="og:description"
-content="{{description}}">
-
-<meta property="og:url"
-content="{{canonical_url}}">
-
-<meta property="og:image"
-content="{{og_image_url}}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Free Basics">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical_url}}">
+<meta property="og:image" content="{{og_image_url}}">
 
 
-<meta name="twitter:card"
-content="summary_large_image">
-
-<meta name="twitter:title"
-content="{{title}}">
-
-<meta name="twitter:description"
-content="{{description}}">
-
-<meta name="twitter:image"
-content="{{og_image_url}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{og_image_url}}">
 
 
 <script type="application/ld+json">
@@ -51,21 +33,74 @@ content="{{og_image_url}}">
 </script>
 
 
+<script type="application/ld+json">
+{{faq_schema}}
+</script>
+
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+line-height:1.6;
+max-width:950px;
+margin:auto;
+padding:20px;
+}
+
+.box{
+border:1px solid #ddd;
+border-radius:8px;
+padding:20px;
+margin:25px 0;
+}
+
+.answer{
+background:#f5f5f5;
+padding:15px;
+border-radius:6px;
+}
+
+.adbox{
+border:2px solid #333;
+padding:20px;
+text-align:center;
+}
+
+</style>
+
 </head>
 
 
 <body>
 
 
-<header>
+<header class="box">
 
-<h1>
-{{title}}
-</h1>
+<h1>{{title}}</h1>
 
 <p>
 {{ai_summary}}
 </p>
+
+
+<p>
+Autor:
+<strong>{{author}}</strong>
+</p>
+
+
+<p>
+Geprüft von:
+<strong>{{reviewed_by}}</strong>
+</p>
+
+
+<p>
+Stand:
+{{updated_at}}
+</p>
+
 
 </header>
 
@@ -74,31 +109,41 @@ content="{{og_image_url}}">
 <main>
 
 
-<section>
+<section class="box">
 
-<h2>
-Wissensartikel
-</h2>
+<h2>Das Wichtigste auf einen Blick</h2>
+
+{{direct_answer}}
+
+</section>
 
 
-<div>
+
+<section class="box">
+
+<h2>Wissensartikel</h2>
 
 {{content}}
-
-</div>
-
 
 </section>
 
 
 
 
-<section>
+<section class="box">
 
-<h2>
-Quellen und Datenbasis
-</h2>
+<h2>Entität und Kontext</h2>
 
+{{entity_context}}
+
+</section>
+
+
+
+
+<section class="box">
+
+<h2>Fakten und Quellen</h2>
 
 <ul>
 
@@ -106,91 +151,76 @@ Quellen und Datenbasis
 
 </ul>
 
+</section>
+
+
+
+
+<section class="box">
+
+<h2>Fragen und Antworten</h2>
+
+{{questions}}
 
 </section>
 
 
 
 
+<section class="box">
 
-<section>
-
-<h2>
-Passende Themen und Angebote
-</h2>
-
-
-<div>
-
-{{related_products}}
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section>
-
-<h2>
-Weitere Themen aus dieser Kategorie
-</h2>
-
-
-<div>
-
-{{internal_links}}
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section>
-
-<h2>
-Newsletter
-</h2>
-
-
-<p>
-Erhalte neue Informationen, Ratgeber und Hinweise zu passenden Themen.
-</p>
-
-
-<div>
-
-{{newsletter}}
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section>
-
-<h2>
-FAQ
-</h2>
-
-
-<div>
+<h2>FAQ</h2>
 
 {{faq}}
 
-</div>
+</section>
 
+
+
+
+<section class="box">
+
+<h2>Verwandte Themen</h2>
+
+{{related_products}}
+
+</section>
+
+
+
+
+<section class="box">
+
+<h2>Weitere Informationen</h2>
+
+{{internal_links}}
+
+</section>
+
+
+
+
+<section class="adbox">
+
+<h3>Werbung / Anzeige</h3>
+
+<p>
+Dieser Bereich enthält externe Partnerangebote.
+</p>
+
+
+{{affiliate_area}}
+
+</section>
+
+
+
+
+<section class="box">
+
+<h2>Newsletter</h2>
+
+{{newsletter}}
 
 </section>
 
@@ -201,8 +231,7 @@ FAQ
 
 
 
-
-<footer>
+<footer class="box">
 
 
 {{footer}}
@@ -214,13 +243,11 @@ FAQ
 Impressum
 </a>
 
-
 |
 
 <a href="/datenschutz">
 Datenschutz
 </a>
-
 
 |
 
@@ -235,10 +262,7 @@ Affiliate-Hinweis
 </footer>
 
 
-
-
 {{cookie_consent}}
-
 
 
 </body>

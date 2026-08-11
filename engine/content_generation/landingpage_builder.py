@@ -19,7 +19,9 @@ class LandingPageBuilder:
     ):
 
         self.system = system
+
         self.renderer = TemplateRenderer()
+
         self.link_optimizer = InternalLinkingOptimizer()
 
 
@@ -31,9 +33,14 @@ class LandingPageBuilder:
         facts=None
     ):
 
+
+        facts = facts or {}
+
+
         now = datetime.now(
             timezone.utc
         ).strftime("%Y-%m-%d")
+
 
 
         product_id = product.get(
@@ -54,31 +61,46 @@ class LandingPageBuilder:
         )
 
 
-        slug = (
-            name.lower()
-            .replace(" ", "-")
-            .replace("ö", "oe")
-            .replace("ä", "ae")
-            .replace("ü", "ue")
-        )
-
-
         partner = product.get(
             "partner",
             ""
         )
 
 
-        external_shop = False
+
+        summary = product.get(
+            "summary",
+            ""
+        )
 
 
-        if partner.lower() == "telekom":
 
-            external_shop = True
+        questions = product.get(
+            "questions",
+            []
+        )
+
+
+        faq = product.get(
+            "faq",
+            []
+        )
+
+
+        sources = product.get(
+            "sources",
+            []
+        )
+
+
+        key_facts = product.get(
+            "key_facts",
+            []
+        )
 
 
 
-        resolved_related_products = (
+        related_products = (
 
             related_products
 
@@ -93,584 +115,439 @@ class LandingPageBuilder:
 
 
 
-        link_result = self.link_optimizer.suggest_links(
+        slug = (
 
-            {
-                "slug": slug,
-                "category": category
-            },
+            name.lower()
 
-            resolved_related_products
-
-        )
-
-
-
-        silo = product.get(
-            "silo",
-            ""
-        )
-
-
-        cluster = product.get(
-            "cluster",
-            category
-        )
-
-
-        newsletter_segment = product.get(
-            "newsletter_segment",
-            silo
-            or
-            category.lower().replace(
+            .replace(
                 " ",
-                "_"
+                "-"
             )
+
+            .replace(
+                "ä",
+                "ae"
+            )
+
+            .replace(
+                "ö",
+                "oe"
+            )
+
+            .replace(
+                "ü",
+                "ue"
+            )
+
         )
 
 
-        return {
 
+        entity = product.get(
+            "entity",
+            {}
+        )
 
-            "product_id":
 
-                product_id,
 
+        entity_html = ""
 
-            "title":
 
-                name,
+        if entity:
 
+            entity_html = f"""
 
-            "category":
+<section class="box">
 
-                category,
+<h2>Information zur Entität</h2>
 
+<p>
+{entity}
+</p>
 
-            "partner":
+</section>
 
-                partner,
+"""
 
 
-            "silo":
 
-                silo,
 
+        facts_html = ""
 
-            "cluster":
 
-                cluster,
+        if key_facts:
 
 
-            "related_products":
+            facts_html = """
 
-                resolved_related_products,
+<section class="box">
 
+<h2>Wichtige Fakten</h2>
 
-            "landingpage_url":
+<ul>
 
-                f"https://freebasics.online/lp/{product_id}",
+"""
 
 
-            "article_url":
+            for fact in key_facts:
 
-                f"https://freebasics.online/blog/{slug}-ratgeber",
-
-
-            "tracking_url":
-
-                product.get(
-                    "tracking_url",
-                    ""
-                ),
-
-
-            "external_shop":
-
-                external_shop,
-
-
-            "shop_url":
-
-                product.get(
-                    "shop_url",
-                    ""
-                ),
-
-
-            "description":
-
-                product.get(
-                    "summary",
-                    "Informationen und Wissensartikel."
-                ),
-
-
-            "content":
-
-                product.get(
-                    "content",
-                    "Weitere Informationen zum Angebot."
-                ),
-
-
-            "sources":
-
-                product.get(
-                    "sources",
-                    []
-                ),
-
-
-            "faq":
-
-                product.get(
-                    "faq",
-                    []
-                ),
-
-
-            "internal_links":
-
-                link_result,
-
-
-            "newsletter_enabled":
-
-                True,
-
-
-            "newsletter_segment":
-
-                newsletter_segment,
-
-
-            "newsletter_topic":
-
-                f"Neue Informationen zu {category}",
-
-
-            "facts":
-
-                facts or {},
-
-
-            "author":
-
-                product.get(
-                    "author",
-                    "Redaktion Free Basics"
-                ),
-
-
-            "reviewer":
-
-                product.get(
-                    "reviewed_by",
-                    "Free Basics Qualitätsprüfung"
-                ),
-
-
-            "updated_at":
-
-                product.get(
-                    "updated_at",
-                    now
-                ),
-
-
-            "status":
-
-                "ready_for_review",
-
-
-            "system":
-
-                self.system
-
-        }
-    def render(
-        self,
-        page
-    ):
-
-
-        schema = {
-
-            "@context":
-
-                "https://schema.org",
-
-
-            "@type":
-
-                "WebPage",
-
-
-            "name":
-
-                page.get(
-                    "title"
-                ),
-
-
-            "url":
-
-                page.get(
-                    "landingpage_url"
-                ),
-
-
-            "about":
-
-                page.get(
-                    "category"
+                facts_html += (
+                    f"<li>{fact}</li>"
                 )
 
-        }
 
+            facts_html += """
 
-
-        sources_html = "\n".join(
-
-            f"<li>{x}</li>"
-
-            for x in page.get(
-                "sources",
-                []
-            )
-
-        )
-
-
-
-        internal_html = ""
-
-
-        for link in page.get(
-            "internal_links",
-            {}
-        ).get(
-            "links",
-            []
-        ):
-
-
-            internal_html += f"""
-
-<div class="internal-link">
-
-<a href="/blog/{link.get('to')}-ratgeber">
-
-{link.get('reason')}:
-{link.get('to')}
-
-</a>
-
-</div>
-
-"""
-
-
-
-        related_html = ""
-
-
-        for item in page.get(
-            "related_products",
-            []
-        ):
-
-
-            related_html += f"""
-
-<div class="related-product">
-
-<a href="/lp/{item.get('product_id')}">
-
-{item.get('product_id')}
--
-{item.get('category','')}
-
-</a>
-
-</div>
-
-"""
-
-
-
-        cluster_html = f"""
-
-<section class="cluster-box">
-
-<h2>
-Themenbereich
-</h2>
-
-
-<p>
-Silo:
-{page.get('silo','')}
-</p>
-
-
-<p>
-Cluster:
-{page.get('cluster','')}
-</p>
-
-
-<p>
-Newsletter Segment:
-{page.get('newsletter_segment','')}
-</p>
-
-
-</section>
-
-
-<section class="related-products">
-
-<h2>
-Verwandte Produkte
-</h2>
-
-
-{related_html}
-
+</ul>
 
 </section>
 
 """
+
+
+
+
+        questions_html = ""
+
+
+        if questions:
+
+
+            questions_html = """
+
+<section class="box">
+
+<h2>Fragen und Antworten</h2>
+
+"""
+
+
+            for q in questions:
+
+
+                questions_html += f"""
+
+<h3>
+{q.get('question','')}
+</h3>
+
+<p>
+{q.get('answer','')}
+</p>
+
+"""
+
+
+            questions_html += """
+
+</section>
+
+"""
+
 
 
 
         faq_html = ""
 
 
-        for item in page.get(
-            "faq",
-            []
-        ):
+        if faq:
 
 
-            faq_html += f"""
+            faq_html = """
 
-<div class="faq-item">
+<section class="box">
 
-<h3>
-{item.get("question","")}
-</h3>
-
-
-<p>
-{item.get("answer","")}
-</p>
-
-
-</div>
+<h2>FAQ</h2>
 
 """
 
 
+            for item in faq:
 
-        newsletter_html = """
 
-<section class="newsletter-box">
+                faq_html += f"""
 
 <h3>
-Newsletter
+{item.get('question','')}
 </h3>
 
-
 <p>
-Neue Ratgeber und Informationen erhalten.
+{item.get('answer','')}
 </p>
 
+"""
 
-<a href="/newsletter">
-Newsletter Anmeldung
-</a>
 
+            faq_html += """
 
 </section>
 
 """
-        return self.renderer.render(
 
-            "landingpages/geo_optimized_landingpage.html",
+
+
+
+        sources_html = ""
+
+
+        if sources:
+
+
+            sources_html = """
+
+<section class="box">
+
+<h2>Fakten und Quellen</h2>
+
+<ul>
+
+"""
+
+
+            for source in sources:
+
+                sources_html += (
+
+                    f"<li>{source}</li>"
+
+                )
+
+
+            sources_html += """
+
+</ul>
+
+</section>
+
+"""
+
+
+
+
+        related_html = ""
+
+
+        if related_products:
+
+
+            related_html = """
+
+<section class="box">
+
+<h2>Verwandte Themen</h2>
+
+<ul>
+
+"""
+
+
+            for item in related_products:
+
+                related_html += (
+
+                    f"<li>{item}</li>"
+
+                )
+
+
+            related_html += """
+
+</ul>
+
+</section>
+
+"""
+
+
+
+
+        schema = json.dumps(
 
             {
 
-                **page,
+                "@context":
+                    "https://schema.org",
 
+                "@type":
+                    "WebPage",
 
-                "canonical_url":
+                "name":
+                    name,
 
-                    (
-                        page.get("landingpage_url")
-                        or page.get("final_url")
-                        or f"https://freebasics.online/lp/{page.get('product_id','')}"
-                    ),
+                "description":
+                    summary,
 
+                "author":
+                    {
 
-                "internal_links":
+                        "@type":
+                            "Organization",
 
-                    internal_html,
+                        "name":
+                            "Free Basics"
 
+                    }
 
-                "cluster":
+            },
 
-                    cluster_html,
+            ensure_ascii=False,
 
-
-                "newsletter":
-
-                    newsletter_html,
-
-
-                "faq":
-
-                    faq_html,
-
-
-                "sources":
-
-                    sources_html,
-
-
-                "footer":
-
-                    get_eeat_footer(),
-
-
-                "cookie_consent":
-
-                    get_cookie_consent_script(),
-
-
-                "page_schema":
-
-                    json.dumps(
-
-                        schema,
-
-                        indent=2,
-
-                        ensure_ascii=False
-
-                    )
-
-            }
+            indent=2
 
         )
 
 
-
-    def validate(
-        self,
-        page
-    ):
-
-
-        required = [
-
-            "product_id",
-
-            "title",
-
-            "landingpage_url",
-
-            "updated_at"
-
-        ]
-
-
-        missing = [
-
-            x
-
-            for x in required
-
-            if not page.get(x)
-
-        ]
 
 
         return {
 
 
-            "valid":
-
-                len(missing) == 0,
-
-
-            "missing":
-
-                missing
-
-        }
-
-
-
-if __name__ == "__main__":
-
-
-    builder = LandingPageBuilder()
-
-
-    page = builder.build(
-
-        {
-
             "product_id":
-
-                "CHK24_001",
-
-
-            "name":
-
-                "Strom",
+                product_id,
 
 
-            "category":
-
-                "energie",
-
-
-            "partner":
-
-                "check24",
+            "title":
+                name,
 
 
-            "silo":
+            "description":
+                summary,
 
-                "energie",
+
+            "canonical_url":
+                f"https://freebasics.online/lp/{product_id}",
+
+
+
+            "page_schema":
+                schema,
+
+
+
+            "author":
+                product.get(
+                    "author",
+                    "Redaktion Free Basics"
+                ),
+
+
+
+            "reviewed_by":
+                product.get(
+                    "reviewed_by",
+                    ""
+                ),
+
+
+
+            "updated_at":
+                now,
+
+
+
+            "content":
+
+                f"""
+
+<section class="box">
+
+<h2>Direktantwort</h2>
+
+<p>
+{summary}
+</p>
+
+</section>
+
+
+<section class="box">
+
+<h2>Produktinformationen</h2>
+
+<p>
+{name} gehört zum Bereich {category}.
+</p>
+
+</section>
+
+
+{entity_html}
+
+{facts_html}
+
+{questions_html}
+
+{faq_html}
+
+{sources_html}
+
+{related_html}
+
+""",
+
+
+
+            "tracking_url":
+
+                product.get(
+                    "tracking_url",
+                    "#"
+                ),
+
+
+
+            "affiliate_label":
+
+                "Werbung / Anzeige",
+
+
+
+            "footer":
+
+                get_eeat_footer(),
+
+
+
+            "cookie_consent":
+
+                get_cookie_consent_script(),
+
+
+
+            "newsletter":
+
+                "",
+
 
 
             "cluster":
 
-                "strom"
+                product.get(
+                    "cluster",
+                    category
+                ),
+
+
+
+            "internal_links":
+
+                ""
 
         }
 
-    )
 
 
-    print(
 
-        builder.validate(
-            page
+    def render(
+        self,
+        landingpage
+    ):
+
+
+        return self.renderer.render(
+
+            "landingpages/geo_optimized_landingpage.html",
+
+            landingpage
+
         )
-
-    )
-
-
-    print(
-
-        builder.render(
-            page
-        )[:1000]
-
-    )

@@ -1,0 +1,1520 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "content_quality_audit",
+  "created": "2026-08-11T15:27:38.594225+00:00",
+  "landingpages": [
+    {
+      "file": "content_repository/landingpages/published/22-bahnen-roman-lieblingsbuch-2023.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/CHK24_001.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": true,
+        "sources": true,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": true
+      },
+      "score": 100,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/landingpages/published/amazon-kindle-paperwhite-neueste-generation-16-gb-ohne-werbung-schwarz.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/apple-airpods-pro-3-kabellose-in-ear-kopfhoerer.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/baufinanzierung.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/c24-bank.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/congstar-allnet.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/congstar-homespot.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/das-caf-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/das-café-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/das-kind-in-dir-muss-heimat-finden-der-schluessel-zur-loesung-fast-aller-probleme.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/datentarife.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/der-nachbar-psychothriller.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/die-off-campus-reihe-im-neuen-look-band-1-5-plus-exklusives-postkartenset.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/dsl.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/gas.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/girokonto.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/glasfaser.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/haftpflichtversicherung.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/hausratversicherung.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/kfz-versicherung.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/kredit.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/lego-editions-cristiano-ronaldo-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/lego-editions-kylian-mbapp-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/lego-editions-kylian-mbappé-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/lego-editions-lionel-messi-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/lego-editions-sports-offizieller-pokal-der-fifa-fussball-weltmeisterschaft-3d-diy-modell-mit-minifigur-43020.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/magentamobil-prepaid.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/magentamobil-young.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/magentamobil.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/magentatv.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/magentazuhause.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7,2-ml.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7-2-ml.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/mietwagen.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/mobilfunk.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/oekostrom.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/pauschalreise.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/philips-oneblade-360-face-body-elektrischer-rasierer-trimmer-und-bodygroomer-qp2824-31.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/philips-oneblade-intimate-intimrasur-trimmen-und-rasieren-mit-extra-hautschutz-modell-qp1924-30.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/philips-oneblade-original-360-klingen-passend-fuer-alle-oneblade-und-pro-modelle-4er-pack-qp440-50.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/private-krankenversicherung.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/rentenversicherung.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/sebastian-fitzek-thriller-bundle-der-augensammler-und-der-augenjaeger-bestseller-psychothriller-im-set.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/solaranlage.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/strom.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": true,
+        "sources": true,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 88,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/landingpages/published/sunday-natural-magnesium-komplex-240-kapseln-400mg-magnesium-aus-7-verbindungen.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/tv-+-internet-+-festnetz.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/landingpages/published/tv-internet-festnetz.html",
+      "type": "landingpage",
+      "checks": {
+        "title": true,
+        "description": true,
+        "schema": true,
+        "faq": false,
+        "sources": false,
+        "advertising": true,
+        "tracking": true,
+        "internal_links": false
+      },
+      "score": 62,
+      "status": "FAILED"
+    }
+  ],
+  "articles": [
+    {
+      "file": "content_repository/articles/published/22-bahnen-roman-lieblingsbuch-2023-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/amazon-kindle-paperwhite-neueste-generation-16-gb-ohne-werbung-schwarz-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/apple-airpods-pro-3-kabellose-in-ear-kopfhoerer-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/baufinanzierung-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/c24-bank-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/congstar-allnet-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/congstar-homespot-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/das-caf-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/articles/published/das-café-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/das-kind-in-dir-muss-heimat-finden-der-schluessel-zur-loesung-fast-aller-probleme-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/datentarife-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/der-nachbar-psychothriller-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/die-off-campus-reihe-im-neuen-look-band-1-5-plus-exklusives-postkartenset-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/dsl-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/gas-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/girokonto-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/glasfaser-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/haftpflichtversicherung-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/hausratversicherung-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/kfz-versicherung-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/kredit-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/lego-editions-cristiano-ronaldo-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/lego-editions-kylian-mbapp-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/articles/published/lego-editions-kylian-mbappé-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/lego-editions-lionel-messi-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/lego-editions-sports-offizieller-pokal-der-fifa-fussball-weltmeisterschaft-3d-diy-modell-mit-minifigur-43020-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/magentamobil-prepaid-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/magentamobil-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/magentamobil-young-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/magentatv-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/magentazuhause-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7,2-ml-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7-2-ml-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/articles/published/mietwagen-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/mobilfunk-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/oekostrom-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/pauschalreise-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/philips-oneblade-360-face-body-elektrischer-rasierer-trimmer-und-bodygroomer-qp2824-31-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/articles/published/philips-oneblade-intimate-intimrasur-trimmen-und-rasieren-mit-extra-hautschutz-modell-qp1924-30-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/articles/published/philips-oneblade-original-360-klingen-passend-fuer-alle-oneblade-und-pro-modelle-4er-pack-qp440-50-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    },
+    {
+      "file": "content_repository/articles/published/private-krankenversicherung-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/rentenversicherung-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/sebastian-fitzek-thriller-bundle-der-augensammler-und-der-augenjaeger-bestseller-psychothriller-im-set-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/solaranlage-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/strom-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/sunday-natural-magnesium-komplex-240-kapseln-400mg-magnesium-aus-7-verbindungen-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/tv-+-internet-+-festnetz-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": true,
+        "facts": true,
+        "sources": true,
+        "faq": true,
+        "related_content": false
+      },
+      "score": 86,
+      "status": "OK"
+    },
+    {
+      "file": "content_repository/articles/published/tv-internet-festnetz-ratgeber.html",
+      "type": "article",
+      "checks": {
+        "article_schema": true,
+        "author": true,
+        "direct_answer": false,
+        "facts": false,
+        "sources": true,
+        "faq": true,
+        "related_content": true
+      },
+      "score": 71,
+      "status": "FAILED"
+    }
+  ],
+  "summary": {
+    "landingpages_ok": 2,
+    "landingpages_failed": 47,
+    "articles_ok": 41,
+    "articles_failed": 7,
+    "overall_status": "CHECK_REQUIRED"
+  }
+}

@@ -1,5 +1,7 @@
 import sys
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 
@@ -17,8 +19,72 @@ from engine.publishing.repository_publisher import RepositoryPublisher
 
 
 
-# HIER DAS PRODUKT ÄNDERN
-PRODUCT_ID = "CHK24_004"
+def normalize_slug(text):
+
+    text = str(text).lower()
+
+
+    replacements = {
+
+        "ä": "ae",
+        "ö": "oe",
+        "ü": "ue",
+        "ß": "ss"
+
+    }
+
+
+    for old, new in replacements.items():
+
+        text = text.replace(
+            old,
+            new
+        )
+
+
+    text = unicodedata.normalize(
+        "NFKD",
+        text
+    )
+
+
+    text = text.encode(
+        "ascii",
+        "ignore"
+    ).decode(
+        "ascii"
+    )
+
+
+    text = re.sub(
+        r"[^a-z0-9]+",
+        "-",
+        text
+    )
+
+
+    text = re.sub(
+        r"-+",
+        "-",
+        text
+    )
+
+
+    return text.strip("-")
+
+
+
+PRODUCT_ID = (
+
+    sys.argv[1]
+
+    if len(sys.argv) > 1
+
+    else
+
+    "CHK24_001"
+
+)
 
 
 
@@ -41,7 +107,9 @@ with open(
 
 product = next(
 
-    p for p in catalog["products"]
+    p
+
+    for p in catalog["products"]
 
     if p["product_id"] == PRODUCT_ID
 
@@ -61,7 +129,22 @@ result = pipeline.process(
 
 
 
+if result.get("status") != "READY":
+
+    print(
+        "ERROR:"
+    )
+
+    print(
+        result
+    )
+
+    sys.exit(1)
+
+
+
 landing_product = result["landingpage"]
+
 
 
 landing_html = renderer.render_landingpage(
@@ -70,38 +153,50 @@ landing_html = renderer.render_landingpage(
 
 
 
-slug = (
+slug = normalize_slug(
     product["name"]
-    .lower()
-    .replace("ä","ae")
-    .replace("ö","oe")
-    .replace("ü","ue")
-    .replace(" ","-")
 )
 
 
 
 landing_path = publisher.save_landingpage(
+
     slug,
+
     landing_html
+
 )
 
 
 
 article_html = renderer.render_article(
+
     result["article"]
+
 )
 
 
 
 article_path = publisher.save_article(
+
     slug + "-ratgeber",
+
     article_html
+
 )
 
 
 
 print()
-print("PRODUCTION CREATED")
-print(landing_path)
-print(article_path)
+
+print(
+    "PRODUCTION CREATED"
+)
+
+print(
+    landing_path
+)
+
+print(
+    article_path
+)

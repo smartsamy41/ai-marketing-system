@@ -1,99 +1,119 @@
+import json
 from pathlib import Path
+import re
 
 
-landingpages = Path(
+CATALOG = Path(
+    "data_master/catalog/product_master_44.json"
+)
+
+
+LP_DIR = Path(
     "content_repository/landingpages/published"
 )
 
-articles = Path(
+
+ARTICLE_DIR = Path(
     "content_repository/articles/published"
 )
 
 
-def check_file(path):
 
-    content = path.read_text(
-        encoding="utf-8"
-    )
+def slugify(text):
 
-    checks = {
+    text = text.lower()
 
-        "canonical":
-            "rel=\"canonical\"" in content,
-
-        "schema":
-            "application/ld+json" in content,
-
-        "advertisement":
-            "Werbung / Anzeige" in content,
-
-        "product_id":
-            "productID" in content,
-
+    replacements = {
+        "ä":"ae",
+        "ö":"oe",
+        "ü":"ue",
+        "ß":"ss"
     }
 
-    return checks
+    for a,b in replacements.items():
+        text=text.replace(a,b)
+
+    text = re.sub(
+        r"[^a-z0-9]+",
+        "-",
+        text
+    )
+
+    return text.strip("-")
 
 
 
-print("=== LANDINGPAGES ===")
+with open(
+    CATALOG,
+    encoding="utf-8"
+) as f:
 
-landing_ok = 0
-
-for file in sorted(
-    landingpages.glob("*.html")
-):
-
-    result = check_file(file)
-
-    if all(result.values()):
-        landing_ok += 1
+    catalog=json.load(f)
 
 
-print(
-    "PASS:",
-    landing_ok,
-    "/",
-    len(list(landingpages.glob("*.html")))
-)
+
+expected_lp=set()
+expected_article=set()
+
+
+
+for product in catalog["products"]:
+
+    slug=slugify(
+        product["name"]
+    )
+
+    expected_lp.add(
+        slug+".html"
+    )
+
+    expected_article.add(
+        slug+"-ratgeber.html"
+    )
+
+
+
+print("="*60)
+print("PUBLISHED CONTENT AUDIT")
+print("="*60)
 
 
 
 print()
-print("=== ARTICLES ===")
-
-
-article_ok = 0
-
-for file in sorted(
-    articles.glob("*.html")
-):
-
-    result = {
-
-        "canonical":
-            "rel=\"canonical\"" in file.read_text(encoding="utf-8"),
-
-        "schema":
-            "application/ld+json" in file.read_text(encoding="utf-8"),
-
-        "author":
-            "Autor:" in file.read_text(encoding="utf-8"),
-
-        "reviewer":
-            "Geprüft von:" in file.read_text(encoding="utf-8"),
-
-    }
-
-
-    if all(result.values()):
-        article_ok += 1
+print("EXPECTED LANDINGPAGES:",len(expected_lp))
+print("EXPECTED ARTICLES:",len(expected_article))
 
 
 
-print(
-    "PASS:",
-    article_ok,
-    "/",
-    len(list(articles.glob("*.html")))
-)
+print()
+print("EXTRA LANDINGPAGES:")
+
+for f in sorted(LP_DIR.iterdir()):
+
+    if f.name not in expected_lp:
+
+        print(
+            "OLD:",
+            f.name
+        )
+
+
+
+print()
+print("EXTRA ARTICLES:")
+
+for f in sorted(ARTICLE_DIR.iterdir()):
+
+    if f.name not in expected_article:
+
+        print(
+            "OLD:",
+            f.name
+        )
+
+
+
+print()
+print("="*60)
+print("AUDIT COMPLETE")
+print("="*60)
