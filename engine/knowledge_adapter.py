@@ -4,6 +4,7 @@ from pathlib import Path
 
 class KnowledgeAdapter:
 
+
     def __init__(self):
 
         self.master_file = Path(
@@ -12,6 +13,10 @@ class KnowledgeAdapter:
 
         self.question_file = Path(
             "data_master/content_intelligence/question_intelligence_graph.json"
+        )
+
+        self.source_file = Path(
+            "data_master/content_intelligence/authority_source_graph.json"
         )
 
         self.knowledge_depth_file = Path(
@@ -37,6 +42,10 @@ class KnowledgeAdapter:
 
         self.questions = self._load(
             self.question_file
+        )
+
+        self.sources_graph = self._load(
+            self.source_file
         )
 
         self.knowledge_depth = self._load(
@@ -66,6 +75,7 @@ class KnowledgeAdapter:
 
             return {}
 
+
         with open(
             path,
             "r",
@@ -94,6 +104,7 @@ class KnowledgeAdapter:
 
                 return product
 
+
         return {}
 
 
@@ -104,6 +115,7 @@ class KnowledgeAdapter:
     ):
 
         result = []
+
 
         for item in self.questions.get(
             "questions",
@@ -118,6 +130,123 @@ class KnowledgeAdapter:
                     item
                 )
 
+
+        return result
+
+
+
+    def _get_faq(
+        self,
+        product_id
+    ):
+
+        faq = []
+
+
+        product = self._find_product(
+            product_id
+        )
+
+
+        catalog = product.get(
+            "catalog",
+            {}
+        )
+
+
+        existing = catalog.get(
+            "faq",
+            []
+        )
+
+
+        if existing:
+
+            return existing
+
+
+
+        questions = self._get_questions(
+            product_id
+        )
+
+
+        for q in questions:
+
+            faq.append(
+
+                {
+
+                    "question":
+                        q.get(
+                            "question",
+                            ""
+                        ),
+
+                    "answer":
+                        "Diese Information wird aus der Wissensbasis bereitgestellt."
+
+                }
+
+            )
+
+
+        return faq
+
+
+
+    def _get_sources(
+        self,
+        product_id
+    ):
+
+        result = []
+
+
+        product = self._find_product(
+            product_id
+        )
+
+
+        catalog = product.get(
+            "catalog",
+            {}
+        )
+
+
+        existing = catalog.get(
+            "sources",
+            []
+        )
+
+
+        if existing:
+
+            return existing
+
+
+
+        for item in self.sources_graph.get(
+            "connections",
+            {}
+        ).get(
+            "product_to_source",
+            []
+        ):
+
+
+            if item.get(
+                "product_id"
+            ) == product_id:
+
+
+                result.append(
+                    item.get(
+                        "source"
+                    )
+                )
+
+
         return result
 
 
@@ -128,6 +257,7 @@ class KnowledgeAdapter:
     ):
 
         result = []
+
 
         for item in self.assets.get(
             "assets",
@@ -141,6 +271,7 @@ class KnowledgeAdapter:
                 result.append(
                     item
                 )
+
 
         return result
 
@@ -198,7 +329,6 @@ class KnowledgeAdapter:
 
 
             "product_id":
-
                 master_product.get(
                     "product_id",
                     ""
@@ -206,7 +336,6 @@ class KnowledgeAdapter:
 
 
             "name":
-
                 identity.get(
                     "name",
                     ""
@@ -214,7 +343,6 @@ class KnowledgeAdapter:
 
 
             "partner":
-
                 identity.get(
                     "partner",
                     ""
@@ -222,176 +350,130 @@ class KnowledgeAdapter:
 
 
             "category":
-
                 identity.get(
                     "category",
                     ""
                 ),
 
 
-
             "landingpage":
-
                 catalog.get(
                     "landingpage",
                     ""
                 ),
 
 
-
             "tracking_url":
-
                 catalog.get(
                     "tracking_url",
                     ""
                 ),
 
 
-
             "summary":
-
                 catalog.get(
                     "summary",
                     ""
                 ),
 
 
-
             "key_facts":
-
                 catalog.get(
                     "key_facts",
                     []
                 ),
 
 
-
             "faq":
-
-                catalog.get(
-                    "faq",
-                    []
+                self._get_faq(
+                    product_id
                 ),
-
 
 
             "sources":
-
-                catalog.get(
-                    "sources",
-                    []
+                self._get_sources(
+                    product_id
                 ),
 
 
-
             "author":
-
                 catalog.get(
                     "author",
                     "Redaktion Free Basics"
                 ),
 
 
-
             "reviewed_by":
-
                 catalog.get(
                     "reviewed_by",
                     ""
                 ),
 
 
-
             "updated_at":
-
                 catalog.get(
                     "updated_at",
                     ""
                 ),
 
 
-
             "entity":
-
                 catalog.get(
                     "entity",
                     {}
                 ),
 
 
-
             "facts":
-
                 llm_context.get(
                     "facts",
                     {}
                 ),
 
 
-
             "wikidata":
-
                 knowledge.get(
                     "wikidata",
                     {}
                 ),
 
 
-
             "mediawiki":
-
                 knowledge.get(
                     "mediawiki",
                     {}
                 ),
 
 
-
             "validation":
-
                 validation,
 
 
-
-            # NEUE INTELLIGENCE LAYER
-
-
             "questions":
-
                 self._get_questions(
                     product_id
                 ),
 
 
-
             "knowledge_depth":
-
                 self.knowledge_depth,
 
 
-
             "content_experience":
-
                 self.experience,
 
 
-
             "asset_selection":
-
                 self._get_asset_selection(
                     product_id
                 ),
 
 
-
             "production_validation":
-
                 self.validation,
 
 
-
             "knowledge_status":
-
                 master_product.get(
                     "status",
                     "READY"
@@ -403,12 +485,11 @@ class KnowledgeAdapter:
 
 if __name__ == "__main__":
 
-
     adapter = KnowledgeAdapter()
 
 
     result = adapter.build_product_context(
-        "CHK24_001"
+        "CHK24_004"
     )
 
 

@@ -574,347 +574,1419 @@
     ],
     "article_to_asset": [
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_001",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_002",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_002",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_002",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_002",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_002",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_002",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_003",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_003",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_003",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_003",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_003",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_003",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_004",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_004",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_004",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_004",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_004",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_005",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_005",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_005",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_005",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_005",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_006",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_006",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_006",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_006",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_006",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_007",
+        "asset_id": "TC_001_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_007",
+        "asset_id": "TC_001_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_007",
+        "asset_id": "TC_001_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_007",
+        "asset_id": "TC_001_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_007",
+        "asset_id": "TC_001_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_008",
+        "asset_id": "TC_002_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_008",
+        "asset_id": "TC_002_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_008",
+        "asset_id": "TC_002_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_008",
+        "asset_id": "TC_002_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_008",
+        "asset_id": "TC_002_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_009",
+        "asset_id": "TC_002_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_009",
+        "asset_id": "TC_002_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_009",
+        "asset_id": "TC_002_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_009",
+        "asset_id": "TC_002_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TC_009",
+        "asset_id": "TC_002_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_002",
+        "asset_id": "TC_002_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_003",
+        "asset_id": "TC_002_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_004",
+        "asset_id": "TC_002_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_005",
+        "asset_id": "TC_002_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_006",
+        "asset_id": "TC_002_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_007",
+        "asset_id": "TC_002_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_008",
+        "asset_id": "TC_002_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "CHK24_001",
+        "asset_id": "TC_002_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_SHOP_001",
+        "asset_id": "TC_002_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_LOGO_200",
+        "asset_id": "TC_002_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_LOGO_300",
+        "asset_id": "TC_002_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_LOGO_600",
+        "asset_id": "TC_002_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_LOGO_940",
+        "asset_id": "TC_002_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_IMG_001",
+        "asset_id": "TC_002_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_IMG_002",
+        "asset_id": "TC_002_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_IMG_003",
+        "asset_id": "TC_002_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "TEL_IMG_004",
+        "asset_id": "TC_002_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "telekom_click",
+        "asset_id": "TC_002_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "domain_init",
+        "asset_id": "TC_002_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "system_event",
+        "asset_id": "TC_002_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_DIRECT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_CALCULATOR",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_SHORT",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_BANNER_300",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "commission_import",
+        "asset_id": "TC_003_BANNER_728",
         "usage": "AUTO_SELECTED"
       },
       {
-        "asset_id": "learning_sync",
+        "asset_id": "TC_003_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_003_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_005_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_006_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_007_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_008_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TC_009_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_002_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_002_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_002_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_002_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_002_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_003_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_003_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_003_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_003_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_003_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_005_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_005_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_005_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_005_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_005_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_006_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_006_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_006_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_006_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_006_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_007_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_007_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_007_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_007_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_007_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_008_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_008_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_008_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_008_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_008_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_001_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_001_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_001_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_001_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "CHK24_001_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_SHOP_001_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_SHOP_001_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_SHOP_001_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_SHOP_001_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_200_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_200_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_200_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_200_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_200_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_300_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_300_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_300_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_300_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_300_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_600_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_600_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_600_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_600_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_600_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_940_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_940_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_940_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_940_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_LOGO_940_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_001_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_001_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_001_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_001_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_001_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_002_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_002_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_002_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_002_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_002_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_003_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_003_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_003_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_003_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_003_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_004_DIRECT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_004_CALCULATOR",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_004_SHORT",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_004_BANNER_300",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "TEL_IMG_004_BANNER_728",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "telekom_click_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "domain_init_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "system_event_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "commission_import_GENERAL",
+        "usage": "AUTO_SELECTED"
+      },
+      {
+        "asset_id": "learning_sync_GENERAL",
         "usage": "AUTO_SELECTED"
       }
     ],

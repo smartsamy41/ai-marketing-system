@@ -4,15 +4,50 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 
 <title>{{title}}</title>
 
-<meta name="description" content="{{description}}">
 
-<link rel="canonical" href="{{canonical_url}}">
+<meta name="description"
+content="{{description}}">
 
-<meta name="robots" content="index, follow">
+
+<link rel="canonical"
+href="{{canonical_url}}">
+
+
+<meta name="robots"
+content="index, follow">
+
+
+<meta property="og:type"
+content="article">
+
+<meta property="og:title"
+content="{{title}}">
+
+<meta property="og:description"
+content="{{description}}">
+
+<meta property="og:url"
+href="{{canonical_url}}">
+
+<meta property="og:site_name"
+content="Free Basics">
+
+
+<meta name="twitter:card"
+content="summary_large_image">
+
+<meta name="twitter:title"
+content="{{title}}">
+
+<meta name="twitter:description"
+content="{{description}}">
 
 
 <script type="application/ld+json">
@@ -31,37 +66,62 @@ padding:20px;
 color:#222;
 }
 
+
 .box {
 padding:20px;
 margin:25px 0;
-border:1px solid #ddd;
+border:1px solid transparent;
 border-radius:8px;
 }
 
+
 .cta {
+
 border:2px solid #0055ff;
 padding:30px;
 text-align:center;
+
 }
 
+
 .button {
+
 background:#0055ff;
 color:white;
 padding:14px 30px;
 border-radius:6px;
 text-decoration:none;
+
 }
+
+
+.related-product {
+
+padding:10px;
+margin:10px 0;
+border-bottom:1px solid #ddd;
+
+}
+
+
+.related-product a {
+
+text-decoration:none;
+
+}
+
 
 .internal-link,
 .newsletter-box {
+
 padding:20px;
 margin:20px 0;
 border:1px solid #ddd;
 border-radius:8px;
+
 }
 
 </style>
-
 
 </head>
 
@@ -73,20 +133,24 @@ border-radius:8px;
 
 <h1>{{title}}</h1>
 
+
 <p>
 Herausgeber:
 <strong>{{author}}</strong>
 </p>
+
 
 <p>
 Geprüft von:
 <strong>{{reviewed_by}}</strong>
 </p>
 
+
 <p>
 Stand:
 {{updated_at}}
 </p>
+
 
 </header>
 
@@ -97,7 +161,10 @@ Stand:
 
 <section class="box">
 
-<h2>Das Wichtigste auf einen Blick</h2>
+<h2>
+Das Wichtigste auf einen Blick
+</h2>
+
 
 <p>
 {{description}}
@@ -109,11 +176,16 @@ Stand:
 
 <section class="box">
 
-<h2>Informationen</h2>
+<h2>
+Produktinformationen
+</h2>
 
-<p>
+
+<div>
+
 {{content}}
-</p>
+
+</div>
 
 </section>
 
@@ -123,7 +195,10 @@ Stand:
 
 <section class="box">
 
-<h2>Fakten & Quellen</h2>
+<h2>
+Fakten & Quellen
+</h2>
+
 
 <ul>
 
@@ -141,7 +216,10 @@ Stand:
 
 <section class="box">
 
-<h2>Häufige Fragen</h2>
+<h2>
+Häufige Fragen
+</h2>
+
 
 {{faq}}
 
@@ -150,40 +228,47 @@ Stand:
 {% endif %}
 
 
-<section class="cluster-box">
 
-{{cluster}}
+<section class="box">
 
-</section>
+<h2>
+Angebote prüfen
+</h2>
 
-
-
-<section class="cta">
 
 <p>
 <strong>Werbung / Anzeige</strong>
 </p>
 
-<h2>Angebot prüfen</h2>
 
 <a class="button"
 href="{{tracking_url}}"
-rel="sponsored nofollow"
-target="_blank">
+rel="sponsored nofollow">
 
 Vergleich starten
 
 </a>
 
+
 </section>
 
 
 
-{{internal_links}}
+{% if related_products %}
+
+<section class="box">
+
+<h2>
+Verwandte Themen
+</h2>
 
 
+{{related_products}}
 
-{{newsletter}}
+
+</section>
+
+{% endif %}
 
 
 
@@ -198,8 +283,8 @@ Vergleich starten
 </footer>
 
 
-{{cookie_consent}}
 
+{{cookie_consent}}
 
 </body>
 

@@ -2,7 +2,6 @@ from engine.template_renderer import TemplateRenderer
 from engine.self_learning_agent.internal_linking_optimizer import InternalLinkingOptimizer
 
 from datetime import datetime, timezone
-import json
 
 from app.templates.base_components import (
     get_eeat_footer,
@@ -19,10 +18,75 @@ class LandingPageBuilder:
     ):
 
         self.system = system
-
         self.renderer = TemplateRenderer()
-
         self.link_optimizer = InternalLinkingOptimizer()
+
+
+
+    def _slugify(
+        self,
+        text
+    ):
+
+        return (
+            str(text)
+            .lower()
+            .replace(" ", "-")
+            .replace("ä", "ae")
+            .replace("ö", "oe")
+            .replace("ü", "ue")
+        )
+
+
+
+    def _build_related_products_html(
+        self,
+        products
+    ):
+
+        html = []
+
+        for item in (products or [])[:8]:
+
+            if isinstance(item, dict):
+
+                category = item.get(
+                    "category",
+                    item.get(
+                        "product_id",
+                        ""
+                    )
+                )
+
+
+                slug = self._slugify(
+                    category
+                )
+
+
+                html.append(
+                    f"""
+                    <div class="related-product">
+                        <a href="/angebote/{slug}">
+                            {category}
+                        </a>
+                    </div>
+                    """
+                )
+
+
+            else:
+
+                html.append(
+                    f"""
+                    <div class="related-product">
+                        {item}
+                    </div>
+                    """
+                )
+
+
+        return "\n".join(html)
 
 
 
@@ -34,18 +98,10 @@ class LandingPageBuilder:
     ):
 
 
-        facts = facts or {}
-
-
         now = datetime.now(
             timezone.utc
-        ).strftime("%Y-%m-%d")
-
-
-
-        product_id = product.get(
-            "product_id",
-            ""
+        ).strftime(
+            "%Y-%m-%d"
         )
 
 
@@ -61,46 +117,8 @@ class LandingPageBuilder:
         )
 
 
-        partner = product.get(
-            "partner",
-            ""
-        )
 
-
-
-        summary = product.get(
-            "summary",
-            ""
-        )
-
-
-
-        questions = product.get(
-            "questions",
-            []
-        )
-
-
-        faq = product.get(
-            "faq",
-            []
-        )
-
-
-        sources = product.get(
-            "sources",
-            []
-        )
-
-
-        key_facts = product.get(
-            "key_facts",
-            []
-        )
-
-
-
-        related_products = (
+        resolved_related_products = (
 
             related_products
 
@@ -115,312 +133,178 @@ class LandingPageBuilder:
 
 
 
-        slug = (
-
-            name.lower()
-
-            .replace(
-                " ",
-                "-"
-            )
-
-            .replace(
-                "ä",
-                "ae"
-            )
-
-            .replace(
-                "ö",
-                "oe"
-            )
-
-            .replace(
-                "ü",
-                "ue"
-            )
-
+        related_html = self._build_related_products_html(
+            resolved_related_products
         )
 
 
 
-        entity = product.get(
-            "entity",
-            {}
+        slug = self._slugify(
+            name
         )
 
 
 
-        entity_html = ""
-
-
-        if entity:
-
-            entity_html = f"""
-
-<section class="box">
-
-<h2>Information zur Entität</h2>
-
-<p>
-{entity}
-</p>
-
-</section>
-
-"""
-
-
-
-
-        facts_html = ""
-
-
-        if key_facts:
-
-
-            facts_html = """
-
-<section class="box">
-
-<h2>Wichtige Fakten</h2>
-
-<ul>
-
-"""
-
-
-            for fact in key_facts:
-
-                facts_html += (
-                    f"<li>{fact}</li>"
-                )
-
-
-            facts_html += """
-
-</ul>
-
-</section>
-
-"""
-
-
-
-
-        questions_html = ""
-
-
-        if questions:
-
-
-            questions_html = """
-
-<section class="box">
-
-<h2>Fragen und Antworten</h2>
-
-"""
-
-
-            for q in questions:
-
-
-                questions_html += f"""
-
-<h3>
-{q.get('question','')}
-</h3>
-
-<p>
-{q.get('answer','')}
-</p>
-
-"""
-
-
-            questions_html += """
-
-</section>
-
-"""
-
-
-
-
-        faq_html = ""
-
-
-        if faq:
-
-
-            faq_html = """
-
-<section class="box">
-
-<h2>FAQ</h2>
-
-"""
-
-
-            for item in faq:
-
-
-                faq_html += f"""
-
-<h3>
-{item.get('question','')}
-</h3>
-
-<p>
-{item.get('answer','')}
-</p>
-
-"""
-
-
-            faq_html += """
-
-</section>
-
-"""
-
-
-
-
-        sources_html = ""
-
-
-        if sources:
-
-
-            sources_html = """
-
-<section class="box">
-
-<h2>Fakten und Quellen</h2>
-
-<ul>
-
-"""
-
-
-            for source in sources:
-
-                sources_html += (
-
-                    f"<li>{source}</li>"
-
-                )
-
-
-            sources_html += """
-
-</ul>
-
-</section>
-
-"""
-
-
-
-
-        related_html = ""
-
-
-        if related_products:
-
-
-            related_html = """
-
-<section class="box">
-
-<h2>Verwandte Themen</h2>
-
-<ul>
-
-"""
-
-
-            for item in related_products:
-
-                related_html += (
-
-                    f"<li>{item}</li>"
-
-                )
-
-
-            related_html += """
-
-</ul>
-
-</section>
-
-"""
-
-
-
-
-        schema = json.dumps(
+        internal_links = self.link_optimizer.suggest_links(
 
             {
-
-                "@context":
-                    "https://schema.org",
-
-                "@type":
-                    "WebPage",
-
-                "name":
-                    name,
-
-                "description":
-                    summary,
-
-                "author":
-                    {
-
-                        "@type":
-                            "Organization",
-
-                        "name":
-                            "Free Basics"
-
-                    }
-
+                "slug": slug,
+                "category": category
             },
 
-            ensure_ascii=False,
-
-            indent=2
+            resolved_related_products
 
         )
-
 
 
 
         return {
 
 
+            "system":
+                self.system,
+
+
             "product_id":
-                product_id,
+                product.get(
+                    "product_id",
+                    ""
+                ),
+
 
 
             "title":
                 name,
 
 
+
+            "category":
+                category,
+
+
+
+            "partner":
+                product.get(
+                    "partner",
+                    ""
+                ),
+
+
+
+            "cluster":
+                product.get(
+                    "cluster",
+                    category
+                ),
+
+
+
+            "silo":
+                product.get(
+                    "silo",
+                    ""
+                ),
+
+
+
+            "product_type":
+                product.get(
+                    "product_type",
+                    ""
+                ),
+
+
+
+            "related_products":
+                related_html,
+
+
+
             "description":
-                summary,
+                product.get(
+                    "summary",
+                    ""
+                ),
 
 
-            "canonical_url":
-                f"https://freebasics.online/lp/{product_id}",
+
+            "content":
+                product.get(
+                    "content",
+                    ""
+                ),
 
 
 
-            "page_schema":
-                schema,
+            "faq":
+                product.get(
+                    "faq",
+                    []
+                ),
+
+
+
+            "questions":
+                product.get(
+                    "questions",
+                    []
+                ),
+
+
+
+            "sources":
+                product.get(
+                    "sources",
+                    []
+                ),
+
+
+
+            "knowledge_depth":
+                product.get(
+                    "knowledge_depth",
+                    {}
+                ),
+
+
+
+            "content_experience":
+                product.get(
+                    "content_experience",
+                    {}
+                ),
+
+
+
+            "production_page_architecture":
+                product.get(
+                    "production_page_architecture",
+                    {}
+                ),
+
+
+
+            "asset_selection":
+                product.get(
+                    "asset_selection",
+                    []
+                ),
+
+
+
+            "production_validation":
+                product.get(
+                    "production_validation",
+                    {}
+                ),
+
+
+
+            "tracking_url":
+                product.get(
+                    "tracking_url",
+                    "#"
+                ),
 
 
 
@@ -445,96 +329,28 @@ class LandingPageBuilder:
 
 
 
-            "content":
-
-                f"""
-
-<section class="box">
-
-<h2>Direktantwort</h2>
-
-<p>
-{summary}
-</p>
-
-</section>
-
-
-<section class="box">
-
-<h2>Produktinformationen</h2>
-
-<p>
-{name} gehört zum Bereich {category}.
-</p>
-
-</section>
-
-
-{entity_html}
-
-{facts_html}
-
-{questions_html}
-
-{faq_html}
-
-{sources_html}
-
-{related_html}
-
-""",
+            "canonical_url":
+                f"https://freebasics.online/angebote/{slug}",
 
 
 
-            "tracking_url":
-
-                product.get(
-                    "tracking_url",
-                    "#"
+            "internal_links":
+                internal_links.get(
+                    "links",
+                    []
                 ),
 
 
 
-            "affiliate_label":
-
-                "Werbung / Anzeige",
-
-
-
             "footer":
-
                 get_eeat_footer(),
 
 
 
             "cookie_consent":
-
-                get_cookie_consent_script(),
-
-
-
-            "newsletter":
-
-                "",
-
-
-
-            "cluster":
-
-                product.get(
-                    "cluster",
-                    category
-                ),
-
-
-
-            "internal_links":
-
-                ""
+                get_cookie_consent_script()
 
         }
-
 
 
 
@@ -542,7 +358,6 @@ class LandingPageBuilder:
         self,
         landingpage
     ):
-
 
         return self.renderer.render(
 

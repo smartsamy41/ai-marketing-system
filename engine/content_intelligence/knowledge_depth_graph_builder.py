@@ -36,224 +36,153 @@ class KnowledgeDepthGraphBuilder:
         )
 
 
-
     def load(self, path):
 
         if not path.exists():
-
             return {}
 
         with open(
             path,
-            "r",
             encoding="utf-8"
         ) as f:
-
             return json.load(f)
 
+
+    def add_unique(self, target, item):
+
+        if item not in target:
+            target.append(item)
 
 
     def build(self):
 
-
-        entities = self.load(
-            self.entity_file
-        )
-
-        products = self.load(
-            self.product_file
-        )
-
-        semantic = self.load(
-            self.semantic_file
-        )
-
-        questions = self.load(
-            self.question_file
-        )
-
-        articles = self.load(
-            self.article_file
-        )
-
-        sources = self.load(
-            self.source_file
-        )
-
+        entities = self.load(self.entity_file)
+        products = self.load(self.product_file)
+        semantic = self.load(self.semantic_file)
+        questions = self.load(self.question_file)
+        articles = self.load(self.article_file)
+        sources = self.load(self.source_file)
 
 
         graph = {
 
-
             "system":
                 "FREE BASICS AI MARKETING SYSTEM",
-
 
             "type":
                 "knowledge_depth_graph",
 
-
             "version":
-                "1.0",
-
+                "2.0",
 
             "status":
                 "ACTIVE",
 
-
             "rules":
             {
-
-                "verified_relationships_only":
-                    True,
-
-                "source_based":
-                    True,
-
-                "no_fake_connections":
-                    True
-
+                "verified_relationships_only": True,
+                "source_based": True,
+                "no_fake_connections": True
             },
-
 
             "depth":
-
             {
-
                 "entities": [],
-
                 "products": [],
-
                 "topics": [],
-
                 "questions": [],
-
                 "articles": [],
-
                 "sources": []
-
             },
 
-
             "relationships":
-
             {
-
                 "entity_to_product": [],
-
                 "product_to_topic": [],
-
                 "product_to_question": [],
-
                 "product_to_article": [],
-
                 "article_to_source": []
-
             }
-
         }
 
 
 
+        # ENTITIES
 
+        for node in entities.get("nodes", {}):
 
-        # ENTITY LAYER
-
-
-        for node in entities.get(
-            "nodes",
-            {}
-        ).keys():
-
-            graph["depth"]["entities"].append(
-                node
-            )
-
-
+            graph["depth"]["entities"].append(node)
 
 
 
         # PRODUCTS
-
 
         for product in products.get(
             "entities",
             []
         ):
 
-
-            pid = product.get(
-                "product_id"
-            )
-
+            pid = product.get("product_id")
 
             if pid:
 
+                graph["depth"]["products"].append({
 
-                graph["depth"]["products"].append(
+                    "product_id": pid,
 
-                    {
+                    "entity":
+                        product.get("name"),
 
-                        "product_id":
-                            pid,
+                    "category":
+                        product.get("category"),
 
-                        "entity":
-                            product.get(
-                                "name"
-                            ),
-
-                        "category":
-                            product.get(
-                                "category"
-                            ),
-
-                        "partner":
-                            product.get(
-                                "partner"
-                            )
-
-                    }
-
-                )
+                    "partner":
+                        product.get("partner")
+                })
 
 
 
+        # ENTITY -> PRODUCT
+
+        for product in products.get(
+            "entities",
+            []
+        ):
+
+            if product.get("product_id"):
+
+                graph["relationships"]["entity_to_product"].append({
+
+                    "entity":
+                        product.get("name"),
+
+                    "product_id":
+                        product.get("product_id")
+
+                })
 
 
-        # TOPICS / CLUSTERS
 
+        # TOPICS
 
         for cluster in semantic.get(
             "clusters",
             []
         ):
 
+            graph["depth"]["topics"].append({
 
-            graph["depth"]["topics"].append(
+                "topic":
+                    cluster.get("cluster"),
 
-                {
+                "products":
+                    cluster.get("products", [])
 
-                    "topic":
-                        cluster.get(
-                            "cluster"
-                        ),
-
-                    "products":
-                        cluster.get(
-                            "products",
-                            []
-                        )
-
-                }
-
-            )
-
-
+            })
 
 
 
         # PRODUCT -> TOPIC
-
 
         for item in semantic.get(
             "connections",
@@ -263,141 +192,63 @@ class KnowledgeDepthGraphBuilder:
             []
         ):
 
+            graph["relationships"]["product_to_topic"].append({
 
-            graph["relationships"]["product_to_topic"].append(
+                "product_id":
+                    item.get("product_id"),
 
-                {
+                "topic":
+                    item.get("topic")
 
-                    "product_id":
-                        item.get(
-                            "product_id"
-                        ),
-
-                    "topic":
-                        item.get(
-                            "topic"
-                        )
-
-                }
-
-            )
-
-
+            })
 
 
 
         # QUESTIONS
-
 
         for question in questions.get(
             "questions",
             []
         ):
 
-
-            graph["depth"]["questions"].append(
-
-                {
-
-                    "question_id":
-                        question.get(
-                            "question_id"
-                        ),
-
-                    "question":
-                        question.get(
-                            "question"
-                        ),
-
-                    "product_id":
-                        question.get(
-                            "product_id"
-                        )
-
-                }
-
-            )
+            graph["depth"]["questions"].append(question)
 
 
-            graph["relationships"]["product_to_question"].append(
+            graph["relationships"]["product_to_question"].append({
 
-                {
+                "product_id":
+                    question.get("product_id"),
 
-                    "product_id":
-                        question.get(
-                            "product_id"
-                        ),
+                "question_id":
+                    question.get("question_id")
 
-                    "question_id":
-                        question.get(
-                            "question_id"
-                        )
-
-                }
-
-            )
-
-
+            })
 
 
 
         # ARTICLES
-
 
         for article in articles.get(
             "articles",
             []
         ):
 
-
-            graph["depth"]["articles"].append(
-
-                {
-
-                    "article_id":
-                        article.get(
-                            "article_id"
-                        ),
-
-                    "product_id":
-                        article.get(
-                            "product_id"
-                        ),
-
-                    "entity":
-                        article.get(
-                            "entity"
-                        )
-
-                }
-
-            )
+            graph["depth"]["articles"].append(article)
 
 
-            graph["relationships"]["product_to_article"].append(
+            graph["relationships"]["product_to_article"].append({
 
-                {
+                "product_id":
+                    article.get("product_id"),
 
-                    "product_id":
-                        article.get(
-                            "product_id"
-                        ),
+                "article_id":
+                    article.get("article_id")
 
-                    "article_id":
-                        article.get(
-                            "article_id"
-                        )
-
-                }
-
-            )
-
-
+            })
 
 
 
         # SOURCES
-
 
         for source in sources.get(
             "connections",
@@ -407,81 +258,39 @@ class KnowledgeDepthGraphBuilder:
             []
         ):
 
-
-            graph["depth"]["sources"].append(
-
-                {
-
-                    "article_id":
-                        source.get(
-                            "article_id"
-                        ),
-
-                    "source":
-                        source.get(
-                            "source"
-                        )
-
-                }
-
-            )
+            graph["depth"]["sources"].append(source)
 
 
-            graph["relationships"]["article_to_source"].append(
+            graph["relationships"]["article_to_source"].append({
 
-                {
+                "article_id":
+                    source.get("article_id"),
 
-                    "article_id":
-                        source.get(
-                            "article_id"
-                        ),
+                "source":
+                    source.get("source")
 
-                    "source":
-                        source.get(
-                            "source"
-                        )
-
-                }
-
-            )
-
-
+            })
 
 
 
         self.output_file.parent.mkdir(
-
             parents=True,
-
             exist_ok=True
-
         )
 
 
-
         with open(
-
             self.output_file,
-
             "w",
-
             encoding="utf-8"
-
         ) as f:
 
-
             json.dump(
-
                 graph,
-
                 f,
-
                 indent=2,
-
                 ensure_ascii=False
-
             )
-
 
 
         print(
@@ -489,51 +298,15 @@ class KnowledgeDepthGraphBuilder:
         )
 
 
-        print(
-            "ENTITIES:",
-            len(graph["depth"]["entities"])
-        )
+        for key,value in graph["relationships"].items():
 
-
-        print(
-            "PRODUCTS:",
-            len(graph["depth"]["products"])
-        )
-
-
-        print(
-            "TOPICS:",
-            len(graph["depth"]["topics"])
-        )
-
-
-        print(
-            "QUESTIONS:",
-            len(graph["depth"]["questions"])
-        )
-
-
-        print(
-            "ARTICLES:",
-            len(graph["depth"]["articles"])
-        )
-
-
-        print(
-            "SOURCES:",
-            len(graph["depth"]["sources"])
-        )
-
-
-        return graph
-
-
+            print(
+                key,
+                len(value)
+            )
 
 
 
 if __name__ == "__main__":
 
-
-    builder = KnowledgeDepthGraphBuilder()
-
-    builder.build()
+    KnowledgeDepthGraphBuilder().build()

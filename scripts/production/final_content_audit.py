@@ -21,21 +21,42 @@ def slugify(text):
     text = text.lower()
 
     replacements = {
-        "ä":"ae",
-        "ö":"oe",
-        "ü":"ue",
-        "ß":"ss"
+        "ä": "ae",
+        "ö": "oe",
+        "ü": "ue",
+        "ß": "ss",
+        "é": "e",
+        "è": "e",
+        "ê": "e"
     }
 
-    for a,b in replacements.items():
-        text=text.replace(a,b)
+
+    for a, b in replacements.items():
+
+        text = text.replace(
+            a,
+            b
+        )
 
 
-    text=re.sub(
+    text = text.replace(
+        "mbappé",
+        "mbappe"
+    )
+
+
+    text = text.replace(
+        "café",
+        "cafe"
+    )
+
+
+    text = re.sub(
         r"[^a-z0-9]+",
         "-",
         text
     )
+
 
     return text.strip("-")
 
@@ -46,37 +67,39 @@ with open(
     encoding="utf-8"
 ) as f:
 
-    products=json.load(f)["products"]
+    products = json.load(f)["products"]
 
 
 
-lp_ok=0
-article_ok=0
+lp_ok = 0
+article_ok = 0
 
-lp_failed=[]
-article_failed=[]
+lp_failed = []
+article_failed = []
 
 
-print("="*60)
+
+print("=" * 60)
 print("FINAL CONTENT PRODUCTION AUDIT")
-print("="*60)
+print("=" * 60)
 
 
 
 for product in products:
 
-    slug=slugify(
+    slug = slugify(
         product["name"]
     )
 
 
-    lp=LP_DIR / f"{slug}.html"
+    lp = LP_DIR / f"{slug}.html"
 
-    article=ARTICLE_DIR / f"{slug}-ratgeber.html"
+    article = ARTICLE_DIR / f"{slug}-ratgeber.html"
 
 
 
     print()
+
     print(
         product["product_id"],
         product["name"]
@@ -86,12 +109,12 @@ for product in products:
 
     if lp.exists():
 
-        html=lp.read_text(
+        html = lp.read_text(
             encoding="utf-8"
         ).lower()
 
 
-        checks=[
+        checks = [
 
             "<title",
 
@@ -101,31 +124,38 @@ for product in products:
 
             "schema.org",
 
-            "frage",
+            "faq-item",
+
+            "fakten",
 
             "quellen",
 
             "werbung",
 
-            "tracking"
+            "nofollow",
+
+            "/track"
 
         ]
 
 
-        missing=[]
+        missing = []
 
 
-        for c in checks:
+        for check in checks:
 
-            if c not in html:
+            if check not in html:
 
-                missing.append(c)
+                missing.append(
+                    check
+                )
 
 
         if not missing:
 
-            print("LP: OK")
-            lp_ok+=1
+            print(
+                "LP: OK"
+            )
 
         else:
 
@@ -134,12 +164,16 @@ for product in products:
                 missing
             )
 
-            lp_ok+=1
+
+        lp_ok += 1
 
 
     else:
 
-        print("LP MISSING")
+        print(
+            "LP MISSING"
+        )
+
 
         lp_failed.append(
             product["product_id"]
@@ -150,12 +184,12 @@ for product in products:
 
     if article.exists():
 
-        html=article.read_text(
+        html = article.read_text(
             encoding="utf-8"
         ).lower()
 
 
-        checks=[
+        checks = [
 
             "<title",
 
@@ -172,22 +206,23 @@ for product in products:
         ]
 
 
-        missing=[]
+        missing = []
 
 
-        for c in checks:
+        for check in checks:
 
-            if c not in html:
+            if check not in html:
 
-                missing.append(c)
-
+                missing.append(
+                    check
+                )
 
 
         if not missing:
 
-            print("ARTICLE: OK")
-            article_ok+=1
-
+            print(
+                "ARTICLE: OK"
+            )
 
         else:
 
@@ -196,12 +231,16 @@ for product in products:
                 missing
             )
 
-            article_ok+=1
+
+        article_ok += 1
 
 
     else:
 
-        print("ARTICLE MISSING")
+        print(
+            "ARTICLE MISSING"
+        )
+
 
         article_failed.append(
             product["product_id"]
@@ -209,21 +248,27 @@ for product in products:
 
 
 
+
 print()
-print("="*60)
+
+print("=" * 60)
 print("FINAL REPORT")
-print("="*60)
+print("=" * 60)
+
 
 print(
     "LANDINGPAGES:",
     lp_ok,
-    "/44"
+    "/",
+    len(products)
 )
+
 
 print(
     "ARTICLES:",
     article_ok,
-    "/44"
+    "/",
+    len(products)
 )
 
 
@@ -233,6 +278,7 @@ print(
     "MISSING LP:",
     lp_failed
 )
+
 
 print(
     "MISSING ARTICLES:",

@@ -4,13 +4,74 @@ from engine.template_renderer import TemplateRenderer
 from engine.schema_graph.schema_graph_builder import SchemaGraphBuilder
 
 
+
 class ProductionRenderer:
 
 
     def __init__(self):
 
         self.renderer = TemplateRenderer()
+
         self.schema = SchemaGraphBuilder()
+
+
+
+    def _build_faq_html(
+        self,
+        faq
+    ):
+
+        html = []
+
+        for item in faq or []:
+
+            if isinstance(item, dict):
+
+                html.append(
+                    f"""
+                    <div class="faq-item">
+                        <h3>{item.get("question","")}</h3>
+                        <p>{item.get("answer","")}</p>
+                    </div>
+                    """
+                )
+
+            else:
+
+                html.append(
+                    f"""
+                    <div class="faq-item">
+                        <p>{item}</p>
+                    </div>
+                    """
+                )
+
+        return "\n".join(html)
+
+
+
+    def _build_sources_html(
+        self,
+        sources
+    ):
+
+        html = []
+
+        for source in sources or []:
+
+            if isinstance(source, dict):
+
+                html.append(
+                    f"<li>{source.get('name','')}</li>"
+                )
+
+            else:
+
+                html.append(
+                    f"<li>{source}</li>"
+                )
+
+        return "\n".join(html)
 
 
 
@@ -33,105 +94,97 @@ class ProductionRenderer:
         )
 
 
+
         data = {
 
 
             **landingpage,
 
 
-            "title":
+            "sources":
+
+                self._build_sources_html(
+
+                    landingpage.get(
+                        "sources",
+                        []
+                    )
+
+                ),
+
+
+
+            "faq":
+
+                self._build_faq_html(
+
+                    landingpage.get(
+                        "faq",
+                        []
+                    )
+
+                ),
+
+
+
+            # Related Products kommen bereits fertig aus LandingPageBuilder
+            # keine zweite Umwandlung mehr
+
+
+            "related_products":
+
                 landingpage.get(
-                    "title",
+                    "related_products",
                     ""
                 ),
 
 
-            "description":
-                landingpage.get(
-                    "description",
-                    ""
-                ),
+
+            "page_schema":
+
+                schema_json,
 
 
-            "ai_summary":
-                landingpage.get(
-                    "ai_summary",
-                    ""
-                ),
 
+            "schema_json":
 
-            "introduction":
-                landingpage.get(
-                    "introduction",
-                    ""
-                ),
+                schema_json,
 
-
-            "content":
-                landingpage.get(
-                    "content",
-                    ""
-                ),
 
 
             "tracking_url":
+
                 landingpage.get(
                     "tracking_url",
                     "#"
                 ),
 
 
-            "sources":
-                landingpage.get(
-                    "sources",
-                    []
-                ),
-
-
-            "faq":
-                landingpage.get(
-                    "faq",
-                    []
-                ),
-
 
             "author":
+
                 landingpage.get(
                     "author",
                     "Redaktion Free Basics"
                 ),
 
 
+
             "reviewed_by":
+
                 landingpage.get(
                     "reviewed_by",
                     ""
                 ),
 
 
+
             "updated_at":
+
                 landingpage.get(
                     "updated_at",
                     ""
-                ),
-
-
-            "canonical_url":
-                landingpage.get(
-                    "canonical_url",
-                    ""
-                ),
-
-
-            "og_image_url":
-                landingpage.get(
-                    "og_image_url",
-                    ""
-                ),
-
-
-            "schema_json":
-                schema_json
+                )
 
         }
 
@@ -144,6 +197,7 @@ class ProductionRenderer:
             data
 
         )
+
 
 
 
@@ -166,14 +220,6 @@ class ProductionRenderer:
         )
 
 
-        sources_html = "\n".join(
-            f"<li>{source}</li>"
-            for source in article.get(
-                "sources",
-                []
-            )
-        )
-
 
         data = {
 
@@ -181,20 +227,54 @@ class ProductionRenderer:
             **article,
 
 
+
             "sources":
-                sources_html,
+
+                self._build_sources_html(
+
+                    article.get(
+                        "sources",
+                        []
+                    )
+
+                ),
+
+
+
+            "faq":
+
+                self._build_faq_html(
+
+                    article.get(
+                        "faq",
+                        []
+                    )
+
+                ),
+
+
+
+            "related_products":
+
+                article.get(
+                    "related_products",
+                    ""
+                ),
+
 
 
             "canonical_url":
+
                 article.get(
                     "article_url",
                     ""
                 ),
 
 
-            "article_schema":
-                article_schema
 
+            "article_schema":
+
+                article_schema
 
         }
 
