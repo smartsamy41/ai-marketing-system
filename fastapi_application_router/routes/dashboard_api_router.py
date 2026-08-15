@@ -18,12 +18,29 @@ DATASET = os.getenv(
 )
 
 
-
 def get_bigquery_client():
 
     return bigquery.Client(
         project=PROJECT_ID
     )
+
+
+def query_rows(query):
+
+    try:
+
+        client = get_bigquery_client()
+
+        result = client.query(query).result()
+
+        return [
+            dict(row)
+            for row in result
+        ]
+
+    except Exception:
+
+        return []
 
 
 
@@ -32,52 +49,58 @@ def count_table(
     where=""
 ):
 
-    try:
-
-        client = get_bigquery_client()
-
-        query = f"""
+    rows = query_rows(
+        f"""
         SELECT COUNT(*) AS total
         FROM `{PROJECT_ID}.{DATASET}.{table}`
         {where}
         """
+    )
 
-        result = list(
-            client.query(query).result()
-        )
+    if rows:
+        return rows[0]["total"]
 
-        return result[0].total
-
-
-    except Exception:
-
-        return 0
+    return 0
 
 
 
 def sum_earnings():
 
-    try:
-
-        client = get_bigquery_client()
-
-        query = f"""
-        SELECT COALESCE(SUM(amount),0) AS total
+    rows = query_rows(
+        f"""
+        SELECT
+        COALESCE(SUM(amount),0) AS total
         FROM `{PROJECT_ID}.{DATASET}.earnings`
         """
+    )
 
-        result = list(
-            client.query(query).result()
-        )
+    if rows:
+        return float(rows[0]["total"])
 
-        return float(
-            result[0].total
-        )
+    return 0.0
 
 
-    except Exception:
 
-        return 0.0
+def group_source(
+    table,
+    field
+):
+
+    return query_rows(
+        f"""
+        SELECT
+        {field},
+        COUNT(*) AS total
+
+        FROM `{PROJECT_ID}.{DATASET}.{table}`
+
+        WHERE {field} != 'test'
+
+        GROUP BY {field}
+
+        ORDER BY total DESC
+        """
+    )
 
 
 
@@ -87,12 +110,9 @@ def count_sheet(sheet):
 
         sheets = GoogleSheetsLive()
 
-        data = sheets.read_records(
-            sheet
+        return len(
+            sheets.read_records(sheet)
         )
-
-        return len(data)
-
 
     except Exception:
 
@@ -108,10 +128,6 @@ def dashboard_api():
 
     metrics = {
 
-
-        # =====================
-        # CONTENT
-        # =====================
 
         "products":
             count_sheet(
@@ -138,17 +154,11 @@ def dashboard_api():
                 "pin_queue"
             ),
 
-
         "newsletter":
             count_sheet(
                 "newsletter_subscribers"
             ),
 
-
-
-        # =====================
-        # REAL LIVE TRAFFIC
-        # =====================
 
 
         "live_clicks":
@@ -172,7 +182,6 @@ def dashboard_api():
             ),
 
 
-
         "live_events":
             count_table(
                 "events",
@@ -183,15 +192,31 @@ def dashboard_api():
             ),
 
 
-
         "revenue":
             sum_earnings(),
 
 
 
-        # =====================
-        # AI SYSTEM
-        # =====================
+        "traffic_sources":
+            group_source(
+                "clicks",
+                "source"
+            ),
+
+
+        "conversion_sources":
+            group_source(
+                "conversions",
+                "source"
+            ),
+
+
+        "event_platforms":
+            group_source(
+                "events",
+                "platform"
+            ),
+
 
 
         "agent_runs":
@@ -206,22 +231,10 @@ def dashboard_api():
             ),
 
 
-
-        # =====================
-        # SEO / INDEX
-        # =====================
-
-
         "index_queue":
             count_table(
                 "index_queue"
             ),
-
-
-
-        # =====================
-        # SYSTEM
-        # =====================
 
 
         "api_status_entries":
