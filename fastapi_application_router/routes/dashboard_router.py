@@ -10,7 +10,7 @@ API_URL = "http://localhost:8080/api/dashboard/live"
 
 
 
-def get_live_data():
+def get_dashboard_data():
 
     try:
 
@@ -24,9 +24,30 @@ def get_live_data():
     except Exception:
 
         return {
+            "system": "FREE BASICS AI MARKETING SYSTEM",
             "status": "OFFLINE",
             "metrics": {}
         }
+
+
+
+def render_list(items, key):
+
+    if not items:
+        return "<p>Keine Daten vorhanden</p>"
+
+    html = ""
+
+    for item in items:
+
+        html += f"""
+        <div class="row">
+            <b>{item.get(key)}</b>
+            <span>{item.get('total')}</span>
+        </div>
+        """
+
+    return html
 
 
 
@@ -36,8 +57,7 @@ def get_live_data():
 )
 def dashboard_live():
 
-
-    data = get_live_data()
+    data = get_dashboard_data()
 
     metrics = data.get(
         "metrics",
@@ -56,7 +76,6 @@ def dashboard_live():
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-
 <title>
 Free Basics Live Dashboard
 </title>
@@ -67,7 +86,7 @@ Free Basics Live Dashboard
 body {{
 
     font-family: Arial, sans-serif;
-    background:#f5f5f5;
+    background:#f4f6f8;
     margin:20px;
 
 }}
@@ -130,8 +149,16 @@ h1 {{
 }}
 
 
-</style>
+.row {{
 
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px solid #eee;
+
+}}
+
+</style>
 
 </head>
 
@@ -140,8 +167,9 @@ h1 {{
 
 
 <h1>
-🚀 Free Basics AI Marketing Live Dashboard
+🚀 FREE BASICS AI MARKETING LIVE DASHBOARD
 </h1>
+
 
 
 <div class="card">
@@ -151,12 +179,12 @@ System Status
 </h2>
 
 <p class="green">
-🟢 {data.get("status","UNKNOWN")}
+🟢 {data.get("status")}
 </p>
 
 <p>
 Modus:
-{data.get("mode","LIVE")}
+{data.get("mode")}
 </p>
 
 </div>
@@ -174,7 +202,7 @@ Modus:
 <div class="card">
 
 <h3>
-Echte Klicks
+Affiliate Klicks
 </h3>
 
 <div class="number blue">
@@ -188,7 +216,7 @@ Echte Klicks
 <div class="card">
 
 <h3>
-Echte Conversions
+Conversions
 </h3>
 
 <div class="number green">
@@ -219,7 +247,7 @@ Events
 Revenue
 </h3>
 
-<div class="number green">
+<div class="number orange">
 {metrics.get("revenue",0)} €
 </div>
 
@@ -232,7 +260,87 @@ Revenue
 
 
 <h2>
-📝 Content
+🌍 Traffic Quellen
+</h2>
+
+
+<div class="card">
+
+{render_list(
+    metrics.get("traffic_sources",[]),
+    "source"
+)}
+
+</div>
+
+
+
+
+<h2>
+🎯 Conversion Quellen
+</h2>
+
+
+<div class="card">
+
+{render_list(
+    metrics.get("conversion_sources",[]),
+    "source"
+)}
+
+</div>
+
+
+
+
+<h2>
+🔄 Conversion Funnel
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+Events
+
+<div class="number">
+{metrics.get("live_events",0)}
+</div>
+
+</div>
+
+
+<div class="card">
+
+Klicks
+
+<div class="number blue">
+{metrics.get("live_clicks",0)}
+</div>
+
+</div>
+
+
+<div class="card">
+
+Conversions
+
+<div class="number green">
+{metrics.get("live_conversions",0)}
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+<h2>
+📝 Content System
 </h2>
 
 
@@ -241,7 +349,7 @@ Revenue
 
 <div class="card">
 Produkte
-<div class="number blue">
+<div class="number">
 {metrics.get("products",0)}
 </div>
 </div>
@@ -249,7 +357,7 @@ Produkte
 
 <div class="card">
 Landingpages
-<div class="number blue">
+<div class="number">
 {metrics.get("landingpages",0)}
 </div>
 </div>
@@ -257,7 +365,7 @@ Landingpages
 
 <div class="card">
 Artikel
-<div class="number blue">
+<div class="number">
 {metrics.get("articles",0)}
 </div>
 </div>
@@ -265,16 +373,8 @@ Artikel
 
 <div class="card">
 Pins
-<div class="number blue">
+<div class="number">
 {metrics.get("pins",0)}
-</div>
-</div>
-
-
-<div class="card">
-Affiliate Assets
-<div class="number blue">
-{metrics.get("affiliate_assets",0)}
 </div>
 </div>
 
@@ -285,7 +385,7 @@ Affiliate Assets
 
 
 <h2>
-🤖 AI Learning
+🤖 AI Engine
 </h2>
 
 
@@ -305,7 +405,7 @@ Agent Runs
 
 <div class="card">
 
-Learning Signals
+Learning
 
 <div class="number orange">
 {metrics.get("agent_learning",0)}
@@ -314,54 +414,20 @@ Learning Signals
 </div>
 
 
-</div>
-
-
-
-
-<h2>
-🔎 SEO / Index
-</h2>
-
-
 <div class="card">
 
-Index Queue:
+Index Queue
 
-<b>
+<div class="number">
 {metrics.get("index_queue",0)}
-</b>
+</div>
 
 </div>
 
 
-
-<h2>
-⚙️ System
-</h2>
-
-
-<div class="card">
-
-<p>
-✅ BigQuery verbunden
-</p>
-
-<p>
-✅ Google Sheets verbunden
-</p>
-
-<p>
-✅ Cloud Run aktiv
-</p>
-
-<p>
-API Status Einträge:
-{metrics.get("api_status_entries",0)}
-
-</p>
-
 </div>
+
+
 
 
 </body>
