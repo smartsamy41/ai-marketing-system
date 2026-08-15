@@ -18,6 +18,7 @@ DATASET = os.getenv(
 )
 
 
+
 def get_bigquery_client():
 
     return bigquery.Client(
@@ -26,7 +27,10 @@ def get_bigquery_client():
 
 
 
-def count_bigquery_table(table):
+def count_table(
+    table,
+    where=""
+):
 
     try:
 
@@ -35,6 +39,7 @@ def count_bigquery_table(table):
         query = f"""
         SELECT COUNT(*) AS total
         FROM `{PROJECT_ID}.{DATASET}.{table}`
+        {where}
         """
 
         result = list(
@@ -76,17 +81,17 @@ def sum_earnings():
 
 
 
-def count_sheet(sheet_name):
+def count_sheet(sheet):
 
     try:
 
         sheets = GoogleSheetsLive()
 
-        records = sheets.read_records(
-            sheet_name
+        data = sheets.read_records(
+            sheet
         )
 
-        return len(records)
+        return len(data)
 
 
     except Exception:
@@ -134,11 +139,6 @@ def dashboard_api():
             ),
 
 
-
-        # =====================
-        # NEWSLETTER
-        # =====================
-
         "newsletter":
             count_sheet(
                 "newsletter_subscribers"
@@ -147,40 +147,61 @@ def dashboard_api():
 
 
         # =====================
-        # TRACKING
+        # REAL LIVE TRAFFIC
         # =====================
 
-        "clicks":
-            count_bigquery_table(
-                "clicks"
+
+        "live_clicks":
+            count_table(
+                "clicks",
+                """
+                WHERE source != 'test'
+                AND platform != 'test'
+                """
             ),
 
-        "conversions":
-            count_bigquery_table(
-                "conversions"
+
+        "live_conversions":
+            count_table(
+                "conversions",
+                """
+                WHERE source != 'test'
+                AND platform != 'test'
+                AND status != 'test'
+                """
             ),
 
-        "events":
-            count_bigquery_table(
-                "events"
+
+
+        "live_events":
+            count_table(
+                "events",
+                """
+                WHERE platform != 'test'
+                AND event_type != 'test_event'
+                """
             ),
 
-        "earnings":
+
+
+        "revenue":
             sum_earnings(),
 
 
 
         # =====================
-        # AI LEARNING
+        # AI SYSTEM
         # =====================
 
+
         "agent_runs":
-            count_bigquery_table(
+            count_table(
                 "agent_runs"
             ),
 
+
         "agent_learning":
-            count_bigquery_table(
+            count_table(
                 "agent_learning"
             ),
 
@@ -190,8 +211,9 @@ def dashboard_api():
         # SEO / INDEX
         # =====================
 
+
         "index_queue":
-            count_bigquery_table(
+            count_table(
                 "index_queue"
             ),
 
@@ -201,8 +223,9 @@ def dashboard_api():
         # SYSTEM
         # =====================
 
+
         "api_status_entries":
-            count_bigquery_table(
+            count_table(
                 "api_status_live"
             )
 
@@ -217,6 +240,9 @@ def dashboard_api():
 
         "status":
             "ONLINE",
+
+        "mode":
+            "LIVE_TRAFFIC_ONLY",
 
         "metrics":
             metrics
