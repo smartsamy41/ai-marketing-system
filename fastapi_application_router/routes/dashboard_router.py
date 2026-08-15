@@ -9,41 +9,58 @@ router = APIRouter()
 API_URL = "http://localhost:8080/api/dashboard/live"
 
 
-
-def get_dashboard_data():
+def get_data():
 
     try:
-
-        response = requests.get(
+        r = requests.get(
             API_URL,
             timeout=5
         )
 
-        return response.json()
+        return r.json()
 
     except Exception:
 
         return {
-            "system": "FREE BASICS AI MARKETING SYSTEM",
             "status": "OFFLINE",
             "metrics": {}
         }
 
 
 
-def render_list(items, key):
+def list_rows(data, key):
 
-    if not items:
+    if not data:
         return "<p>Keine Daten vorhanden</p>"
 
     html = ""
 
-    for item in items:
+    for item in data:
 
         html += f"""
         <div class="row">
-            <b>{item.get(key)}</b>
-            <span>{item.get('total')}</span>
+            <span>{item.get(key)}</span>
+            <b>{item.get("total")}</b>
+        </div>
+        """
+
+    return html
+
+
+
+def daily_rows(data):
+
+    if not data:
+        return "<p>Keine Daten vorhanden</p>"
+
+    html = ""
+
+    for item in data:
+
+        html += f"""
+        <div class="row">
+            <span>{item.get("day")}</span>
+            <b>{item.get("total")}</b>
         </div>
         """
 
@@ -57,10 +74,36 @@ def render_list(items, key):
 )
 def dashboard_live():
 
-    data = get_dashboard_data()
+    data = get_data()
 
     metrics = data.get(
         "metrics",
+        {}
+    )
+
+
+    clicks = metrics.get(
+        "live_clicks",
+        0
+    )
+
+    conversions = metrics.get(
+        "live_conversions",
+        0
+    )
+
+
+    rate = 0
+
+    if clicks > 0:
+        rate = round(
+            conversions / clicks * 100,
+            2
+        )
+
+
+    daily = metrics.get(
+        "daily_stats",
         {}
     )
 
@@ -74,89 +117,66 @@ def dashboard_live():
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+content="width=device-width,initial-scale=1.0">
 
 <title>
-Free Basics Live Dashboard
+Free Basics Dashboard V3
 </title>
 
 
 <style>
 
 body {{
-
-    font-family: Arial, sans-serif;
-    background:#f4f6f8;
-    margin:20px;
-
-}}
-
-
-h1 {{
-
-    color:#111827;
-
+font-family:Arial;
+background:#f4f6f8;
+margin:20px;
 }}
 
 
 .grid {{
-
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }}
 
 
 .card {{
-
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:
-    0 4px 15px rgba(0,0,0,0.08);
-
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
 }}
 
 
 .number {{
-
-    font-size:38px;
-    font-weight:bold;
-
-}}
-
-
-.green {{
-
-    color:#16a34a;
-
+font-size:38px;
+font-weight:bold;
 }}
 
 
 .blue {{
+color:#2563eb;
+}}
 
-    color:#2563eb;
 
+.green {{
+color:#16a34a;
 }}
 
 
 .orange {{
-
-    color:#ea580c;
-
+color:#ea580c;
 }}
 
 
 .row {{
-
-    display:flex;
-    justify-content:space-between;
-    padding:8px 0;
-    border-bottom:1px solid #eee;
-
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid #eee;
 }}
+
 
 </style>
 
@@ -167,7 +187,7 @@ h1 {{
 
 
 <h1>
-🚀 FREE BASICS AI MARKETING LIVE DASHBOARD
+🚀 FREE BASICS AI MARKETING LIVE DASHBOARD V3
 </h1>
 
 
@@ -175,11 +195,12 @@ h1 {{
 <div class="card">
 
 <h2>
-System Status
+System
 </h2>
 
-<p class="green">
-🟢 {data.get("status")}
+<p>
+Status:
+<b>{data.get("status")}</b>
 </p>
 
 <p>
@@ -201,53 +222,42 @@ Modus:
 
 <div class="card">
 
-<h3>
-Affiliate Klicks
-</h3>
+Klicks
 
 <div class="number blue">
-{metrics.get("live_clicks",0)}
+{clicks}
 </div>
 
 </div>
-
 
 
 <div class="card">
 
-<h3>
 Conversions
-</h3>
 
 <div class="number green">
-{metrics.get("live_conversions",0)}
+{conversions}
 </div>
 
 </div>
-
 
 
 <div class="card">
 
-<h3>
-Events
-</h3>
-
-<div class="number">
-{metrics.get("live_events",0)}
-</div>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-Revenue
-</h3>
+Conversion Rate
 
 <div class="number orange">
+{rate} %
+</div>
+
+</div>
+
+
+<div class="card">
+
+Revenue
+
+<div class="number">
 {metrics.get("revenue",0)} €
 </div>
 
@@ -266,7 +276,7 @@ Revenue
 
 <div class="card">
 
-{render_list(
+{list_rows(
     metrics.get("traffic_sources",[]),
     "source"
 )}
@@ -283,7 +293,7 @@ Revenue
 
 <div class="card">
 
-{render_list(
+{list_rows(
     metrics.get("conversion_sources",[]),
     "source"
 )}
@@ -294,45 +304,47 @@ Revenue
 
 
 <h2>
-🔄 Conversion Funnel
+📅 Klick Verlauf
 </h2>
 
 
-<div class="grid">
+<div class="card">
+
+{daily_rows(
+    daily.get("clicks",[])
+)}
+
+</div>
+
+
+
+
+<h2>
+🔄 Event Verlauf
+</h2>
 
 
 <div class="card">
 
-Events
-
-<div class="number">
-{metrics.get("live_events",0)}
-</div>
+{daily_rows(
+    daily.get("events",[])
+)}
 
 </div>
+
+
+
+
+<h2>
+💰 Conversion Verlauf
+</h2>
 
 
 <div class="card">
 
-Klicks
-
-<div class="number blue">
-{metrics.get("live_clicks",0)}
-</div>
-
-</div>
-
-
-<div class="card">
-
-Conversions
-
-<div class="number green">
-{metrics.get("live_conversions",0)}
-</div>
-
-</div>
-
+{daily_rows(
+    daily.get("conversions",[])
+)}
 
 </div>
 
@@ -393,41 +405,30 @@ Pins
 
 
 <div class="card">
-
 Agent Runs
-
-<div class="number orange">
+<div class="number">
 {metrics.get("agent_runs",0)}
 </div>
-
 </div>
 
 
 <div class="card">
-
 Learning
-
-<div class="number orange">
+<div class="number">
 {metrics.get("agent_learning",0)}
 </div>
-
 </div>
 
 
 <div class="card">
-
 Index Queue
-
 <div class="number">
 {metrics.get("index_queue",0)}
 </div>
-
 </div>
 
 
 </div>
-
-
 
 
 </body>
