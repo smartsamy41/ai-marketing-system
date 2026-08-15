@@ -1,12 +1,13 @@
 from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
+
 from fastapi_application_router.routes.dashboard_api_router import dashboard_api
 
 
 router = APIRouter()
 
 
-def render_rows(items, key):
+def rows(items, key):
 
     if not items:
         return "<p>Keine Daten</p>"
@@ -16,8 +17,8 @@ def render_rows(items, key):
     for item in items:
         html += f"""
         <div class="row">
-            <span>{item.get(key)}</span>
-            <b>{item.get("total")}</b>
+            <span>{item.get(key, '')}</span>
+            <strong>{item.get('total', 0)}</strong>
         </div>
         """
 
@@ -25,7 +26,28 @@ def render_rows(items, key):
 
 
 
-def render_days(items):
+def cards(items, key):
+
+    if not items:
+        return ""
+
+    html = ""
+
+    for item in items:
+        html += f"""
+        <div class="small-card">
+            <h3>{item.get(key,'')}</h3>
+            <div class="value">
+                {item.get('total',0)}
+            </div>
+        </div>
+        """
+
+    return html
+
+
+
+def daily(items):
 
     if not items:
         return "<p>Keine Daten</p>"
@@ -35,8 +57,8 @@ def render_days(items):
     for item in items:
         html += f"""
         <div class="row">
-            <span>{item.get("day")}</span>
-            <b>{item.get("total")}</b>
+            <span>{item.get('day')}</span>
+            <strong>{item.get('total')}</strong>
         </div>
         """
 
@@ -58,8 +80,38 @@ def dashboard_live():
     )
 
 
-    return f"""
+    clicks = metrics.get(
+        "live_clicks",
+        0
+    )
 
+    conversions = metrics.get(
+        "live_conversions",
+        0
+    )
+
+    events = metrics.get(
+        "live_events",
+        0
+    )
+
+
+    rate = 0
+
+    if clicks:
+        rate = round(
+            conversions / clicks * 100,
+            2
+        )
+
+
+    daily_stats = metrics.get(
+        "daily_stats",
+        {}
+    )
+
+
+    return f"""
 <!DOCTYPE html>
 
 <html lang="de">
@@ -71,19 +123,24 @@ def dashboard_live():
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-
 <title>
-Free Basics Live Dashboard
+FREE BASICS Dashboard V4
 </title>
 
 
 <style>
 
 body {{
-font-family:Arial;
-background:#f5f6f8;
+font-family:Arial,sans-serif;
+background:#f4f6f8;
 margin:20px;
 }}
+
+
+h1 {{
+color:#111827;
+}}
+
 
 .grid {{
 display:grid;
@@ -92,36 +149,50 @@ repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }}
 
+
 .card {{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+margin-bottom:20px;
+}}
+
+
+.small-card {{
 background:white;
 padding:20px;
 border-radius:15px;
 box-shadow:0 4px 15px rgba(0,0,0,.08);
 }}
 
-.number {{
-font-size:38px;
+
+.value {{
+font-size:36px;
 font-weight:bold;
+}}
+
+
+.blue {{
+color:#2563eb;
 }}
 
 .green {{
 color:#16a34a;
 }}
 
-.blue {{
-color:#2563eb;
-}}
-
 .orange {{
 color:#ea580c;
 }}
 
+
 .row {{
 display:flex;
 justify-content:space-between;
-padding:8px;
-border-bottom:1px solid #ddd;
+padding:10px;
+border-bottom:1px solid #eee;
 }}
+
 
 </style>
 
@@ -133,7 +204,7 @@ border-bottom:1px solid #ddd;
 
 
 <h1>
-🚀 FREE BASICS AI MARKETING LIVE DASHBOARD
+🚀 FREE BASICS AI MARKETING DASHBOARD V4
 </h1>
 
 
@@ -145,12 +216,12 @@ System
 
 <p>
 Status:
-<b>{data.get("status")}</b>
+<b>{data.get('status')}</b>
 </p>
 
 <p>
 Modus:
-{data.get("mode")}
+{data.get('mode')}
 </p>
 
 </div>
@@ -158,58 +229,70 @@ Modus:
 
 
 <h2>
-📈 Live Traffic
+📊 Live KPIs
 </h2>
 
 
 <div class="grid">
 
 
-<div class="card">
+<div class="small-card">
 
 Klicks
 
-<div class="number blue">
-{metrics.get("live_clicks",0)}
+<div class="value blue">
+{clicks}
 </div>
 
 </div>
 
 
-<div class="card">
+<div class="small-card">
 
 Events
 
-<div class="number">
-{metrics.get("live_events",0)}
+<div class="value">
+{events}
 </div>
 
 </div>
 
 
-<div class="card">
+<div class="small-card">
 
 Conversions
 
-<div class="number green">
-{metrics.get("live_conversions",0)}
+<div class="value green">
+{conversions}
 </div>
 
 </div>
 
 
-<div class="card">
+<div class="small-card">
+
+Conversion Rate
+
+<div class="value orange">
+{rate} %
+</div>
+
+</div>
+
+
+<div class="small-card">
 
 Revenue
 
-<div class="number orange">
-{metrics.get("revenue",0)} €
+<div class="value">
+{metrics.get('revenue',0)} €
 </div>
 
 </div>
 
 
 </div>
+
 
 
 
@@ -219,12 +302,13 @@ Revenue
 
 <div class="card">
 
-{render_rows(
-metrics.get("traffic_sources",[]),
+{cards(
+metrics.get('traffic_sources',[]),
 "source"
 )}
 
 </div>
+
 
 
 
@@ -234,8 +318,8 @@ metrics.get("traffic_sources",[]),
 
 <div class="card">
 
-{render_rows(
-metrics.get("conversion_sources",[]),
+{cards(
+metrics.get('conversion_sources',[]),
 "source"
 )}
 
@@ -243,17 +327,19 @@ metrics.get("conversion_sources",[]),
 
 
 
+
 <h2>
-📅 Klick Verlauf
+📈 Klick Verlauf
 </h2>
 
 <div class="card">
 
-{render_days(
-metrics.get("daily_stats",{}).get("clicks",[])
+{daily(
+daily_stats.get('clicks',[])
 )}
 
 </div>
+
 
 
 
@@ -263,11 +349,12 @@ metrics.get("daily_stats",{}).get("clicks",[])
 
 <div class="card">
 
-{render_days(
-metrics.get("daily_stats",{}).get("events",[])
+{daily(
+daily_stats.get('events',[])
 )}
 
 </div>
+
 
 
 
@@ -277,43 +364,53 @@ metrics.get("daily_stats",{}).get("events",[])
 
 <div class="card">
 
-{render_days(
-metrics.get("daily_stats",{}).get("conversions",[])
+{daily(
+daily_stats.get('conversions',[])
 )}
 
 </div>
 
 
 
+
 <h2>
-🤖 AI System
+🤖 AI Engine
 </h2>
 
 
 <div class="grid">
 
 
-<div class="card">
+<div class="small-card">
+
 Agent Runs
-<div class="number">
-{metrics.get("agent_runs",0)}
+
+<div class="value">
+{metrics.get('agent_runs',0)}
 </div>
+
 </div>
 
 
-<div class="card">
+<div class="small-card">
+
 Learning
-<div class="number">
-{metrics.get("agent_learning",0)}
+
+<div class="value">
+{metrics.get('agent_learning',0)}
 </div>
+
 </div>
 
 
-<div class="card">
+<div class="small-card">
+
 Index Queue
-<div class="number">
-{metrics.get("index_queue",0)}
+
+<div class="value">
+{metrics.get('index_queue',0)}
 </div>
+
 </div>
 
 
@@ -323,5 +420,4 @@ Index Queue
 </body>
 
 </html>
-
 """
