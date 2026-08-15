@@ -6,7 +6,7 @@ import requests
 router = APIRouter()
 
 
-API_URL = "http://localhost:8080/api/dashboard/live"
+API_URL = "https://freebasics.online/api/dashboard/live"
 
 
 def get_data():
