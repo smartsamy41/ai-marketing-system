@@ -18,20 +18,22 @@ DATASET = os.getenv(
 )
 
 
-def get_bigquery_client():
+
+def get_client():
 
     return bigquery.Client(
         project=PROJECT_ID
     )
 
 
-def query_rows(query):
+
+def query_rows(sql):
 
     try:
 
-        client = get_bigquery_client()
+        client = get_client()
 
-        result = client.query(query).result()
+        result = client.query(sql).result()
 
         return [
             dict(row)
@@ -64,24 +66,31 @@ def count_table(
 
 
 
-def sum_earnings():
+def daily_stats(
+    table,
+    where=""
+):
 
-    rows = query_rows(
+    return query_rows(
         f"""
         SELECT
-        COALESCE(SUM(amount),0) AS total
-        FROM `{PROJECT_ID}.{DATASET}.earnings`
+            CAST(DATE(timestamp) AS STRING) AS day,
+            COUNT(*) AS total
+
+        FROM `{PROJECT_ID}.{DATASET}.{table}`
+
+        {where}
+
+        GROUP BY day
+
+        ORDER BY day DESC
+        LIMIT 30
         """
     )
 
-    if rows:
-        return float(rows[0]["total"])
-
-    return 0.0
 
 
-
-def group_source(
+def grouped_source(
     table,
     field
 ):
@@ -89,8 +98,8 @@ def group_source(
     return query_rows(
         f"""
         SELECT
-        {field},
-        COUNT(*) AS total
+            {field},
+            COUNT(*) AS total
 
         FROM `{PROJECT_ID}.{DATASET}.{table}`
 
@@ -129,37 +138,29 @@ def dashboard_api():
     metrics = {
 
 
+        # CONTENT
+
         "products":
-            count_sheet(
-                "products"
-            ),
+            count_sheet("products"),
 
         "landingpages":
-            count_sheet(
-                "landingpages"
-            ),
+            count_sheet("landingpages"),
 
         "articles":
-            count_sheet(
-                "blog_articles"
-            ),
+            count_sheet("blog_articles"),
 
         "affiliate_assets":
-            count_sheet(
-                "affiliate_assets"
-            ),
+            count_sheet("affiliate_assets"),
 
         "pins":
-            count_sheet(
-                "pin_queue"
-            ),
+            count_sheet("pin_queue"),
 
         "newsletter":
-            count_sheet(
-                "newsletter_subscribers"
-            ),
+            count_sheet("newsletter_subscribers"),
 
 
+
+        # LIVE TRACKING
 
         "live_clicks":
             count_table(
@@ -167,17 +168,6 @@ def dashboard_api():
                 """
                 WHERE source != 'test'
                 AND platform != 'test'
-                """
-            ),
-
-
-        "live_conversions":
-            count_table(
-                "conversions",
-                """
-                WHERE source != 'test'
-                AND platform != 'test'
-                AND status != 'test'
                 """
             ),
 
@@ -192,32 +182,80 @@ def dashboard_api():
             ),
 
 
-        "revenue":
-            sum_earnings(),
+        "live_conversions":
+            count_table(
+                "conversions",
+                """
+                WHERE source != 'test'
+                AND status != 'test'
+                """
+            ),
 
 
+
+        # SOURCES
 
         "traffic_sources":
-            group_source(
+            grouped_source(
                 "clicks",
                 "source"
             ),
 
 
         "conversion_sources":
-            group_source(
+            grouped_source(
                 "conversions",
                 "source"
             ),
 
 
         "event_platforms":
-            group_source(
+            grouped_source(
                 "events",
                 "platform"
             ),
 
 
+
+        # TIME SERIES
+
+        "daily_stats":
+        {
+
+            "clicks":
+                daily_stats(
+                    "clicks",
+                    """
+                    WHERE source != 'test'
+                    AND platform != 'test'
+                    """
+                ),
+
+
+            "events":
+                daily_stats(
+                    "events",
+                    """
+                    WHERE platform != 'test'
+                    AND event_type != 'test_event'
+                    """
+                ),
+
+
+            "conversions":
+                daily_stats(
+                    "conversions",
+                    """
+                    WHERE source != 'test'
+                    AND status != 'test'
+                    """
+                )
+
+        },
+
+
+
+        # AI SYSTEM
 
         "agent_runs":
             count_table(
