@@ -1,4 +1,4 @@
-from engine.template_renderer import TemplateRenderer
+from engine.rendering.production_renderer import ProductionRenderer
 from engine.self_learning_agent.internal_linking_optimizer import InternalLinkingOptimizer
 
 from datetime import datetime, timezone
@@ -18,7 +18,9 @@ class LandingPageBuilder:
     ):
 
         self.system = system
-        self.renderer = TemplateRenderer()
+
+        self.renderer = ProductionRenderer()
+
         self.link_optimizer = InternalLinkingOptimizer()
 
 
@@ -39,18 +41,71 @@ class LandingPageBuilder:
 
 
 
+    def _build_content(
+        self,
+        product
+    ):
+
+        html = []
+
+        summary = product.get(
+            "summary",
+            ""
+        )
+
+        if summary:
+
+            html.append(
+                f"<p>{summary}</p>"
+            )
+
+
+        key_facts = product.get(
+            "key_facts",
+            []
+        )
+
+
+        if key_facts:
+
+            html.append(
+                "<h3>Wichtige Informationen</h3>"
+            )
+
+            html.append(
+                "<ul>"
+            )
+
+
+            for fact in key_facts:
+
+                html.append(
+                    f"<li>{fact}</li>"
+                )
+
+
+            html.append(
+                "</ul>"
+            )
+
+
+        return "\n".join(html)
+
+
+
     def _build_related_products_html(
         self,
         products
     ):
 
-        html = []
+        html=[]
+
 
         for item in (products or [])[:8]:
 
-            if isinstance(item, dict):
+            if isinstance(item,dict):
 
-                category = item.get(
+                name=item.get(
                     "category",
                     item.get(
                         "product_id",
@@ -59,8 +114,8 @@ class LandingPageBuilder:
                 )
 
 
-                slug = self._slugify(
-                    category
+                slug=self._slugify(
+                    name
                 )
 
 
@@ -68,19 +123,8 @@ class LandingPageBuilder:
                     f"""
                     <div class="related-product">
                         <a href="/angebote/{slug}">
-                            {category}
+                            {name}
                         </a>
-                    </div>
-                    """
-                )
-
-
-            else:
-
-                html.append(
-                    f"""
-                    <div class="related-product">
-                        {item}
                     </div>
                     """
                 )
@@ -98,62 +142,39 @@ class LandingPageBuilder:
     ):
 
 
-        now = datetime.now(
+        now=datetime.now(
             timezone.utc
         ).strftime(
             "%Y-%m-%d"
         )
 
 
-        name = product.get(
+        name=product.get(
             "name",
-            "Angebot"
+            product.get(
+                "product_name",
+                "Produkt"
+            )
         )
 
 
-        category = product.get(
+        category=product.get(
             "category",
             ""
         )
 
 
-
-        resolved_related_products = (
-
-            related_products
-
-            or
-
-            product.get(
-                "related_products",
-                []
-            )
-
-        )
-
-
-
-        related_html = self._build_related_products_html(
-            resolved_related_products
-        )
-
-
-
-        slug = self._slugify(
+        slug=self._slugify(
             name
         )
 
 
-
-        internal_links = self.link_optimizer.suggest_links(
-
+        internal_links=self.link_optimizer.suggest_links(
             {
-                "slug": slug,
-                "category": category
+                "slug":slug,
+                "category":category
             },
-
-            resolved_related_products
-
+            related_products or []
         )
 
 
@@ -172,15 +193,12 @@ class LandingPageBuilder:
                 ),
 
 
-
             "title":
                 name,
 
 
-
             "category":
                 category,
-
 
 
             "partner":
@@ -190,36 +208,6 @@ class LandingPageBuilder:
                 ),
 
 
-
-            "cluster":
-                product.get(
-                    "cluster",
-                    category
-                ),
-
-
-
-            "silo":
-                product.get(
-                    "silo",
-                    ""
-                ),
-
-
-
-            "product_type":
-                product.get(
-                    "product_type",
-                    ""
-                ),
-
-
-
-            "related_products":
-                related_html,
-
-
-
             "description":
                 product.get(
                     "summary",
@@ -227,13 +215,10 @@ class LandingPageBuilder:
                 ),
 
 
-
             "content":
-                product.get(
-                    "content",
-                    ""
+                self._build_content(
+                    product
                 ),
-
 
 
             "faq":
@@ -243,13 +228,11 @@ class LandingPageBuilder:
                 ),
 
 
-
             "questions":
                 product.get(
                     "questions",
                     []
                 ),
-
 
 
             "sources":
@@ -259,53 +242,11 @@ class LandingPageBuilder:
                 ),
 
 
-
-            "knowledge_depth":
-                product.get(
-                    "knowledge_depth",
-                    {}
-                ),
-
-
-
-            "content_experience":
-                product.get(
-                    "content_experience",
-                    {}
-                ),
-
-
-
-            "production_page_architecture":
-                product.get(
-                    "production_page_architecture",
-                    {}
-                ),
-
-
-
-            "asset_selection":
-                product.get(
-                    "asset_selection",
-                    []
-                ),
-
-
-
-            "production_validation":
-                product.get(
-                    "production_validation",
-                    {}
-                ),
-
-
-
             "tracking_url":
                 product.get(
                     "tracking_url",
                     "#"
                 ),
-
 
 
             "author":
@@ -315,7 +256,6 @@ class LandingPageBuilder:
                 ),
 
 
-
             "reviewed_by":
                 product.get(
                     "reviewed_by",
@@ -323,15 +263,18 @@ class LandingPageBuilder:
                 ),
 
 
-
             "updated_at":
                 now,
-
 
 
             "canonical_url":
                 f"https://freebasics.online/angebote/{slug}",
 
+
+            "related_products":
+                self._build_related_products_html(
+                    related_products
+                ),
 
 
             "internal_links":
@@ -341,10 +284,8 @@ class LandingPageBuilder:
                 ),
 
 
-
             "footer":
                 get_eeat_footer(),
-
 
 
             "cookie_consent":
@@ -359,10 +300,6 @@ class LandingPageBuilder:
         landingpage
     ):
 
-        return self.renderer.render(
-
-            "landingpages/geo_optimized_landingpage.html",
-
+        return self.renderer.render_landingpage(
             landingpage
-
         )
