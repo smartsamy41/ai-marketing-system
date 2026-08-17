@@ -42,6 +42,7 @@ class LandingPageBuilder:
 
 
 
+
     def _build_content(
         self,
         product
@@ -63,95 +64,96 @@ class LandingPageBuilder:
 
             html.append(
                 f"""
-                <div class="content-summary">
-                    <p>{summary}</p>
-                </div>
+                <section class="content-summary">
+
+                    <h3>
+                    Überblick
+                    </h3>
+
+                    <p>
+                    {summary}
+                    </p>
+
+                </section>
                 """
             )
 
 
-        facts = product.get(
-            "key_facts",
-            []
+        html.append(
+            """
+            <section>
+
+            <h3>
+            Wichtige Punkte
+            </h3>
+
+            <ul>
+            """
         )
 
 
-        clean_facts = []
-
-        for fact in facts:
-
-            if isinstance(fact, dict):
-
-                text = (
-                    fact.get("title")
-                    or fact.get("name")
-                    or fact.get("description")
-                    or ""
-                )
-
-            else:
-
-                text = str(fact)
+        category = str(
+            product.get(
+                "category",
+                ""
+            )
+            or ""
+        ).strip()
 
 
-            text = text.strip()
-
-
-            blocked = [
-                "product_id",
-                "entity_type",
-                "asset_status",
-                "tracking_available",
-                "source_reference",
-                "geo_ready"
-            ]
-
-
-            if text and not any(
-                x in text.lower()
-                for x in blocked
-            ):
-
-                clean_facts.append(
-                    text
-                )
-
-
-        if clean_facts:
+        if category:
 
             html.append(
+                f"""
+                <li>
+                Kategorie: {category}
+                </li>
                 """
+            )
+
+
+        html.append(
+            """
+            <li>
+            Datenbasis: geprüfte Partnerinformationen
+            </li>
+            """
+        )
+
+
+        html.append(
+            """
+            </ul>
+
+            </section>
+            """
+        )
+
+
+        content = str(
+            product.get(
+                "content",
+                ""
+            )
+            or ""
+        ).strip()
+
+
+        if content:
+
+            html.append(
+                f"""
+                <section>
+
                 <h3>
-                Wichtige Informationen
+                Weitere Informationen
                 </h3>
 
-                <ul>
-                """
-            )
-
-
-            for item in clean_facts:
-
-                html.append(
-                    f"<li>{item}</li>"
-                )
-
-
-            html.append(
-                """
-                </ul>
-                """
-            )
-
-
-        if not html:
-
-            html.append(
-                """
                 <p>
-                Weitere Informationen werden
-                aus geprüften Quellen ergänzt.
+                {content}
                 </p>
+
+                </section>
                 """
             )
 
