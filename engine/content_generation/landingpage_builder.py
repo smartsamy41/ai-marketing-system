@@ -41,6 +41,7 @@ class LandingPageBuilder:
 
 
 
+
     def _build_content(
         self,
         product
@@ -48,49 +49,114 @@ class LandingPageBuilder:
 
         html = []
 
-        summary = product.get(
-            "summary",
-            ""
-        )
+
+        summary = str(
+            product.get(
+                "summary",
+                ""
+            )
+            or ""
+        ).strip()
+
 
         if summary:
 
             html.append(
-                f"<p>{summary}</p>"
+                f"""
+                <div class="content-summary">
+                    <p>{summary}</p>
+                </div>
+                """
             )
 
 
-        key_facts = product.get(
+        facts = product.get(
             "key_facts",
             []
         )
 
 
-        if key_facts:
+        clean_facts = []
+
+        for fact in facts:
+
+            if isinstance(fact, dict):
+
+                text = (
+                    fact.get("title")
+                    or fact.get("name")
+                    or fact.get("description")
+                    or ""
+                )
+
+            else:
+
+                text = str(fact)
+
+
+            text = text.strip()
+
+
+            blocked = [
+                "product_id",
+                "entity_type",
+                "asset_status",
+                "tracking_available",
+                "source_reference",
+                "geo_ready"
+            ]
+
+
+            if text and not any(
+                x in text.lower()
+                for x in blocked
+            ):
+
+                clean_facts.append(
+                    text
+                )
+
+
+        if clean_facts:
 
             html.append(
-                "<h3>Wichtige Informationen</h3>"
+                """
+                <h3>
+                Wichtige Informationen
+                </h3>
+
+                <ul>
+                """
             )
 
-            html.append(
-                "<ul>"
-            )
 
-
-            for fact in key_facts:
+            for item in clean_facts:
 
                 html.append(
-                    f"<li>{fact}</li>"
+                    f"<li>{item}</li>"
                 )
 
 
             html.append(
-                "</ul>"
+                """
+                </ul>
+                """
+            )
+
+
+        if not html:
+
+            html.append(
+                """
+                <p>
+                Weitere Informationen werden
+                aus geprüften Quellen ergänzt.
+                </p>
+                """
             )
 
 
         return "\n".join(html)
-
 
 
     def _build_related_products_html(
