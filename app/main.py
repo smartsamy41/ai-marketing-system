@@ -1633,6 +1633,7 @@ Produkt → Knowledge Layer → Blog → Landingpage → Social → Tracking →
 # ============================================================
 
 
+
 @app.get(
     "/lp/{product_id}",
     response_class=HTMLResponse
@@ -1651,7 +1652,6 @@ def landingpage(
     )
 
     if not product:
-
         raise HTTPException(
             status_code=404,
             detail="Produkt nicht gefunden"
@@ -1686,7 +1686,6 @@ def landingpage(
         "generated",
         "READY"
     ]:
-
         raise HTTPException(
             status_code=503,
             detail="ContentPipeline nicht verfügbar"
@@ -1702,7 +1701,7 @@ def landingpage(
 
     seo_title = str(
         pipeline_result.get("seo_title")
-        or f"{product_name} prüfen | Free Basics"
+        or f"{product_name} | Free Basics"
     ).strip()
 
 
@@ -1714,103 +1713,27 @@ def landingpage(
 
     page_html = str(
         pipeline_result.get("landingpage", {}).get("html")
-        or pipeline_result.get("body")
         or ""
     ).strip()
 
 
     if not page_html:
-
         raise HTTPException(
             status_code=503,
             detail="Pipeline Inhalt nicht verfügbar"
         )
 
 
-    affiliate_data = affiliate.get_product_data(
-        product_id
-    )
-
-    assets = affiliate_data.get(
-        "assets",
-        []
-    )
-
-
-    asset_html = ""
-
-    for asset in assets:
-
-        vergleich = str(
-            asset.get("vergleichsrechner_html")
-            or ""
-        )
-
-        kurz = str(
-            asset.get("kurzrechner_html")
-            or ""
-        )
-
-        banner300 = str(
-            asset.get("banner_300x250_html")
-            or ""
-        )
-
-        banner728 = str(
-            asset.get("banner_728x90_html")
-            or ""
-        )
-
-
-        # PHASE 6 FINAL:
-        # Pro Produkt genau ein Affiliate Bereich.
-        # Keine Mehrfachbanner.
-        # Keine zusätzlichen Rechner.
-        # CTA erfolgt über advertisement Block.
-
-        asset_html = ""
-
-
-    tracking_url = str(
-        affiliate_data.get("tracking_url")
-        or affiliate_data.get("affiliate_url")
-        or ""
-    ).strip()
-
-
-    advertisement = f"""
-    <section>
-        <strong>Werbung / Anzeige</strong>
-
-        <p>
-        Dieser Bereich enthält einen Affiliate-
-        oder Partnerlink.
-        </p>
-
-        <a href="{tracking_url}"
-        target="_blank"
-        rel="sponsored nofollow noopener">
-        Vergleich starten
-        </a>
-
-    </section>
-    """
-
-
     body = f"""
     <main>
 
         <nav>
-        <a href="/">Startseite</a>
-        ›
-        {product_name}
+            <a href="/">Startseite</a>
+            ›
+            {product_name}
         </nav>
 
         {page_html}
-
-        {asset_html}
-
-        {advertisement}
 
     </main>
     """
