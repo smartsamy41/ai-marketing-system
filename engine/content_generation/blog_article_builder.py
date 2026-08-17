@@ -193,18 +193,32 @@ Zusammenhänge und Kriterien zum Thema.
 
 
 
+
         source_html = ""
 
 
-        for source in sources:
+        if sources:
+
+            source_html += """
+            <li>
+            Diese Seite basiert auf hinterlegten Partnerinformationen.
+            </li>
+            """
 
 
-            source_html += (
+            for source in sources:
 
-                f"<li>{source}</li>"
+                source_html += (
+                    f"<li>Quelle: {source}</li>"
+                )
 
-            )
+        else:
 
+            source_html += """
+            <li>
+            Keine zusätzlichen Quellen hinterlegt.
+            </li>
+            """
 
 
         related_html = ""
@@ -275,28 +289,86 @@ Zusammenhänge und Kriterien zum Thema.
                 description,
 
 
+            "ai_summary":
+                description,
+
+
+            "direct_answer":
+                f"""
+                <p>
+                {name} einfach erklärt:
+                {description}
+                </p>
+                """,
+
+
             "content":
                 content,
 
 
-            "faq":
-                faq_html,
+            "entity_context":
+                """
+                <p>
+                Dieser Artikel basiert auf hinterlegten Wissensdaten
+                und geprüften Informationsquellen.
+                </p>
+                """,
 
 
             "sources":
                 source_html,
 
 
+            "questions":
+                faq_html,
+
+
+            "faq":
+                faq_html,
+
+
             "related_products":
                 related_html,
+
+
+            "internal_links":
+                "",
+
+
+            "affiliate_area":
+                f"""
+                <p>
+                Dieser Bereich enthält ein externes Partnerangebot.
+                </p>
+
+                <a href="{product.get('tracking_url','#')}"
+                   target="_blank"
+                   rel="sponsored nofollow noopener">
+
+                   Vergleich starten
+
+                </a>
+                """,
+
+
+            "newsletter":
+                """
+                <p>
+                Neue Ratgeber und Informationen von Free Basics erhalten.
+                </p>
+                """,
+
+
+            "footer":
+                "",
 
 
             "article_schema":
                 schema,
 
 
-            "ai_summary":
-                description,
+            "faq_schema":
+                "",
 
 
             "canonical_url":
@@ -317,11 +389,17 @@ Zusammenhänge und Kriterien zum Thema.
                 product.get(
                     "reviewed_by",
                     ""
+                ),
+
+
+            "updated_at":
+                product.get(
+                    "updated_at",
+                    ""
                 )
 
 
         }
-
 
 
         return article
