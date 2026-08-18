@@ -22,7 +22,6 @@ class ContentPipeline:
         self.relationship_resolver = ProductRelationshipResolver()
 
 
-
     def normalize_slug(self, text):
 
         text = str(text).lower()
@@ -59,7 +58,6 @@ class ContentPipeline:
         for part in text.split("-"):
 
             if part.strip():
-
                 parts.append(part.strip())
 
 
@@ -71,7 +69,6 @@ class ContentPipeline:
         self,
         product
     ):
-
 
         knowledge_data = self.knowledge.build_product_context(
             product["product_id"]
@@ -89,22 +86,45 @@ class ContentPipeline:
             }
 
 
-
         product.update(
             knowledge_data
         )
 
 
-        # ==============================
-        # TRACKING URL MASTER MAPPING
-        # ==============================
+        # =====================================
+        # MASTER TRACKING URL MAPPING
+        # Knowledge Layer ist führend
+        # =====================================
 
         product["tracking_url"] = (
-            product.get("tracking_url_v3")
-            or product.get("affiliate_url")
-            or ""
-        )
 
+            knowledge_data.get(
+                "tracking_url"
+            )
+
+            or
+
+            product.get(
+                "tracking_url_v3"
+            )
+
+            or
+
+            product.get(
+                "affiliate_url"
+            )
+
+            or
+
+            product.get(
+                "target_url"
+            )
+
+            or
+
+            ""
+
+        )
 
 
         product["summary"] = (
@@ -121,7 +141,6 @@ class ContentPipeline:
             )
 
         )
-
 
 
         product["key_facts"] = (
@@ -143,7 +162,6 @@ class ContentPipeline:
         )
 
 
-
         product["faq"] = (
 
             knowledge_data.get(
@@ -155,7 +173,6 @@ class ContentPipeline:
             []
 
         )
-
 
 
         product["sources"] = (
@@ -171,14 +188,14 @@ class ContentPipeline:
         )
 
 
-
         product["slug"] = self.normalize_slug(
+
             product.get(
                 "name",
                 ""
             )
-        )
 
+        )
 
 
         product["landingpage_url"] = (
@@ -190,7 +207,6 @@ class ContentPipeline:
         )
 
 
-
         product["article_url"] = (
 
             self.urls.article_url(
@@ -198,7 +214,6 @@ class ContentPipeline:
             )
 
         )
-
 
 
         product.setdefault(
@@ -210,19 +225,16 @@ class ContentPipeline:
         )
 
 
-
         product.setdefault(
             "author",
             "Redaktion Free Basics"
         )
 
 
-
         product.setdefault(
             "reviewed_by",
             "Samy ben Chedli Jendoubi"
         )
-
 
 
         relationship_data = (
@@ -232,7 +244,6 @@ class ContentPipeline:
             )
 
         )
-
 
 
         product.update(
@@ -283,6 +294,17 @@ class ContentPipeline:
         )
 
 
+        # Sicherheit vor Content Build
+        product["tracking_url"] = (
+
+            product.get("tracking_url")
+            or
+            knowledge_data.get("tracking_url")
+            or
+            ""
+
+        )
+
 
         landingpage = self.landingpage_builder.build(
 
@@ -328,48 +350,38 @@ class ContentPipeline:
         )
 
 
-
         article_html = self.article_builder.render(
             article
         )
 
 
-
         return {
 
-
             "product":
-
                 product,
 
 
             "landingpage":
-
                 landingpage,
 
 
             "landingpage_html":
-
                 landingpage_html,
 
 
             "article":
-
                 article,
 
 
             "article_html":
-
                 article_html,
 
 
             "relationship":
-
                 relationship_data,
 
 
             "status":
-
                 "READY"
 
         }

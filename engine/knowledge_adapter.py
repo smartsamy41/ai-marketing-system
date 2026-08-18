@@ -383,10 +383,20 @@ class KnowledgeAdapter:
                 ),
 
             "tracking_url":
-                catalog.get(
-                    "tracking_url",
-                    ""
-                ),
+    catalog.get(
+        "tracking_url_v3",
+        ""
+    )
+    or
+    catalog.get(
+        "tracking_url",
+        ""
+    )
+    or
+    catalog.get(
+        "affiliate_url",
+        ""
+    ),
 
             "summary":
                 self._build_summary(
