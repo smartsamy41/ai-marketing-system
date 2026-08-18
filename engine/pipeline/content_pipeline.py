@@ -95,6 +95,18 @@ class ContentPipeline:
         )
 
 
+        # ==============================
+        # TRACKING URL MASTER MAPPING
+        # ==============================
+
+        product["tracking_url"] = (
+            product.get("tracking_url_v3")
+            or product.get("affiliate_url")
+            or ""
+        )
+
+
+
         product["summary"] = (
 
             knowledge_data.get(
@@ -178,6 +190,7 @@ class ContentPipeline:
         )
 
 
+
         product["article_url"] = (
 
             self.urls.article_url(
@@ -197,10 +210,12 @@ class ContentPipeline:
         )
 
 
+
         product.setdefault(
             "author",
             "Redaktion Free Basics"
         )
+
 
 
         product.setdefault(
