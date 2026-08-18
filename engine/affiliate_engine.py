@@ -7,13 +7,18 @@ from engine.secret_manager import SecretManager
 class AffiliateEngine:
 
     """
-    Zentrale Affiliate Asset Steuerung.
+    Zentrale Affiliate Steuerung.
 
-    Eine zentrale Quelle für:
-    - Produktdaten
-    - Werbemittel
-    - Tracking URLs
-    - Affiliate URLs
+    Quelle:
+    Google Sheets products
+    Google Sheets affiliate_assets_clean
+
+    Liefert:
+    - affiliate_url
+    - tracking_url
+    - target_url
+    - assets
+    - primary_asset
     """
 
 
@@ -32,7 +37,9 @@ class AffiliateEngine:
             ),
             credentials_json=(
                 credentials_json
-                or secrets.get("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+                or secrets.get(
+                    "GOOGLE_APPLICATION_CREDENTIALS_JSON"
+                )
             )
         )
 
@@ -85,7 +92,10 @@ class AffiliateEngine:
 
 
 
-    def product_id(self, record):
+    def product_id(
+        self,
+        record
+    ):
 
         return self.clean(
             record.get("product_id")
@@ -107,22 +117,28 @@ class AffiliateEngine:
         for record in self.products:
 
             ids = [
+
                 self.normalize(
                     record.get("product_id")
                 ),
+
                 self.normalize(
                     record.get("produkt_id")
                 ),
+
                 self.normalize(
                     record.get("product_name")
                 ),
+
                 self.normalize(
                     record.get("name")
                 )
+
             ]
 
 
             if search in ids:
+
                 return record
 
 
@@ -145,13 +161,19 @@ class AffiliateEngine:
         for asset in self.assets:
 
             asset_id = self.normalize(
+
                 asset.get("product_id")
-                or asset.get("produkt_id")
+                or
+                asset.get("produkt_id")
+
             )
 
 
             if asset_id == target:
-                result.append(asset)
+
+                result.append(
+                    asset
+                )
 
 
         return result
@@ -169,45 +191,61 @@ class AffiliateEngine:
 
 
         if not assets:
+
             return None
 
 
 
         for asset in assets:
 
-            html = self.clean(
-                asset.get("html_code")
-                or asset.get("html")
-                or asset.get("vergleichsrechner_html")
-                or asset.get("banner_300x250_html")
-            )
-
 
             url = self.clean(
+
                 asset.get("affiliate_url")
-                or asset.get("direktlink")
-                or asset.get("tracking_url")
+                or
+                asset.get("tracking_url")
+                or
+                asset.get("direktlink")
+
             )
 
 
-            if html or url:
+            html = self.clean(
+
+                asset.get("html_code")
+                or
+                asset.get("html")
+                or
+                asset.get("vergleichsrechner_html")
+                or
+                asset.get("banner_300x250_html")
+
+            )
+
+
+            if url or html:
 
                 return {
 
                     "asset_type":
                         self.clean(
+                            asset.get("asset_type")
+                            or
                             asset.get("werbemittel_typ")
-                            or asset.get("asset_type")
                         ),
+
 
                     "html":
                         html,
 
+
                     "affiliate_url":
                         url,
 
+
                     "tracking_url":
                         url,
+
 
                     "cta":
                         self.clean(
@@ -215,6 +253,7 @@ class AffiliateEngine:
                         )
                         or
                         "Vergleich starten",
+
 
                     "kennzeichnung":
                         self.clean(
@@ -235,6 +274,7 @@ class AffiliateEngine:
         product
     ):
 
+
         record = self.find_product(
             product
         )
@@ -243,7 +283,10 @@ class AffiliateEngine:
         if not record:
 
             return {
-                "status": "NOT_FOUND"
+
+                "status":
+                    "NOT_FOUND"
+
             }
 
 
@@ -258,17 +301,31 @@ class AffiliateEngine:
         )
 
 
+
         tracking_url = self.clean(
+
             record.get("tracking_url")
+            or
+            record.get("tracking_url_v3")
+            or
+            record.get("affiliate_url")
+            or
+            record.get("target_url")
+            or
+            record.get("official_direct_link")
+
         )
+
 
 
         if not tracking_url and primary_asset:
 
             tracking_url = self.clean(
+
                 primary_asset.get(
                     "affiliate_url"
                 )
+
             )
 
 
@@ -278,31 +335,50 @@ class AffiliateEngine:
             "status":
                 "FOUND",
 
+
             "product_id":
                 product_id,
 
+
             "product_name":
                 self.clean(
+
                     record.get("product_name")
-                    or record.get("name")
+                    or
+                    record.get("name")
+
                 ),
+
 
             "partner":
                 self.clean(
+
                     record.get("partner")
+                    or
+                    record.get("source")
+
                 ),
+
 
             "primary_asset":
                 primary_asset,
 
+
             "tracking_url":
                 tracking_url,
 
+
             "affiliate_url":
                 tracking_url,
+
+
+            "target_url":
+                tracking_url,
+
 
             "assets":
                 self.find_assets(
                     product_id
                 )
+
         }
