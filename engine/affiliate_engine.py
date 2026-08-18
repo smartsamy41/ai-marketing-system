@@ -21,6 +21,165 @@ class AffiliateEngine:
     - primary_asset
     """
 
+    def __init__(
+        self,
+        sheet_id: str | None = None,
+        credentials_json: str | None = None
+    ):
+
+        secrets = SecretManager()
+
+        self.sheets = GoogleSheetsLive(
+            spreadsheet_id=(
+                sheet_id
+                or secrets.get("GOOGLE_SHEET_ID")
+            ),
+            credentials_json=(
+                credentials_json
+                or secrets.get(
+                    "GOOGLE_APPLICATION_CREDENTIALS_JSON"
+                )
+            )
+        )
+
+        self.products = []
+        self.assets = []
+
+        self.reload()
+
+
+    def reload(self):
+
+        self.products = self.sheets.read_records(
+            "products",
+            "A:ZZ"
+        )
+
+        self.assets = self.sheets.read_records(
+            "affiliate_assets_clean",
+            "A:ZZ"
+        )
+
+
+    @staticmethod
+    def clean(value):
+
+        if value is None:
+            return ""
+
+        text = str(value).strip()
+
+        if text.lower() in (
+            "nan",
+            "none",
+            "null"
+        ):
+            return ""
+
+        return text
+
+
+    @staticmethod
+    def normalize(value: Any):
+
+        return AffiliateEngine.clean(
+            value
+        ).lower()
+
+
+    def product_id(
+        self,
+        record
+    ):
+
+        return self.clean(
+            record.get("product_id")
+            or record.get("produkt_id")
+        )
+
+
+    def find_product(
+        self,
+        product
+    ):
+
+        search = self.normalize(
+            product
+        )
+
+        for record in self.products:
+
+            ids = [
+
+                self.normalize(
+                    record.get("product_id")
+                ),
+
+                self.normalize(
+                    record.get("produkt_id")
+                ),
+
+                self.normalize(
+                    record.get("product_name")
+                ),
+
+                self.normalize(
+                    record.get("name")
+                )
+
+            ]
+
+            if search in ids:
+                return record
+
+        return None
+
+
+    def find_assets(
+        self,
+        product_id
+    ):
+
+        result = []
+
+        target = self.normalize(
+            product_id
+        )
+
+        for asset in self.assets:
+
+            asset_id = self.normalize(
+                asset.get("product_id")
+                or
+                asset.get("produkt_id")
+            )
+
+            if asset_id == target:
+                result.append(asset)
+
+        return result
+from typing import Any
+
+from engine.google_sheets_live import GoogleSheetsLive
+from engine.secret_manager import SecretManager
+
+
+class AffiliateEngine:
+
+    """
+    Zentrale Affiliate Steuerung.
+
+    Quelle:
+    Google Sheets products
+    Google Sheets affiliate_assets_clean
+
+    Liefert:
+    - affiliate_url
+    - tracking_url
+    - target_url
+    - assets
+    - primary_asset
+    """
 
     def __init__(
         self,
@@ -49,7 +208,6 @@ class AffiliateEngine:
         self.reload()
 
 
-
     def reload(self):
 
         self.products = self.sheets.read_records(
@@ -61,7 +219,6 @@ class AffiliateEngine:
             "affiliate_assets_clean",
             "A:ZZ"
         )
-
 
 
     @staticmethod
@@ -82,14 +239,12 @@ class AffiliateEngine:
         return text
 
 
-
     @staticmethod
     def normalize(value: Any):
 
         return AffiliateEngine.clean(
             value
         ).lower()
-
 
 
     def product_id(
@@ -103,7 +258,6 @@ class AffiliateEngine:
         )
 
 
-
     def find_product(
         self,
         product
@@ -112,7 +266,6 @@ class AffiliateEngine:
         search = self.normalize(
             product
         )
-
 
         for record in self.products:
 
@@ -136,14 +289,10 @@ class AffiliateEngine:
 
             ]
 
-
             if search in ids:
-
                 return record
 
-
         return None
-
 
 
     def find_assets(
@@ -157,29 +306,18 @@ class AffiliateEngine:
             product_id
         )
 
-
         for asset in self.assets:
 
             asset_id = self.normalize(
-
                 asset.get("product_id")
                 or
                 asset.get("produkt_id")
-
             )
 
-
             if asset_id == target:
-
-                result.append(
-                    asset
-                )
-
+                result.append(asset)
 
         return result
-
-
-
     def select_primary_asset(
         self,
         product_id
@@ -189,29 +327,22 @@ class AffiliateEngine:
             product_id
         )
 
-
         if not assets:
-
             return None
-
 
 
         for asset in assets:
 
-
             url = self.clean(
-
                 asset.get("affiliate_url")
                 or
-                asset.get("tracking_url")
-                or
                 asset.get("direktlink")
-
+                or
+                asset.get("target_url")
             )
 
 
             html = self.clean(
-
                 asset.get("html_code")
                 or
                 asset.get("html")
@@ -219,7 +350,6 @@ class AffiliateEngine:
                 asset.get("vergleichsrechner_html")
                 or
                 asset.get("banner_300x250_html")
-
             )
 
 
@@ -240,10 +370,6 @@ class AffiliateEngine:
 
 
                     "affiliate_url":
-                        url,
-
-
-                    "tracking_url":
                         url,
 
 
@@ -274,7 +400,6 @@ class AffiliateEngine:
         product
     ):
 
-
         record = self.find_product(
             product
         )
@@ -301,13 +426,9 @@ class AffiliateEngine:
         )
 
 
+        # Echter Partnerlink
+        affiliate_url = self.clean(
 
-        tracking_url = self.clean(
-
-            record.get("tracking_url")
-            or
-            record.get("tracking_url_v3")
-            or
             record.get("affiliate_url")
             or
             record.get("target_url")
@@ -317,16 +438,30 @@ class AffiliateEngine:
         )
 
 
+        # Eigener Tracking Wrapper
+        tracking_url = self.clean(
 
-        if not tracking_url and primary_asset:
+            record.get("tracking_url_v3")
+            or
+            record.get("tracking_url")
 
-            tracking_url = self.clean(
+        )
+
+
+        if not affiliate_url and primary_asset:
+
+            affiliate_url = self.clean(
 
                 primary_asset.get(
                     "affiliate_url"
                 )
 
             )
+
+
+        if not tracking_url:
+
+            tracking_url = affiliate_url
 
 
 
@@ -369,11 +504,11 @@ class AffiliateEngine:
 
 
             "affiliate_url":
-                tracking_url,
+                affiliate_url,
 
 
             "target_url":
-                tracking_url,
+                affiliate_url,
 
 
             "assets":
