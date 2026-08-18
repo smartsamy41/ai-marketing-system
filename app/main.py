@@ -1789,7 +1789,8 @@ def track_real_click(
         )
 
     target_url = str(
-        affiliate_data.get("affiliate_url")
+        affiliate_data.get("target_url")
+        or affiliate_data.get("affiliate_url")
         or ""
     ).strip()
 
