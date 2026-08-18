@@ -31,6 +31,10 @@ class KnowledgeAdapter:
             "data_master/content_intelligence/asset_selection_intelligence_graph.json"
         )
 
+        self.affiliate_asset_file = Path(
+            "data_master/content_intelligence/affiliate_asset_knowledge_graph.json"
+        )
+
         self.validation_file = Path(
             "data_master/content_intelligence/production_validation_intelligence_graph.json"
         )
@@ -41,8 +45,17 @@ class KnowledgeAdapter:
         self.sources_graph = self._load(self.source_file)
         self.knowledge_depth = self._load(self.knowledge_depth_file)
         self.experience = self._load(self.experience_file)
-        self.assets = self._load(self.asset_file)
-        self.validation = self._load(self.validation_file)
+        self.assets = self._load(
+            self.asset_file
+        )
+
+        self.affiliate_assets = self._load(
+            self.affiliate_asset_file
+        )
+
+        self.validation = self._load(
+            self.validation_file
+        )
 
 
 
@@ -71,6 +84,26 @@ class KnowledgeAdapter:
                 return product
 
         return {}
+
+
+
+
+    def _get_affiliate_assets(self, product_id):
+
+        result = []
+
+        for asset in self.affiliate_assets.get(
+            "assets",
+            []
+        ):
+
+            if product_id in str(asset):
+
+                result.append(
+                    asset
+                )
+
+        return result
 
 
 
