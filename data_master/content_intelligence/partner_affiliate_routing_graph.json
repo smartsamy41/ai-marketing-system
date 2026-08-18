@@ -1,0 +1,32 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "partner_affiliate_routing",
+  "version": "1.0",
+  "partners": {
+    "amazon": {
+      "tracking_ids": [
+        "freebasics-21",
+        "uniquetshir0f-21"
+      ],
+      "routes": {
+        "product_found": {
+          "action": "USE_PRODUCT_AFFILIATE_LINK"
+        },
+        "newsletter_product_found": {
+          "action": "USE_PRODUCT_AFFILIATE_LINK"
+        },
+        "newsletter_topic_only": {
+          "action": "USE_PARTNER_HOME_LINK"
+        }
+      },
+      "homepage": {
+        "short_link": "https://link.amazon/B06rC85zP",
+        "affiliate_link": "https://www.amazon.de?&linkCode=ll2&tag=uniquetshir0f-21&linkId=075739baa8efc057f2373b4bd5a149b4&ref_=as_li_ss_tl"
+      }
+    },
+    "telekom": {
+      "route": "EXTERNAL_SHOP",
+      "conversion_landingpage": false
+    }
+  }
+}
