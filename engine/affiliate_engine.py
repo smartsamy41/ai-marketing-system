@@ -9,12 +9,11 @@ class AffiliateEngine:
     """
     Zentrale Affiliate Asset Steuerung.
 
-    Regeln:
-    - Ein Produkt = mehrere mögliche Assets
-    - Primary Asset wird sauber ausgewählt
-    - Keine nan Werte
-    - Keine leeren Tracking URLs
-    - Werbemittel müssen aus Master Asset Sheet kommen
+    Eine zentrale Quelle für:
+    - Produktdaten
+    - Werbemittel
+    - Tracking URLs
+    - Affiliate URLs
     """
 
 
@@ -80,10 +79,9 @@ class AffiliateEngine:
     @staticmethod
     def normalize(value: Any):
 
-        return (
-            AffiliateEngine.clean(value)
-            .lower()
-        )
+        return AffiliateEngine.clean(
+            value
+        ).lower()
 
 
 
@@ -109,28 +107,22 @@ class AffiliateEngine:
         for record in self.products:
 
             ids = [
-
                 self.normalize(
                     record.get("product_id")
                 ),
-
                 self.normalize(
                     record.get("produkt_id")
                 ),
-
                 self.normalize(
                     record.get("product_name")
                 ),
-
                 self.normalize(
                     record.get("name")
                 )
-
             ]
 
 
             if search in ids:
-
                 return record
 
 
@@ -153,19 +145,13 @@ class AffiliateEngine:
         for asset in self.assets:
 
             asset_id = self.normalize(
-
                 asset.get("product_id")
-                or
-                asset.get("produkt_id")
-
+                or asset.get("produkt_id")
             )
 
 
             if asset_id == target:
-
-                result.append(
-                    asset
-                )
+                result.append(asset)
 
 
         return result
@@ -183,7 +169,6 @@ class AffiliateEngine:
 
 
         if not assets:
-
             return None
 
 
@@ -215,14 +200,14 @@ class AffiliateEngine:
                             or asset.get("asset_type")
                         ),
 
-
                     "html":
                         html,
-
 
                     "affiliate_url":
                         url,
 
+                    "tracking_url":
+                        url,
 
                     "cta":
                         self.clean(
@@ -230,7 +215,6 @@ class AffiliateEngine:
                         )
                         or
                         "Vergleich starten",
-
 
                     "kennzeichnung":
                         self.clean(
@@ -240,7 +224,6 @@ class AffiliateEngine:
                         "Werbung / Anzeige"
 
                 }
-
 
 
         return None
@@ -260,10 +243,7 @@ class AffiliateEngine:
         if not record:
 
             return {
-
-                "status":
-                    "NOT_FOUND"
-
+                "status": "NOT_FOUND"
             }
 
 
@@ -285,23 +265,21 @@ class AffiliateEngine:
 
         if not tracking_url and primary_asset:
 
-            tracking_url = primary_asset.get(
-                "affiliate_url",
-                ""
+            tracking_url = self.clean(
+                primary_asset.get(
+                    "affiliate_url"
+                )
             )
 
 
 
         return {
 
-
             "status":
                 "FOUND",
 
-
             "product_id":
                 product_id,
-
 
             "product_name":
                 self.clean(
@@ -309,24 +287,22 @@ class AffiliateEngine:
                     or record.get("name")
                 ),
 
-
             "partner":
                 self.clean(
                     record.get("partner")
                 ),
 
-
             "primary_asset":
                 primary_asset,
-
 
             "tracking_url":
                 tracking_url,
 
+            "affiliate_url":
+                tracking_url,
 
             "assets":
                 self.find_assets(
                     product_id
                 )
-
         }
