@@ -35,6 +35,18 @@ class KnowledgeAdapter:
             "data_master/content_intelligence/affiliate_asset_knowledge_graph.json"
         )
 
+        self.partner_policy_file = Path(
+            "data_master/content_intelligence/partner_policy_intelligence.json"
+        )
+
+        self.partner_production_file = Path(
+            "data_master/content_intelligence/partner_production_intelligence_graph.json"
+        )
+
+        self.partner_routing_file = Path(
+            "data_master/content_intelligence/partner_affiliate_routing_graph.json"
+        )
+
         self.validation_file = Path(
             "data_master/content_intelligence/production_validation_intelligence_graph.json"
         )
@@ -51,6 +63,18 @@ class KnowledgeAdapter:
 
         self.affiliate_assets = self._load(
             self.affiliate_asset_file
+        )
+
+        self.partner_policy = self._load(
+            self.partner_policy_file
+        )
+
+        self.partner_production = self._load(
+            self.partner_production_file
+        )
+
+        self.partner_routing = self._load(
+            self.partner_routing_file
         )
 
         self.validation = self._load(
@@ -514,6 +538,15 @@ class KnowledgeAdapter:
                     "mediawiki",
                     {}
                 ),
+
+            "partner_policy":
+                self.partner_policy,
+
+            "partner_production":
+                self.partner_production,
+
+            "affiliate_routing":
+                self.partner_routing,
 
             "validation":
                 validation,
