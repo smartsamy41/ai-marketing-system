@@ -1365,7 +1365,9 @@ def blog_detail(slug: str):
     "/dashboard",
     response_class=HTMLResponse
 )
-def dashboard_page():
+def dashboard_page(request: Request):
+
+    verify_run_request(request)
 
     products = read_records("products")
     landingpages = read_records("landingpages")
