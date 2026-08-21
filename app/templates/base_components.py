@@ -159,16 +159,6 @@ def get_eeat_footer() -> str:
             "
           >
             <li>
-              <a href="/methodik" style="color:#cbd5e1;">
-                Methodik
-              </a>
-            </li>
-            <li>
-              <a href="/redaktion" style="color:#cbd5e1;">
-                Redaktionelle Richtlinien
-              </a>
-            </li>
-            <li>
               <a href="/affiliate-hinweis" style="color:#cbd5e1;">
                 Affiliate-Hinweis
               </a>
@@ -204,7 +194,7 @@ def get_eeat_footer() -> str:
               </a>
             </li>
             <li>
-              <a href="/agb" style="color:#cbd5e1;">
+              <a href="/affiliate-hinweis" style="color:#cbd5e1;">
                 AGB
               </a>
             </li>
