@@ -20,7 +20,7 @@
         "name": "DSL",
         "partner": "check24",
         "category": "DSL",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+        "landingpage": "https://freebasics.online/angebote/dsl",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_004&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Ddsl-anbieterwechsel%26cat%3D4",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -51,14 +51,14 @@
             "name": "DSL",
             "partner": "check24",
             "category": "DSL",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+            "landingpage": "https://freebasics.online/angebote/dsl",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+          "landingpage": "https://freebasics.online/angebote/dsl",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -120,7 +120,7 @@
         "name": "Mobilfunk",
         "partner": "check24",
         "category": "Mobilfunk",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+        "landingpage": "https://freebasics.online/angebote/mobilfunk",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_005&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dhandytarife%26cat%3D7",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -151,14 +151,14 @@
             "name": "Mobilfunk",
             "partner": "check24",
             "category": "Mobilfunk",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+            "landingpage": "https://freebasics.online/angebote/mobilfunk",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+          "landingpage": "https://freebasics.online/angebote/mobilfunk",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -220,7 +220,7 @@
         "name": "Oekostrom",
         "partner": "check24",
         "category": "Oekostrom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+        "landingpage": "https://freebasics.online/angebote/oekostrom",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_002&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Doekostrom%26cat%3D5",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -251,14 +251,14 @@
             "name": "Oekostrom",
             "partner": "check24",
             "category": "Oekostrom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+            "landingpage": "https://freebasics.online/angebote/oekostrom",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+          "landingpage": "https://freebasics.online/angebote/oekostrom",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -320,7 +320,7 @@
         "name": "Strom",
         "partner": "check24",
         "category": "Strom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+        "landingpage": "https://freebasics.online/angebote/strom",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_001&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dstromanbieter-wechseln%26cat%3D1",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -382,14 +382,14 @@
             "name": "Strom",
             "partner": "check24",
             "category": "Strom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+            "landingpage": "https://freebasics.online/angebote/strom",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+          "landingpage": "https://freebasics.online/angebote/strom",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -451,7 +451,7 @@
         "name": "Gas",
         "partner": "check24",
         "category": "Gas",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+        "landingpage": "https://freebasics.online/angebote/gas",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_003&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dgasanbieter-wechseln%26cat%3D3",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -482,14 +482,14 @@
             "name": "Gas",
             "partner": "check24",
             "category": "Gas",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+            "landingpage": "https://freebasics.online/angebote/gas",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+          "landingpage": "https://freebasics.online/angebote/gas",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -551,7 +551,7 @@
         "name": "Pauschalreise",
         "partner": "check24",
         "category": "Reisen",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+        "landingpage": "https://freebasics.online/angebote/pauschalreise",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_006&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dpauschalreisen-vergleich%26cat%3D9",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -582,14 +582,14 @@
             "name": "Pauschalreise",
             "partner": "check24",
             "category": "Reisen",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+            "landingpage": "https://freebasics.online/angebote/pauschalreise",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+          "landingpage": "https://freebasics.online/angebote/pauschalreise",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -651,7 +651,7 @@
         "name": "Mietwagen",
         "partner": "check24",
         "category": "Reisen",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+        "landingpage": "https://freebasics.online/angebote/mietwagen",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_007&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dmietwagen-preisvergleich%26cat%3D10",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -682,14 +682,14 @@
             "name": "Mietwagen",
             "partner": "check24",
             "category": "Reisen",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+            "landingpage": "https://freebasics.online/angebote/mietwagen",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+          "landingpage": "https://freebasics.online/angebote/mietwagen",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -751,7 +751,7 @@
         "name": "C24 Bank",
         "partner": "check24",
         "category": "Finanzen",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+        "landingpage": "https://freebasics.online/angebote/c24-bank",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=CHK24_008&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dc24bank%26cat%3D14",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -782,14 +782,14 @@
             "name": "C24 Bank",
             "partner": "check24",
             "category": "Finanzen",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+            "landingpage": "https://freebasics.online/angebote/c24-bank",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "check24",
             "geo_ready": true
           },
           "source_reference": "check24",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+          "landingpage": "https://freebasics.online/angebote/c24-bank",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -851,7 +851,7 @@
         "name": "Solaranlage",
         "partner": "tarifcheck",
         "category": "Solaranlage",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+        "landingpage": "https://freebasics.online/angebote/solaranlage",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_001&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dsolaranlage",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -882,14 +882,14 @@
             "name": "Solaranlage",
             "partner": "tarifcheck",
             "category": "Solaranlage",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+            "landingpage": "https://freebasics.online/angebote/solaranlage",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+          "landingpage": "https://freebasics.online/angebote/solaranlage",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -951,7 +951,7 @@
         "name": "Kfz-Versicherung",
         "partner": "tarifcheck",
         "category": "Versicherung",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+        "landingpage": "https://freebasics.online/angebote/kfz-versicherung",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_002&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkfz-versicherung",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -982,14 +982,14 @@
             "name": "Kfz-Versicherung",
             "partner": "tarifcheck",
             "category": "Versicherung",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+            "landingpage": "https://freebasics.online/angebote/kfz-versicherung",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+          "landingpage": "https://freebasics.online/angebote/kfz-versicherung",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1051,7 +1051,7 @@
         "name": "Kredit",
         "partner": "tarifcheck",
         "category": "Kredit",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+        "landingpage": "https://freebasics.online/angebote/kredit",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_003&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkredit",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1082,14 +1082,14 @@
             "name": "Kredit",
             "partner": "tarifcheck",
             "category": "Kredit",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+            "landingpage": "https://freebasics.online/angebote/kredit",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+          "landingpage": "https://freebasics.online/angebote/kredit",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1151,7 +1151,7 @@
         "name": "Girokonto",
         "partner": "tarifcheck",
         "category": "Girokonto",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+        "landingpage": "https://freebasics.online/angebote/girokonto",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_004&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dgirokonto",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1182,14 +1182,14 @@
             "name": "Girokonto",
             "partner": "tarifcheck",
             "category": "Girokonto",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+            "landingpage": "https://freebasics.online/angebote/girokonto",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+          "landingpage": "https://freebasics.online/angebote/girokonto",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1251,7 +1251,7 @@
         "name": "Baufinanzierung",
         "partner": "tarifcheck",
         "category": "Baufinanzierung",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+        "landingpage": "https://freebasics.online/angebote/baufinanzierung",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_005&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dbaufinanzierung",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1282,14 +1282,14 @@
             "name": "Baufinanzierung",
             "partner": "tarifcheck",
             "category": "Baufinanzierung",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+            "landingpage": "https://freebasics.online/angebote/baufinanzierung",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+          "landingpage": "https://freebasics.online/angebote/baufinanzierung",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1351,7 +1351,7 @@
         "name": "Hausratversicherung",
         "partner": "tarifcheck",
         "category": "Versicherung",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+        "landingpage": "https://freebasics.online/angebote/hausratversicherung",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_006&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhausratversicherung",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1382,14 +1382,14 @@
             "name": "Hausratversicherung",
             "partner": "tarifcheck",
             "category": "Versicherung",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+            "landingpage": "https://freebasics.online/angebote/hausratversicherung",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+          "landingpage": "https://freebasics.online/angebote/hausratversicherung",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1451,7 +1451,7 @@
         "name": "Haftpflichtversicherung",
         "partner": "tarifcheck",
         "category": "Versicherung",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+        "landingpage": "https://freebasics.online/angebote/haftpflichtversicherung",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_007&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhaftpflichtversicherung",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1482,14 +1482,14 @@
             "name": "Haftpflichtversicherung",
             "partner": "tarifcheck",
             "category": "Versicherung",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+            "landingpage": "https://freebasics.online/angebote/haftpflichtversicherung",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+          "landingpage": "https://freebasics.online/angebote/haftpflichtversicherung",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1551,7 +1551,7 @@
         "name": "Rentenversicherung",
         "partner": "tarifcheck",
         "category": "Vorsorge",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+        "landingpage": "https://freebasics.online/angebote/rentenversicherung",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_008&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Drentenversicherung",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1582,14 +1582,14 @@
             "name": "Rentenversicherung",
             "partner": "tarifcheck",
             "category": "Vorsorge",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+            "landingpage": "https://freebasics.online/angebote/rentenversicherung",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+          "landingpage": "https://freebasics.online/angebote/rentenversicherung",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1651,7 +1651,7 @@
         "name": "Private Krankenversicherung",
         "partner": "tarifcheck",
         "category": "Versicherung",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+        "landingpage": "https://freebasics.online/angebote/private-krankenversicherung",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TC_009&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dprivate-krankenversicherung",
         "system_source": "cloud_landingpages_only",
         "status": "official_assets_ready",
@@ -1682,14 +1682,14 @@
             "name": "Private Krankenversicherung",
             "partner": "tarifcheck",
             "category": "Versicherung",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+            "landingpage": "https://freebasics.online/angebote/private-krankenversicherung",
             "tracking_available": true,
             "asset_status": "official_assets_ready",
             "source_reference": "tarifcheck",
             "geo_ready": true
           },
           "source_reference": "tarifcheck",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+          "landingpage": "https://freebasics.online/angebote/private-krankenversicherung",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1751,7 +1751,7 @@
         "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
         "partner": "amazon",
         "category": "Bluetooth-Kopfhörer",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+        "landingpage": "https://freebasics.online/angebote/apple-airpods-pro-3-kabellose-in-ear-kopfhoerer",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FQF32239&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FQF32239%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44049d07107531e7ad6d6dfe2f054065%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -1782,14 +1782,14 @@
             "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
             "partner": "amazon",
             "category": "Bluetooth-Kopfhörer",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+            "landingpage": "https://freebasics.online/angebote/apple-airpods-pro-3-kabellose-in-ear-kopfhoerer",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+          "landingpage": "https://freebasics.online/angebote/apple-airpods-pro-3-kabellose-in-ear-kopfhoerer",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1851,7 +1851,7 @@
         "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
         "partner": "amazon",
         "category": "E-Reader",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+        "landingpage": "https://freebasics.online/angebote/amazon-kindle-paperwhite-neueste-generation-16-gb-ohne-werbung-schwarz",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0CFPWLGF2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CFPWLGF2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44d0788340e0256001696d3ece88528d%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -1882,14 +1882,14 @@
             "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
             "partner": "amazon",
             "category": "E-Reader",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+            "landingpage": "https://freebasics.online/angebote/amazon-kindle-paperwhite-neueste-generation-16-gb-ohne-werbung-schwarz",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+          "landingpage": "https://freebasics.online/angebote/amazon-kindle-paperwhite-neueste-generation-16-gb-ohne-werbung-schwarz",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -1951,7 +1951,7 @@
         "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
         "partner": "amazon",
         "category": "Körperpflege & Elektrorasierer",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+        "landingpage": "https://freebasics.online/angebote/philips-oneblade-intimate-intimrasur-trimmen-und-rasieren-mit-extra-hautschutz-modell-qp1924-30",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0DFYN8174&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DFYN8174%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Df29cec1e2851f7a806babd846a9ddfc4%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -1982,14 +1982,14 @@
             "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
             "partner": "amazon",
             "category": "Körperpflege & Elektrorasierer",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+            "landingpage": "https://freebasics.online/angebote/philips-oneblade-intimate-intimrasur-trimmen-und-rasieren-mit-extra-hautschutz-modell-qp1924-30",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+          "landingpage": "https://freebasics.online/angebote/philips-oneblade-intimate-intimrasur-trimmen-und-rasieren-mit-extra-hautschutz-modell-qp1924-30",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2051,7 +2051,7 @@
         "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
         "partner": "amazon",
         "category": "Bauspielzeugsets",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-lionel-messi-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FPXFBL13&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXFBL13%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D06fcb046b24b9cd38f1784f7219533ca%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2082,14 +2082,14 @@
             "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
             "partner": "amazon",
             "category": "Bauspielzeugsets",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+            "landingpage": "https://freebasics.online/angebote/lego-editions-lionel-messi-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+          "landingpage": "https://freebasics.online/angebote/lego-editions-lionel-messi-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2151,7 +2151,7 @@
         "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
         "partner": "amazon",
         "category": "Bauspielzeugsets",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-kylian-mbappe-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FPXDCDX2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDCDX2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D5af01d4132de4d9c81c7b720665a5974%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2182,14 +2182,14 @@
             "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
             "partner": "amazon",
             "category": "Bauspielzeugsets",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+            "landingpage": "https://freebasics.online/angebote/lego-editions-kylian-mbappe-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+          "landingpage": "https://freebasics.online/angebote/lego-editions-kylian-mbappe-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2251,7 +2251,7 @@
         "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
         "partner": "amazon",
         "category": "Bauspielzeugsets",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-cristiano-ronaldo-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FPXGJL6H&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXGJL6H%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D38c487ba09e0fd7845e695ad0cd319e7%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2282,14 +2282,14 @@
             "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
             "partner": "amazon",
             "category": "Bauspielzeugsets",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+            "landingpage": "https://freebasics.online/angebote/lego-editions-cristiano-ronaldo-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+          "landingpage": "https://freebasics.online/angebote/lego-editions-cristiano-ronaldo-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2351,7 +2351,7 @@
         "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
         "partner": "amazon",
         "category": "Bauspielzeugsets",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-sports-offizieller-pokal-der-fifa-fussball-weltmeisterschaft-3d-diy-modell-mit-minifigur-43020",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FPXDRR63&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDRR63%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D0a52b5924b86de2297fba57c9ae1b02b%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2382,14 +2382,14 @@
             "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
             "partner": "amazon",
             "category": "Bauspielzeugsets",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+            "landingpage": "https://freebasics.online/angebote/lego-editions-sports-offizieller-pokal-der-fifa-fussball-weltmeisterschaft-3d-diy-modell-mit-minifigur-43020",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+          "landingpage": "https://freebasics.online/angebote/lego-editions-sports-offizieller-pokal-der-fifa-fussball-weltmeisterschaft-3d-diy-modell-mit-minifigur-43020",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2451,7 +2451,7 @@
         "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
         "partner": "amazon",
         "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+        "landingpage": "https://freebasics.online/angebote/das-kind-in-dir-muss-heimat-finden-der-schluessel-zur-loesung-fast-aller-probleme",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=3424631078&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3424631078%3Fsmid%3DA1JC316NLNMF97%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D3230f2a54418561cda1437a62636751a%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2482,14 +2482,14 @@
             "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
             "partner": "amazon",
             "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+            "landingpage": "https://freebasics.online/angebote/das-kind-in-dir-muss-heimat-finden-der-schluessel-zur-loesung-fast-aller-probleme",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+          "landingpage": "https://freebasics.online/angebote/das-kind-in-dir-muss-heimat-finden-der-schluessel-zur-loesung-fast-aller-probleme",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2551,7 +2551,7 @@
         "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
         "partner": "amazon",
         "category": "Bücher - Psychothriller",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+        "landingpage": "https://freebasics.online/angebote/sebastian-fitzek-thriller-bundle-der-augensammler-und-der-augenjaeger-bestseller-psychothriller-im-set",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FNX7HC9M&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FNX7HC9M%3Fsmid%3DAL5JXES37EDG7%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D411dad09febceb05b8d53957ad711075%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2582,14 +2582,14 @@
             "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
             "partner": "amazon",
             "category": "Bücher - Psychothriller",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+            "landingpage": "https://freebasics.online/angebote/sebastian-fitzek-thriller-bundle-der-augensammler-und-der-augenjaeger-bestseller-psychothriller-im-set",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+          "landingpage": "https://freebasics.online/angebote/sebastian-fitzek-thriller-bundle-der-augensammler-und-der-augenjaeger-bestseller-psychothriller-im-set",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2651,7 +2651,7 @@
         "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
         "partner": "amazon",
         "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+        "landingpage": "https://freebasics.online/angebote/das-cafe-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=3423209690&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3423209690%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D79007b57baece76e191e2663d00af73c%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2682,14 +2682,14 @@
             "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
             "partner": "amazon",
             "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+            "landingpage": "https://freebasics.online/angebote/das-cafe-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+          "landingpage": "https://freebasics.online/angebote/das-cafe-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2751,7 +2751,7 @@
         "name": "22 Bahnen Roman Lieblingsbuch 2023",
         "partner": "amazon",
         "category": "Bücher - Roman & Gegenwartsliteratur",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+        "landingpage": "https://freebasics.online/angebote/22-bahnen-roman-lieblingsbuch-2023",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=3832167242&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3832167242%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D6b3e47793fe11a33da23977f37721e53%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2782,14 +2782,14 @@
             "name": "22 Bahnen Roman Lieblingsbuch 2023",
             "partner": "amazon",
             "category": "Bücher - Roman & Gegenwartsliteratur",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+            "landingpage": "https://freebasics.online/angebote/22-bahnen-roman-lieblingsbuch-2023",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+          "landingpage": "https://freebasics.online/angebote/22-bahnen-roman-lieblingsbuch-2023",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2851,7 +2851,7 @@
         "name": "Der Nachbar Psychothriller",
         "partner": "amazon",
         "category": "Bücher - Psychothriller",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+        "landingpage": "https://freebasics.online/angebote/der-nachbar-psychothriller",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=3426281759&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3426281759%3Fsmid%3DAQJOK2ISQB5Q5%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Dd964d6eb9b49e87def7735dbf9b7913c%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2882,14 +2882,14 @@
             "name": "Der Nachbar Psychothriller",
             "partner": "amazon",
             "category": "Bücher - Psychothriller",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+            "landingpage": "https://freebasics.online/angebote/der-nachbar-psychothriller",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+          "landingpage": "https://freebasics.online/angebote/der-nachbar-psychothriller",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -2951,7 +2951,7 @@
         "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
         "partner": "amazon",
         "category": "Körperpflege & Elektrorasierer",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+        "landingpage": "https://freebasics.online/angebote/philips-oneblade-360-face-body-elektrischer-rasierer-trimmer-und-bodygroomer-qp2824-31",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0DXLBZF4Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DXLBZF4Q%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D7d4e32a08a825498bee7382c530296e8%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -2982,14 +2982,14 @@
             "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
             "partner": "amazon",
             "category": "Körperpflege & Elektrorasierer",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+            "landingpage": "https://freebasics.online/angebote/philips-oneblade-360-face-body-elektrischer-rasierer-trimmer-und-bodygroomer-qp2824-31",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+          "landingpage": "https://freebasics.online/angebote/philips-oneblade-360-face-body-elektrischer-rasierer-trimmer-und-bodygroomer-qp2824-31",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -3051,7 +3051,7 @@
         "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
         "partner": "amazon",
         "category": "Rasierklingen & Zubehör",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+        "landingpage": "https://freebasics.online/angebote/philips-oneblade-original-360-klingen-passend-fuer-alle-oneblade-und-pro-modelle-4er-pack-qp440-50",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0CVXSK4D3&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CVXSK4D3%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D2febca87ab6dce8c73180e79c99357a6%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -3082,14 +3082,14 @@
             "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
             "partner": "amazon",
             "category": "Rasierklingen & Zubehör",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+            "landingpage": "https://freebasics.online/angebote/philips-oneblade-original-360-klingen-passend-fuer-alle-oneblade-und-pro-modelle-4er-pack-qp440-50",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+          "landingpage": "https://freebasics.online/angebote/philips-oneblade-original-360-klingen-passend-fuer-alle-oneblade-und-pro-modelle-4er-pack-qp440-50",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -3151,7 +3151,7 @@
         "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
         "partner": "amazon",
         "category": "Kosmetik - Wimperntusche",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+        "landingpage": "https://freebasics.online/angebote/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7-2-ml",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B08P4YPB8Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B08P4YPB8Q%3Fsmid%3DALAJG0TLJF7AF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Db596d267acc19dfded98b049ca2e358c%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -3182,14 +3182,14 @@
             "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
             "partner": "amazon",
             "category": "Kosmetik - Wimperntusche",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+            "landingpage": "https://freebasics.online/angebote/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7-2-ml",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+          "landingpage": "https://freebasics.online/angebote/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7-2-ml",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -3251,7 +3251,7 @@
         "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
         "partner": "amazon",
         "category": "Nahrungsergänzung - Magnesium",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+        "landingpage": "https://freebasics.online/angebote/sunday-natural-magnesium-komplex-240-kapseln-400mg-magnesium-aus-7-verbindungen",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0FMS3V43J&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FMS3V43J%3Fsmid%3DA1KKPIBTTVQSPQ%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D32623354b1c45bca2728d97a7e1aee82%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -3282,14 +3282,14 @@
             "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
             "partner": "amazon",
             "category": "Nahrungsergänzung - Magnesium",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+            "landingpage": "https://freebasics.online/angebote/sunday-natural-magnesium-komplex-240-kapseln-400mg-magnesium-aus-7-verbindungen",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+          "landingpage": "https://freebasics.online/angebote/sunday-natural-magnesium-komplex-240-kapseln-400mg-magnesium-aus-7-verbindungen",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -3351,7 +3351,7 @@
         "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
         "partner": "amazon",
         "category": "Bücher - Liebesromane / New Adult",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+        "landingpage": "https://freebasics.online/angebote/die-off-campus-reihe-im-neuen-look-band-1-5-plus-exklusives-postkartenset",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=B0D1YKBX82&partner=amazon_no_api&target=https%3A//www.amazon.de/Off-Campus-Reihe-neuen-Look-exklusives-Postkartenset/dp/B0D1YKBX82%3Fpd_rd_w%3Dxylrd%26content-id%3Damzn1.sym.2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_p%3D2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_r%3DF1QVTK61EB04BBPR6N0F%26pd_rd_wg%3DPITh0%26pd_rd_r%3D50058732-d05a-4c21-b3a9-6fa7140cd969%26pd_rd_i%3DB0D1YKBX82%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D4ac87f6407fab4d74ef588cbc2dd89c0%26ref_%3Das_li_ss_tl",
         "system_source": "cloud_landingpages_only",
         "status": "original_image_done",
@@ -3382,14 +3382,14 @@
             "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
             "partner": "amazon",
             "category": "Bücher - Liebesromane / New Adult",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+            "landingpage": "https://freebasics.online/angebote/die-off-campus-reihe-im-neuen-look-band-1-5-plus-exklusives-postkartenset",
             "tracking_available": true,
             "asset_status": "original_image_done",
             "source_reference": "amazon",
             "geo_ready": true
           },
           "source_reference": "amazon",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+          "landingpage": "https://freebasics.online/angebote/die-off-campus-reihe-im-neuen-look-band-1-5-plus-exklusives-postkartenset",
           "status": "READY_FOR_LLM_CONTEXT"
         },
         "facts_registry": {
@@ -3451,9 +3451,9 @@
         "name": "MagentaTV",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_001&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "MagentaTV",
         "summary": "",
@@ -3468,7 +3468,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -3482,15 +3485,19 @@
             "name": "MagentaTV",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_001",
@@ -3551,9 +3558,9 @@
         "name": "Glasfaser",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_002&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "Glasfaser",
         "summary": "",
@@ -3568,7 +3575,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -3582,15 +3592,19 @@
             "name": "Glasfaser",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_002",
@@ -3651,9 +3665,9 @@
         "name": "MagentaZuhause",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_003&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "MagentaZuhause",
         "summary": "",
@@ -3668,7 +3682,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -3682,15 +3699,19 @@
             "name": "MagentaZuhause",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_003",
@@ -3751,9 +3772,9 @@
         "name": "MagentaMobil",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_004&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "MagentaMobil",
         "summary": "",
@@ -3768,7 +3789,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -3782,15 +3806,19 @@
             "name": "MagentaMobil",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_004",
@@ -3851,9 +3879,9 @@
         "name": "MagentaMobil Young",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_005&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "MagentaMobil Young",
         "summary": "",
@@ -3868,7 +3896,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -3882,15 +3913,19 @@
             "name": "MagentaMobil Young",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_005",
@@ -3951,9 +3986,9 @@
         "name": "MagentaMobil Prepaid",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_006&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "MagentaMobil Prepaid",
         "summary": "",
@@ -3968,7 +4003,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -3982,15 +4020,19 @@
             "name": "MagentaMobil Prepaid",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_006",
@@ -4051,9 +4093,9 @@
         "name": "congstar Allnet",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_007&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "congstar Allnet",
         "summary": "",
@@ -4068,7 +4110,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -4082,15 +4127,19 @@
             "name": "congstar Allnet",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_007",
@@ -4151,9 +4200,9 @@
         "name": "congstar Homespot",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_008&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "congstar Homespot",
         "summary": "",
@@ -4168,7 +4217,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -4182,15 +4234,19 @@
             "name": "congstar Homespot",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_008",
@@ -4251,9 +4307,9 @@
         "name": "TV + Internet + Festnetz",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_009&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "TV + Internet + Festnetz",
         "summary": "",
@@ -4268,7 +4324,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -4282,15 +4341,19 @@
             "name": "TV + Internet + Festnetz",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_009",
@@ -4351,9 +4414,9 @@
         "name": "Datentarife",
         "partner": "telekom",
         "category": "telekom",
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+        "landingpage": "https://free-basics.telekom-profis.de",
         "tracking_url": "https://ai-marketing-system-1081897051313.europe-west1.run.app/track?pid=TEL_010&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
-        "system_source": "cloud_landingpages_only",
+        "system_source": "telekom_external_shop",
         "status": "active",
         "hero_title": "Datentarife",
         "summary": "",
@@ -4368,7 +4431,10 @@
           "wikidata_id": "",
           "sameAs": []
         },
-        "internal_links": []
+        "internal_links": [],
+        "shop_url": "https://free-basics.telekom-profis.de",
+        "conversion_target": "external_shop",
+        "landingpage_type": "external_shop"
       },
       "knowledge": {
         "llm_context": {
@@ -4382,15 +4448,19 @@
             "name": "Datentarife",
             "partner": "telekom",
             "category": "telekom",
-            "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+            "landingpage": "https://free-basics.telekom-profis.de",
             "tracking_available": true,
             "asset_status": "active",
             "source_reference": "telekom",
-            "geo_ready": true
+            "geo_ready": true,
+            "shop_url": "https://free-basics.telekom-profis.de",
+            "conversion_target": "external_shop"
           },
           "source_reference": "telekom",
-          "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
-          "status": "READY_FOR_LLM_CONTEXT"
+          "landingpage": "https://free-basics.telekom-profis.de",
+          "status": "READY_FOR_LLM_CONTEXT",
+          "shop_url": "https://free-basics.telekom-profis.de",
+          "conversion_target": "external_shop"
         },
         "facts_registry": {
           "product_id": "TEL_010",
@@ -4440,5 +4510,6 @@
       "updated_at": "2026-07-29T07:41:10.546135+00:00"
     }
   ],
-  "status": "READY"
+  "status": "READY",
+  "updated_at": "2026-08-21T09:39:30.089935+00:00"
 }
