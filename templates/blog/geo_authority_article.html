@@ -5,228 +5,265 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>{{title}}</title>
 
-<meta name="description" content="{{description}}">
+<meta name="description"
+      content="{{description}}">
 
-<link rel="canonical" href="{{canonical_url}}">
+<link rel="canonical"
+      href="{{canonical_url}}">
 
+<meta name="robots"
+      content="index, follow">
 
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Free Basics">
-<meta property="og:title" content="{{title}}">
-<meta property="og:description" content="{{description}}">
-<meta property="og:url" content="{{canonical_url}}">
-<meta property="og:image" content="{{og_image_url}}">
+<meta property="og:type"
+      content="article">
 
+<meta property="og:site_name"
+      content="Free Basics">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{title}}">
-<meta name="twitter:description" content="{{description}}">
-<meta name="twitter:image" content="{{og_image_url}}">
+<meta property="og:title"
+      content="{{title}}">
 
+<meta property="og:description"
+      content="{{description}}">
+
+<meta property="og:url"
+      content="{{canonical_url}}">
+
+{{og_image_meta}}
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="{{title}}">
+
+<meta name="twitter:description"
+      content="{{description}}">
 
 <script type="application/ld+json">
 {{article_schema}}
 </script>
 
-
 <script type="application/ld+json">
 {{faq_schema}}
 </script>
 
-
 <style>
 
-body{
-font-family:Arial,sans-serif;
-line-height:1.6;
-max-width:950px;
-margin:auto;
-padding:20px;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+    color: #222;
 }
 
-.box{
-border:1px solid #ddd;
-border-radius:8px;
-padding:20px;
-margin:25px 0;
+.box {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 24px 0;
 }
 
-.answer{
-background:#f5f5f5;
-padding:15px;
-border-radius:6px;
+.hero {
+    background: #f5f7fb;
 }
 
-.adbox{
-border:2px solid #333;
-padding:20px;
-text-align:center;
+.answer {
+    background: #f7f9fc;
+}
+
+.adbox {
+    border: 2px solid #333;
+    padding: 24px;
+    margin: 28px 0;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 14px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+a {
+    color: #0055ff;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
+<header class="box hero">
 
-<header class="box">
-
-<h1>{{title}}</h1>
+<h1>
+{{title}}
+</h1>
 
 <p>
 {{ai_summary}}
 </p>
-
 
 <p>
 Autor:
 <strong>{{author}}</strong>
 </p>
 
-
 <p>
 Geprüft von:
 <strong>{{reviewed_by}}</strong>
 </p>
-
 
 <p>
 Stand:
 {{updated_at}}
 </p>
 
-
 </header>
-
-
 
 <main>
 
+<section class="box answer">
 
-<section class="box">
-
-<h2>Das Wichtigste auf einen Blick</h2>
+<h2>
+Das Wichtigste auf einen Blick
+</h2>
 
 {{direct_answer}}
 
 </section>
 
-
-
 <section class="box">
 
-<h2>Wissensartikel</h2>
+<h2>
+Wissensartikel
+</h2>
 
 {{content}}
 
 </section>
 
-
-
-
 <section class="box">
 
-<h2>Entität und Kontext</h2>
+<h2>
+Entität und Kontext
+</h2>
 
 {{entity_context}}
 
 </section>
 
-
-
-
 <section class="box">
 
-<h2>Fakten und Quellen</h2>
+<h2>
+Fakten und Quellen
+</h2>
 
 <ul>
-
 {{sources}}
-
 </ul>
 
 </section>
 
-
-
-
 <section class="box">
 
-<h2>Häufige Fragen</h2>
+<h2>
+Häufige Fragen
+</h2>
 
 {{faq}}
 
 </section>
 
-
-
-
 <section class="box">
 
-<h2>Verwandte Themen</h2>
+<h2>
+Verwandte Themen
+</h2>
 
 {{related_products}}
 
 </section>
 
-
-
-
 <section class="box">
 
-<h2>Weitere Informationen</h2>
+<h2>
+Weitere Informationen
+</h2>
 
 {{internal_links}}
 
 </section>
 
-
-
-
 <section class="adbox">
 
-<h3>Werbung / Anzeige</h3>
+<h3>
+Werbung / Anzeige
+</h3>
 
 <p>
 Dieser Bereich enthält externe Partnerangebote.
 </p>
 
-
 {{affiliate_area}}
 
 </section>
 
-
-
-
 <section class="box">
 
-<h2>Newsletter</h2>
+<h2>
+Newsletter
+</h2>
 
 {{newsletter}}
 
 </section>
 
-
-
 </main>
-
-
-
 
 <footer class="box">
 
-
 {{footer}}
 
-
 <nav>
+
+<a href="/methodik">
+Methodik
+</a>
+
+|
+
+<a href="/redaktion">
+Redaktion
+</a>
+
+|
+
+<a href="/affiliate-hinweis">
+Affiliate-Hinweis
+</a>
+
+|
 
 <a href="/impressum">
 Impressum
@@ -240,19 +277,15 @@ Datenschutz
 
 |
 
-<a href="/affiliate-hinweis">
-Affiliate-Hinweis
+<a href="/kontakt">
+Kontakt
 </a>
-
 
 </nav>
 
-
 </footer>
 
-
 {{cookie_consent}}
-
 
 </body>
 

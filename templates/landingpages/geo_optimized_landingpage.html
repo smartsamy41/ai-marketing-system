@@ -17,8 +17,7 @@
       href="{{canonical_url}}">
 
 <meta name="robots"
-      content="{{robots_meta}}">
-
+      content="index, follow">
 
 <meta property="og:type"
       content="website">
@@ -35,9 +34,7 @@
 <meta property="og:url"
       content="{{canonical_url}}">
 
-<meta property="og:image"
-      content="{{og_image_url}}">
-
+{{og_image_meta}}
 
 <meta name="twitter:card"
       content="summary_large_image">
@@ -48,116 +45,109 @@
 <meta name="twitter:description"
       content="{{description}}">
 
-<meta name="twitter:image"
-      content="{{og_image_url}}">
-
-
 <script type="application/ld+json">
 {{page_schema}}
 </script>
-
 
 <style>
 
 body {
     font-family: Arial, sans-serif;
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-    line-height:1.7;
-    color:#222;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    line-height: 1.7;
+    color: #222;
 }
 
 header {
-    margin-bottom:40px;
+    margin-bottom: 40px;
 }
 
 h1 {
-    font-size:42px;
+    font-size: 42px;
 }
 
 .box {
-    background:#fff;
-    border:1px solid #ddd;
-    border-radius:14px;
-    padding:25px;
-    margin:25px 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 25px;
+    margin: 25px 0;
 }
 
 .hero {
-    background:#f5f7fb;
-    padding:35px;
-    border-radius:18px;
+    background: #f5f7fb;
+    padding: 35px;
+    border-radius: 18px;
 }
 
 .answer {
-    background:#f7f9fc;
+    background: #f7f9fc;
 }
 
 .fact-list li,
 .source-list li {
-    margin:8px 0;
+    margin: 8px 0;
 }
 
 .faq-item {
-    border-bottom:1px solid #ddd;
-    padding:15px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
 }
 
 .cta {
-    background:#f1f6ff;
-    border:2px solid #0055ff;
-    text-align:center;
-    padding:35px;
-    border-radius:16px;
+    background: #f1f6ff;
+    border: 2px solid #0055ff;
+    text-align: center;
+    padding: 35px;
+    border-radius: 16px;
 }
 
 .button {
-    display:inline-block;
-    background:#0055ff;
-    color:white;
-    padding:15px 35px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+    display: inline-block;
+    background: #0055ff;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .newsletter {
-    background:#fafafa;
-    padding:30px;
-    border-radius:15px;
-    border:1px solid #ddd;
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
 }
 
 table {
-    width:100%;
-    border-collapse:collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th,
 td {
-    padding:10px;
-    border-bottom:1px solid #ddd;
-    text-align:left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
 footer {
-    margin-top:50px;
-    padding-top:30px;
-    border-top:1px solid #ddd;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
 }
 
 a {
-    color:#0055ff;
+    color: #0055ff;
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <header class="hero">
 
@@ -186,9 +176,7 @@ Aktualisiert:
 
 </header>
 
-
 <main>
-
 
 <section class="box answer">
 
@@ -200,7 +188,6 @@ Das Wichtigste auf einen Blick
 
 </section>
 
-
 <section class="box">
 
 <h2>
@@ -211,45 +198,6 @@ Produkt- und Themeninformationen
 
 </section>
 
-
-<section class="box">
-
-<h2>
-Datenbasis
-</h2>
-
-<ul class="fact-list">
-
-<li>
-Kategorie:
-{{category}}
-</li>
-
-<li>
-Partnerquelle:
-{{partner}}
-</li>
-
-<li>
-Produkt-ID:
-{{product_id}}
-</li>
-
-<li>
-Silo:
-{{silo}}
-</li>
-
-<li>
-Cluster:
-{{cluster}}
-</li>
-
-</ul>
-
-</section>
-
-
 <section class="box">
 
 <h2>
@@ -257,13 +205,10 @@ Fakten & Quellen
 </h2>
 
 <ul class="source-list">
-
 {{sources}}
-
 </ul>
 
 </section>
-
 
 <section class="box">
 
@@ -275,11 +220,10 @@ Häufige Fragen
 
 </section>
 
-
 <section class="cta">
 
 <h2>
-Weitere Informationen und Angebote
+Angebote prüfen
 </h2>
 
 <p>
@@ -292,17 +236,15 @@ Werbung / Anzeige
 
 </section>
 
-
 <section class="box">
 
 <h2>
-Verwandte Themen
+Weitere Themen
 </h2>
 
 {{related_products}}
 
 </section>
-
 
 <section class="box">
 
@@ -310,10 +252,9 @@ Verwandte Themen
 Weitere Informationen
 </h2>
 
-{{internal_links_html}}
+{{internal_links}}
 
 </section>
-
 
 <section class="newsletter">
 
@@ -321,61 +262,36 @@ Weitere Informationen
 Newsletter
 </h2>
 
-{{newsletter}}
+<p>
+Neue Ratgeber und Informationen von Free Basics erhalten.
+</p>
+
+<form action="/api/newsletter/subscribe"
+      method="post">
+
+<input
+type="email"
+name="email"
+placeholder="E-Mail-Adresse"
+required>
+
+<button type="submit">
+Anmelden
+</button>
+
+</form>
 
 </section>
 
-
 </main>
-
 
 <footer>
 
 {{footer}}
 
-<nav>
-
-<a href="/methodik">
-Methodik
-</a>
-
-|
-
-<a href="/redaktion">
-Redaktion
-</a>
-
-|
-
-<a href="/affiliate-hinweis">
-Affiliate-Hinweis
-</a>
-
-|
-
-<a href="/impressum">
-Impressum
-</a>
-
-|
-
-<a href="/datenschutz">
-Datenschutz
-</a>
-
-|
-
-<a href="/kontakt">
-Kontakt
-</a>
-
-</nav>
-
 </footer>
 
-
 {{cookie_consent}}
-
 
 </body>
 

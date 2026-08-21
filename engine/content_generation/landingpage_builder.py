@@ -1,10 +1,9 @@
-import json
-from pathlib import Path
 from datetime import datetime, timezone
-from html import escape
 
 from engine.rendering.production_renderer import ProductionRenderer
-from engine.self_learning_agent.internal_linking_optimizer import InternalLinkingOptimizer
+from engine.self_learning_agent.internal_linking_optimizer import (
+    InternalLinkingOptimizer
+)
 
 from app.templates.base_components import (
     get_eeat_footer,
@@ -20,16 +19,8 @@ class LandingPageBuilder:
     ):
 
         self.system = system
-
         self.renderer = ProductionRenderer()
-
         self.link_optimizer = InternalLinkingOptimizer()
-
-        self.asset_graph_file = Path(
-            "data_master/content_production/"
-            "affiliate_asset_output/"
-            "affiliate_asset_injection_graph.json"
-        )
 
 
     # =========================================================
@@ -37,28 +28,11 @@ class LandingPageBuilder:
     # =========================================================
 
     @staticmethod
-    def clean(value):
-
-        if value is None:
-            return ""
-
-        text = str(value).strip()
-
-        if text.lower() in {
-            "",
-            "nan",
-            "none",
-            "null"
-        }:
-            return ""
-
-        return text
-
-
-    def _slugify(self, text):
+    def _slugify(text):
 
         return (
-            self.clean(text)
+            str(text or "")
+            .strip()
             .lower()
             .replace(" ", "-")
             .replace("ä", "ae")
@@ -68,322 +42,69 @@ class LandingPageBuilder:
         )
 
 
-    def load_json(self, path):
+    @staticmethod
+    def _partner(product):
 
-        if not path.exists():
-            return {}
-
-        with open(
-            path,
-            encoding="utf-8"
-        ) as f:
-
-            return json.load(f)
+        return str(
+            product.get(
+                "partner",
+                ""
+            )
+            or ""
+        ).strip().lower()
 
 
-    # =========================================================
-    # AFFILIATE ASSETS
-    # =========================================================
-
-    def get_product_assets(
+    def _build_og_image_meta(
         self,
-        product_id
+        product
     ):
 
-        graph = self.load_json(
-            self.asset_graph_file
-        )
+        url = str(
+            product.get(
+                "og_image_url",
+                ""
+            )
+            or ""
+        ).strip()
+
+        if not url:
+            return ""
 
         return (
-            graph
-            .get("products", {})
-            .get(product_id, [])
+            f'<meta property="og:image" content="{url}">\n'
+            f'<meta name="twitter:image" content="{url}">'
         )
-
-
-    def select_primary_asset(
-        self,
-        product
-    ):
-
-        product_id = self.clean(
-            product.get("product_id")
-        )
-
-        partner = self.clean(
-            product.get("partner")
-        ).lower()
-
-        assets = self.get_product_assets(
-            product_id
-        )
-
-        if not assets:
-            return None
-
-
-        priorities = {
-
-            "check24": [
-                "calculator",
-                "short_calculator",
-                "direct_link",
-                "banner_300x250",
-                "banner_728x90",
-                "verified_routing_link"
-            ],
-
-            "tarifcheck": [
-                "calculator",
-                "direct_link",
-                "short_calculator",
-                "banner_300x250",
-                "banner_728x90",
-                "verified_routing_link"
-            ],
-
-            "amazon": [
-                "verified_routing_link",
-                "direct_link",
-                "affiliate_asset"
-            ],
-
-            "telekom": [
-                "verified_routing_link",
-                "direct_link",
-                "affiliate_asset"
-            ]
-        }
-
-
-        wanted = priorities.get(
-            partner,
-            [
-                "verified_routing_link",
-                "direct_link",
-                "calculator",
-                "banner_300x250"
-            ]
-        )
-
-
-        for asset_type in wanted:
-
-            for asset in assets:
-
-                if (
-                    asset.get("asset_type") == asset_type
-                    and asset.get("payload_available")
-                    and asset.get("source_verified")
-                ):
-
-                    return asset
-
-
-        for asset in assets:
-
-            if (
-                asset.get("payload_available")
-                and asset.get("source_verified")
-            ):
-
-                return asset
-
-
-        return None
-
-
-    def render_affiliate_area(
-        self,
-        product
-    ):
-
-        partner = self.clean(
-            product.get("partner")
-        ).lower()
-
-        asset = self.select_primary_asset(
-            product
-        )
-
-
-        if not asset:
-
-            return """
-<p>
-Für dieses Produkt ist derzeit kein freigegebenes
-Partner-Werbemittel hinterlegt.
-</p>
-"""
-
-
-        payload = self.clean(
-            asset.get("payload")
-        )
-
-        asset_type = self.clean(
-            asset.get("asset_type")
-        )
-
-        compliance = (
-            asset.get("compliance", {})
-            or {}
-        )
-
-        disclosure = self.clean(
-            compliance.get("kennzeichnung")
-        )
-
-
-        if partner == "telekom":
-
-            return f"""
-<p>
-<strong>Werbung / Anzeige</strong>
-</p>
-
-<p>
-Weitere Informationen und Angebote finden Sie
-im offiziellen Telekom-Profis-Shop von Free Basics.
-</p>
-
-<a class="button"
-   href="{escape(payload)}"
-   target="_blank"
-   rel="sponsored nofollow noopener">
-
-Zum Telekom Profis Shop
-
-</a>
-"""
-
-
-        partner_notice = ""
-
-
-        if partner == "tarifcheck":
-
-            partner_notice = """
-<p>
-<strong>
-powered by TARIFCHECK24 GmbH
-</strong>
-</p>
-
-<p>
-Free Basics ist Tippgeber und nicht
-Versicherungsvermittler.
-</p>
-"""
-
-
-        if asset_type in {
-            "direct_link",
-            "verified_routing_link",
-            "affiliate_asset"
-        }:
-
-            if partner == "amazon":
-
-                label = "Bei Amazon ansehen"
-
-            elif partner in {
-                "check24",
-                "tarifcheck"
-            }:
-
-                label = "Vergleich starten"
-
-            else:
-
-                label = "Weitere Informationen"
-
-
-            return f"""
-{partner_notice}
-
-<p>
-{escape(disclosure)}
-</p>
-
-<a class="button"
-   href="{escape(payload)}"
-   target="_blank"
-   rel="sponsored nofollow noopener">
-
-{label}
-
-</a>
-"""
-
-
-        return f"""
-{partner_notice}
-
-<p>
-{escape(disclosure)}
-</p>
-
-<div class="official-affiliate-asset">
-
-{payload}
-
-</div>
-"""
 
 
     # =========================================================
-    # DIRECT ANSWER
+    # CONTENT
     # =========================================================
 
-    def build_direct_answer(
-        self,
-        product
-    ):
-
-        name = self.clean(
-            product.get("name")
-            or product.get("product_name")
-        )
-
-        summary = self.clean(
-            product.get("summary")
-        )
-
-
-        if not summary:
-
-            return f"""
-<p>
-<strong>{escape(name)}</strong> ist ein Thema aus dem
-Informationsangebot von Free Basics.
-</p>
-"""
-
-
-        return f"""
-<p>
-<strong>{escape(name)}:</strong>
-{escape(summary)}
-</p>
-"""
-
-
-    # =========================================================
-    # MAIN CONTENT
-    # =========================================================
-
-    def build_content(
+    def _build_content(
         self,
         product
     ):
 
         html = []
 
+        name = str(
+            product.get(
+                "name",
+                product.get(
+                    "product_name",
+                    "Produkt"
+                )
+            )
+            or ""
+        ).strip()
 
-        summary = self.clean(
-            product.get("summary")
-        )
+        summary = str(
+            product.get(
+                "summary",
+                ""
+            )
+            or ""
+        ).strip()
 
 
         if summary:
@@ -392,10 +113,10 @@ Informationsangebot von Free Basics.
                 f"""
 <section>
 
-<h2>Worum geht es bei {escape(self.clean(product.get("name"))) }?</h2>
+<h2>Worum geht es bei {name}?</h2>
 
 <p>
-{escape(summary)}
+{summary}
 </p>
 
 </section>
@@ -403,7 +124,7 @@ Informationsangebot von Free Basics.
             )
 
 
-        key_facts = (
+        facts = (
             product.get(
                 "key_facts",
                 []
@@ -412,26 +133,22 @@ Informationsangebot von Free Basics.
         )
 
 
-        if key_facts:
+        if facts:
+
+            fact_html = "\n".join(
+                f"<li>{fact}</li>"
+                for fact in facts
+                if fact
+            )
 
             html.append(
-                """
+                f"""
 <section>
 
 <h2>Welche Fakten sind wichtig?</h2>
 
 <ul>
-"""
-            )
-
-            for fact in key_facts:
-
-                html.append(
-                    f"<li>{escape(str(fact))}</li>"
-                )
-
-            html.append(
-                """
+{fact_html}
 </ul>
 
 </section>
@@ -448,10 +165,47 @@ Informationsangebot von Free Basics.
         )
 
 
-        if comparison:
+        rows = []
+
+        for item in comparison:
+
+            if not isinstance(
+                item,
+                dict
+            ):
+                continue
+
+            field = item.get(
+                "field",
+                ""
+            )
+
+            value = item.get(
+                "value",
+                ""
+            )
+
+            if not (
+                field
+                or value
+            ):
+                continue
+
+
+            rows.append(
+                f"""
+<tr>
+<th>{field}</th>
+<td>{value}</td>
+</tr>
+"""
+            )
+
+
+        if rows:
 
             html.append(
-                """
+                f"""
 <section>
 
 <h2>Welche Daten sollten verglichen werden?</h2>
@@ -459,37 +213,7 @@ Informationsangebot von Free Basics.
 <table>
 
 <tbody>
-"""
-            )
-
-
-            for item in comparison:
-
-                field = escape(
-                    self.clean(
-                        item.get("field")
-                    )
-                )
-
-                value = escape(
-                    self.clean(
-                        item.get("value")
-                    )
-                )
-
-
-                html.append(
-                    f"""
-<tr>
-<th>{field}</th>
-<td>{value}</td>
-</tr>
-"""
-                )
-
-
-            html.append(
-                """
+{''.join(rows)}
 </tbody>
 
 </table>
@@ -499,12 +223,16 @@ Informationsangebot von Free Basics.
             )
 
 
-        content = self.clean(
-            product.get("content")
-        )
+        extra = str(
+            product.get(
+                "content",
+                ""
+            )
+            or ""
+        ).strip()
 
 
-        if content:
+        if extra:
 
             html.append(
                 f"""
@@ -513,7 +241,7 @@ Informationsangebot von Free Basics.
 <h2>Weitere Informationen</h2>
 
 <p>
-{escape(content)}
+{extra}
 </p>
 
 </section>
@@ -521,33 +249,52 @@ Informationsangebot von Free Basics.
             )
 
 
-        if not html:
+        return "\n".join(
+            html
+        )
 
-            html.append(
-                """
-<section>
 
-<h2>Welche Informationen liegen vor?</h2>
+    # =========================================================
+    # DIRECT ANSWER
+    # =========================================================
 
+    def _build_direct_answer(
+        self,
+        product
+    ):
+
+        name = str(
+            product.get(
+                "name",
+                "Produkt"
+            )
+            or "Produkt"
+        ).strip()
+
+        summary = str(
+            product.get(
+                "summary",
+                ""
+            )
+            or ""
+        ).strip()
+
+        if not summary:
+            return ""
+
+        return f"""
 <p>
-Diese Seite basiert auf geprüften Produkt-
-und Partnerinformationen aus dem
-Free-Basics-Knowledge-Layer.
+<strong>{name}:</strong>
+{summary}
 </p>
-
-</section>
 """
-            )
-
-
-        return "\n".join(html)
 
 
     # =========================================================
     # RELATED PRODUCTS
     # =========================================================
 
-    def build_related_products(
+    def _build_related_products_html(
         self,
         products
     ):
@@ -566,30 +313,43 @@ Free-Basics-Knowledge-Layer.
             ):
                 continue
 
-
-            product_id = self.clean(
-                item.get("product_id")
-            )
-
-            name = self.clean(
-                item.get("category")
-                or item.get("name")
-                or product_id
+            name = (
+                item.get("name")
+                or item.get("category")
+                or item.get("product_id")
+                or ""
             )
 
 
-            if not product_id:
+            if not name:
                 continue
+
+
+            url = str(
+                item.get(
+                    "landingpage",
+                    ""
+                )
+                or ""
+            ).strip()
+
+
+            if not url:
+
+                url = (
+                    "/angebote/"
+                    + self._slugify(
+                        name
+                    )
+                )
 
 
             html.append(
                 f"""
 <div class="related-product">
 
-<a href="/lp/{escape(product_id)}">
-
-{escape(name)}
-
+<a href="{url}">
+{name}
 </a>
 
 </div>
@@ -597,136 +357,306 @@ Free-Basics-Knowledge-Layer.
             )
 
 
-        return "\n".join(html)
+        return "\n".join(
+            html
+        )
 
 
     # =========================================================
     # INTERNAL LINKS
     # =========================================================
 
-    def build_internal_links(
+    def _build_internal_links(
         self,
         product,
         related_products
     ):
 
-        name = self.clean(
-            product.get("name")
-        )
-
-        category = self.clean(
-            product.get("category")
-        )
-
-        slug = self._slugify(
-            name
-        )
+        category = str(
+            product.get(
+                "category",
+                ""
+            )
+            or ""
+        ).strip()
 
 
-        result = self.link_optimizer.suggest_links(
+        try:
 
-            {
-                "slug": slug,
-                "category": category
-            },
+            result = (
+                self.link_optimizer
+                .suggest_links(
+                    {
+                        "slug":
+                            self._slugify(
+                                category
+                            ),
 
-            related_products or []
+                        "category":
+                            category
+                    },
 
+                    related_products
+                    or []
+                )
+            )
+
+        except Exception:
+
+            return ""
+
+
+        links = (
+            result.get(
+                "links",
+                []
+            )
+            or []
         )
 
 
         html = []
 
 
-        silo = self.clean(
-            product.get("silo")
-        )
+        for link in links:
 
+            if isinstance(
+                link,
+                dict
+            ):
 
-        cluster = self.clean(
-            product.get("cluster")
-            or category
-        )
-
-
-        if silo:
-
-            silo_slug = (
-                silo.replace(
-                    "_",
-                    "-"
+                url = (
+                    link.get("url")
+                    or link.get("href")
+                    or ""
                 )
-            )
 
-            html.append(
-                f"""
-<li>
-<a href="/{escape(silo_slug)}/">
-{escape(silo.replace("_", " ").title())}
+                title = (
+                    link.get("title")
+                    or link.get("name")
+                    or url
+                )
+
+            else:
+
+                url = str(
+                    link
+                )
+
+                title = url
+
+
+            if url:
+
+                html.append(
+                    f"""
+<p>
+<a href="{url}">
+{title}
 </a>
-</li>
+</p>
 """
+                )
+
+
+        return "\n".join(
+            html
+        )
+
+
+    # =========================================================
+    # AFFILIATE AREA
+    # =========================================================
+
+    def _build_affiliate_area(
+        self,
+        product
+    ):
+
+        partner = self._partner(
+            product
+        )
+
+        pid = str(
+            product.get(
+                "product_id",
+                ""
             )
+            or ""
+        )
 
 
-        if silo and cluster:
-
-            silo_slug = silo.replace(
-                "_",
-                "-"
+        tracking = str(
+            product.get(
+                "tracking_url",
+                ""
             )
+            or ""
+        ).strip()
 
-            cluster_slug = self._slugify(
-                cluster
+
+        landingpage = str(
+            product.get(
+                "landingpage",
+                ""
             )
+            or ""
+        ).strip()
 
-            html.append(
-                f"""
-<li>
-<a href="/{escape(silo_slug)}/{escape(cluster_slug)}/">
-{escape(cluster)}
-</a>
-</li>
-"""
+
+        shop_url = str(
+            product.get(
+                "shop_url",
+                ""
             )
+            or ""
+        ).strip()
 
 
-        for link in result.get(
-            "links",
-            []
+        conversion_target = str(
+            product.get(
+                "conversion_target",
+                ""
+            )
+            or ""
+        ).strip()
+
+
+        # TELEKOM
+        if (
+            partner == "telekom"
+            or pid.startswith(
+                "TEL_"
+            )
+            or conversion_target
+            == "external_shop"
         ):
 
-            target = self.clean(
-                link.get("to")
+            target = (
+                shop_url
+                or landingpage
+                or "https://free-basics.telekom-profis.de"
             )
 
-            reason = self.clean(
-                link.get("reason")
-            )
+            return f"""
+<div class="official-affiliate-asset">
 
+<p>
+<strong>Werbung / Anzeige</strong>
+</p>
+
+<p>
+Die weitere Produktinformation und Abwicklung
+erfolgt im Telekom-Profis-Shop.
+</p>
+
+<a class="button"
+   href="{target}"
+   target="_blank"
+   rel="sponsored nofollow noopener">
+
+Zum Telekom-Profis-Shop
+
+</a>
+
+</div>
+"""
+
+
+        # AMAZON
+        if partner == "amazon":
+
+            target = (
+                tracking
+                or landingpage
+            )
 
             if not target:
-                continue
+                return ""
 
+            return f"""
+<div class="official-affiliate-asset">
 
-            html.append(
-                f"""
-<li>
-<a href="/blog/{escape(target)}-ratgeber">
-{escape(reason or target)}
+<p>
+<strong>Werbung / Anzeige</strong>
+</p>
+
+<a class="button"
+   href="{target}"
+   target="_blank"
+   rel="sponsored nofollow noopener">
+
+Bei Amazon ansehen
+
 </a>
-</li>
+
+</div>
 """
+
+
+        # TARIFCHECK
+        if partner == "tarifcheck":
+
+            target = (
+                tracking
+                or landingpage
             )
 
+            if not target:
+                return ""
 
-        return (
-            "<ul>"
-            +
-            "\n".join(html)
-            +
-            "</ul>"
+            return f"""
+<div class="official-affiliate-asset">
+
+<p>
+<strong>Werbung / Anzeige</strong>
+</p>
+
+<p>
+powered by TARIFCHECK24 GmbH
+</p>
+
+<a class="button"
+   href="{target}"
+   target="_blank"
+   rel="sponsored nofollow noopener">
+
+Vergleich starten
+
+</a>
+
+</div>
+"""
+
+
+        # CHECK24 / fallback
+        target = (
+            tracking
+            or landingpage
         )
+
+        if not target:
+            return ""
+
+
+        return f"""
+<div class="official-affiliate-asset">
+
+<p>
+<strong>Werbung / Anzeige</strong>
+</p>
+
+<a class="button"
+   href="{target}"
+   target="_blank"
+   rel="sponsored nofollow noopener">
+
+Vergleich starten
+
+</a>
+
+</div>
+"""
 
 
     # =========================================================
@@ -742,60 +672,32 @@ Free-Basics-Knowledge-Layer.
 
         now = datetime.now(
             timezone.utc
-        ).strftime(
-            "%Y-%m-%d"
-        )
+        ).isoformat()
 
 
-        related_products = (
-            related_products
-            or product.get(
-                "related_products",
-                []
-            )
-            or []
-        )
-
-
-        product_id = self.clean(
-            product.get("product_id")
-        )
-
-
-        name = self.clean(
-            product.get("name")
-            or product.get("product_name")
-            or "Produkt"
-        )
-
-
-        category = self.clean(
-            product.get("category")
-        )
-
-
-        partner = self.clean(
-            product.get("partner")
-        ).lower()
-
-
-        silo = self.clean(
-            product.get("silo")
-        )
-
-
-        cluster = self.clean(
-            product.get("cluster")
-            or category
-        )
-
-
-        newsletter_segment = self.clean(
+        name = str(
             product.get(
-                "newsletter_segment"
+                "name",
+                product.get(
+                    "product_name",
+                    "Produkt"
+                )
             )
-            or silo
-            or category
+            or "Produkt"
+        ).strip()
+
+
+        category = str(
+            product.get(
+                "category",
+                ""
+            )
+            or ""
+        ).strip()
+
+
+        partner = self._partner(
+            product
         )
 
 
@@ -804,14 +706,31 @@ Free-Basics-Knowledge-Layer.
         )
 
 
-        canonical_url = self.clean(
+        canonical_url = str(
             product.get(
-                "landingpage_url"
+                "landingpage",
+                ""
             )
-        )
+            or ""
+        ).strip()
 
 
-        if not canonical_url:
+        if (
+            partner == "telekom"
+            or str(
+                product.get(
+                    "conversion_target",
+                    ""
+                )
+            ) == "external_shop"
+        ):
+
+            canonical_url = (
+                "https://freebasics.online/"
+                f"blog/{slug}"
+            )
+
+        elif not canonical_url:
 
             canonical_url = (
                 "https://freebasics.online/"
@@ -819,37 +738,11 @@ Free-Basics-Knowledge-Layer.
             )
 
 
-        #
-        # GEO QUALITY SHIELD PREPARATION
-        #
-        # Noch KEINE erfundenen lokalen Daten.
-        #
-        geo_verified = bool(
-            product.get(
-                "geo_verified",
-                False
-            )
+        internal_links = self._build_internal_links(
+            product,
+            related_products
+            or []
         )
-
-
-        page_type = self.clean(
-            product.get(
-                "page_type"
-            )
-        )
-
-
-        if page_type == "geo" and not geo_verified:
-
-            robots_meta = (
-                "noindex, follow"
-            )
-
-        else:
-
-            robots_meta = (
-                "index, follow"
-            )
 
 
         return {
@@ -858,7 +751,10 @@ Free-Basics-Knowledge-Layer.
                 self.system,
 
             "product_id":
-                product_id,
+                product.get(
+                    "product_id",
+                    ""
+                ),
 
             "title":
                 name,
@@ -869,29 +765,19 @@ Free-Basics-Knowledge-Layer.
             "partner":
                 partner,
 
-            "silo":
-                silo,
-
-            "cluster":
-                cluster,
-
-            "newsletter_segment":
-                newsletter_segment,
-
             "description":
-                self.clean(
-                    product.get(
-                        "summary"
-                    )
+                product.get(
+                    "summary",
+                    ""
                 ),
 
             "direct_answer":
-                self.build_direct_answer(
+                self._build_direct_answer(
                     product
                 ),
 
             "content":
-                self.build_content(
+                self._build_content(
                     product
                 ),
 
@@ -899,123 +785,70 @@ Free-Basics-Knowledge-Layer.
                 product.get(
                     "faq",
                     []
-                )
-                or [],
+                ),
 
             "questions":
                 product.get(
                     "questions",
                     []
-                )
-                or [],
+                ),
 
             "sources":
                 product.get(
                     "sources",
                     []
-                )
-                or [],
-
-            "facts":
-                facts or {},
-
-            "affiliate_area":
-                self.render_affiliate_area(
-                    product
                 ),
 
             "tracking_url":
-                self.clean(
-                    product.get(
-                        "tracking_url"
-                    )
+                product.get(
+                    "tracking_url",
+                    ""
+                ),
+
+            "affiliate_area":
+                self._build_affiliate_area(
+                    product
                 ),
 
             "author":
-                self.clean(
-                    product.get(
-                        "author"
-                    )
-                )
-                or "Redaktion Free Basics",
+                product.get(
+                    "author",
+                    "Redaktion Free Basics"
+                ),
 
             "reviewed_by":
-                self.clean(
-                    product.get(
-                        "reviewed_by"
-                    )
+                product.get(
+                    "reviewed_by",
+                    ""
                 ),
 
             "updated_at":
-                self.clean(
-                    product.get(
-                        "updated_at"
-                    )
-                )
-                or now,
+                product.get(
+                    "updated_at",
+                    now
+                ),
 
             "canonical_url":
                 canonical_url,
 
-            "landingpage_url":
-                canonical_url,
-
-            "robots_meta":
-                robots_meta,
-
-            "geo_verified":
-                geo_verified,
-
             "related_products":
-                self.build_related_products(
+                self._build_related_products_html(
                     related_products
-                ),
-
-            "internal_links_html":
-                self.build_internal_links(
-                    product,
-                    related_products
+                    or []
                 ),
 
             "internal_links":
-                self.link_optimizer.suggest_links(
-
-                    {
-                        "slug":
-                            slug,
-
-                        "category":
-                            category
-                    },
-
-                    related_products
-
-                ).get(
-                    "links",
-                    []
-                ),
-
-            "newsletter":
-                f"""
-<p>
-Neue Ratgeber und Informationen zum Themenbereich
-<strong>{escape(newsletter_segment)}</strong>
-erhalten.
-</p>
-
-<a href="/newsletter">
-Newsletter Anmeldung
-</a>
-""",
+                internal_links,
 
             "og_image_url":
-                self.clean(
-                    product.get(
-                        "og_image_url"
-                    )
-                    or product.get(
-                        "image_url"
-                    )
+                product.get(
+                    "og_image_url",
+                    ""
+                ),
+
+            "og_image_meta":
+                self._build_og_image_meta(
+                    product
                 ),
 
             "footer":
@@ -1023,6 +856,7 @@ Newsletter Anmeldung
 
             "cookie_consent":
                 get_cookie_consent_script()
+
         }
 
 
@@ -1038,12 +872,3 @@ Newsletter Anmeldung
         return self.renderer.render_landingpage(
             landingpage
         )
-
-
-if __name__ == "__main__":
-
-    builder = LandingPageBuilder()
-
-    print(
-        "LandingPageBuilder READY"
-    )
