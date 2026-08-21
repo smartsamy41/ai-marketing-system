@@ -10,7 +10,7 @@
       "partner": "check24",
       "category": "DSL",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_004",
+        "landingpage": "https://freebasics.online/angebote/dsl",
         "tracking_available": true,
         "internal_links": []
       },
@@ -24,7 +24,7 @@
       "partner": "check24",
       "category": "Mobilfunk",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_005",
+        "landingpage": "https://freebasics.online/angebote/mobilfunk",
         "tracking_available": true,
         "internal_links": []
       },
@@ -38,7 +38,7 @@
       "partner": "check24",
       "category": "Oekostrom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_002",
+        "landingpage": "https://freebasics.online/angebote/oekostrom",
         "tracking_available": true,
         "internal_links": []
       },
@@ -52,7 +52,7 @@
       "partner": "check24",
       "category": "Strom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_001",
+        "landingpage": "https://freebasics.online/angebote/strom",
         "tracking_available": true,
         "internal_links": [
           "/blog/strom-ratgeber"
@@ -71,7 +71,7 @@
       "partner": "check24",
       "category": "Gas",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_003",
+        "landingpage": "https://freebasics.online/angebote/gas",
         "tracking_available": true,
         "internal_links": []
       },
@@ -85,7 +85,7 @@
       "partner": "check24",
       "category": "Reisen",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_006",
+        "landingpage": "https://freebasics.online/angebote/pauschalreise",
         "tracking_available": true,
         "internal_links": []
       },
@@ -99,7 +99,7 @@
       "partner": "check24",
       "category": "Reisen",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_007",
+        "landingpage": "https://freebasics.online/angebote/mietwagen",
         "tracking_available": true,
         "internal_links": []
       },
@@ -113,7 +113,7 @@
       "partner": "check24",
       "category": "Finanzen",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/CHK24_008",
+        "landingpage": "https://freebasics.online/angebote/c24-bank",
         "tracking_available": true,
         "internal_links": []
       },
@@ -127,7 +127,7 @@
       "partner": "tarifcheck",
       "category": "Solaranlage",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_001",
+        "landingpage": "https://freebasics.online/angebote/solaranlage",
         "tracking_available": true,
         "internal_links": []
       },
@@ -141,7 +141,7 @@
       "partner": "tarifcheck",
       "category": "Versicherung",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_002",
+        "landingpage": "https://freebasics.online/angebote/kfz-versicherung",
         "tracking_available": true,
         "internal_links": []
       },
@@ -155,7 +155,7 @@
       "partner": "tarifcheck",
       "category": "Kredit",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_003",
+        "landingpage": "https://freebasics.online/angebote/kredit",
         "tracking_available": true,
         "internal_links": []
       },
@@ -169,7 +169,7 @@
       "partner": "tarifcheck",
       "category": "Girokonto",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_004",
+        "landingpage": "https://freebasics.online/angebote/girokonto",
         "tracking_available": true,
         "internal_links": []
       },
@@ -183,7 +183,7 @@
       "partner": "tarifcheck",
       "category": "Baufinanzierung",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_005",
+        "landingpage": "https://freebasics.online/angebote/baufinanzierung",
         "tracking_available": true,
         "internal_links": []
       },
@@ -197,7 +197,7 @@
       "partner": "tarifcheck",
       "category": "Versicherung",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_006",
+        "landingpage": "https://freebasics.online/angebote/hausratversicherung",
         "tracking_available": true,
         "internal_links": []
       },
@@ -211,7 +211,7 @@
       "partner": "tarifcheck",
       "category": "Versicherung",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_007",
+        "landingpage": "https://freebasics.online/angebote/haftpflichtversicherung",
         "tracking_available": true,
         "internal_links": []
       },
@@ -225,7 +225,7 @@
       "partner": "tarifcheck",
       "category": "Vorsorge",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_008",
+        "landingpage": "https://freebasics.online/angebote/rentenversicherung",
         "tracking_available": true,
         "internal_links": []
       },
@@ -239,7 +239,7 @@
       "partner": "tarifcheck",
       "category": "Versicherung",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TC_009",
+        "landingpage": "https://freebasics.online/angebote/private-krankenversicherung",
         "tracking_available": true,
         "internal_links": []
       },
@@ -253,7 +253,7 @@
       "partner": "amazon",
       "category": "Bluetooth-Kopfhörer",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FQF32239",
+        "landingpage": "https://freebasics.online/angebote/apple-airpods-pro-3-kabellose-in-ear-kopfhoerer",
         "tracking_available": true,
         "internal_links": []
       },
@@ -267,7 +267,7 @@
       "partner": "amazon",
       "category": "E-Reader",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CFPWLGF2",
+        "landingpage": "https://freebasics.online/angebote/amazon-kindle-paperwhite-neueste-generation-16-gb-ohne-werbung-schwarz",
         "tracking_available": true,
         "internal_links": []
       },
@@ -281,7 +281,7 @@
       "partner": "amazon",
       "category": "Körperpflege & Elektrorasierer",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DFYN8174",
+        "landingpage": "https://freebasics.online/angebote/philips-oneblade-intimate-intimrasur-trimmen-und-rasieren-mit-extra-hautschutz-modell-qp1924-30",
         "tracking_available": true,
         "internal_links": []
       },
@@ -295,7 +295,7 @@
       "partner": "amazon",
       "category": "Bauspielzeugsets",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXFBL13",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-lionel-messi-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
         "tracking_available": true,
         "internal_links": []
       },
@@ -309,7 +309,7 @@
       "partner": "amazon",
       "category": "Bauspielzeugsets",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDCDX2",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-kylian-mbappe-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
         "tracking_available": true,
         "internal_links": []
       },
@@ -323,7 +323,7 @@
       "partner": "amazon",
       "category": "Bauspielzeugsets",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXGJL6H",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-cristiano-ronaldo-fussball-highlights-spielzeug-3d-modellbau-mit-minifigur",
         "tracking_available": true,
         "internal_links": []
       },
@@ -337,7 +337,7 @@
       "partner": "amazon",
       "category": "Bauspielzeugsets",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FPXDRR63",
+        "landingpage": "https://freebasics.online/angebote/lego-editions-sports-offizieller-pokal-der-fifa-fussball-weltmeisterschaft-3d-diy-modell-mit-minifigur-43020",
         "tracking_available": true,
         "internal_links": []
       },
@@ -351,7 +351,7 @@
       "partner": "amazon",
       "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3424631078",
+        "landingpage": "https://freebasics.online/angebote/das-kind-in-dir-muss-heimat-finden-der-schluessel-zur-loesung-fast-aller-probleme",
         "tracking_available": true,
         "internal_links": []
       },
@@ -365,7 +365,7 @@
       "partner": "amazon",
       "category": "Bücher - Psychothriller",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FNX7HC9M",
+        "landingpage": "https://freebasics.online/angebote/sebastian-fitzek-thriller-bundle-der-augensammler-und-der-augenjaeger-bestseller-psychothriller-im-set",
         "tracking_available": true,
         "internal_links": []
       },
@@ -379,7 +379,7 @@
       "partner": "amazon",
       "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3423209690",
+        "landingpage": "https://freebasics.online/angebote/das-cafe-am-rande-der-welt-eine-erzaehlung-ueber-den-sinn-des-lebens",
         "tracking_available": true,
         "internal_links": []
       },
@@ -393,7 +393,7 @@
       "partner": "amazon",
       "category": "Bücher - Roman & Gegenwartsliteratur",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3832167242",
+        "landingpage": "https://freebasics.online/angebote/22-bahnen-roman-lieblingsbuch-2023",
         "tracking_available": true,
         "internal_links": []
       },
@@ -407,7 +407,7 @@
       "partner": "amazon",
       "category": "Bücher - Psychothriller",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/3426281759",
+        "landingpage": "https://freebasics.online/angebote/der-nachbar-psychothriller",
         "tracking_available": true,
         "internal_links": []
       },
@@ -421,7 +421,7 @@
       "partner": "amazon",
       "category": "Körperpflege & Elektrorasierer",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0DXLBZF4Q",
+        "landingpage": "https://freebasics.online/angebote/philips-oneblade-360-face-body-elektrischer-rasierer-trimmer-und-bodygroomer-qp2824-31",
         "tracking_available": true,
         "internal_links": []
       },
@@ -435,7 +435,7 @@
       "partner": "amazon",
       "category": "Rasierklingen & Zubehör",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0CVXSK4D3",
+        "landingpage": "https://freebasics.online/angebote/philips-oneblade-original-360-klingen-passend-fuer-alle-oneblade-und-pro-modelle-4er-pack-qp440-50",
         "tracking_available": true,
         "internal_links": []
       },
@@ -449,7 +449,7 @@
       "partner": "amazon",
       "category": "Kosmetik - Wimperntusche",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B08P4YPB8Q",
+        "landingpage": "https://freebasics.online/angebote/maybelline-new-york-sky-high-mascara-fuer-extreme-laenge-und-volles-volumen-very-black-7-2-ml",
         "tracking_available": true,
         "internal_links": []
       },
@@ -463,7 +463,7 @@
       "partner": "amazon",
       "category": "Nahrungsergänzung - Magnesium",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0FMS3V43J",
+        "landingpage": "https://freebasics.online/angebote/sunday-natural-magnesium-komplex-240-kapseln-400mg-magnesium-aus-7-verbindungen",
         "tracking_available": true,
         "internal_links": []
       },
@@ -477,7 +477,7 @@
       "partner": "amazon",
       "category": "Bücher - Liebesromane / New Adult",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/B0D1YKBX82",
+        "landingpage": "https://freebasics.online/angebote/die-off-campus-reihe-im-neuen-look-band-1-5-plus-exklusives-postkartenset",
         "tracking_available": true,
         "internal_links": []
       },
@@ -491,7 +491,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_001",
+        "landingpage": "https://freebasics.online/angebote/magentatv",
         "tracking_available": true,
         "internal_links": []
       },
@@ -505,7 +505,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_002",
+        "landingpage": "https://freebasics.online/angebote/glasfaser",
         "tracking_available": true,
         "internal_links": []
       },
@@ -519,7 +519,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_003",
+        "landingpage": "https://freebasics.online/angebote/magentazuhause",
         "tracking_available": true,
         "internal_links": []
       },
@@ -533,7 +533,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_004",
+        "landingpage": "https://freebasics.online/angebote/magentamobil",
         "tracking_available": true,
         "internal_links": []
       },
@@ -547,7 +547,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_005",
+        "landingpage": "https://freebasics.online/angebote/magentamobil-young",
         "tracking_available": true,
         "internal_links": []
       },
@@ -561,7 +561,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_006",
+        "landingpage": "https://freebasics.online/angebote/magentamobil-prepaid",
         "tracking_available": true,
         "internal_links": []
       },
@@ -575,7 +575,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_007",
+        "landingpage": "https://freebasics.online/angebote/congstar-allnet",
         "tracking_available": true,
         "internal_links": []
       },
@@ -589,7 +589,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_008",
+        "landingpage": "https://freebasics.online/angebote/congstar-homespot",
         "tracking_available": true,
         "internal_links": []
       },
@@ -603,7 +603,7 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_009",
+        "landingpage": "https://freebasics.online/angebote/tv-internet-festnetz",
         "tracking_available": true,
         "internal_links": []
       },
@@ -617,12 +617,13 @@
       "partner": "telekom",
       "category": "telekom",
       "relationships": {
-        "landingpage": "https://ai-marketing-system-1081897051313.europe-west1.run.app/lp/TEL_010",
+        "landingpage": "https://freebasics.online/angebote/datentarife",
         "tracking_available": true,
         "internal_links": []
       },
       "knowledge_status": "READY",
       "source": []
     }
-  ]
+  ],
+  "updated_at": "2026-08-21T09:46:19.875777+00:00"
 }

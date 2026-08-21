@@ -2,9 +2,10 @@ User-agent: *
 
 Allow: /
 Allow: /blog/
-Allow: /lp/
+Allow: /angebote/
 Allow: /produkte/
 
+Disallow: /lp/
 Disallow: /run
 Disallow: /track
 Disallow: /admin

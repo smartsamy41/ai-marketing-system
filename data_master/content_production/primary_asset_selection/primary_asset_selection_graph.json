@@ -348,100 +348,100 @@
       "product_name": "MagentaTV",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_002": {
       "product_id": "TEL_002",
       "product_name": "Glasfaser",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_003": {
       "product_id": "TEL_003",
       "product_name": "MagentaZuhause",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_004": {
       "product_id": "TEL_004",
       "product_name": "MagentaMobil",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_005": {
       "product_id": "TEL_005",
       "product_name": "MagentaMobil Young",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_006": {
       "product_id": "TEL_006",
       "product_name": "MagentaMobil Prepaid",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_007": {
       "product_id": "TEL_007",
       "product_name": "congstar Allnet",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_008": {
       "product_id": "TEL_008",
       "product_name": "congstar Homespot",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_009": {
       "product_id": "TEL_009",
       "product_name": "TV + Internet + Festnetz",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     },
     "TEL_010": {
       "product_id": "TEL_010",
       "product_name": "Datentarife",
       "partner": "telekom",
       "primary_asset": {
-        "asset_id": "TEL_SHOP_001",
-        "source": "shop"
+        "asset_id": "TEL_SHOP_001_DIRECT",
+        "source": "official_shop"
       },
-      "available_assets": 0
+      "available_assets": 5
     }
   },
   "statistics": {
