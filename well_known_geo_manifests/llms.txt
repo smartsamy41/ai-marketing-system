@@ -65,3 +65,17 @@ Legal:
 - https://freebasics.online/datenschutz
 - https://freebasics.online/affiliate-hinweis
 - https://freebasics.online/kontakt
+
+## Verified GEO Content
+
+- Strom in Lübeck:
+  https://freebasics.online/energie/strom/luebeck/
+
+  Location Entity:
+  Wikidata Q2843
+
+  Data basis:
+  verified local primary sources,
+  structured product data,
+  Free Basics GEO Quality Shield.
+
