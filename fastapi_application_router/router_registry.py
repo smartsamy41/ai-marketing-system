@@ -16,6 +16,11 @@ from fastapi_application_router.routes.dashboard_api_router import (
 )
 
 
+from fastapi_application_router.routes.blog_public_router import (
+    router as blog_public_router
+)
+
+
 
 api_router = APIRouter()
 
@@ -34,5 +39,11 @@ for route in dashboard_router.routes:
 
 
 for route in dashboard_api_router.routes:
+
+    api_router.routes.append(route)
+
+
+
+for route in blog_public_router.routes:
 
     api_router.routes.append(route)
