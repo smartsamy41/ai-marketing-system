@@ -6,7 +6,7 @@
       "identifier": "CHK24_004",
       "name": "DSL",
       "category": "DSL",
-      "url": "https://freebasics.online/lp/CHK24_004",
+      "url": "https://freebasics.online/angebote/CHK24_004",
       "provider": "check24"
     },
     {
@@ -14,7 +14,7 @@
       "identifier": "CHK24_005",
       "name": "Mobilfunk",
       "category": "Mobilfunk",
-      "url": "https://freebasics.online/lp/CHK24_005",
+      "url": "https://freebasics.online/angebote/CHK24_005",
       "provider": "check24"
     },
     {
@@ -22,7 +22,7 @@
       "identifier": "CHK24_002",
       "name": "Oekostrom",
       "category": "Oekostrom",
-      "url": "https://freebasics.online/lp/CHK24_002",
+      "url": "https://freebasics.online/angebote/CHK24_002",
       "provider": "check24"
     },
     {
@@ -30,7 +30,7 @@
       "identifier": "CHK24_001",
       "name": "Strom",
       "category": "Strom",
-      "url": "https://freebasics.online/lp/CHK24_001",
+      "url": "https://freebasics.online/angebote/CHK24_001",
       "provider": "check24"
     },
     {
@@ -38,7 +38,7 @@
       "identifier": "CHK24_003",
       "name": "Gas",
       "category": "Gas",
-      "url": "https://freebasics.online/lp/CHK24_003",
+      "url": "https://freebasics.online/angebote/CHK24_003",
       "provider": "check24"
     },
     {
@@ -46,7 +46,7 @@
       "identifier": "CHK24_006",
       "name": "Pauschalreise",
       "category": "Reisen",
-      "url": "https://freebasics.online/lp/CHK24_006",
+      "url": "https://freebasics.online/angebote/CHK24_006",
       "provider": "check24"
     },
     {
@@ -54,7 +54,7 @@
       "identifier": "CHK24_007",
       "name": "Mietwagen",
       "category": "Reisen",
-      "url": "https://freebasics.online/lp/CHK24_007",
+      "url": "https://freebasics.online/angebote/CHK24_007",
       "provider": "check24"
     },
     {
@@ -62,7 +62,7 @@
       "identifier": "CHK24_008",
       "name": "C24 Bank",
       "category": "Finanzen",
-      "url": "https://freebasics.online/lp/CHK24_008",
+      "url": "https://freebasics.online/angebote/CHK24_008",
       "provider": "check24"
     },
     {
@@ -70,7 +70,7 @@
       "identifier": "TC_001",
       "name": "Solaranlage",
       "category": "Solaranlage",
-      "url": "https://freebasics.online/lp/TC_001",
+      "url": "https://freebasics.online/angebote/TC_001",
       "provider": "tarifcheck"
     },
     {
@@ -78,7 +78,7 @@
       "identifier": "TC_002",
       "name": "Kfz-Versicherung",
       "category": "Versicherung",
-      "url": "https://freebasics.online/lp/TC_002",
+      "url": "https://freebasics.online/angebote/TC_002",
       "provider": "tarifcheck"
     },
     {
@@ -86,7 +86,7 @@
       "identifier": "TC_003",
       "name": "Kredit",
       "category": "Kredit",
-      "url": "https://freebasics.online/lp/TC_003",
+      "url": "https://freebasics.online/angebote/TC_003",
       "provider": "tarifcheck"
     },
     {
@@ -94,7 +94,7 @@
       "identifier": "TC_004",
       "name": "Girokonto",
       "category": "Girokonto",
-      "url": "https://freebasics.online/lp/TC_004",
+      "url": "https://freebasics.online/angebote/TC_004",
       "provider": "tarifcheck"
     },
     {
@@ -102,7 +102,7 @@
       "identifier": "TC_005",
       "name": "Baufinanzierung",
       "category": "Baufinanzierung",
-      "url": "https://freebasics.online/lp/TC_005",
+      "url": "https://freebasics.online/angebote/TC_005",
       "provider": "tarifcheck"
     },
     {
@@ -110,7 +110,7 @@
       "identifier": "TC_006",
       "name": "Hausratversicherung",
       "category": "Versicherung",
-      "url": "https://freebasics.online/lp/TC_006",
+      "url": "https://freebasics.online/angebote/TC_006",
       "provider": "tarifcheck"
     },
     {
@@ -118,7 +118,7 @@
       "identifier": "TC_007",
       "name": "Haftpflichtversicherung",
       "category": "Versicherung",
-      "url": "https://freebasics.online/lp/TC_007",
+      "url": "https://freebasics.online/angebote/TC_007",
       "provider": "tarifcheck"
     },
     {
@@ -126,7 +126,7 @@
       "identifier": "TC_008",
       "name": "Rentenversicherung",
       "category": "Vorsorge",
-      "url": "https://freebasics.online/lp/TC_008",
+      "url": "https://freebasics.online/angebote/TC_008",
       "provider": "tarifcheck"
     },
     {
@@ -134,7 +134,7 @@
       "identifier": "TC_009",
       "name": "Private Krankenversicherung",
       "category": "Versicherung",
-      "url": "https://freebasics.online/lp/TC_009",
+      "url": "https://freebasics.online/angebote/TC_009",
       "provider": "tarifcheck"
     },
     {
@@ -142,7 +142,7 @@
       "identifier": "B0FQF32239",
       "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
       "category": "Bluetooth-Kopfhörer",
-      "url": "https://freebasics.online/lp/B0FQF32239",
+      "url": "https://freebasics.online/angebote/B0FQF32239",
       "provider": "amazon"
     },
     {
@@ -150,7 +150,7 @@
       "identifier": "B0CFPWLGF2",
       "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
       "category": "E-Reader",
-      "url": "https://freebasics.online/lp/B0CFPWLGF2",
+      "url": "https://freebasics.online/angebote/B0CFPWLGF2",
       "provider": "amazon"
     },
     {
@@ -158,7 +158,7 @@
       "identifier": "B0DFYN8174",
       "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
       "category": "Körperpflege & Elektrorasierer",
-      "url": "https://freebasics.online/lp/B0DFYN8174",
+      "url": "https://freebasics.online/angebote/B0DFYN8174",
       "provider": "amazon"
     },
     {
@@ -166,7 +166,7 @@
       "identifier": "B0FPXFBL13",
       "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
       "category": "Bauspielzeugsets",
-      "url": "https://freebasics.online/lp/B0FPXFBL13",
+      "url": "https://freebasics.online/angebote/B0FPXFBL13",
       "provider": "amazon"
     },
     {
@@ -174,7 +174,7 @@
       "identifier": "B0FPXDCDX2",
       "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
       "category": "Bauspielzeugsets",
-      "url": "https://freebasics.online/lp/B0FPXDCDX2",
+      "url": "https://freebasics.online/angebote/B0FPXDCDX2",
       "provider": "amazon"
     },
     {
@@ -182,7 +182,7 @@
       "identifier": "B0FPXGJL6H",
       "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
       "category": "Bauspielzeugsets",
-      "url": "https://freebasics.online/lp/B0FPXGJL6H",
+      "url": "https://freebasics.online/angebote/B0FPXGJL6H",
       "provider": "amazon"
     },
     {
@@ -190,7 +190,7 @@
       "identifier": "B0FPXDRR63",
       "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
       "category": "Bauspielzeugsets",
-      "url": "https://freebasics.online/lp/B0FPXDRR63",
+      "url": "https://freebasics.online/angebote/B0FPXDRR63",
       "provider": "amazon"
     },
     {
@@ -198,7 +198,7 @@
       "identifier": "3424631078",
       "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
       "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
-      "url": "https://freebasics.online/lp/3424631078",
+      "url": "https://freebasics.online/angebote/3424631078",
       "provider": "amazon"
     },
     {
@@ -206,7 +206,7 @@
       "identifier": "B0FNX7HC9M",
       "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
       "category": "Bücher - Psychothriller",
-      "url": "https://freebasics.online/lp/B0FNX7HC9M",
+      "url": "https://freebasics.online/angebote/B0FNX7HC9M",
       "provider": "amazon"
     },
     {
@@ -214,7 +214,7 @@
       "identifier": "3423209690",
       "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
       "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
-      "url": "https://freebasics.online/lp/3423209690",
+      "url": "https://freebasics.online/angebote/3423209690",
       "provider": "amazon"
     },
     {
@@ -222,7 +222,7 @@
       "identifier": "3832167242",
       "name": "22 Bahnen Roman Lieblingsbuch 2023",
       "category": "Bücher - Roman & Gegenwartsliteratur",
-      "url": "https://freebasics.online/lp/3832167242",
+      "url": "https://freebasics.online/angebote/3832167242",
       "provider": "amazon"
     },
     {
@@ -230,7 +230,7 @@
       "identifier": "3426281759",
       "name": "Der Nachbar Psychothriller",
       "category": "Bücher - Psychothriller",
-      "url": "https://freebasics.online/lp/3426281759",
+      "url": "https://freebasics.online/angebote/3426281759",
       "provider": "amazon"
     },
     {
@@ -238,7 +238,7 @@
       "identifier": "B0DXLBZF4Q",
       "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
       "category": "Körperpflege & Elektrorasierer",
-      "url": "https://freebasics.online/lp/B0DXLBZF4Q",
+      "url": "https://freebasics.online/angebote/B0DXLBZF4Q",
       "provider": "amazon"
     },
     {
@@ -246,7 +246,7 @@
       "identifier": "B0CVXSK4D3",
       "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
       "category": "Rasierklingen & Zubehör",
-      "url": "https://freebasics.online/lp/B0CVXSK4D3",
+      "url": "https://freebasics.online/angebote/B0CVXSK4D3",
       "provider": "amazon"
     },
     {
@@ -254,7 +254,7 @@
       "identifier": "B08P4YPB8Q",
       "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
       "category": "Kosmetik - Wimperntusche",
-      "url": "https://freebasics.online/lp/B08P4YPB8Q",
+      "url": "https://freebasics.online/angebote/B08P4YPB8Q",
       "provider": "amazon"
     },
     {
@@ -262,7 +262,7 @@
       "identifier": "B0FMS3V43J",
       "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
       "category": "Nahrungsergänzung - Magnesium",
-      "url": "https://freebasics.online/lp/B0FMS3V43J",
+      "url": "https://freebasics.online/angebote/B0FMS3V43J",
       "provider": "amazon"
     },
     {
@@ -270,7 +270,7 @@
       "identifier": "B0D1YKBX82",
       "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
       "category": "Bücher - Liebesromane / New Adult",
-      "url": "https://freebasics.online/lp/B0D1YKBX82",
+      "url": "https://freebasics.online/angebote/B0D1YKBX82",
       "provider": "amazon"
     },
     {
@@ -278,7 +278,7 @@
       "identifier": "TEL_001",
       "name": "MagentaTV",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_001",
+      "url": "https://freebasics.online/angebote/TEL_001",
       "provider": "telekom"
     },
     {
@@ -286,7 +286,7 @@
       "identifier": "TEL_002",
       "name": "Glasfaser",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_002",
+      "url": "https://freebasics.online/angebote/TEL_002",
       "provider": "telekom"
     },
     {
@@ -294,7 +294,7 @@
       "identifier": "TEL_003",
       "name": "MagentaZuhause",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_003",
+      "url": "https://freebasics.online/angebote/TEL_003",
       "provider": "telekom"
     },
     {
@@ -302,7 +302,7 @@
       "identifier": "TEL_004",
       "name": "MagentaMobil",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_004",
+      "url": "https://freebasics.online/angebote/TEL_004",
       "provider": "telekom"
     },
     {
@@ -310,7 +310,7 @@
       "identifier": "TEL_005",
       "name": "MagentaMobil Young",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_005",
+      "url": "https://freebasics.online/angebote/TEL_005",
       "provider": "telekom"
     },
     {
@@ -318,7 +318,7 @@
       "identifier": "TEL_006",
       "name": "MagentaMobil Prepaid",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_006",
+      "url": "https://freebasics.online/angebote/TEL_006",
       "provider": "telekom"
     },
     {
@@ -326,7 +326,7 @@
       "identifier": "TEL_007",
       "name": "congstar Allnet",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_007",
+      "url": "https://freebasics.online/angebote/TEL_007",
       "provider": "telekom"
     },
     {
@@ -334,7 +334,7 @@
       "identifier": "TEL_008",
       "name": "congstar Homespot",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_008",
+      "url": "https://freebasics.online/angebote/TEL_008",
       "provider": "telekom"
     },
     {
@@ -342,7 +342,7 @@
       "identifier": "TEL_009",
       "name": "TV + Internet + Festnetz",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_009",
+      "url": "https://freebasics.online/angebote/TEL_009",
       "provider": "telekom"
     },
     {
@@ -350,7 +350,7 @@
       "identifier": "TEL_010",
       "name": "Datentarife",
       "category": "telekom",
-      "url": "https://freebasics.online/lp/TEL_010",
+      "url": "https://freebasics.online/angebote/TEL_010",
       "provider": "telekom"
     }
   ]

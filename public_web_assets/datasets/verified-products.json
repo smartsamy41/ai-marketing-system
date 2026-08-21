@@ -10,7 +10,7 @@
       "name": "DSL",
       "partner": "check24",
       "category": "DSL",
-      "landingpage": "https://freebasics.online/lp/CHK24_004",
+      "landingpage": "https://freebasics.online/angebote/CHK24_004",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_004&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Ddsl-anbieterwechsel%26cat%3D4",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -20,7 +20,7 @@
       "name": "Mobilfunk",
       "partner": "check24",
       "category": "Mobilfunk",
-      "landingpage": "https://freebasics.online/lp/CHK24_005",
+      "landingpage": "https://freebasics.online/angebote/CHK24_005",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_005&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dhandytarife%26cat%3D7",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -30,7 +30,7 @@
       "name": "Oekostrom",
       "partner": "check24",
       "category": "Oekostrom",
-      "landingpage": "https://freebasics.online/lp/CHK24_002",
+      "landingpage": "https://freebasics.online/angebote/CHK24_002",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_002&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Doekostrom%26cat%3D5",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -40,7 +40,7 @@
       "name": "Strom",
       "partner": "check24",
       "category": "Strom",
-      "landingpage": "https://freebasics.online/lp/CHK24_001",
+      "landingpage": "https://freebasics.online/angebote/CHK24_001",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_001&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dstromanbieter-wechseln%26cat%3D1",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -50,7 +50,7 @@
       "name": "Gas",
       "partner": "check24",
       "category": "Gas",
-      "landingpage": "https://freebasics.online/lp/CHK24_003",
+      "landingpage": "https://freebasics.online/angebote/CHK24_003",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_003&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dgasanbieter-wechseln%26cat%3D3",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -60,7 +60,7 @@
       "name": "Pauschalreise",
       "partner": "check24",
       "category": "Reisen",
-      "landingpage": "https://freebasics.online/lp/CHK24_006",
+      "landingpage": "https://freebasics.online/angebote/CHK24_006",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_006&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dpauschalreisen-vergleich%26cat%3D9",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -70,7 +70,7 @@
       "name": "Mietwagen",
       "partner": "check24",
       "category": "Reisen",
-      "landingpage": "https://freebasics.online/lp/CHK24_007",
+      "landingpage": "https://freebasics.online/angebote/CHK24_007",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_007&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dmietwagen-preisvergleich%26cat%3D10",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -80,7 +80,7 @@
       "name": "C24 Bank",
       "partner": "check24",
       "category": "Finanzen",
-      "landingpage": "https://freebasics.online/lp/CHK24_008",
+      "landingpage": "https://freebasics.online/angebote/CHK24_008",
       "tracking_url": "https://freebasics.online/track?pid=CHK24_008&partner=check24&target=https%3A//a.check24.net/misc/click.php%3Fpid%3D354456%26aid%3D18%26deep%3Dc24bank%26cat%3D14",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -90,7 +90,7 @@
       "name": "Solaranlage",
       "partner": "tarifcheck",
       "category": "Solaranlage",
-      "landingpage": "https://freebasics.online/lp/TC_001",
+      "landingpage": "https://freebasics.online/angebote/TC_001",
       "tracking_url": "https://freebasics.online/track?pid=TC_001&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dsolaranlage",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -100,7 +100,7 @@
       "name": "Kfz-Versicherung",
       "partner": "tarifcheck",
       "category": "Versicherung",
-      "landingpage": "https://freebasics.online/lp/TC_002",
+      "landingpage": "https://freebasics.online/angebote/TC_002",
       "tracking_url": "https://freebasics.online/track?pid=TC_002&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkfz-versicherung",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -110,7 +110,7 @@
       "name": "Kredit",
       "partner": "tarifcheck",
       "category": "Kredit",
-      "landingpage": "https://freebasics.online/lp/TC_003",
+      "landingpage": "https://freebasics.online/angebote/TC_003",
       "tracking_url": "https://freebasics.online/track?pid=TC_003&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dkredit",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -120,7 +120,7 @@
       "name": "Girokonto",
       "partner": "tarifcheck",
       "category": "Girokonto",
-      "landingpage": "https://freebasics.online/lp/TC_004",
+      "landingpage": "https://freebasics.online/angebote/TC_004",
       "tracking_url": "https://freebasics.online/track?pid=TC_004&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dgirokonto",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -130,7 +130,7 @@
       "name": "Baufinanzierung",
       "partner": "tarifcheck",
       "category": "Baufinanzierung",
-      "landingpage": "https://freebasics.online/lp/TC_005",
+      "landingpage": "https://freebasics.online/angebote/TC_005",
       "tracking_url": "https://freebasics.online/track?pid=TC_005&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dbaufinanzierung",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -140,7 +140,7 @@
       "name": "Hausratversicherung",
       "partner": "tarifcheck",
       "category": "Versicherung",
-      "landingpage": "https://freebasics.online/lp/TC_006",
+      "landingpage": "https://freebasics.online/angebote/TC_006",
       "tracking_url": "https://freebasics.online/track?pid=TC_006&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhausratversicherung",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -150,7 +150,7 @@
       "name": "Haftpflichtversicherung",
       "partner": "tarifcheck",
       "category": "Versicherung",
-      "landingpage": "https://freebasics.online/lp/TC_007",
+      "landingpage": "https://freebasics.online/angebote/TC_007",
       "tracking_url": "https://freebasics.online/track?pid=TC_007&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dhaftpflichtversicherung",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -160,7 +160,7 @@
       "name": "Rentenversicherung",
       "partner": "tarifcheck",
       "category": "Vorsorge",
-      "landingpage": "https://freebasics.online/lp/TC_008",
+      "landingpage": "https://freebasics.online/angebote/TC_008",
       "tracking_url": "https://freebasics.online/track?pid=TC_008&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Drentenversicherung",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -170,7 +170,7 @@
       "name": "Private Krankenversicherung",
       "partner": "tarifcheck",
       "category": "Versicherung",
-      "landingpage": "https://freebasics.online/lp/TC_009",
+      "landingpage": "https://freebasics.online/angebote/TC_009",
       "tracking_url": "https://freebasics.online/track?pid=TC_009&partner=tarifcheck&target=https%3A//a.partner-versicherung.de/click.php%3Fpartner_id%3D165274%26ad_id%3D15%26deep%3Dprivate-krankenversicherung",
       "system_source": "cloud_landingpages_only",
       "status": "official_assets_ready"
@@ -180,7 +180,7 @@
       "name": "Apple AirPods Pro 3 Kabellose In-Ear Kopfhörer",
       "partner": "amazon",
       "category": "Bluetooth-Kopfhörer",
-      "landingpage": "https://freebasics.online/lp/B0FQF32239",
+      "landingpage": "https://freebasics.online/angebote/B0FQF32239",
       "tracking_url": "https://freebasics.online/track?pid=B0FQF32239&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FQF32239%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44049d07107531e7ad6d6dfe2f054065%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -190,7 +190,7 @@
       "name": "Amazon Kindle Paperwhite neueste Generation 16 GB ohne Werbung schwarz",
       "partner": "amazon",
       "category": "E-Reader",
-      "landingpage": "https://freebasics.online/lp/B0CFPWLGF2",
+      "landingpage": "https://freebasics.online/angebote/B0CFPWLGF2",
       "tracking_url": "https://freebasics.online/track?pid=B0CFPWLGF2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CFPWLGF2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D44d0788340e0256001696d3ece88528d%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -200,7 +200,7 @@
       "name": "Philips OneBlade Intimate Intimrasur Trimmen und Rasieren mit extra Hautschutz Modell QP1924/30",
       "partner": "amazon",
       "category": "Körperpflege & Elektrorasierer",
-      "landingpage": "https://freebasics.online/lp/B0DFYN8174",
+      "landingpage": "https://freebasics.online/angebote/B0DFYN8174",
       "tracking_url": "https://freebasics.online/track?pid=B0DFYN8174&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DFYN8174%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Df29cec1e2851f7a806babd846a9ddfc4%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -210,7 +210,7 @@
       "name": "LEGO Editions Lionel Messi Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
       "partner": "amazon",
       "category": "Bauspielzeugsets",
-      "landingpage": "https://freebasics.online/lp/B0FPXFBL13",
+      "landingpage": "https://freebasics.online/angebote/B0FPXFBL13",
       "tracking_url": "https://freebasics.online/track?pid=B0FPXFBL13&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXFBL13%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D06fcb046b24b9cd38f1784f7219533ca%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -220,7 +220,7 @@
       "name": "LEGO Editions Kylian Mbappé Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
       "partner": "amazon",
       "category": "Bauspielzeugsets",
-      "landingpage": "https://freebasics.online/lp/B0FPXDCDX2",
+      "landingpage": "https://freebasics.online/angebote/B0FPXDCDX2",
       "tracking_url": "https://freebasics.online/track?pid=B0FPXDCDX2&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDCDX2%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D5af01d4132de4d9c81c7b720665a5974%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -230,7 +230,7 @@
       "name": "LEGO Editions Cristiano Ronaldo Fußball-Highlights Spielzeug 3D Modellbau mit Minifigur",
       "partner": "amazon",
       "category": "Bauspielzeugsets",
-      "landingpage": "https://freebasics.online/lp/B0FPXGJL6H",
+      "landingpage": "https://freebasics.online/angebote/B0FPXGJL6H",
       "tracking_url": "https://freebasics.online/track?pid=B0FPXGJL6H&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXGJL6H%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D38c487ba09e0fd7845e695ad0cd319e7%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -240,7 +240,7 @@
       "name": "LEGO Editions Sports Offizieller Pokal der FIFA Fußball-Weltmeisterschaft 3D DIY Modell mit Minifigur 43020",
       "partner": "amazon",
       "category": "Bauspielzeugsets",
-      "landingpage": "https://freebasics.online/lp/B0FPXDRR63",
+      "landingpage": "https://freebasics.online/angebote/B0FPXDRR63",
       "tracking_url": "https://freebasics.online/track?pid=B0FPXDRR63&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FPXDRR63%3Fsmid%3DA3JWKAKR8XB7XF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D0a52b5924b86de2297fba57c9ae1b02b%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -250,7 +250,7 @@
       "name": "Das Kind in dir muss Heimat finden Der Schlüssel zur Lösung fast aller Probleme",
       "partner": "amazon",
       "category": "Bücher - Psychologie & Persönlichkeitsentwicklung",
-      "landingpage": "https://freebasics.online/lp/3424631078",
+      "landingpage": "https://freebasics.online/angebote/3424631078",
       "tracking_url": "https://freebasics.online/track?pid=3424631078&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3424631078%3Fsmid%3DA1JC316NLNMF97%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D3230f2a54418561cda1437a62636751a%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -260,7 +260,7 @@
       "name": "Sebastian Fitzek Thriller-Bundle Der Augensammler und Der Augenjäger Bestseller-Psychothriller im Set",
       "partner": "amazon",
       "category": "Bücher - Psychothriller",
-      "landingpage": "https://freebasics.online/lp/B0FNX7HC9M",
+      "landingpage": "https://freebasics.online/angebote/B0FNX7HC9M",
       "tracking_url": "https://freebasics.online/track?pid=B0FNX7HC9M&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FNX7HC9M%3Fsmid%3DAL5JXES37EDG7%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D411dad09febceb05b8d53957ad711075%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -270,7 +270,7 @@
       "name": "Das Café am Rande der Welt Eine Erzählung über den Sinn des Lebens",
       "partner": "amazon",
       "category": "Bücher - Persönlichkeitsentwicklung & Lebenshilfe",
-      "landingpage": "https://freebasics.online/lp/3423209690",
+      "landingpage": "https://freebasics.online/angebote/3423209690",
       "tracking_url": "https://freebasics.online/track?pid=3423209690&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3423209690%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D79007b57baece76e191e2663d00af73c%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -280,7 +280,7 @@
       "name": "22 Bahnen Roman Lieblingsbuch 2023",
       "partner": "amazon",
       "category": "Bücher - Roman & Gegenwartsliteratur",
-      "landingpage": "https://freebasics.online/lp/3832167242",
+      "landingpage": "https://freebasics.online/angebote/3832167242",
       "tracking_url": "https://freebasics.online/track?pid=3832167242&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3832167242%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D6b3e47793fe11a33da23977f37721e53%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -290,7 +290,7 @@
       "name": "Der Nachbar Psychothriller",
       "partner": "amazon",
       "category": "Bücher - Psychothriller",
-      "landingpage": "https://freebasics.online/lp/3426281759",
+      "landingpage": "https://freebasics.online/angebote/3426281759",
       "tracking_url": "https://freebasics.online/track?pid=3426281759&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/3426281759%3Fsmid%3DAQJOK2ISQB5Q5%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Dd964d6eb9b49e87def7735dbf9b7913c%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -300,7 +300,7 @@
       "name": "PHILIPS OneBlade 360 Face & Body Elektrischer Rasierer Trimmer und Bodygroomer QP2824/31",
       "partner": "amazon",
       "category": "Körperpflege & Elektrorasierer",
-      "landingpage": "https://freebasics.online/lp/B0DXLBZF4Q",
+      "landingpage": "https://freebasics.online/angebote/B0DXLBZF4Q",
       "tracking_url": "https://freebasics.online/track?pid=B0DXLBZF4Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0DXLBZF4Q%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D7d4e32a08a825498bee7382c530296e8%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -310,7 +310,7 @@
       "name": "Philips OneBlade Original 360-Klingen passend für alle OneBlade und Pro Modelle 4er-Pack QP440/50",
       "partner": "amazon",
       "category": "Rasierklingen & Zubehör",
-      "landingpage": "https://freebasics.online/lp/B0CVXSK4D3",
+      "landingpage": "https://freebasics.online/angebote/B0CVXSK4D3",
       "tracking_url": "https://freebasics.online/track?pid=B0CVXSK4D3&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0CVXSK4D3%3Fsmid%3DA3JWKAKR8XB7XF%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D2febca87ab6dce8c73180e79c99357a6%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -320,7 +320,7 @@
       "name": "Maybelline New York Sky High Mascara für extreme Länge und volles Volumen Very Black 7,2 ml",
       "partner": "amazon",
       "category": "Kosmetik - Wimperntusche",
-      "landingpage": "https://freebasics.online/lp/B08P4YPB8Q",
+      "landingpage": "https://freebasics.online/angebote/B08P4YPB8Q",
       "tracking_url": "https://freebasics.online/track?pid=B08P4YPB8Q&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B08P4YPB8Q%3Fsmid%3DALAJG0TLJF7AF%26th%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3Db596d267acc19dfded98b049ca2e358c%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -330,7 +330,7 @@
       "name": "SUNDAY NATURAL Magnesium Komplex 240 Kapseln 400mg Magnesium aus 7 Verbindungen",
       "partner": "amazon",
       "category": "Nahrungsergänzung - Magnesium",
-      "landingpage": "https://freebasics.online/lp/B0FMS3V43J",
+      "landingpage": "https://freebasics.online/angebote/B0FMS3V43J",
       "tracking_url": "https://freebasics.online/track?pid=B0FMS3V43J&partner=amazon_no_api&target=https%3A//www.amazon.de/gp/product/B0FMS3V43J%3Fsmid%3DA1KKPIBTTVQSPQ%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D32623354b1c45bca2728d97a7e1aee82%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -340,7 +340,7 @@
       "name": "Die Off-Campus-Reihe im neuen Look Band 1-5 plus exklusives Postkartenset",
       "partner": "amazon",
       "category": "Bücher - Liebesromane / New Adult",
-      "landingpage": "https://freebasics.online/lp/B0D1YKBX82",
+      "landingpage": "https://freebasics.online/angebote/B0D1YKBX82",
       "tracking_url": "https://freebasics.online/track?pid=B0D1YKBX82&partner=amazon_no_api&target=https%3A//www.amazon.de/Off-Campus-Reihe-neuen-Look-exklusives-Postkartenset/dp/B0D1YKBX82%3Fpd_rd_w%3Dxylrd%26content-id%3Damzn1.sym.2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_p%3D2773ee31-e1d7-4b66-89a3-82d27d16ebdc%26pf_rd_r%3DF1QVTK61EB04BBPR6N0F%26pd_rd_wg%3DPITh0%26pd_rd_r%3D50058732-d05a-4c21-b3a9-6fa7140cd969%26pd_rd_i%3DB0D1YKBX82%26psc%3D1%26linkCode%3Dll2%26tag%3Dfreebasics-21%26linkId%3D4ac87f6407fab4d74ef588cbc2dd89c0%26ref_%3Das_li_ss_tl",
       "system_source": "cloud_landingpages_only",
       "status": "original_image_done"
@@ -350,7 +350,7 @@
       "name": "MagentaTV",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_001",
+      "landingpage": "https://freebasics.online/angebote/TEL_001",
       "tracking_url": "https://freebasics.online/track?pid=TEL_001&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -360,7 +360,7 @@
       "name": "Glasfaser",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_002",
+      "landingpage": "https://freebasics.online/angebote/TEL_002",
       "tracking_url": "https://freebasics.online/track?pid=TEL_002&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -370,7 +370,7 @@
       "name": "MagentaZuhause",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_003",
+      "landingpage": "https://freebasics.online/angebote/TEL_003",
       "tracking_url": "https://freebasics.online/track?pid=TEL_003&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -380,7 +380,7 @@
       "name": "MagentaMobil",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_004",
+      "landingpage": "https://freebasics.online/angebote/TEL_004",
       "tracking_url": "https://freebasics.online/track?pid=TEL_004&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -390,7 +390,7 @@
       "name": "MagentaMobil Young",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_005",
+      "landingpage": "https://freebasics.online/angebote/TEL_005",
       "tracking_url": "https://freebasics.online/track?pid=TEL_005&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -400,7 +400,7 @@
       "name": "MagentaMobil Prepaid",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_006",
+      "landingpage": "https://freebasics.online/angebote/TEL_006",
       "tracking_url": "https://freebasics.online/track?pid=TEL_006&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -410,7 +410,7 @@
       "name": "congstar Allnet",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_007",
+      "landingpage": "https://freebasics.online/angebote/TEL_007",
       "tracking_url": "https://freebasics.online/track?pid=TEL_007&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -420,7 +420,7 @@
       "name": "congstar Homespot",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_008",
+      "landingpage": "https://freebasics.online/angebote/TEL_008",
       "tracking_url": "https://freebasics.online/track?pid=TEL_008&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -430,7 +430,7 @@
       "name": "TV + Internet + Festnetz",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_009",
+      "landingpage": "https://freebasics.online/angebote/TEL_009",
       "tracking_url": "https://freebasics.online/track?pid=TEL_009&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
@@ -440,7 +440,7 @@
       "name": "Datentarife",
       "partner": "telekom",
       "category": "telekom",
-      "landingpage": "https://freebasics.online/lp/TEL_010",
+      "landingpage": "https://freebasics.online/angebote/TEL_010",
       "tracking_url": "https://freebasics.online/track?pid=TEL_010&partner=telekom&target=https%3A//free-basics.telekom-profis.de",
       "system_source": "cloud_landingpages_only",
       "status": "active"
