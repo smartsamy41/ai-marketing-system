@@ -1,0 +1,46 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "geo_ready_candidate_report",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "local_data_ready_required": true,
+    "market_builder_required": true,
+    "content_node_required": true,
+    "unique_content_required": true,
+    "processor_does_not_publish": true
+  },
+  "summary": {
+    "bridge_records": 440,
+    "local_data_ready_input": 1,
+    "ready_for_geo_validation": 1,
+    "blocked": 0,
+    "errors": 0,
+    "published": 0
+  },
+  "results": [
+    {
+      "status": "READY_FOR_GEO_VALIDATION",
+      "candidate_id": "CHK24_001:DE-SH-LUEBECK-Q2843",
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "location_name": "Lübeck",
+      "product_id": "CHK24_001",
+      "partner": "check24",
+      "market_status": "BUILT",
+      "node_status": "READY_FOR_GEO_VALIDATION",
+      "canonical_url": "https://freebasics.online/energie/strom/luebeck/",
+      "validation": {
+        "real_location": true,
+        "source_verified": true,
+        "wikidata_verified": true,
+        "product_match": true,
+        "category_match": true,
+        "search_intent_match": true,
+        "partner_compliant": true,
+        "local_data_available": true,
+        "unique_content": true
+      }
+    }
+  ],
+  "updated_at": "2026-08-21T13:55:44.943284+00:00"
+}

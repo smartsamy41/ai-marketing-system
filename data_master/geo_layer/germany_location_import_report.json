@@ -1,0 +1,95 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "germany_location_import_report",
+  "version": "2.0",
+  "created": "2026-08-21T13:41:53.580973+00:00",
+  "summary": {
+    "seed_locations": 10,
+    "imported": 10,
+    "failed": 0,
+    "registry_after": 10,
+    "duplicate_wikidata_ids": 0
+  },
+  "results": [
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-BE-BERLIN-Q64",
+      "name": "Berlin",
+      "state": "Berlin",
+      "wikidata_id": "Q64",
+      "postal_code": "10115–14199"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-HH-HAMBURG-Q1055",
+      "name": "Hamburg",
+      "state": "Hamburg",
+      "wikidata_id": "Q1055",
+      "postal_code": "27499 | 20095–21149 | 22041–22769"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-BY-MUENCHEN-Q1726",
+      "name": "München",
+      "state": "Bayern",
+      "wikidata_id": "Q1726",
+      "postal_code": "80331–81929 | 85540"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-NW-KOELN-Q365",
+      "name": "Köln",
+      "state": "Nordrhein-Westfalen",
+      "wikidata_id": "Q365",
+      "postal_code": "51109 | 51143 | 50823 | 50765 | 50667 | 50678 | 50825 | 51067 | 50859 | 50935 | 50733 | 51107 | 51145 | 51065 | 50939 | 50676 | 51103 | 50997 | 50670 | 50931"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-HE-FRANKFURT-AM-MAIN-Q1794",
+      "name": "Frankfurt am Main",
+      "state": "Hessen",
+      "wikidata_id": "Q1794",
+      "postal_code": "60308–60599 | 65929–65936"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-BW-STUTTGART-Q1022",
+      "name": "Stuttgart",
+      "state": "Baden-Württemberg",
+      "wikidata_id": "Q1022",
+      "postal_code": "70569 | 70193 | 70329 | 70374 | 70191 | 70188 | 70195 | 70174 | 70563 | 70567 | 70192 | 70439 | 70499 | 70184 | 70190 | 70199 | 70435 | 70599 | 70565 | 70182"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-NW-DUESSELDORF-Q1718",
+      "name": "Düsseldorf",
+      "state": "Nordrhein-Westfalen",
+      "wikidata_id": "Q1718",
+      "postal_code": "40225 | 40211 | 40545 | 40593 | 40237 | 40215 | 40599 | 40627 | 40625 | 40239 | 40468 | 40227 | 40212 | 40589 | 40233 | 40210 | 40213 | 40217 | 40472 | 40479"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-SN-LEIPZIG-Q2079",
+      "name": "Leipzig",
+      "state": "Sachsen",
+      "wikidata_id": "Q2079",
+      "postal_code": "04157 | 04229 | 04155 | 04177 | 04159 | 04105 | 04357 | 04109 | 04275 | 04317 | 04003"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-NW-DORTMUND-Q1295",
+      "name": "Dortmund",
+      "state": "Nordrhein-Westfalen",
+      "wikidata_id": "Q1295",
+      "postal_code": "44135–44388"
+    },
+    {
+      "status": "IMPORTED",
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "name": "Lübeck",
+      "state": "Schleswig-Holstein",
+      "wikidata_id": "Q2843",
+      "postal_code": "23552–23570"
+    }
+  ]
+}

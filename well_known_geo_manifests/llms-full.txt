@@ -1,6 +1,5 @@
 # Free Basics - Full Knowledge Manifest
 
-
 ## Identity
 
 Name:
@@ -33,16 +32,6 @@ Current Product Catalog:
 
 44 Products
 
-Categories include:
-
-- Technology
-- Internet
-- Energy
-- Finance
-- Insurance
-- Travel
-- Consumer Products
-
 
 ## Data Architecture
 
@@ -50,17 +39,9 @@ Main Data Sources:
 
 /datasets/verified-products.json
 
-Public product registry.
-
-
 /datasets/verified-products.jsonld
 
-Schema.org structured product data.
-
-
 /datasets/knowledge-graph.json
-
-Entity relationship graph.
 
 
 ## Knowledge Graph
@@ -70,11 +51,14 @@ Entities:
 - Products
 - Partners
 - Categories
+- Locations
 
 Relations:
 
 - provided_by
 - belongs_to
+- related_to
+- located_in
 
 
 ## Content System
@@ -85,39 +69,7 @@ Content types:
 - Blog Articles
 - Knowledge Guides
 - Product Information
-
-
-Content workflow:
-
-AI Draft
-→ Review
-→ Approved
-→ Published
-
-
-## GEO Optimization
-
-The system uses:
-
-- Structured data
-- Entity references
-- Source references
-- FAQ structures
-- Author information
-
-
-## Publishing Ecosystem
-
-Distribution channels:
-
-- Pinterest
-- YouTube
-- TikTok
-- Medium
-
-Primary source:
-
-https://freebasics.online
+- Verified GEO Content
 
 
 ## Canonical Policy
@@ -144,6 +96,7 @@ The system uses:
 - Source references
 - Structured datasets
 - Automated validation
+- GEO Quality Shield
 
 
 ## Legal Information
@@ -166,13 +119,19 @@ Available structured resources:
 - JSON-LD Dataset
 - Knowledge Graph
 - API Documentation
+- llms.txt
+- llms-full.txt
 
 
 Status:
 
 ACTIVE
 
+<!-- FREE_BASICS_GEO_AUTO_START -->
+
 ## Verified GEO Knowledge Nodes
+
+Generated: 2026-08-21T13:55:44.951977+00:00
 
 ### Strom in Lübeck
 
@@ -182,6 +141,9 @@ https://freebasics.online/energie/strom/luebeck/
 Product:
 CHK24_001
 
+Partner:
+check24
+
 Category:
 strom
 
@@ -190,6 +152,9 @@ energie
 
 Location:
 Lübeck
+
+Location ID:
+DE-SH-LUEBECK-Q2843
 
 Wikidata:
 Q2843
@@ -201,11 +166,25 @@ Validation:
 - product_match: true
 - category_match: true
 - search_intent_match: true
-- partner_compliant: true
 - local_data_available: true
+- partner_compliant: true
 - unique_content: true
+- geo_quality_status: INDEX
+- geo_publish_allowed: true
+- llms_allowed: true
 
-Primary local sources:
+Primary sources:
 - https://www.swhl.de/verbraucherinformationen/
 - https://www.swhl.de/news/2026/stadtwerke-luebeck-senken-gas-und-strompreise-zum-1-april-2026/
 
+---
+
+## Machine Interpretation Policy
+
+Only validated and published GEO nodes are included.
+
+A location name alone does not qualify a page for inclusion.
+
+Missing local data, missing source verification or failed quality validation prevents inclusion.
+
+<!-- FREE_BASICS_GEO_AUTO_END -->

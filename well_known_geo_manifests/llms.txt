@@ -6,11 +6,9 @@ Free Basics
 Website:
 https://freebasics.online
 
-
 Description:
 Free Basics is a knowledge and content platform for products,
 guides, comparisons and selected partner offers.
-
 
 Knowledge Structure:
 
@@ -19,7 +17,6 @@ Knowledge Structure:
 - Knowledge Graph
 - GEO optimized content
 - Source based information
-
 
 Main Areas:
 
@@ -30,13 +27,11 @@ Main Areas:
 - Travel
 - Everyday Products
 
-
 Machine Readable Data:
 
 - /datasets/verified-products.json
 - /datasets/verified-products.jsonld
 - /datasets/knowledge-graph.json
-
 
 Content Structure:
 
@@ -45,19 +40,16 @@ Content Structure:
 - Knowledge Articles
 - Product Information
 
-
 Transparency:
 
 Free Basics clearly discloses affiliate relationships.
 Partner content is marked as advertising where applicable.
-
 
 Sources:
 
 - Primary source documents
 - Official partner information
 - Public knowledge sources
-
 
 Legal:
 
@@ -66,16 +58,33 @@ Legal:
 - https://freebasics.online/affiliate-hinweis
 - https://freebasics.online/kontakt
 
+<!-- FREE_BASICS_GEO_AUTO_START -->
+
 ## Verified GEO Content
 
-- Strom in Lübeck:
-  https://freebasics.online/energie/strom/luebeck/
+### Strom in Lübeck
 
-  Location Entity:
-  Wikidata Q2843
+- Canonical: https://freebasics.online/energie/strom/luebeck/
+- Product: CHK24_001
+- Partner: check24
+- Location: Lübeck
+- Wikidata: Q2843
+- Validation: verified GEO knowledge node
 
-  Data basis:
-  verified local primary sources,
-  structured product data,
-  Free Basics GEO Quality Shield.
+## GEO Quality Policy
 
+GEO content is included only when:
+
+- the location is verified
+- source verification succeeded
+- Wikidata verification succeeded
+- product and category relevance succeeded
+- search intent validation succeeded
+- local data is available
+- unique content validation succeeded
+- partner compliance succeeded
+- publication validation allows indexing
+
+Unverified or incomplete GEO nodes are excluded.
+
+<!-- FREE_BASICS_GEO_AUTO_END -->

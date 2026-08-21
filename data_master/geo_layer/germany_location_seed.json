@@ -1,0 +1,85 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "germany_location_seed",
+  "version": "2.0",
+  "status": "VERIFIED_PILOT",
+  "rules": {
+    "qid_required": true,
+    "no_name_guessing": true,
+    "real_locations_only": true,
+    "no_auto_geo_publish": true
+  },
+  "locations": [
+    {
+      "name": "Berlin",
+      "wikidata_id": "Q64",
+      "state": "Berlin",
+      "state_code": "BE",
+      "state_wikidata_id": "Q64"
+    },
+    {
+      "name": "Hamburg",
+      "wikidata_id": "Q1055",
+      "state": "Hamburg",
+      "state_code": "HH",
+      "state_wikidata_id": "Q1055"
+    },
+    {
+      "name": "München",
+      "wikidata_id": "Q1726",
+      "state": "Bayern",
+      "state_code": "BY",
+      "state_wikidata_id": "Q980"
+    },
+    {
+      "name": "Köln",
+      "wikidata_id": "Q365",
+      "state": "Nordrhein-Westfalen",
+      "state_code": "NW",
+      "state_wikidata_id": "Q1198"
+    },
+    {
+      "name": "Frankfurt am Main",
+      "wikidata_id": "Q1794",
+      "state": "Hessen",
+      "state_code": "HE",
+      "state_wikidata_id": "Q1199"
+    },
+    {
+      "name": "Stuttgart",
+      "wikidata_id": "Q1022",
+      "state": "Baden-Württemberg",
+      "state_code": "BW",
+      "state_wikidata_id": "Q985"
+    },
+    {
+      "name": "Düsseldorf",
+      "wikidata_id": "Q1718",
+      "state": "Nordrhein-Westfalen",
+      "state_code": "NW",
+      "state_wikidata_id": "Q1198"
+    },
+    {
+      "name": "Leipzig",
+      "wikidata_id": "Q2079",
+      "state": "Sachsen",
+      "state_code": "SN",
+      "state_wikidata_id": "Q1202"
+    },
+    {
+      "name": "Dortmund",
+      "wikidata_id": "Q1295",
+      "state": "Nordrhein-Westfalen",
+      "state_code": "NW",
+      "state_wikidata_id": "Q1198"
+    },
+    {
+      "name": "Lübeck",
+      "wikidata_id": "Q2843",
+      "state": "Schleswig-Holstein",
+      "state_code": "SH",
+      "state_wikidata_id": "Q1194"
+    }
+  ],
+  "updated_at": "2026-08-21T13:41:48.082801+00:00"
+}

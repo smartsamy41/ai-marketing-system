@@ -1,0 +1,75 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "geo_batch_report",
+  "version": "3.0",
+  "created": "2026-08-21T13:55:44.952487+00:00",
+  "filter": {
+    "product_id": null,
+    "limit": null
+  },
+  "pipeline": {
+    "candidate_matrix": {
+      "status": "UPDATED",
+      "matrix_size": 440,
+      "candidates": 270,
+      "blocked": 170
+    },
+    "local_source_bridge": {
+      "status": "UPDATED",
+      "records": 440,
+      "local_data_ready": 1,
+      "local_data_missing": 269,
+      "blocked": 170
+    },
+    "ready_candidate_processor": {
+      "status": "UPDATED",
+      "local_data_ready_input": 1,
+      "ready_for_geo_validation": 1,
+      "blocked": 0,
+      "errors": 0
+    }
+  },
+  "summary": {
+    "nodes_found": 1,
+    "published": 1,
+    "blocked": 0,
+    "errors": 0
+  },
+  "sitemap": {
+    "status": "UPDATED"
+  },
+  "llms": {
+    "status": "UPDATED",
+    "geo_nodes": 1,
+    "llms": "well_known_geo_manifests/llms.txt",
+    "llms_full": "well_known_geo_manifests/llms-full.txt"
+  },
+  "results": [
+    {
+      "status": "PUBLISHED",
+      "product_id": "CHK24_001",
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "location_name": "Lübeck",
+      "partner": "check24",
+      "canonical_url": "https://freebasics.online/energie/strom/luebeck/",
+      "validation": {
+        "status": "COMPLIANT",
+        "product_id": "CHK24_001",
+        "page_type": "geo",
+        "geo_quality_status": "INDEX",
+        "robots": "index, follow",
+        "sitemap_allowed": true,
+        "llms_allowed": true,
+        "indexnow_allowed": true,
+        "geo_publish_allowed": true,
+        "errors": [],
+        "warnings": []
+      },
+      "publishing": {
+        "status": "PUBLISHED",
+        "path": "content_repository/geo/published/energie/strom/luebeck/index.html",
+        "url": "https://freebasics.online/energie/strom/luebeck/"
+      }
+    }
+  ]
+}
