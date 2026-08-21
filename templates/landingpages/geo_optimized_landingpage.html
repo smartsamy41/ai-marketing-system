@@ -5,33 +5,51 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>{{title}} | Free Basics</title>
 
-<meta name="description" content="{{description}}">
+<meta name="description"
+      content="{{description}}">
 
-<link rel="canonical" href="{{canonical_url}}">
+<link rel="canonical"
+      href="{{canonical_url}}">
 
-<meta name="robots" content="index, follow">
-
-
-<meta property="og:type" content="website">
-
-<meta property="og:title" content="{{title}}">
-
-<meta property="og:description" content="{{description}}">
-
-<meta property="og:url" content="{{canonical_url}}">
-
-<meta property="og:site_name" content="Free Basics">
+<meta name="robots"
+      content="{{robots_meta}}">
 
 
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type"
+      content="website">
 
-<meta name="twitter:title" content="{{title}}">
+<meta property="og:site_name"
+      content="Free Basics">
 
-<meta name="twitter:description" content="{{description}}">
+<meta property="og:title"
+      content="{{title}}">
+
+<meta property="og:description"
+      content="{{description}}">
+
+<meta property="og:url"
+      content="{{canonical_url}}">
+
+<meta property="og:image"
+      content="{{og_image_url}}">
+
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="{{title}}">
+
+<meta name="twitter:description"
+      content="{{description}}">
+
+<meta name="twitter:image"
+      content="{{og_image_url}}">
 
 
 <script type="application/ld+json">
@@ -42,95 +60,98 @@
 <style>
 
 body {
-font-family: Arial, sans-serif;
-max-width:1000px;
-margin:auto;
-padding:20px;
-line-height:1.7;
-color:#222;
+    font-family: Arial, sans-serif;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+    line-height:1.7;
+    color:#222;
 }
 
 header {
-margin-bottom:40px;
+    margin-bottom:40px;
 }
 
 h1 {
-font-size:42px;
+    font-size:42px;
 }
 
 .box {
-background:#fff;
-border:1px solid #ddd;
-border-radius:14px;
-padding:25px;
-margin:25px 0;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:14px;
+    padding:25px;
+    margin:25px 0;
 }
 
 .hero {
-background:#f5f7fb;
-padding:35px;
-border-radius:18px;
+    background:#f5f7fb;
+    padding:35px;
+    border-radius:18px;
+}
+
+.answer {
+    background:#f7f9fc;
 }
 
 .fact-list li,
 .source-list li {
-margin:8px 0;
+    margin:8px 0;
 }
 
 .faq-item {
-border-bottom:1px solid #ddd;
-padding:15px 0;
+    border-bottom:1px solid #ddd;
+    padding:15px 0;
 }
 
 .cta {
-
-background:#f1f6ff;
-border:2px solid #0055ff;
-text-align:center;
-padding:35px;
-border-radius:16px;
-
+    background:#f1f6ff;
+    border:2px solid #0055ff;
+    text-align:center;
+    padding:35px;
+    border-radius:16px;
 }
-
 
 .button {
-
-display:inline-block;
-background:#0055ff;
-color:white;
-padding:15px 35px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-
+    display:inline-block;
+    background:#0055ff;
+    color:white;
+    padding:15px 35px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
-
 
 .newsletter {
-
-background:#fafafa;
-padding:30px;
-border-radius:15px;
-border:1px solid #ddd;
-
+    background:#fafafa;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #ddd;
 }
 
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,
+td {
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
 
 footer {
-
-margin-top:50px;
-padding-top:30px;
-border-top:1px solid #ddd;
-
+    margin-top:50px;
+    padding-top:30px;
+    border-top:1px solid #ddd;
 }
 
-
 a {
-color:#0055ff;
+    color:#0055ff;
 }
 
 </style>
-
 
 </head>
 
@@ -144,43 +165,58 @@ color:#0055ff;
 {{title}}
 </h1>
 
-
 <p>
 {{description}}
 </p>
-
 
 <p>
 Redaktion:
 <strong>{{author}}</strong>
 </p>
 
-
 <p>
 Geprüft:
 <strong>{{reviewed_by}}</strong>
 </p>
-
 
 <p>
 Aktualisiert:
 {{updated_at}}
 </p>
 
-
 </header>
-
 
 
 <main>
 
 
-<section class="box">
+<section class="box answer">
 
 <h2>
 Das Wichtigste auf einen Blick
 </h2>
 
+{{direct_answer}}
+
+</section>
+
+
+<section class="box">
+
+<h2>
+Produkt- und Themeninformationen
+</h2>
+
+{{content}}
+
+</section>
+
+
+<section class="box">
+
+<h2>
+Datenbasis
+</h2>
 
 <ul class="fact-list">
 
@@ -189,49 +225,29 @@ Kategorie:
 {{category}}
 </li>
 
-
 <li>
 Partnerquelle:
 {{partner}}
 </li>
-
 
 <li>
 Produkt-ID:
 {{product_id}}
 </li>
 
-
 <li>
-Status:
-Geprüfte Produktinformationen
+Silo:
+{{silo}}
 </li>
 
+<li>
+Cluster:
+{{cluster}}
+</li>
 
 </ul>
 
 </section>
-
-
-
-
-<section class="box">
-
-<h2>
-Produktinformationen
-</h2>
-
-
-<div>
-
-{{content}}
-
-</div>
-
-
-</section>
-
-
 
 
 <section class="box">
@@ -240,18 +256,13 @@ Produktinformationen
 Fakten & Quellen
 </h2>
 
-
 <ul class="source-list">
 
 {{sources}}
 
 </ul>
 
-
 </section>
-
-
-
 
 
 <section class="box">
@@ -260,26 +271,16 @@ Fakten & Quellen
 Häufige Fragen
 </h2>
 
-
-<div>
-
 {{faq}}
 
-</div>
-
-
 </section>
-
-
-
 
 
 <section class="cta">
 
 <h2>
-Angebote prüfen
+Weitere Informationen und Angebote
 </h2>
-
 
 <p>
 <strong>
@@ -287,45 +288,31 @@ Werbung / Anzeige
 </strong>
 </p>
 
-
-<p>
-Dieser Bereich enthält einen Partnerlink.
-</p>
-
-
-<a class="button"
-href="{{tracking_url}}"
-rel="nofollow sponsored">
-
-Vergleich starten
-
-</a>
-
+{{affiliate_area}}
 
 </section>
-
-
-
 
 
 <section class="box">
 
 <h2>
-Weitere Themen
+Verwandte Themen
 </h2>
 
-
-<div>
-
 {{related_products}}
-
-</div>
-
 
 </section>
 
 
+<section class="box">
 
+<h2>
+Weitere Informationen
+</h2>
+
+{{internal_links_html}}
+
+</section>
 
 
 <section class="newsletter">
@@ -334,57 +321,19 @@ Weitere Themen
 Newsletter
 </h2>
 
-
-<p>
-Neue Ratgeber und Informationen von Free Basics erhalten.
-</p>
-
-
-<form action="/api/newsletter/subscribe" method="post">
-
-<input 
-type="email"
-name="email"
-placeholder="E-Mail-Adresse"
-required>
-
-
-<button>
-Anmelden
-</button>
-
-</form>
-
+{{newsletter}}
 
 </section>
-
 
 
 </main>
 
 
-
-
 <footer>
 
+{{footer}}
 
-<h2>
-Free Basics
-</h2>
-
-
-<p>
-Wissensplattform für Tarifinformationen,
-digitale Themen und Verbraucherorientierung.
-</p>
-
-
-<p>
-Affiliate-Bereiche werden transparent als Werbung oder Anzeige gekennzeichnet.
-</p>
-
-
-<p>
+<nav>
 
 <a href="/methodik">
 Methodik
@@ -402,10 +351,7 @@ Redaktion
 Affiliate-Hinweis
 </a>
 
-</p>
-
-
-<p>
+|
 
 <a href="/impressum">
 Impressum
@@ -423,16 +369,12 @@ Datenschutz
 Kontakt
 </a>
 
-</p>
-
-
-<p>
-© 2026 Free Basics
-</p>
-
+</nav>
 
 </footer>
 
+
+{{cookie_consent}}
 
 
 </body>
