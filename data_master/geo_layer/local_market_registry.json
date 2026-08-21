@@ -1,0 +1,54 @@
+{
+  "system": "FREE BASICS AI MARKETING SYSTEM",
+  "type": "geo_local_market_registry",
+  "version": "1.0",
+  "status": "ACTIVE",
+  "rules": {
+    "verified_sources_only": true,
+    "no_fabricated_local_data": true,
+    "source_required": true,
+    "unique_content_required_for_index": true
+  },
+  "count": 1,
+  "records": [
+    {
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "location_name": "Lübeck",
+      "postal_code": "23552–23570",
+      "state": "Schleswig-Holstein",
+      "country": "Deutschland",
+      "product_id": "CHK24_001",
+      "category": "strom",
+      "silo": "energie",
+      "market_data": {
+        "verified_facts": [
+          "Stadtwerke Lübeck Energie GmbH ist Grundversorger im Netzgebiet Lübeck",
+          "Grundversorgung basiert auf § 36 EnWG",
+          "Arbeitspreis Strom sinkt um 6,27 Cent pro kWh brutto",
+          "Grundpreis bleibt unverändert",
+          "Bei 2.500 kWh Jahresverbrauch ergibt sich laut Stadtwerke Lübeck eine jährliche Entlastung von rund 156 Euro brutto",
+          "Als Gründe werden gesunkene Beschaffungskosten und reduzierte Netznutzungsentgelte genannt"
+        ],
+        "source_ids": [
+          "SRC_GEO_LUEBECK_STROM_GRUNDVERSORGER",
+          "SRC_GEO_LUEBECK_STROM_2026_PRICE_CHANGE"
+        ],
+        "source_urls": [
+          "https://www.swhl.de/verbraucherinformationen/",
+          "https://www.swhl.de/news/2026/stadtwerke-luebeck-senken-gas-und-strompreise-zum-1-april-2026/"
+        ],
+        "source_count": 2
+      },
+      "validation": {
+        "real_location": true,
+        "source_verified": true,
+        "local_data_available": true,
+        "unique_content": false,
+        "geo_page_allowed": false
+      },
+      "status": "LOCAL_DATA_READY",
+      "updated_at": "2026-08-21T12:32:21.899334+00:00"
+    }
+  ],
+  "updated_at": "2026-08-21T12:32:21.899432+00:00"
+}

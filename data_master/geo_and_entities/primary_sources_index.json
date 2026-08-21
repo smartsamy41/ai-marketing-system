@@ -1,9 +1,9 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "system": "FREE BASICS AI MARKETING SYSTEM",
   "description": "Primary Sources Index",
   "status": "ACTIVE",
-  "count": 6,
+  "count": 8,
   "sources": [
     {
       "source_id": "SRC_CHECK24",
@@ -52,6 +52,47 @@
       "category": "entity_reference",
       "usage": "Entity linking",
       "status": "planned"
+    },
+    {
+      "source_id": "SRC_GEO_LUEBECK_STROM_GRUNDVERSORGER",
+      "name": "Stadtwerke Lübeck Verbraucherinformationen",
+      "type": "official_local_source",
+      "category": "energy_local_market",
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "location_name": "Lübeck",
+      "product_id": "CHK24_001",
+      "topic": "strom_grundversorgung",
+      "publisher": "Stadtwerke Lübeck Energie GmbH",
+      "url": "https://www.swhl.de/verbraucherinformationen/",
+      "verified_facts": [
+        "Stadtwerke Lübeck Energie GmbH ist Grundversorger im Netzgebiet Lübeck",
+        "Grundversorgung basiert auf § 36 EnWG"
+      ],
+      "source_verified": true,
+      "status": "active"
+    },
+    {
+      "source_id": "SRC_GEO_LUEBECK_STROM_2026_PRICE_CHANGE",
+      "name": "Stadtwerke Lübeck Strompreisänderung 2026",
+      "type": "official_local_source",
+      "category": "energy_local_market",
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "location_name": "Lübeck",
+      "product_id": "CHK24_001",
+      "topic": "strom_price_update_2026",
+      "publisher": "Stadtwerke Lübeck",
+      "published_at": "2026-02-12",
+      "effective_from": "2026-04-01",
+      "url": "https://www.swhl.de/news/2026/stadtwerke-luebeck-senken-gas-und-strompreise-zum-1-april-2026/",
+      "verified_facts": [
+        "Arbeitspreis Strom sinkt um 6,27 Cent pro kWh brutto",
+        "Grundpreis bleibt unverändert",
+        "Bei 2.500 kWh Jahresverbrauch ergibt sich laut Stadtwerke Lübeck eine jährliche Entlastung von rund 156 Euro brutto",
+        "Als Gründe werden gesunkene Beschaffungskosten und reduzierte Netznutzungsentgelte genannt"
+      ],
+      "source_verified": true,
+      "status": "active"
     }
-  ]
+  ],
+  "updated_at": "2026-08-21T12:30:14.216831+00:00"
 }

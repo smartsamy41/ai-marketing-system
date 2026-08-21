@@ -1,13 +1,60 @@
 {
   "system": "FREE BASICS AI MARKETING SYSTEM",
   "type": "geo_registry",
-  "version": "1.0",
+  "version": "2.1",
   "status": "ACTIVE",
   "rules": {
     "real_locations_only": true,
     "source_required": true,
     "wikidata_validation_required": true,
-    "no_fake_city_pages": true
+    "no_fake_city_pages": true,
+    "no_fabricated_local_data": true,
+    "quality_shield_required": true
   },
-  "locations": []
+  "count": 1,
+  "locations": [
+    {
+      "location_id": "DE-SH-LUEBECK-Q2843",
+      "name": "Lübeck",
+      "postal_code": "23552–23570",
+      "state": "Schleswig-Holstein",
+      "country": "Deutschland",
+      "entity": {
+        "wikidata_id": "Q2843",
+        "state_wikidata_id": "Q1194",
+        "knowledge_graph": "",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q2843"
+        ],
+        "coordinate": "Point(10.686388888 53.869722222)"
+      },
+      "content": {
+        "related_products": [],
+        "related_categories": [],
+        "articles": [],
+        "landingpages": [],
+        "faq": []
+      },
+      "sources": [
+        {
+          "source": "Wikidata SPARQL",
+          "entity": "Q2843",
+          "verified": true
+        }
+      ],
+      "validation": {
+        "real_location": true,
+        "source_verified": true,
+        "wikidata_verified": true,
+        "local_data_available": false,
+        "product_match": false,
+        "category_match": false,
+        "search_intent_match": false,
+        "partner_compliant": false,
+        "unique_content": false,
+        "geo_page_allowed": false
+      }
+    }
+  ],
+  "updated_at": "2026-08-21T12:23:59.081874+00:00"
 }
