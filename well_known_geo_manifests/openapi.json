@@ -1,47 +1,24 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Free Basics AI Marketing System API",
-    "version": "1.0",
-    "description": "Public API documentation for Free Basics."
+    "title": "FREE BASICS API",
+    "description": "Public information and offer routes for Free Basics.",
+    "version": "1.0.0"
   },
-
   "servers": [
     {
       "url": "https://freebasics.online"
     }
   ],
-
   "paths": {
 
-    "/health": {
+    "/blog/{slug}": {
       "get": {
-        "summary": "System health status",
-        "responses": {
-          "200": {
-            "description": "System available"
-          }
-        }
-      }
-    },
-
-    "/": {
-      "get": {
-        "summary": "Free Basics homepage",
-        "responses": {
-          "200": {
-            "description": "Homepage available"
-          }
-        }
-      }
-    },
-
-    "/lp/{product_id}": {
-      "get": {
-        "summary": "Product landingpage",
+        "summary": "Public blog article",
+        "description": "Returns a published Free Basics article.",
         "parameters": [
           {
-            "name": "product_id",
+            "name": "slug",
             "in": "path",
             "required": true,
             "schema": {
@@ -51,7 +28,46 @@
         ],
         "responses": {
           "200": {
-            "description": "Landingpage available"
+            "description": "Article found"
+          },
+          "404": {
+            "description": "Article not found"
+          }
+        }
+      }
+    },
+
+    "/angebote/{slug}": {
+      "get": {
+        "summary": "Public offer page",
+        "description": "Returns a published Free Basics offer page.",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Offer page found"
+          },
+          "404": {
+            "description": "Offer page not found"
+          }
+        }
+      }
+    },
+
+    "/health": {
+      "get": {
+        "summary": "System health",
+        "responses": {
+          "200": {
+            "description": "System healthy"
           }
         }
       }
