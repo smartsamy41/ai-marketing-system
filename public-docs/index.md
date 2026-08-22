@@ -8,7 +8,7 @@ Free Basics ist eine digitale Informationsplattform für Tarifinformationen, dig
 
 ## Hauptwebsite
 
-https://freebasics.online
+[https://freebasics.online](https://freebasics.online)
 
 Die Website freebasics.online ist die primäre und kanonische Veröffentlichungsquelle.
 
@@ -24,16 +24,16 @@ Die Website freebasics.online ist die primäre und kanonische Veröffentlichungs
 
 ## Öffentliche Datensätze
 
-- https://freebasics.online/datasets/verified-products.json
-- https://freebasics.online/datasets/verified-products.jsonld
-- https://freebasics.online/datasets/knowledge-graph.json
+- [Verified Products JSON](https://freebasics.online/datasets/verified-products.json)
+- [Verified Products JSON-LD](https://freebasics.online/datasets/verified-products.jsonld)
+- [Knowledge Graph](https://freebasics.online/datasets/knowledge-graph.json)
 
 ## Machine-readable Ressourcen
 
-- https://freebasics.online/llms.txt
-- https://freebasics.online/llms-full.txt
-- https://freebasics.online/openapi.json
-- https://freebasics.online/security.txt
+- [llms.txt](https://freebasics.online/llms.txt)
+- [llms-full.txt](https://freebasics.online/llms-full.txt)
+- [OpenAPI](https://freebasics.online/openapi.json)
+- [security.txt](https://freebasics.online/security.txt)
 
 ## Transparenz
 
@@ -43,7 +43,7 @@ Kommerzielle Inhalte werden transparent als Werbung oder Anzeige gekennzeichnet.
 
 ## Weitere Informationen
 
-- https://freebasics.online/impressum
-- https://freebasics.online/datenschutz
-- https://freebasics.online/affiliate-hinweis
-- https://freebasics.online/kontakt
+- [Impressum](https://freebasics.online/impressum)
+- [Datenschutz](https://freebasics.online/datenschutz)
+- [Affiliate-Hinweis](https://freebasics.online/affiliate-hinweis)
+- [Kontakt](https://freebasics.online/kontakt)
