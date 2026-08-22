@@ -1,5 +1,15 @@
 class AIValidator:
 
+    ERROR_PREFIXES = (
+        "OPENAI_ERROR:",
+        "GEMINI_ERROR:",
+        "GROQ_ERROR:",
+        "PERPLEXITY_ERROR:",
+        "HUGGINGFACE_ERROR:",
+        "HF_ERROR:",
+        "AI_ERROR:"
+    )
+
 
     def validate(
         self,
@@ -10,7 +20,8 @@ class AIValidator:
             "status": "UNKNOWN",
             "valid": False,
             "length": 0,
-            "issues": []
+            "issues": [],
+            "provider_error": False
         }
 
 
@@ -25,11 +36,9 @@ class AIValidator:
             return result
 
 
-
         text = str(
             response
         ).strip()
-
 
 
         if not text:
@@ -43,10 +52,27 @@ class AIValidator:
             return result
 
 
-
         result["length"] = len(
             text
         )
+
+
+        upper_text = text.upper()
+
+
+        if upper_text.startswith(
+            self.ERROR_PREFIXES
+        ):
+
+            result["issues"].append(
+                "provider_error"
+            )
+
+            result["provider_error"] = True
+
+            result["status"] = "ERROR"
+
+            return result
 
 
         if len(text) < 20:
@@ -64,7 +90,6 @@ class AIValidator:
         else:
 
             result["status"] = "WARNING"
-
 
 
         return result

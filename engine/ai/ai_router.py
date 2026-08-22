@@ -2,6 +2,7 @@ from engine.ai.openai_client import OpenAIClient
 from engine.ai.gemini_client import GeminiClient
 from engine.ai.groq_client import GroqClient
 from engine.ai.perplexity_client import PerplexityClient
+from engine.ai.huggingface_client import HuggingFaceClient
 
 from engine.ai.ai_validator import AIValidator
 from engine.ai.ai_evaluator import AIEvaluator
@@ -17,11 +18,11 @@ class AIRouter:
         self.gemini = GeminiClient()
         self.groq = GroqClient()
         self.perplexity = PerplexityClient()
+        self.huggingface = HuggingFaceClient()
 
         self.validator = AIValidator()
         self.evaluator = AIEvaluator()
         self.learning = AILearningBridge()
-
 
 
     def run(
@@ -30,6 +31,10 @@ class AIRouter:
         prompt: str
     ):
 
+
+        # =====================================================
+        # OPENAI
+        # =====================================================
 
         if task == "analysis":
 
@@ -40,6 +45,10 @@ class AIRouter:
             )
 
 
+        # =====================================================
+        # GEMINI
+        # =====================================================
+
         elif task == "knowledge":
 
             provider = "gemini"
@@ -48,6 +57,10 @@ class AIRouter:
                 prompt
             )
 
+
+        # =====================================================
+        # GROQ
+        # =====================================================
 
         elif task == "fast":
 
@@ -58,11 +71,28 @@ class AIRouter:
             )
 
 
+        # =====================================================
+        # PERPLEXITY
+        # =====================================================
+
         elif task == "verify":
 
             provider = "perplexity"
 
             response = self.perplexity.generate(
+                prompt
+            )
+
+
+        # =====================================================
+        # HUGGING FACE
+        # =====================================================
+
+        elif task == "opensource":
+
+            provider = "huggingface"
+
+            response = self.huggingface.generate(
                 prompt
             )
 
@@ -73,6 +103,10 @@ class AIRouter:
                 "Unknown AI task"
             )
 
+
+        # =====================================================
+        # VALIDATION
+        # =====================================================
 
         validation = self.validator.validate(
             response
@@ -86,6 +120,10 @@ class AIRouter:
             verification = response
 
 
+        # =====================================================
+        # EVALUATION
+        # =====================================================
+
         evaluation = self.evaluator.evaluate(
             task,
             provider,
@@ -95,14 +133,33 @@ class AIRouter:
         )
 
 
+        # =====================================================
+        # LEARNING
+        # =====================================================
+
         try:
 
             self.learning.log_ai_result(
+
                 task=task,
+
                 provider=provider,
-                score=evaluation["score"],
-                validation_status=evaluation["validation_status"],
-                verification=evaluation["verification"]
+
+                score=
+                    evaluation[
+                        "score"
+                    ],
+
+                validation_status=
+                    evaluation[
+                        "validation_status"
+                    ],
+
+                verification=
+                    evaluation[
+                        "verification"
+                    ]
+
             )
 
         except Exception as exc:
@@ -115,10 +172,13 @@ class AIRouter:
 
         return {
 
-            "provider": provider,
+            "provider":
+                provider,
 
-            "result": response,
+            "result":
+                response,
 
-            "evaluation": evaluation
+            "evaluation":
+                evaluation
 
         }

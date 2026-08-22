@@ -13,17 +13,73 @@ class AIEvaluator:
         verification=None
     ):
 
+        validation_status = (
+            validation.get(
+                "status",
+                "UNKNOWN"
+            )
+        )
+
+        provider_error = bool(
+            validation.get(
+                "provider_error",
+                False
+            )
+        )
+
+
+        # =====================================================
+        # PROVIDER ERROR
+        # =====================================================
+
+        if (
+            provider_error
+            or validation_status == "ERROR"
+        ):
+
+            return {
+
+                "timestamp":
+                    datetime.now(
+                        timezone.utc
+                    ).isoformat(),
+
+                "task":
+                    task,
+
+                "provider":
+                    provider,
+
+                "score":
+                    0,
+
+                "validation_status":
+                    "ERROR",
+
+                "verification":
+                    False,
+
+                "provider_error":
+                    True
+            }
+
 
         score = 0
 
 
-        # Antwort vorhanden
+        # =====================================================
+        # RESPONSE PRESENT
+        # =====================================================
+
         if response:
 
             score += 40
 
 
-        # Validator bestanden
+        # =====================================================
+        # VALIDATOR PASSED
+        # =====================================================
+
         if validation.get(
             "valid",
             False
@@ -32,20 +88,31 @@ class AIEvaluator:
             score += 30
 
 
-        # Perplexity Prüfung vorhanden
+        # =====================================================
+        # VERIFICATION PRESENT
+        # =====================================================
+
         if verification:
 
             score += 20
 
 
-        # Mindestlänge
+        # =====================================================
+        # RESPONSE DEPTH
+        # =====================================================
+
         if len(
-            str(response)
+            str(
+                response or ""
+            )
         ) > 200:
 
             score += 10
 
 
+        # =====================================================
+        # FINAL RESULT
+        # =====================================================
 
         return {
 
@@ -64,13 +131,13 @@ class AIEvaluator:
                 score,
 
             "validation_status":
-                validation.get(
-                    "status"
-                ),
+                validation_status,
 
             "verification":
                 bool(
                     verification
-                )
+                ),
 
+            "provider_error":
+                False
         }

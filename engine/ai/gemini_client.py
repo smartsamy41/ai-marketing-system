@@ -24,7 +24,7 @@ class GeminiClient:
     def generate(
         self,
         prompt: str,
-        model="gemini-2.0-flash-lite"
+        model="gemini-3.5-flash-lite"
     ):
 
         try:
@@ -33,6 +33,13 @@ class GeminiClient:
                 model=model,
                 contents=prompt
             )
+
+            if not response.text:
+
+                return (
+                    "GEMINI_ERROR: "
+                    "Empty response"
+                )
 
             return response.text
 

@@ -1,5 +1,3 @@
-from datetime import datetime, timezone
-
 from engine.learning_logger import LearningLogger
 
 
@@ -30,8 +28,26 @@ class AILearningBridge:
         recommendation = self.get_recommendation(
             task,
             provider,
-            score
+            score,
+            validation_status
         )
+
+
+        if validation_status == "ERROR":
+
+            learning_status = "ERROR"
+
+        elif validation_status == "FAILED":
+
+            learning_status = "FAILED"
+
+        elif validation_status == "WARNING":
+
+            learning_status = "WARNING"
+
+        else:
+
+            learning_status = "ACTIVE"
 
 
         return self.logger.log_learning(
@@ -54,7 +70,7 @@ class AILearningBridge:
                 float(score) / 100
             ),
 
-            status="ACTIVE",
+            status=learning_status,
 
             note=(
                 f"validation={validation_status}; "
@@ -68,8 +84,18 @@ class AILearningBridge:
         self,
         task,
         provider,
-        score
+        score,
+        validation_status
     ):
+
+        if validation_status in {
+            "ERROR",
+            "FAILED"
+        }:
+
+            return (
+                f"DISABLE_OR_REVIEW_{provider.upper()}_FOR_{task.upper()}"
+            )
 
 
         if score >= 90:

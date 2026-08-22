@@ -1,4 +1,5 @@
 import os
+import re
 
 from groq import Groq
 
@@ -21,30 +22,94 @@ class GroqClient:
         )
 
 
+    @staticmethod
+    def clean_response(
+        content
+    ):
+
+        if not content:
+            return ""
+
+        content = str(
+            content
+        )
+
+        # Entfernt interne Reasoning-Blöcke
+        content = re.sub(
+            r"<think>.*?</think>",
+            "",
+            content,
+            flags=re.DOTALL | re.IGNORECASE
+        )
+
+        return content.strip()
+
+
     def generate(
         self,
         prompt: str,
-        model="llama-3.1-8b-instant"
+        model="qwen/qwen3.6-27b"
     ):
 
-        response = self.client.chat.completions.create(
+        try:
 
-            model=model,
+            response = (
+                self.client
+                .chat
+                .completions
+                .create(
 
-            messages=[
-                {
-                    "role": "system",
-                    "content":
-                    "Du bist ein schneller Analyse-Agent im Free Basics AI System."
-                },
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
+                    model=model,
 
-            temperature=0.2
-        )
+                    messages=[
+                        {
+                            "role": "system",
+                            "content":
+                                (
+                                    "Du bist ein schneller Analyse-Agent "
+                                    "im Free Basics AI Marketing System. "
+                                    "Gib nur die angeforderte Antwort aus. "
+                                    "Keine internen Gedankengänge."
+                                )
+                        },
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ],
+
+                    temperature=0.2
+                )
+            )
 
 
-        return response.choices[0].message.content
+            content = (
+                response
+                .choices[0]
+                .message
+                .content
+            )
+
+
+            content = self.clean_response(
+                content
+            )
+
+
+            if not content:
+
+                return (
+                    "GROQ_ERROR: "
+                    "Empty response"
+                )
+
+
+            return content
+
+
+        except Exception as exc:
+
+            return (
+                "GROQ_ERROR: "
+                + str(exc)
+            )
