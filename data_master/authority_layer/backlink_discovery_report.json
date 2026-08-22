@@ -1,56 +1,11 @@
 {
   "system": "FREE BASICS AI MARKETING SYSTEM",
   "type": "backlink_discovery_report",
-  "version": "2.0",
-  "status": "ACTIVE",
-  "rules": {
-    "verified_backlinks_only": true,
-    "candidate_not_equal_backlink": true,
-    "dynamic_platforms_are_not_negative_proof": true,
-    "no_artificial_backlinks": true,
-    "no_fabricated_backlinks": true
-  },
+  "version": "3.0",
   "summary": {
-    "candidates": 6,
+    "total": 6,
     "verified": 3,
-    "not_found_in_html": 0,
     "dynamic_page_unverified": 3,
-    "errors": 0
-  },
-  "verified": [
-    {
-      "source_url": "https://github.com/smartsamy41",
-      "source_domain": "github.com",
-      "platform": "github",
-      "backlinks_found": 1
-    },
-    {
-      "source_url": "https://smartsamy41.github.io/ai-marketing-system/",
-      "source_domain": "smartsamy41.github.io",
-      "platform": "github_pages",
-      "backlinks_found": 12
-    },
-    {
-      "source_url": "https://de.pinterest.com/freebasics_official/",
-      "source_domain": "de.pinterest.com",
-      "platform": "pinterest",
-      "backlinks_found": 1
-    }
-  ],
-  "not_found_in_html": [],
-  "dynamic_page_unverified": [
-    {
-      "source_url": "https://www.youtube.com/@freebasics_online",
-      "platform": "youtube"
-    },
-    {
-      "source_url": "https://medium.com/@freebasics-online",
-      "platform": "medium"
-    },
-    {
-      "source_url": "https://www.tiktok.com/@free.basics1",
-      "platform": "tiktok"
-    }
-  ],
-  "updated_at": "2026-08-22T07:11:00.065522+00:00"
+    "not_found_in_html": 0
+  }
 }

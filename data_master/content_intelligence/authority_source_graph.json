@@ -1,13 +1,17 @@
 {
   "system": "FREE BASICS AI MARKETING SYSTEM",
   "type": "authority_source_graph",
-  "version": "1.0",
+  "version": "2.0",
   "status": "ACTIVE",
   "rules": {
     "verified_sources_only": true,
     "source_required_for_claims": true,
     "no_fabricated_sources": true,
-    "entity_source_relationship_required": true
+    "entity_source_relationship_required": true,
+    "verified_backlinks_only": true,
+    "backlink_must_be_active": true,
+    "backlink_must_be_link_verified": true,
+    "no_fabricated_authority_metrics": true
   },
   "connections": {
     "product_to_source": [
@@ -721,10 +725,14 @@
         "partner": "telekom",
         "product_id": "TEL_010"
       }
-    ]
+    ],
+    "verified_backlinks": []
   },
   "validation": {
     "products_checked": 44,
-    "sources_found": 11
+    "sources_found": 13,
+    "backlinks_checked": 3,
+    "verified_backlinks": 0,
+    "backlink_domains": 0
   }
 }

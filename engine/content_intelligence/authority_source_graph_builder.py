@@ -23,16 +23,25 @@ class AuthoritySourceGraphBuilder:
             "data_master/geo_and_entities/primary_sources_index.json"
         )
 
+        self.backlink_file = Path(
+            "data_master/authority_layer/backlink_registry.json"
+        )
+
+        self.article_file = Path(
+            "data_master/content_graph/article_intelligence_graph.json"
+        )
+
         self.output_file = Path(
             "data_master/content_intelligence/authority_source_graph.json"
         )
 
 
-
-    def load(self, path):
+    def load(
+        self,
+        path
+    ):
 
         if not path.exists():
-
             return {}
 
         with open(
@@ -43,6 +52,18 @@ class AuthoritySourceGraphBuilder:
 
             return json.load(f)
 
+
+    @staticmethod
+    def clean(
+        value
+    ):
+
+        if value is None:
+            return ""
+
+        return str(
+            value
+        ).strip()
 
 
     def build(self):
@@ -64,26 +85,28 @@ class AuthoritySourceGraphBuilder:
             self.primary_source_file
         )
 
+        backlinks = self.load(
+            self.backlink_file
+        )
+
+        articles = self.load(
+            self.article_file
+        )
 
 
         graph = {
 
-
             "system":
                 "FREE BASICS AI MARKETING SYSTEM",
-
 
             "type":
                 "authority_source_graph",
 
-
             "version":
-                "1.0",
-
+                "2.0",
 
             "status":
                 "ACTIVE",
-
 
             "rules":
             {
@@ -98,10 +121,21 @@ class AuthoritySourceGraphBuilder:
                     True,
 
                 "entity_source_relationship_required":
+                    True,
+
+                "verified_backlinks_only":
+                    True,
+
+                "backlink_must_be_active":
+                    True,
+
+                "backlink_must_be_link_verified":
+                    True,
+
+                "no_fabricated_authority_metrics":
                     True
 
             },
-
 
             "connections":
             {
@@ -112,10 +146,11 @@ class AuthoritySourceGraphBuilder:
 
                 "article_to_source": [],
 
-                "partner_to_source": []
+                "partner_to_source": [],
+
+                "verified_backlinks": []
 
             },
-
 
             "validation":
             {
@@ -124,6 +159,15 @@ class AuthoritySourceGraphBuilder:
                     0,
 
                 "sources_found":
+                    0,
+
+                "backlinks_checked":
+                    0,
+
+                "verified_backlinks":
+                    0,
+
+                "backlink_domains":
                     0
 
             }
@@ -131,9 +175,11 @@ class AuthoritySourceGraphBuilder:
         }
 
 
+        # =====================================================
+        # SOURCE REGISTRY
+        # =====================================================
 
         source_names = []
-
 
 
         for source in sources.get(
@@ -152,7 +198,6 @@ class AuthoritySourceGraphBuilder:
                 )
 
 
-
         for source in primary_sources.get(
             "sources",
             []
@@ -169,20 +214,25 @@ class AuthoritySourceGraphBuilder:
                 )
 
 
-
         source_names = list(
-            set(source_names)
+            set(
+                source_names
+            )
         )
 
 
-
-        graph["validation"]["sources_found"] = len(
+        graph[
+            "validation"
+        ][
+            "sources_found"
+        ] = len(
             source_names
         )
 
 
-
-
+        # =====================================================
+        # PRODUCT / PARTNER SOURCES
+        # =====================================================
 
         for product in products.get(
             "products",
@@ -216,18 +266,24 @@ class AuthoritySourceGraphBuilder:
             )
 
 
-
             if product_id:
 
 
-                graph["validation"]["products_checked"] += 1
-
+                graph[
+                    "validation"
+                ][
+                    "products_checked"
+                ] += 1
 
 
                 if product_source:
 
 
-                    graph["connections"]["product_to_source"].append(
+                    graph[
+                        "connections"
+                    ][
+                        "product_to_source"
+                    ].append(
 
                         {
 
@@ -242,11 +298,14 @@ class AuthoritySourceGraphBuilder:
                     )
 
 
-
                 elif partner:
 
 
-                    graph["connections"]["product_to_source"].append(
+                    graph[
+                        "connections"
+                    ][
+                        "product_to_source"
+                    ].append(
 
                         {
 
@@ -261,13 +320,14 @@ class AuthoritySourceGraphBuilder:
                     )
 
 
-
-
-
                 if partner:
 
 
-                    graph["connections"]["partner_to_source"].append(
+                    graph[
+                        "connections"
+                    ][
+                        "partner_to_source"
+                    ].append(
 
                         {
 
@@ -282,8 +342,9 @@ class AuthoritySourceGraphBuilder:
                     )
 
 
-
-
+        # =====================================================
+        # ENTITY SOURCES
+        # =====================================================
 
         for relationship in entities.get(
             "relationships",
@@ -301,11 +362,14 @@ class AuthoritySourceGraphBuilder:
             )
 
 
-
             if entity and source:
 
 
-                graph["connections"]["entity_to_source"].append(
+                graph[
+                    "connections"
+                ][
+                    "entity_to_source"
+                ].append(
 
                     {
 
@@ -320,19 +384,9 @@ class AuthoritySourceGraphBuilder:
                 )
 
 
-
-
-
-        article_file = Path(
-            "data_master/content_graph/article_intelligence_graph.json"
-        )
-
-
-        articles = self.load(
-            article_file
-        )
-
-
+        # =====================================================
+        # ARTICLE SOURCES
+        # =====================================================
 
         for article in articles.get(
             "articles",
@@ -345,7 +399,11 @@ class AuthoritySourceGraphBuilder:
             )
 
 
-            for link in graph["connections"]["product_to_source"]:
+            for link in graph[
+                "connections"
+            ][
+                "product_to_source"
+            ]:
 
 
                 if link.get(
@@ -353,7 +411,11 @@ class AuthoritySourceGraphBuilder:
                 ) == product_id:
 
 
-                    graph["connections"]["article_to_source"].append(
+                    graph[
+                        "connections"
+                    ][
+                        "article_to_source"
+                    ].append(
 
                         {
 
@@ -372,14 +434,217 @@ class AuthoritySourceGraphBuilder:
                     )
 
 
+        # =====================================================
+        # VERIFIED BACKLINKS
+        # =====================================================
+
+        backlink_domains = set()
+
+        seen_backlinks = set()
 
 
+        for backlink in backlinks.get(
+            "backlinks",
+            []
+        ):
+
+
+            graph[
+                "validation"
+            ][
+                "backlinks_checked"
+            ] += 1
+
+
+            status = self.clean(
+                backlink.get(
+                    "status"
+                )
+            ).upper()
+
+
+            link_verified = bool(
+                backlink.get(
+                    "link_verified",
+                    False
+                )
+            )
+
+
+            source_url = self.clean(
+                backlink.get(
+                    "source_url"
+                )
+            )
+
+
+            source_domain = self.clean(
+                backlink.get(
+                    "source_domain"
+                )
+            )
+
+
+            target_url = self.clean(
+                backlink.get(
+                    "target_url"
+                )
+            )
+
+
+            if status != "ACTIVE":
+                continue
+
+
+            if not link_verified:
+                continue
+
+
+            if not source_url:
+                continue
+
+
+            if not source_domain:
+                continue
+
+
+            if not target_url:
+                continue
+
+
+            backlink_key = (
+                source_url,
+                target_url
+            )
+
+
+            if backlink_key in seen_backlinks:
+                continue
+
+
+            seen_backlinks.add(
+                backlink_key
+            )
+
+
+            backlink_domains.add(
+                source_domain
+            )
+
+
+            graph[
+                "connections"
+            ][
+                "verified_backlinks"
+            ].append(
+
+                {
+
+                    "source_domain":
+                        source_domain,
+
+                    "source_url":
+                        source_url,
+
+                    "source_type":
+                        self.clean(
+                            backlink.get(
+                                "source_type"
+                            )
+                        ),
+
+                    "target_url":
+                        target_url,
+
+                    "anchor_text":
+                        self.clean(
+                            backlink.get(
+                                "anchor_text"
+                            )
+                        ),
+
+                    "rel":
+                        self.clean(
+                            backlink.get(
+                                "rel"
+                            )
+                        ),
+
+                    "follow":
+                        bool(
+                            backlink.get(
+                                "follow",
+                                False
+                            )
+                        ),
+
+                    "nofollow":
+                        bool(
+                            backlink.get(
+                                "nofollow",
+                                False
+                            )
+                        ),
+
+                    "sponsored":
+                        bool(
+                            backlink.get(
+                                "sponsored",
+                                False
+                            )
+                        ),
+
+                    "ugc":
+                        bool(
+                            backlink.get(
+                                "ugc",
+                                False
+                            )
+                        ),
+
+                    "link_verified":
+                        True,
+
+                    "status":
+                        "ACTIVE"
+
+                }
+
+            )
+
+
+        graph[
+            "validation"
+        ][
+            "verified_backlinks"
+        ] = len(
+
+            graph[
+                "connections"
+            ][
+                "verified_backlinks"
+            ]
+
+        )
+
+
+        graph[
+            "validation"
+        ][
+            "backlink_domains"
+        ] = len(
+            backlink_domains
+        )
+
+
+        # =====================================================
+        # WRITE
+        # =====================================================
 
         self.output_file.parent.mkdir(
             parents=True,
             exist_ok=True
         )
-
 
 
         with open(
@@ -402,42 +667,78 @@ class AuthoritySourceGraphBuilder:
             )
 
 
-
         print(
-            "AUTHORITY SOURCE GRAPH CREATED"
+            "AUTHORITY SOURCE GRAPH CREATED V2"
         )
 
 
-        for key,value in graph["connections"].items():
+        for key, value in graph[
+            "connections"
+        ].items():
 
             print(
                 key,
                 ":",
-                len(value)
+                len(
+                    value
+                )
             )
 
 
         print(
             "PRODUCTS:",
-            graph["validation"]["products_checked"]
+            graph[
+                "validation"
+            ][
+                "products_checked"
+            ]
         )
 
 
         print(
             "SOURCES:",
-            graph["validation"]["sources_found"]
+            graph[
+                "validation"
+            ][
+                "sources_found"
+            ]
         )
 
+
+        print(
+            "BACKLINKS CHECKED:",
+            graph[
+                "validation"
+            ][
+                "backlinks_checked"
+            ]
+        )
+
+
+        print(
+            "VERIFIED BACKLINKS:",
+            graph[
+                "validation"
+            ][
+                "verified_backlinks"
+            ]
+        )
+
+
+        print(
+            "BACKLINK DOMAINS:",
+            graph[
+                "validation"
+            ][
+                "backlink_domains"
+            ]
+        )
 
 
         return graph
 
 
-
-
-
 if __name__ == "__main__":
-
 
     builder = AuthoritySourceGraphBuilder()
 
