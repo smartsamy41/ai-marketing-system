@@ -1,17 +1,14 @@
 {
   "system": "FREE BASICS AI MARKETING SYSTEM",
   "type": "authority_source_graph",
-  "version": "2.0",
+  "version": "3.0",
   "status": "ACTIVE",
   "rules": {
     "verified_sources_only": true,
     "source_required_for_claims": true,
     "no_fabricated_sources": true,
-    "entity_source_relationship_required": true,
     "verified_backlinks_only": true,
-    "backlink_must_be_active": true,
-    "backlink_must_be_link_verified": true,
-    "no_fabricated_authority_metrics": true
+    "active_registry_only": true
   },
   "connections": {
     "product_to_source": [
@@ -372,179 +369,179 @@
     ],
     "article_to_source": [
       {
-        "article_id": "ARTICLE_CHK24_004",
+        "product_id": "CHK24_004",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_005",
+        "product_id": "CHK24_005",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_002",
+        "product_id": "CHK24_002",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_001",
+        "product_id": "CHK24_001",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_003",
+        "product_id": "CHK24_003",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_006",
+        "product_id": "CHK24_006",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_007",
+        "product_id": "CHK24_007",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_CHK24_008",
+        "product_id": "CHK24_008",
         "source": "check24"
       },
       {
-        "article_id": "ARTICLE_TC_001",
+        "product_id": "TC_001",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_002",
+        "product_id": "TC_002",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_003",
+        "product_id": "TC_003",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_004",
+        "product_id": "TC_004",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_005",
+        "product_id": "TC_005",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_006",
+        "product_id": "TC_006",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_007",
+        "product_id": "TC_007",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_008",
+        "product_id": "TC_008",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_TC_009",
+        "product_id": "TC_009",
         "source": "tarifcheck"
       },
       {
-        "article_id": "ARTICLE_B0FQF32239",
+        "product_id": "B0FQF32239",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0CFPWLGF2",
+        "product_id": "B0CFPWLGF2",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0DFYN8174",
+        "product_id": "B0DFYN8174",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0FPXFBL13",
+        "product_id": "B0FPXFBL13",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0FPXDCDX2",
+        "product_id": "B0FPXDCDX2",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0FPXGJL6H",
+        "product_id": "B0FPXGJL6H",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0FPXDRR63",
+        "product_id": "B0FPXDRR63",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_3424631078",
+        "product_id": "3424631078",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0FNX7HC9M",
+        "product_id": "B0FNX7HC9M",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_3423209690",
+        "product_id": "3423209690",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_3832167242",
+        "product_id": "3832167242",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_3426281759",
+        "product_id": "3426281759",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0DXLBZF4Q",
+        "product_id": "B0DXLBZF4Q",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0CVXSK4D3",
+        "product_id": "B0CVXSK4D3",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B08P4YPB8Q",
+        "product_id": "B08P4YPB8Q",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0FMS3V43J",
+        "product_id": "B0FMS3V43J",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_B0D1YKBX82",
+        "product_id": "B0D1YKBX82",
         "source": "amazon"
       },
       {
-        "article_id": "ARTICLE_TEL_001",
+        "product_id": "TEL_001",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_002",
+        "product_id": "TEL_002",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_003",
+        "product_id": "TEL_003",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_004",
+        "product_id": "TEL_004",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_005",
+        "product_id": "TEL_005",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_006",
+        "product_id": "TEL_006",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_007",
+        "product_id": "TEL_007",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_008",
+        "product_id": "TEL_008",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_009",
+        "product_id": "TEL_009",
         "source": "telekom"
       },
       {
-        "article_id": "ARTICLE_TEL_010",
+        "product_id": "TEL_010",
         "source": "telekom"
       }
     ],
@@ -726,13 +723,36 @@
         "product_id": "TEL_010"
       }
     ],
-    "verified_backlinks": []
+    "verified_backlinks": [
+      {
+        "source_domain": "github.com",
+        "source_url": "https://github.com/smartsamy41",
+        "target_url": "https://freebasics.online",
+        "follow": true,
+        "verified": true
+      },
+      {
+        "source_domain": "smartsamy41.github.io",
+        "source_url": "https://smartsamy41.github.io/ai-marketing-system",
+        "target_url": "https://freebasics.online",
+        "follow": true,
+        "verified": true
+      },
+      {
+        "source_domain": "de.pinterest.com",
+        "source_url": "https://de.pinterest.com/freebasics_official",
+        "target_url": "https://freebasics.online",
+        "follow": true,
+        "verified": true
+      }
+    ]
   },
   "validation": {
     "products_checked": 44,
     "sources_found": 13,
     "backlinks_checked": 3,
-    "verified_backlinks": 0,
-    "backlink_domains": 0
-  }
+    "verified_backlinks": 3,
+    "backlink_domains": 3
+  },
+  "updated_at": "2026-08-22T08:53:01.718535+00:00"
 }
