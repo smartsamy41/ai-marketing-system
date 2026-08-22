@@ -1,0 +1,9 @@
+title: Free Basics
+description: Öffentliche technische Dokumentation und Methodik von Free Basics.
+url: "https://smartsamy41.github.io"
+baseurl: "/ai-marketing-system"
+
+theme: minima
+
+plugins:
+  - jekyll-seo-tag
