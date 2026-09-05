@@ -1,0 +1,20 @@
+﻿{
+  "partner": "CHECK24",
+  "partner_id": "354456",
+  "record_type": "compliance",
+  "verification_status": "STRONG_SOURCE",
+  "source_type": "official_partner_material",
+  "source_reference": null,
+  "source_reference_status": "PENDING_EXACT_REFERENCE",
+  "rules": {
+    "no_misleading_claims": true,
+    "no_fake_savings": true,
+    "no_brand_misuse": true,
+    "provider_logos_require_permission": true,
+    "advertising_disclosure": {
+      "required": true,
+      "text": "<p><strong>CHECK24.net Partnerprogramm</strong></p><p>Wir nehmen am CHECK24.net Partnerprogramm teil. Auf unseren Seiten werden iFrame-Buchungsmasken und andere Werbemittel eingebunden, an denen wir über Transaktionen, zum Beispiel durch Leads und Sales, eine Werbekostenerstattung erhalten können.</p><p>Weitere Informationen zur Datennutzung durch CHECK24.net erhalten Sie in der Datenschutzerklärung von <a href=\"https://www.check24.net\" target=\"_blank\">CHECK24.net</a>.</p>"
+    }
+  },
+  "notes": "CHECK24 compliance rules are stored conservatively as STRONG_SOURCE until the exact official primary-source reference is normalized. Partner ID 354456 is independently VERIFIED in the partner manifest."
+}
