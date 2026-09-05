@@ -1,0 +1,152 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.compliance_rule.schema.v1",
+  "title": "NURANO Compliance Rule",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "rules"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    }
+  },
+
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_rule_id",
+        "rule_scope",
+        "rule_type",
+        "title",
+        "requirement",
+        "enforcement",
+        "status",
+        "verification_status"
+      ],
+
+      "properties": {
+        "nurano_rule_id": {
+          "type": "string",
+          "pattern": "^NRUL_[0-9]{4}$"
+        },
+
+        "rule_scope": {
+          "type": "string",
+          "enum": [
+            "PARTNER_RULE",
+            "NURANO_INTERNAL_POLICY"
+          ]
+        },
+
+        "nurano_partner_key": {
+          "type": ["string", "null"]
+        },
+
+        "nurano_product_id": {
+          "type": ["string", "null"],
+          "pattern": "^NPRD_[0-9]{4}$"
+        },
+
+        "nurano_asset_id": {
+          "type": ["string", "null"],
+          "pattern": "^NAST_[0-9]{4}$"
+        },
+
+        "rule_type": {
+          "type": "string",
+          "enum": [
+            "ADVERTISING_DISCLOSURE",
+            "BRAND_USAGE",
+            "ROUTING",
+            "CONTENT",
+            "NEWSLETTER",
+            "TRACKING",
+            "PRIVACY",
+            "CONSENT",
+            "PROHIBITED_CLAIM",
+            "LEGAL_NOTICE",
+            "ASSET_USAGE",
+            "OTHER"
+          ]
+        },
+
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "requirement": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "prohibited": {
+          "type": "boolean"
+        },
+
+        "enforcement": {
+          "type": "string",
+          "enum": [
+            "BLOCK",
+            "WARN",
+            "REQUIRE_REVIEW",
+            "INFORMATIONAL"
+          ]
+        },
+
+        "source_reference": {
+          "type": ["string", "null"]
+        },
+
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "STRONG_SOURCE",
+            "UNVERIFIED",
+            "LEGACY",
+            "PLACEHOLDER",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "valid_from": {
+          "type": ["string", "null"]
+        },
+
+        "valid_until": {
+          "type": ["string", "null"]
+        },
+
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}
