@@ -1,0 +1,114 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.suppression.schema.v1",
+  "title": "NURANO Suppression and Unsubscribe Model",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "suppressions"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "suppressions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/suppression"
+      }
+    }
+  },
+
+  "$defs": {
+    "suppression": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_suppression_id",
+        "nurano_subscriber_id",
+        "suppression_type",
+        "status",
+        "created_at"
+      ],
+
+      "properties": {
+        "nurano_suppression_id": {
+          "type": "string",
+          "pattern": "^NSUP_[0-9]{6}$"
+        },
+
+        "nurano_subscriber_id": {
+          "type": "string",
+          "pattern": "^NSUB_[0-9]{6}$"
+        },
+
+        "suppression_type": {
+          "type": "string",
+          "enum": [
+            "UNSUBSCRIBE",
+            "COMPLAINT",
+            "BOUNCE",
+            "MANUAL_BLOCK",
+            "CONSENT_WITHDRAWN",
+            "OTHER"
+          ]
+        },
+
+        "scope": {
+          "type": "string",
+          "enum": [
+            "ALL_NEWSLETTERS",
+            "MARKETING_ONLY",
+            "PARTNER_SPECIFIC",
+            "CAMPAIGN_SPECIFIC"
+          ]
+        },
+
+        "nurano_partner_key": {
+          "type": ["string", "null"]
+        },
+
+        "reason": {
+          "type": ["string", "null"]
+        },
+
+        "evidence_reference": {
+          "type": ["string", "null"],
+          "description": "Reference to unsubscribe or suppression evidence stored outside Git."
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "RELEASED",
+            "EXPIRED"
+          ]
+        },
+
+        "created_at": {
+          "type": "string"
+        },
+
+        "released_at": {
+          "type": ["string", "null"]
+        },
+
+        "updated_at": {
+          "type": ["string", "null"]
+        },
+
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}
