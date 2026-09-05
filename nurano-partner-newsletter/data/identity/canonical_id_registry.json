@@ -1,0 +1,53 @@
+﻿{
+  "record_type": "canonical_id_registry",
+  "schema_version": "1.0.0",
+
+  "partners": [
+    {
+      "nurano_partner_key": "CHECK24",
+      "external_partner_id": "354456"
+    },
+    {
+      "nurano_partner_key": "TARIFCHECK",
+      "external_partner_id": "165274"
+    },
+    {
+      "nurano_partner_key": "TELEKOM",
+      "external_partner_id": "100228979"
+    }
+  ],
+
+  "products": [
+    {"nurano_product_id":"NPRD_0001","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_001","product_name":"Strom"},
+    {"nurano_product_id":"NPRD_0002","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_002","product_name":"Ökostrom"},
+    {"nurano_product_id":"NPRD_0003","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_003","product_name":"Gas"},
+    {"nurano_product_id":"NPRD_0004","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_004","product_name":"DSL"},
+    {"nurano_product_id":"NPRD_0005","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_005","product_name":"Mobilfunk"},
+    {"nurano_product_id":"NPRD_0006","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_006","product_name":"Pauschalreise"},
+    {"nurano_product_id":"NPRD_0007","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_007","product_name":"Mietwagen"},
+    {"nurano_product_id":"NPRD_0008","nurano_partner_key":"CHECK24","legacy_source_product_id":"CHK24_008","product_name":"C24 Bank"},
+
+    {"nurano_product_id":"NPRD_0009","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_001","product_name":"Solaranlage"},
+    {"nurano_product_id":"NPRD_0010","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_002","product_name":"Kfz-Versicherung"},
+    {"nurano_product_id":"NPRD_0011","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_003","product_name":"Kredit"},
+    {"nurano_product_id":"NPRD_0012","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_004","product_name":"Girokonto"},
+    {"nurano_product_id":"NPRD_0013","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_005","product_name":"Baufinanzierung"},
+    {"nurano_product_id":"NPRD_0014","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_006","product_name":"Hausratversicherung"},
+    {"nurano_product_id":"NPRD_0015","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_007","product_name":"Haftpflichtversicherung"},
+    {"nurano_product_id":"NPRD_0016","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_008","product_name":"Rentenversicherung"},
+    {"nurano_product_id":"NPRD_0017","nurano_partner_key":"TARIFCHECK","legacy_source_product_id":"TC_009","product_name":"Private Krankenversicherung"},
+
+    {"nurano_product_id":"NPRD_0018","nurano_partner_key":"TELEKOM","legacy_source_product_id":"TELP_001","product_name":"Festnetz und Internet"},
+    {"nurano_product_id":"NPRD_0019","nurano_partner_key":"TELEKOM","legacy_source_product_id":"TELP_002","product_name":"Glasfaser"},
+    {"nurano_product_id":"NPRD_0020","nurano_partner_key":"TELEKOM","legacy_source_product_id":"TELP_003","product_name":"Mobilfunk"},
+    {"nurano_product_id":"NPRD_0021","nurano_partner_key":"TELEKOM","legacy_source_product_id":"TELP_004","product_name":"Congstar"}
+  ],
+
+  "rules": {
+    "nurano_product_id_is_canonical": true,
+    "external_partner_id_is_not_nurano_identity": true,
+    "legacy_source_product_id_is_not_canonical": true,
+    "external_product_reference_requires_verified_source": true,
+    "invent_external_reference": false
+  }
+}
