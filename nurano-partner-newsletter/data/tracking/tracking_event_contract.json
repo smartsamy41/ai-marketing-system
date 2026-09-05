@@ -1,0 +1,68 @@
+﻿{
+  "record_type": "tracking_event_contract",
+  "schema_version": "1.0.0",
+  "schema_reference": "../../schemas/tracking_event.schema.json",
+  "verification_status": "STRONG_SOURCE",
+
+  "event_contract": {
+    "event_id": null,
+    "event_type": null,
+    "event_timestamp": null,
+    "source_system": null,
+
+    "visitor_id": null,
+    "session_id": null,
+    "click_id": null,
+    "campaign_id": null,
+
+    "partner_id": null,
+    "product_id": null,
+    "asset_id": null,
+
+    "traffic": {
+      "landing_url": null,
+      "referrer_url": null,
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "utm_content": null,
+      "utm_term": null
+    },
+
+    "routing": {
+      "destination_type": null,
+      "destination_reference": null
+    },
+
+    "conversion": {
+      "conversion_id": null,
+      "conversion_status": null,
+      "commission_amount": null,
+      "currency": null
+    },
+
+    "analytics": {
+      "matomo_visitor_id": null
+    }
+  },
+
+  "required_runtime_rules": {
+    "event_id_must_be_unique": true,
+    "event_timestamp_must_be_utc": true,
+    "unknown_partner_behavior": "STOP",
+    "unknown_product_behavior": "STOP",
+    "unknown_asset_behavior": "STOP",
+    "commission_requires_verified_source": true,
+    "destination_requires_verified_routing_record": true
+  },
+
+  "privacy_rules": {
+    "personal_names_allowed": false,
+    "email_addresses_allowed": false,
+    "raw_ip_addresses_allowed": false,
+    "subscriber_pii_allowed": false,
+    "visitor_identifier_type": "PSEUDONYMOUS"
+  },
+
+  "notes": "This file is a neutral runtime data contract. Null values are placeholders only and must be populated from validated runtime data. It contains no partner secrets, subscriber data, commissions or invented destinations."
+}
