@@ -1,0 +1,22 @@
+﻿{
+  "schema_version": "1.0.0",
+  "vault_contract": {
+    "storage_mode": "EXTERNAL_SECURE_VAULT",
+    "provider_independent": true,
+    "git_storage_allowed": false,
+    "supported_data_classes": [
+      "SUBSCRIBER_EMAIL",
+      "SUBSCRIBER_PROFILE",
+      "CONSENT_EVIDENCE",
+      "DOI_EVIDENCE",
+      "SUPPRESSION_EVIDENCE",
+      "DELIVERY_PROVIDER_REFERENCE",
+      "SECURITY_METADATA"
+    ],
+    "reference_format": "OPAQUE_EXTERNAL_REFERENCE",
+    "encryption_required": true,
+    "access_control_required": true,
+    "audit_logging_required": true,
+    "raw_secret_in_repository_allowed": false
+  }
+}
