@@ -1,0 +1,9 @@
+﻿{
+  "partner": "Tarifcheck",
+  "partner_id": "165274",
+  "verification_status": "VERIFIED",
+  "primary_source_type": "official_partner_material",
+  "primary_source_reference": null,
+  "source_reference_status": "PENDING_EXACT_REFERENCE",
+  "notes": "Partner ID 165274 is verified from official Tarifcheck partner material previously supplied for the project. The exact primary-source reference has not yet been normalized into the new provenance layer. Tracking, assets, compliance and newsletter rules require separate sourced records. Legacy ?tid=[ID] tracking must not be used."
+}
