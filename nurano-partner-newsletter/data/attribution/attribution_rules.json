@@ -1,0 +1,70 @@
+﻿{
+  "record_type": "attribution_rules",
+  "schema_version": "1.0.0",
+  "verification_status": "STRONG_SOURCE",
+
+  "primary_keys": {
+    "click_id": {
+      "required_for_outbound_click": true,
+      "must_be_unique": true
+    },
+    "conversion_id": {
+      "required_for_partner_conversion": true,
+      "must_be_unique_when_present": true
+    }
+  },
+
+  "attribution_chain": [
+    "campaign_id",
+    "click_id",
+    "partner_id",
+    "product_id",
+    "asset_id",
+    "conversion_id"
+  ],
+
+  "matching_rules": {
+    "preferred_match": "EXACT_CLICK_ID",
+    "fallback_matching_allowed": false,
+    "cross_partner_matching_allowed": false,
+    "cross_product_matching_allowed": false,
+    "cross_asset_matching_allowed": false,
+    "unknown_click_id_behavior": "UNATTRIBUTED",
+    "unknown_conversion_id_behavior": "STOP"
+  },
+
+  "conversion_rules": {
+    "partner_id_must_match_original_click": true,
+    "product_id_must_match_original_click": true,
+    "asset_id_must_match_original_click_when_present": true,
+    "commission_must_have_verified_source": true,
+    "unverified_commission_behavior": "STORE_CONVERSION_WITHOUT_COMMISSION"
+  },
+
+  "campaign_rules": {
+    "campaign_id_optional": true,
+    "campaign_id_must_not_override_click_identity": true
+  },
+
+  "privacy_rules": {
+    "personal_name_matching_allowed": false,
+    "email_matching_allowed": false,
+    "raw_ip_matching_allowed": false,
+    "visitor_id_must_be_pseudonymous": true
+  },
+
+  "conflict_rules": {
+    "partner_conflict": "STOP",
+    "product_conflict": "STOP",
+    "asset_conflict": "STOP",
+    "duplicate_conversion": "STOP_AND_REVIEW"
+  },
+
+  "analytics_rules": {
+    "matomo_is_source_of_truth_for_attribution": false,
+    "nurano_tracking_is_source_of_truth": true,
+    "matomo_may_receive_event_copy_later": true
+  },
+
+  "notes": "Attribution is exact-ID based. No probabilistic matching, fingerprinting, personal-data matching or invented commission logic is allowed."
+}
