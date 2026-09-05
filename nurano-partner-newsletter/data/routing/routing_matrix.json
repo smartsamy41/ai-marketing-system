@@ -1,0 +1,83 @@
+﻿{
+  "record_type": "routing_matrix",
+  "schema_version": "1.0.0",
+  "verification_status": "STRONG_SOURCE",
+
+  "partners": [
+    {
+      "partner_key": "CHECK24",
+      "partner_id": "354456",
+      "routing_mode": "AFFILIATE_ASSET",
+      "asset_source": "../assets/check24_assets.json",
+      "product_ids": [
+        "CHK24_001",
+        "CHK24_002",
+        "CHK24_003",
+        "CHK24_004",
+        "CHK24_005",
+        "CHK24_006",
+        "CHK24_007",
+        "CHK24_008"
+      ],
+      "rules": {
+        "use_source_backed_assets_only": true,
+        "invent_destination": false,
+        "invent_deeplink": false,
+        "invent_tracking_parameter": false
+      }
+    },
+
+    {
+      "partner_key": "TARIFCHECK",
+      "partner_id": "165274",
+      "routing_mode": "AFFILIATE_ASSET",
+      "asset_source": "../assets/tarifcheck_assets.json",
+      "product_ids": [
+        "TC_001",
+        "TC_002",
+        "TC_003",
+        "TC_004",
+        "TC_005",
+        "TC_006",
+        "TC_007",
+        "TC_008",
+        "TC_009"
+      ],
+      "rules": {
+        "use_source_backed_assets_only": true,
+        "invent_destination": false,
+        "invent_deeplink": false,
+        "invent_tracking_parameter": false
+      }
+    },
+
+    {
+      "partner_key": "TELEKOM",
+      "partner_id": "100228979",
+      "routing_mode": "DIRECT_TO_OFFICIAL_SHOP",
+      "official_shop": "https://free-basics.telekom-profis.de",
+      "product_ids": [
+        "TELP_001",
+        "TELP_002",
+        "TELP_003",
+        "TELP_004"
+      ],
+      "rules": {
+        "separate_conversion_landingpages_allowed": false,
+        "all_ctas_route_to_official_shop": true,
+        "shop_url_change_requires_telekom_confirmation": true,
+        "invent_destination": false
+      }
+    }
+  ],
+
+  "global_rules": {
+    "unknown_partner_behavior": "STOP",
+    "unknown_product_behavior": "STOP",
+    "missing_verified_destination_behavior": "STOP",
+    "invent_destination": false,
+    "invent_deeplink": false,
+    "invent_tracking_parameter": false,
+    "invent_commission": false
+  }
+}
