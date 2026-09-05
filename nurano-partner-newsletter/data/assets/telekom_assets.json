@@ -1,0 +1,68 @@
+﻿{
+  "partner": "Telekom Profis",
+  "partner_id": "100228979",
+  "record_type": "affiliate_assets",
+  "verification_status": "VERIFIED",
+  "source_type": "verified_official_asset",
+  "source_reference": "Verified Telekom Profis shop and official asset URLs",
+  "assets": [
+    {
+      "asset_id": "TEL_SHOP_001",
+      "asset_type": "official_shop",
+      "url": "https://free-basics.telekom-profis.de",
+      "status": "ACTIVE_UNTIL_TELEKOM_CONFIRMS_REPLACEMENT"
+    },
+    {
+      "asset_id": "TEL_LOGO_200",
+      "asset_type": "official_logo",
+      "target_url": "https://0100228979.telekom-profis.de",
+      "image": "telekom_logo_2024_200x43.jpg"
+    },
+    {
+      "asset_id": "TEL_LOGO_300",
+      "asset_type": "official_logo",
+      "target_url": "https://0100228979.telekom-profis.de",
+      "image": "telekom_logo_2024_300x65.jpg"
+    },
+    {
+      "asset_id": "TEL_LOGO_600",
+      "asset_type": "official_logo",
+      "target_url": "https://0100228979.telekom-profis.de",
+      "image": "telekom_logo_2024_600x126.jpg"
+    },
+    {
+      "asset_id": "TEL_LOGO_940",
+      "asset_type": "official_logo",
+      "target_url": "https://0100228979.telekom-profis.de",
+      "image": "telekom_logo_2024_940x203.jpg"
+    },
+    {
+      "asset_id": "TEL_IMG_GLASFASER",
+      "asset_type": "official_image",
+      "url": "https://www.telekom-profis.de/shop/grafik/tk-profis_720x350_glasfaser_os.jpg"
+    },
+    {
+      "asset_id": "TEL_IMG_SOFORT",
+      "asset_type": "official_image",
+      "url": "https://www.telekom-profis.de/shop/grafik/teaser_sofort_720.jpg"
+    },
+    {
+      "asset_id": "TEL_IMG_MAGENTAMOBIL",
+      "asset_type": "official_image",
+      "url": "https://www.telekom-profis.de/shop/mobilfunk/telefonieren-und-surfen/grafik/022026_magentamobil_720.jpg"
+    },
+    {
+      "asset_id": "TEL_IMG_STARTSEITE",
+      "asset_type": "official_image",
+      "url": "https://www.telekom-profis.de/shop/grafik/tk-profis_710x350_startseite-teaser_v1_002.jpg"
+    }
+  ],
+  "restrictions": {
+    "official_assets_only": true,
+    "ai_generated_partner_images_allowed": false,
+    "rebuilt_partner_banners_allowed": false,
+    "rebuilt_partner_calculators_allowed": false,
+    "rebuilt_partner_forms_allowed": false
+  },
+  "notes": "Telekom assets must remain tied to verified official Telekom Profis sources. The existing Telekom Profis shop URL must not be replaced without Telekom confirmation."
+}
