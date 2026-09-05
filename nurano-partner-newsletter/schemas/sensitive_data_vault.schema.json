@@ -1,0 +1,98 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.sensitive_data_vault.schema.v1",
+  "title": "NURANO Sensitive Customer Data Vault Contract",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "vault_contract"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "vault_contract": {
+      "$ref": "#/$defs/vault_contract"
+    }
+  },
+
+  "$defs": {
+    "vault_contract": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "storage_mode",
+        "provider_independent",
+        "git_storage_allowed",
+        "supported_data_classes"
+      ],
+
+      "properties": {
+        "storage_mode": {
+          "type": "string",
+          "enum": [
+            "EXTERNAL_SECURE_VAULT"
+          ]
+        },
+
+        "provider_independent": {
+          "type": "boolean",
+          "const": true
+        },
+
+        "git_storage_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+
+        "supported_data_classes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "SUBSCRIBER_EMAIL",
+              "SUBSCRIBER_PROFILE",
+              "CONSENT_EVIDENCE",
+              "DOI_EVIDENCE",
+              "SUPPRESSION_EVIDENCE",
+              "DELIVERY_PROVIDER_REFERENCE",
+              "SECURITY_METADATA"
+            ]
+          }
+        },
+
+        "reference_format": {
+          "type": "string",
+          "description": "Opaque reference used by NURANO to address sensitive data outside Git."
+        },
+
+        "encryption_required": {
+          "type": "boolean",
+          "const": true
+        },
+
+        "access_control_required": {
+          "type": "boolean",
+          "const": true
+        },
+
+        "audit_logging_required": {
+          "type": "boolean",
+          "const": true
+        },
+
+        "raw_secret_in_repository_allowed": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  }
+}
