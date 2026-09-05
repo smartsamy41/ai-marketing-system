@@ -1,0 +1,80 @@
+﻿{
+  "partner": "CHECK24",
+  "partner_id": "354456",
+  "record_type": "affiliate_assets",
+  "verification_status": "STRONG_SOURCE",
+  "source_type": "official_affiliate_assets",
+  "source_reference": null,
+  "source_reference_status": "PENDING_EXACT_REFERENCE",
+  "assets": [
+    {
+      "product": "Strom",
+      "deep": "stromanbieter-wechseln",
+      "cat": "1",
+      "iframe_id": "c24pp-power-iframe",
+      "iframe_script": "https://files.check24.net/widgets/auto/354456/c24pp-power-iframe/power-iframe.js",
+      "short_widget_id": "c24pp-power-widget70585",
+      "banner_300x250_aid": "305",
+      "banner_728x90_aid": "306"
+    },
+    {
+      "product": "Ökostrom",
+      "deep": "oekostrom",
+      "cat": "5",
+      "iframe_id": "c24pp-power-iframe",
+      "iframe_parameter": "data-eco=\"yes\"",
+      "short_widget_id": "c24pp-power-widget27283",
+      "banner_300x250_aid": "120",
+      "banner_728x90_aid": "122"
+    },
+    {
+      "product": "Gas",
+      "deep": "gasanbieter-wechseln",
+      "cat": "3",
+      "iframe_id": "c24pp-gas-iframe",
+      "short_widget_id": "c24pp-gas-widget47864",
+      "banner_300x250_aid": "315",
+      "banner_728x90_aid": "317"
+    },
+    {
+      "product": "DSL",
+      "deep": "dsl-anbieterwechsel",
+      "cat": "4",
+      "iframe_id": "c24pp-dsl-iframe",
+      "banner_300x250_aid": "82",
+      "banner_728x90_aid": "332"
+    },
+    {
+      "product": "Mobilfunk",
+      "deep": "handytarife",
+      "cat": "7",
+      "iframe_id": "c24pp-mobileservice-iframe",
+      "iframe_script": "sim-only-iframe.js",
+      "banner_300x250_aid": "171",
+      "banner_728x90_aid": "177"
+    },
+    {
+      "product": "Pauschalreise",
+      "deep": "pauschalreisen-vergleich",
+      "cat": "9",
+      "iframe_id": "c24pp-package-iframe",
+      "banner_status": "UNAVAILABLE"
+    },
+    {
+      "product": "Mietwagen",
+      "deep": "mietwagen-preisvergleich",
+      "cat": "10",
+      "iframe_id": "c24pp-rentalcar-iframe",
+      "banner_status": "UNAVAILABLE"
+    },
+    {
+      "product": "C24 Bank",
+      "deep": "c24bank",
+      "cat": "14",
+      "calculator_status": "UNAVAILABLE",
+      "banner_status": "UNAVAILABLE"
+    }
+  ],
+  "link_pattern": "https://a.check24.net/misc/click.php?pid=354456&aid=18&deep={deep}&cat={cat}",
+  "notes": "Only source-backed CHECK24 assets are stored. Legacy partner ID C24_554433 and placeholder URLs must not be used."
+}
