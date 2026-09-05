@@ -1,0 +1,99 @@
+﻿{
+  "record_type": "matomo_adapter_contract",
+  "schema_version": "1.0.0",
+  "verification_status": "STRONG_SOURCE",
+
+  "status": {
+    "adapter_enabled": false,
+    "matomo_installed": false,
+    "matomo_configured": false
+  },
+
+  "source_of_truth": {
+    "nurano_tracking": true,
+    "matomo": false
+  },
+
+  "input_reference": {
+    "tracking_schema": "../../schemas/tracking_event.schema.json",
+    "tracking_contract": "../../data/tracking/tracking_event_contract.json",
+    "attribution_rules": "../../data/attribution/attribution_rules.json"
+  },
+
+  "allowed_event_types": [
+    "PAGE_VIEW",
+    "CTA_VIEW",
+    "CTA_CLICK",
+    "OUTBOUND_CLICK",
+    "NEWSLETTER_CLICK",
+    "PARTNER_CONVERSION"
+  ],
+
+  "allowed_fields": [
+    "event_id",
+    "event_type",
+    "event_timestamp",
+    "source_system",
+    "visitor_id",
+    "session_id",
+    "click_id",
+    "campaign_id",
+    "partner_id",
+    "product_id",
+    "asset_id",
+    "landing_url",
+    "referrer_url",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+    "utm_term",
+    "conversion_id",
+    "conversion_status"
+  ],
+
+  "blocked_fields": [
+    "personal_name",
+    "email_address",
+    "raw_ip_address",
+    "subscriber_pii",
+    "doi_proof",
+    "consent_evidence",
+    "partner_secret",
+    "api_token",
+    "commission_amount"
+  ],
+
+  "mapping_rules": {
+    "preserve_click_id": true,
+    "preserve_campaign_id": true,
+    "preserve_partner_id": true,
+    "preserve_product_id": true,
+    "preserve_asset_id": true,
+    "matomo_must_not_modify_nurano_attribution": true,
+    "matomo_must_not_generate_partner_destinations": true,
+    "matomo_must_not_generate_commissions": true
+  },
+
+  "configuration_placeholders": {
+    "matomo_base_url": null,
+    "matomo_site_id": null,
+    "matomo_auth_token": "SECRET_MANAGER_ONLY"
+  },
+
+  "privacy_rules": {
+    "raw_ip_forwarding_allowed": false,
+    "email_forwarding_allowed": false,
+    "subscriber_pii_forwarding_allowed": false,
+    "visitor_identifier_type": "PSEUDONYMOUS"
+  },
+
+  "failure_behavior": {
+    "matomo_unavailable": "CONTINUE_NURANO_TRACKING",
+    "invalid_event": "REJECT_ADAPTER_COPY",
+    "missing_secret": "DISABLE_ADAPTER",
+    "attribution_conflict": "KEEP_NURANO_SOURCE_OF_TRUTH"
+  },
+
+  "notes": "Matomo is an optional analytics adapter only. NURANO tracking and attribution remain authoritative. No secrets or runtime credentials are stored in Git."
+}
