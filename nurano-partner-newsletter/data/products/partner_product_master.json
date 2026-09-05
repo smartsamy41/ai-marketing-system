@@ -1,0 +1,124 @@
+﻿{
+    "record_type":  "partner_product_master",
+    "verification_status":  "STRONG_SOURCE",
+    "partners":  [
+                     {
+                         "partner_key":  "CHECK24",
+                         "partner_id":  "354456",
+                         "partner_status":  "ACTIVE",
+                         "products":  [
+                                          {
+                                              "product_id":  "CHK24_001",
+                                              "product":  "Strom"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_002",
+                                              "product":  "Ökostrom"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_003",
+                                              "product":  "Gas"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_004",
+                                              "product":  "DSL"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_005",
+                                              "product":  "Mobilfunk"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_006",
+                                              "product":  "Pauschalreise"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_007",
+                                              "product":  "Mietwagen"
+                                          },
+                                          {
+                                              "product_id":  "CHK24_008",
+                                              "product":  "C24 Bank"
+                                          }
+                                      ]
+                     },
+                     {
+                         "partner_key":  "TARIFCHECK",
+                         "partner_id":  "165274",
+                         "partner_status":  "ACTIVE",
+                         "products":  [
+                                          {
+                                              "product_id":  "TC_001",
+                                              "product":  "Solaranlage"
+                                          },
+                                          {
+                                              "product_id":  "TC_002",
+                                              "product":  "Kfz-Versicherung"
+                                          },
+                                          {
+                                              "product_id":  "TC_003",
+                                              "product":  "Kredit"
+                                          },
+                                          {
+                                              "product_id":  "TC_004",
+                                              "product":  "Girokonto"
+                                          },
+                                          {
+                                              "product_id":  "TC_005",
+                                              "product":  "Baufinanzierung"
+                                          },
+                                          {
+                                              "product_id":  "TC_006",
+                                              "product":  "Hausratversicherung"
+                                          },
+                                          {
+                                              "product_id":  "TC_007",
+                                              "product":  "Haftpflichtversicherung"
+                                          },
+                                          {
+                                              "product_id":  "TC_008",
+                                              "product":  "Rentenversicherung"
+                                          },
+                                          {
+                                              "product_id":  "TC_009",
+                                              "product":  "Private Krankenversicherung"
+                                          }
+                                      ]
+                     },
+                     {
+                         "partner_key":  "TELEKOM",
+                         "partner_id":  "100228979",
+                         "partner_status":  "ACTIVE",
+                         "products":  [
+                                          {
+                                              "product_id":  "TEL_001",
+                                              "product":  "Telekom Profis Shop",
+                                              "routing":  "DIRECT_TO_OFFICIAL_SHOP"
+                                          },
+                                          {
+                                              "product_id":  "TEL_002",
+                                              "product":  "Festnetz und Internet"
+                                          },
+                                          {
+                                              "product_id":  "TEL_003",
+                                              "product":  "Glasfaser"
+                                          },
+                                          {
+                                              "product_id":  "TEL_004",
+                                              "product":  "Mobilfunk"
+                                          },
+                                          {
+                                              "product_id":  "TEL_005",
+                                              "product":  "Congstar",
+                                              "classification":  "TELEKOM_PRODUCT_OR_TARIFF_AREA",
+                                              "separate_partner":  false
+                                          }
+                                      ]
+                     }
+                 ],
+    "inactive_partners":  [
+                              "Amazon",
+                              "Awin",
+                              "FinanceAds"
+                          ],
+    "notes":  "This master defines stable internal product IDs only. It does not contain commissions, prices, promotions or invented commercial facts."
+}
