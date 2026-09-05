@@ -1,0 +1,143 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.asset.schema.v1",
+  "title": "NURANO Canonical Asset",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "assets"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    }
+  },
+
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_asset_id",
+        "nurano_partner_key",
+        "asset_type",
+        "asset_role",
+        "status",
+        "verification_status"
+      ],
+
+      "properties": {
+        "nurano_asset_id": {
+          "type": "string",
+          "pattern": "^NAST_[0-9]{4}$"
+        },
+
+        "nurano_partner_key": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "nurano_product_id": {
+          "type": ["string", "null"],
+          "pattern": "^NPRD_[0-9]{4}$"
+        },
+
+        "external_asset_reference": {
+          "type": ["string", "null"]
+        },
+
+        "legacy_source_asset_reference": {
+          "type": ["string", "null"]
+        },
+
+        "asset_type": {
+          "type": "string",
+          "enum": [
+            "AFFILIATE_LINK",
+            "DEEPLINK",
+            "IFRAME",
+            "WIDGET",
+            "BANNER",
+            "IMAGE",
+            "LOGO",
+            "SHOP_URL",
+            "DOCUMENT",
+            "OTHER"
+          ]
+        },
+
+        "asset_role": {
+          "type": "string",
+          "enum": [
+            "PRIMARY_CONVERSION",
+            "SECONDARY_CONVERSION",
+            "INFORMATIONAL",
+            "EDITORIAL",
+            "BRANDING",
+            "NEWSLETTER",
+            "SUPPORTING"
+          ]
+        },
+
+        "target_url": {
+          "type": ["string", "null"]
+        },
+
+        "embed_code": {
+          "type": ["string", "null"]
+        },
+
+        "source_reference": {
+          "type": ["string", "null"]
+        },
+
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "STRONG_SOURCE",
+            "UNVERIFIED",
+            "LEGACY",
+            "PLACEHOLDER",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "UNAVAILABLE",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "valid_from": {
+          "type": ["string", "null"]
+        },
+
+        "valid_until": {
+          "type": ["string", "null"]
+        },
+
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}
