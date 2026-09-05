@@ -1,0 +1,134 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.commission.schema.v1",
+  "title": "NURANO Commission Model",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "commissions"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "commissions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/commission"
+      }
+    }
+  },
+
+  "$defs": {
+    "commission": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_commission_id",
+        "nurano_partner_key",
+        "commission_type",
+        "verification_status",
+        "status"
+      ],
+
+      "properties": {
+        "nurano_commission_id": {
+          "type": "string",
+          "pattern": "^NCOM_[0-9]{4}$"
+        },
+
+        "nurano_partner_key": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "nurano_product_id": {
+          "type": ["string", "null"],
+          "pattern": "^NPRD_[0-9]{4}$"
+        },
+
+        "external_commission_reference": {
+          "type": ["string", "null"]
+        },
+
+        "commission_type": {
+          "type": "string",
+          "enum": [
+            "FIXED_AMOUNT",
+            "PERCENTAGE",
+            "LEAD",
+            "SALE",
+            "TIERED",
+            "PROMOTION",
+            "UNKNOWN"
+          ]
+        },
+
+        "commission_value": {
+          "type": ["number", "null"]
+        },
+
+        "currency": {
+          "type": ["string", "null"]
+        },
+
+        "percentage": {
+          "type": ["number", "null"]
+        },
+
+        "conditions": {
+          "type": ["string", "null"]
+        },
+
+        "source_reference": {
+          "type": ["string", "null"]
+        },
+
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "STRONG_SOURCE",
+            "UNVERIFIED",
+            "LEGACY",
+            "PLACEHOLDER",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "production_eligible": {
+          "type": "boolean"
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "EXPIRED",
+            "UNVERIFIED",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "valid_from": {
+          "type": ["string", "null"]
+        },
+
+        "valid_until": {
+          "type": ["string", "null"]
+        },
+
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}
