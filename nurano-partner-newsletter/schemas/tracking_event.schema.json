@@ -1,0 +1,66 @@
+﻿{
+  "schema_name": "nurano_tracking_event",
+  "schema_version": "1.0.0",
+  "record_type": "tracking_event_schema",
+  "verification_status": "STRONG_SOURCE",
+
+  "privacy": {
+    "store_personal_names": false,
+    "store_email_addresses": false,
+    "store_raw_ip_addresses": false,
+    "visitor_identifier_type": "PSEUDONYMOUS",
+    "sensitive_consent_data_location": "SEPARATE_ENCRYPTED_DATA_VAULT"
+  },
+
+  "identifiers": [
+    "event_id",
+    "visitor_id",
+    "session_id",
+    "click_id",
+    "campaign_id",
+    "partner_id",
+    "product_id",
+    "asset_id"
+  ],
+
+  "allowed_event_types": [
+    "PAGE_VIEW",
+    "CTA_VIEW",
+    "CTA_CLICK",
+    "OUTBOUND_CLICK",
+    "NEWSLETTER_CLICK",
+    "PARTNER_CONVERSION",
+    "ATTRIBUTION_UPDATE"
+  ],
+
+  "traffic_fields": [
+    "landing_url",
+    "referrer_url",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+    "utm_term"
+  ],
+
+  "conversion_rules": {
+    "commission_values_must_be_verified": true,
+    "unverified_commissions_must_not_be_used": true
+  },
+
+  "analytics": {
+    "matomo_enabled": false,
+    "matomo_configuration_status": "NOT_CONFIGURED"
+  },
+
+  "global_rules": {
+    "unknown_partner_behavior": "STOP",
+    "unknown_product_behavior": "STOP",
+    "unknown_asset_behavior": "STOP",
+    "invent_destination": false,
+    "invent_tracking_parameter": false,
+    "invent_commission": false,
+    "secrets_in_git": false,
+    "subscriber_pii_in_git": false
+  }
+}
