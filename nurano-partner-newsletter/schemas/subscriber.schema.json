@@ -1,0 +1,117 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.subscriber.schema.v1",
+  "title": "NURANO Subscriber Model",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "subscribers"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "subscribers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/subscriber"
+      }
+    }
+  },
+
+  "$defs": {
+    "subscriber": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_subscriber_id",
+        "status",
+        "consent_status",
+        "created_at"
+      ],
+
+      "properties": {
+        "nurano_subscriber_id": {
+          "type": "string",
+          "pattern": "^NSUB_[0-9]{6}$"
+        },
+
+        "email_reference": {
+          "type": ["string", "null"],
+          "description": "Reference to sensitive storage only. Never store the real email address in Git."
+        },
+
+        "profile_reference": {
+          "type": ["string", "null"],
+          "description": "Reference to optional sensitive subscriber profile storage."
+        },
+
+        "locale": {
+          "type": ["string", "null"]
+        },
+
+        "country_code": {
+          "type": ["string", "null"]
+        },
+
+        "consent_status": {
+          "type": "string",
+          "enum": [
+            "PENDING",
+            "CONFIRMED",
+            "WITHDRAWN",
+            "REJECTED",
+            "UNKNOWN"
+          ]
+        },
+
+        "doi_reference": {
+          "type": ["string", "null"],
+          "description": "Reference to DOI evidence stored outside Git."
+        },
+
+        "suppression_status": {
+          "type": "string",
+          "enum": [
+            "NOT_SUPPRESSED",
+            "SUPPRESSED"
+          ]
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "PENDING",
+            "UNSUBSCRIBED",
+            "SUPPRESSED",
+            "INACTIVE"
+          ]
+        },
+
+        "created_at": {
+          "type": "string"
+        },
+
+        "updated_at": {
+          "type": ["string", "null"]
+        },
+
+        "unsubscribed_at": {
+          "type": ["string", "null"]
+        },
+
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}
