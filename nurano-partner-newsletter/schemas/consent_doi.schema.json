@@ -1,0 +1,121 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.consent_doi.schema.v1",
+  "title": "NURANO Consent and DOI Model",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "consents"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "consents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/consent"
+      }
+    }
+  },
+
+  "$defs": {
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_consent_id",
+        "nurano_subscriber_id",
+        "consent_type",
+        "consent_status",
+        "doi_status",
+        "created_at"
+      ],
+
+      "properties": {
+        "nurano_consent_id": {
+          "type": "string",
+          "pattern": "^NCON_[0-9]{6}$"
+        },
+
+        "nurano_subscriber_id": {
+          "type": "string",
+          "pattern": "^NSUB_[0-9]{6}$"
+        },
+
+        "consent_type": {
+          "type": "string",
+          "enum": [
+            "NEWSLETTER",
+            "MARKETING",
+            "PARTNER_COMMUNICATION",
+            "OTHER"
+          ]
+        },
+
+        "consent_status": {
+          "type": "string",
+          "enum": [
+            "PENDING",
+            "GRANTED",
+            "WITHDRAWN",
+            "REJECTED",
+            "EXPIRED"
+          ]
+        },
+
+        "doi_status": {
+          "type": "string",
+          "enum": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "CONFIRMED",
+            "FAILED",
+            "EXPIRED"
+          ]
+        },
+
+        "consent_source_reference": {
+          "type": ["string", "null"],
+          "description": "Reference to consent evidence stored outside Git."
+        },
+
+        "doi_evidence_reference": {
+          "type": ["string", "null"],
+          "description": "Reference to DOI proof stored outside Git."
+        },
+
+        "policy_version": {
+          "type": ["string", "null"]
+        },
+
+        "confirmed_at": {
+          "type": ["string", "null"]
+        },
+
+        "withdrawn_at": {
+          "type": ["string", "null"]
+        },
+
+        "created_at": {
+          "type": "string"
+        },
+
+        "updated_at": {
+          "type": ["string", "null"]
+        },
+
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}
