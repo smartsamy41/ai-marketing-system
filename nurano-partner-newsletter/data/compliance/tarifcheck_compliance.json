@@ -1,0 +1,59 @@
+﻿{
+    "partner":  "Tarifcheck",
+    "partner_id":  "165274",
+    "record_type":  "compliance",
+    "verification_status":  "VERIFIED",
+    "source_type":  "official_partner_material",
+    "source_reference":  null,
+    "source_reference_status":  "PENDING_EXACT_REFERENCE",
+    "rules":  {
+                  "advertising_label_required":  true,
+                  "allowed_labels":  [
+                                         "Werbung",
+                                         "Anzeige"
+                                     ],
+                  "role":  "Tippgeber",
+                  "not_role":  "Versicherungsvermittler",
+                  "powered_by_required":  "powered by TARIFCHECK24 GmbH",
+                  "visual_separation_required":  true,
+                  "impressum_text":  "Alle Vergleiche powered by TARIFCHECK24 GmbH, Zollstr. 11b, 21465 Wentorf bei Hamburg, Tel. 040 - 73098288, Fax 040 - 73098289, E-Mail: info@tarifcheck.de",
+                  "prohibited":  [
+                                     "provider_logos_without_permission",
+                                     "brand_bidding",
+                                     "CHECK24_or_Tarifcheck_in_URL",
+                                     "traffic_networks_GetMyAds_or_Promycom",
+                                     "official_seals_without_permission",
+                                     "SCHUFA-frei_claims",
+                                     "copying_Tarifcheck_text_graphics_images"
+                                 ],
+                  "newsletter":  {
+                                     "doi_required":  true,
+                                     "full_impressum_required":  true,
+                                     "unsubscribe_required":  true,
+                                     "doi_proof_required":  true,
+                                     "template_approval_required_when_using_personalized_tarifcheck_templates":  true,
+                                     "footer_required_fields":  [
+                                                                    "company_name",
+                                                                    "address",
+                                                                    "phone",
+                                                                    "email",
+                                                                    "tax_number"
+                                                                ],
+                                     "personalized_template_request_email":  "stephan.cordes@tarifcheck.de",
+                                     "personalized_template_request_requires":  [
+                                                                                    "partner_id",
+                                                                                    "sender_company",
+                                                                                    "product_topic",
+                                                                                    "recipient_list_information"
+                                                                                ],
+                                     "test_newsletter_required":  true,
+                                     "approval_before_send_required":  true
+                                 },
+                  "tracking":  {
+                                   "verified_format":  "\u0026tracking=TRACKING_ID",
+                                   "legacy_format":  "?tid=[ID]",
+                                   "legacy_format_status":  "DO_NOT_USE"
+                               }
+              },
+    "notes":  "Only verified Tarifcheck compliance facts are stored here. Missing exact source references remain pending and must not be invented."
+}
