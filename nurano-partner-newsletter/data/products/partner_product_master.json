@@ -90,24 +90,19 @@
                          "partner_status":  "ACTIVE",
                          "products":  [
                                           {
-                                              "product_id":  "TEL_001",
-                                              "product":  "Telekom Profis Shop",
-                                              "routing":  "DIRECT_TO_OFFICIAL_SHOP"
-                                          },
-                                          {
-                                              "product_id":  "TEL_002",
+                                              "product_id":  "TELP_001",
                                               "product":  "Festnetz und Internet"
                                           },
                                           {
-                                              "product_id":  "TEL_003",
+                                              "product_id":  "TELP_002",
                                               "product":  "Glasfaser"
                                           },
                                           {
-                                              "product_id":  "TEL_004",
+                                              "product_id":  "TELP_003",
                                               "product":  "Mobilfunk"
                                           },
                                           {
-                                              "product_id":  "TEL_005",
+                                              "product_id":  "TELP_004",
                                               "product":  "Congstar",
                                               "classification":  "TELEKOM_PRODUCT_OR_TARIFF_AREA",
                                               "separate_partner":  false

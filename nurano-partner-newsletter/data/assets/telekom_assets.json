@@ -40,7 +40,7 @@
                        "asset_id":  "TEL_IMG_GLASFASER",
                        "asset_type":  "official_image",
                        "url":  "https://www.telekom-profis.de/shop/grafik/tk-profis_720x350_glasfaser_os.jpg",
-                       "product_id":  "TEL_003"
+                       "product_id":  "TELP_002"
                    },
                    {
                        "asset_id":  "TEL_IMG_SOFORT",
@@ -51,7 +51,7 @@
                        "asset_id":  "TEL_IMG_MAGENTAMOBIL",
                        "asset_type":  "official_image",
                        "url":  "https://www.telekom-profis.de/shop/mobilfunk/telefonieren-und-surfen/grafik/022026_magentamobil_720.jpg",
-                       "product_id":  "TEL_004"
+                       "product_id":  "TELP_003"
                    },
                    {
                        "asset_id":  "TEL_IMG_STARTSEITE",
