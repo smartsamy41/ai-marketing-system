@@ -1,0 +1,72 @@
+﻿{
+  "record_type": "matomo_configuration_schema",
+  "schema_version": "1.0.0",
+  "verification_status": "STRONG_SOURCE",
+
+  "runtime_status": {
+    "enabled": false,
+    "installation_status": "NOT_INSTALLED",
+    "configuration_status": "NOT_CONFIGURED"
+  },
+
+  "non_secret_configuration": {
+    "matomo_base_url": {
+      "required": true,
+      "value": null,
+      "storage": "RUNTIME_CONFIG"
+    },
+    "matomo_site_id": {
+      "required": true,
+      "value": null,
+      "storage": "RUNTIME_CONFIG"
+    },
+    "tracking_mode": {
+      "required": true,
+      "value": "SERVER_SIDE_ADAPTER"
+    }
+  },
+
+  "secret_requirements": {
+    "MATOMO_AUTH_TOKEN": {
+      "required": true,
+      "value_in_git": false,
+      "storage": "SECRET_MANAGER",
+      "purpose": "Authentication for Matomo API operations."
+    }
+  },
+
+  "forbidden_git_values": [
+    "matomo_auth_token",
+    "api_token",
+    "password",
+    "database_password",
+    "subscriber_pii",
+    "doi_proof",
+    "consent_evidence"
+  ],
+
+  "privacy_defaults": {
+    "send_raw_ip": false,
+    "send_email": false,
+    "send_personal_name": false,
+    "send_subscriber_pii": false,
+    "visitor_identifier_type": "PSEUDONYMOUS"
+  },
+
+  "validation_rules": {
+    "adapter_must_remain_disabled_until_configured": true,
+    "missing_base_url_behavior": "DISABLE_ADAPTER",
+    "missing_site_id_behavior": "DISABLE_ADAPTER",
+    "missing_auth_token_behavior": "DISABLE_ADAPTER",
+    "invalid_configuration_behavior": "STOP_MATOMO_ONLY",
+    "nurano_tracking_must_continue": true
+  },
+
+  "source_of_truth": {
+    "tracking": "NURANO",
+    "attribution": "NURANO",
+    "analytics_copy": "MATOMO_OPTIONAL"
+  },
+
+  "notes": "This schema contains configuration requirements only. No real Matomo URL, site ID, credentials or secrets are stored in Git."
+}
