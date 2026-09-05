@@ -1,0 +1,977 @@
+﻿{
+    "record_type":  "canonical_asset_registry",
+    "schema_version":  "1.0.0",
+    "assets":  [
+                   {
+                       "nurano_asset_id":  "NAST_0001",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0001",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_001",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=stromanbieter-wechseln\u0026cat=1",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "stromanbieter-wechseln",
+                                        "cat":  "1"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0002",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0001",
+                       "external_asset_reference":  "c24pp-power-iframe",
+                       "legacy_source_asset_reference":  "CHK24_001",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "https://files.check24.net/widgets/auto/354456/c24pp-power-iframe/power-iframe.js",
+                                        "iframe_id":  "c24pp-power-iframe",
+                                        "iframe_parameter":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0003",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0001",
+                       "external_asset_reference":  "c24pp-power-widget70585",
+                       "legacy_source_asset_reference":  "CHK24_001",
+                       "asset_type":  "WIDGET",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "widget_id":  "c24pp-power-widget70585"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0004",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0001",
+                       "external_asset_reference":  "305",
+                       "legacy_source_asset_reference":  "CHK24_001",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "300x250",
+                                        "aid":  "305"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0005",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0001",
+                       "external_asset_reference":  "306",
+                       "legacy_source_asset_reference":  "CHK24_001",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "728x90",
+                                        "aid":  "306"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0006",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0002",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_002",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=oekostrom\u0026cat=5",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "oekostrom",
+                                        "cat":  "5"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0007",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0002",
+                       "external_asset_reference":  "c24pp-power-iframe",
+                       "legacy_source_asset_reference":  "CHK24_002",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  null,
+                                        "iframe_id":  "c24pp-power-iframe",
+                                        "iframe_parameter":  "data-eco=\"yes\""
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0008",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0002",
+                       "external_asset_reference":  "c24pp-power-widget27283",
+                       "legacy_source_asset_reference":  "CHK24_002",
+                       "asset_type":  "WIDGET",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "widget_id":  "c24pp-power-widget27283"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0009",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0002",
+                       "external_asset_reference":  "120",
+                       "legacy_source_asset_reference":  "CHK24_002",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "300x250",
+                                        "aid":  "120"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0010",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0002",
+                       "external_asset_reference":  "122",
+                       "legacy_source_asset_reference":  "CHK24_002",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "728x90",
+                                        "aid":  "122"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0011",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0003",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_003",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=gasanbieter-wechseln\u0026cat=3",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "gasanbieter-wechseln",
+                                        "cat":  "3"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0012",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0003",
+                       "external_asset_reference":  "c24pp-gas-iframe",
+                       "legacy_source_asset_reference":  "CHK24_003",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  null,
+                                        "iframe_id":  "c24pp-gas-iframe",
+                                        "iframe_parameter":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0013",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0003",
+                       "external_asset_reference":  "c24pp-gas-widget47864",
+                       "legacy_source_asset_reference":  "CHK24_003",
+                       "asset_type":  "WIDGET",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "widget_id":  "c24pp-gas-widget47864"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0014",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0003",
+                       "external_asset_reference":  "315",
+                       "legacy_source_asset_reference":  "CHK24_003",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "300x250",
+                                        "aid":  "315"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0015",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0003",
+                       "external_asset_reference":  "317",
+                       "legacy_source_asset_reference":  "CHK24_003",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "728x90",
+                                        "aid":  "317"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0016",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0004",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_004",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=dsl-anbieterwechsel\u0026cat=4",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "dsl-anbieterwechsel",
+                                        "cat":  "4"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0017",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0004",
+                       "external_asset_reference":  "c24pp-dsl-iframe",
+                       "legacy_source_asset_reference":  "CHK24_004",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  null,
+                                        "iframe_id":  "c24pp-dsl-iframe",
+                                        "iframe_parameter":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0018",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0004",
+                       "external_asset_reference":  "82",
+                       "legacy_source_asset_reference":  "CHK24_004",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "300x250",
+                                        "aid":  "82"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0019",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0004",
+                       "external_asset_reference":  "332",
+                       "legacy_source_asset_reference":  "CHK24_004",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "728x90",
+                                        "aid":  "332"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0020",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0005",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_005",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=handytarife\u0026cat=7",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "handytarife",
+                                        "cat":  "7"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0021",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0005",
+                       "external_asset_reference":  "c24pp-mobileservice-iframe",
+                       "legacy_source_asset_reference":  "CHK24_005",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "sim-only-iframe.js",
+                                        "iframe_id":  "c24pp-mobileservice-iframe",
+                                        "iframe_parameter":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0022",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0005",
+                       "external_asset_reference":  "171",
+                       "legacy_source_asset_reference":  "CHK24_005",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "300x250",
+                                        "aid":  "171"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0023",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0005",
+                       "external_asset_reference":  "177",
+                       "legacy_source_asset_reference":  "CHK24_005",
+                       "asset_type":  "BANNER",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "size":  "728x90",
+                                        "aid":  "177"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0024",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0006",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_006",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=pauschalreisen-vergleich\u0026cat=9",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "pauschalreisen-vergleich",
+                                        "cat":  "9"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0025",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0006",
+                       "external_asset_reference":  "c24pp-package-iframe",
+                       "legacy_source_asset_reference":  "CHK24_006",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  null,
+                                        "iframe_id":  "c24pp-package-iframe",
+                                        "iframe_parameter":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0026",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0007",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_007",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=mietwagen-preisvergleich\u0026cat=10",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "mietwagen-preisvergleich",
+                                        "cat":  "10"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0027",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0007",
+                       "external_asset_reference":  "c24pp-rentalcar-iframe",
+                       "legacy_source_asset_reference":  "CHK24_007",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  null,
+                                        "iframe_id":  "c24pp-rentalcar-iframe",
+                                        "iframe_parameter":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0028",
+                       "nurano_partner_key":  "CHECK24",
+                       "nurano_product_id":  "NPRD_0008",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "CHK24_008",
+                       "asset_type":  "DEEPLINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.check24.net/misc/click.php?pid=354456\u0026aid=18\u0026deep=c24bank\u0026cat=14",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "deep":  "c24bank",
+                                        "cat":  "14"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0029",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0009",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TC_001",
+                       "asset_type":  "AFFILIATE_LINK",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://a.partner-versicherung.de/click.php?partner_id=165274\u0026ad_id=15\u0026deep=solaranlage",
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0030",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0009",
+                       "external_asset_reference":  "tcpp-iframe-solar",
+                       "legacy_source_asset_reference":  "TC_001",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "solar-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0031",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0010",
+                       "external_asset_reference":  "tcpp-iframe-kfz",
+                       "legacy_source_asset_reference":  "TC_002",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "https://form.partner-versicherung.de/widgets/165274/tcpp-iframe-kfz/kfz-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0032",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0010",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TC_002",
+                       "asset_type":  "WIDGET",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "widget_script":  "https://form.partner-versicherung.de/widgets/165274/tcpp-widget-kfz/kfz-widget.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0033",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0011",
+                       "external_asset_reference":  "tcpp-iframe-kredit",
+                       "legacy_source_asset_reference":  "TC_003",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "kredit-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0034",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0012",
+                       "external_asset_reference":  "tcpp-iframe-giro",
+                       "legacy_source_asset_reference":  "TC_004",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "giro-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0035",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0013",
+                       "external_asset_reference":  "tcpp-iframe-baufi",
+                       "legacy_source_asset_reference":  "TC_005",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "baufi-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0036",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0014",
+                       "external_asset_reference":  "tcpp-iframe-hr",
+                       "legacy_source_asset_reference":  "TC_006",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "hr-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0037",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0015",
+                       "external_asset_reference":  "tcpp-iframe-phv",
+                       "legacy_source_asset_reference":  "TC_007",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "phv-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0038",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0016",
+                       "external_asset_reference":  "tcpp-iframe-rente",
+                       "legacy_source_asset_reference":  "TC_008",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "rente-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0039",
+                       "nurano_partner_key":  "TARIFCHECK",
+                       "nurano_product_id":  "NPRD_0017",
+                       "external_asset_reference":  "tcpp-iframe-pkv",
+                       "legacy_source_asset_reference":  "TC_009",
+                       "asset_type":  "IFRAME",
+                       "asset_role":  "SECONDARY_CONVERSION",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  null,
+                       "verification_status":  "STRONG_SOURCE",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "iframe_script":  "pkv-iframe.js"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0040",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_SHOP_001",
+                       "asset_type":  "SHOP_URL",
+                       "asset_role":  "PRIMARY_CONVERSION",
+                       "target_url":  "https://free-basics.telekom-profis.de",
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  null,
+                                        "source_asset_type":  "official_shop",
+                                        "source_url":  "https://free-basics.telekom-profis.de"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0041",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_LOGO_200",
+                       "asset_type":  "LOGO",
+                       "asset_role":  "BRANDING",
+                       "target_url":  "https://0100228979.telekom-profis.de",
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  "telekom_logo_2024_200x43.jpg",
+                                        "source_asset_type":  "official_logo",
+                                        "source_url":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0042",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_LOGO_300",
+                       "asset_type":  "LOGO",
+                       "asset_role":  "BRANDING",
+                       "target_url":  "https://0100228979.telekom-profis.de",
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  "telekom_logo_2024_300x65.jpg",
+                                        "source_asset_type":  "official_logo",
+                                        "source_url":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0043",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_LOGO_600",
+                       "asset_type":  "LOGO",
+                       "asset_role":  "BRANDING",
+                       "target_url":  "https://0100228979.telekom-profis.de",
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  "telekom_logo_2024_600x126.jpg",
+                                        "source_asset_type":  "official_logo",
+                                        "source_url":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0044",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_LOGO_940",
+                       "asset_type":  "LOGO",
+                       "asset_role":  "BRANDING",
+                       "target_url":  "https://0100228979.telekom-profis.de",
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  "telekom_logo_2024_940x203.jpg",
+                                        "source_asset_type":  "official_logo",
+                                        "source_url":  null
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0045",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  "NPRD_0019",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_IMG_GLASFASER",
+                       "asset_type":  "IMAGE",
+                       "asset_role":  "EDITORIAL",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  "TELP_002",
+                                        "image":  null,
+                                        "source_asset_type":  "official_image",
+                                        "source_url":  "https://www.telekom-profis.de/shop/grafik/tk-profis_720x350_glasfaser_os.jpg"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0046",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_IMG_SOFORT",
+                       "asset_type":  "IMAGE",
+                       "asset_role":  "EDITORIAL",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  null,
+                                        "source_asset_type":  "official_image",
+                                        "source_url":  "https://www.telekom-profis.de/shop/grafik/teaser_sofort_720.jpg"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0047",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  "NPRD_0020",
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_IMG_MAGENTAMOBIL",
+                       "asset_type":  "IMAGE",
+                       "asset_role":  "EDITORIAL",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  "TELP_003",
+                                        "image":  null,
+                                        "source_asset_type":  "official_image",
+                                        "source_url":  "https://www.telekom-profis.de/shop/mobilfunk/telefonieren-und-surfen/grafik/022026_magentamobil_720.jpg"
+                                    }
+                   },
+                   {
+                       "nurano_asset_id":  "NAST_0048",
+                       "nurano_partner_key":  "TELEKOM",
+                       "nurano_product_id":  null,
+                       "external_asset_reference":  null,
+                       "legacy_source_asset_reference":  "TEL_IMG_STARTSEITE",
+                       "asset_type":  "IMAGE",
+                       "asset_role":  "EDITORIAL",
+                       "target_url":  null,
+                       "embed_code":  null,
+                       "source_reference":  "Verified Telekom Profis shop and official asset URLs",
+                       "verification_status":  "VERIFIED",
+                       "status":  "ACTIVE",
+                       "valid_from":  null,
+                       "valid_until":  null,
+                       "metadata":  {
+                                        "original_product_id":  null,
+                                        "image":  null,
+                                        "source_asset_type":  "official_image",
+                                        "source_url":  "https://www.telekom-profis.de/shop/grafik/tk-profis_710x350_startseite-teaser_v1_002.jpg"
+                                    }
+                   }
+               ]
+}
