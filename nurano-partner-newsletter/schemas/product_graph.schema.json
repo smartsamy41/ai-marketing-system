@@ -1,0 +1,147 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.product_graph.schema.v1",
+  "title": "NURANO Product Graph",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "products"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/product"
+      }
+    }
+  },
+
+  "$defs": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_product_id",
+        "nurano_partner_key",
+        "product_name",
+        "product_type",
+        "status",
+        "verification_status"
+      ],
+
+      "properties": {
+        "nurano_product_id": {
+          "type": "string",
+          "pattern": "^NPRD_[0-9]{4}$"
+        },
+
+        "nurano_partner_key": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "product_name": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "product_type": {
+          "type": "string",
+          "enum": [
+            "COMPARISON",
+            "INSURANCE",
+            "FINANCE",
+            "ENERGY",
+            "TELECOM",
+            "TRAVEL",
+            "BANKING",
+            "SOLAR",
+            "OTHER"
+          ]
+        },
+
+        "external_product_reference": {
+          "type": ["string", "null"]
+        },
+
+        "legacy_source_product_id": {
+          "type": ["string", "null"]
+        },
+
+        "parent_product_id": {
+          "type": ["string", "null"],
+          "pattern": "^NPRD_[0-9]{4}$"
+        },
+
+        "related_product_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^NPRD_[0-9]{4}$"
+          },
+          "uniqueItems": true
+        },
+
+        "category": {
+          "type": ["string", "null"]
+        },
+
+        "subcategory": {
+          "type": ["string", "null"]
+        },
+
+        "routing_mode": {
+          "type": ["string", "null"],
+          "enum": [
+            "AFFILIATE_ASSET",
+            "DIRECT_TO_OFFICIAL_SHOP",
+            "NO_ROUTING",
+            null
+          ]
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "SUSPENDED"
+          ]
+        },
+
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "STRONG_SOURCE",
+            "UNVERIFIED",
+            "LEGACY",
+            "PLACEHOLDER",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "source_reference": {
+          "type": ["string", "null"]
+        },
+
+        "valid_from": {
+          "type": ["string", "null"]
+        },
+
+        "valid_until": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}
