@@ -1,0 +1,132 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nurano.partner_master.schema.v1",
+  "title": "NURANO Partner Master",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "schema_version",
+    "partners"
+  ],
+
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+
+    "partners": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/partner"
+      }
+    }
+  },
+
+  "$defs": {
+    "partner": {
+      "type": "object",
+      "additionalProperties": false,
+
+      "required": [
+        "nurano_partner_key",
+        "partner_name",
+        "external_partner_id",
+        "partner_type",
+        "business_area",
+        "routing_mode",
+        "status",
+        "verification_status"
+      ],
+
+      "properties": {
+        "nurano_partner_key": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "partner_name": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "external_partner_id": {
+          "type": ["string", "null"]
+        },
+
+        "partner_type": {
+          "type": "string",
+          "minLength": 1
+        },
+
+        "business_area": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+
+        "official_domain": {
+          "type": ["string", "null"]
+        },
+
+        "official_shop_url": {
+          "type": ["string", "null"]
+        },
+
+        "routing_mode": {
+          "type": "string",
+          "enum": [
+            "AFFILIATE_ASSET",
+            "DIRECT_TO_OFFICIAL_SHOP",
+            "NO_ROUTING"
+          ]
+        },
+
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "SUSPENDED"
+          ]
+        },
+
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "STRONG_SOURCE",
+            "UNVERIFIED",
+            "LEGACY",
+            "PLACEHOLDER",
+            "DO_NOT_USE"
+          ]
+        },
+
+        "source_reference": {
+          "type": ["string", "null"]
+        },
+
+        "valid_from": {
+          "type": ["string", "null"]
+        },
+
+        "valid_until": {
+          "type": ["string", "null"]
+        },
+
+        "created_at": {
+          "type": ["string", "null"]
+        },
+
+        "updated_at": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}
