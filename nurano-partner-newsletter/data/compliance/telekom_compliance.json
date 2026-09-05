@@ -1,0 +1,27 @@
+﻿{
+  "partner": "Telekom Profis",
+  "partner_id": "100228979",
+  "record_type": "compliance_and_routing",
+  "verification_status": "VERIFIED",
+  "source_type": "verified_partner_records",
+  "source_reference": "Gmail message 1a06bd84d17781ea and verified official Telekom Profis assets",
+  "rules": {
+    "official_shop": "https://free-basics.telekom-profis.de",
+    "shop_url_status": "ACTIVE_UNTIL_TELEKOM_CONFIRMS_REPLACEMENT",
+    "separate_conversion_landingpages_allowed": false,
+    "cta_destination": "OFFICIAL_TELEKOM_PROFIS_SHOP",
+    "editorial_blog_content_allowed": true,
+    "newsletter_content_allowed": true,
+    "congstar": {
+      "separate_partner": false,
+      "classification": "TELEKOM_PRODUCT_OR_TARIFF_AREA"
+    },
+    "assets": {
+      "official_assets_only": true,
+      "ai_rebuilt_partner_banners_allowed": false,
+      "ai_rebuilt_partner_calculators_allowed": false,
+      "ai_rebuilt_partner_forms_allowed": false
+    }
+  },
+  "notes": "Telekom routing must continue to use the current official Telekom Profis shop until Telekom confirms a replacement URL. Public NURANO branding must not silently replace the partner shop URL."
+}
