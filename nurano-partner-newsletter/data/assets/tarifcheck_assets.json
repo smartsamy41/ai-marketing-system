@@ -1,0 +1,134 @@
+﻿{
+  "partner": "Tarifcheck",
+  "partner_id": "165274",
+  "record_type": "affiliate_assets",
+  "verification_status": "STRONG_SOURCE",
+  "source_type": "official_affiliate_assets",
+  "source_reference": null,
+  "source_reference_status": "PENDING_EXACT_REFERENCE",
+  "assets": [
+    {
+      "product_id": "TC_001",
+      "product": "Solaranlage",
+      "iframe_id": "tcpp-iframe-solar",
+      "iframe_script": "solar-iframe.js",
+      "direct_link": "https://a.partner-versicherung.de/click.php?partner_id=165274&ad_id=15&deep=solaranlage",
+      "short_url": "https://www.tarifcheck.com/6c5unD8",
+      "startpage_link": "https://a.partner-versicherung.de/click.php?partner_id=165274&ad_id=15",
+      "startpage_short_url": "https://www.tarifcheck.com/zalF0t7",
+      "banners": [
+        {"size": "300x250", "ad_id": "1698"},
+        {"size": "728x90", "ad_id": "1690"},
+        {"size": "980x90", "ad_id": "1704"},
+        {"size": "300x300", "ad_id": "1700"},
+        {"size": "300x50", "ad_id": "1696"}
+      ]
+    },
+    {
+      "product_id": "TC_002",
+      "product": "Kfz-Versicherung",
+      "iframe_id": "tcpp-iframe-kfz",
+      "iframe_script": "https://form.partner-versicherung.de/widgets/165274/tcpp-iframe-kfz/kfz-iframe.js",
+      "short_widget_css": "https://form.partner-versicherung.de/widgets/kfz-widget.css",
+      "short_widget_class": "tcpp-widget-kfz",
+      "short_widget_script": "https://form.partner-versicherung.de/widgets/165274/tcpp-widget-kfz/kfz-widget.js",
+      "deep": "kfz-versicherung",
+      "short_url": "https://www.tarifcheck.com/ows4kfw",
+      "banners": [
+        {"size": "300x250", "ad_id": "1618"},
+        {"size": "728x90", "ad_id": "1634"}
+      ]
+    },
+    {
+      "product_id": "TC_003",
+      "product": "Kredit",
+      "iframe_id": "tcpp-iframe-kredit",
+      "iframe_script": "kredit-iframe.js",
+      "iframe_parameters": {
+        "data-duration": "12",
+        "data-purpose": "8",
+        "data-amount": "5000"
+      },
+      "short_widget_css": "kredit-widget.css",
+      "deep": "kredit",
+      "short_url": "https://www.tarifcheck.com/mmYbmVN",
+      "banners": [
+        {"size": "300x250", "ad_id": "601"},
+        {"size": "728x90", "ad_id": "1482"}
+      ]
+    },
+    {
+      "product_id": "TC_004",
+      "product": "Girokonto",
+      "iframe_id": "tcpp-iframe-giro",
+      "iframe_script": "giro-iframe.js",
+      "deep": "girokonto",
+      "short_url": "https://www.tarifcheck.com/4e9H7PT",
+      "banners": [
+        {"size": "728x90", "ad_id": "1530"}
+      ],
+      "banner_300x250_status": "UNAVAILABLE"
+    },
+    {
+      "product_id": "TC_005",
+      "product": "Baufinanzierung",
+      "iframe_id": "tcpp-iframe-baufi",
+      "iframe_script": "baufi-iframe.js",
+      "deep": "baufinanzierung",
+      "short_url": "https://www.tarifcheck.com/mZHvsW3",
+      "banners": [
+        {"size": "300x250", "ad_id": "629"},
+        {"size": "728x90", "ad_id": "633"}
+      ]
+    },
+    {
+      "product_id": "TC_006",
+      "product": "Hausratversicherung",
+      "iframe_id": "tcpp-iframe-hr",
+      "iframe_script": "hr-iframe.js",
+      "direct_link": null,
+      "short_url": null,
+      "banners": [
+        {"size": "300x250", "ad_id": "741"},
+        {"size": "728x90", "ad_id": "745"}
+      ]
+    },
+    {
+      "product_id": "TC_007",
+      "product": "Haftpflichtversicherung",
+      "iframe_id": "tcpp-iframe-phv",
+      "iframe_script": "phv-iframe.js",
+      "deep": "haftpflichtversicherung",
+      "short_url": "https://www.tarifcheck.com/4k68puO",
+      "banners": [
+        {"size": "300x250", "ad_id": "923"},
+        {"size": "728x90", "ad_id": "927"}
+      ]
+    },
+    {
+      "product_id": "TC_008",
+      "product": "Rentenversicherung",
+      "iframe_id": "tcpp-iframe-rente",
+      "iframe_script": "rente-iframe.js",
+      "deep": "rentenversicherung",
+      "short_url": "https://www.tarifcheck.com/WrTBy8V",
+      "banners": [
+        {"size": "300x250", "ad_id": "853"},
+        {"size": "728x90", "ad_id": "857"}
+      ]
+    },
+    {
+      "product_id": "TC_009",
+      "product": "Private Krankenversicherung",
+      "iframe_id": "tcpp-iframe-pkv",
+      "iframe_script": "pkv-iframe.js",
+      "deep": "private-krankenversicherung",
+      "short_url": "https://www.tarifcheck.com/dXoXGNU",
+      "banners": [
+        {"size": "300x250", "ad_id": "657"},
+        {"size": "728x90", "ad_id": "661"}
+      ]
+    }
+  ],
+  "notes": "Only verified Tarifcheck assets are stored. Previously pasted PKV links under TC_001 Solaranlage are explicitly excluded and must not be used."
+}
